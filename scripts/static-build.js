@@ -15,7 +15,8 @@ const STATIC_FILES = [
   "data/public/phase1_updates.json",
   "data/public/communication_status.json",
   "data/public/status.json",
-  "data/public/x_feed_preview.json"
+  "data/public/x_feed_preview.json",
+  "data/public/area_navigation.json"
 ];
 
 function main() {

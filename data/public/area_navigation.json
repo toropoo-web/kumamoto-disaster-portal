@@ -1,0 +1,145 @@
+{
+  "section_title": "地域災害ナビ",
+  "areas": [
+    {
+      "area_id": "KM000",
+      "name": "熊本県",
+      "navigation": {
+        "water": "熊本県 給水場所",
+        "shelter": "熊本県 避難所",
+        "road": "熊本県 通行止め",
+        "disaster_map": "https://www.portal.pref.kumamoto.jp/hazard/"
+      }
+    },
+    {
+      "area_id": "KM003",
+      "name": "宇城市",
+      "navigation": {
+        "water": "宇城市 給水場所",
+        "shelter": "宇城市 避難所",
+        "road": "宇城市 通行止め",
+        "disaster_map": "https://www.city.uki.kumamoto.jp/kinkyu/"
+      }
+    },
+    {
+      "area_id": "KM007",
+      "name": "氷川町",
+      "navigation": {
+        "water": "氷川町 給水場所",
+        "shelter": "氷川町 避難所",
+        "road": "氷川町 通行止め",
+        "disaster_map": "https://www.town.hikawa.kumamoto.jp/"
+      }
+    },
+    {
+      "area_id": "KM005",
+      "name": "八代市",
+      "navigation": {
+        "water": "八代市 給水場所",
+        "shelter": "八代市 避難所",
+        "road": "八代市 通行止め",
+        "disaster_map": "https://www.city.yatsushiro.lg.jp/bousai/default.html"
+      }
+    },
+    {
+      "area_id": "KM002",
+      "name": "宇土市",
+      "navigation": {
+        "water": "宇土市 給水場所",
+        "shelter": "宇土市 避難所",
+        "road": "宇土市 通行止め",
+        "disaster_map": "https://www.city.uto.lg.jp/"
+      }
+    },
+    {
+      "area_id": "KM008",
+      "name": "益城町",
+      "navigation": {
+        "water": "益城町 給水場所",
+        "shelter": "益城町 避難所",
+        "road": "益城町 通行止め",
+        "disaster_map": "https://www.town.mashiki.lg.jp/bousai/"
+      }
+    },
+    {
+      "area_id": "KM010",
+      "name": "御船町",
+      "navigation": {
+        "water": "御船町 給水場所",
+        "shelter": "御船町 避難所",
+        "road": "御船町 通行止め",
+        "disaster_map": "https://www.town.mifune.kumamoto.jp/"
+      }
+    },
+    {
+      "area_id": "KM012",
+      "name": "嘉島町",
+      "navigation": {
+        "water": "嘉島町 給水場所",
+        "shelter": "嘉島町 避難所",
+        "road": "嘉島町 通行止め",
+        "disaster_map": "https://www.town.kumamoto-kashima.lg.jp/"
+      }
+    },
+    {
+      "area_id": "KM006",
+      "name": "人吉市",
+      "navigation": {
+        "water": "人吉市 給水場所",
+        "shelter": "人吉市 避難所",
+        "road": "人吉市 通行止め",
+        "disaster_map": "https://www.city.hitoyoshi.lg.jp/disaster_mode/"
+      }
+    },
+    {
+      "area_id": "KM001",
+      "name": "熊本市",
+      "navigation": {
+        "water": "熊本市 給水場所",
+        "shelter": "熊本市 避難所",
+        "road": "熊本市 通行止め",
+        "disaster_map": "https://www.city.kumamoto.jp/kurashi/bosai/"
+      }
+    },
+    {
+      "area_id": "KM011",
+      "name": "菊陽町",
+      "navigation": {
+        "water": "菊陽町 給水場所",
+        "shelter": "菊陽町 避難所",
+        "road": "菊陽町 通行止め",
+        "disaster_map": "https://www.town.kikuyo.lg.jp/bousai/"
+      }
+    },
+    {
+      "area_id": "KM013",
+      "name": "菊池市",
+      "navigation": {
+        "water": "菊池市 給水場所",
+        "shelter": "菊池市 避難所",
+        "road": "菊池市 通行止め",
+        "disaster_map": "https://www.city.kikuchi.lg.jp/"
+      }
+    },
+    {
+      "area_id": "KM009",
+      "name": "合志市",
+      "navigation": {
+        "water": "合志市 給水場所",
+        "shelter": "合志市 避難所",
+        "road": "合志市 通行止め",
+        "disaster_map": "https://www.city.koshi.lg.jp/"
+      }
+    },
+    {
+      "area_id": "KM004",
+      "name": "美里町",
+      "navigation": {
+        "water": "美里町 給水場所",
+        "shelter": "美里町 避難所",
+        "road": "美里町 通行止め",
+        "disaster_map": "https://www.town.kumamoto-misato.lg.jp/"
+      }
+    }
+  ]
+}

@@ -8,6 +8,8 @@
   var LOAD_ERROR_MESSAGE = "情報を読み込めませんでした。自治体公式サイトの情報をご確認ください。";
   var X_FEED_STATUS_AVAILABLE = "AVAILABLE";
   var X_FEED_STATUS_UNAVAILABLE = "UNAVAILABLE";
+  var AREA_DISASTER_NAV_ID = "area-disaster-nav";
+  var GOOGLE_MAPS_SEARCH_BASE = "https://www.google.com/maps/search/?api=1&query=";
 
   var CATEGORY_ORDER = [
     { id: "EMERGENCY", anchor: "cat-emergency" },
@@ -338,6 +340,175 @@
       el.textContent = text;
     }
     return el;
+  }
+
+  function buildGoogleMapsSearchUrl(query) {
+    return GOOGLE_MAPS_SEARCH_BASE + encodeURIComponent(query);
+  }
+
+  function scrollToAreaDisasterNav() {
+    var target = document.getElementById(AREA_DISASTER_NAV_ID);
+    if (!target) {
+      return;
+    }
+    var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start"
+    });
+    var select = target.querySelector(".area-disaster-nav__select");
+    if (select) {
+      select.focus();
+    }
+  }
+
+  function renderAreaNavPromo(container) {
+    var section = createElement("section", "area-nav-promo");
+    section.setAttribute("aria-labelledby", "area-nav-promo-title");
+
+    var inner = createElement("div", "container");
+    inner.appendChild(createElement("h2", "area-nav-promo__title", "地域の災害情報を地図で確認"));
+    inner.querySelector(".area-nav-promo__title").id = "area-nav-promo-title";
+    inner.appendChild(createElement(
+      "p",
+      "area-nav-promo__lead",
+      "市町村を選択すると、地域に関連する災害情報や地図を確認できます。"
+    ));
+
+    var button = createElement("button", "area-nav-promo__button", "地域を選択して見る");
+    button.type = "button";
+    button.setAttribute("aria-label", "地域災害ナビへ移動");
+    button.addEventListener("click", scrollToAreaDisasterNav);
+    inner.appendChild(button);
+
+    section.appendChild(inner);
+    container.appendChild(section);
+  }
+
+  function createAreaNavExternalLink(className, label, href, ariaLabel) {
+    var link = createElement("a", className, label);
+    link.href = href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", ariaLabel);
+    return link;
+  }
+
+  function renderAreaDisasterNavLinks(panel, areaEntry) {
+    panel.innerHTML = "";
+    if (!areaEntry || !areaEntry.navigation) {
+      panel.hidden = true;
+      return;
+    }
+
+    var nav = areaEntry.navigation;
+    panel.hidden = false;
+    panel.appendChild(createElement("h3", "area-disaster-nav__selected-name", areaEntry.name));
+
+    var list = createElement("ul", "area-disaster-nav__links");
+
+    var items = [
+      {
+        icon: "💧",
+        label: "給水・断水",
+        href: buildGoogleMapsSearchUrl(nav.water),
+        ariaLabel: areaEntry.name + "の給水・断水情報をGoogleマップで検索（外部リンク）"
+      },
+      {
+        icon: "🏠",
+        label: "避難所",
+        href: buildGoogleMapsSearchUrl(nav.shelter),
+        ariaLabel: areaEntry.name + "の避難所をGoogleマップで検索（外部リンク）"
+      },
+      {
+        icon: "🚧",
+        label: "道路・通行情報",
+        href: buildGoogleMapsSearchUrl(nav.road),
+        ariaLabel: areaEntry.name + "の道路・通行情報をGoogleマップで検索（外部リンク）"
+      },
+      {
+        icon: "📡",
+        label: "通信情報",
+        href: "#communication-status-title",
+        ariaLabel: "携帯電話・通信情報へ移動",
+        internal: true
+      },
+      {
+        icon: "🗺",
+        label: "防災マップ",
+        href: nav.disaster_map,
+        ariaLabel: areaEntry.name + "の公式防災マップへ（外部リンク）"
+      }
+    ];
+
+    items.forEach(function (item) {
+      var li = createElement("li", "area-disaster-nav__item");
+      var link = createAreaNavExternalLink("area-disaster-nav__link", item.icon + " " + item.label, item.href, item.ariaLabel);
+      if (item.internal) {
+        link.removeAttribute("target");
+        link.removeAttribute("rel");
+      }
+      li.appendChild(link);
+      list.appendChild(li);
+    });
+
+    panel.appendChild(list);
+  }
+
+  function renderAreaDisasterNav(container, areaNavigation) {
+    if (!areaNavigation || !areaNavigation.areas || areaNavigation.areas.length === 0) {
+      return;
+    }
+
+    var section = createElement("section", "area-disaster-nav");
+    section.id = AREA_DISASTER_NAV_ID;
+    section.setAttribute("aria-labelledby", "area-disaster-nav-title");
+
+    var inner = createElement("div", "container");
+    var title = areaNavigation.section_title || "地域災害ナビ";
+    inner.appendChild(createElement("h2", "section-title area-disaster-nav__title", title));
+    inner.querySelector(".area-disaster-nav__title").id = "area-disaster-nav-title";
+    inner.appendChild(createElement(
+      "p",
+      "area-disaster-nav__lead",
+      "お住まいの地域を選ぶと、給水・避難所・道路情報などへのリンクを表示します。"
+    ));
+
+    var selectId = "area-disaster-nav-select";
+    var label = createElement("label", "area-disaster-nav__label", "自治体を選択");
+    label.htmlFor = selectId;
+
+    var select = createElement("select", "area-disaster-nav__select");
+    select.id = selectId;
+    select.setAttribute("aria-label", "自治体を選択");
+
+    var placeholder = createElement("option", null, "自治体を選択してください");
+    placeholder.value = "";
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    select.appendChild(placeholder);
+
+    var areaMap = {};
+    areaNavigation.areas.forEach(function (area) {
+      areaMap[area.area_id] = area;
+      var option = createElement("option", null, area.name);
+      option.value = area.area_id;
+      select.appendChild(option);
+    });
+
+    var panel = createElement("div", "area-disaster-nav__panel");
+    panel.hidden = true;
+    panel.setAttribute("aria-live", "polite");
+
+    select.addEventListener("change", function () {
+      renderAreaDisasterNavLinks(panel, areaMap[select.value] || null);
+    });
+
+    inner.appendChild(label);
+    inner.appendChild(select);
+    inner.appendChild(panel);
+    section.appendChild(inner);
+    container.appendChild(section);
   }
 
   function renderEmergencyNotice(container) {
@@ -806,6 +977,7 @@
       loadJson("phase1_updates.json"),
       loadJson("communication_status.json"),
       loadJson("status.json"),
+      loadJson("area_navigation.json"),
       loadXFeedPreview()
     ])
       .then(function (results) {
@@ -814,7 +986,8 @@
         var updates = results[2];
         var communicationStatus = results[3];
         var publicStatus = results[4];
-        var xFeedState = results[5];
+        var areaNavigation = results[5];
+        var xFeedState = results[6];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -828,6 +1001,7 @@
 
         renderEmergencyNotice(page);
         renderPageHeader(page, navigation, lastVerified);
+        renderAreaNavPromo(page);
         renderCommunicationStatus(page, communicationStatus);
         renderPageNavigation(page, navigation, publicRecords);
         renderXFeedSection(page, xFeedState);
@@ -841,6 +1015,7 @@
           renderLatestUpdates(page, publicRecords);
         }
 
+        renderAreaDisasterNav(page, areaNavigation);
         renderAboutSection(page);
         renderCautionSection(page);
         renderPageFooter(page);

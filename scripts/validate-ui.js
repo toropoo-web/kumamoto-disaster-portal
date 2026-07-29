@@ -15,7 +15,8 @@ const REQUIRED_FILES = [
   "data/public/phase1_updates.json",
   "data/public/communication_status.json",
   "data/public/status.json",
-  "data/public/x_feed_preview.json"
+  "data/public/x_feed_preview.json",
+  "data/public/area_navigation.json"
 ];
 
 const CSS_CHECKS = [
@@ -39,7 +40,10 @@ const JS_CHECKS = [
   { name: "x feed preview load", pattern: /loadXFeedPreview/ },
   { name: "x feed graceful degradation", pattern: /X_FEED_STATUS_UNAVAILABLE/ },
   { name: "x feed section render", pattern: /renderXFeedSection/ },
-  { name: "patrol header source", pattern: /publicStatus\.last_patrol_at/ }
+  { name: "patrol header source", pattern: /publicStatus\.last_patrol_at/ },
+  { name: "area navigation load", pattern: /loadJson\("area_navigation\.json"\)/ },
+  { name: "area disaster nav render", pattern: /renderAreaDisasterNav/ },
+  { name: "google maps search url", pattern: /google\.com\/maps\/search\/\?api=1&query=/ }
 ];
 
 const HTML_CHECKS = [

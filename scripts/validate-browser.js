@@ -80,6 +80,13 @@ async function validateViewport(page, viewport, anchors) {
       return dt ? dt.textContent.trim() : "";
     });
 
+    const areaNavPromo = document.querySelector(".area-nav-promo");
+    const areaDisasterNav = document.getElementById("area-disaster-nav");
+    const areaNavSelect = document.querySelector(".area-disaster-nav__select");
+    const areaNavOptions = areaNavSelect
+      ? Array.from(areaNavSelect.options).filter((option) => option.value !== "")
+      : [];
+
     return {
       pageOverflow,
       cardOverflow,
@@ -96,7 +103,16 @@ async function validateViewport(page, viewport, anchors) {
       hasWifiCaution: !!document.querySelector(".communication-status__caution"),
       hasDisasterMessage: Array.from(document.querySelectorAll(".communication-status__provider")).some((el) => el.textContent.trim() === "災害用伝言サービス"),
       latestCount: latestItems.length,
-      latestDates
+      latestDates,
+      hasAreaNavPromo: !!areaNavPromo,
+      hasAreaDisasterNav: !!areaDisasterNav,
+      areaNavOptionCount: areaNavOptions.length,
+      areaNavPromoTitle: areaNavPromo
+        ? (areaNavPromo.querySelector(".area-nav-promo__title") || {}).textContent || ""
+        : "",
+      areaDisasterNavTitle: areaDisasterNav
+        ? (areaDisasterNav.querySelector(".area-disaster-nav__title") || {}).textContent || ""
+        : ""
     };
   });
 
@@ -104,6 +120,26 @@ async function validateViewport(page, viewport, anchors) {
   for (const anchor of anchors) {
     const exists = await page.evaluate((id) => !!document.getElementById(id), anchor);
     anchorChecks[anchor] = exists;
+  }
+
+  let areaNavLinkChecks = {
+    panelVisible: false,
+    mapLinkCount: 0,
+    googleMapsLinkCount: 0
+  };
+
+  if (checks.hasAreaDisasterNav) {
+    await page.selectOption(".area-disaster-nav__select", { index: 1 });
+    areaNavLinkChecks = await page.evaluate(() => {
+      const panel = document.querySelector(".area-disaster-nav__panel");
+      const links = panel ? Array.from(panel.querySelectorAll(".area-disaster-nav__link")) : [];
+      const googleMapsLinks = links.filter((link) => link.href.includes("google.com/maps/search/?api=1&query="));
+      return {
+        panelVisible: panel ? !panel.hidden : false,
+        mapLinkCount: links.length,
+        googleMapsLinkCount: googleMapsLinks.length
+      };
+    });
   }
 
   const sortedDates = checks.latestDates.slice().sort().reverse();
@@ -122,6 +158,14 @@ async function validateViewport(page, viewport, anchors) {
     checks.hasWifiCaution &&
     checks.hasDisasterMessage &&
     checks.latestCount === 4 &&
+    checks.hasAreaNavPromo &&
+    checks.hasAreaDisasterNav &&
+    checks.areaNavOptionCount === 14 &&
+    checks.areaNavPromoTitle === "地域の災害情報を地図で確認" &&
+    checks.areaDisasterNavTitle === "地域災害ナビ" &&
+    areaNavLinkChecks.panelVisible &&
+    areaNavLinkChecks.mapLinkCount === 5 &&
+    areaNavLinkChecks.googleMapsLinkCount === 3 &&
     Object.values(anchorChecks).every(Boolean) &&
     dateOrderOk;
 
@@ -130,6 +174,7 @@ async function validateViewport(page, viewport, anchors) {
     pass,
     checks,
     anchorChecks,
+    areaNavLinkChecks,
     dateOrderOk
   };
 }

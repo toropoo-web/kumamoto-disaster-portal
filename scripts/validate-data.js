@@ -117,6 +117,67 @@ function validateXFeedPreview(errors) {
   });
 }
 
+function validateAreaNavigation(errors, areas) {
+  const filePath = path.join(DATA_DIR, "area_navigation.json");
+  if (!fs.existsSync(filePath)) {
+    errors.push("area_navigation.json: file missing");
+    return;
+  }
+
+  let data;
+  try {
+    data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch (err) {
+    errors.push(`area_navigation.json: invalid JSON (${err.message})`);
+    return;
+  }
+
+  if (!data.areas || !Array.isArray(data.areas)) {
+    errors.push("area_navigation.json: areas array missing");
+    return;
+  }
+
+  if (data.areas.length !== EXPECTED_AREA_COUNT) {
+    errors.push(`area_navigation.json: area count ${data.areas.length} (expected ${EXPECTED_AREA_COUNT})`);
+  }
+
+  const areaIdSet = new Set(areas.map((area) => area.area_id));
+  const navIds = new Set();
+
+  data.areas.forEach((entry, index) => {
+    if (!entry.area_id || !entry.name || !entry.navigation) {
+      errors.push(`area_navigation.json[${index}]: required fields missing`);
+      return;
+    }
+
+    if (!areaIdSet.has(entry.area_id)) {
+      errors.push(`area_navigation.json[${index}]: unknown area_id ${entry.area_id}`);
+    }
+
+    if (navIds.has(entry.area_id)) {
+      errors.push(`area_navigation.json: duplicate area_id ${entry.area_id}`);
+    }
+    navIds.add(entry.area_id);
+
+    const requiredNav = ["water", "shelter", "road", "disaster_map"];
+    requiredNav.forEach((field) => {
+      if (!entry.navigation[field] || String(entry.navigation[field]).trim() === "") {
+        errors.push(`area_navigation.json[${index}]: navigation.${field} missing`);
+      }
+    });
+
+    if (entry.navigation.disaster_map && !isValidUrlFormat(entry.navigation.disaster_map)) {
+      errors.push(`area_navigation.json[${index}]: invalid disaster_map URL`);
+    }
+  });
+
+  areaIdSet.forEach((areaId) => {
+    if (!navIds.has(areaId)) {
+      errors.push(`area_navigation.json: missing area_id ${areaId}`);
+    }
+  });
+}
+
 function main() {
   const areas = readJson("phase1_areas.json");
   const navigation = readJson("phase1_navigation.json");
@@ -214,6 +275,7 @@ function main() {
   }
 
   validateXFeedPreview(errors);
+  validateAreaNavigation(errors, areas);
 
   const result = {
     AREA_COUNT: areas.length,
