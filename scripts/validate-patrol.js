@@ -23,6 +23,7 @@ const REQUIRED_MONITOR_FILES = [
   "monitor/candidate-format.js",
   "monitor/review-engine.js",
   "monitor/apply-engine.js",
+  "monitor/operation-report.js",
   "monitor/UPDATE_FLOW.md",
   "scripts/run-monitor.js",
   "scripts/review-candidates.js",

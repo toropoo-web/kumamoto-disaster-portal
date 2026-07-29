@@ -23,21 +23,42 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run patrol
-        run: npm run patrol
+      - name: Run patrol and generate reports
+        id: patrol
+        run: |
+          set -e
+          npm run patrol | tee patrol-output.log
+          if grep -q "HIGH_PRIORITY_CHANGES_FOUND" patrol-output.log; then
+            echo "high_alert=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "high_alert=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Generate review queue
         run: npm run review
 
-      - name: Validate patrol infrastructure
-        run: node scripts/validate-patrol.js
+      - name: Validate patrol and operation infrastructure
+        run: |
+          node scripts/validate-patrol.js
+          node scripts/validate-operation.js
+
+      - name: Log patrol summary on failure
+        if: failure()
+        run: |
+          echo "Patrol workflow failed. Recent artifacts:"
+          ls -la monitor/reports/ || true
+          ls -la operations/patrol/ || true
+          cat monitor/reports/daily-report.md || true
+          cat monitor/reports/source-failures.md || true
 
       - name: Upload patrol artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: patrol-reports
+          name: patrol-reports-${{ github.run_id }}
           path: |
             monitor/reports/
             monitor/change-log/
             data/update_candidates/
+            operations/patrol/
+            patrol-output.log

@@ -17,7 +17,9 @@ function fetchSource(url, redirectCount) {
       resolve({
         ok: false,
         url,
+        originalUrl: url,
         status: 0,
+        redirectCount,
         error: "invalid_url",
         message: err.message,
         body: "",
@@ -49,7 +51,30 @@ function fetchSource(url, redirectCount) {
         ) {
           res.resume();
           const nextUrl = new URL(location, url).toString();
-          fetchSource(nextUrl, redirectCount + 1).then(resolve);
+          fetchSource(nextUrl, redirectCount + 1).then((result) => {
+            resolve({
+              ...result,
+              originalUrl: result.originalUrl || url,
+              redirectCount: redirectCount + 1
+            });
+          });
+          return;
+        }
+
+        if (status >= 300 && status < 400 && location) {
+          res.resume();
+          resolve({
+            ok: false,
+            url,
+            originalUrl: url,
+            finalUrl: url,
+            status,
+            redirectCount,
+            error: "redirect_anomaly",
+            message: "too many redirects",
+            body: "",
+            headers: res.headers || {}
+          });
           return;
         }
 
@@ -60,8 +85,10 @@ function fetchSource(url, redirectCount) {
           resolve({
             ok: status >= 200 && status < 400,
             url,
+            originalUrl: url,
             finalUrl: url,
             status,
+            redirectCount,
             error: null,
             message: "",
             body,
@@ -76,7 +103,9 @@ function fetchSource(url, redirectCount) {
       resolve({
         ok: false,
         url,
+        originalUrl: url,
         status: 0,
+        redirectCount,
         error: "timeout",
         message: "request timeout",
         body: "",
@@ -88,7 +117,9 @@ function fetchSource(url, redirectCount) {
       resolve({
         ok: false,
         url,
+        originalUrl: url,
         status: 0,
+        redirectCount,
         error: "network_error",
         message: err.message,
         body: "",

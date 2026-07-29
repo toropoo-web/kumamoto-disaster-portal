@@ -1,0 +1,30 @@
+﻿node.exe : npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help
+ npmrc` for supported config options.
+発生場所 行:1 文字:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm warn Unknow...config options.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+> kumamoto-phase1-disaster-page@1.0.0 validate
+> node scripts/validate-data.js
+
+=== Phase1 Data Validation ===
+{
+  "AREA_COUNT": 5,
+  "PUBLIC_CATEGORY_COUNT": 4,
+  "PUBLIC_CARD_COUNT": 8,
+  "EXCLUDED_UNVERIFIED_COUNT": 0,
+  "PAST_INCIDENT_EXCLUDED_COUNT": 0,
+  "SOURCE_URL_MISSING_COUNT": 0,
+  "EMPTY_HEADLINE_COUNT": 0,
+  "EMPTY_SUMMARY_COUNT": 0,
+  "TOP_URL_AS_ARTICLE_COUNT": 0,
+  "HUB_URL_MISMATCH_COUNT": 0,
+  "DUPLICATE_SOURCE_URL_COUNT": 0,
+  "REQUIRES_MANUAL_REVIEW_COUNT": 0,
+  "DATA_VALIDATION": "PASS",
+  "errors": [],
+  "warnings": []
+}
