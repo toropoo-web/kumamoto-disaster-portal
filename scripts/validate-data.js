@@ -108,7 +108,8 @@ function isPublicDisasterLocation(location, now = new Date()) {
 }
 
 const ALLOWED_SOURCE_TYPES = new Set([
-  "MUNICIPALITY", "PREFECTURE", "NATIONAL", "JSDF", "JCG", "TELECOM", "OTHER"
+  "MUNICIPALITY", "PREFECTURE", "NATIONAL", "JSDF", "JCG", "TELECOM", "OTHER",
+  "official_disaster_portal", "official_emergency_portal", "official_portal"
 ]);
 
 const ALLOWED_VERIFICATION_STATUS = new Set(["VERIFIED", "REQUIRES_MANUAL_REVIEW"]);
@@ -195,6 +196,10 @@ function validateXFeedPreview(errors) {
         errors.push(`x_feed_preview.json[${index}]: duplicate url`);
       }
       seenUrls.add(post.url);
+    }
+
+    if (post.source_id === "SRC-PER-001" || post.account_name === "小泉進次郎") {
+      errors.push(`x_feed_preview.json[${index}]: personal source SRC-PER-001 must not appear in portal preview`);
     }
   });
 }

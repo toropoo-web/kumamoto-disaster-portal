@@ -15,6 +15,23 @@ const MIN_ITEMS = 5;
 const MAX_ITEMS = 8;
 
 const EXCLUDED_PATTERNS = [/DEMO/i, /SEED/i, /デモ/];
+const EXCLUDED_SOURCE_IDS = new Set(["SRC-PER-001"]);
+const EXCLUDED_ACCOUNT_HANDLES = new Set(["shinjirokoiz"]);
+
+const SOURCE_REGISTRY = {
+  "SRC-MUN-KM001": {
+    municipality: "熊本市",
+    source_type: "LOCAL_GOVERNMENT",
+    content_filter: "DISASTER_RELATED",
+    account_handle: "kumamotocity_"
+  },
+  "SRC-MUN-KM005": {
+    municipality: "八代市",
+    source_type: "LOCAL_GOVERNMENT",
+    content_filter: "DISASTER_RELATED",
+    account_handle: "yatsushiro0801"
+  }
+};
 
 function fetchJson(url) {
   return new Promise((resolve, reject) => {
@@ -43,9 +60,42 @@ function fetchJson(url) {
 }
 
 function isExcludedPost(post) {
+  if (!post) {
+    return true;
+  }
+
+  if (EXCLUDED_SOURCE_IDS.has(post.sourceId)) {
+    return true;
+  }
+
+  if (post.accountHandle && EXCLUDED_ACCOUNT_HANDLES.has(post.accountHandle)) {
+    return true;
+  }
+
   const fields = [post.sourceId, post.postId, post.sourceName, post.accountHandle, post.category];
   const haystack = fields.filter(Boolean).join(" ");
   return EXCLUDED_PATTERNS.some((pattern) => pattern.test(haystack));
+}
+
+function getSourceMeta(post) {
+  return SOURCE_REGISTRY[post.sourceId] || null;
+}
+
+function resolveSourceType(post, registryMeta) {
+  if (registryMeta && registryMeta.source_type) {
+    return registryMeta.source_type;
+  }
+
+  if (typeof post.sourceId === "string") {
+    if (post.sourceId.startsWith("SRC-NAT-")) {
+      return "GOVERNMENT";
+    }
+    if (post.sourceId.startsWith("SRC-KUM-")) {
+      return "PREFECTURE";
+    }
+  }
+
+  return null;
 }
 
 function isActivePost(post) {
@@ -63,13 +113,29 @@ function getPostText(post) {
 }
 
 function toPreviewPost(post) {
-  return {
+  const registryMeta = getSourceMeta(post);
+  const accountHandle = post.accountHandle || (registryMeta && registryMeta.account_handle) || null;
+  const preview = {
     source_id: post.sourceId,
     account_name: post.sourceName,
+    account_handle: accountHandle,
     post_time: post.postedAt,
     text: getPostText(post),
     url: post.postUrl
   };
+
+  const sourceType = resolveSourceType(post, registryMeta);
+  if (sourceType) {
+    preview.source_type = sourceType;
+  }
+  if (registryMeta && registryMeta.municipality) {
+    preview.municipality = registryMeta.municipality;
+  }
+  if (registryMeta && registryMeta.content_filter) {
+    preview.content_filter = registryMeta.content_filter;
+  }
+
+  return preview;
 }
 
 function isValidPreviewPost(post) {
@@ -86,6 +152,7 @@ function isValidPreviewPost(post) {
 function selectPosts(posts) {
   const seen = new Set();
   const selected = [];
+  const localGovernmentBySource = new Map();
 
   const sorted = posts
     .filter(isActivePost)
@@ -94,28 +161,57 @@ function selectPosts(posts) {
     .sort((a, b) => new Date(b.postedAt) - new Date(a.postedAt));
 
   for (const post of sorted) {
+    const preview = toPreviewPost(post);
+    if (!isValidPreviewPost(preview)) {
+      continue;
+    }
+
+    if (preview.source_type === "LOCAL_GOVERNMENT" && !localGovernmentBySource.has(preview.source_id)) {
+      localGovernmentBySource.set(preview.source_id, preview);
+    }
+  }
+
+  for (const preview of localGovernmentBySource.values()) {
+    if (seen.has(preview.url)) {
+      continue;
+    }
+    seen.add(preview.url);
+    selected.push(preview);
+  }
+
+  for (const post of sorted) {
+    if (selected.length >= MAX_ITEMS) {
+      break;
+    }
+
     const dedupeKey = post.postUrl || post.postId;
     if (!dedupeKey || seen.has(dedupeKey)) {
       continue;
     }
-    seen.add(dedupeKey);
 
     const preview = toPreviewPost(post);
     if (!isValidPreviewPost(preview)) {
       continue;
     }
 
+    seen.add(dedupeKey);
     selected.push(preview);
-    if (selected.length >= MAX_ITEMS) {
-      break;
-    }
   }
 
-  return selected;
+  return selected.slice(0, MAX_ITEMS);
+}
+
+function loadRawPosts() {
+  const localFile = process.env.X_FEED_POSTS_FILE;
+  if (localFile && fs.existsSync(localFile)) {
+    return Promise.resolve(JSON.parse(fs.readFileSync(localFile, "utf8")));
+  }
+
+  return fetchJson(X_FEED_POSTS_URL);
 }
 
 async function main() {
-  const rawPosts = await fetchJson(X_FEED_POSTS_URL);
+  const rawPosts = await loadRawPosts();
   if (!Array.isArray(rawPosts)) {
     throw new Error("x-feed posts.json must be an array");
   }
@@ -131,7 +227,7 @@ async function main() {
   const output = {
     section_title: "公式X速報",
     synced_at: new Date().toISOString(),
-    source_feed_url: X_FEED_POSTS_URL,
+    source_feed_url: process.env.X_FEED_POSTS_FILE || X_FEED_POSTS_URL,
     item_count: posts.length,
     posts
   };
@@ -141,9 +237,12 @@ async function main() {
 
   const result = {
     X_FEED_SYNC: "PASS",
-    source: X_FEED_POSTS_URL,
+    source: process.env.X_FEED_POSTS_FILE || X_FEED_POSTS_URL,
     rawCount: rawPosts.length,
     selectedCount: posts.length,
+    excludedSourceIds: Array.from(EXCLUDED_SOURCE_IDS),
+    localGovernmentCount: posts.filter((post) => post.source_type === "LOCAL_GOVERNMENT").length,
+    personalSourceCount: posts.filter((post) => post.source_id === "SRC-PER-001").length,
     output: path.relative(ROOT, OUTPUT_PATH)
   };
 

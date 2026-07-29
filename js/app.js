@@ -8,9 +8,15 @@
   var LOAD_ERROR_MESSAGE = "情報を読み込めませんでした。自治体公式サイトの情報をご確認ください。";
   var X_FEED_STATUS_AVAILABLE = "AVAILABLE";
   var X_FEED_STATUS_UNAVAILABLE = "UNAVAILABLE";
+  var X_FEED_ACCOUNT_LABEL = "公式X情報";
+  var X_FEED_EXCLUDED_SOURCE_IDS = { "SRC-PER-001": true };
+  var X_FEED_EXCLUDED_ACCOUNT_HANDLES = { shinjirokoiz: true };
   var AREA_DISASTER_NAV_ID = "area-disaster-nav";
   var DISASTER_MAP_SECTION_ID = "disaster-location-map-section";
   var VERIFIED_LOCATIONS_TITLE = "📍 支援地点一覧";
+  var VERIFIED_LOCATIONS_EMPTY_DEFAULT = "該当する確認済み地点はありません。";
+  var VERIFIED_LOCATIONS_EMPTY_INFO_CHECK = "自治体情報をご確認ください";
+  var EMPTY_STATE_INFORMATION_CHECK = "information_check_required";
   var AREA_DISASTER_NAV_CATEGORIES = [
     { id: "WATER", icon: "💧", label: "給水・断水", locationCategory: "WATER" },
     { id: "SHELTER", icon: "🏠", label: "避難所", locationCategory: "SHELTER" },
@@ -202,6 +208,41 @@
     return typeof url === "string" && (url.indexOf("https://") === 0 || url.indexOf("http://") === 0);
   }
 
+  function isExcludedXFeedPost(post) {
+    if (!post) {
+      return true;
+    }
+
+    if (post.source_id && X_FEED_EXCLUDED_SOURCE_IDS[post.source_id]) {
+      return true;
+    }
+
+    if (post.account_handle && X_FEED_EXCLUDED_ACCOUNT_HANDLES[post.account_handle]) {
+      return true;
+    }
+
+    if (post.account_name === "小泉進次郎") {
+      return true;
+    }
+
+    return false;
+  }
+
+  function getXFeedHandleLabel(post) {
+    if (post.account_handle) {
+      return "@" + post.account_handle;
+    }
+
+    if (post.url) {
+      var handleMatch = post.url.match(/x\.com\/([^/]+)\/status\//i);
+      if (handleMatch && handleMatch[1]) {
+        return "@" + handleMatch[1];
+      }
+    }
+
+    return null;
+  }
+
   function validateXFeedPreview(data) {
     if (!data || !Array.isArray(data.posts) || data.posts.length === 0) {
       return null;
@@ -212,7 +253,7 @@
     var seenUrls = {};
 
     data.posts.forEach(function (post) {
-      if (!post) {
+      if (!post || isExcludedXFeedPost(post)) {
         return;
       }
 
@@ -923,7 +964,24 @@
     return li;
   }
 
-  function renderVerifiedLocationList(panel, areaEntry, disasterLocations) {
+  function getVerifiedLocationEmptyMessage(areaId, category, locationSources) {
+    var sources = (locationSources && locationSources.sources) || [];
+    var categorySources = sources.filter(function (source) {
+      return source.area_id === areaId && source.category === category;
+    });
+
+    if (
+      categorySources.some(function (source) {
+        return source.empty_state === EMPTY_STATE_INFORMATION_CHECK;
+      })
+    ) {
+      return VERIFIED_LOCATIONS_EMPTY_INFO_CHECK;
+    }
+
+    return VERIFIED_LOCATIONS_EMPTY_DEFAULT;
+  }
+
+  function renderVerifiedLocationList(panel, areaEntry, disasterLocations, locationSources) {
     var locations = getPublicLocationsForArea(disasterLocations, areaEntry.area_id);
     var block = createElement("div", "verified-locations");
     block.id = "verified-locations-" + areaEntry.area_id;
@@ -958,7 +1016,7 @@
         categorySection.appendChild(createElement(
           "p",
           "verified-locations__empty",
-          "該当する確認済み地点はありません。"
+          getVerifiedLocationEmptyMessage(areaEntry.area_id, categoryMeta.id, locationSources)
         ));
       } else {
         var list = createElement("ul", "verified-locations__list");
@@ -1138,7 +1196,7 @@
     return link;
   }
 
-  function renderAreaDisasterNavLinks(panel, areaEntry, disasterLocations) {
+  function renderAreaDisasterNavLinks(panel, areaEntry, disasterLocations, locationSources) {
     panel.innerHTML = "";
     panel._selectLocationCategory = null;
     if (!areaEntry || !areaEntry.navigation) {
@@ -1175,10 +1233,10 @@
     });
 
     panel.appendChild(list);
-    renderVerifiedLocationList(panel, areaEntry, disasterLocations);
+    renderVerifiedLocationList(panel, areaEntry, disasterLocations, locationSources);
   }
 
-  function renderAreaDisasterNav(container, areaNavigation, disasterLocations) {
+  function renderAreaDisasterNav(container, areaNavigation, disasterLocations, locationSources) {
     if (!areaNavigation || !areaNavigation.areas || areaNavigation.areas.length === 0) {
       return;
     }
@@ -1224,7 +1282,7 @@
     panel.setAttribute("aria-live", "polite");
 
     select.addEventListener("change", function () {
-      renderAreaDisasterNavLinks(panel, areaMap[select.value] || null, disasterLocations);
+      renderAreaDisasterNavLinks(panel, areaMap[select.value] || null, disasterLocations, locationSources);
     });
 
     inner.appendChild(label);
@@ -2032,7 +2090,17 @@
       if (datetime) {
         meta.appendChild(createElement("time", "x-feed__datetime", datetime));
       }
-      if (post.account_name) {
+
+      meta.appendChild(createElement("span", "x-feed__label", X_FEED_ACCOUNT_LABEL));
+
+      if (post.source_type === "LOCAL_GOVERNMENT" && post.municipality) {
+        meta.appendChild(createElement("span", "x-feed__municipality", post.municipality));
+      }
+
+      var handleLabel = getXFeedHandleLabel(post);
+      if (handleLabel) {
+        meta.appendChild(createElement("span", "x-feed__handle", handleLabel));
+      } else if (post.account_name && post.source_type !== "LOCAL_GOVERNMENT") {
         meta.appendChild(createElement("span", "x-feed__account", post.account_name));
       }
 
@@ -2046,7 +2114,8 @@
       link.href = post.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
-      link.setAttribute("aria-label", (post.account_name || "公式") + "のX投稿へ（外部リンク）");
+      var ariaSource = post.municipality || post.account_name || X_FEED_ACCOUNT_LABEL;
+      link.setAttribute("aria-label", ariaSource + "のX投稿へ（外部リンク）");
       li.appendChild(link);
 
       list.appendChild(li);
@@ -2341,6 +2410,7 @@
       loadJson("status.json"),
       loadJson("area_navigation.json"),
       loadJson("disaster_locations.json"),
+      loadJson("location_sources.json"),
       loadJson("infrastructure_status.json"),
       loadJson("infrastructure_sources.json"),
       loadXFeedPreview()
@@ -2353,9 +2423,10 @@
         var publicStatus = results[4];
         var areaNavigation = results[5];
         var disasterLocations = results[6];
-        var infrastructureStatus = results[7];
-        var infrastructureSources = results[8];
-        var xFeedState = results[9];
+        var locationSources = results[7];
+        var infrastructureStatus = results[8];
+        var infrastructureSources = results[9];
+        var xFeedState = results[10];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -2383,7 +2454,7 @@
           renderLatestUpdates(page, publicRecords);
         }
 
-        renderAreaDisasterNav(page, areaNavigation, disasterLocations);
+        renderAreaDisasterNav(page, areaNavigation, disasterLocations, locationSources);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);
         renderDisasterMapSection(page, disasterLocations, infrastructureStatus, infrastructureSources, areas);
         renderAboutSection(page);
