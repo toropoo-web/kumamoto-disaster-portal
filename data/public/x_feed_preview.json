@@ -1,64 +1,64 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-29T09:00:44.996Z",
+  "synced_at": "2026-07-29T13:34:07.849Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
     {
-      "source_id": "SRC-NAT-004",
-      "account_name": "総務省消防庁",
-      "post_time": "2026-07-29T05:36:42.000Z",
-      "text": "【消防庁とりまとめ第16報】令和８年熊本地震による被害及び 消防機関等の対応状況について、７月29日（水）14時00分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/EE0YRimFJp\n#総務省消防庁 #災害情報 #地震",
-      "url": "https://x.com/FDMA_JAPAN/status/2082339511686815843"
+      "source_id": "SRC-NAT-002",
+      "account_name": "内閣府防災",
+      "post_time": "2026-07-29T13:30:03.000Z",
+      "text": "【地震情報】29日22時19分頃、熊本県熊本などで震度5弱の地震がありました。今後の情報に注意してください。強い揺れのあった地域の皆さんは落ち着いて行動してください。",
+      "url": "https://x.com/CAO_BOUSAI/status/2082458636295790866"
     },
     {
       "source_id": "SRC-NAT-001",
       "account_name": "首相官邸 災害・危機管理情報",
-      "post_time": "2026-07-29T05:04:24.000Z",
-      "text": "【地震関連・官房長官記者会見】\n本日（７月２９日）１１時００分頃から行われた木原官房長官の記者会見における、令和８年熊本地震に関する冒頭発言と関連質疑です。\n\n※要旨（速報版）\n（官房長官）\n　私から令和８年熊本地震について申し上げます。 https://t.co/6E7wBg6KXn",
-      "url": "https://x.com/Kantei_Saigai/status/2082331383620669500"
-    },
-    {
-      "source_id": "SRC-NAT-001",
-      "account_name": "首相官邸 災害・危機管理情報",
-      "post_time": "2026-07-29T04:32:37.000Z",
-      "text": "令和8年熊本地震に関する第2回非常災害対策本部会議のライブ配信です。 https://t.co/cKksGA5kup",
-      "url": "https://x.com/Kantei_Saigai/status/2082323384910909580"
+      "post_time": "2026-07-29T13:19:45.000Z",
+      "text": "【緊急地震速報】\n熊本県で地震　九州で強い揺れ\n強い揺れに警戒してください。\n発表日時 29日22時19分\n対象地域：熊本県天草・芦北、熊本県熊本、鹿児島県薩摩、熊本県球磨",
+      "url": "https://x.com/Kantei_Saigai/status/2082456044681429082"
     },
     {
       "source_id": "SRC-PER-001",
       "account_name": "小泉進次郎",
-      "post_time": "2026-07-29T03:34:14.000Z",
-      "text": "今朝は防衛省に登庁した際に熊本地震を受けた自衛隊の活動状況を政務3役で確認してから、防衛省ロビーで待つメディアの皆さんへその内容を報告しました。\n\n以下は第二回防衛省災害対策本部会議で発信した最新状況です。\n1. https://t.co/H42o6xmFWG",
-      "url": "https://x.com/shinjirokoiz/status/2082308691957842110"
-    },
-    {
-      "source_id": "SRC-PER-001",
-      "account_name": "小泉進次郎",
-      "post_time": "2026-07-29T03:29:47.000Z",
-      "text": "現在、熊本県八代市の日本製紙八代工場において約20名の自衛隊員が人命救助にあたっています。引き続き、人命救助を最優先に活動を行ってまいります。",
-      "url": "https://x.com/shinjirokoiz/status/2082307572506480668"
-    },
-    {
-      "source_id": "SRC-NAT-004",
-      "account_name": "総務省消防庁",
-      "post_time": "2026-07-29T03:08:17.000Z",
-      "text": "【消防庁　令和８年熊本地震に対する消防機関の活動状況】 嘉島町のイオンモール熊本被災現場において、関係機関と連携し活動中です。 #緊急消防援助隊 #緊援隊 #熊本県 #福岡県大隊 https://t.co/5uG3csMpUJ",
-      "url": "https://x.com/FDMA_JAPAN/status/2082302161661399344"
-    },
-    {
-      "source_id": "SRC-NAT-004",
-      "account_name": "総務省消防庁",
-      "post_time": "2026-07-29T02:47:32.000Z",
-      "text": "【消防庁とりまとめ第15報】令和８年熊本地震による被害及び 消防機関等の対応状況について、７月29日（水）11時00分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/ip1QKZvzIB\n#総務省消防庁 #災害情報 #地震",
-      "url": "https://x.com/FDMA_JAPAN/status/2082296939568390447"
+      "post_time": "2026-07-29T12:56:50.000Z",
+      "text": "熊本の皆さん、熊本への支援物資を積んだ海上自衛隊の艦艇5隻中1隻の水中処分母船5号（YDT）は本日、八代港に入港し、他の艦艇が入港するための準備を行なっています。\n陸から、空から、海から、支援活動を展開中です。 https://t.co/hNc0feOYK4",
+      "url": "https://x.com/shinjirokoiz/status/2082450274803945496"
     },
     {
       "source_id": "SRC-NAT-005",
       "account_name": "防衛省 災害対策",
-      "post_time": "2026-07-29T02:03:41.000Z",
-      "text": "防衛省・自衛隊は、熊本県各所において給水活動を実施しております。\n詳細については、各自治体のホームページをご確認ください。\n#給水支援 https://t.co/S0vLbhKZaT https://t.co/rwXWMU2s2Q",
-      "url": "https://x.com/ModJapan_saigai/status/2082285906850160748"
+      "post_time": "2026-07-29T12:56:27.000Z",
+      "text": "熊本への支援物資を輸送している海上自衛隊艦艇５隻のうち、水中処分母船５号（YDT）が本日八代港に入港し、後続艦艇による支援物資の陸揚げ等に向けた所要の準備を実施しています。 https://t.co/I3rw8tYuBc",
+      "url": "https://x.com/ModJapan_saigai/status/2082450180692209923"
+    },
+    {
+      "source_id": "SRC-NAT-002",
+      "account_name": "内閣府防災",
+      "post_time": "2026-07-29T12:46:06.000Z",
+      "text": "令和８年熊本地震に関して、地元自治体と連携して災害応急対策を進めるため、本日、津島副大臣を団長とする政府調査団を派遣し、木村知事と意見交換を行い、その後、知事とともに非常災害対策本部会議に出席しました。引き続き、救命・救助活動を最優先に、災害応急対策に全力で取り組んでまいります。 https://t.co/hxI6mE7tZ1",
+      "url": "https://x.com/CAO_BOUSAI/status/2082447574364238025"
+    },
+    {
+      "source_id": "SRC-NAT-002",
+      "account_name": "内閣府防災",
+      "post_time": "2026-07-29T12:26:22.000Z",
+      "text": "【被害状況公表】\n令和８年熊本地震による被害状況等について、「内閣府 防災情報のページ」に掲載しました。\n詳細はこちら↓↓↓\nhttps://t.co/14X5nbDtQV\n\n#令和８年熊本地震　#被害状況",
+      "url": "https://x.com/CAO_BOUSAI/status/2082442610623521122"
+    },
+    {
+      "source_id": "SRC-PER-001",
+      "account_name": "小泉進次郎",
+      "post_time": "2026-07-29T11:33:34.000Z",
+      "text": "イオンモール熊本周辺のがれきの撤去活動を展開中の陸上自衛隊第42即応機動連隊です。人命救助を最優先に、生活支援など、あらゆる支援を先手先手で展開中です。 https://t.co/yToUD3ZHLW",
+      "url": "https://x.com/shinjirokoiz/status/2082429323064250671"
+    },
+    {
+      "source_id": "SRC-PER-001",
+      "account_name": "小泉進次郎",
+      "post_time": "2026-07-29T11:25:36.000Z",
+      "text": "先ほど、自衛隊の熊本地震支援活動の最新状況について記者会見を行いました。動画をご覧頂ければ幸いです。 https://t.co/RTmcfEWMEF",
+      "url": "https://x.com/shinjirokoiz/status/2082427314441486653"
     }
   ]
 }
