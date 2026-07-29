@@ -273,12 +273,11 @@
       "area_id": "KM005",
       "municipality": "八代市",
       "category": "WATER",
-      "url": null,
+      "url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "update_cycle": "DAILY",
       "source_type": "MUNICIPALITY",
-      "last_checked_at": "2026-07-29T15:00:00+09:00",
-      "status": "PENDING",
-      "status_reason": "防災サイト内の給水専用ページURL未確認。"
+      "last_checked_at": "2026-07-29T17:01:00+09:00",
+      "status": "ACTIVE"
     },
     {
       "source_id": "LOC-SRC-KM005-SHELTER-PENDING",

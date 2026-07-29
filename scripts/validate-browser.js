@@ -192,6 +192,30 @@ async function validateViewport(page, viewport, anchors) {
       const button = document.querySelector('.area-disaster-nav__category-btn[data-nav-category="WATER"]');
       return button ? button.classList.contains("area-disaster-nav__category-btn--active") : false;
     });
+
+    await page.selectOption(".area-disaster-nav__select", { label: "八代市" });
+    await page.click('.area-disaster-nav__category-btn[data-nav-category="WATER"]');
+    areaNavLinkChecks.yatsushiroWaterCount = await page.evaluate(() => {
+      const section = document.querySelector('.verified-locations__category[data-category="WATER"]');
+      return section ? section.querySelectorAll(".verified-locations__item").length : 0;
+    });
+    areaNavLinkChecks.yatsushiroMapButtonCount = await page.evaluate(() => {
+      return document.querySelectorAll(".verified-locations__map-link").length;
+    });
+    await page.click('.verified-locations__category[data-category="WATER"] .verified-locations__map-link');
+    await page.waitForFunction(() => {
+      const mapPanel = document.getElementById("disaster-map-panel");
+      return mapPanel && !mapPanel.hidden && document.querySelectorAll(".leaflet-marker-icon").length > 0;
+    }, { timeout: 20000 });
+    await page.waitForSelector(".leaflet-popup-content", { timeout: 10000 });
+    areaNavLinkChecks.yatsushiroMapLinkWorks = await page.evaluate(() => {
+      const mapSection = document.getElementById("disaster-location-map-section");
+      const mapPanel = document.getElementById("disaster-map-panel");
+      const mapOpen = mapSection && mapPanel && !mapPanel.hidden;
+      const markerCount = document.querySelectorAll(".leaflet-marker-icon").length;
+      const popupVisible = !!document.querySelector(".leaflet-popup-content");
+      return mapOpen && markerCount > 0 && popupVisible;
+    });
   }
 
   let disasterMapChecks = {
@@ -204,8 +228,17 @@ async function validateViewport(page, viewport, anchors) {
   };
 
   if (viewport.name === "desktop-1440" && checks.hasDisasterMap) {
-    await page.click(".disaster-map__toggle");
-    await page.waitForSelector("#disaster-location-map.leaflet-container", { timeout: 20000 });
+    const mapPanelHidden = await page.evaluate(() => {
+      const panel = document.getElementById("disaster-map-panel");
+      return panel ? panel.hidden : true;
+    });
+    if (mapPanelHidden) {
+      await page.click(".disaster-map__toggle");
+    }
+    await page.waitForFunction(() => {
+      const mapPanel = document.getElementById("disaster-map-panel");
+      return mapPanel && !mapPanel.hidden;
+    }, { timeout: 20000 });
     await page.waitForSelector(".leaflet-marker-icon", { timeout: 20000 });
     disasterMapChecks = await page.evaluate(() => {
       return {
@@ -264,11 +297,14 @@ async function validateViewport(page, viewport, anchors) {
     (areaNavLinkChecks.mashikiMapButtonCount === undefined || areaNavLinkChecks.mashikiMapButtonCount === 5) &&
     (areaNavLinkChecks.waterCategoryFirst === undefined || areaNavLinkChecks.waterCategoryFirst === "WATER") &&
     (areaNavLinkChecks.waterCategoryActive === undefined || areaNavLinkChecks.waterCategoryActive === true) &&
+    (areaNavLinkChecks.yatsushiroWaterCount === undefined || areaNavLinkChecks.yatsushiroWaterCount === 5) &&
+    (areaNavLinkChecks.yatsushiroMapButtonCount === undefined || areaNavLinkChecks.yatsushiroMapButtonCount === 5) &&
+    (areaNavLinkChecks.yatsushiroMapLinkWorks === undefined || areaNavLinkChecks.yatsushiroMapLinkWorks === true) &&
     disasterMapChecks.hasSection &&
     disasterMapChecks.layerToggleCount === 2 &&
     disasterMapChecks.hasExpansionNotice &&
     (viewport.name !== "desktop-1440" || (
-      disasterMapChecks.markerCount >= 11 &&
+      disasterMapChecks.markerCount >= 16 &&
       disasterMapChecks.popupVisible &&
       disasterMapChecks.popupHasFacilityField &&
       disasterMapChecks.mapInfraStatusCardCount === 10
