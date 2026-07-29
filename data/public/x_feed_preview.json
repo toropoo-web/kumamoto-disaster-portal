@@ -1,9 +1,20 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-29T22:51:11.762Z",
+  "synced_at": "2026-07-29T23:03:30.748Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
+    {
+      "source_id": "SRC-MUN-KM006",
+      "account_name": "人吉市公式X",
+      "account_handle": "hitoyoshishi",
+      "post_time": "2026-07-29T22:45:45.000Z",
+      "text": "【防災無線放送内容】生活用水提供のお知らせ\n環境課からのお知らせです。\n地震の影響により市内各地で断水または水圧低下が発生しています。\n本日（３０日）、生活用水として、下原田町荒毛の熊本フクスケ株式会社にて井戸水を提供いたします...\nhttps://t.co/HV7ij7xM79",
+      "url": "https://x.com/hitoyoshishi/status/2082598480045031466",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "人吉市",
+      "content_filter": "DISASTER_RELATED"
+    },
     {
       "source_id": "SRC-MUN-KM001",
       "account_name": "熊本市公式X",
@@ -73,17 +84,6 @@
       "url": "https://x.com/yatsushiro0801/status/2082570208842309750",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
-      "content_filter": "DISASTER_RELATED"
-    },
-    {
-      "source_id": "SRC-MUN-KM001",
-      "account_name": "熊本市公式X",
-      "account_handle": "kumamotocity_",
-      "post_time": "2026-07-29T14:50:03.000Z",
-      "text": "【令和８年熊本地震の被災者支援制度（7月29日時点）】\n令和８年熊本地震により被災された方々に対する支援制度をまとめました。\n・り災証明書の発行\n・経済的な支援\n・生活面への支援\n・各種減免・支払いの猶予　など\n \n詳しくは→https://t.co/GuX07zxiCA",
-      "url": "https://x.com/kumamotocity_/status/2082478768191594671",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "熊本市",
       "content_filter": "DISASTER_RELATED"
     }
   ]

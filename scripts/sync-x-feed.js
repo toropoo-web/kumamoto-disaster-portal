@@ -30,6 +30,12 @@ const SOURCE_REGISTRY = {
     source_type: "LOCAL_GOVERNMENT",
     content_filter: "DISASTER_RELATED",
     account_handle: "yatsushiro0801"
+  },
+  "SRC-MUN-KM006": {
+    municipality: "人吉市",
+    source_type: "LOCAL_GOVERNMENT",
+    content_filter: "DISASTER_RELATED",
+    account_handle: "hitoyoshishi"
   }
 };
 
