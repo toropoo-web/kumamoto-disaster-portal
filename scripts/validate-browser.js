@@ -140,6 +140,14 @@ async function validateViewport(page, viewport, anchors) {
         googleMapsLinkCount: googleMapsLinks.length
       };
     });
+
+    await page.selectOption(".area-disaster-nav__select", { label: "益城町" });
+    areaNavLinkChecks.mashikiLocationCount = await page.evaluate(() => {
+      return document.querySelectorAll(".verified-locations__item").length;
+    });
+    areaNavLinkChecks.mashikiMapLinks = await page.evaluate(() => {
+      return Array.from(document.querySelectorAll(".verified-locations__map-link")).map((link) => link.href);
+    });
   }
 
   const sortedDates = checks.latestDates.slice().sort().reverse();
@@ -166,6 +174,11 @@ async function validateViewport(page, viewport, anchors) {
     areaNavLinkChecks.panelVisible &&
     areaNavLinkChecks.mapLinkCount === 5 &&
     areaNavLinkChecks.googleMapsLinkCount === 3 &&
+    (areaNavLinkChecks.mashikiLocationCount === undefined || areaNavLinkChecks.mashikiLocationCount === 5) &&
+    (areaNavLinkChecks.mashikiMapLinks === undefined || (
+      areaNavLinkChecks.mashikiMapLinks.length === 5 &&
+      areaNavLinkChecks.mashikiMapLinks.every((href) => href.includes("google.com/maps/search/?api=1&query="))
+    )) &&
     Object.values(anchorChecks).every(Boolean) &&
     dateOrderOk;
 

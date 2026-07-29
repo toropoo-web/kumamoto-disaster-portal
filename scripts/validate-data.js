@@ -41,6 +41,18 @@ const AREA_RULES = {
 
 const CONTAMINATION_PATTERNS = [/2016/, /平成28/, /H28/];
 
+const ALLOWED_LOCATION_CATEGORIES = new Set([
+  "SHELTER", "WATER", "ROAD", "SUPPORT", "LIFELINE", "MEDICAL", "CHARGING", "OTHER"
+]);
+
+const ALLOWED_LOCATION_STATUS = new Set(["ACTIVE", "ENDED", "UNKNOWN"]);
+
+const ALLOWED_SOURCE_TYPES = new Set([
+  "MUNICIPALITY", "PREFECTURE", "NATIONAL", "JSDF", "JCG", "TELECOM", "OTHER"
+]);
+
+const ALLOWED_VERIFICATION_STATUS = new Set(["VERIFIED", "REQUIRES_MANUAL_REVIEW"]);
+
 function readJson(filename) {
   return JSON.parse(fs.readFileSync(path.join(DATA_DIR, filename), "utf8"));
 }
@@ -178,6 +190,132 @@ function validateAreaNavigation(errors, areas) {
   });
 }
 
+function validateDisasterLocations(errors, areas) {
+  const filePath = path.join(DATA_DIR, "disaster_locations.json");
+  if (!fs.existsSync(filePath)) {
+    errors.push("disaster_locations.json: file missing");
+    return null;
+  }
+
+  let data;
+  try {
+    data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch (err) {
+    errors.push(`disaster_locations.json: invalid JSON (${err.message})`);
+    return null;
+  }
+
+  if (data.version !== 1) {
+    errors.push(`disaster_locations.json: version ${data.version} (expected 1)`);
+  }
+
+  if (data.incident_scope !== INCIDENT_SCOPE) {
+    errors.push(`disaster_locations.json: incident_scope mismatch (${data.incident_scope})`);
+  }
+
+  if (!data.locations || !Array.isArray(data.locations)) {
+    errors.push("disaster_locations.json: locations array missing");
+    return null;
+  }
+
+  const areaIdSet = new Set(areas.map((area) => area.area_id));
+  const locationIds = new Set();
+  const stats = {
+    locationCount: data.locations.length,
+    areaIds: new Set(),
+    categories: new Set(),
+    activeCount: 0,
+    endedCount: 0,
+    publicCount: 0
+  };
+
+  data.locations.forEach((location, index) => {
+    const label = location.location_id || `index ${index}`;
+    const required = [
+      "location_id", "area_id", "category", "name", "status",
+      "source", "source_url", "verified_at", "incident_scope", "verification_status"
+    ];
+
+    required.forEach((field) => {
+      if (location[field] === undefined || location[field] === null || location[field] === "") {
+        errors.push(`disaster_locations[${label}]: missing ${field}`);
+      }
+    });
+
+    if (location.location_id) {
+      if (locationIds.has(location.location_id)) {
+        errors.push(`disaster_locations: duplicate location_id ${location.location_id}`);
+      }
+      locationIds.add(location.location_id);
+    }
+
+    if (location.area_id && !areaIdSet.has(location.area_id)) {
+      errors.push(`disaster_locations[${label}]: unknown area_id ${location.area_id}`);
+    }
+
+    if (location.category && !ALLOWED_LOCATION_CATEGORIES.has(location.category)) {
+      errors.push(`disaster_locations[${label}]: invalid category ${location.category}`);
+    }
+
+    if (location.status && !ALLOWED_LOCATION_STATUS.has(location.status)) {
+      errors.push(`disaster_locations[${label}]: invalid status ${location.status}`);
+    }
+
+    if (location.verification_status && !ALLOWED_VERIFICATION_STATUS.has(location.verification_status)) {
+      errors.push(`disaster_locations[${label}]: invalid verification_status ${location.verification_status}`);
+    }
+
+    if (location.source_url && !isValidUrlFormat(location.source_url)) {
+      errors.push(`disaster_locations[${label}]: invalid source_url`);
+    }
+
+    if (location.source) {
+      if (!location.source.type || !ALLOWED_SOURCE_TYPES.has(location.source.type)) {
+        errors.push(`disaster_locations[${label}]: invalid source.type`);
+      }
+      if (!location.source.name) {
+        errors.push(`disaster_locations[${label}]: missing source.name`);
+      }
+    }
+
+    const hasLat = location.lat !== null && location.lat !== undefined;
+    const hasLng = location.lng !== null && location.lng !== undefined;
+    if (hasLat !== hasLng) {
+      errors.push(`disaster_locations[${label}]: lat/lng must both be set or both null`);
+    }
+
+    if (location.incident_scope && location.incident_scope !== INCIDENT_SCOPE) {
+      errors.push(`disaster_locations[${label}]: incident_scope mismatch`);
+    }
+
+    const text = JSON.stringify(location);
+    if (CONTAMINATION_PATTERNS.some((pattern) => pattern.test(text))) {
+      errors.push(`disaster_locations[${label}]: 2016年情報混入の疑い`);
+    }
+
+    if (location.area_id) {
+      stats.areaIds.add(location.area_id);
+    }
+    if (location.category) {
+      stats.categories.add(location.category);
+    }
+    if (location.status === "ACTIVE") {
+      stats.activeCount += 1;
+    }
+    if (location.status === "ENDED") {
+      stats.endedCount += 1;
+    }
+    if (
+      location.verification_status === "VERIFIED" &&
+      location.status === "ACTIVE"
+    ) {
+      stats.publicCount += 1;
+    }
+  });
+
+  return stats;
+}
+
 function main() {
   const areas = readJson("phase1_areas.json");
   const navigation = readJson("phase1_navigation.json");
@@ -276,10 +414,17 @@ function main() {
 
   validateXFeedPreview(errors);
   validateAreaNavigation(errors, areas);
+  const locationStats = validateDisasterLocations(errors, areas);
 
   const result = {
     AREA_COUNT: areas.length,
     PUBLIC_CARD_COUNT: publicRecords.length,
+    LOCATION_COUNT: locationStats ? locationStats.locationCount : 0,
+    LOCATION_AREA_COUNT: locationStats ? locationStats.areaIds.size : 0,
+    LOCATION_CATEGORY_COUNT: locationStats ? locationStats.categories.size : 0,
+    LOCATION_ACTIVE_COUNT: locationStats ? locationStats.activeCount : 0,
+    LOCATION_ENDED_COUNT: locationStats ? locationStats.endedCount : 0,
+    LOCATION_PUBLIC_COUNT: locationStats ? locationStats.publicCount : 0,
     DUPLICATE_MUNICIPALITY_ID: areaIds.size === areas.length ? 0 : 1,
     DUPLICATE_URL_COUNT: [...urlCounts.values()].filter((c) => c > 1).length,
     DATA_2016_CONTAMINATION: errors.some((e) => e.includes("2016")) ? "FOUND" : "NONE",

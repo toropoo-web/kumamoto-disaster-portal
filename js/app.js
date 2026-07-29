@@ -11,6 +11,17 @@
   var AREA_DISASTER_NAV_ID = "area-disaster-nav";
   var GOOGLE_MAPS_SEARCH_BASE = "https://www.google.com/maps/search/?api=1&query=";
 
+  var LOCATION_CATEGORY_ICONS = {
+    SHELTER: "🏠",
+    WATER: "💧",
+    ROAD: "🚧",
+    SUPPORT: "🤝",
+    LIFELINE: "⚡",
+    MEDICAL: "🏥",
+    CHARGING: "📡",
+    OTHER: "📍"
+  };
+
   var CATEGORY_ORDER = [
     { id: "EMERGENCY", anchor: "cat-emergency" },
     { id: "SHELTER", anchor: "cat-shelter" },
@@ -346,6 +357,99 @@
     return GOOGLE_MAPS_SEARCH_BASE + encodeURIComponent(query);
   }
 
+  function buildLocationMapsUrl(location) {
+    if (location.lat !== null && location.lat !== undefined &&
+        location.lng !== null && location.lng !== undefined) {
+      return buildGoogleMapsSearchUrl(location.lat + "," + location.lng);
+    }
+
+    var queryParts = [location.area_name, location.name, location.address]
+      .filter(function (part) {
+        return part && String(part).trim() !== "";
+      });
+    return buildGoogleMapsSearchUrl(queryParts.join(" "));
+  }
+
+  function isPublicLocation(location) {
+    if (!location) {
+      return false;
+    }
+    if (location.verification_status !== "VERIFIED") {
+      return false;
+    }
+    if (location.status !== "ACTIVE") {
+      return false;
+    }
+    if (location.expires_at) {
+      var expiresAt = parseDate(location.expires_at);
+      if (expiresAt && expiresAt.getTime() < Date.now()) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function getPublicLocationsForArea(disasterLocations, areaId) {
+    if (!disasterLocations || !disasterLocations.locations) {
+      return [];
+    }
+
+    return disasterLocations.locations
+      .filter(function (location) {
+        return location.area_id === areaId && isPublicLocation(location);
+      })
+      .sort(function (a, b) {
+        var categoryA = a.category || "";
+        var categoryB = b.category || "";
+        if (categoryA !== categoryB) {
+          return categoryA.localeCompare(categoryB);
+        }
+        return (a.display_priority || 50) - (b.display_priority || 50);
+      });
+  }
+
+  function renderVerifiedLocationList(panel, areaEntry, disasterLocations) {
+    var locations = getPublicLocationsForArea(disasterLocations, areaEntry.area_id);
+    if (!locations.length) {
+      return;
+    }
+
+    var sectionTitle = disasterLocations.section_title || "確認済み災害地点";
+    var block = createElement("div", "verified-locations");
+    block.appendChild(createElement("h4", "verified-locations__title", sectionTitle));
+
+    var list = createElement("ul", "verified-locations__list");
+
+    locations.forEach(function (location) {
+      var icon = LOCATION_CATEGORY_ICONS[location.category] || "📍";
+      var li = createElement("li", "verified-locations__item");
+
+      var header = createElement("div", "verified-locations__header");
+      header.appendChild(createElement("p", "verified-locations__name", icon + " " + location.name));
+      header.appendChild(createElement("p", "verified-locations__area", location.area_name));
+      li.appendChild(header);
+
+      var sourceName = location.source && location.source.name ? location.source.name : "公式情報";
+      li.appendChild(createElement("p", "verified-locations__source", "確認：" + sourceName));
+
+      if (location.notes) {
+        li.appendChild(createElement("p", "verified-locations__notes", location.notes));
+      }
+
+      var mapLink = createAreaNavExternalLink(
+        "verified-locations__map-link",
+        "地図を見る",
+        buildLocationMapsUrl(location),
+        location.name + "をGoogleマップで開く（外部リンク）"
+      );
+      li.appendChild(mapLink);
+      list.appendChild(li);
+    });
+
+    block.appendChild(list);
+    panel.appendChild(block);
+  }
+
   function scrollToAreaDisasterNav() {
     var target = document.getElementById(AREA_DISASTER_NAV_ID);
     if (!target) {
@@ -394,7 +498,7 @@
     return link;
   }
 
-  function renderAreaDisasterNavLinks(panel, areaEntry) {
+  function renderAreaDisasterNavLinks(panel, areaEntry, disasterLocations) {
     panel.innerHTML = "";
     if (!areaEntry || !areaEntry.navigation) {
       panel.hidden = true;
@@ -453,9 +557,10 @@
     });
 
     panel.appendChild(list);
+    renderVerifiedLocationList(panel, areaEntry, disasterLocations);
   }
 
-  function renderAreaDisasterNav(container, areaNavigation) {
+  function renderAreaDisasterNav(container, areaNavigation, disasterLocations) {
     if (!areaNavigation || !areaNavigation.areas || areaNavigation.areas.length === 0) {
       return;
     }
@@ -501,7 +606,7 @@
     panel.setAttribute("aria-live", "polite");
 
     select.addEventListener("change", function () {
-      renderAreaDisasterNavLinks(panel, areaMap[select.value] || null);
+      renderAreaDisasterNavLinks(panel, areaMap[select.value] || null, disasterLocations);
     });
 
     inner.appendChild(label);
@@ -978,6 +1083,7 @@
       loadJson("communication_status.json"),
       loadJson("status.json"),
       loadJson("area_navigation.json"),
+      loadJson("disaster_locations.json"),
       loadXFeedPreview()
     ])
       .then(function (results) {
@@ -987,7 +1093,8 @@
         var communicationStatus = results[3];
         var publicStatus = results[4];
         var areaNavigation = results[5];
-        var xFeedState = results[6];
+        var disasterLocations = results[6];
+        var xFeedState = results[7];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -1015,7 +1122,7 @@
           renderLatestUpdates(page, publicRecords);
         }
 
-        renderAreaDisasterNav(page, areaNavigation);
+        renderAreaDisasterNav(page, areaNavigation, disasterLocations);
         renderAboutSection(page);
         renderCautionSection(page);
         renderPageFooter(page);

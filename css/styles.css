@@ -226,6 +226,85 @@ button:focus-visible {
   background: #eef3fa;
 }
 
+/* Verified disaster locations */
+.verified-locations {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.verified-locations__title {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.4;
+}
+
+.verified-locations__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.verified-locations__item {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.verified-locations__header {
+  margin-bottom: 6px;
+}
+
+.verified-locations__name {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.verified-locations__area {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.verified-locations__source {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.verified-locations__notes {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.verified-locations__map-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.verified-locations__map-link:hover {
+  background: #eef3fa;
+}
+
 /* Communication Status */
 .communication-status {
   background: var(--background);

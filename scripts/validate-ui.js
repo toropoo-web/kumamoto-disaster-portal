@@ -16,7 +16,8 @@ const REQUIRED_FILES = [
   "data/public/communication_status.json",
   "data/public/status.json",
   "data/public/x_feed_preview.json",
-  "data/public/area_navigation.json"
+  "data/public/area_navigation.json",
+  "data/public/disaster_locations.json"
 ];
 
 const CSS_CHECKS = [
@@ -43,7 +44,10 @@ const JS_CHECKS = [
   { name: "patrol header source", pattern: /publicStatus\.last_patrol_at/ },
   { name: "area navigation load", pattern: /loadJson\("area_navigation\.json"\)/ },
   { name: "area disaster nav render", pattern: /renderAreaDisasterNav/ },
-  { name: "google maps search url", pattern: /google\.com\/maps\/search\/\?api=1&query=/ }
+  { name: "google maps search url", pattern: /google\.com\/maps\/search\/\?api=1&query=/ },
+  { name: "disaster locations load", pattern: /loadJson\("disaster_locations\.json"\)/ },
+  { name: "verified location render", pattern: /renderVerifiedLocationList/ },
+  { name: "location maps url builder", pattern: /buildLocationMapsUrl/ }
 ];
 
 const HTML_CHECKS = [
