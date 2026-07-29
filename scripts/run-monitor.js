@@ -14,6 +14,7 @@ const { processResults } = require("../monitor/diff-engine");
 const { generateOperationReports, renderDailyReport } = require("../monitor/operation-report");
 const { runUrlAudit } = require("../monitor/url-audit");
 const { saveOperationStatus } = require("../monitor/operation-status");
+const { savePublicStatus } = require("../monitor/public-status");
 
 function loadSources() {
   const data = JSON.parse(fs.readFileSync(SOURCES_FILE, "utf8"));
@@ -56,6 +57,18 @@ async function main() {
   });
 
   const operationStatus = await saveOperationStatus({ patrolAt });
+  let publicStatusResult = { saved: false };
+
+  if (diffResult.successCount > 0) {
+    publicStatusResult = savePublicStatus({
+      patrolAt,
+      sourceCount: sources.length,
+      successCount: diffResult.successCount,
+      lastValidationAt: operationStatus.currentStatus.LAST_VALIDATION,
+      systemStatus: operationStatus.currentStatus.PUBLIC_STATUS
+    });
+  }
+
   const summaryWithStatus = Object.assign({}, operation.summary, {
     currentStatus: operationStatus.currentStatus
   });
@@ -89,6 +102,8 @@ async function main() {
     linkAuditPath: urlAudit.artifacts.reportPath,
     linkAuditCounts: urlAudit.summary.counts,
     currentStatus: operationStatus.currentStatus,
+    publicStatusUpdated: publicStatusResult.saved === true,
+    publicStatusPath: publicStatusResult.saved ? publicStatusResult.statusPath : null,
     sources: operation.summary.sources
   };
 

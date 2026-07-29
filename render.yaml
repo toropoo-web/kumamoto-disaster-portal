@@ -15,3 +15,6 @@ services:
       - path: /data/public/communication_status.json
         name: Cache-Control
         value: no-cache, no-store, must-revalidate
+      - path: /data/public/status.json
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate

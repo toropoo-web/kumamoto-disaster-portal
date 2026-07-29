@@ -193,19 +193,6 @@
     return service.status_label || COMMUNICATION_STATUS_LABELS[service.status] || COMMUNICATION_STATUS_LABELS.CHECK_OFFICIAL;
   }
 
-  function getLatestCollectedAt(records) {
-    var latestValue = "";
-    var latestDate = null;
-    records.forEach(function (record) {
-      var date = parseDate(record.collected_at);
-      if (date && (!latestDate || date > latestDate)) {
-        latestDate = date;
-        latestValue = record.collected_at;
-      }
-    });
-    return formatDateTime(latestValue);
-  }
-
   function extractDomain(url) {
     try {
       return new URL(url).hostname;
@@ -645,19 +632,23 @@
       loadJson("phase1_areas.json"),
       loadJson("phase1_navigation.json"),
       loadJson("phase1_updates.json"),
-      loadJson("communication_status.json")
+      loadJson("communication_status.json"),
+      loadJson("status.json")
     ])
       .then(function (results) {
         var areas = results[0];
         var navigation = results[1];
         var updates = results[2];
         var communicationStatus = results[3];
+        var publicStatus = results[4];
 
         var publicRecords = updates
           .filter(isPublicRecord)
           .filter(isAllowedForArea);
 
-        var lastVerified = getLatestCollectedAt(publicRecords);
+        var lastVerified = publicStatus && publicStatus.last_patrol_at
+          ? formatDateTime(publicStatus.last_patrol_at)
+          : "";
 
         page.innerHTML = "";
 

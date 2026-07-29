@@ -13,7 +13,8 @@ const REQUIRED_FILES = [
   "data/public/phase1_areas.json",
   "data/public/phase1_navigation.json",
   "data/public/phase1_updates.json",
-  "data/public/communication_status.json"
+  "data/public/communication_status.json",
+  "data/public/status.json"
 ];
 
 const CSS_CHECKS = [
@@ -32,7 +33,9 @@ const JS_CHECKS = [
   { name: "communication section title", pattern: /section_title \|\| "携帯電話・通信"/ },
   { name: "misato placeholder", pattern: /公開可能な公式情報を確認中です/ },
   { name: "KM010 area rules", pattern: /KM010:/ },
-  { name: "KM013 area rules", pattern: /KM013:/ }
+  { name: "KM013 area rules", pattern: /KM013:/ },
+  { name: "status.json load", pattern: /loadJson\("status\.json"\)/ },
+  { name: "patrol header source", pattern: /publicStatus\.last_patrol_at/ }
 ];
 
 const HTML_CHECKS = [

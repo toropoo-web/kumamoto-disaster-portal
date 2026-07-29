@@ -70,7 +70,8 @@ function validateJsonParse() {
     "phase1_areas.json",
     "phase1_navigation.json",
     "phase1_updates.json",
-    "communication_status.json"
+    "communication_status.json",
+    "status.json"
   ];
   const errors = [];
 
@@ -219,7 +220,8 @@ function validateBuild() {
     "data/public/phase1_areas.json",
     "data/public/phase1_navigation.json",
     "data/public/phase1_updates.json",
-    "data/public/communication_status.json"
+    "data/public/communication_status.json",
+    "data/public/status.json"
   ];
 
   staticFiles.forEach((file) => {

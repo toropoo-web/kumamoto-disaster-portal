@@ -11,7 +11,8 @@ const PUBLIC_FILES = [
   "data/public/phase1_areas.json",
   "data/public/phase1_navigation.json",
   "data/public/phase1_updates.json",
-  "data/public/communication_status.json"
+  "data/public/communication_status.json",
+  "data/public/status.json"
 ];
 
 const REQUIRED_MONITOR_FILES = [
@@ -28,6 +29,7 @@ const REQUIRED_MONITOR_FILES = [
   "monitor/post-apply-validation.js",
   "monitor/update-history.js",
   "monitor/operation-status.js",
+  "monitor/public-status.js",
   "monitor/UPDATE_FLOW.md",
   "scripts/run-monitor.js",
   "scripts/review-candidates.js",
