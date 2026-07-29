@@ -55,6 +55,22 @@
     KM009: {
       allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
       blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM010: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM011: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM012: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM013: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
     }
   };
 
