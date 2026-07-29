@@ -25,5 +25,9 @@ ia-check-result.json
 # Patrol runtime artifacts (snapshots and generated reports are local/CI artifacts)
 monitor/reports/patrol-*.json
 monitor/reports/snapshots.json
+monitor/reports/review_queue.md
+monitor/reports/normalized_candidates.json
 monitor/change-log/*.json
 data/update_candidates/*.json
+data/approved/*.json
+!data/approved/_template.json

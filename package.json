@@ -9,9 +9,11 @@
     "validate:ui": "node scripts/validate-ui.js",
     "validate:links": "node scripts/validate-links.js",
     "validate:browser": "node scripts/validate-browser.js",
-    "test": "node scripts/validate-data.js && node scripts/validate-ui.js && node scripts/validate-links.js && node scripts/validate-patrol.js",
+    "test": "node scripts/validate-data.js && node scripts/validate-ui.js && node scripts/validate-links.js && node scripts/validate-patrol.js && node scripts/validate-review.js",
     "build": "node scripts/static-build.js",
     "patrol": "node scripts/run-monitor.js",
+    "review": "node scripts/review-candidates.js",
+    "apply-approved": "node scripts/apply-approved.js",
     "screenshots": "node scripts/capture-screenshots.js"
   },
   "devDependencies": {

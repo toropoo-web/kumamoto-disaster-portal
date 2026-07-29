@@ -20,7 +20,13 @@ const REQUIRED_MONITOR_FILES = [
   "monitor/parser.js",
   "monitor/diff-engine.js",
   "monitor/constants.js",
-  "scripts/run-monitor.js"
+  "monitor/candidate-format.js",
+  "monitor/review-engine.js",
+  "monitor/apply-engine.js",
+  "monitor/UPDATE_FLOW.md",
+  "scripts/run-monitor.js",
+  "scripts/review-candidates.js",
+  "scripts/apply-approved.js"
 ];
 
 function hashFile(filePath) {
@@ -63,8 +69,12 @@ function main() {
   }
 
   const candidateDir = path.join(ROOT, "data", "update_candidates");
+  const approvedDir = path.join(ROOT, "data", "approved");
   if (!fs.existsSync(candidateDir)) {
     errors.push("Missing data/update_candidates directory");
+  }
+  if (!fs.existsSync(approvedDir)) {
+    errors.push("Missing data/approved directory");
   }
 
   const workflowPath = path.join(ROOT, ".github", "workflows", "patrol.yml");
@@ -103,6 +113,7 @@ function main() {
     COMMUNICATION_MONITOR_COUNT: communicationCount,
     DIFF_ENGINE: diffEngineOk ? "PASS" : "FAIL",
     UPDATE_CANDIDATE_OUTPUT: fs.existsSync(candidateDir) ? "READY" : "FAIL",
+    UPDATE_REVIEW_FLOW: fs.existsSync(path.join(ROOT, "monitor", "review-engine.js")) ? "READY" : "FAIL",
     NO_PUBLIC_DATA_CHANGE: "PASS (structure check only)",
     PUBLIC_DATA_AUTO_MODIFY: false,
     checks,

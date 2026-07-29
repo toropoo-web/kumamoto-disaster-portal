@@ -108,7 +108,10 @@ function compareSource(source, current, previous) {
   return changes.length ? changes : null;
 }
 
-function buildUpdateCandidate(source, current, changeEntries) {
+function buildUpdateCandidate(source, current, previous, changeEntries) {
+  const changeTypes = changeEntries.map((entry) => entry.changeType);
+  const primaryEntry = changeEntries[0];
+
   return {
     generatedAt: new Date().toISOString(),
     sourceId: source.id,
@@ -120,10 +123,22 @@ function buildUpdateCandidate(source, current, changeEntries) {
     summary: "自動巡回で変更を検知しました。人手確認後にのみ公開データへ反映してください。",
     sourceUrl: source.url,
     verificationStatus: "REQUIRES_MANUAL_REVIEW",
+    reviewStatus: "REQUIRES_REVIEW",
     incidentScope: "2026_KUMAMOTO_EARTHQUAKE",
     detectedKeywords: current.keywords,
-    changeTypes: changeEntries.map((entry) => entry.changeType),
+    changeTypes,
+    changeType: primaryEntry.changeType,
     safetyFlags: changeEntries.flatMap((entry) => entry.safetyFlags || []),
+    before: {
+      title: previous ? previous.title || "" : null,
+      contentHash: previous ? previous.contentHash || null : null,
+      pageUpdatedAt: previous ? previous.pageUpdatedAt || null : null
+    },
+    after: {
+      title: current.title || "",
+      contentHash: current.contentHash || null,
+      pageUpdatedAt: current.pageUpdatedAt || null
+    },
     autoPublish: false
   };
 }
@@ -194,7 +209,7 @@ function processResults(sources, parsedResults) {
 
     if (detected) {
       detected.forEach((entry) => changeEntries.push(entry));
-      candidates.push(buildUpdateCandidate(source, current, detected));
+      candidates.push(buildUpdateCandidate(source, current, previous, detected));
     }
 
     snapshots.sources[source.id] = {

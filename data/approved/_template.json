@@ -1,0 +1,39 @@
+{
+  "approvedAt": null,
+  "approvedBy": "manual-reviewer",
+  "note": "承認時は approvedAt を ISO8601 で記入し、reviewStatus を APPROVED に設定してください。",
+  "candidates": [
+    {
+      "id": "CAND-EXAMPLE-001",
+      "source": "KM002-uto-water",
+      "municipality": "宇土市",
+      "category": "municipality",
+      "areaId": "KM002",
+      "publicCategoryId": "WATER",
+      "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "detectedAt": "2026-07-29T07:09:36.993Z",
+      "changeType": "CONTENT_CHANGED",
+      "priority": "HIGH",
+      "keywords": ["断水", "給水"],
+      "before": {
+        "title": "変更前タイトル",
+        "contentHash": null,
+        "pageUpdatedAt": null
+      },
+      "after": {
+        "title": "変更後タイトル",
+        "contentHash": null,
+        "pageUpdatedAt": null
+      },
+      "reviewStatus": "REQUIRES_REVIEW",
+      "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+      "publicUpdate": {
+        "target": "phase1_updates",
+        "action": "update",
+        "fields": {
+          "displayed_updated_at": "2026-07-29T12:00:00+09:00"
+        }
+      }
+    }
+  ]
+}

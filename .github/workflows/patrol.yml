@@ -26,6 +26,9 @@ jobs:
       - name: Run patrol
         run: npm run patrol
 
+      - name: Generate review queue
+        run: npm run review
+
       - name: Validate patrol infrastructure
         run: node scripts/validate-patrol.js
 
