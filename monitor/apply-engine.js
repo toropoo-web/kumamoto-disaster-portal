@@ -13,7 +13,11 @@ const PUBLIC_COMM = path.join(ROOT, "data", "public", "communication_status.json
 const CONTAMINATION_PATTERNS = [/2016/, /平成28/, /H28/, /平成２８/];
 const INCIDENT_SCOPE = "2026_KUMAMOTO_EARTHQUAKE";
 
-function fetchStatus(url) {
+function fetchStatus(url, redirectCount) {
+  if (redirectCount === undefined) {
+    redirectCount = 0;
+  }
+
   return new Promise((resolve) => {
     const client = url.startsWith("https") ? https : http;
     const req = client.request(
@@ -24,8 +28,21 @@ function fetchStatus(url) {
         headers: { "User-Agent": "kumamoto-disaster-portal-apply/1.0" }
       },
       (res) => {
+        const status = res.statusCode || 0;
+        const location = res.headers.location;
+
+        if (
+          [301, 302, 303, 307, 308].includes(status) &&
+          location &&
+          redirectCount < 5
+        ) {
+          res.resume();
+          resolve(fetchStatus(new URL(location, url).href, redirectCount + 1));
+          return;
+        }
+
         res.resume();
-        resolve(res.statusCode || 0);
+        resolve(status);
       }
     );
     req.on("timeout", () => {

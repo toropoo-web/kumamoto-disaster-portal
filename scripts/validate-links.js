@@ -13,12 +13,26 @@ function readJson(filename) {
   return JSON.parse(fs.readFileSync(path.join(DATA_DIR, filename), "utf8"));
 }
 
-function fetchStatus(url, attempt) {
+function fetchStatus(url, attempt, redirectCount) {
+  if (redirectCount === undefined) {
+    redirectCount = 0;
+  }
+
   return new Promise((resolve) => {
     const client = url.startsWith("https") ? https : http;
     const req = client.request(url, { method: "GET", timeout: 15000, headers: { "User-Agent": "kumamoto-disaster-portal-validator/1.0" } }, (res) => {
+      const status = res.statusCode || 0;
+      const location = res.headers.location;
+
+      if ([301, 302, 303, 307, 308].includes(status) && location && redirectCount < 5) {
+        res.resume();
+        const nextUrl = new URL(location, url).href;
+        fetchStatus(nextUrl, attempt, redirectCount + 1).then(resolve);
+        return;
+      }
+
       res.resume();
-      resolve({ url, status: res.statusCode || 0 });
+      resolve({ url, status });
     });
     req.on("timeout", () => {
       req.destroy();
@@ -32,7 +46,7 @@ function fetchStatus(url, attempt) {
     const retriable = result.status === 0 && attempt < 3;
     if (retriable) {
       await new Promise((r) => setTimeout(r, 1000));
-      return fetchStatus(url, attempt + 1);
+      return fetchStatus(url, attempt + 1, redirectCount);
     }
     return result;
   });

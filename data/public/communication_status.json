@@ -1,13 +1,16 @@
 {
   "section_title": "携帯電話・通信",
-  "confirmed_at": "2026-07-29T14:00:00+09:00",
+  "confirmed_at": "2026-07-29T07:34:25.698Z",
   "providers": [
     {
       "provider_id": "docomo",
       "provider_name": "NTTドコモ",
       "status": "PARTIAL_OUTAGE",
-      "status_label": "一部地域",
-      "areas": ["八代市", "宇城市"],
+      "status_label": "一部地域（第6報）",
+      "areas": [
+        "八代市",
+        "宇城市"
+      ],
       "source_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html"
     },
     {
@@ -15,7 +18,12 @@
       "provider_name": "au",
       "status": "PARTIAL_OUTAGE",
       "status_label": "一部地域",
-      "areas": ["八代市", "人吉市", "宇城市", "美里町"],
+      "areas": [
+        "八代市",
+        "人吉市",
+        "宇城市",
+        "美里町"
+      ],
       "source_url": "https://news.kddi.com/important/news/important_202607291742.html"
     },
     {
@@ -31,7 +39,15 @@
       "provider_name": "楽天",
       "status": "PARTIAL_OUTAGE",
       "status_label": "一部地域",
-      "areas": ["八代市", "人吉市", "宇土市", "宇城市", "美里町", "益城町", "氷川町"],
+      "areas": [
+        "八代市",
+        "人吉市",
+        "宇土市",
+        "宇城市",
+        "美里町",
+        "益城町",
+        "氷川町"
+      ],
       "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/"
     }
   ],
