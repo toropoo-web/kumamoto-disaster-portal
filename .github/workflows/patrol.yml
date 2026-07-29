@@ -45,6 +45,7 @@ jobs:
           node scripts/validate-patrol.js
           node scripts/validate-operation.js
           node scripts/validate-url-audit.js
+          node scripts/validate-post-apply.js
 
       - name: Log patrol summary on failure
         if: failure()

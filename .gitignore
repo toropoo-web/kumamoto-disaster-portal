@@ -8,6 +8,8 @@ operations/**
 !operations/patrol/.gitkeep
 !operations/url-audit/
 !operations/url-audit/.gitkeep
+!operations/update-history/
+!operations/update-history/.gitkeep
 node_modules/
 
 # Internal documentation
@@ -36,6 +38,8 @@ monitor/reports/source-failures.md
 monitor/reports/high-alert.md
 monitor/reports/patrol-summary.json
 monitor/reports/link-audit-report.md
+monitor/reports/operation-status.json
+monitor/reports/operation-status.md
 monitor/change-log/*.json
 data/update_candidates/*.json
 data/approved/*.json

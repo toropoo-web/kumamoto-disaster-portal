@@ -11,8 +11,9 @@ const REPORTS_DIR = path.join(ROOT, "monitor", "reports");
 const { fetchSource } = require("../monitor/crawler");
 const { parsePage } = require("../monitor/parser");
 const { processResults } = require("../monitor/diff-engine");
-const { generateOperationReports } = require("../monitor/operation-report");
+const { generateOperationReports, renderDailyReport } = require("../monitor/operation-report");
 const { runUrlAudit } = require("../monitor/url-audit");
+const { saveOperationStatus } = require("../monitor/operation-status");
 
 function loadSources() {
   const data = JSON.parse(fs.readFileSync(SOURCES_FILE, "utf8"));
@@ -54,6 +55,14 @@ async function main() {
     linkAuditCounts: urlAudit.summary.counts
   });
 
+  const operationStatus = await saveOperationStatus({ patrolAt });
+  const summaryWithStatus = Object.assign({}, operation.summary, {
+    currentStatus: operationStatus.currentStatus
+  });
+  const dailyReport = renderDailyReport(summaryWithStatus);
+  fs.writeFileSync(operation.dailyReportPath, dailyReport, "utf8");
+  fs.writeFileSync(path.join(operation.operationDir, "report.md"), dailyReport, "utf8");
+
   const report = {
     patrolAt,
     incidentScope: "2026_KUMAMOTO_EARTHQUAKE",
@@ -79,6 +88,7 @@ async function main() {
     operationDir: operation.operationDir,
     linkAuditPath: urlAudit.artifacts.reportPath,
     linkAuditCounts: urlAudit.summary.counts,
+    currentStatus: operationStatus.currentStatus,
     sources: operation.summary.sources
   };
 

@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const { generateReviewArtifacts } = require("./review-engine");
+const { renderOperationStatus } = require("./operation-status");
 
 const ROOT = path.join(__dirname, "..");
 const REPORTS_DIR = path.join(__dirname, "reports");
@@ -128,6 +129,11 @@ function renderDailyReport(summary) {
     lines.push("URL_CHANGE_REQUIRED: " + (summary.linkAuditCounts.URL_CHANGE_REQUIRED || 0));
     lines.push("REVIEW_REQUIRED: " + (summary.linkAuditCounts.REVIEW_REQUIRED || 0));
     lines.push("詳細: monitor/reports/link-audit-report.md");
+  }
+
+  if (summary.currentStatus) {
+    lines.push("");
+    lines.push(renderOperationStatus({ CURRENT_STATUS: summary.currentStatus }));
   }
 
   return lines.join("\n") + "\n";
@@ -266,6 +272,7 @@ function generateOperationReports(options) {
     failures,
     sources: buildSourceRows(sources, parsedResults, fetchResults),
     linkAuditCounts: options.linkAuditCounts || null,
+    currentStatus: options.currentStatus || null,
     autoPublish: false,
     noPublicDataChange: true
   };
@@ -318,6 +325,7 @@ module.exports = {
   classifyFailure,
   buildFailureEntry,
   generateOperationReports,
+  renderDailyReport,
   REPORTS_DIR,
   OPERATIONS_DIR
 };
