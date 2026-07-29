@@ -189,6 +189,10 @@
     return label;
   }
 
+  function getServiceStatusText(service) {
+    return service.status_label || COMMUNICATION_STATUS_LABELS[service.status] || COMMUNICATION_STATUS_LABELS.CHECK_OFFICIAL;
+  }
+
   function getLatestCollectedAt(records) {
     var latestValue = "";
     var latestDate = null;
@@ -317,8 +321,10 @@
     section.setAttribute("aria-labelledby", "communication-status-title");
 
     var inner = createElement("div", "container");
-    inner.appendChild(createElement("h2", "communication-status__title", "通信情報"));
-    inner.querySelector(".communication-status__title").id = "communication-status-title";
+    var sectionTitle = communicationStatus.section_title || "携帯電話・通信";
+    var titleEl = createElement("h2", "communication-status__title", sectionTitle);
+    titleEl.id = "communication-status-title";
+    inner.appendChild(titleEl);
 
     var list = createElement("ul", "communication-status__list");
 
@@ -335,6 +341,32 @@
       li.appendChild(link);
       list.appendChild(li);
     });
+
+    if (communicationStatus.services && communicationStatus.services.length > 0) {
+      communicationStatus.services.forEach(function (service) {
+        var li = createElement("li", "communication-status__item communication-status__item--service");
+        var displayName = service.display_name || service.service_name;
+        var link = createElement("a", "communication-status__link");
+        link.href = service.source_url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.setAttribute("aria-label", displayName + "の公式情報へ（外部リンク）");
+
+        link.appendChild(createElement("span", "communication-status__provider", service.service_name));
+        link.appendChild(createElement("span", "communication-status__text", getServiceStatusText(service)));
+        li.appendChild(link);
+
+        if (service.summary) {
+          li.appendChild(createElement("p", "communication-status__summary", service.summary));
+        }
+
+        if (service.caution) {
+          li.appendChild(createElement("p", "communication-status__caution", service.caution));
+        }
+
+        list.appendChild(li);
+      });
+    }
 
     inner.appendChild(list);
 

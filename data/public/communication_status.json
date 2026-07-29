@@ -1,4 +1,5 @@
 {
+  "section_title": "携帯電話・通信",
   "confirmed_at": "2026-07-29T14:00:00+09:00",
   "providers": [
     {
@@ -32,6 +33,30 @@
       "status_label": "一部地域",
       "areas": ["八代市", "人吉市", "宇土市", "宇城市", "美里町", "益城町", "氷川町"],
       "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/"
+    }
+  ],
+  "services": [
+    {
+      "service_id": "wifi_00000japan",
+      "type": "DISASTER_WIFI",
+      "service_name": "00000JAPAN",
+      "display_name": "災害時無料Wi-Fi「00000JAPAN」",
+      "status": "AVAILABLE",
+      "status_label": "熊本県で無料開放",
+      "summary": "災害時に無料で利用できるWi-Fiです",
+      "caution": "暗号化されていない場合があります。カード番号・暗証番号・パスワードなどの重要な個人情報は入力しないでください。",
+      "source_url": "https://www.wlan-business.org/00000japan/",
+      "confirmed_at": "2026-07-28T19:45:00+09:00"
+    },
+    {
+      "service_id": "disaster_message",
+      "type": "DISASTER_MESSAGE",
+      "service_name": "災害用伝言サービス",
+      "display_name": "災害用伝言サービス",
+      "status": "CHECK_OFFICIAL",
+      "status_label": "171・Web171",
+      "source_url": "https://www.soumu.go.jp/menu_seisaku/ictseisaku/net_anzen/hijyo/dengon.html",
+      "confirmed_at": "2026-07-29T16:00:00+09:00"
     }
   ]
 }
