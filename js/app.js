@@ -6,6 +6,8 @@
   var INCIDENT_SCOPE = "2026_KUMAMOTO_EARTHQUAKE";
   var MAX_LATEST = 4;
   var LOAD_ERROR_MESSAGE = "情報を読み込めませんでした。自治体公式サイトの情報をご確認ください。";
+  var X_FEED_STATUS_AVAILABLE = "AVAILABLE";
+  var X_FEED_STATUS_UNAVAILABLE = "UNAVAILABLE";
 
   var CATEGORY_ORDER = [
     { id: "EMERGENCY", anchor: "cat-emergency" },
@@ -102,6 +104,74 @@
     });
   }
 
+  function isValidXFeedUrl(url) {
+    return typeof url === "string" && (url.indexOf("https://") === 0 || url.indexOf("http://") === 0);
+  }
+
+  function validateXFeedPreview(data) {
+    if (!data || !Array.isArray(data.posts) || data.posts.length === 0) {
+      return null;
+    }
+
+    var requiredFields = ["source_id", "account_name", "post_time", "text", "url"];
+    var validPosts = [];
+    var seenUrls = {};
+
+    data.posts.forEach(function (post) {
+      if (!post) {
+        return;
+      }
+
+      var hasAllFields = requiredFields.every(function (field) {
+        return post[field] && String(post[field]).trim() !== "";
+      });
+
+      if (!hasAllFields || !isValidXFeedUrl(post.url)) {
+        return;
+      }
+
+      if (seenUrls[post.url]) {
+        return;
+      }
+      seenUrls[post.url] = true;
+      validPosts.push(post);
+    });
+
+    if (validPosts.length === 0) {
+      return null;
+    }
+
+    return validPosts;
+  }
+
+  function loadXFeedPreview() {
+    return fetch(DATA_BASE + "x_feed_preview.json")
+      .then(function (response) {
+        if (!response.ok) {
+          return { status: X_FEED_STATUS_UNAVAILABLE };
+        }
+        return response.json()
+          .then(function (data) {
+            var posts = validateXFeedPreview(data);
+            if (!posts) {
+              return { status: X_FEED_STATUS_UNAVAILABLE };
+            }
+            return {
+              status: X_FEED_STATUS_AVAILABLE,
+              section_title: data.section_title,
+              synced_at: data.synced_at,
+              posts: posts
+            };
+          })
+          .catch(function () {
+            return { status: X_FEED_STATUS_UNAVAILABLE };
+          });
+      })
+      .catch(function () {
+        return { status: X_FEED_STATUS_UNAVAILABLE };
+      });
+  }
+
   function isPublicRecord(record) {
     if (!record || record.verification_status !== VERIFIED_STATUS) {
       return false;
@@ -169,6 +239,19 @@
     var h = String(date.getHours()).padStart(2, "0");
     var min = String(date.getMinutes()).padStart(2, "0");
     return m + "月" + d + "日 " + h + ":" + min + "確認";
+  }
+
+  function formatSyncedAt(value) {
+    var date = parseDate(value);
+    if (!date) {
+      return "";
+    }
+    var y = date.getFullYear();
+    var m = String(date.getMonth() + 1).padStart(2, "0");
+    var d = String(date.getDate()).padStart(2, "0");
+    var h = String(date.getHours()).padStart(2, "0");
+    var min = String(date.getMinutes()).padStart(2, "0");
+    return y + "/" + m + "/" + d + " " + h + ":" + min;
   }
 
   function formatCommunicationAreas(areas) {
@@ -429,8 +512,8 @@
     container.appendChild(wrap);
   }
 
-  function renderXFeedSection(container, xFeedData) {
-    if (!xFeedData || !xFeedData.posts || xFeedData.posts.length === 0) {
+  function renderXFeedSection(container, xFeedState) {
+    if (!xFeedState || xFeedState.status !== X_FEED_STATUS_AVAILABLE || !xFeedState.posts || xFeedState.posts.length === 0) {
       return;
     }
 
@@ -438,14 +521,20 @@
     section.setAttribute("aria-labelledby", "x-feed-title");
 
     var inner = createElement("div", "container");
-    var titleEl = createElement("h2", "section-title x-feed__title", xFeedData.section_title || "公式X速報");
+    var titleEl = createElement("h2", "section-title x-feed__title", xFeedState.section_title || "公式X速報");
     titleEl.id = "x-feed-title";
     inner.appendChild(titleEl);
+
+    var syncedAt = formatSyncedAt(xFeedState.synced_at);
+    if (syncedAt) {
+      inner.appendChild(createElement("p", "x-feed__synced", "最終取得：" + syncedAt));
+    }
+
     inner.appendChild(createElement("p", "x-feed__lead", "公的機関・自治体等の公式X投稿です。最新状況はリンク先でご確認ください。"));
 
     var list = createElement("ul", "x-feed__list");
 
-    xFeedData.posts.forEach(function (post) {
+    xFeedState.posts.forEach(function (post) {
       var li = createElement("li", "x-feed__item");
       var meta = createElement("div", "x-feed__meta");
 
@@ -717,7 +806,7 @@
       loadJson("phase1_updates.json"),
       loadJson("communication_status.json"),
       loadJson("status.json"),
-      loadJson("x_feed_preview.json")
+      loadXFeedPreview()
     ])
       .then(function (results) {
         var areas = results[0];
@@ -725,7 +814,7 @@
         var updates = results[2];
         var communicationStatus = results[3];
         var publicStatus = results[4];
-        var xFeedData = results[5];
+        var xFeedState = results[5];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -741,7 +830,7 @@
         renderPageHeader(page, navigation, lastVerified);
         renderCommunicationStatus(page, communicationStatus);
         renderPageNavigation(page, navigation, publicRecords);
-        renderXFeedSection(page, xFeedData);
+        renderXFeedSection(page, xFeedState);
 
         var categoryAnchorsPlaced = {};
         areas.forEach(function (area) {

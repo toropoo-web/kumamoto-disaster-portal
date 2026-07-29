@@ -36,7 +36,8 @@ const JS_CHECKS = [
   { name: "KM010 area rules", pattern: /KM010:/ },
   { name: "KM013 area rules", pattern: /KM013:/ },
   { name: "status.json load", pattern: /loadJson\("status\.json"\)/ },
-  { name: "x feed preview load", pattern: /loadJson\("x_feed_preview\.json"\)/ },
+  { name: "x feed preview load", pattern: /loadXFeedPreview/ },
+  { name: "x feed graceful degradation", pattern: /X_FEED_STATUS_UNAVAILABLE/ },
   { name: "x feed section render", pattern: /renderXFeedSection/ },
   { name: "patrol header source", pattern: /publicStatus\.last_patrol_at/ }
 ];
