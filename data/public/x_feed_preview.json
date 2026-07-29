@@ -1,16 +1,16 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-29T22:47:29.497Z",
-  "source_feed_url": "c:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\kumamoto X\\data\\posts.json",
+  "synced_at": "2026-07-29T22:51:11.762Z",
+  "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
     {
       "source_id": "SRC-MUN-KM001",
       "account_name": "熊本市公式X",
       "account_handle": "kumamotocity_",
-      "post_time": "2026-07-28T08:37:56.000Z",
-      "text": "こちらは熊本市です。\n2026/07/28 17:36 に避難所を開設しましたのでお知らせします。\n開設した避難所： 龍田まちづくりセンター・公民館",
-      "url": "https://x.com/kumamotocity_/status/2082022732196458525",
+      "post_time": "2026-07-29T22:00:02.000Z",
+      "text": "【応急給水活動について（7月30日07：00時点）】\n７月30日（木）の応急給水活動について下記のとおり実施します。↓\nhttps://t.co/aiYZ2BxUQi",
+      "url": "https://x.com/kumamotocity_/status/2082586976499441809",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "熊本市",
       "content_filter": "DISASTER_RELATED"
@@ -19,12 +19,30 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-28T08:35:21.000Z",
-      "text": "こちらは八代市です。\n2026/07/28 16:27 に避難所を開設しましたのでお知らせします。\n開設した避難所： 宮地東コミュニティセンター、代陽コミュニティセンター",
-      "url": "https://x.com/yatsushiro0801/status/2082022083056574767",
+      "post_time": "2026-07-29T20:54:47.000Z",
+      "text": "【給水所情報（第12報）】\n7月30日（木）の応急給水場所その２\n（7：00～12：00）\n　・宮地小学校\n　・第四中学校\n（14：00～19：00）\n　・郡築コミュニティセンター\n　・昭和コミュニティセンター",
+      "url": "https://x.com/yatsushiro0801/status/2082570557103710717",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "DISASTER_RELATED"
+    },
+    {
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-29T22:28:52.000Z",
+      "text": "(続き) \nこちらは益城町です。\n現在(2026/07/28 18:50)開設中の避難所情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9\n #避難所開設",
+      "url": "https://x.com/Bousai_Kumamoto/status/2082594232414753207",
+      "source_type": "PREFECTURE"
+    },
+    {
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-29T22:28:52.000Z",
+      "text": "こちらは益城町です。\n2026/07/28 18:50 に避難所を開設しましたのでお知らせします。\n開設した避難所： 益城町公民館飯野分館",
+      "url": "https://x.com/Bousai_Kumamoto/status/2082594231307345979",
+      "source_type": "PREFECTURE"
     },
     {
       "source_id": "SRC-NAT-004",
@@ -36,49 +54,37 @@
       "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-NAT-005",
-      "account_name": "防衛省 災害対策",
-      "account_handle": "ModJapan_saigai",
-      "post_time": "2026-07-29T13:57:29.000Z",
-      "text": "本日、航空自衛隊と陸上自衛隊が輸送したクーラーが熊本県の避難所（小川防災拠点センター６１台（宇城市）、美里町総合体育館１９台（美里町）、県南広域本部３２台（八代市）、住宅型老人ホームまるもり２０台（御船町）、宇土市役所１６台（宇土市）の計１４８台）と、一時集積場所であるグランメッ https://t.co/tckN6upmZT",
-      "url": "https://x.com/ModJapan_saigai/status/2082465537192575002",
-      "source_type": "GOVERNMENT"
+      "source_id": "SRC-MUN-KM005",
+      "account_name": "八代市公式X",
+      "account_handle": "yatsushiro0801",
+      "post_time": "2026-07-29T20:54:15.000Z",
+      "text": "【給水所情報（第11報）】\n7月30日（木）の応急給水場所その１\n（7：00～19：00）\n　・八代小学校\n　・第二中学校\n　・松高コミュニティセンター\n　・代陽コミュニティセンター\n　・太田郷コミュニティセンター\n　・鏡コミュニティセンター\n　・千丁コミュニティセンター\n　・泉運動公園",
+      "url": "https://x.com/yatsushiro0801/status/2082570423322202398",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "八代市",
+      "content_filter": "DISASTER_RELATED"
     },
     {
-      "source_id": "SRC-NAT-002",
-      "account_name": "内閣府防災",
-      "account_handle": "CAO_BOUSAI",
-      "post_time": "2026-07-29T13:30:03.000Z",
-      "text": "【地震情報】29日22時19分頃、熊本県熊本などで震度5弱の地震がありました。今後の情報に注意してください。強い揺れのあった地域の皆さんは落ち着いて行動してください。",
-      "url": "https://x.com/CAO_BOUSAI/status/2082458636295790866",
-      "source_type": "GOVERNMENT"
+      "source_id": "SRC-MUN-KM005",
+      "account_name": "八代市公式X",
+      "account_handle": "yatsushiro0801",
+      "post_time": "2026-07-29T20:53:24.000Z",
+      "text": "【給水所情報（第10報）】\n配布量は1回あたり５リットル程度となります。\n給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。\nまた、給水車が水の補給のため一時的に不在になることがありますので、あらかじめご了承ください。",
+      "url": "https://x.com/yatsushiro0801/status/2082570208842309750",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "八代市",
+      "content_filter": "DISASTER_RELATED"
     },
     {
-      "source_id": "SRC-NAT-001",
-      "account_name": "首相官邸 災害・危機管理情報",
-      "account_handle": "Kantei_Saigai",
-      "post_time": "2026-07-29T13:19:45.000Z",
-      "text": "【緊急地震速報】\n熊本県で地震　九州で強い揺れ\n強い揺れに警戒してください。\n発表日時 29日22時19分\n対象地域：熊本県天草・芦北、熊本県熊本、鹿児島県薩摩、熊本県球磨",
-      "url": "https://x.com/Kantei_Saigai/status/2082456044681429082",
-      "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-NAT-005",
-      "account_name": "防衛省 災害対策",
-      "account_handle": "ModJapan_saigai",
-      "post_time": "2026-07-29T12:56:27.000Z",
-      "text": "熊本への支援物資を輸送している海上自衛隊艦艇５隻のうち、水中処分母船５号（YDT）が本日八代港に入港し、後続艦艇による支援物資の陸揚げ等に向けた所要の準備を実施しています。 https://t.co/I3rw8tYuBc",
-      "url": "https://x.com/ModJapan_saigai/status/2082450180692209923",
-      "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-NAT-002",
-      "account_name": "内閣府防災",
-      "account_handle": "CAO_BOUSAI",
-      "post_time": "2026-07-29T12:46:06.000Z",
-      "text": "令和８年熊本地震に関して、地元自治体と連携して災害応急対策を進めるため、本日、津島副大臣を団長とする政府調査団を派遣し、木村知事と意見交換を行い、その後、知事とともに非常災害対策本部会議に出席しました。引き続き、救命・救助活動を最優先に、災害応急対策に全力で取り組んでまいります。 https://t.co/hxI6mE7tZ1",
-      "url": "https://x.com/CAO_BOUSAI/status/2082447574364238025",
-      "source_type": "GOVERNMENT"
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-07-29T14:50:03.000Z",
+      "text": "【令和８年熊本地震の被災者支援制度（7月29日時点）】\n令和８年熊本地震により被災された方々に対する支援制度をまとめました。\n・り災証明書の発行\n・経済的な支援\n・生活面への支援\n・各種減免・支払いの猶予　など\n \n詳しくは→https://t.co/GuX07zxiCA",
+      "url": "https://x.com/kumamotocity_/status/2082478768191594671",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
+      "content_filter": "DISASTER_RELATED"
     }
   ]
 }
