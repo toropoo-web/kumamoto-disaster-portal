@@ -116,8 +116,8 @@ function main() {
   if (!comm.section_title || comm.section_title !== "携帯電話・通信") {
     errors.push(`communication_status section_title missing or incorrect`);
   }
-  if (!comm.services || comm.services.length !== 2) {
-    errors.push(`communication_status services: ${comm.services ? comm.services.length : 0} (expected 2)`);
+  if (!comm.services || comm.services.length !== 3) {
+    errors.push(`communication_status services: ${comm.services ? comm.services.length : 0} (expected 3)`);
   }
 
   const result = {

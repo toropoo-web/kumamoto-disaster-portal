@@ -158,6 +158,13 @@
       "category": "communication",
       "url": "https://www.soumu.go.jp/menu_seisaku/ictseisaku/net_anzen/hijyo/dengon.html",
       "service_id": "disaster_message"
+    },
+    {
+      "id": "COMM-ntt-west",
+      "name": "NTT西日本 災害支援情報",
+      "category": "communication",
+      "url": "https://www.ntt-west.co.jp/newscms/disasternews/15400/1_20260729.pdf",
+      "service_id": "ntt_west_disaster_support"
     }
   ]
 }

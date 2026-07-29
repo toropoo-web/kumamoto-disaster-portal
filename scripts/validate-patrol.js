@@ -68,11 +68,11 @@ function main() {
     if (municipalityCount !== 14) {
       errors.push(`Municipality monitor count: ${municipalityCount} (expected 14)`);
     }
-    if (communicationCount !== 6) {
-      errors.push(`Communication monitor count: ${communicationCount} (expected 6)`);
+    if (communicationCount !== 7) {
+      errors.push(`Communication monitor count: ${communicationCount} (expected 7)`);
     }
-    if (sourceCount !== 20) {
-      errors.push(`Monitor source count: ${sourceCount} (expected 20)`);
+    if (sourceCount !== 21) {
+      errors.push(`Monitor source count: ${sourceCount} (expected 21)`);
     }
   }
 

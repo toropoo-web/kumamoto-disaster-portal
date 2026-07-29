@@ -117,7 +117,7 @@ async function validateViewport(page, viewport, anchors) {
     checks.misatoPlaceholder &&
     checks.linkCount > 0 &&
     checks.muniCount === 14 &&
-    checks.commCount === 6 &&
+    checks.commCount === 7 &&
     checks.commTitleText === "携帯電話・通信" &&
     checks.hasWifiCaution &&
     checks.hasDisasterMessage &&
