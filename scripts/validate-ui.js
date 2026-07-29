@@ -19,6 +19,7 @@ const REQUIRED_FILES = [
   "data/public/area_navigation.json",
   "data/public/disaster_locations.json",
   "data/public/location_sources.json",
+  "data/public/water_cross_view.json",
   "data/public/emergency_sources.json",
   "data/public/infrastructure_sources.json",
   "data/public/infrastructure_status.json"
@@ -34,7 +35,9 @@ const CSS_CHECKS = [
   { name: "infrastructure nav min-height", pattern: /\.infrastructure-info__nav-link[\s\S]*min-height:\s*44px/ },
   { name: "disaster map layer toggles", pattern: /\.disaster-map__layer-toggles/ },
   { name: "disaster map expansion notice", pattern: /\.disaster-map__expansion-notice/ },
-  { name: "area disaster nav category buttons", pattern: /\.area-disaster-nav__category-btn/ }
+  { name: "area disaster nav category buttons", pattern: /\.area-disaster-nav__category-btn/ },
+  { name: "water cross view section", pattern: /\.water-cross-view/ },
+  { name: "water cross view card", pattern: /\.water-cross-view__card/ }
 ];
 
 const JS_CHECKS = [
@@ -68,6 +71,9 @@ const JS_CHECKS = [
   { name: "location category display label", pattern: /getLocationCategoryDisplayLabel/ },
   { name: "location nav categories", pattern: /LOCATION_NAV_CATEGORIES/ },
   { name: "area disaster nav categories", pattern: /AREA_DISASTER_NAV_CATEGORIES/ },
+  { name: "water cross view render", pattern: /renderWaterCrossView/ },
+  { name: "water cross view load", pattern: /loadJson\("water_cross_view\.json"\)/ },
+  { name: "water cross view section id", pattern: /WATER_CROSS_VIEW_ID/ },
   { name: "open disaster map section", pattern: /openDisasterMapSection/ },
   { name: "scroll to page target", pattern: /scrollToPageTarget/ },
   { name: "verified locations support title", pattern: /VERIFIED_LOCATIONS_TITLE/ },

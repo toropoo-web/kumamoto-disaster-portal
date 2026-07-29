@@ -12,6 +12,7 @@
   var X_FEED_EXCLUDED_SOURCE_IDS = { "SRC-PER-001": true };
   var X_FEED_EXCLUDED_ACCOUNT_HANDLES = { shinjirokoiz: true };
   var AREA_DISASTER_NAV_ID = "area-disaster-nav";
+  var WATER_CROSS_VIEW_ID = "water-cross-view";
   var DISASTER_MAP_SECTION_ID = "disaster-location-map-section";
   var VERIFIED_LOCATIONS_TITLE = "📍 支援地点一覧";
   var VERIFIED_LOCATIONS_EMPTY_DEFAULT = "該当する確認済み地点はありません。";
@@ -807,6 +808,105 @@
     });
     block.appendChild(cards);
     container.appendChild(block);
+  }
+
+  // WaterCrossView: cross-municipality official water access view
+  function renderWaterCrossView(container, waterCrossView) {
+    if (!waterCrossView || !waterCrossView.municipalities) {
+      return;
+    }
+
+    var section = createElement("section", "water-cross-view");
+    section.id = WATER_CROSS_VIEW_ID;
+    section.setAttribute("aria-labelledby", "water-cross-view-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement("h2", "section-title water-cross-view__title", "💧 " + (waterCrossView.title || "給水情報"));
+    title.id = "water-cross-view-title";
+    inner.appendChild(title);
+    inner.appendChild(createElement(
+      "p",
+      "water-cross-view__lead",
+      waterCrossView.description || "現在利用可能な給水所"
+    ));
+
+    if (waterCrossView.last_updated) {
+      inner.appendChild(createElement(
+        "p",
+        "water-cross-view__updated",
+        "最終更新：" + formatDateTime(waterCrossView.last_updated)
+      ));
+    }
+
+    var grid = createElement("div", "water-cross-view__grid");
+    waterCrossView.municipalities.forEach(function (entry) {
+      var card = createElement("article", "water-cross-view__card");
+      card.setAttribute("aria-label", entry.municipality + "の給水情報");
+
+      card.appendChild(createElement("h3", "water-cross-view__municipality", entry.municipality));
+
+      if (entry.location_count > 0) {
+        card.appendChild(createElement("p", "water-cross-view__status", entry.status_label || "給水対応中"));
+        card.appendChild(createElement("p", "water-cross-view__count", entry.location_count + "箇所"));
+
+        var list = createElement("ul", "water-cross-view__locations");
+        entry.locations.slice(0, 3).forEach(function (location) {
+          list.appendChild(createElement("li", "water-cross-view__location", "・" + location.location_name));
+        });
+        card.appendChild(list);
+
+        if (entry.location_count > 3) {
+          card.appendChild(createElement(
+            "p",
+            "water-cross-view__more",
+            "ほか" + (entry.location_count - 3) + "箇所"
+          ));
+        }
+
+        card.appendChild(createElement("p", "water-cross-view__verified", "公式更新確認済"));
+      } else {
+        card.appendChild(createElement(
+          "p",
+          "water-cross-view__empty",
+          "現在、公開中の給水所情報はありません。"
+        ));
+      }
+
+      var sourceLabel = entry.source_label || (entry.municipality + "公式");
+      if (entry.source_url) {
+        var sourceWrap = createElement("p", "water-cross-view__source");
+        sourceWrap.appendChild(document.createTextNode("情報源: "));
+        var sourceLink = createElement("a", "water-cross-view__source-link", sourceLabel);
+        sourceLink.href = entry.source_url;
+        sourceLink.target = "_blank";
+        sourceLink.rel = "noopener noreferrer";
+        sourceWrap.appendChild(sourceLink);
+        card.appendChild(sourceWrap);
+      } else {
+        card.appendChild(createElement("p", "water-cross-view__source", "情報源: " + sourceLabel));
+      }
+
+      var detailLink = createElement("button", "water-cross-view__detail-link", "自治体の給水情報を見る");
+      detailLink.type = "button";
+      detailLink.addEventListener("click", function () {
+        var navSection = document.getElementById(AREA_DISASTER_NAV_ID);
+        var navSelect = document.getElementById("area-disaster-nav-select");
+        if (navSelect && entry.area_id) {
+          navSelect.value = entry.area_id;
+          navSelect.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+        if (navSection) {
+          scrollToPageTarget(navSection);
+        }
+      });
+      card.appendChild(detailLink);
+
+      grid.appendChild(card);
+    });
+
+    inner.appendChild(grid);
+    section.appendChild(inner);
+    container.appendChild(section);
   }
 
   function renderInfrastructureSection(container, infrastructureStatus, infrastructureSources, areas) {
@@ -2411,6 +2511,7 @@
       loadJson("area_navigation.json"),
       loadJson("disaster_locations.json"),
       loadJson("location_sources.json"),
+      loadJson("water_cross_view.json"),
       loadJson("infrastructure_status.json"),
       loadJson("infrastructure_sources.json"),
       loadXFeedPreview()
@@ -2424,9 +2525,10 @@
         var areaNavigation = results[5];
         var disasterLocations = results[6];
         var locationSources = results[7];
-        var infrastructureStatus = results[8];
-        var infrastructureSources = results[9];
-        var xFeedState = results[10];
+        var waterCrossView = results[8];
+        var infrastructureStatus = results[9];
+        var infrastructureSources = results[10];
+        var xFeedState = results[11];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -2455,6 +2557,7 @@
         }
 
         renderAreaDisasterNav(page, areaNavigation, disasterLocations, locationSources);
+        renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);
         renderDisasterMapSection(page, disasterLocations, infrastructureStatus, infrastructureSources, areas);
         renderAboutSection(page);

@@ -1712,6 +1712,106 @@ button:focus-visible {
   }
 }
 
+.water-cross-view {
+  padding: 24px 0;
+  background: #f8fbff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.water-cross-view__lead,
+.water-cross-view__updated {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.water-cross-view__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.water-cross-view__card {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.water-cross-view__municipality {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.water-cross-view__status {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.water-cross-view__count {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.water-cross-view__locations {
+  margin: 0 0 8px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.water-cross-view__location {
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.water-cross-view__more,
+.water-cross-view__empty,
+.water-cross-view__verified,
+.water-cross-view__source {
+  margin: 0 0 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.water-cross-view__verified {
+  color: #1b5e20;
+}
+
+.water-cross-view__source-link {
+  color: var(--primary);
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.water-cross-view__detail-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .municipality-nav__list {
     grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1719,6 +1819,10 @@ button:focus-visible {
 
   .infrastructure-info__nav-list {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .water-cross-view__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 

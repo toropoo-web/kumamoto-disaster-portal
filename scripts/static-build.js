@@ -19,6 +19,7 @@ const STATIC_FILES = [
   "data/public/area_navigation.json",
   "data/public/disaster_locations.json",
   "data/public/location_sources.json",
+  "data/public/water_cross_view.json",
   "data/public/emergency_sources.json",
   "data/public/infrastructure_sources.json",
   "data/public/infrastructure_status.json"
