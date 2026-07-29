@@ -21,6 +21,13 @@ const REQUIRED_MONITOR_FILES = [
   "monitor/parser.js",
   "monitor/diff-engine.js",
   "monitor/constants.js",
+  "monitor/location-sources.js",
+  "monitor/emergency-sources.js",
+  "monitor/emergency-fetcher.js",
+  "monitor/emergency-diff-engine.js",
+  "monitor/infrastructure-sources.js",
+  "monitor/infrastructure-fetcher.js",
+  "monitor/infrastructure-diff-engine.js",
   "monitor/candidate-format.js",
   "monitor/review-engine.js",
   "monitor/apply-engine.js",
@@ -32,6 +39,8 @@ const REQUIRED_MONITOR_FILES = [
   "monitor/public-status.js",
   "monitor/UPDATE_FLOW.md",
   "scripts/run-monitor.js",
+  "scripts/run-emergency-patrol.js",
+  "scripts/run-infrastructure-patrol.js",
   "scripts/review-candidates.js",
   "scripts/apply-approved.js",
   "scripts/run-url-audit.js"
@@ -73,6 +82,15 @@ function main() {
     }
     if (sourceCount !== 21) {
       errors.push(`Monitor source count: ${sourceCount} (expected 21)`);
+    }
+
+    const nttWest = (sources.communication || []).find((item) => item.id === "COMM-ntt-west");
+    if (!nttWest) {
+      errors.push("Missing COMM-ntt-west monitor source");
+    } else if (nttWest.priority !== "HIGH") {
+      errors.push(`COMM-ntt-west priority: ${nttWest.priority || "unset"} (expected HIGH)`);
+    } else if (nttWest.service_id !== "ntt_west_disaster_support") {
+      errors.push(`COMM-ntt-west service_id: ${nttWest.service_id} (expected ntt_west_disaster_support)`);
     }
   }
 

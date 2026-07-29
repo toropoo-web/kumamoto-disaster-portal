@@ -9,18 +9,99 @@
   var X_FEED_STATUS_AVAILABLE = "AVAILABLE";
   var X_FEED_STATUS_UNAVAILABLE = "UNAVAILABLE";
   var AREA_DISASTER_NAV_ID = "area-disaster-nav";
+  var DISASTER_MAP_SECTION_ID = "disaster-location-map-section";
+  var VERIFIED_LOCATIONS_TITLE = "📍 支援地点一覧";
+  var AREA_DISASTER_NAV_CATEGORIES = [
+    { id: "WATER", icon: "💧", label: "給水・断水", locationCategory: "WATER" },
+    { id: "SHELTER", icon: "🏠", label: "避難所", locationCategory: "SHELTER" },
+    { id: "ROAD", icon: "🚧", label: "道路・通行情報", scrollTarget: "infra-road" },
+    { id: "COMMUNICATION", icon: "📡", label: "通信情報", scrollTarget: "communication-status-title" },
+    { id: "DISASTER_MAP", icon: "🗺", label: "防災マップ", opensDisasterMap: true }
+  ];
+  var DISASTER_MAP_AREA_IDS = {
+    KM001: true, KM002: true, KM003: true, KM005: true,
+    KM006: true, KM007: true, KM008: true
+  };
+  var DISASTER_MAP_CATEGORIES = {
+    WATER: true,
+    FOOD: true,
+    SUPPLY: true,
+    CHARGING: true,
+    SHELTER: true
+  };
+  var DISASTER_MAP_LAYER_LOCATION = "location";
+  var DISASTER_MAP_LAYER_INFRASTRUCTURE = "infrastructure";
+  var DISASTER_MAP_INFRASTRUCTURE_COLORS = {
+    ROAD: "#c2410c",
+    WATER_SERVICE: "#2563eb",
+    COMMUNICATION: "#7c3aed",
+    POWER: "#ca8a04"
+  };
+  var INFRASTRUCTURE_INFO_ID = "infrastructure-info";
+  var INFRASTRUCTURE_CATEGORIES = [
+    { id: "infra-road", category: "ROAD", icon: "🚧", label: "道路・交通" },
+    { id: "infra-water", category: "WATER_SERVICE", icon: "🚰", label: "水道" },
+    { id: "infra-comm", category: "COMMUNICATION", icon: "📡", label: "通信" },
+    { id: "infra-power", category: "POWER", icon: "⚡", label: "電力" }
+  ];
+  var INFRASTRUCTURE_STATUS_LABELS = {
+    ROAD: {
+      CLOSED: "通行止め",
+      RESTRICTED: "通行規制・片側交互等",
+      PASSABLE: "通行可能",
+      CHECK_OFFICIAL: "公式情報を確認",
+      PENDING: "確認中",
+      UNKNOWN: "公式未確認"
+    },
+    POWER: {
+      OUTAGE: "停電中",
+      PARTIAL_OUTAGE: "一部停電",
+      RESTORING: "復旧作業中",
+      RESTORED: "復旧済み",
+      CHECK_OFFICIAL: "公式情報を確認",
+      PENDING: "確認中",
+      UNKNOWN: "公式未確認"
+    },
+    WATER_SERVICE: {
+      SUSPENDED: "断水",
+      LOW_PRESSURE: "低水圧・節水",
+      TURBID: "濁水・煮沸",
+      RESTORING: "復旧作業中",
+      RESTORED: "復旧済み",
+      CHECK_OFFICIAL: "公式情報を確認",
+      PENDING: "確認中",
+      UNKNOWN: "公式未確認"
+    },
+    COMMUNICATION: {
+      OUTAGE: "通信障害",
+      PARTIAL_OUTAGE: "一部地域で障害",
+      AVAILABLE: "利用可能",
+      CHECK_OFFICIAL: "公式情報を確認",
+      PENDING: "確認中",
+      UNKNOWN: "公式未確認"
+    }
+  };
+  var LEAFLET_VERSION = "1.9.4";
+  var LEAFLET_CDN_BASE = "https://unpkg.com/leaflet@" + LEAFLET_VERSION + "/dist/";
   var GOOGLE_MAPS_SEARCH_BASE = "https://www.google.com/maps/search/?api=1&query=";
 
   var LOCATION_CATEGORY_ICONS = {
     SHELTER: "🏠",
     WATER: "💧",
+    FOOD: "🍱",
+    SUPPLY: "📦",
+    CHARGING: "🔋",
     ROAD: "🚧",
     SUPPORT: "🤝",
     LIFELINE: "⚡",
     MEDICAL: "🏥",
-    CHARGING: "📡",
     OTHER: "📍"
   };
+
+  var LOCATION_NAV_CATEGORIES = [
+    { id: "WATER", icon: "💧", label: "給水所" },
+    { id: "SHELTER", icon: "🏠", label: "避難所" }
+  ];
 
   var CATEGORY_ORDER = [
     { id: "EMERGENCY", anchor: "cat-emergency" },
@@ -357,6 +438,25 @@
     return GOOGLE_MAPS_SEARCH_BASE + encodeURIComponent(query);
   }
 
+  function getLocationCategoryDisplayLabel(category) {
+    for (var i = 0; i < LOCATION_NAV_CATEGORIES.length; i++) {
+      if (LOCATION_NAV_CATEGORIES[i].id === category) {
+        return LOCATION_NAV_CATEGORIES[i].icon + " " + LOCATION_NAV_CATEGORIES[i].label;
+      }
+    }
+    if (category && LOCATION_CATEGORY_ICONS[category]) {
+      return LOCATION_CATEGORY_ICONS[category] + " " + category;
+    }
+    return category || "—";
+  }
+
+  function getLocationOriginalText(location) {
+    if (!location || !location.original_text) {
+      return "";
+    }
+    return location.original_text;
+  }
+
   function buildLocationMapsUrl(location) {
     if (location.lat !== null && location.lat !== undefined &&
         location.lng !== null && location.lng !== undefined) {
@@ -370,14 +470,365 @@
     return buildGoogleMapsSearchUrl(queryParts.join(" "));
   }
 
+  function getJstDateString(date) {
+    return new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Tokyo",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).format(date || new Date());
+  }
+
+  function getLocationFreshnessLabel(location) {
+    if (!location || location.update_cycle !== "DAILY") {
+      return "";
+    }
+    if (getLocationFreshness(location) === "STALE") {
+      return "🟡 前回確認情報";
+    }
+    return "🟢 本日確認済み";
+  }
+
+  function formatOperationDate(value) {
+    if (!value) {
+      return "—";
+    }
+    var parts = String(value).split("-");
+    if (parts.length !== 3) {
+      return value;
+    }
+    return Number(parts[1]) + "月" + Number(parts[2]) + "日";
+  }
+
+  function getLocationHoursText(location) {
+    if (!location || !location.notes) {
+      return "—";
+    }
+    var match = location.notes.match(/(\d{1,2}[:：]\d{2}.*?(?:\d{1,2}[:：]\d{2}|午後\d{1,2}時|午前\d{1,2}時))/);
+    if (match) {
+      return match[1].replace(/[。．]/g, "");
+    }
+    if (/午後\d{1,2}時まで/.test(location.notes)) {
+      return location.notes.match(/午後\d{1,2}時まで/)[0];
+    }
+    if (/20時を目処/.test(location.notes)) {
+      return "20時を目処に終了予定";
+    }
+    return location.notes;
+  }
+
+  function getLocationFreshness(location) {
+    if (!location || location.update_cycle !== "DAILY") {
+      return "ACTIVE";
+    }
+    if (!location.operation_date) {
+      return "STALE";
+    }
+    if (location.operation_date === getJstDateString()) {
+      return "ACTIVE";
+    }
+    return "STALE";
+  }
+
+  function getInfrastructureFreshness(item) {
+    var checked = parseDate(item && item.last_checked_at);
+    if (!checked) {
+      return "OUTDATED";
+    }
+    var hours = (Date.now() - checked.getTime()) / (1000 * 60 * 60);
+    if (hours <= 24) {
+      return "CURRENT";
+    }
+    if (hours <= 72) {
+      return "STALE";
+    }
+    return "OUTDATED";
+  }
+
+  function getInfrastructureFreshnessLabel(item) {
+    var freshness = getInfrastructureFreshness(item);
+    if (freshness === "CURRENT") {
+      return "🟢 最新確認済み";
+    }
+    if (freshness === "STALE") {
+      return "🟡 前回確認情報";
+    }
+    return "🟠 情報確認中";
+  }
+
+  function buildInfrastructureSourceMap(sourcesData) {
+    var map = {};
+    if (!sourcesData || !sourcesData.sources) {
+      return map;
+    }
+    sourcesData.sources.forEach(function (source) {
+      map[source.source_id] = source;
+    });
+    return map;
+  }
+
+  function buildAreaNameMap(areas) {
+    var map = {};
+    if (!areas) {
+      return map;
+    }
+    areas.forEach(function (area) {
+      map[area.area_id] = area.name || area.area_id;
+    });
+    return map;
+  }
+
+  function getInfrastructureCategoryMeta(category) {
+    for (var i = 0; i < INFRASTRUCTURE_CATEGORIES.length; i++) {
+      if (INFRASTRUCTURE_CATEGORIES[i].category === category) {
+        return INFRASTRUCTURE_CATEGORIES[i];
+      }
+    }
+    return null;
+  }
+
+  function getInfrastructureCategoryLabel(category) {
+    var meta = getInfrastructureCategoryMeta(category);
+    if (!meta) {
+      return category || "—";
+    }
+    return meta.icon + " " + meta.label;
+  }
+
+  function getInfrastructureStatusLabel(item) {
+    if (!item) {
+      return "—";
+    }
+    var categoryLabels = INFRASTRUCTURE_STATUS_LABELS[item.category];
+    if (categoryLabels && categoryLabels[item.status]) {
+      return categoryLabels[item.status];
+    }
+    if (item.status_label) {
+      return item.status_label;
+    }
+    return item.status || "—";
+  }
+
+  function getInfrastructureOriginalText(item) {
+    if (!item) {
+      return "";
+    }
+    if (item.original_text) {
+      return item.original_text;
+    }
+    if (item.description) {
+      return item.description;
+    }
+    return "";
+  }
+
+  function hasInfrastructureSourceUrl(source) {
+    return !!(source && source.url && (source.url.indexOf("https://") === 0 || source.url.indexOf("http://") === 0));
+  }
+
+  function isDisplayableInfrastructureItem(item, sourceMap) {
+    if (!item || item.status === "ENDED") {
+      return false;
+    }
+    if (item.type === "EXTERNAL_LINK") {
+      return hasInfrastructureSourceUrl(sourceMap[item.source_id]);
+    }
+    return item.type === "STATUS";
+  }
+
+  function getInfrastructureItemsForCategory(items, category, sourceMap) {
+    if (!items) {
+      return [];
+    }
+    return items.filter(function (item) {
+      return item.category === category && isDisplayableInfrastructureItem(item, sourceMap);
+    });
+  }
+
+  function appendInfrastructureMetaRow(card, label, value) {
+    var row = createElement("div", "infrastructure-info__meta-row");
+    row.appendChild(createElement("dt", "infrastructure-info__meta-label", label));
+    row.appendChild(createElement("dd", "infrastructure-info__meta-value", value));
+    card.appendChild(row);
+  }
+
+  function renderInfrastructureStatusCard(item, areaNameMap, sourceMap) {
+    var card = createElement("article", "infrastructure-info__card");
+    card.setAttribute("aria-labelledby", item.status_id + "-title");
+
+    var header = createElement("div", "infrastructure-info__card-header");
+    header.appendChild(createElement("h4", "infrastructure-info__card-title", item.title || "—"));
+    header.querySelector(".infrastructure-info__card-title").id = item.status_id + "-title";
+
+    var freshness = getInfrastructureFreshnessLabel(item);
+    if (freshness) {
+      header.appendChild(createElement("p", "infrastructure-info__freshness", freshness));
+    }
+    card.appendChild(header);
+
+    var meta = createElement("dl", "infrastructure-info__meta");
+    appendInfrastructureMetaRow(meta, "カテゴリ", getInfrastructureCategoryLabel(item.category));
+    appendInfrastructureMetaRow(meta, "地域", areaNameMap[item.area_id] || item.area_id || "—");
+    appendInfrastructureMetaRow(meta, "状態", getInfrastructureStatusLabel(item));
+
+    var originalText = getInfrastructureOriginalText(item);
+    if (originalText) {
+      var originalRow = createElement("div", "infrastructure-info__meta-row infrastructure-info__meta-row--original");
+      originalRow.appendChild(createElement("dt", "infrastructure-info__meta-label", "原文"));
+      var originalValue = createElement("dd", "infrastructure-info__meta-value infrastructure-info__original-text");
+      originalValue.textContent = originalText;
+      originalRow.appendChild(originalValue);
+      meta.appendChild(originalRow);
+    }
+
+    appendInfrastructureMetaRow(
+      meta,
+      "最終確認日時",
+      item.last_checked_at ? formatDateTime(item.last_checked_at) : "—"
+    );
+
+    var source = sourceMap[item.source_id];
+    if (source) {
+      var sourceRow = createElement("div", "infrastructure-info__meta-row");
+      sourceRow.appendChild(createElement("dt", "infrastructure-info__meta-label", "Source"));
+      var sourceValue = createElement("dd", "infrastructure-info__meta-value");
+      if (hasInfrastructureSourceUrl(source)) {
+        var sourceLink = createElement("a", "infrastructure-info__source-link", source.provider || source.title || "提供元を見る");
+        sourceLink.href = source.url;
+        sourceLink.target = "_blank";
+        sourceLink.rel = "noopener noreferrer";
+        sourceValue.appendChild(sourceLink);
+      } else {
+        sourceValue.textContent = source.provider || source.title || item.source_id || "—";
+      }
+      sourceRow.appendChild(sourceValue);
+      meta.appendChild(sourceRow);
+    }
+
+    card.appendChild(meta);
+    return card;
+  }
+
+  function renderInfrastructureExternalLinkCard(item, sourceMap) {
+    var source = sourceMap[item.source_id];
+    if (!hasInfrastructureSourceUrl(source)) {
+      return null;
+    }
+
+    var card = createElement("article", "infrastructure-info__card infrastructure-info__card--external");
+    var title = createElement("p", "infrastructure-info__external-title", "🚗 " + (item.title || "通れた道マップ"));
+    card.appendChild(title);
+
+    var link = createElement("a", "infrastructure-info__external-link", "提供元を見る");
+    link.href = source.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    card.appendChild(link);
+    return card;
+  }
+
+  function renderInfrastructureCategoryBlock(container, categoryMeta, items, areaNameMap, sourceMap) {
+    var block = createElement("div", "infrastructure-info__category");
+    block.id = categoryMeta.id;
+
+    var heading = createElement(
+      "h3",
+      "infrastructure-info__category-title",
+      categoryMeta.icon + " " + categoryMeta.label
+    );
+    block.appendChild(heading);
+
+    var statusItems = [];
+    var externalItems = [];
+    items.forEach(function (item) {
+      if (item.type === "EXTERNAL_LINK") {
+        externalItems.push(item);
+      } else {
+        statusItems.push(item);
+      }
+    });
+
+    if (statusItems.length === 0 && externalItems.length === 0) {
+      block.appendChild(createElement("p", "infrastructure-info__empty", "現在確認中"));
+      container.appendChild(block);
+      return;
+    }
+
+    var cards = createElement("div", "infrastructure-info__cards");
+    statusItems.forEach(function (item) {
+      cards.appendChild(renderInfrastructureStatusCard(item, areaNameMap, sourceMap));
+    });
+    externalItems.forEach(function (item) {
+      var externalCard = renderInfrastructureExternalLinkCard(item, sourceMap);
+      if (externalCard) {
+        cards.appendChild(externalCard);
+      }
+    });
+    block.appendChild(cards);
+    container.appendChild(block);
+  }
+
+  function renderInfrastructureSection(container, infrastructureStatus, infrastructureSources, areas) {
+    if (!infrastructureStatus) {
+      return;
+    }
+
+    var section = createElement("section", "infrastructure-info");
+    section.id = INFRASTRUCTURE_INFO_ID;
+    section.setAttribute("aria-labelledby", "infrastructure-info-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement("h2", "section-title infrastructure-info__title", "インフラ情報");
+    title.id = "infrastructure-info-title";
+    inner.appendChild(title);
+    inner.appendChild(createElement(
+      "p",
+      "infrastructure-info__lead",
+      "道路・交通、水道、通信、電力の状態を公式情報に基づき表示します。"
+    ));
+
+    var sourceMap = buildInfrastructureSourceMap(infrastructureSources);
+    var areaNameMap = buildAreaNameMap(areas);
+    var allItems = (infrastructureStatus.items || []).filter(function (item) {
+      return isDisplayableInfrastructureItem(item, sourceMap);
+    });
+
+    var nav = createElement("nav", "infrastructure-info__nav");
+    nav.setAttribute("aria-label", "インフラ情報カテゴリ");
+    var navList = createElement("ul", "infrastructure-info__nav-list");
+    INFRASTRUCTURE_CATEGORIES.forEach(function (categoryMeta) {
+      var navItem = createElement("li", "infrastructure-info__nav-item");
+      var navLink = createElement("a", "infrastructure-info__nav-link", categoryMeta.icon + " " + categoryMeta.label);
+      navLink.href = "#" + categoryMeta.id;
+      navItem.appendChild(navLink);
+      navList.appendChild(navItem);
+    });
+    nav.appendChild(navList);
+    inner.appendChild(nav);
+
+    var categoriesWrap = createElement("div", "infrastructure-info__categories");
+    INFRASTRUCTURE_CATEGORIES.forEach(function (categoryMeta) {
+      var categoryItems = getInfrastructureItemsForCategory(allItems, categoryMeta.category, sourceMap);
+      renderInfrastructureCategoryBlock(categoriesWrap, categoryMeta, categoryItems, areaNameMap, sourceMap);
+    });
+    inner.appendChild(categoriesWrap);
+
+    section.appendChild(inner);
+    container.appendChild(section);
+  }
+
   function isPublicLocation(location) {
     if (!location) {
       return false;
     }
-    if (location.verification_status !== "VERIFIED") {
+    var status = location.status;
+    if (status === "ENDED" || status === "UNKNOWN" || status === "PENDING_REVIEW") {
       return false;
     }
-    if (location.status !== "ACTIVE") {
+    if (status !== "ACTIVE") {
+      return false;
+    }
+    if (location.verification_status !== "VERIFIED") {
       return false;
     }
     if (location.expires_at) {
@@ -408,46 +859,235 @@
       });
   }
 
-  function renderVerifiedLocationList(panel, areaEntry, disasterLocations) {
-    var locations = getPublicLocationsForArea(disasterLocations, areaEntry.area_id);
-    if (!locations.length) {
-      return;
+  function renderVerifiedLocationItem(location) {
+    var icon = LOCATION_CATEGORY_ICONS[location.category] || "📍";
+    var li = createElement("li", "verified-locations__item");
+
+    var header = createElement("div", "verified-locations__header");
+    header.appendChild(createElement("p", "verified-locations__name", icon + " " + location.name));
+    if (location.status_label) {
+      header.appendChild(createElement("p", "verified-locations__status", location.status_label));
+    }
+    li.appendChild(header);
+
+    var sourceName = location.source && location.source.name ? location.source.name : "公式情報";
+    li.appendChild(createElement("p", "verified-locations__source", "確認元：" + sourceName));
+
+    if (location.category === "WATER") {
+      var hoursText = getLocationHoursText(location);
+      if (hoursText && hoursText !== "—") {
+        li.appendChild(createElement("p", "verified-locations__hours", "利用時間：" + hoursText));
+      }
     }
 
-    var sectionTitle = disasterLocations.section_title || "確認済み災害地点";
+    if (location.last_checked_at) {
+      li.appendChild(createElement(
+        "p",
+        "verified-locations__checked-at",
+        "最終確認：" + formatDateTime(location.last_checked_at)
+      ));
+    }
+
+    if (location.notes) {
+      li.appendChild(createElement("p", "verified-locations__notes", "注意事項：" + location.notes));
+    }
+
+    var originalText = getLocationOriginalText(location);
+    if (originalText) {
+      var original = createElement("p", "verified-locations__original-text", originalText);
+      original.setAttribute("lang", "ja");
+      li.appendChild(original);
+    }
+
+    if (getLocationFreshness(location) === "STALE") {
+      li.appendChild(createElement(
+        "p",
+        "verified-locations__stale-notice",
+        "🟡 前回確認情報（実施日が前日以前）。最新情報を公式でご確認ください。"
+      ));
+    } else if (location.update_cycle === "DAILY") {
+      li.appendChild(createElement(
+        "p",
+        "verified-locations__fresh-notice",
+        "🟢 本日確認済み"
+      ));
+    }
+
+    var mapLink = createElement("button", "verified-locations__map-link", "地図を見る");
+    mapLink.type = "button";
+    mapLink.setAttribute("aria-label", location.name + "を災害マップで見る");
+    mapLink.addEventListener("click", function () {
+      openDisasterMapSection({ locationId: location.location_id });
+    });
+    li.appendChild(mapLink);
+    return li;
+  }
+
+  function renderVerifiedLocationList(panel, areaEntry, disasterLocations) {
+    var locations = getPublicLocationsForArea(disasterLocations, areaEntry.area_id);
     var block = createElement("div", "verified-locations");
-    block.appendChild(createElement("h4", "verified-locations__title", sectionTitle));
+    block.id = "verified-locations-" + areaEntry.area_id;
+    block.appendChild(createElement("h4", "verified-locations__title", VERIFIED_LOCATIONS_TITLE));
 
-    var list = createElement("ul", "verified-locations__list");
-
+    var grouped = {};
+    LOCATION_NAV_CATEGORIES.forEach(function (categoryMeta) {
+      grouped[categoryMeta.id] = [];
+    });
     locations.forEach(function (location) {
-      var icon = LOCATION_CATEGORY_ICONS[location.category] || "📍";
-      var li = createElement("li", "verified-locations__item");
-
-      var header = createElement("div", "verified-locations__header");
-      header.appendChild(createElement("p", "verified-locations__name", icon + " " + location.name));
-      header.appendChild(createElement("p", "verified-locations__area", location.area_name));
-      li.appendChild(header);
-
-      var sourceName = location.source && location.source.name ? location.source.name : "公式情報";
-      li.appendChild(createElement("p", "verified-locations__source", "確認：" + sourceName));
-
-      if (location.notes) {
-        li.appendChild(createElement("p", "verified-locations__notes", location.notes));
+      if (grouped[location.category]) {
+        grouped[location.category].push(location);
       }
-
-      var mapLink = createAreaNavExternalLink(
-        "verified-locations__map-link",
-        "地図を見る",
-        buildLocationMapsUrl(location),
-        location.name + "をGoogleマップで開く（外部リンク）"
-      );
-      li.appendChild(mapLink);
-      list.appendChild(li);
     });
 
-    block.appendChild(list);
+    var categoryPanels = createElement("div", "verified-locations__category-panels");
+
+    LOCATION_NAV_CATEGORIES.forEach(function (categoryMeta) {
+      var categorySection = createElement("section", "verified-locations__category");
+      categorySection.id = "verified-locations-cat-" + categoryMeta.id.toLowerCase() + "-" + areaEntry.area_id;
+      categorySection.setAttribute("data-category", categoryMeta.id);
+      categorySection.setAttribute("aria-label", categoryMeta.label);
+
+      var categoryTitle = createElement(
+        "h5",
+        "verified-locations__category-title",
+        categoryMeta.icon + " " + categoryMeta.label
+      );
+      categorySection.appendChild(categoryTitle);
+
+      if (grouped[categoryMeta.id].length === 0) {
+        categorySection.appendChild(createElement(
+          "p",
+          "verified-locations__empty",
+          "該当する確認済み地点はありません。"
+        ));
+      } else {
+        var list = createElement("ul", "verified-locations__list");
+        grouped[categoryMeta.id].forEach(function (location) {
+          list.appendChild(renderVerifiedLocationItem(location));
+        });
+        categorySection.appendChild(list);
+      }
+
+      categoryPanels.appendChild(categorySection);
+    });
+
+    function selectLocationCategory(categoryId) {
+      setAreaNavCategoryActive(panel, categoryId);
+
+      var selected = categoryPanels.querySelector('[data-category="' + categoryId + '"]');
+      if (!selected) {
+        scrollToPageTarget(block.id);
+        return;
+      }
+
+      Array.prototype.forEach.call(
+        categoryPanels.querySelectorAll(".verified-locations__category"),
+        function (sectionEl) {
+          sectionEl.hidden = false;
+          sectionEl.classList.toggle(
+            "verified-locations__category--selected",
+            sectionEl.getAttribute("data-category") === categoryId
+          );
+        }
+      );
+
+      categoryPanels.insertBefore(selected, categoryPanels.firstChild);
+      scrollToPageTarget(selected.id);
+    }
+
+    panel._selectLocationCategory = selectLocationCategory;
+
+    block.appendChild(categoryPanels);
     panel.appendChild(block);
+  }
+
+  function scrollToPageTarget(targetId) {
+    var target = document.getElementById(targetId);
+    if (!target) {
+      return false;
+    }
+    var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+      block: "start"
+    });
+    return true;
+  }
+
+  function setAreaNavCategoryActive(panel, categoryId) {
+    if (!panel) {
+      return;
+    }
+    Array.prototype.forEach.call(
+      panel.querySelectorAll(".area-disaster-nav__category-btn"),
+      function (button) {
+        var isActive = button.getAttribute("data-nav-category") === categoryId;
+        button.classList.toggle("area-disaster-nav__category-btn--active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      }
+    );
+  }
+
+  function focusMapLocationMarker(locationId) {
+    var mapContainer = document.getElementById("disaster-location-map");
+    if (!mapContainer || !mapContainer._leafletMap || !mapContainer._locationMarkers) {
+      return false;
+    }
+    var marker = mapContainer._locationMarkers[locationId];
+    if (!marker) {
+      return false;
+    }
+    mapContainer._leafletMap.setView(marker.getLatLng(), 15);
+    marker.openPopup();
+    mapContainer._leafletMap.invalidateSize();
+    return true;
+  }
+
+  function openDisasterMapSection(options) {
+    options = options || {};
+    var section = document.getElementById(DISASTER_MAP_SECTION_ID);
+    if (!section) {
+      return;
+    }
+    scrollToPageTarget(DISASTER_MAP_SECTION_ID);
+    var toggle = section.querySelector(".disaster-map__toggle");
+    var mapPanel = document.getElementById("disaster-map-panel");
+    if (!toggle || !mapPanel) {
+      return;
+    }
+    if (mapPanel.hidden) {
+      toggle.click();
+    }
+    if (!options.locationId) {
+      return;
+    }
+    var attempts = 0;
+    var maxAttempts = 40;
+    var timer = window.setInterval(function () {
+      attempts += 1;
+      if (focusMapLocationMarker(options.locationId) || attempts >= maxAttempts) {
+        window.clearInterval(timer);
+      }
+    }, 250);
+  }
+
+  function handleAreaNavCategoryClick(panel, areaEntry, categoryItem) {
+    setAreaNavCategoryActive(panel, categoryItem.id);
+    if (categoryItem.opensDisasterMap) {
+      openDisasterMapSection();
+      return;
+    }
+    if (categoryItem.scrollTarget) {
+      scrollToPageTarget(categoryItem.scrollTarget);
+      return;
+    }
+    if (categoryItem.locationCategory && panel._selectLocationCategory) {
+      panel._selectLocationCategory(categoryItem.locationCategory);
+      return;
+    }
+    if (areaEntry && areaEntry.area_id) {
+      scrollToPageTarget("verified-locations-" + areaEntry.area_id);
+    }
   }
 
   function scrollToAreaDisasterNav() {
@@ -500,59 +1140,37 @@
 
   function renderAreaDisasterNavLinks(panel, areaEntry, disasterLocations) {
     panel.innerHTML = "";
+    panel._selectLocationCategory = null;
     if (!areaEntry || !areaEntry.navigation) {
       panel.hidden = true;
       return;
     }
 
-    var nav = areaEntry.navigation;
     panel.hidden = false;
     panel.appendChild(createElement("h3", "area-disaster-nav__selected-name", areaEntry.name));
 
     var list = createElement("ul", "area-disaster-nav__links");
+    list.setAttribute("role", "list");
+    list.setAttribute("aria-label", "カテゴリ別支援情報");
 
-    var items = [
-      {
-        icon: "💧",
-        label: "給水・断水",
-        href: buildGoogleMapsSearchUrl(nav.water),
-        ariaLabel: areaEntry.name + "の給水・断水情報をGoogleマップで検索（外部リンク）"
-      },
-      {
-        icon: "🏠",
-        label: "避難所",
-        href: buildGoogleMapsSearchUrl(nav.shelter),
-        ariaLabel: areaEntry.name + "の避難所をGoogleマップで検索（外部リンク）"
-      },
-      {
-        icon: "🚧",
-        label: "道路・通行情報",
-        href: buildGoogleMapsSearchUrl(nav.road),
-        ariaLabel: areaEntry.name + "の道路・通行情報をGoogleマップで検索（外部リンク）"
-      },
-      {
-        icon: "📡",
-        label: "通信情報",
-        href: "#communication-status-title",
-        ariaLabel: "携帯電話・通信情報へ移動",
-        internal: true
-      },
-      {
-        icon: "🗺",
-        label: "防災マップ",
-        href: nav.disaster_map,
-        ariaLabel: areaEntry.name + "の公式防災マップへ（外部リンク）"
-      }
-    ];
-
-    items.forEach(function (item) {
+    AREA_DISASTER_NAV_CATEGORIES.forEach(function (categoryItem) {
       var li = createElement("li", "area-disaster-nav__item");
-      var link = createAreaNavExternalLink("area-disaster-nav__link", item.icon + " " + item.label, item.href, item.ariaLabel);
-      if (item.internal) {
-        link.removeAttribute("target");
-        link.removeAttribute("rel");
-      }
-      li.appendChild(link);
+      var button = createElement(
+        "button",
+        "area-disaster-nav__category-btn",
+        categoryItem.icon + " " + categoryItem.label
+      );
+      button.type = "button";
+      button.setAttribute("data-nav-category", categoryItem.id);
+      button.setAttribute("aria-pressed", "false");
+      button.setAttribute(
+        "aria-label",
+        areaEntry.name + "の" + categoryItem.label + "一覧へ移動"
+      );
+      button.addEventListener("click", function () {
+        handleAreaNavCategoryClick(panel, areaEntry, categoryItem);
+      });
+      li.appendChild(button);
       list.appendChild(li);
     });
 
@@ -611,6 +1229,602 @@
 
     inner.appendChild(label);
     inner.appendChild(select);
+    inner.appendChild(panel);
+    section.appendChild(inner);
+    container.appendChild(section);
+  }
+
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function hasMapCoordinates(location) {
+    return typeof location.lat === "number" && typeof location.lng === "number";
+  }
+
+  function getMapDisplayLocations(disasterLocations) {
+    if (!disasterLocations || !disasterLocations.locations) {
+      return [];
+    }
+
+    return disasterLocations.locations.filter(function (location) {
+      return DISASTER_MAP_AREA_IDS[location.area_id] &&
+        isPublicLocation(location) &&
+        hasMapCoordinates(location) &&
+        DISASTER_MAP_CATEGORIES[location.category];
+    });
+  }
+
+  function getInfrastructureInfoType(item) {
+    if (!item) {
+      return null;
+    }
+    if (item.info_type) {
+      return item.info_type;
+    }
+    if (item.geometry && item.geometry.type === "Point") {
+      return "POINT";
+    }
+    if (item.geometry && item.geometry.type === "LineString") {
+      return "LINE";
+    }
+    if (item.geometry && item.geometry.type === "Polygon") {
+      return "AREA";
+    }
+    if (item.type === "STATUS") {
+      return "STATUS";
+    }
+    return null;
+  }
+
+  function hasValidInfrastructureGeometry(item) {
+    if (!item || !item.geometry || !item.geometry.type) {
+      return false;
+    }
+    var infoType = getInfrastructureInfoType(item);
+    if (infoType === "POINT") {
+      return Array.isArray(item.geometry.coordinates) &&
+        item.geometry.coordinates.length >= 2 &&
+        typeof item.geometry.coordinates[0] === "number" &&
+        typeof item.geometry.coordinates[1] === "number";
+    }
+    if (infoType === "LINE") {
+      return Array.isArray(item.geometry.coordinates) && item.geometry.coordinates.length >= 2;
+    }
+    if (infoType === "AREA") {
+      return Array.isArray(item.geometry.coordinates) &&
+        item.geometry.coordinates.length > 0 &&
+        Array.isArray(item.geometry.coordinates[0]) &&
+        item.geometry.coordinates[0].length >= 3;
+    }
+    return false;
+  }
+
+  function getMapInfrastructureItems(infrastructureStatus, infrastructureSources) {
+    var sourceMap = buildInfrastructureSourceMap(infrastructureSources);
+    if (!infrastructureStatus || !infrastructureStatus.items) {
+      return { geometry: [], status: [] };
+    }
+
+    var geometry = [];
+    var status = [];
+
+    infrastructureStatus.items.forEach(function (item) {
+      if (!isDisplayableInfrastructureItem(item, sourceMap)) {
+        return;
+      }
+      var infoType = getInfrastructureInfoType(item);
+      if (infoType === "STATUS") {
+        status.push(item);
+        return;
+      }
+      if ((infoType === "POINT" || infoType === "LINE" || infoType === "AREA") &&
+        hasValidInfrastructureGeometry(item)) {
+        geometry.push(item);
+      }
+    });
+
+    return { geometry: geometry, status: status };
+  }
+
+  function pointToLatLng(coordinates) {
+    return [coordinates[1], coordinates[0]];
+  }
+
+  function lineToLatLngs(coordinates) {
+    return coordinates.map(pointToLatLng);
+  }
+
+  function polygonToLatLngs(coordinates) {
+    if (!coordinates || !coordinates.length) {
+      return [];
+    }
+    return coordinates[0].map(pointToLatLng);
+  }
+
+  function buildInfrastructureMapMarkerIcon(category) {
+    var meta = getInfrastructureCategoryMeta(category);
+    var icon = meta ? meta.icon : "🚧";
+    var modifier = (category || "road").toLowerCase().replace("_", "-");
+    return window.L.divIcon({
+      className: "disaster-map-marker disaster-map-marker--infra disaster-map-marker--infra-" + modifier,
+      html: '<span class="disaster-map-marker__icon" aria-hidden="true">' + icon + "</span>",
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
+      popupAnchor: [0, -16]
+    });
+  }
+
+  function buildInfrastructureMapPopupHtml(item, areaNameMap, sourceMap) {
+    var source = sourceMap[item.source_id];
+    var html = "";
+    html += "<div class=\"disaster-map-popup disaster-map-popup--infra\">";
+    html += "<p class=\"disaster-map-popup__name\"><strong>" + escapeHtml(item.title || "—") + "</strong></p>";
+    var freshness = getInfrastructureFreshnessLabel(item);
+    if (freshness) {
+      html += "<p class=\"disaster-map-popup__freshness\">" + escapeHtml(freshness) + "</p>";
+    }
+    html += "<p class=\"disaster-map-popup__row\">カテゴリ：" + escapeHtml(getInfrastructureCategoryLabel(item.category)) + "</p>";
+    html += "<p class=\"disaster-map-popup__row\">地域：" + escapeHtml(areaNameMap[item.area_id] || item.area_id || "—") + "</p>";
+    html += "<p class=\"disaster-map-popup__row\">状態：" + escapeHtml(getInfrastructureStatusLabel(item)) + "</p>";
+    var originalText = getInfrastructureOriginalText(item);
+    if (originalText) {
+      html += "<p class=\"disaster-map-popup__row\">原文：" + escapeHtml(originalText) + "</p>";
+    }
+    html += "<p class=\"disaster-map-popup__row\">最終確認：" + escapeHtml(formatDateTime(item.last_checked_at)) + "</p>";
+    if (source && hasInfrastructureSourceUrl(source)) {
+      html += "<p class=\"disaster-map-popup__row\"><a href=\"" + escapeHtml(source.url) + "\" target=\"_blank\" rel=\"noopener noreferrer\">提供元を見る</a></p>";
+    }
+    html += "</div>";
+    return html;
+  }
+
+  function addInfrastructureGeometryToMap(item, layerGroup, areaNameMap, sourceMap, bounds) {
+    var infoType = getInfrastructureInfoType(item);
+    var color = DISASTER_MAP_INFRASTRUCTURE_COLORS[item.category] || "#64748b";
+    var popupHtml = buildInfrastructureMapPopupHtml(item, areaNameMap, sourceMap);
+
+    if (infoType === "POINT") {
+      var latLng = pointToLatLng(item.geometry.coordinates);
+      var marker = window.L.marker(latLng, {
+        icon: buildInfrastructureMapMarkerIcon(item.category)
+      });
+      marker.bindPopup(popupHtml);
+      marker.addTo(layerGroup);
+      bounds.push(latLng);
+      return;
+    }
+
+    if (infoType === "LINE") {
+      var line = window.L.polyline(lineToLatLngs(item.geometry.coordinates), {
+        color: color,
+        weight: 4,
+        opacity: 0.85
+      });
+      line.bindPopup(popupHtml);
+      line.addTo(layerGroup);
+      line.getLatLngs().forEach(function (latLng) {
+        bounds.push([latLng.lat, latLng.lng]);
+      });
+      return;
+    }
+
+    if (infoType === "AREA") {
+      var polygon = window.L.polygon(polygonToLatLngs(item.geometry.coordinates), {
+        color: color,
+        weight: 2,
+        fillColor: color,
+        fillOpacity: 0.2
+      });
+      polygon.bindPopup(popupHtml);
+      polygon.addTo(layerGroup);
+      polygon.getLatLngs()[0].forEach(function (latLng) {
+        bounds.push([latLng.lat, latLng.lng]);
+      });
+    }
+  }
+
+  function renderInfrastructureMapStatusList(container, statusItems, areaNameMap, sourceMap) {
+    if (!statusItems.length) {
+      return;
+    }
+
+    var listWrap = createElement("div", "disaster-map__infra-status");
+    listWrap.setAttribute("aria-label", "インフラ状態一覧");
+    listWrap.appendChild(createElement("h3", "disaster-map__infra-status-title", "インフラ状態（カード）"));
+
+    var list = createElement("div", "disaster-map__infra-status-list");
+    statusItems.forEach(function (item) {
+      var card = createElement("article", "disaster-map__infra-status-card");
+      card.appendChild(createElement("h4", "disaster-map__infra-status-card-title", item.title || "—"));
+
+      var freshness = getInfrastructureFreshnessLabel(item);
+      if (freshness) {
+        card.appendChild(createElement("p", "disaster-map__infra-status-freshness", freshness));
+      }
+
+      var meta = createElement("dl", "disaster-map__infra-status-meta");
+      function addMeta(label, value) {
+        var row = createElement("div", "disaster-map__infra-status-meta-row");
+        row.appendChild(createElement("dt", null, label));
+        row.appendChild(createElement("dd", null, value));
+        meta.appendChild(row);
+      }
+
+      addMeta("カテゴリ", getInfrastructureCategoryLabel(item.category));
+      addMeta("地域", areaNameMap[item.area_id] || item.area_id || "—");
+      addMeta("状態", getInfrastructureStatusLabel(item));
+      var originalText = getInfrastructureOriginalText(item);
+      if (originalText) {
+        addMeta("原文", originalText);
+      }
+      addMeta("最終確認", item.last_checked_at ? formatDateTime(item.last_checked_at) : "—");
+
+      var source = sourceMap[item.source_id];
+      if (source && hasInfrastructureSourceUrl(source)) {
+        var sourceRow = createElement("div", "disaster-map__infra-status-meta-row");
+        sourceRow.appendChild(createElement("dt", null, "Source"));
+        var sourceDd = createElement("dd", null, "");
+        var sourceLink = createElement("a", null, source.provider || "提供元を見る");
+        sourceLink.href = source.url;
+        sourceLink.target = "_blank";
+        sourceLink.rel = "noopener noreferrer";
+        sourceDd.appendChild(sourceLink);
+        sourceRow.appendChild(sourceDd);
+        meta.appendChild(sourceRow);
+      }
+
+      card.appendChild(meta);
+      list.appendChild(card);
+    });
+
+    listWrap.appendChild(list);
+    container.appendChild(listWrap);
+  }
+
+  function loadLeafletAssets() {
+    return new Promise(function (resolve, reject) {
+      if (window.L) {
+        resolve();
+        return;
+      }
+
+      if (!document.querySelector('link[data-leaflet-css="true"]')) {
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = LEAFLET_CDN_BASE + "leaflet.css";
+        link.setAttribute("data-leaflet-css", "true");
+        document.head.appendChild(link);
+      }
+
+      var existingScript = document.querySelector('script[data-leaflet-js="true"]');
+      if (existingScript) {
+        existingScript.addEventListener("load", function () { resolve(); });
+        existingScript.addEventListener("error", function () { reject(new Error("Leaflet load failed")); });
+        if (window.L) {
+          resolve();
+        }
+        return;
+      }
+
+      var script = document.createElement("script");
+      script.src = LEAFLET_CDN_BASE + "leaflet.js";
+      script.setAttribute("data-leaflet-js", "true");
+      script.onload = function () { resolve(); };
+      script.onerror = function () { reject(new Error("Leaflet load failed")); };
+      document.body.appendChild(script);
+    });
+  }
+
+  function buildMapMarkerIcon(category) {
+    var icon = LOCATION_CATEGORY_ICONS[category] || "📍";
+    var modifierMap = {
+      WATER: "water",
+      FOOD: "food",
+      SUPPLY: "supply",
+      CHARGING: "charging",
+      SHELTER: "shelter"
+    };
+    var modifier = modifierMap[category] || "other";
+    return window.L.divIcon({
+      className: "disaster-map-marker disaster-map-marker--" + modifier,
+      html: '<span class="disaster-map-marker__icon" aria-hidden="true">' + icon + "</span>",
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
+      popupAnchor: [0, -16]
+    });
+  }
+
+  function buildMapPopupHtml(location) {
+    var sourceName = location.source && location.source.name ? location.source.name : "公式情報";
+    var sourceUrl = location.source_url || "";
+    var freshnessLabel = getLocationFreshnessLabel(location);
+    var hoursText = getLocationHoursText(location);
+    var categoryLabel = getLocationCategoryDisplayLabel(location.category);
+    var originalText = getLocationOriginalText(location);
+
+    var html = "";
+    html += "<div class=\"disaster-map-popup\">";
+    html += "<p class=\"disaster-map-popup__category\">" + escapeHtml(categoryLabel) + "</p>";
+    html += "<p class=\"disaster-map-popup__row\"><span class=\"disaster-map-popup__label\">施設名：</span>" + escapeHtml(location.name) + "</p>";
+    html += "<p class=\"disaster-map-popup__row\"><span class=\"disaster-map-popup__label\">自治体：</span>" + escapeHtml(location.area_name) + "</p>";
+    if (location.category === "WATER" && hoursText && hoursText !== "—") {
+      html += "<p class=\"disaster-map-popup__row\"><span class=\"disaster-map-popup__label\">利用時間：</span>" + escapeHtml(hoursText) + "</p>";
+    }
+    if (location.last_checked_at) {
+      html += "<p class=\"disaster-map-popup__row\"><span class=\"disaster-map-popup__label\">更新日時：</span>" + escapeHtml(formatDateTime(location.last_checked_at)) + "</p>";
+    }
+    html += "<p class=\"disaster-map-popup__row\"><span class=\"disaster-map-popup__label\">確認元：</span>" + escapeHtml(sourceName) + "</p>";
+    if (location.notes) {
+      html += "<p class=\"disaster-map-popup__row\"><span class=\"disaster-map-popup__label\">注意事項：</span>" + escapeHtml(location.notes) + "</p>";
+    }
+    if (originalText) {
+      html += "<p class=\"disaster-map-popup__original-text\" lang=\"ja\">" + escapeHtml(originalText) + "</p>";
+    }
+    if (freshnessLabel) {
+      html += "<p class=\"disaster-map-popup__freshness\">" + escapeHtml(freshnessLabel) + "</p>";
+    }
+    if (location.status_label && location.category === "SHELTER") {
+      html += "<p class=\"disaster-map-popup__row\"><span class=\"disaster-map-popup__label\">状況：</span>" + escapeHtml(location.status_label) + "</p>";
+    }
+    if (sourceUrl) {
+      html += "<p class=\"disaster-map-popup__row\"><a href=\"" + escapeHtml(sourceUrl) + "\" target=\"_blank\" rel=\"noopener noreferrer\">公式情報を見る</a></p>";
+    }
+    html += "</div>";
+    return html;
+  }
+
+  function initDisasterMap(mapContainer, config) {
+    if (!mapContainer || !window.L) {
+      return null;
+    }
+
+    if (mapContainer._leafletMap) {
+      mapContainer._leafletMap.remove();
+      mapContainer._leafletMap = null;
+    }
+
+    var map = window.L.map(mapContainer, {
+      scrollWheelZoom: false
+    });
+
+    window.L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    var locationGroup = window.L.layerGroup();
+    var infrastructureGroup = window.L.layerGroup();
+    var bounds = [];
+    mapContainer._locationMarkers = {};
+
+    if (config.showLocation) {
+      config.locations.forEach(function (location) {
+        var marker = window.L.marker([location.lat, location.lng], {
+          icon: buildMapMarkerIcon(location.category)
+        });
+        marker.bindPopup(buildMapPopupHtml(location));
+        mapContainer._locationMarkers[location.location_id] = marker;
+        marker.addTo(locationGroup);
+        bounds.push([location.lat, location.lng]);
+      });
+      locationGroup.addTo(map);
+    }
+
+    if (config.showInfrastructure) {
+      config.infrastructureGeometry.forEach(function (item) {
+        addInfrastructureGeometryToMap(
+          item,
+          infrastructureGroup,
+          config.areaNameMap,
+          config.sourceMap,
+          bounds
+        );
+      });
+      if (config.infrastructureGeometry.length > 0) {
+        infrastructureGroup.addTo(map);
+      }
+    }
+
+    if (bounds.length === 0) {
+      map.setView([32.7898, 130.7417], 10);
+    } else if (bounds.length === 1) {
+      map.setView(bounds[0], 14);
+    } else {
+      map.fitBounds(bounds, { padding: [32, 32] });
+    }
+
+    mapContainer._leafletMap = map;
+    mapContainer._layerGroups = {
+      location: locationGroup,
+      infrastructure: infrastructureGroup
+    };
+    return map;
+  }
+
+  function updateDisasterMapLayers(mapContainer, showLocation, showInfrastructure) {
+    if (!mapContainer || !mapContainer._leafletMap || !mapContainer._layerGroups) {
+      return;
+    }
+    var map = mapContainer._leafletMap;
+    var groups = mapContainer._layerGroups;
+
+    if (showLocation) {
+      if (!map.hasLayer(groups.location)) {
+        groups.location.addTo(map);
+      }
+    } else if (map.hasLayer(groups.location)) {
+      map.removeLayer(groups.location);
+    }
+
+    if (showInfrastructure) {
+      if (!map.hasLayer(groups.infrastructure) && groups.infrastructure.getLayers().length > 0) {
+        groups.infrastructure.addTo(map);
+      }
+    } else if (map.hasLayer(groups.infrastructure)) {
+      map.removeLayer(groups.infrastructure);
+    }
+
+    map.invalidateSize();
+  }
+
+  function renderDisasterMapSection(container, disasterLocations, infrastructureStatus, infrastructureSources, areas) {
+    var locations = getMapDisplayLocations(disasterLocations);
+    var infrastructureItems = getMapInfrastructureItems(infrastructureStatus, infrastructureSources);
+    var hasLocationLayer = locations.length > 0;
+    var hasInfrastructureLayer = infrastructureItems.geometry.length > 0 ||
+      infrastructureItems.status.length > 0;
+
+    if (!hasLocationLayer && !hasInfrastructureLayer) {
+      return;
+    }
+
+    var areaNameMap = buildAreaNameMap(areas);
+    var sourceMap = buildInfrastructureSourceMap(infrastructureSources);
+
+    var section = createElement("section", "disaster-map");
+    section.id = "disaster-location-map-section";
+    section.setAttribute("aria-labelledby", "disaster-map-title");
+
+    var inner = createElement("div", "container");
+    inner.appendChild(createElement("h2", "section-title disaster-map__title", "確認済み災害地点マップ"));
+    inner.querySelector(".disaster-map__title").id = "disaster-map-title";
+    inner.appendChild(createElement(
+      "p",
+      "disaster-map__lead",
+      "給水・避難所（Location Layer）とインフラ情報（Infrastructure Layer）を地図上で切り替えて確認できます。"
+    ));
+
+    var toggle = createElement("button", "disaster-map__toggle", "災害マップを見る");
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "disaster-map-panel");
+
+    var panel = createElement("div", "disaster-map__panel");
+    panel.id = "disaster-map-panel";
+    panel.hidden = true;
+
+    var layerToggles = createElement("div", "disaster-map__layer-toggles");
+    layerToggles.setAttribute("role", "group");
+    layerToggles.setAttribute("aria-label", "マップレイヤー");
+
+    var locationToggleId = "disaster-map-layer-location";
+    var infrastructureToggleId = "disaster-map-layer-infrastructure";
+
+    var locationLabel = createElement("label", "disaster-map__layer-toggle");
+    locationLabel.htmlFor = locationToggleId;
+    var locationCheckbox = createElement("input", "disaster-map__layer-checkbox");
+    locationCheckbox.type = "checkbox";
+    locationCheckbox.id = locationToggleId;
+    locationCheckbox.checked = hasLocationLayer;
+    locationCheckbox.disabled = !hasLocationLayer;
+    locationLabel.appendChild(locationCheckbox);
+    locationLabel.appendChild(document.createTextNode(" 💧 給水・避難所"));
+    layerToggles.appendChild(locationLabel);
+
+    var infrastructureLabel = createElement("label", "disaster-map__layer-toggle");
+    infrastructureLabel.htmlFor = infrastructureToggleId;
+    var infrastructureCheckbox = createElement("input", "disaster-map__layer-checkbox");
+    infrastructureCheckbox.type = "checkbox";
+    infrastructureCheckbox.id = infrastructureToggleId;
+    infrastructureCheckbox.checked = hasInfrastructureLayer;
+    infrastructureCheckbox.disabled = !hasInfrastructureLayer;
+    infrastructureLabel.appendChild(infrastructureCheckbox);
+    infrastructureLabel.appendChild(document.createTextNode(" 🚧 インフラ情報"));
+    layerToggles.appendChild(infrastructureLabel);
+    panel.appendChild(layerToggles);
+
+    var locationLegend = createElement("div", "disaster-map__legend disaster-map__legend--location");
+    locationLegend.setAttribute("aria-label", "給水・避難所の凡例");
+    locationLegend.innerHTML = "<span class=\"disaster-map__legend-item\">💧 給水所</span><span class=\"disaster-map__legend-item\">🏠 避難所</span><span class=\"disaster-map__legend-item\">🍱 食料配布</span><span class=\"disaster-map__legend-item\">📦 物資配布</span><span class=\"disaster-map__legend-item\">🔋 充電支援</span>";
+    panel.appendChild(locationLegend);
+
+    var infrastructureLegend = createElement("div", "disaster-map__legend disaster-map__legend--infrastructure");
+    infrastructureLegend.setAttribute("aria-label", "インフラ情報の凡例");
+    infrastructureLegend.innerHTML = "<span class=\"disaster-map__legend-item\">🚧 道路・交通</span><span class=\"disaster-map__legend-item\">🚰 水道</span><span class=\"disaster-map__legend-item\">📡 通信</span><span class=\"disaster-map__legend-item\">⚡ 電力</span>";
+    panel.appendChild(infrastructureLegend);
+
+    var expansionNotice = createElement("p", "disaster-map__expansion-notice", "インフラマップ機能拡張中");
+    expansionNotice.id = "disaster-map-infra-expansion-notice";
+    panel.appendChild(expansionNotice);
+
+    var mapContainer = createElement("div", "disaster-map__canvas");
+    mapContainer.id = "disaster-location-map";
+    mapContainer.setAttribute("role", "region");
+    mapContainer.setAttribute("aria-label", "災害地点マップ");
+    panel.appendChild(mapContainer);
+
+    var infraStatusContainer = createElement("div", "disaster-map__infra-status-wrap");
+    if (hasInfrastructureLayer) {
+      renderInfrastructureMapStatusList(
+        infraStatusContainer,
+        infrastructureItems.status,
+        areaNameMap,
+        sourceMap
+      );
+    }
+    panel.appendChild(infraStatusContainer);
+
+    function syncLayerVisibility() {
+      var showLocation = locationCheckbox.checked && hasLocationLayer;
+      var showInfrastructure = infrastructureCheckbox.checked && hasInfrastructureLayer;
+      locationLegend.hidden = !showLocation;
+      infrastructureLegend.hidden = !showInfrastructure;
+      expansionNotice.hidden = !showInfrastructure;
+      infraStatusContainer.hidden = !showInfrastructure;
+      if (mapContainer._leafletMap) {
+        updateDisasterMapLayers(mapContainer, showLocation, showInfrastructure);
+      }
+    }
+
+    locationCheckbox.addEventListener("change", syncLayerVisibility);
+    infrastructureCheckbox.addEventListener("change", syncLayerVisibility);
+    syncLayerVisibility();
+
+    var mapReady = false;
+    var mapLoading = false;
+
+    toggle.addEventListener("click", function () {
+      var willOpen = panel.hidden;
+      panel.hidden = !willOpen;
+      toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      toggle.textContent = willOpen ? "災害マップを閉じる" : "災害マップを見る";
+
+      if (!willOpen || mapReady || mapLoading) {
+        if (willOpen && mapReady && mapContainer._leafletMap) {
+          mapContainer._leafletMap.invalidateSize();
+          syncLayerVisibility();
+        }
+        return;
+      }
+
+      mapLoading = true;
+      loadLeafletAssets()
+        .then(function () {
+          initDisasterMap(mapContainer, {
+            locations: locations,
+            infrastructureGeometry: infrastructureItems.geometry,
+            areaNameMap: areaNameMap,
+            sourceMap: sourceMap,
+            showLocation: locationCheckbox.checked && hasLocationLayer,
+            showInfrastructure: infrastructureCheckbox.checked && hasInfrastructureLayer
+          });
+          mapReady = true;
+          syncLayerVisibility();
+        })
+        .catch(function () {
+          panel.appendChild(createElement("p", "disaster-map__error", "地図を読み込めませんでした。しばらくしてから再度お試しください。"));
+        })
+        .finally(function () {
+          mapLoading = false;
+        });
+    });
+
+    inner.appendChild(toggle);
     inner.appendChild(panel);
     section.appendChild(inner);
     container.appendChild(section);
@@ -843,12 +2057,16 @@
     container.appendChild(section);
   }
 
+  function isEmergencyInfoRecord(record) {
+    return record.update_type === "EMERGENCY_INFO" || !!record.original_text;
+  }
+
   function renderLatestUpdates(container, records) {
     var section = createElement("section", "latest-updates");
     section.setAttribute("aria-labelledby", "latest-updates-title");
 
     var inner = createElement("div", "container");
-    inner.appendChild(createElement("h2", "section-title latest-updates__title", "直近の更新"));
+    inner.appendChild(createElement("h2", "section-title latest-updates__title", "最新公式情報"));
     inner.querySelector(".latest-updates__title").id = "latest-updates-title";
     inner.appendChild(createElement("p", "latest-updates__lead", "直近の更新4件です。上の自治体別・カテゴリ別一覧とあわせてご確認ください。"));
 
@@ -857,6 +2075,9 @@
 
     sorted.forEach(function (record) {
       var li = createElement("li", "latest-updates__item");
+      if (isEmergencyInfoRecord(record)) {
+        li.classList.add("latest-updates__item--emergency");
+      }
       var meta = createElement("div", "latest-updates__meta");
 
       var datetime = formatDateTime(record.displayed_updated_at);
@@ -867,13 +2088,33 @@
       meta.appendChild(createElement("span", "latest-updates__category", record.public_category_label));
 
       li.appendChild(meta);
-      li.appendChild(createElement("p", "latest-updates__headline", record.headline));
+
+      if (isEmergencyInfoRecord(record) && record.original_text) {
+        li.appendChild(createElement("p", "latest-updates__original-text", record.original_text));
+        var emergencyMeta = createElement("dl", "latest-updates__emergency-meta");
+        if (record.published_at) {
+          emergencyMeta.appendChild(createElement("dt", null, "発表日時"));
+          emergencyMeta.appendChild(createElement("dd", null, formatDateTime(record.published_at)));
+        }
+        if (record.collected_at) {
+          emergencyMeta.appendChild(createElement("dt", null, "取得日時"));
+          emergencyMeta.appendChild(createElement("dd", null, formatDateTime(record.collected_at)));
+        }
+        var sourceLabel = record.source_name || record.department || record.area_name;
+        if (sourceLabel) {
+          emergencyMeta.appendChild(createElement("dt", null, "Source"));
+          emergencyMeta.appendChild(createElement("dd", null, sourceLabel));
+        }
+        li.appendChild(emergencyMeta);
+      } else {
+        li.appendChild(createElement("p", "latest-updates__headline", record.headline));
+      }
 
       var link = createElement("a", "latest-updates__link", "発表元の公式ページへ");
       link.href = record.source_url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
-      link.setAttribute("aria-label", record.headline + "の発表元公式ページへ（外部リンク）");
+      link.setAttribute("aria-label", (record.headline || record.original_text || record.area_name) + "の発表元公式ページへ（外部リンク）");
       li.appendChild(link);
 
       list.appendChild(li);
@@ -886,23 +2127,39 @@
 
   function renderOfficialInfoCard(record) {
     var card = createElement("article", "official-info-card");
+    if (isEmergencyInfoRecord(record)) {
+      card.classList.add("official-info-card--emergency");
+    }
     card.appendChild(createElement("p", "official-info-card__category", record.public_category_label));
-    card.appendChild(createElement("h3", "official-info-card__headline", record.headline));
 
-    if (record.summary) {
-      card.appendChild(createElement("p", "official-info-card__summary", record.summary));
+    if (isEmergencyInfoRecord(record) && record.original_text) {
+      card.appendChild(createElement("h3", "official-info-card__headline", record.area_name + "（公式発表）"));
+      card.appendChild(createElement("p", "official-info-card__original-text", record.original_text));
+    } else {
+      card.appendChild(createElement("h3", "official-info-card__headline", record.headline));
+      if (record.summary) {
+        card.appendChild(createElement("p", "official-info-card__summary", record.summary));
+      }
     }
 
     var meta = createElement("dl", "official-info-card__meta");
+    if (isEmergencyInfoRecord(record) && record.published_at) {
+      meta.appendChild(createElement("dt", null, "発表日時"));
+      meta.appendChild(createElement("dd", null, formatDateTime(record.published_at)));
+    }
+    if (isEmergencyInfoRecord(record) && record.collected_at) {
+      meta.appendChild(createElement("dt", null, "取得日時"));
+      meta.appendChild(createElement("dd", null, formatDateTime(record.collected_at)));
+    }
     var updated = formatDateTime(record.displayed_updated_at);
-    if (updated) {
+    if (updated && !isEmergencyInfoRecord(record)) {
       meta.appendChild(createElement("dt", null, "更新："));
       meta.appendChild(createElement("dd", null, updated));
     }
 
     var sourceLabel = record.department || record.source_name || record.area_name;
     if (sourceLabel) {
-      meta.appendChild(createElement("dt", null, "発表："));
+      meta.appendChild(createElement("dt", null, isEmergencyInfoRecord(record) ? "Source" : "発表："));
       meta.appendChild(createElement("dd", null, sourceLabel));
     }
     card.appendChild(meta);
@@ -1084,6 +2341,8 @@
       loadJson("status.json"),
       loadJson("area_navigation.json"),
       loadJson("disaster_locations.json"),
+      loadJson("infrastructure_status.json"),
+      loadJson("infrastructure_sources.json"),
       loadXFeedPreview()
     ])
       .then(function (results) {
@@ -1094,7 +2353,9 @@
         var publicStatus = results[4];
         var areaNavigation = results[5];
         var disasterLocations = results[6];
-        var xFeedState = results[7];
+        var infrastructureStatus = results[7];
+        var infrastructureSources = results[8];
+        var xFeedState = results[9];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -1123,6 +2384,8 @@
         }
 
         renderAreaDisasterNav(page, areaNavigation, disasterLocations);
+        renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);
+        renderDisasterMapSection(page, disasterLocations, infrastructureStatus, infrastructureSources, areas);
         renderAboutSection(page);
         renderCautionSection(page);
         renderPageFooter(page);

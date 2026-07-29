@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+  "sources": [
+    {
+      "source_id": "EMG-SRC-KM000-EMERGENCY-001",
+      "area_id": "KM000",
+      "municipality": "熊本県",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM001-X-001",
+      "area_id": "KM001",
+      "municipality": "熊本市",
+      "source_type": "MUNICIPAL_X",
+      "url": "https://x.com/city_kumamoto",
+      "x_feed_source_id": "SRC-MUN-KM001",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM001-BOUSAI-001",
+      "area_id": "KM001",
+      "municipality": "熊本市",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.city.kumamoto.jp/kurashi/bosai/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM002-EMERGENCY-001",
+      "area_id": "KM002",
+      "municipality": "宇土市",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.city.uto.lg.jp/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM003-EMERGENCY-001",
+      "area_id": "KM003",
+      "municipality": "宇城市",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM004-EMERGENCY-001",
+      "area_id": "KM004",
+      "municipality": "美里町",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.town.kumamoto-misato.lg.jp/index.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM005-BOUSAI-001",
+      "area_id": "KM005",
+      "municipality": "八代市",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM006-EMERGENCY-001",
+      "area_id": "KM006",
+      "municipality": "人吉市",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM007-EMERGENCY-001",
+      "area_id": "KM007",
+      "municipality": "氷川町",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.town.hikawa.kumamoto.jp/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM008-BOUSAI-001",
+      "area_id": "KM008",
+      "municipality": "益城町",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM009-EMERGENCY-001",
+      "area_id": "KM009",
+      "municipality": "合志市",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.city.koshi.lg.jp/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM010-EMERGENCY-001",
+      "area_id": "KM010",
+      "municipality": "御船町",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.town.mifune.kumamoto.jp/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM011-BOUSAI-001",
+      "area_id": "KM011",
+      "municipality": "菊陽町",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.town.kikuyo.lg.jp/bousai/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM012-EMERGENCY-001",
+      "area_id": "KM012",
+      "municipality": "嘉島町",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.town.kumamoto-kashima.lg.jp/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM013-EMERGENCY-001",
+      "area_id": "KM013",
+      "municipality": "菊池市",
+      "source_type": "EMERGENCY_PAGE",
+      "url": "https://www.city.kikuchi.lg.jp/",
+      "status": "ACTIVE"
+    }
+  ]
+}

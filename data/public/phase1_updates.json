@@ -64,6 +64,26 @@
     "display_priority": 1
   },
   {
+    "area_id": "KM001",
+    "area_name": "熊本市",
+    "public_category_id": "EMERGENCY",
+    "public_category_label": "地震・緊急情報",
+    "headline": "熊本市公式X（津波情報）",
+    "summary": "この地震による津波の心配はありません。",
+    "original_text": "この地震による津波の心配はありません。",
+    "published_at": "2026-07-29T06:30:00+09:00",
+    "displayed_updated_at": "2026-07-29T06:30:00+09:00",
+    "source_name": "熊本市公式X",
+    "source_url": "https://x.com/city_kumamoto/status/fixture-tsunami-001",
+    "department": "熊本市",
+    "verification_status": "VERIFIED",
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "collected_at": "2026-07-29T18:00:00+09:00",
+    "update_type": "EMERGENCY_INFO",
+    "emergency_source_id": "EMG-SRC-KM001-X-001",
+    "display_priority": 0
+  },
+  {
     "area_id": "KM002",
     "area_name": "宇土市",
     "public_category_id": "WATER",

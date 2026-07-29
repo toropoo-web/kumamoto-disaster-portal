@@ -1,6 +1,6 @@
 const { chromium } = require("playwright");
 
-const URL = process.env.SERVE_URL || "http://localhost:3000";
+const SERVE_URL = process.env.SERVE_URL || "http://localhost:3000";
 
 const VIEWPORTS = [
   { name: "desktop-1440", width: 1440, height: 900 },
@@ -35,8 +35,11 @@ function formatConfirmedAtShort(value) {
 
 async function validateViewport(page, viewport, anchors) {
   await page.setViewportSize({ width: viewport.width, height: viewport.height });
-  await page.goto(URL, { waitUntil: "networkidle" });
-  await page.waitForTimeout(500);
+  await page.goto(SERVE_URL, { waitUntil: "networkidle" });
+  await page.waitForFunction(() => {
+    return !!document.getElementById("area-disaster-nav") &&
+      !!document.getElementById("disaster-location-map-section");
+  }, { timeout: 20000 });
 
   const checks = await page.evaluate(() => {
     const body = document.body;
@@ -112,7 +115,24 @@ async function validateViewport(page, viewport, anchors) {
         : "",
       areaDisasterNavTitle: areaDisasterNav
         ? (areaDisasterNav.querySelector(".area-disaster-nav__title") || {}).textContent || ""
-        : ""
+        : "",
+      hasDisasterMap: !!document.getElementById("disaster-location-map-section"),
+      hasInfrastructureSection: !!document.getElementById("infrastructure-info"),
+      infrastructureTitle: (document.querySelector(".infrastructure-info__title") || {}).textContent || "",
+      infrastructureNavCount: document.querySelectorAll(".infrastructure-info__nav-link").length,
+      infrastructureStatusCardCount: document.querySelectorAll(".infrastructure-info__card:not(.infrastructure-info__card--external)").length,
+      infrastructureExternalCardCount: document.querySelectorAll(".infrastructure-info__card--external").length,
+      infrastructureFreshnessCount: document.querySelectorAll(".infrastructure-info__freshness").length,
+      infrastructurePowerEmpty: (() => {
+        const powerBlock = document.getElementById("infra-power");
+        if (!powerBlock) return false;
+        const empty = powerBlock.querySelector(".infrastructure-info__empty");
+        return empty ? empty.textContent.trim() === "現在確認中" : false;
+      })(),
+      infrastructureToyotaVisible: Array.from(document.querySelectorAll(".infrastructure-info__external-title, .infrastructure-info__card-title"))
+        .some((el) => el.textContent.includes("TOYOTA")),
+      hasMapLayerToggles: document.querySelectorAll(".disaster-map__layer-toggle").length,
+      hasMapExpansionNotice: !!document.getElementById("disaster-map-infra-expansion-notice")
     };
   });
 
@@ -124,20 +144,22 @@ async function validateViewport(page, viewport, anchors) {
 
   let areaNavLinkChecks = {
     panelVisible: false,
-    mapLinkCount: 0,
-    googleMapsLinkCount: 0
+    categoryButtonCount: 0,
+    hasGoogleMapsCategoryLinks: false
   };
 
   if (checks.hasAreaDisasterNav) {
     await page.selectOption(".area-disaster-nav__select", { index: 1 });
     areaNavLinkChecks = await page.evaluate(() => {
       const panel = document.querySelector(".area-disaster-nav__panel");
-      const links = panel ? Array.from(panel.querySelectorAll(".area-disaster-nav__link")) : [];
-      const googleMapsLinks = links.filter((link) => link.href.includes("google.com/maps/search/?api=1&query="));
+      const categoryButtons = panel ? Array.from(panel.querySelectorAll(".area-disaster-nav__category-btn")) : [];
       return {
         panelVisible: panel ? !panel.hidden : false,
-        mapLinkCount: links.length,
-        googleMapsLinkCount: googleMapsLinks.length
+        categoryButtonCount: categoryButtons.length,
+        hasGoogleMapsCategoryLinks: categoryButtons.some((button) => {
+          const href = button.getAttribute("href") || "";
+          return href.includes("google.com/maps/search/?api=1&query=");
+        })
       };
     });
 
@@ -145,8 +167,69 @@ async function validateViewport(page, viewport, anchors) {
     areaNavLinkChecks.mashikiLocationCount = await page.evaluate(() => {
       return document.querySelectorAll(".verified-locations__item").length;
     });
-    areaNavLinkChecks.mashikiMapLinks = await page.evaluate(() => {
-      return Array.from(document.querySelectorAll(".verified-locations__map-link")).map((link) => link.href);
+    areaNavLinkChecks.mashikiWaterCount = await page.evaluate(() => {
+      const section = document.querySelector('.verified-locations__category[data-category="WATER"]');
+      return section ? section.querySelectorAll(".verified-locations__item").length : 0;
+    });
+    areaNavLinkChecks.mashikiShelterCount = await page.evaluate(() => {
+      const section = document.querySelector('.verified-locations__category[data-category="SHELTER"]');
+      return section ? section.querySelectorAll(".verified-locations__item").length : 0;
+    });
+    areaNavLinkChecks.verifiedLocationsTitle = await page.evaluate(() => {
+      const title = document.querySelector(".verified-locations__title");
+      return title ? title.textContent.trim() : "";
+    });
+    areaNavLinkChecks.mashikiMapButtonCount = await page.evaluate(() => {
+      return document.querySelectorAll(".verified-locations__map-link").length;
+    });
+    await page.click('.area-disaster-nav__category-btn[data-nav-category="WATER"]');
+    areaNavLinkChecks.waterCategoryFirst = await page.evaluate(() => {
+      const panels = document.querySelector(".verified-locations__category-panels");
+      const first = panels ? panels.querySelector(".verified-locations__category") : null;
+      return first ? first.getAttribute("data-category") : "";
+    });
+    areaNavLinkChecks.waterCategoryActive = await page.evaluate(() => {
+      const button = document.querySelector('.area-disaster-nav__category-btn[data-nav-category="WATER"]');
+      return button ? button.classList.contains("area-disaster-nav__category-btn--active") : false;
+    });
+  }
+
+  let disasterMapChecks = {
+    hasSection: checks.hasDisasterMap,
+    markerCount: 0,
+    popupVisible: false,
+    layerToggleCount: checks.hasMapLayerToggles,
+    hasExpansionNotice: checks.hasMapExpansionNotice,
+    mapInfraStatusCardCount: 0
+  };
+
+  if (viewport.name === "desktop-1440" && checks.hasDisasterMap) {
+    await page.click(".disaster-map__toggle");
+    await page.waitForSelector("#disaster-location-map.leaflet-container", { timeout: 20000 });
+    await page.waitForSelector(".leaflet-marker-icon", { timeout: 20000 });
+    disasterMapChecks = await page.evaluate(() => {
+      return {
+        hasSection: !!document.getElementById("disaster-location-map-section"),
+        markerCount: document.querySelectorAll(".leaflet-marker-icon").length,
+        popupVisible: false,
+        layerToggleCount: document.querySelectorAll(".disaster-map__layer-toggle").length,
+        hasExpansionNotice: !!document.getElementById("disaster-map-infra-expansion-notice"),
+        mapInfraStatusCardCount: document.querySelectorAll(".disaster-map__infra-status-card").length
+      };
+    });
+    await page.evaluate(() => {
+      const marker = document.querySelector(".leaflet-marker-icon");
+      if (marker) {
+        marker.click();
+      }
+    });
+    await page.waitForSelector(".leaflet-popup-content", { timeout: 5000 });
+    disasterMapChecks.popupVisible = await page.evaluate(() => {
+      return !!document.querySelector(".leaflet-popup-content");
+    });
+    disasterMapChecks.popupHasFacilityField = await page.evaluate(() => {
+      const popup = document.querySelector(".leaflet-popup-content");
+      return popup ? popup.textContent.includes("施設名：") : false;
     });
   }
 
@@ -172,13 +255,32 @@ async function validateViewport(page, viewport, anchors) {
     checks.areaNavPromoTitle === "地域の災害情報を地図で確認" &&
     checks.areaDisasterNavTitle === "地域災害ナビ" &&
     areaNavLinkChecks.panelVisible &&
-    areaNavLinkChecks.mapLinkCount === 5 &&
-    areaNavLinkChecks.googleMapsLinkCount === 3 &&
+    areaNavLinkChecks.categoryButtonCount === 5 &&
+    areaNavLinkChecks.hasGoogleMapsCategoryLinks === false &&
     (areaNavLinkChecks.mashikiLocationCount === undefined || areaNavLinkChecks.mashikiLocationCount === 5) &&
-    (areaNavLinkChecks.mashikiMapLinks === undefined || (
-      areaNavLinkChecks.mashikiMapLinks.length === 5 &&
-      areaNavLinkChecks.mashikiMapLinks.every((href) => href.includes("google.com/maps/search/?api=1&query="))
+    (areaNavLinkChecks.mashikiWaterCount === undefined || areaNavLinkChecks.mashikiWaterCount === 3) &&
+    (areaNavLinkChecks.mashikiShelterCount === undefined || areaNavLinkChecks.mashikiShelterCount === 2) &&
+    (areaNavLinkChecks.verifiedLocationsTitle === undefined || areaNavLinkChecks.verifiedLocationsTitle === "📍 支援地点一覧") &&
+    (areaNavLinkChecks.mashikiMapButtonCount === undefined || areaNavLinkChecks.mashikiMapButtonCount === 5) &&
+    (areaNavLinkChecks.waterCategoryFirst === undefined || areaNavLinkChecks.waterCategoryFirst === "WATER") &&
+    (areaNavLinkChecks.waterCategoryActive === undefined || areaNavLinkChecks.waterCategoryActive === true) &&
+    disasterMapChecks.hasSection &&
+    disasterMapChecks.layerToggleCount === 2 &&
+    disasterMapChecks.hasExpansionNotice &&
+    (viewport.name !== "desktop-1440" || (
+      disasterMapChecks.markerCount >= 11 &&
+      disasterMapChecks.popupVisible &&
+      disasterMapChecks.popupHasFacilityField &&
+      disasterMapChecks.mapInfraStatusCardCount === 10
     )) &&
+    checks.hasInfrastructureSection &&
+    checks.infrastructureTitle === "インフラ情報" &&
+    checks.infrastructureNavCount === 4 &&
+    checks.infrastructureStatusCardCount === 10 &&
+    checks.infrastructureExternalCardCount === 0 &&
+    checks.infrastructureFreshnessCount === 10 &&
+    checks.infrastructurePowerEmpty &&
+    !checks.infrastructureToyotaVisible &&
     Object.values(anchorChecks).every(Boolean) &&
     dateOrderOk;
 
@@ -188,25 +290,27 @@ async function validateViewport(page, viewport, anchors) {
     checks,
     anchorChecks,
     areaNavLinkChecks,
+    disasterMapChecks,
     dateOrderOk
   };
 }
 
 async function main() {
-  const areasRes = await fetch(`${URL}/data/public/phase1_areas.json`);
+  const areasRes = await fetch(`${SERVE_URL}/data/public/phase1_areas.json`);
   const areas = await areasRes.json();
   const anchors = areas.map((a) => a.anchor);
 
-  const statusRes = await fetch(`${URL}/data/public/status.json`);
+  const statusRes = await fetch(`${SERVE_URL}/data/public/status.json`);
   const publicStatus = await statusRes.json();
-  const commRes = await fetch(`${URL}/data/public/communication_status.json`);
+  const commRes = await fetch(`${SERVE_URL}/data/public/communication_status.json`);
   const communicationStatus = await commRes.json();
 
   const expectedHeader = formatDateTime(publicStatus.last_patrol_at);
   const expectedCommConfirmed = formatConfirmedAtShort(communicationStatus.confirmed_at);
 
   const browser = await chromium.launch();
-  const page = await browser.newPage();
+  const context = await browser.newContext({ serviceWorkers: "block" });
+  const page = await context.newPage();
 
   const consoleErrors = [];
   const consoleWarnings = [];

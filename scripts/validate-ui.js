@@ -17,7 +17,11 @@ const REQUIRED_FILES = [
   "data/public/status.json",
   "data/public/x_feed_preview.json",
   "data/public/area_navigation.json",
-  "data/public/disaster_locations.json"
+  "data/public/disaster_locations.json",
+  "data/public/location_sources.json",
+  "data/public/emergency_sources.json",
+  "data/public/infrastructure_sources.json",
+  "data/public/infrastructure_status.json"
 ];
 
 const CSS_CHECKS = [
@@ -25,7 +29,12 @@ const CSS_CHECKS = [
   { name: "link min-height >= 44px", pattern: /min-height:\s*44px/ },
   { name: "max-width ~1100px", pattern: /max-width:\s*1100px/ },
   { name: "overflow-x hidden on body", pattern: /overflow-x:\s*hidden/ },
-  { name: "municipality nav grid layout", pattern: /municipality-nav__list[\s\S]*grid-template-columns:\s*repeat\(2/ }
+  { name: "municipality nav grid layout", pattern: /municipality-nav__list[\s\S]*grid-template-columns:\s*repeat\(2/ },
+  { name: "infrastructure info section", pattern: /\.infrastructure-info/ },
+  { name: "infrastructure nav min-height", pattern: /\.infrastructure-info__nav-link[\s\S]*min-height:\s*44px/ },
+  { name: "disaster map layer toggles", pattern: /\.disaster-map__layer-toggles/ },
+  { name: "disaster map expansion notice", pattern: /\.disaster-map__expansion-notice/ },
+  { name: "area disaster nav category buttons", pattern: /\.area-disaster-nav__category-btn/ }
 ];
 
 const JS_CHECKS = [
@@ -47,7 +56,33 @@ const JS_CHECKS = [
   { name: "google maps search url", pattern: /google\.com\/maps\/search\/\?api=1&query=/ },
   { name: "disaster locations load", pattern: /loadJson\("disaster_locations\.json"\)/ },
   { name: "verified location render", pattern: /renderVerifiedLocationList/ },
-  { name: "location maps url builder", pattern: /buildLocationMapsUrl/ }
+  { name: "location maps url builder", pattern: /buildLocationMapsUrl/ },
+  { name: "location freshness helper", pattern: /getLocationFreshness/ },
+  { name: "location stale notice", pattern: /verified-locations__stale-notice/ },
+  { name: "disaster map section", pattern: /renderDisasterMapSection/ },
+  { name: "disaster map toggle", pattern: /disaster-map__toggle/ },
+  { name: "disaster map categories", pattern: /DISASTER_MAP_CATEGORIES/ },
+  { name: "location freshness label", pattern: /getLocationFreshnessLabel/ },
+  { name: "location category display label", pattern: /getLocationCategoryDisplayLabel/ },
+  { name: "location nav categories", pattern: /LOCATION_NAV_CATEGORIES/ },
+  { name: "area disaster nav categories", pattern: /AREA_DISASTER_NAV_CATEGORIES/ },
+  { name: "open disaster map section", pattern: /openDisasterMapSection/ },
+  { name: "scroll to page target", pattern: /scrollToPageTarget/ },
+  { name: "verified locations support title", pattern: /VERIFIED_LOCATIONS_TITLE/ },
+  { name: "map popup facility fields", pattern: /施設名：/ },
+  { name: "emergency original text display", pattern: /official-info-card__original-text/ },
+  { name: "latest official info section", pattern: /最新公式情報/ },
+  { name: "emergency info record helper", pattern: /isEmergencyInfoRecord/ },
+  { name: "infrastructure status load", pattern: /loadJson\("infrastructure_status\.json"\)/ },
+  { name: "infrastructure sources load", pattern: /loadJson\("infrastructure_sources\.json"\)/ },
+  { name: "infrastructure section render", pattern: /renderInfrastructureSection/ },
+  { name: "infrastructure freshness helper", pattern: /getInfrastructureFreshness/ },
+  { name: "infrastructure category config", pattern: /INFRASTRUCTURE_CATEGORIES/ },
+  { name: "infrastructure external link guard", pattern: /hasInfrastructureSourceUrl/ },
+  { name: "disaster map layer toggles", pattern: /disaster-map__layer-toggles/ },
+  { name: "infrastructure map geometry", pattern: /addInfrastructureGeometryToMap/ },
+  { name: "infrastructure map status list", pattern: /renderInfrastructureMapStatusList/ },
+  { name: "disaster map expansion notice", pattern: /インフラマップ機能拡張中/ }
 ];
 
 const HTML_CHECKS = [

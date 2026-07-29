@@ -1,0 +1,11 @@
+{
+  "description": "Fixture content overrides for infrastructure patrol validation",
+  "overrides": {
+    "INF-SRC-KM002-WATER-001": {
+      "originalText": "【巡回テスト】今回の地震に伴う断水について。宇土市内の網田地区を除く全域で断水が発生しています。復旧作業を継続中です。",
+      "title": "今回の地震に伴う断水について（更新確認）",
+      "publishedAt": "2026-07-29T20:00:00+09:00",
+      "pageUpdatedAt": "2026-07-29T20:00:00+09:00"
+    }
+  }
+}

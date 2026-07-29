@@ -125,7 +125,9 @@ function normalizeCandidate(raw, index) {
     autoPublish: false
   };
 
-  candidate.priority = classifyPriority(candidate);
+  if (!candidate.priority) {
+    candidate.priority = classifyPriority(candidate);
+  }
   return candidate;
 }
 

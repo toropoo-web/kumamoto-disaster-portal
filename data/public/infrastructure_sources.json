@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+  "sources": [
+    {
+      "source_id": "INF-SRC-KM000-ROAD-001",
+      "provider": "熊本県",
+      "category": "ROAD",
+      "area_scope": ["KM000"],
+      "source_type": "PREFECTURE_HAZARD_PORTAL",
+      "url": "https://www.portal.pref.kumamoto.jp/hazard/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-KM005-ROAD-001",
+      "provider": "八代市",
+      "category": "ROAD",
+      "area_scope": ["KM005"],
+      "source_type": "MUNICIPAL_ROAD_PAGE",
+      "url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-KM008-ROAD-001",
+      "provider": "益城町",
+      "category": "ROAD",
+      "area_scope": ["KM008"],
+      "source_type": "MUNICIPAL_ROAD_PAGE",
+      "url": "https://www.town.mashiki.lg.jp/bousai/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-KM011-ROAD-001",
+      "provider": "菊陽町",
+      "category": "ROAD",
+      "area_scope": ["KM011"],
+      "source_type": "MUNICIPAL_ROAD_PAGE",
+      "url": "https://www.town.kikuyo.lg.jp/bousai/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-EXT-TOYOTA-ROAD-001",
+      "provider": "TOYOTA",
+      "category": "ROAD",
+      "area_scope": ["KM000"],
+      "source_type": "EXTERNAL_INFRA_MAP",
+      "url": null,
+      "status": "PENDING",
+      "status_reason": "通れた道マップの公式URLは未確認。確認後にACTIVE登録。"
+    },
+    {
+      "source_id": "INF-SRC-POWER-KYUSHU-001",
+      "provider": "九州電力",
+      "category": "POWER",
+      "area_scope": ["KM000"],
+      "source_type": "POWER_UTILITY_PAGE",
+      "url": null,
+      "status": "PENDING",
+      "status_reason": "熊本地震向け停電・復旧情報の公式URLは未確認。"
+    },
+    {
+      "source_id": "INF-SRC-KM002-WATER-001",
+      "provider": "宇土市",
+      "category": "WATER_SERVICE",
+      "area_scope": ["KM002"],
+      "source_type": "MUNICIPAL_WATER_PAGE",
+      "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-KM006-WATER-001",
+      "provider": "人吉市",
+      "category": "WATER_SERVICE",
+      "area_scope": ["KM006"],
+      "source_type": "MUNICIPAL_WATER_PAGE",
+      "url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-COMM-DOCOMO-001",
+      "provider": "NTTドコモ",
+      "category": "COMMUNICATION",
+      "area_scope": ["KM003", "KM005"],
+      "source_type": "CARRIER_STATUS_PAGE",
+      "url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-COMM-AU-001",
+      "provider": "au",
+      "category": "COMMUNICATION",
+      "area_scope": ["KM003", "KM004", "KM005", "KM006"],
+      "source_type": "CARRIER_STATUS_PAGE",
+      "url": "https://news.kddi.com/important/news/important_202607291742.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-COMM-SOFTBANK-001",
+      "provider": "SoftBank",
+      "category": "COMMUNICATION",
+      "area_scope": ["KM000"],
+      "source_type": "CARRIER_STATUS_PAGE",
+      "url": "https://www.softbank.jp/mobile/info/personal/important/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-COMM-RAKUTEN-001",
+      "provider": "楽天モバイル",
+      "category": "COMMUNICATION",
+      "area_scope": ["KM002", "KM003", "KM004", "KM005", "KM006", "KM007", "KM008"],
+      "source_type": "CARRIER_STATUS_PAGE",
+      "url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-COMM-WIFI-001",
+      "provider": "00000JAPAN",
+      "category": "COMMUNICATION",
+      "area_scope": ["KM000"],
+      "source_type": "DISASTER_WIFI_PAGE",
+      "url": "https://www.wlan-business.org/00000japan/",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-COMM-NTT-WEST-001",
+      "provider": "NTT西日本",
+      "category": "COMMUNICATION",
+      "area_scope": ["KM000"],
+      "source_type": "CARRIER_STATUS_PAGE",
+      "url": "https://www.ntt-west.co.jp/newscms/disasternews/15400/1_20260729.pdf",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "INF-SRC-COMM-DENGON-001",
+      "provider": "総務省",
+      "category": "COMMUNICATION",
+      "area_scope": ["KM000"],
+      "source_type": "DISASTER_MESSAGE_PAGE",
+      "url": "https://www.soumu.go.jp/menu_seisaku/ictseisaku/net_anzen/hijyo/dengon.html",
+      "status": "ACTIVE"
+    }
+  ]
+}

@@ -3,6 +3,16 @@
 const fs = require("fs");
 const path = require("path");
 
+const {
+  isLocationListReviewSource,
+  SUGGESTED_REVIEW_LOCATION_LIST,
+  SUGGESTED_REVIEW_EMERGENCY_INFO,
+  SUGGESTED_REVIEW_INFRASTRUCTURE_STATUS
+} = require("./constants");
+const { findLocationSourcesByUrl } = require("./location-sources");
+const { findEmergencySourcesByUrl } = require("./emergency-sources");
+const { findInfrastructureSourcesByUrl } = require("./infrastructure-sources");
+
 const ROOT = path.join(__dirname, "..");
 const SNAPSHOT_FILE = path.join(__dirname, "reports", "snapshots.json");
 const CHANGE_LOG_DIR = path.join(__dirname, "change-log");
@@ -112,7 +122,7 @@ function buildUpdateCandidate(source, current, previous, changeEntries) {
   const changeTypes = changeEntries.map((entry) => entry.changeType);
   const primaryEntry = changeEntries[0];
 
-  return {
+  const candidate = {
     generatedAt: new Date().toISOString(),
     sourceId: source.id,
     sourceName: source.name,
@@ -125,6 +135,9 @@ function buildUpdateCandidate(source, current, previous, changeEntries) {
     verificationStatus: "REQUIRES_MANUAL_REVIEW",
     reviewStatus: "REQUIRES_REVIEW",
     incidentScope: "2026_KUMAMOTO_EARTHQUAKE",
+    priority: source.priority || null,
+    serviceId: source.service_id || null,
+    providerId: source.provider_id || null,
     detectedKeywords: current.keywords,
     changeTypes,
     changeType: primaryEntry.changeType,
@@ -141,6 +154,43 @@ function buildUpdateCandidate(source, current, previous, changeEntries) {
     },
     autoPublish: false
   };
+
+  if (isLocationListReviewSource(source)) {
+    candidate.suggestedReview = SUGGESTED_REVIEW_LOCATION_LIST;
+    candidate.relatedPublicTarget = "disaster_locations";
+  }
+
+  const locationSources = findLocationSourcesByUrl(source.url);
+  if (locationSources.length) {
+    candidate.suggestedReview = SUGGESTED_REVIEW_LOCATION_LIST;
+    candidate.relatedPublicTarget = "disaster_locations";
+    candidate.source_id = locationSources[0].source_id;
+    if (locationSources.length > 1) {
+      candidate.locationSourceIds = locationSources.map((entry) => entry.source_id);
+    }
+  }
+
+  const emergencySources = findEmergencySourcesByUrl(source.url);
+  if (emergencySources.length) {
+    candidate.suggestedReview = SUGGESTED_REVIEW_EMERGENCY_INFO;
+    candidate.relatedPublicTarget = "phase1_updates";
+    candidate.emergency_source_id = emergencySources[0].source_id;
+    if (current.originalText) {
+      candidate.original_text = current.originalText;
+    }
+  }
+
+  const infrastructureSources = findInfrastructureSourcesByUrl(source.url);
+  if (infrastructureSources.length) {
+    candidate.suggestedReview = SUGGESTED_REVIEW_INFRASTRUCTURE_STATUS;
+    candidate.relatedPublicTarget = "infrastructure_status";
+    candidate.infrastructure_source_id = infrastructureSources[0].source_id;
+    if (current.originalText) {
+      candidate.original_text = current.originalText;
+    }
+  }
+
+  return candidate;
 }
 
 function appendChangeLog(dateKey, entries) {

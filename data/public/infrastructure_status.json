@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+  "confirmed_at": "2026-07-29T18:00:00+09:00",
+  "items": [
+    {
+      "status_id": "INF-STATUS-ROAD-KM000-001",
+      "area_id": "KM000",
+      "category": "ROAD",
+      "type": "STATUS",
+      "title": "熊本県災害情報ポータル（道路・交通）",
+      "description": "熊本県の災害情報ポータルで道路・交通の最新情報を確認できます。",
+      "status": "CHECK_OFFICIAL",
+      "source_id": "INF-SRC-KM000-ROAD-001",
+      "last_checked_at": "2026-07-29T15:00:00+09:00",
+      "source_updated_at": null
+    },
+    {
+      "status_id": "INF-STATUS-ROAD-KM008-001",
+      "area_id": "KM008",
+      "category": "ROAD",
+      "type": "STATUS",
+      "title": "益城町防災情報（道路・交通）",
+      "description": "益城町の防災ページで道路・交通に関する情報を確認できます。",
+      "status": "CHECK_OFFICIAL",
+      "source_id": "INF-SRC-KM008-ROAD-001",
+      "last_checked_at": "2026-07-29T14:38:00+09:00",
+      "source_updated_at": null
+    },
+    {
+      "status_id": "INF-STATUS-ROAD-EXT-TOYOTA-001",
+      "area_id": "KM000",
+      "category": "ROAD",
+      "type": "EXTERNAL_LINK",
+      "provider": "TOYOTA",
+      "title": "TOYOTA 通れた道マップ",
+      "description": "外部マップで通行可能な道路情報を確認できます。Portal内では道路データを再構築しません。",
+      "status": "PENDING",
+      "source_id": "INF-SRC-EXT-TOYOTA-ROAD-001",
+      "last_checked_at": "2026-07-29T18:00:00+09:00",
+      "source_updated_at": null
+    },
+    {
+      "status_id": "INF-STATUS-WATER-KM002-001",
+      "area_id": "KM002",
+      "category": "WATER_SERVICE",
+      "type": "STATUS",
+      "title": "今回の地震に伴う断水について",
+      "description": "宇土市内の網田地区を除く全域で断水が発生しています。",
+      "status": "SUSPENDED",
+      "source_id": "INF-SRC-KM002-WATER-001",
+      "last_checked_at": "2026-07-29T15:00:00+09:00",
+      "source_updated_at": "2026-07-29T00:00:00+09:00"
+    },
+    {
+      "status_id": "INF-STATUS-WATER-KM006-001",
+      "area_id": "KM006",
+      "category": "WATER_SERVICE",
+      "type": "STATUS",
+      "title": "断水・水圧低下に関するお知らせ",
+      "description": "人吉市内各地で断水または水圧低下が発生しています。",
+      "status": "SUSPENDED",
+      "source_id": "INF-SRC-KM006-WATER-001",
+      "last_checked_at": "2026-07-29T15:00:00+09:00",
+      "source_updated_at": "2026-07-29T00:00:00+09:00"
+    },
+    {
+      "status_id": "INF-STATUS-COMM-DOCOMO-001",
+      "area_id": "KM000",
+      "category": "COMMUNICATION",
+      "type": "STATUS",
+      "title": "NTTドコモ ネットワーク障害情報",
+      "description": "一部地域（第6報）。八代市・宇城市など。",
+      "status": "PARTIAL_OUTAGE",
+      "source_id": "INF-SRC-COMM-DOCOMO-001",
+      "last_checked_at": "2026-07-29T06:00:00+09:00",
+      "source_updated_at": null
+    },
+    {
+      "status_id": "INF-STATUS-COMM-AU-001",
+      "area_id": "KM000",
+      "category": "COMMUNICATION",
+      "type": "STATUS",
+      "title": "au 重要なお知らせ",
+      "description": "八代市・人吉市・宇城市・美里町など一部地域。",
+      "status": "PARTIAL_OUTAGE",
+      "source_id": "INF-SRC-COMM-AU-001",
+      "last_checked_at": "2026-07-29T06:00:00+09:00",
+      "source_updated_at": null
+    },
+    {
+      "status_id": "INF-STATUS-COMM-SOFTBANK-001",
+      "area_id": "KM000",
+      "category": "COMMUNICATION",
+      "type": "STATUS",
+      "title": "SoftBank 重要なお知らせ",
+      "description": "公式ページで最新の障害情報を確認してください。",
+      "status": "CHECK_OFFICIAL",
+      "source_id": "INF-SRC-COMM-SOFTBANK-001",
+      "last_checked_at": "2026-07-29T06:00:00+09:00",
+      "source_updated_at": null
+    },
+    {
+      "status_id": "INF-STATUS-COMM-RAKUTEN-001",
+      "area_id": "KM000",
+      "category": "COMMUNICATION",
+      "type": "STATUS",
+      "title": "楽天モバイル 障害情報",
+      "description": "八代市・人吉市・宇土市・宇城市・美里町・益城町・氷川町など一部地域。",
+      "status": "PARTIAL_OUTAGE",
+      "source_id": "INF-SRC-COMM-RAKUTEN-001",
+      "last_checked_at": "2026-07-29T06:00:00+09:00",
+      "source_updated_at": null
+    },
+    {
+      "status_id": "INF-STATUS-COMM-WIFI-001",
+      "area_id": "KM000",
+      "category": "COMMUNICATION",
+      "type": "STATUS",
+      "title": "災害時無料Wi-Fi「00000JAPAN」",
+      "description": "熊本県で無料開放。暗号化されていない場合があります。",
+      "status": "AVAILABLE",
+      "source_id": "INF-SRC-COMM-WIFI-001",
+      "last_checked_at": "2026-07-28T19:45:00+09:00",
+      "source_updated_at": null
+    },
+    {
+      "status_id": "INF-STATUS-COMM-NTT-WEST-001",
+      "area_id": "KM000",
+      "category": "COMMUNICATION",
+      "type": "STATUS",
+      "title": "NTT西日本 災害支援情報",
+      "description": "災害用伝言171 / Web171、Wi-Fi、公衆電話無料化、料金等支援措置（第2報）。",
+      "status": "AVAILABLE",
+      "source_id": "INF-SRC-COMM-NTT-WEST-001",
+      "last_checked_at": "2026-07-29T15:00:00+09:00",
+      "source_updated_at": "2026-07-29T15:00:00+09:00"
+    }
+  ]
+}

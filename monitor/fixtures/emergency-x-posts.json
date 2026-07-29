@@ -1,0 +1,15 @@
+{
+  "description": "Fixture posts for emergency patrol validation (official municipal X only)",
+  "posts": [
+    {
+      "sourceId": "SRC-MUN-KM001",
+      "sourceName": "熊本市",
+      "accountHandle": "city_kumamoto",
+      "postId": "FIXTURE-KM001-TSUNAMI-001",
+      "postedAt": "2026-07-29T06:30:00+09:00",
+      "postUrl": "https://x.com/city_kumamoto/status/fixture-tsunami-001",
+      "summary": "この地震による津波の心配はありません。",
+      "status": "ACTIVE"
+    }
+  ]
+}

@@ -17,7 +17,11 @@ const STATIC_FILES = [
   "data/public/status.json",
   "data/public/x_feed_preview.json",
   "data/public/area_navigation.json",
-  "data/public/disaster_locations.json"
+  "data/public/disaster_locations.json",
+  "data/public/location_sources.json",
+  "data/public/emergency_sources.json",
+  "data/public/infrastructure_sources.json",
+  "data/public/infrastructure_status.json"
 ];
 
 function main() {

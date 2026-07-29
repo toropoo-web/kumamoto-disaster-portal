@@ -81,7 +81,9 @@ function fetchSource(url, redirectCount) {
         const chunks = [];
         res.on("data", (chunk) => chunks.push(chunk));
         res.on("end", () => {
-          const body = Buffer.concat(chunks).toString("utf8");
+          const bodyBuffer = Buffer.concat(chunks);
+          const contentType = String(res.headers["content-type"] || "").toLowerCase();
+          const isPdf = contentType.includes("pdf") || url.toLowerCase().endsWith(".pdf");
           resolve({
             ok: status >= 200 && status < 400,
             url,
@@ -91,7 +93,8 @@ function fetchSource(url, redirectCount) {
             redirectCount,
             error: null,
             message: "",
-            body,
+            body: isPdf ? "" : bodyBuffer.toString("utf8"),
+            bodyBuffer,
             headers: res.headers || {}
           });
         });
