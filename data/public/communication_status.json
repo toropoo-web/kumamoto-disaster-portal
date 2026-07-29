@@ -1,0 +1,37 @@
+{
+  "confirmed_at": "2026-07-29T14:00:00+09:00",
+  "providers": [
+    {
+      "provider_id": "docomo",
+      "provider_name": "NTTドコモ",
+      "status": "PARTIAL_OUTAGE",
+      "status_label": "一部地域",
+      "areas": ["八代市", "宇城市"],
+      "source_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html"
+    },
+    {
+      "provider_id": "au",
+      "provider_name": "au",
+      "status": "PARTIAL_OUTAGE",
+      "status_label": "一部地域",
+      "areas": ["八代市", "人吉市", "宇城市", "美里町"],
+      "source_url": "https://news.kddi.com/important/news/important_202607291742.html"
+    },
+    {
+      "provider_id": "softbank",
+      "provider_name": "SoftBank",
+      "status": "CHECK_OFFICIAL",
+      "status_label": "公式情報を確認",
+      "areas": [],
+      "source_url": "https://www.softbank.jp/mobile/info/personal/important/"
+    },
+    {
+      "provider_id": "rakuten",
+      "provider_name": "楽天",
+      "status": "PARTIAL_OUTAGE",
+      "status_label": "一部地域",
+      "areas": ["八代市", "人吉市", "宇土市", "宇城市", "美里町", "益城町", "氷川町"],
+      "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/"
+    }
+  ]
+}

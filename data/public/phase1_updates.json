@@ -12,7 +12,7 @@
     "department": "熊本県",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-29T13:00:00+09:00",
+    "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1
   },
   {
@@ -28,7 +28,7 @@
     "department": "知事室",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-29T13:00:00+09:00",
+    "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 2
   },
   {
@@ -44,7 +44,7 @@
     "department": "熊本県",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-29T13:00:00+09:00",
+    "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 3
   },
   {
@@ -60,7 +60,7 @@
     "department": "熊本市",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-29T13:00:00+09:00",
+    "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1
   },
   {
@@ -76,7 +76,7 @@
     "department": "上下水道課",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-29T13:00:00+09:00",
+    "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1
   },
   {
@@ -92,7 +92,7 @@
     "department": "上下水道課",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-29T13:00:00+09:00",
+    "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 2
   },
   {
@@ -108,7 +108,7 @@
     "department": "宇土市役所",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-29T13:00:00+09:00",
+    "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 3
   },
   {
@@ -124,7 +124,119 @@
     "department": "宇城市",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-29T13:00:00+09:00",
+    "collected_at": "2026-07-29T15:00:00+09:00",
+    "display_priority": 1
+  },
+  {
+    "area_id": "KM005",
+    "area_name": "八代市",
+    "public_category_id": "EMERGENCY",
+    "public_category_label": "地震・緊急情報",
+    "headline": "令和8年熊本地震（八代市防災サイト）",
+    "summary": "避難所開設状況、給水所情報、断水のお知らせなど、八代市の最新情報を掲載しています。",
+    "displayed_updated_at": "2026-07-29T09:17:00+09:00",
+    "source_name": "八代市",
+    "source_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+    "department": "八代市",
+    "verification_status": "VERIFIED",
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "collected_at": "2026-07-29T15:00:00+09:00",
+    "display_priority": 1
+  },
+  {
+    "area_id": "KM006",
+    "area_name": "人吉市",
+    "public_category_id": "SHELTER",
+    "public_category_label": "避難所",
+    "headline": "警戒レベル3「高齢者等避難」避難所を開設",
+    "summary": "7月28日の地震を受け、全域に警戒レベル3を発令し、指定避難所8カ所を開設しています。",
+    "displayed_updated_at": "2026-07-29T00:00:00+09:00",
+    "source_name": "人吉市",
+    "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500270",
+    "department": "総務部防災課",
+    "verification_status": "VERIFIED",
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "collected_at": "2026-07-29T15:00:00+09:00",
+    "display_priority": 1
+  },
+  {
+    "area_id": "KM006",
+    "area_name": "人吉市",
+    "public_category_id": "WATER",
+    "public_category_label": "断水・給水",
+    "headline": "【水道局】断水・水圧低下に関するお知らせ",
+    "summary": "市内各地で断水または水圧低下が発生しています。給水車を増設しています。",
+    "displayed_updated_at": "2026-07-29T00:00:00+09:00",
+    "source_name": "人吉市",
+    "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
+    "department": "水道局上水道課",
+    "verification_status": "VERIFIED",
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "collected_at": "2026-07-29T15:00:00+09:00",
+    "display_priority": 2
+  },
+  {
+    "area_id": "KM007",
+    "area_name": "氷川町",
+    "public_category_id": "EMERGENCY",
+    "public_category_label": "地震・緊急情報",
+    "headline": "令和8年熊本地震に関する緊急情報",
+    "summary": "飲料水・食料の配布、家屋の安全確認の呼びかけなど、町からの緊急お知らせを掲載しています。",
+    "displayed_updated_at": "2026-07-29T12:53:00+09:00",
+    "source_name": "氷川町",
+    "source_url": "https://www.town.hikawa.kumamoto.jp/",
+    "department": "氷川町",
+    "verification_status": "VERIFIED",
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "collected_at": "2026-07-29T15:00:00+09:00",
+    "display_priority": 1
+  },
+  {
+    "area_id": "KM008",
+    "area_name": "益城町",
+    "public_category_id": "SHELTER",
+    "public_category_label": "避難所",
+    "headline": "避難所の開設について",
+    "summary": "益城町総合体育館に避難所を開設しています。地域共生センターカタルは閉鎖しています。",
+    "displayed_updated_at": "2026-07-28T00:00:00+09:00",
+    "source_name": "益城町",
+    "source_url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+    "department": "益城町",
+    "verification_status": "VERIFIED",
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "collected_at": "2026-07-29T15:00:00+09:00",
+    "display_priority": 1
+  },
+  {
+    "area_id": "KM008",
+    "area_name": "益城町",
+    "public_category_id": "WATER",
+    "public_category_label": "断水・給水",
+    "headline": "給水車による給水を行っています",
+    "summary": "令和8年熊本地震に伴い、カタル・はぴねす・飯野町民グラウンドなどで給水車による給水を実施しています。",
+    "displayed_updated_at": "2026-07-29T00:00:00+09:00",
+    "source_name": "益城町",
+    "source_url": "https://www.town.mashiki.lg.jp/kiji0038070/index.html",
+    "department": "益城町",
+    "verification_status": "VERIFIED",
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "collected_at": "2026-07-29T15:00:00+09:00",
+    "display_priority": 2
+  },
+  {
+    "area_id": "KM009",
+    "area_name": "合志市",
+    "public_category_id": "EMERGENCY",
+    "public_category_label": "地震・緊急情報",
+    "headline": "令和8年熊本地震に関する緊急情報",
+    "summary": "避難所の開設状況、断水・水道のお知らせ、クーリングシェルターの状況などを掲載しています。",
+    "displayed_updated_at": "2026-07-29T14:06:00+09:00",
+    "source_name": "合志市",
+    "source_url": "https://www.city.koshi.lg.jp/",
+    "department": "合志市",
+    "verification_status": "VERIFIED",
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1
   }
 ]

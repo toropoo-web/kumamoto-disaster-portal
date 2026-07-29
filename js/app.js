@@ -35,8 +35,37 @@
     KM004: {
       allowed: [],
       requireDirectVerification: true
+    },
+    KM005: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM006: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM007: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM008: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM009: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
     }
   };
+
+  var COMMUNICATION_STATUS_LABELS = {
+    PARTIAL_OUTAGE: "一部地域",
+    RESTORED: "復旧済み",
+    NO_REPORTED_IMPACT: "影響情報なし",
+    CHECK_OFFICIAL: "公式情報を確認"
+  };
+
+  var MAX_COMMUNICATION_AREAS = 4;
 
   var EXCLUDED_STATUSES = [
     "REQUIRES_MANUAL_REVIEW",
@@ -112,6 +141,36 @@
     var h = String(date.getHours()).padStart(2, "0");
     var min = String(date.getMinutes()).padStart(2, "0");
     return y + "年" + m + "月" + d + "日 " + h + ":" + min;
+  }
+
+  function formatConfirmedAtShort(value) {
+    var date = parseDate(value);
+    if (!date) {
+      return "";
+    }
+    var m = date.getMonth() + 1;
+    var d = date.getDate();
+    var h = String(date.getHours()).padStart(2, "0");
+    var min = String(date.getMinutes()).padStart(2, "0");
+    return m + "月" + d + "日 " + h + ":" + min + "確認";
+  }
+
+  function formatCommunicationAreas(areas) {
+    if (!areas || areas.length === 0) {
+      return "";
+    }
+    if (areas.length <= MAX_COMMUNICATION_AREAS) {
+      return "（" + areas.join("・") + "）";
+    }
+    return "（" + areas.slice(0, MAX_COMMUNICATION_AREAS).join("・") + "ほか）";
+  }
+
+  function getCommunicationStatusText(provider) {
+    var label = provider.status_label || COMMUNICATION_STATUS_LABELS[provider.status] || COMMUNICATION_STATUS_LABELS.CHECK_OFFICIAL;
+    if (provider.status === "PARTIAL_OUTAGE") {
+      return label + formatCommunicationAreas(provider.areas);
+    }
+    return label;
   }
 
   function getLatestCollectedAt(records) {
@@ -202,7 +261,17 @@
     container.appendChild(section);
   }
 
-  function renderPageHeader(container, areas, lastVerified) {
+  function buildMunicipalitySubtitle(navigation) {
+    if (!navigation || navigation.length === 0) {
+      return "各自治体の公式情報へリンクします。";
+    }
+    var names = navigation.map(function (item) {
+      return item.name;
+    });
+    return names.join("・") + "の公式情報へリンクします。";
+  }
+
+  function renderPageHeader(container, navigation, lastVerified) {
     var header = createElement("header", "page-header");
     var inner = createElement("div", "container");
 
@@ -210,7 +279,7 @@
     title.innerHTML = "令和8年熊本地震<br>自治体公式情報まとめ";
     inner.appendChild(title);
 
-    inner.appendChild(createElement("p", "page-header__subtitle", "熊本県・熊本市・宇土市・宇城市・美里町の公式情報へリンクします。"));
+    inner.appendChild(createElement("p", "page-header__subtitle", buildMunicipalitySubtitle(navigation)));
 
     if (lastVerified) {
       var verified = createElement("p", "page-header__verified");
@@ -221,6 +290,45 @@
 
     header.appendChild(inner);
     container.appendChild(header);
+  }
+
+  function renderCommunicationStatus(container, communicationStatus) {
+    if (!communicationStatus || !communicationStatus.providers || communicationStatus.providers.length === 0) {
+      return;
+    }
+
+    var section = createElement("section", "communication-status");
+    section.setAttribute("aria-labelledby", "communication-status-title");
+
+    var inner = createElement("div", "container");
+    inner.appendChild(createElement("h2", "communication-status__title", "通信情報"));
+    inner.querySelector(".communication-status__title").id = "communication-status-title";
+
+    var list = createElement("ul", "communication-status__list");
+
+    communicationStatus.providers.forEach(function (provider) {
+      var li = createElement("li", "communication-status__item");
+      var link = createElement("a", "communication-status__link");
+      link.href = provider.source_url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", provider.provider_name + "の公式障害情報へ（外部リンク）");
+
+      link.appendChild(createElement("span", "communication-status__provider", provider.provider_name));
+      link.appendChild(createElement("span", "communication-status__text", getCommunicationStatusText(provider)));
+      li.appendChild(link);
+      list.appendChild(li);
+    });
+
+    inner.appendChild(list);
+
+    var confirmedAt = formatConfirmedAtShort(communicationStatus.confirmed_at);
+    if (confirmedAt) {
+      inner.appendChild(createElement("p", "communication-status__confirmed", confirmedAt));
+    }
+
+    section.appendChild(inner);
+    container.appendChild(section);
   }
 
   function renderPageNavigation(container, navigation, records) {
@@ -235,14 +343,7 @@
     var muniScroll = createElement("div", "municipality-nav__scroll");
     var muniList = createElement("ul", "municipality-nav__list");
 
-    navigation.forEach(function (item, index) {
-      if (index > 0) {
-        var sep = createElement("li", "municipality-nav__separator");
-        sep.setAttribute("aria-hidden", "true");
-        sep.textContent = "｜";
-        muniList.appendChild(sep);
-      }
-
+    navigation.forEach(function (item) {
       var li = createElement("li", "municipality-nav__item");
       var link = createElement("a", "municipality-nav__link", item.name);
       link.href = "#" + item.anchor;
@@ -495,12 +596,14 @@
     Promise.all([
       loadJson("phase1_areas.json"),
       loadJson("phase1_navigation.json"),
-      loadJson("phase1_updates.json")
+      loadJson("phase1_updates.json"),
+      loadJson("communication_status.json")
     ])
       .then(function (results) {
         var areas = results[0];
         var navigation = results[1];
         var updates = results[2];
+        var communicationStatus = results[3];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -511,7 +614,8 @@
         page.innerHTML = "";
 
         renderEmergencyNotice(page);
-        renderPageHeader(page, areas, lastVerified);
+        renderPageHeader(page, navigation, lastVerified);
+        renderCommunicationStatus(page, communicationStatus);
         renderPageNavigation(page, navigation, publicRecords);
 
         var categoryAnchorsPlaced = {};

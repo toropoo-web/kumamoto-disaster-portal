@@ -1,7 +1,12 @@
 [
   {"area_id":"KM000","name":"熊本県","anchor":"kumamoto-pref"},
-  {"area_id":"KM001","name":"熊本市","anchor":"kumamoto-city"},
-  {"area_id":"KM002","name":"宇土市","anchor":"uto-city"},
   {"area_id":"KM003","name":"宇城市","anchor":"uki-city"},
+  {"area_id":"KM007","name":"氷川町","anchor":"hikawa-town"},
+  {"area_id":"KM005","name":"八代市","anchor":"yatsushiro-city"},
+  {"area_id":"KM002","name":"宇土市","anchor":"uto-city"},
+  {"area_id":"KM008","name":"益城町","anchor":"mashiki-town"},
+  {"area_id":"KM006","name":"人吉市","anchor":"hitoyoshi-city"},
+  {"area_id":"KM001","name":"熊本市","anchor":"kumamoto-city"},
+  {"area_id":"KM009","name":"合志市","anchor":"koshi-city"},
   {"area_id":"KM004","name":"美里町","anchor":"misato-town"}
 ]
