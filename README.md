@@ -37,13 +37,17 @@
 2. ファイル一式をWebサーバーのドキュメントルートに配置します
 3. `index.html` がルートでアクセス可能であることを確認します
 
+### Render（GitHub連携）
+
+このリポジトリは Render Static Site 向けに構成されています。`render.yaml` を参照し、リポジトリルート（`.`）を公開ディレクトリとしてデプロイしてください。
+
 例（任意の静的サーバー）:
 
 ```bash
 npx serve . -l 3000
 ```
 
-Apache・Nginx・GitHub Pages・Cloudflare Pages・Netlify・Vercel（Static）など、静的ファイル配信に対応した環境で利用できます。
+Apache・Nginx・GitHub Pages・Netlify・Vercel（Static）など、静的ファイル配信に対応した環境で利用できます。
 
 ## 注意事項
 
