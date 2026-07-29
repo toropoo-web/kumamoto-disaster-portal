@@ -1,0 +1,20 @@
+{
+  "name": "kumamoto-phase1-disaster-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "令和8年熊本地震 自治体公式情報まとめ（Phase1公開ページ）",
+  "scripts": {
+    "serve": "npx --yes serve . -l 3000",
+    "validate": "node scripts/validate-data.js",
+    "validate:ui": "node scripts/validate-ui.js",
+    "validate:links": "node scripts/validate-links.js",
+    "validate:browser": "node scripts/validate-browser.js",
+    "test": "node scripts/validate-data.js && node scripts/validate-ui.js && node scripts/validate-links.js && node scripts/validate-patrol.js",
+    "build": "node scripts/static-build.js",
+    "patrol": "node scripts/run-monitor.js",
+    "screenshots": "node scripts/capture-screenshots.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}

@@ -1,0 +1,235 @@
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = path.join(__dirname, "..");
+const SNAPSHOT_FILE = path.join(__dirname, "reports", "snapshots.json");
+const CHANGE_LOG_DIR = path.join(__dirname, "change-log");
+const CANDIDATE_DIR = path.join(ROOT, "data", "update_candidates");
+
+function ensureDir(dirPath) {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
+}
+
+function readSnapshots() {
+  if (!fs.existsSync(SNAPSHOT_FILE)) {
+    return { version: 1, sources: {} };
+  }
+  return JSON.parse(fs.readFileSync(SNAPSHOT_FILE, "utf8"));
+}
+
+function writeSnapshots(data) {
+  ensureDir(path.dirname(SNAPSHOT_FILE));
+  fs.writeFileSync(SNAPSHOT_FILE, JSON.stringify(data, null, 2) + "\n", "utf8");
+}
+
+function buildChangeEntry(source, previous, current, changeType) {
+  const entry = {
+    source: source.id,
+    sourceName: source.name,
+    category: source.category,
+    areaId: source.area_id || null,
+    url: source.url,
+    detectedAt: new Date().toISOString(),
+    changeType,
+    previousHash: previous ? previous.contentHash : null,
+    currentHash: current ? current.contentHash : null,
+    keywords: current ? current.keywords : [],
+    status: "DETECTED"
+  };
+
+  if (!current || !current.reachable) {
+    entry.status = "FAILED";
+    entry.changeType = "URL_UNREACHABLE";
+    return entry;
+  }
+
+  if (current.contaminationRisk) {
+    entry.status = "REVIEW_REQUIRED";
+    entry.changeType = changeType || "CONTENT_CHANGED";
+    entry.safetyFlags = ["POSSIBLE_2016_CONTAMINATION"];
+  }
+
+  if (previous && previous.title !== current.title) {
+    entry.titleChanged = {
+      from: previous.title,
+      to: current.title
+    };
+  }
+
+  if (previous && previous.pageUpdatedAt !== current.pageUpdatedAt && current.pageUpdatedAt) {
+    entry.pageUpdatedAtChanged = {
+      from: previous.pageUpdatedAt || null,
+      to: current.pageUpdatedAt
+    };
+  }
+
+  return entry;
+}
+
+function compareSource(source, current, previous) {
+  if (!current.reachable) {
+    return buildChangeEntry(source, previous, current, "URL_UNREACHABLE");
+  }
+
+  if (!previous) {
+    return null;
+  }
+
+  const changes = [];
+
+  if (previous.contentHash !== current.contentHash) {
+    changes.push(buildChangeEntry(source, previous, current, "CONTENT_CHANGED"));
+  }
+
+  if (previous.title !== current.title) {
+    const titleEntry = buildChangeEntry(source, previous, current, "TITLE_CHANGED");
+    if (!changes.length) {
+      changes.push(titleEntry);
+    } else {
+      changes[0].titleChanged = titleEntry.titleChanged;
+      if (changes[0].changeType === "CONTENT_CHANGED") {
+        changes[0].changeType = "CONTENT_AND_TITLE_CHANGED";
+      }
+    }
+  }
+
+  if (
+    previous.pageUpdatedAt !== current.pageUpdatedAt &&
+    current.pageUpdatedAt &&
+    !changes.length
+  ) {
+    changes.push(buildChangeEntry(source, previous, current, "PAGE_UPDATED_AT_CHANGED"));
+  }
+
+  return changes.length ? changes : null;
+}
+
+function buildUpdateCandidate(source, current, changeEntries) {
+  return {
+    generatedAt: new Date().toISOString(),
+    sourceId: source.id,
+    sourceName: source.name,
+    category: source.category,
+    areaId: source.area_id || null,
+    publicCategoryId: source.public_category_id || null,
+    headline: current.title || source.name,
+    summary: "自動巡回で変更を検知しました。人手確認後にのみ公開データへ反映してください。",
+    sourceUrl: source.url,
+    verificationStatus: "REQUIRES_MANUAL_REVIEW",
+    incidentScope: "2026_KUMAMOTO_EARTHQUAKE",
+    detectedKeywords: current.keywords,
+    changeTypes: changeEntries.map((entry) => entry.changeType),
+    safetyFlags: changeEntries.flatMap((entry) => entry.safetyFlags || []),
+    autoPublish: false
+  };
+}
+
+function appendChangeLog(dateKey, entries) {
+  ensureDir(CHANGE_LOG_DIR);
+  const filePath = path.join(CHANGE_LOG_DIR, dateKey + ".json");
+  let existing = [];
+
+  if (fs.existsSync(filePath)) {
+    existing = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  }
+
+  const merged = existing.concat(entries);
+  fs.writeFileSync(filePath, JSON.stringify(merged, null, 2) + "\n", "utf8");
+  return filePath;
+}
+
+function writeUpdateCandidates(candidates) {
+  if (!candidates.length) {
+    return null;
+  }
+
+  ensureDir(CANDIDATE_DIR);
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const filePath = path.join(CANDIDATE_DIR, stamp + ".json");
+  fs.writeFileSync(
+    filePath,
+    JSON.stringify(
+      {
+        generatedAt: new Date().toISOString(),
+        candidateCount: candidates.length,
+        autoPublish: false,
+        candidates
+      },
+      null,
+      2
+    ) + "\n",
+    "utf8"
+  );
+  return filePath;
+}
+
+function processResults(sources, parsedResults) {
+  const snapshots = readSnapshots();
+  const changeEntries = [];
+  const candidates = [];
+  let successCount = 0;
+  let failedCount = 0;
+
+  sources.forEach((source) => {
+    const current = parsedResults[source.id];
+    const previous = snapshots.sources[source.id] || null;
+
+    if (!current.reachable) {
+      failedCount += 1;
+      changeEntries.push(buildChangeEntry(source, previous, current, "URL_UNREACHABLE"));
+      snapshots.sources[source.id] = {
+        ...current,
+        sourceName: source.name,
+        category: source.category
+      };
+      return;
+    }
+
+    successCount += 1;
+    const detected = compareSource(source, current, previous);
+
+    if (detected) {
+      detected.forEach((entry) => changeEntries.push(entry));
+      candidates.push(buildUpdateCandidate(source, current, detected));
+    }
+
+    snapshots.sources[source.id] = {
+      ...current,
+      sourceName: source.name,
+      category: source.category
+    };
+  });
+
+  writeSnapshots(snapshots);
+
+  const dateKey = new Date().toISOString().slice(0, 10);
+  const changeLogPath = changeEntries.length
+    ? appendChangeLog(dateKey, changeEntries)
+    : null;
+  const candidatePath = writeUpdateCandidates(candidates);
+
+  return {
+    successCount,
+    failedCount,
+    changeCount: changeEntries.length,
+    candidateCount: candidates.length,
+    changeLogPath,
+    candidatePath,
+    changeEntries
+  };
+}
+
+module.exports = {
+  readSnapshots,
+  writeSnapshots,
+  compareSource,
+  processResults,
+  buildChangeEntry,
+  SNAPSHOT_FILE,
+  CHANGE_LOG_DIR,
+  CANDIDATE_DIR
+};
