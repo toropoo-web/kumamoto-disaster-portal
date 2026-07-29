@@ -3,7 +3,8 @@ site/
 release/
 publication/
 screenshots/
-operations/patrol/**
+operations/**
+!operations/patrol/
 !operations/patrol/.gitkeep
 node_modules/
 
