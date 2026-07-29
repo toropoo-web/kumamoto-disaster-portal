@@ -85,14 +85,14 @@
     "public_category_id": "WATER",
     "public_category_label": "断水・給水",
     "headline": "給水車による給水のお知らせ",
-    "summary": "令和8年7月29日（水）午前9時から給水車による給水を行います。",
-    "displayed_updated_at": "2026-07-29T00:00:00+09:00",
+    "summary": "現在、ecowin宇土アリーナほか4か所で給水車による給水を行っています。容器をご持参の上、お越しください。",
+    "displayed_updated_at": "2026-07-29T16:30:00+09:00",
     "source_name": "宇土市",
-    "source_url": "https://www.city.uto.lg.jp/article/view/1014/16322.html",
+    "source_url": "https://www.city.uto.lg.jp/article/view/1308/16341.html",
     "department": "上下水道課",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-29T15:00:00+09:00",
+    "collected_at": "2026-07-29T08:39:01.382Z",
     "display_priority": 2
   },
   {
