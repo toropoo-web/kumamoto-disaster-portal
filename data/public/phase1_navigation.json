@@ -1,0 +1,7 @@
+[
+  {"area_id":"KM000","name":"熊本県","anchor":"kumamoto-pref"},
+  {"area_id":"KM001","name":"熊本市","anchor":"kumamoto-city"},
+  {"area_id":"KM002","name":"宇土市","anchor":"uto-city"},
+  {"area_id":"KM003","name":"宇城市","anchor":"uki-city"},
+  {"area_id":"KM004","name":"美里町","anchor":"misato-town"}
+]

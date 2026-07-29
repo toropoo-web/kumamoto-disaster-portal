@@ -1,0 +1,28 @@
+# Development / internal (not deployed)
+site/
+release/
+publication/
+screenshots/
+operations/
+scripts/
+node_modules/
+
+# Internal documentation
+SAVEPOINT_*.md
+DEPLOYMENT_READINESS.md
+
+# Archives and artifacts
+kumamoto-disaster-portal-v1.0.0.zip
+release-package.zip
+lighthouse-report.json
+deploy-audit-result.json
+ia-check-result.json
+.zip-audit/
+
+# Secrets
+.env
+.env.*
+
+# Dev tooling (not needed for static deploy)
+package.json
+package-lock.json

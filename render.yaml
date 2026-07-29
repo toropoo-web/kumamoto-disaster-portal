@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: kumamoto-disaster-portal
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    autoDeploy: true
+    headers:
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+      - path: /data/public/phase1_updates.json
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
