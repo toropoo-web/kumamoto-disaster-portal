@@ -24,10 +24,12 @@ const REQUIRED_MONITOR_FILES = [
   "monitor/review-engine.js",
   "monitor/apply-engine.js",
   "monitor/operation-report.js",
+  "monitor/url-audit.js",
   "monitor/UPDATE_FLOW.md",
   "scripts/run-monitor.js",
   "scripts/review-candidates.js",
-  "scripts/apply-approved.js"
+  "scripts/apply-approved.js",
+  "scripts/run-url-audit.js"
 ];
 
 function hashFile(filePath) {

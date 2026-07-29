@@ -119,6 +119,17 @@ function renderDailyReport(summary) {
     lines.push("詳細: monitor/reports/source-failures.md");
   }
 
+  if (summary.linkAuditCounts) {
+    lines.push("");
+    lines.push("## Link Audit");
+    lines.push("");
+    lines.push("PASS: " + (summary.linkAuditCounts.PASS || 0));
+    lines.push("TEMPORARY_FAILURE: " + (summary.linkAuditCounts.TEMPORARY_FAILURE || 0));
+    lines.push("URL_CHANGE_REQUIRED: " + (summary.linkAuditCounts.URL_CHANGE_REQUIRED || 0));
+    lines.push("REVIEW_REQUIRED: " + (summary.linkAuditCounts.REVIEW_REQUIRED || 0));
+    lines.push("詳細: monitor/reports/link-audit-report.md");
+  }
+
   return lines.join("\n") + "\n";
 }
 
@@ -254,6 +265,7 @@ function generateOperationReports(options) {
     },
     failures,
     sources: buildSourceRows(sources, parsedResults, fetchResults),
+    linkAuditCounts: options.linkAuditCounts || null,
     autoPublish: false,
     noPublicDataChange: true
   };

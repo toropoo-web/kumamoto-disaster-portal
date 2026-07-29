@@ -37,10 +37,14 @@ jobs:
       - name: Generate review queue
         run: npm run review
 
+      - name: Run URL audit
+        run: npm run url-audit
+
       - name: Validate patrol and operation infrastructure
         run: |
           node scripts/validate-patrol.js
           node scripts/validate-operation.js
+          node scripts/validate-url-audit.js
 
       - name: Log patrol summary on failure
         if: failure()
@@ -61,4 +65,5 @@ jobs:
             monitor/change-log/
             data/update_candidates/
             operations/patrol/
+            operations/url-audit/
             patrol-output.log

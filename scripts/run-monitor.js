@@ -12,6 +12,7 @@ const { fetchSource } = require("../monitor/crawler");
 const { parsePage } = require("../monitor/parser");
 const { processResults } = require("../monitor/diff-engine");
 const { generateOperationReports } = require("../monitor/operation-report");
+const { runUrlAudit } = require("../monitor/url-audit");
 
 function loadSources() {
   const data = JSON.parse(fs.readFileSync(SOURCES_FILE, "utf8"));
@@ -43,12 +44,14 @@ async function main() {
   }
 
   const diffResult = processResults(sources, parsedResults);
+  const urlAudit = await runUrlAudit({ save: true });
   const operation = generateOperationReports({
     patrolAt,
     sources,
     parsedResults,
     fetchResults,
-    diffResult
+    diffResult,
+    linkAuditCounts: urlAudit.summary.counts
   });
 
   const report = {
@@ -74,6 +77,8 @@ async function main() {
     failuresReportPath: operation.failuresReportPath,
     highAlertPath: operation.highAlertPath,
     operationDir: operation.operationDir,
+    linkAuditPath: urlAudit.artifacts.reportPath,
+    linkAuditCounts: urlAudit.summary.counts,
     sources: operation.summary.sources
   };
 
@@ -93,6 +98,17 @@ async function main() {
       console.log("SOURCE: " + item.source);
       console.log("SUMMARY: " + item.summary);
     });
+  }
+
+  if (urlAudit.summary.counts.URL_CHANGE_REQUIRED > 0) {
+    console.log("");
+    console.log("=== URL_CHANGE_REQUIRED ===");
+    urlAudit.summary.results
+      .filter((item) => item.status === "URL_CHANGE_REQUIRED")
+      .forEach((item) => {
+        console.log("NAME: " + item.name);
+        console.log("URL: " + item.url);
+      });
   }
 
   if (diffResult.failedCount > 0 && diffResult.successCount === 0) {
