@@ -259,6 +259,7 @@
 
   function renderEmergencyNotice(container) {
     var section = createElement("section", "emergency-notice");
+    section.id = "page-hero";
     section.setAttribute("role", "alert");
     section.setAttribute("aria-label", "緊急時の注意");
 
@@ -426,6 +427,55 @@
     }
 
     container.appendChild(wrap);
+  }
+
+  function renderXFeedSection(container, xFeedData) {
+    if (!xFeedData || !xFeedData.posts || xFeedData.posts.length === 0) {
+      return;
+    }
+
+    var section = createElement("section", "x-feed");
+    section.setAttribute("aria-labelledby", "x-feed-title");
+
+    var inner = createElement("div", "container");
+    var titleEl = createElement("h2", "section-title x-feed__title", xFeedData.section_title || "公式X速報");
+    titleEl.id = "x-feed-title";
+    inner.appendChild(titleEl);
+    inner.appendChild(createElement("p", "x-feed__lead", "公的機関・自治体等の公式X投稿です。最新状況はリンク先でご確認ください。"));
+
+    var list = createElement("ul", "x-feed__list");
+
+    xFeedData.posts.forEach(function (post) {
+      var li = createElement("li", "x-feed__item");
+      var meta = createElement("div", "x-feed__meta");
+
+      var datetime = formatDateTime(post.post_time);
+      if (datetime) {
+        meta.appendChild(createElement("time", "x-feed__datetime", datetime));
+      }
+      if (post.account_name) {
+        meta.appendChild(createElement("span", "x-feed__account", post.account_name));
+      }
+
+      li.appendChild(meta);
+
+      if (post.text) {
+        li.appendChild(createElement("p", "x-feed__text", post.text));
+      }
+
+      var link = createElement("a", "x-feed__link", "公式X投稿へ");
+      link.href = post.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", (post.account_name || "公式") + "のX投稿へ（外部リンク）");
+      li.appendChild(link);
+
+      list.appendChild(li);
+    });
+
+    inner.appendChild(list);
+    section.appendChild(inner);
+    container.appendChild(section);
   }
 
   function renderLatestUpdates(container, records) {
@@ -613,6 +663,39 @@
     container.appendChild(footer);
   }
 
+  var BACK_TO_TOP_THRESHOLD = 400;
+
+  function initBackToTop(heroTarget) {
+    var button = createElement("button", "back-to-top");
+    button.type = "button";
+    button.textContent = "↑ ページ上部へ戻る";
+    button.setAttribute("aria-label", "ページ上部へ戻る");
+    button.setAttribute("aria-hidden", "true");
+    button.tabIndex = -1;
+
+    function updateVisibility() {
+      var show = window.scrollY > BACK_TO_TOP_THRESHOLD;
+      button.classList.toggle("back-to-top--visible", show);
+      button.setAttribute("aria-hidden", show ? "false" : "true");
+      button.tabIndex = show ? 0 : -1;
+    }
+
+    button.addEventListener("click", function () {
+      var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var behavior = prefersReducedMotion ? "auto" : "smooth";
+
+      if (heroTarget) {
+        heroTarget.scrollIntoView({ behavior: behavior, block: "start" });
+      } else {
+        window.scrollTo({ top: 0, behavior: behavior });
+      }
+    });
+
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    updateVisibility();
+    document.body.appendChild(button);
+  }
+
   function renderLoadError(page) {
     page.innerHTML = "";
     renderEmergencyNotice(page);
@@ -633,7 +716,8 @@
       loadJson("phase1_navigation.json"),
       loadJson("phase1_updates.json"),
       loadJson("communication_status.json"),
-      loadJson("status.json")
+      loadJson("status.json"),
+      loadJson("x_feed_preview.json")
     ])
       .then(function (results) {
         var areas = results[0];
@@ -641,6 +725,7 @@
         var updates = results[2];
         var communicationStatus = results[3];
         var publicStatus = results[4];
+        var xFeedData = results[5];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -656,6 +741,7 @@
         renderPageHeader(page, navigation, lastVerified);
         renderCommunicationStatus(page, communicationStatus);
         renderPageNavigation(page, navigation, publicRecords);
+        renderXFeedSection(page, xFeedData);
 
         var categoryAnchorsPlaced = {};
         areas.forEach(function (area) {
@@ -669,6 +755,7 @@
         renderAboutSection(page);
         renderCautionSection(page);
         renderPageFooter(page);
+        initBackToTop(document.getElementById("page-hero"));
       })
       .catch(function () {
         renderLoadError(page);

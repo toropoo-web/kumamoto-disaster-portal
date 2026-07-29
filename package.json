@@ -12,6 +12,7 @@
     "validate:browser": "node scripts/validate-browser.js",
     "test": "node scripts/validate-data.js && node scripts/validate-ui.js && node scripts/validate-links.js && node scripts/validate-url-audit.js && node scripts/validate-post-apply.js && node scripts/validate-patrol.js && node scripts/validate-review.js && node scripts/validate-operation.js && node scripts/validate-public-status.js",
     "build": "node scripts/static-build.js",
+    "sync:x-feed": "node scripts/sync-x-feed.js",
     "patrol": "node scripts/run-monitor.js",
     "url-audit": "node scripts/run-url-audit.js",
     "review": "node scripts/review-candidates.js",

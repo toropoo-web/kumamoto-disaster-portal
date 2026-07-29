@@ -14,7 +14,8 @@ const REQUIRED_FILES = [
   "data/public/phase1_navigation.json",
   "data/public/phase1_updates.json",
   "data/public/communication_status.json",
-  "data/public/status.json"
+  "data/public/status.json",
+  "data/public/x_feed_preview.json"
 ];
 
 const CSS_CHECKS = [
@@ -35,6 +36,8 @@ const JS_CHECKS = [
   { name: "KM010 area rules", pattern: /KM010:/ },
   { name: "KM013 area rules", pattern: /KM013:/ },
   { name: "status.json load", pattern: /loadJson\("status\.json"\)/ },
+  { name: "x feed preview load", pattern: /loadJson\("x_feed_preview\.json"\)/ },
+  { name: "x feed section render", pattern: /renderXFeedSection/ },
   { name: "patrol header source", pattern: /publicStatus\.last_patrol_at/ }
 ];
 

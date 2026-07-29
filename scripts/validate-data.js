@@ -71,6 +71,52 @@ function isValidUrlFormat(url) {
   }
 }
 
+function validateXFeedPreview(errors) {
+  const filePath = path.join(DATA_DIR, "x_feed_preview.json");
+  if (!fs.existsSync(filePath)) {
+    errors.push("x_feed_preview.json: file missing");
+    return;
+  }
+
+  let data;
+  try {
+    data = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch (err) {
+    errors.push(`x_feed_preview.json: invalid JSON (${err.message})`);
+    return;
+  }
+
+  if (!data.posts || !Array.isArray(data.posts)) {
+    errors.push("x_feed_preview.json: posts array missing");
+    return;
+  }
+
+  if (data.posts.length < 1 || data.posts.length > 8) {
+    errors.push(`x_feed_preview.json: post count ${data.posts.length} (expected 1-8)`);
+  }
+
+  const seenUrls = new Set();
+  data.posts.forEach((post, index) => {
+    const required = ["source_id", "account_name", "post_time", "text", "url"];
+    required.forEach((field) => {
+      if (!post[field] || String(post[field]).trim() === "") {
+        errors.push(`x_feed_preview.json[${index}]: missing ${field}`);
+      }
+    });
+
+    if (post.url && !isValidUrlFormat(post.url)) {
+      errors.push(`x_feed_preview.json[${index}]: invalid url`);
+    }
+
+    if (post.url) {
+      if (seenUrls.has(post.url)) {
+        errors.push(`x_feed_preview.json[${index}]: duplicate url`);
+      }
+      seenUrls.add(post.url);
+    }
+  });
+}
+
 function main() {
   const areas = readJson("phase1_areas.json");
   const navigation = readJson("phase1_navigation.json");
@@ -166,6 +212,8 @@ function main() {
   if (publicRecords.length !== EXPECTED_PUBLIC_CARD_COUNT) {
     errors.push(`公開カード数: ${publicRecords.length} (期待値: ${EXPECTED_PUBLIC_CARD_COUNT})`);
   }
+
+  validateXFeedPreview(errors);
 
   const result = {
     AREA_COUNT: areas.length,

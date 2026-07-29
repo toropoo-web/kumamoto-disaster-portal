@@ -1,0 +1,64 @@
+{
+  "section_title": "公式X速報",
+  "synced_at": "2026-07-29T09:00:44.996Z",
+  "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
+  "item_count": 8,
+  "posts": [
+    {
+      "source_id": "SRC-NAT-004",
+      "account_name": "総務省消防庁",
+      "post_time": "2026-07-29T05:36:42.000Z",
+      "text": "【消防庁とりまとめ第16報】令和８年熊本地震による被害及び 消防機関等の対応状況について、７月29日（水）14時00分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/EE0YRimFJp\n#総務省消防庁 #災害情報 #地震",
+      "url": "https://x.com/FDMA_JAPAN/status/2082339511686815843"
+    },
+    {
+      "source_id": "SRC-NAT-001",
+      "account_name": "首相官邸 災害・危機管理情報",
+      "post_time": "2026-07-29T05:04:24.000Z",
+      "text": "【地震関連・官房長官記者会見】\n本日（７月２９日）１１時００分頃から行われた木原官房長官の記者会見における、令和８年熊本地震に関する冒頭発言と関連質疑です。\n\n※要旨（速報版）\n（官房長官）\n　私から令和８年熊本地震について申し上げます。 https://t.co/6E7wBg6KXn",
+      "url": "https://x.com/Kantei_Saigai/status/2082331383620669500"
+    },
+    {
+      "source_id": "SRC-NAT-001",
+      "account_name": "首相官邸 災害・危機管理情報",
+      "post_time": "2026-07-29T04:32:37.000Z",
+      "text": "令和8年熊本地震に関する第2回非常災害対策本部会議のライブ配信です。 https://t.co/cKksGA5kup",
+      "url": "https://x.com/Kantei_Saigai/status/2082323384910909580"
+    },
+    {
+      "source_id": "SRC-PER-001",
+      "account_name": "小泉進次郎",
+      "post_time": "2026-07-29T03:34:14.000Z",
+      "text": "今朝は防衛省に登庁した際に熊本地震を受けた自衛隊の活動状況を政務3役で確認してから、防衛省ロビーで待つメディアの皆さんへその内容を報告しました。\n\n以下は第二回防衛省災害対策本部会議で発信した最新状況です。\n1. https://t.co/H42o6xmFWG",
+      "url": "https://x.com/shinjirokoiz/status/2082308691957842110"
+    },
+    {
+      "source_id": "SRC-PER-001",
+      "account_name": "小泉進次郎",
+      "post_time": "2026-07-29T03:29:47.000Z",
+      "text": "現在、熊本県八代市の日本製紙八代工場において約20名の自衛隊員が人命救助にあたっています。引き続き、人命救助を最優先に活動を行ってまいります。",
+      "url": "https://x.com/shinjirokoiz/status/2082307572506480668"
+    },
+    {
+      "source_id": "SRC-NAT-004",
+      "account_name": "総務省消防庁",
+      "post_time": "2026-07-29T03:08:17.000Z",
+      "text": "【消防庁　令和８年熊本地震に対する消防機関の活動状況】 嘉島町のイオンモール熊本被災現場において、関係機関と連携し活動中です。 #緊急消防援助隊 #緊援隊 #熊本県 #福岡県大隊 https://t.co/5uG3csMpUJ",
+      "url": "https://x.com/FDMA_JAPAN/status/2082302161661399344"
+    },
+    {
+      "source_id": "SRC-NAT-004",
+      "account_name": "総務省消防庁",
+      "post_time": "2026-07-29T02:47:32.000Z",
+      "text": "【消防庁とりまとめ第15報】令和８年熊本地震による被害及び 消防機関等の対応状況について、７月29日（水）11時00分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/ip1QKZvzIB\n#総務省消防庁 #災害情報 #地震",
+      "url": "https://x.com/FDMA_JAPAN/status/2082296939568390447"
+    },
+    {
+      "source_id": "SRC-NAT-005",
+      "account_name": "防衛省 災害対策",
+      "post_time": "2026-07-29T02:03:41.000Z",
+      "text": "防衛省・自衛隊は、熊本県各所において給水活動を実施しております。\n詳細については、各自治体のホームページをご確認ください。\n#給水支援 https://t.co/S0vLbhKZaT https://t.co/rwXWMU2s2Q",
+      "url": "https://x.com/ModJapan_saigai/status/2082285906850160748"
+    }
+  ]
+}
