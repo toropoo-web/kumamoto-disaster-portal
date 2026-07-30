@@ -96,6 +96,7 @@ jobs:
           git add data/public/status.json
           if [ "$AUTO_APPLY_ENABLED" = "true" ]; then
             git add data/public/phase1_updates.json || true
+            git add data/public/disaster_locations.json || true
             git add data/public/water_cross_view.json data/public/water_search_index.json data/public/disaster_search_index.json || true
           fi
           STAGED="$(git diff --cached --name-only)"

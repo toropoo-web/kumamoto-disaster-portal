@@ -6,10 +6,10 @@
     "鹿児島県"
   ],
   "source_registry": "data/water_sources.json",
-  "location_item_count": 9,
+  "location_item_count": 11,
   "registry_item_count": 24,
-  "item_count": 33,
-  "last_updated": "2026-07-30T10:22:25.828Z",
+  "item_count": 35,
+  "last_updated": "2026-07-30T14:47:54.903Z",
   "items": [
     {
       "item_kind": "location",
@@ -127,6 +127,32 @@
       "source_type": "official",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
       "updated_at": "2026-07-29T00:00:00+09:00"
+    },
+    {
+      "item_kind": "location",
+      "region": "熊本県",
+      "municipality": "菊陽町",
+      "organization": "菊陽町公式",
+      "location": "菊陽町総合体育館 給水所",
+      "title": "給水対応中",
+      "search_text": "熊本県 菊陽町 菊陽町総合体育館 給水所 給水対応中 給水 給水所 応急給水",
+      "source_name": "菊陽町公式",
+      "source_type": "official",
+      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "updated_at": "2026-07-29T16:30:00+09:00"
+    },
+    {
+      "item_kind": "location",
+      "region": "熊本県",
+      "municipality": "菊陽町",
+      "organization": "菊陽町公式",
+      "location": "西部町民センター 給水所",
+      "title": "給水対応中",
+      "search_text": "熊本県 菊陽町 西部町民センター 給水所 給水対応中 給水 給水所 応急給水",
+      "source_name": "菊陽町公式",
+      "source_type": "official",
+      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "updated_at": "2026-07-29T16:30:00+09:00"
     },
     {
       "item_kind": "registry",

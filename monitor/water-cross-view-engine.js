@@ -12,7 +12,8 @@ const TARGET_MUNICIPALITIES = [
   { area_id: "KM001", municipality: "熊本市", source_label: "熊本市公式" },
   { area_id: "KM005", municipality: "八代市", source_label: "八代市公式" },
   { area_id: "KM003", municipality: "宇城市", source_label: "宇城市公式" },
-  { area_id: "KM006", municipality: "人吉市", source_label: "人吉市公式" }
+  { area_id: "KM006", municipality: "人吉市", source_label: "人吉市公式" },
+  { area_id: "KM011", municipality: "菊陽町", source_label: "菊陽町公式" }
 ];
 
 const ALLOWED_STATUS_LABELS = new Set(["給水情報あり", "給水対応中", "公式更新確認済み", "給水実施中"]);

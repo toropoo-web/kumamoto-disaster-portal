@@ -3,7 +3,7 @@
   "title": "給水情報",
   "description": "現在利用可能な給水所",
   "last_updated": "2026-07-29T17:01:00+09:00",
-  "municipality_count": 2,
+  "municipality_count": 3,
   "municipalities": [
     {
       "municipality": "熊本市",
@@ -138,6 +138,38 @@
           "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
           "status_label": "給水対応中",
           "updated_at": "2026-07-29T00:00:00+09:00"
+        }
+      ]
+    },
+    {
+      "municipality": "菊陽町",
+      "area_id": "KM011",
+      "status": "ACTIVE",
+      "status_label": "給水対応中",
+      "location_count": 2,
+      "source_type": "official",
+      "source_label": "菊陽町公式",
+      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "locations": [
+        {
+          "location_id": "LOC-KM011-WATER-0001",
+          "location_name": "菊陽町総合体育館 給水所",
+          "municipality": "菊陽町",
+          "source_type": "official",
+          "source_name": "菊陽町公式防災情報",
+          "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+          "status_label": "給水対応中",
+          "updated_at": "2026-07-29T16:30:00+09:00"
+        },
+        {
+          "location_id": "LOC-KM011-WATER-0002",
+          "location_name": "西部町民センター 給水所",
+          "municipality": "菊陽町",
+          "source_type": "official",
+          "source_name": "菊陽町公式防災情報",
+          "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+          "status_label": "給水対応中",
+          "updated_at": "2026-07-29T16:30:00+09:00"
         }
       ]
     }

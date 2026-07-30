@@ -100,23 +100,30 @@ function main() {
 
   const ukiResults = searchDisasterIndex(payload, "宇城 給水", { category: "WATER" });
   const kagoshimaResults = searchDisasterIndex(payload, "霧島 給水", { category: "WATER" });
+  const kikuyoResults = searchDisasterIndex(payload, "菊陽 給水", { category: "WATER" });
   const waterCount = payload.index.filter(function (item) {
     return item.category === "WATER";
   }).length;
+  const waterSearchIndex = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "data", "public", "water_search_index.json"), "utf8")
+  );
+  const expectedWaterCount = waterSearchIndex.item_count;
   const volunteerKumamotoResults = searchDisasterIndex(payload, "熊本 ボランティア", { category: "VOLUNTEER" });
   const volunteerKagoshimaResults = searchDisasterIndex(payload, "鹿児島 災害VC", { category: "VOLUNTEER" });
   const volunteerKirishimaResults = searchDisasterIndex(payload, "霧島 ボランティア", { category: "VOLUNTEER" });
   const volunteerUkiResults = searchDisasterIndex(payload, "宇城 災害VC", { category: "VOLUNTEER" });
   checks.push({
     check: "search engine usable",
-    pass: ukiResults.length > 0 && kagoshimaResults.length > 0,
+    pass: ukiResults.length > 0 && kagoshimaResults.length > 0 && kikuyoResults.length > 0,
     ukiCount: ukiResults.length,
-    kagoshimaCount: kagoshimaResults.length
+    kagoshimaCount: kagoshimaResults.length,
+    kikuyoCount: kikuyoResults.length
   });
   checks.push({
     check: "water index count preserved",
-    pass: waterCount === 33,
-    waterCount: waterCount
+    pass: waterCount === expectedWaterCount,
+    waterCount: waterCount,
+    expectedWaterCount: expectedWaterCount
   });
   checks.push({
     check: "volunteer search examples usable",
@@ -136,8 +143,16 @@ function main() {
   if (!kagoshimaResults.length) {
     errors.push("search engine check failed: 霧島 給水");
   }
-  if (waterCount !== 33) {
-    errors.push("water index count check failed: expected 33, got " + waterCount);
+  if (!kikuyoResults.length) {
+    errors.push("search engine check failed: 菊陽 給水");
+  }
+  if (waterCount !== expectedWaterCount) {
+    errors.push(
+      "water index count check failed: expected " +
+      expectedWaterCount +
+      ", got " +
+      waterCount
+    );
   }
   if (!volunteerKumamotoResults.length) {
     errors.push("volunteer search check failed: 熊本 ボランティア");
