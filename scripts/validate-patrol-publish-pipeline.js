@@ -18,6 +18,7 @@ function main() {
     "monitor/public-data-build.js",
     "scripts/publish-patrol-pipeline.js",
     "scripts/seed-patrol-snapshots.js",
+    "scripts/sync-patrol-public-status.js",
     "scripts/verify-public-commit-staging.js",
     "monitor/baselines/patrol-snapshots.seed.json",
     ".github/workflows/patrol.yml",
@@ -35,7 +36,12 @@ function main() {
   [
     { name: "snapshot cache restore", pattern: /actions\/cache@v4/ },
     { name: "seed patrol snapshots", pattern: /seed-patrol-snapshots\.js/ },
-    { name: "review queue generation", pattern: /npm run review/ }
+    { name: "review queue generation", pattern: /npm run review/ },
+    { name: "sync patrol public status", pattern: /sync-patrol-public-status\.js/ },
+    { name: "public index build", pattern: /npm run build/ },
+    { name: "publication validation", pattern: /npm test/ },
+    { name: "public commit guard", pattern: /verify-public-commit-staging\.js/ },
+    { name: "water cross view commit", pattern: /water_cross_view\.json/ }
   ].forEach(function (item) {
     if (!item.pattern.test(patrolWorkflow)) {
       errors.push("patrol.yml missing: " + item.name);
@@ -48,6 +54,9 @@ function main() {
   }
   if (!/verify-public-commit-staging\.js/.test(publishWorkflow)) {
     errors.push("publish-patrol.yml missing public commit staging guard");
+  }
+  if (!/--lenient/.test(publishWorkflow)) {
+    errors.push("publish-patrol.yml missing lenient publish mode");
   }
   if (!/water_cross_view\.json/.test(publishWorkflow)) {
     errors.push("publish-patrol.yml missing public index commit targets");

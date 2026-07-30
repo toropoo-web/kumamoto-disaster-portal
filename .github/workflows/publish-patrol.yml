@@ -48,7 +48,7 @@ jobs:
       - name: Publish patrol pipeline
         run: |
           set -e
-          ARGS="--publish-status"
+          ARGS="--publish-status --lenient"
           if [ "${{ github.event.inputs.apply_approved }}" = "true" ]; then
             ARGS="$ARGS --apply-approved"
           fi

@@ -17,6 +17,7 @@ async function runApplyApproved(apply) {
 async function main() {
   const applyApproved = process.argv.includes("--apply-approved");
   const publishStatus = process.argv.includes("--publish-status");
+  const lenient = process.argv.includes("--lenient");
   const dryRun = !applyApproved && !publishStatus;
 
   const before = inspectPublishPipeline();
@@ -28,6 +29,7 @@ async function main() {
     latestPatrol: before.latestPatrol,
     publicStatusBefore: before.publicStatus,
     actions: [],
+    warnings: [],
     errors: []
   };
 
@@ -59,7 +61,12 @@ async function main() {
     });
 
     if (!statusResult.saved) {
-      summary.errors.push("status publish skipped: " + (statusResult.reason || "unknown"));
+      const skipReason = "status publish skipped: " + (statusResult.reason || "unknown");
+      if (lenient && statusResult.reason === "latest patrol report missing") {
+        summary.warnings.push(skipReason);
+      } else {
+        summary.errors.push(skipReason);
+      }
     } else if (applyApproved) {
       try {
         runPublicDataBuild();
