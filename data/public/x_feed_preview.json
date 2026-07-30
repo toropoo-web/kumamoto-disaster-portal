@@ -1,9 +1,31 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-30T21:49:46.825Z",
+  "synced_at": "2026-07-30T23:19:05.508Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
+    {
+      "source_id": "SRC-MUN-KM006",
+      "account_name": "人吉市公式X",
+      "account_handle": "hitoyoshishi",
+      "post_time": "2026-07-30T22:45:44.000Z",
+      "text": "【防災無線放送内容】地震による水道水の濁りについて（2026/07/31/07:45）\n環境課からのお知らせです。\n地震の影響により、市内各地で断水および水圧低下が発生しています。\n生活用水として、下原田町荒毛の熊本フクスケ株式会社、下林町の市...\nhttps://t.co/bIsgEXJRpC",
+      "url": "https://x.com/hitoyoshishi/status/2082960866992066624",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "人吉市",
+      "content_filter": "DISASTER_RELATED"
+    },
+    {
+      "source_id": "SRC-MUN-KM005",
+      "account_name": "八代市公式X",
+      "account_handle": "yatsushiro0801",
+      "post_time": "2026-07-30T21:49:21.000Z",
+      "text": "【給水所情報　7月31日（金）】\n八代市及び八代生活環境事務組合からのお知らせです。\n応急給水を次のとおり行います。\n配布量は１回あたり５L程度となります。\n給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。\n給水車が水の補給で一時的に不在になることがあります。",
+      "url": "https://x.com/yatsushiro0801/status/2082946676143300746",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "八代市",
+      "content_filter": "DISASTER_RELATED"
+    },
     {
       "source_id": "SRC-MUN-KM001",
       "account_name": "熊本市公式X",
@@ -16,25 +38,23 @@
       "content_filter": "DISASTER_RELATED"
     },
     {
+      "source_id": "SRC-NAT-004",
+      "account_name": "総務省消防庁",
+      "account_handle": "FDMA_JAPAN",
+      "post_time": "2026-07-30T22:55:11.000Z",
+      "text": "【消防庁とりまとめ第22報】令和８年熊本地震による被害及び消防機関等の対応状況について、7月31日（金）7時30分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/aaB4gV6wEV #総務省消防庁 #災害情報 #地震",
+      "url": "https://x.com/FDMA_JAPAN/status/2082963245334401264",
+      "source_type": "GOVERNMENT"
+    },
+    {
       "source_id": "SRC-MUN-KM006",
       "account_name": "人吉市公式X",
       "account_handle": "hitoyoshishi",
-      "post_time": "2026-07-30T10:27:10.000Z",
-      "text": "【市内全域で断水や水圧低下が発生しています】\n\n地震の影響で水源地の濁りが発生し、水源地からの供給量が大幅に減少しているため、市内全域で水圧低下または断水が発生しています。\n\n▼詳しくはこちらをご覧ください\nhttps://t.co/zP4PxQQK2Y\n\n▼給水車などの場所はこちら\nhttps://t.co/iBGYFIR7y6",
-      "url": "https://x.com/hitoyoshishi/status/2082774997098287150",
+      "post_time": "2026-07-30T22:05:45.000Z",
+      "text": "【防災無線放送内容】給水について（2026/07/31/7:00）\n水道局からのお知らせです。\n本日（３1日）、午前７時から一部の地域を除き水が使える地域が広がります。\n水を出した時に濁った水が出る���合があります。\nその際は、しばらく出してから...\nhttps://t.co/4aXvLVzaO5",
+      "url": "https://x.com/hitoyoshishi/status/2082950802415759458",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "人吉市",
-      "content_filter": "DISASTER_RELATED"
-    },
-    {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-30T08:31:29.000Z",
-      "text": "【応急給水活動について】\n７月３０日（木）の応急給水を1箇所追加いたします。\n配布量は１回あたり５L程度となります。\n給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。\n\n時間　１８：００～１９：００\n場所　龍峯コミュニティセンター",
-      "url": "https://x.com/yatsushiro0801/status/2082745887831605417",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
       "content_filter": "DISASTER_RELATED"
     },
     {
@@ -51,7 +71,7 @@
       "account_name": "内閣府防災",
       "account_handle": "CAO_BOUSAI",
       "post_time": "2026-07-30T11:41:50.000Z",
-      "text": "令和８年熊本地震の被害状況等を掲載しました。\n#令和８年熊本地震 #被害状況 https://t.co/e5fsH6XhUU",
+      "text": "令和８年熊本���震の被害状況等を掲載しました。\n#令和８年熊本地震 #被害状況 https://t.co/e5fsH6XhUU",
       "url": "https://x.com/CAO_BOUSAI/status/2082793790038012381",
       "source_type": "GOVERNMENT"
     },
@@ -63,24 +83,6 @@
       "text": "本日、熊本県の八代港に入港した海上自衛隊の艦艇から、飲料水や非常用糧食、生活用品などの支援物資を陸上自衛隊が引き継ぎ、避難所等への輸送を開始しました。\nあわせて、熊本県内各地で給水支援などの生活支援活動を実施しています。 https://t.co/HkJ2oFm6uj",
       "url": "https://x.com/ModJapan_saigai/status/2082789328959557910",
       "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-NAT-001",
-      "account_name": "首相官邸 災害・危機管理情報",
-      "account_handle": "Kantei_Saigai",
-      "post_time": "2026-07-30T10:58:36.000Z",
-      "text": "【地震関連・官房長官記者会見】\n本日（７月３０日）１６時００分頃から行われた木原官房長官の記者会見における、令和８年熊本地震に関する関連質疑です。\n\n※要旨（速報版）\n（記者） https://t.co/X98zWumACu",
-      "url": "https://x.com/Kantei_Saigai/status/2082782907916304482",
-      "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-KUM-001",
-      "account_name": "防災くまもと",
-      "account_handle": "Bousai_Kumamoto",
-      "post_time": "2026-07-30T09:45:26.000Z",
-      "text": "こちらは氷川町です。\n2026/07/29 18:00 に避難所を開設しましたのでお知らせします。\n開設した避難所： 氷川町立竜北西部小学校",
-      "url": "https://x.com/Bousai_Kumamoto/status/2082764494758113550",
-      "source_type": "PREFECTURE"
     }
   ]
 }
