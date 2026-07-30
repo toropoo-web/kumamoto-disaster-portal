@@ -131,11 +131,29 @@ function main() {
     return item.category === "VOLUNTEER";
   });
 
+  const volunteerKagoshimaResults = searchDisasterIndex(payload, "鹿児島 ボランティア", {
+    category: "VOLUNTEER"
+  });
+  const volunteerKirishimaResults = searchDisasterIndex(payload, "霧島 災害VC", {
+    category: "VOLUNTEER"
+  });
+  const volunteerAiraResults = searchDisasterIndex(payload, "姶良 ボランティア", {
+    category: "VOLUNTEER"
+  });
+
   checks.push({
     check: "VOLUNTEER search possible",
-    pass: volunteerKumamotoResults.length > 0 && volunteerUkiResults.length > 0,
+    pass:
+      volunteerKumamotoResults.length > 0 &&
+      volunteerUkiResults.length > 0 &&
+      volunteerKagoshimaResults.length > 0 &&
+      volunteerKirishimaResults.length > 0 &&
+      volunteerAiraResults.length > 0,
     kumamotoVolunteerCount: volunteerKumamotoResults.length,
     ukiVolunteerCount: volunteerUkiResults.length,
+    kagoshimaVolunteerCount: volunteerKagoshimaResults.length,
+    kirishimaVolunteerCount: volunteerKirishimaResults.length,
+    airaVolunteerCount: volunteerAiraResults.length,
     volunteerIndexCount: volunteerCategories.length
   });
 
@@ -145,8 +163,17 @@ function main() {
   if (!volunteerUkiResults.length) {
     errors.push("VOLUNTEER search failed: 宇城 災害VC");
   }
-  if (volunteerCategories.length !== 11) {
-    errors.push("expected 11 VOLUNTEER index entries (HISTORICAL_ONLY excluded)");
+  if (!volunteerKagoshimaResults.length) {
+    errors.push("VOLUNTEER search failed: 鹿児島 ボランティア");
+  }
+  if (!volunteerKirishimaResults.length) {
+    errors.push("VOLUNTEER search failed: 霧島 災害VC");
+  }
+  if (!volunteerAiraResults.length) {
+    errors.push("VOLUNTEER search failed: 姶良 ボランティア");
+  }
+  if (volunteerCategories.length !== 20) {
+    errors.push("expected 20 VOLUNTEER index entries (11 Kumamoto + 9 Kagoshima)");
   }
 
   const volunteerResult = validateVolunteerIndexExample();

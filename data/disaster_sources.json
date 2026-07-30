@@ -952,6 +952,248 @@
         "confirmed": false,
         "source": ""
       }
+    },
+    {
+      "source_id": "DSRC-VOL-6929C25F92",
+      "category": "VOLUNTEER",
+      "prefecture": "鹿児島県",
+      "municipality": "鹿児島県",
+      "organization": "鹿児島県社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://www.kaken-shakyo.jp/pages/346/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "令和7年8月大雨"
+      ],
+      "current_capability": {
+        "confirmed": true,
+        "source": "鹿児島県災害ボランティア情報（公式）"
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-494AB2E48A",
+      "category": "VOLUNTEER",
+      "prefecture": "鹿児島県",
+      "municipality": "鹿児島市",
+      "organization": "鹿児島市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://www.dondon-net.or.jp/volunteer/saigaibora/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-E140EAD5B8",
+      "category": "VOLUNTEER",
+      "prefecture": "鹿児島県",
+      "municipality": "霧島市",
+      "organization": "霧島市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://kirisha.jp/section-info/disaster-volunteer/3441/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "令和7年8月大雨"
+      ],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-B33C7FEDC2",
+      "category": "VOLUNTEER",
+      "prefecture": "鹿児島県",
+      "municipality": "姶良市",
+      "organization": "姶良市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://aira-shakyo.jp/kagoshima/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "令和7年8月大雨"
+      ],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-98B62526DF",
+      "category": "VOLUNTEER",
+      "prefecture": "鹿児島県",
+      "municipality": "薩摩川内市",
+      "organization": "薩摩川内市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://satsumasendai-shakyo.com/about/business/disaster-volunteer/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "令和7年8月大雨"
+      ],
+      "current_capability": {
+        "confirmed": true,
+        "source": "薩摩川内市災害ボランティアセンター公式情報"
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-558B0F1CB8",
+      "category": "VOLUNTEER",
+      "prefecture": "鹿児島県",
+      "municipality": "出水市",
+      "organization": "出水市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://izumi-shakyo.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-7F040E278F",
+      "category": "VOLUNTEER",
+      "prefecture": "鹿児島県",
+      "municipality": "伊佐市",
+      "organization": "伊佐市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://isa-shakyo.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-75B020F2BE",
+      "category": "VOLUNTEER",
+      "prefecture": "鹿児島県",
+      "municipality": "阿久根市",
+      "organization": "阿久根市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://www.akuneshakyo.or.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-A2AA2EE5D5",
+      "category": "VOLUNTEER",
+      "prefecture": "鹿児島県",
+      "municipality": "指宿市",
+      "organization": "指宿市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://ibusuki-syakyo.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
     }
   ]
 }

@@ -157,10 +157,10 @@ function main() {
     pass:
       registryResult.errors.length === 0 &&
       registryResult.categoryCounts.WATER > 0 &&
-      registryResult.categoryCounts.VOLUNTEER === 14
+      registryResult.categoryCounts.VOLUNTEER === 23
   });
-  if (registryResult.categoryCounts.VOLUNTEER !== 14) {
-    errors.push("expected 14 VOLUNTEER sources in disaster_sources.json");
+  if (registryResult.categoryCounts.VOLUNTEER !== 23) {
+    errors.push("expected 23 VOLUNTEER sources in disaster_sources.json (14 Kumamoto + 9 Kagoshima)");
   }
   errors.push.apply(errors, registryResult.errors);
 
@@ -328,7 +328,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log("PHASE27_VOLUNTEER_SOURCE_IMPORT_COMPLETE");
+  console.log("PHASE27_VOLUNTEER_KAGOSHIMA_SOURCE_IMPORT_COMPLETE");
 }
 
 main();
