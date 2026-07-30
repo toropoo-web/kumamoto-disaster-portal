@@ -176,12 +176,39 @@ function validateWaterCrossView(payload) {
     });
   });
 
-  const uki = (data.municipalities || []).find(function (entry) {
-    return entry.municipality === "宇城市";
-  });
-  if (!uki || uki.location_count !== 9) {
-    errors.push("宇城市 must have 9 official water locations");
+  function countPublicMunicipalWaterLocations(areaId) {
+    const disasterLocations = readJson(PUBLIC_LOCATIONS, { locations: [] });
+    return (disasterLocations.locations || []).filter(function (location) {
+      return location.area_id === areaId && isPublicMunicipalWater(location);
+    }).length;
   }
+
+  TARGET_MUNICIPALITIES.forEach(function (target) {
+    const entry = (data.municipalities || []).find(function (item) {
+      return item.municipality === target.municipality;
+    });
+    const expectedCount = countPublicMunicipalWaterLocations(target.area_id);
+
+    if (!entry) {
+      errors.push(target.municipality + ": missing municipality entry");
+      return;
+    }
+
+    if (entry.location_count !== expectedCount) {
+      errors.push(
+        target.municipality +
+        " location_count must match disaster_locations (" +
+        expectedCount +
+        " official water locations, got " +
+        entry.location_count +
+        ")"
+      );
+    }
+
+    if (entry.location_count !== (entry.locations || []).length) {
+      errors.push(target.municipality + ": location_count must match locations length");
+    }
+  });
 
   return errors;
 }

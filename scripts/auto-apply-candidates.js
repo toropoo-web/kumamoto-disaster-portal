@@ -3,7 +3,7 @@
 
 const { runAutoApply } = require("../monitor/auto-apply-engine");
 const { runPostApplyValidation } = require("../monitor/post-apply-validation");
-const { execSync } = require("child_process");
+const { runPublicDataBuild } = require("../monitor/public-data-build");
 
 async function main() {
   const apply = process.argv.includes("--apply");
@@ -24,7 +24,7 @@ async function main() {
     output.errors = (output.errors || []).concat(validationResult.errors || []);
 
     try {
-      execSync("node scripts/static-build.js", { stdio: "pipe" });
+      runPublicDataBuild();
       output.BUILD = "PASS";
     } catch (err) {
       output.BUILD = "FAIL";

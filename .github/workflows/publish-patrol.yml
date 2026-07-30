@@ -54,6 +54,10 @@ jobs:
           fi
           node scripts/publish-patrol-pipeline.js $ARGS
 
+      - name: Validate publication outputs
+        if: github.event.inputs.apply_approved == 'true'
+        run: npm test
+
       - name: Validate public status
         run: node scripts/validate-public-status.js
 
@@ -65,10 +69,12 @@ jobs:
           git add data/public/status.json
           if [ "${{ github.event.inputs.apply_approved }}" = "true" ]; then
             git add data/public/phase1_updates.json data/public/communication_status.json data/public/disaster_locations.json data/public/infrastructure_status.json || true
+            git add data/public/water_cross_view.json data/public/water_search_index.json data/public/disaster_search_index.json || true
           fi
           if git diff --cached --quiet; then
             echo "NO_PUBLIC_STATUS_CHANGES"
             exit 0
           fi
+          node scripts/verify-public-commit-staging.js
           git commit -m "chore(public): publish patrol status and reviewed updates"
           git push

@@ -349,8 +349,28 @@ function validateWaterSearchIndex(payload) {
     }
   });
 
-  if (locationCount !== 22) {
-    errors.push("location_item_count must remain 22, got " + locationCount);
+  const expectedLocationCount = buildLocationItems(
+    readJson(CROSS_VIEW_FILE, { municipalities: [] })
+  ).length;
+
+  if (payload.location_item_count !== locationCount) {
+    errors.push(
+      "location_item_count metadata mismatch (metadata " +
+      payload.location_item_count +
+      ", items " +
+      locationCount +
+      ")"
+    );
+  }
+
+  if (locationCount !== expectedLocationCount) {
+    errors.push(
+      "location_item_count must match water_cross_view location items (" +
+      expectedLocationCount +
+      ", got " +
+      locationCount +
+      ")"
+    );
   }
 
   if (registryCount === 0) {

@@ -6,6 +6,7 @@ const {
   inspectPublishPipeline,
   syncPublicStatusFromLatestPatrol
 } = require("../monitor/patrol-publish-pipeline");
+const { runPublicDataBuild } = require("../monitor/public-data-build");
 
 async function runApplyApproved(apply) {
   const args = apply ? ["node", "scripts/apply-approved.js", "--apply"] : ["node", "scripts/apply-approved.js"];
@@ -59,6 +60,13 @@ async function main() {
 
     if (!statusResult.saved) {
       summary.errors.push("status publish skipped: " + (statusResult.reason || "unknown"));
+    } else if (applyApproved) {
+      try {
+        runPublicDataBuild();
+        summary.actions.push({ step: "public-index-build", result: "PASS" });
+      } catch (err) {
+        summary.errors.push("public index build failed after publication");
+      }
     } else {
       try {
         execSync("node scripts/static-build.js", { stdio: "pipe" });
