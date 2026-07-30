@@ -865,7 +865,14 @@
     return index.items
       .filter(function (item) {
         var hay = normalizeSearchText(
-          [item.region, item.municipality, item.location, item.title, item.search_text].join(" ")
+          [
+            item.region,
+            item.municipality,
+            item.organization,
+            item.location,
+            item.title,
+            item.search_text
+          ].join(" ")
         );
         return tokens.every(function (token) {
           return hay.indexOf(token) !== -1;
@@ -924,11 +931,19 @@
         "water-search__region",
         item.region + " " + item.municipality
       ));
-      card.appendChild(createElement(
-        "h3",
-        "water-search__location",
-        "📍 " + item.location
-      ));
+      if (item.item_kind === "registry") {
+        card.appendChild(createElement(
+          "h3",
+          "water-search__location",
+          item.location
+        ));
+      } else {
+        card.appendChild(createElement(
+          "h3",
+          "water-search__location",
+          "📍 " + item.location
+        ));
+      }
       card.appendChild(createElement(
         "p",
         "water-search__title",
@@ -936,7 +951,15 @@
       ));
 
       var sourceText = "情報源: " + (item.source_name || "公式情報");
-      card.appendChild(createElement("p", "water-search__source", sourceText));
+      if (item.source_url) {
+        var sourceLink = createElement("a", "water-search__source-link", sourceText);
+        sourceLink.href = item.source_url;
+        sourceLink.target = "_blank";
+        sourceLink.rel = "noopener noreferrer";
+        card.appendChild(createElement("p", "water-search__source")).appendChild(sourceLink);
+      } else {
+        card.appendChild(createElement("p", "water-search__source", sourceText));
+      }
 
       if (item.updated_at) {
         card.appendChild(createElement(

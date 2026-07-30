@@ -1,0 +1,393 @@
+{
+  "category": "WATER",
+  "regions": [
+    "熊本県",
+    "鹿児島県"
+  ],
+  "sources": [
+    {
+      "region": "熊本県",
+      "organization": "熊本県防災情報",
+      "source_type": "official",
+      "url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "熊本市",
+      "source_type": "official",
+      "url": "https://www.city.kumamoto.jp/kurashi/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "熊本市上下水道局",
+      "source_type": "official",
+      "url": "https://www.city.kumamoto.jp/kurashi/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "八代市",
+      "source_type": "official",
+      "url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "宇城市",
+      "source_type": "official",
+      "url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "人吉市",
+      "source_type": "official",
+      "url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "菊池市",
+      "source_type": "official",
+      "url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "合志市",
+      "source_type": "official",
+      "url": "https://www.city.koshi.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "玉名市",
+      "source_type": "official",
+      "url": "https://www.city.tamana.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "天草市",
+      "source_type": "official",
+      "url": "https://www.city.amakusa.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "鹿児島県防災情報",
+      "source_type": "official",
+      "url": "https://www.pref.kagoshima.jp/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "鹿児島市",
+      "source_type": "official",
+      "url": "https://www.city.kagoshima.jp/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "霧島市",
+      "source_type": "official",
+      "url": "https://www.city.kirishima.lg.jp/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "鹿屋市",
+      "source_type": "official",
+      "url": "https://www.city.kanoya.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "薩摩川内市",
+      "source_type": "official",
+      "url": "https://www.city.satsumasendai.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "姶良市",
+      "source_type": "official",
+      "url": "https://www.city.aira.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "出水市",
+      "source_type": "official",
+      "url": "https://www.city.izumi.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "鹿児島県水道企業団",
+      "source_type": "official",
+      "url": "https://www.watersuigen-d.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "陸上自衛隊西部方面隊",
+      "source_type": "official",
+      "url": "https://www.mod.go.jp/gsdf/west/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "陸上自衛隊西部方面隊",
+      "source_type": "official",
+      "url": "https://www.mod.go.jp/gsdf/west/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "消防庁",
+      "source_type": "official",
+      "url": "https://www.fdma.go.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "消防庁",
+      "source_type": "official",
+      "url": "https://www.fdma.go.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "海上保安庁",
+      "source_type": "official",
+      "url": "https://www.kaiho.mlit.go.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "鹿児島県",
+      "organization": "海上保安庁",
+      "source_type": "official",
+      "url": "https://www.kaiho.mlit.go.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    }
+  ]
+}

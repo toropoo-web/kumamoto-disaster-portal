@@ -1917,6 +1917,11 @@ button:focus-visible {
   line-height: 1.5;
 }
 
+.water-search__source-link {
+  color: var(--color-primary, #1a5fb4);
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .water-search__form {
     grid-template-columns: 1fr auto;

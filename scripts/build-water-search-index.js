@@ -14,16 +14,13 @@ function main() {
   console.log(
     JSON.stringify(
       {
-        PHASE: "PHASE27_WATER_SEARCH_IMPLEMENTATION",
+        PHASE: "PHASE27_WATER_SEARCH_INDEX_V2",
+        VERSION: payload.version,
         ITEM_COUNT: payload.item_count,
+        LOCATION_ITEM_COUNT: payload.location_item_count,
+        REGISTRY_ITEM_COUNT: payload.registry_item_count,
         REGIONS: payload.regions,
-        LAST_UPDATED: payload.last_updated,
-        MUNICIPALITIES: Array.from(
-          payload.items.reduce(function (set, item) {
-            set.add(item.municipality);
-            return set;
-          }, new Set())
-        )
+        LAST_UPDATED: payload.last_updated
       },
       null,
       2
