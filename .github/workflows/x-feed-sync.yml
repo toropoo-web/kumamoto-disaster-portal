@@ -1,0 +1,60 @@
+name: X Feed Sync
+
+on:
+  schedule:
+    # Align with kumamoto-disaster-x-feed fetch cadence (every 30 minutes UTC)
+    - cron: "15,45 * * * *"
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - x-feed-updated
+
+concurrency:
+  group: x-feed-sync-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync x feed preview from upstream posts.json
+        run: npm run sync:x-feed
+
+      - name: Validate x feed preview JSON
+        run: node scripts/validate-x-feed-preview.js
+
+      - name: Publish x feed preview
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/public/x_feed_preview.json
+          STAGED="$(git diff --cached --name-only)"
+          if [ -z "$STAGED" ]; then
+            echo "NO_X_FEED_CHANGES"
+            exit 0
+          fi
+          if [ "$STAGED" != "data/public/x_feed_preview.json" ]; then
+            echo "REFUSING_COMMIT: only data/public/x_feed_preview.json may be published"
+            echo "$STAGED"
+            git reset
+            exit 1
+          fi
+          git commit -m "chore: sync x feed preview"
+          git push

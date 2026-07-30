@@ -1,6 +1,6 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-29T23:03:30.748Z",
+  "synced_at": "2026-07-30T05:49:36.104Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
@@ -8,83 +8,79 @@
       "source_id": "SRC-MUN-KM006",
       "account_name": "人吉市公式X",
       "account_handle": "hitoyoshishi",
-      "post_time": "2026-07-29T22:45:45.000Z",
-      "text": "【防災無線放送内容】生活用水提供のお知らせ\n環境課からのお知らせです。\n地震の影響により市内各地で断水または水圧低下が発生しています。\n本日（３０日）、生活用水として、下原田町荒毛の熊本フクスケ株式会社にて井戸水を提供いたします...\nhttps://t.co/HV7ij7xM79",
-      "url": "https://x.com/hitoyoshishi/status/2082598480045031466",
+      "post_time": "2026-07-30T03:45:44.000Z",
+      "text": "【防災無線放送内容】給水車のお知らせ（2026/07/30/12:45）\n水道局からのお知らせです。\n地震の影響により市内各地で断水または水圧低下が発生しています。ただいま、おこばコミュニティセンターで給水車を設置していますので、必要な方は取りに行ってください。皆様の節水のご協力をお願いします。",
+      "url": "https://x.com/hitoyoshishi/status/2082673973696012359",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "人吉市",
+      "content_filter": "DISASTER_RELATED"
+    },
+    {
+      "source_id": "SRC-MUN-KM005",
+      "account_name": "八代市公式X",
+      "account_handle": "yatsushiro0801",
+      "post_time": "2026-07-30T03:44:19.000Z",
+      "text": "災害総合相談窓口のご案内\n\n　被災された方々を支援するための専用窓口を市役所本庁舎２階に設けております。ご利用ください。\n\n開設場所：市役所本庁舎２階　市民相談室横\n平日　午前9時～午後5時\n電話 　33-4452\n\n詳しくは市ホームページを確認ください。\nhttps://t.co/amKjQNCBct",
+      "url": "https://x.com/yatsushiro0801/status/2082673617285026301",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "八代市",
       "content_filter": "DISASTER_RELATED"
     },
     {
       "source_id": "SRC-MUN-KM001",
       "account_name": "熊本市公式X",
       "account_handle": "kumamotocity_",
-      "post_time": "2026-07-29T22:00:02.000Z",
-      "text": "【応急給水活動について（7月30日07：00時点）】\n７月30日（木）の応急給水活動について下記のとおり実施します。↓\nhttps://t.co/aiYZ2BxUQi",
-      "url": "https://x.com/kumamotocity_/status/2082586976499441809",
+      "post_time": "2026-07-30T03:15:20.000Z",
+      "text": "■原稿■\n【濁水情報について（7月30日11：30時点）】\n\n熊本市内の一部で発生している濁水状況は、次のとおりです↓\nhttps://t.co/aiYZ2BxUQi",
+      "url": "https://x.com/kumamotocity_/status/2082666323948241081",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "熊本市",
       "content_filter": "DISASTER_RELATED"
     },
     {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-29T20:54:47.000Z",
-      "text": "【給水所情報（第12報）】\n7月30日（木）の応急給水場所その２\n（7：00～12：00）\n　・宮地小学校\n　・第四中学校\n（14：00～19：00）\n　・郡築コミュニティセンター\n　・昭和コミュニティセンター",
-      "url": "https://x.com/yatsushiro0801/status/2082570557103710717",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
-      "content_filter": "DISASTER_RELATED"
+      "source_id": "SRC-NAT-004",
+      "account_name": "総務省消防庁",
+      "account_handle": "FDMA_JAPAN",
+      "post_time": "2026-07-30T03:32:28.000Z",
+      "text": "【消防庁　令和８年熊本地震に対する消防機関の活動状況】 消防防災ヘリも、被災地で活動中です。#緊急消防援助隊 #緊援隊 #熊本県 #佐賀県防災航空隊 https://t.co/pcIC805iqJ",
+      "url": "https://x.com/FDMA_JAPAN/status/2082670634589684147",
+      "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-KUM-001",
-      "account_name": "防災くまもと",
-      "account_handle": "Bousai_Kumamoto",
-      "post_time": "2026-07-29T22:28:52.000Z",
-      "text": "(続き) \nこちらは益城町です。\n現在(2026/07/28 18:50)開設中の避難所情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9\n #避難所開設",
-      "url": "https://x.com/Bousai_Kumamoto/status/2082594232414753207",
-      "source_type": "PREFECTURE"
-    },
-    {
-      "source_id": "SRC-KUM-001",
-      "account_name": "防災くまもと",
-      "account_handle": "Bousai_Kumamoto",
-      "post_time": "2026-07-29T22:28:52.000Z",
-      "text": "こちらは益城町です。\n2026/07/28 18:50 に避難所を開設しましたのでお知らせします。\n開設した避難所： 益城町公民館飯野分館",
-      "url": "https://x.com/Bousai_Kumamoto/status/2082594231307345979",
-      "source_type": "PREFECTURE"
+      "source_id": "SRC-NAT-005",
+      "account_name": "防衛省 災害対策",
+      "account_handle": "ModJapan_saigai",
+      "post_time": "2026-07-30T03:25:13.000Z",
+      "text": "本日、海上自衛隊の掃海母艦「ぶんご」、多用途支援艦「えんしゅう」「げんかい」の３隻が八代港に入港しました。入港後は、搭載した救援物資を速やかに陸上自衛隊へ引き継ぎ、陸上自衛隊において被災地の避難場所等、必要な場所への輸送を開始しています。\n\n↓掃海母艦「ぶんご」の入港の様子です。 https://t.co/rRXwyeT0Yq",
+      "url": "https://x.com/ModJapan_saigai/status/2082668811069833655",
+      "source_type": "GOVERNMENT"
     },
     {
       "source_id": "SRC-NAT-004",
       "account_name": "総務省消防庁",
       "account_handle": "FDMA_JAPAN",
-      "post_time": "2026-07-29T22:19:52.000Z",
-      "text": "【消防庁とりまとめ第18報】令和８年熊本地震による被害及び消防機関等の対応状況について、7月30日（木）6時30分現在の被害状況等を取りまとめました。\n詳細はこちら→https://t.co/ya3d8x1YxX\n #総務省消防庁 #災害情報 #地震",
-      "url": "https://x.com/FDMA_JAPAN/status/2082591966047662498",
+      "post_time": "2026-07-30T03:24:23.000Z",
+      "text": "本日（7/30）は、熊本県を含めて31都府県に熱中症警戒アラートが発表されています。特に、避難所等普段とは異なる環境で過ごされている方は、こまめに水分補給をしたり、濡れたタオル等を肌に当て体を冷やすなどの熱中症対策をお願いします。周囲の方や離れて暮らすご家族への呼びかけもお願いします。 https://t.co/JcMPUwKKpi",
+      "url": "https://x.com/FDMA_JAPAN/status/2082668603833504044",
       "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-29T20:54:15.000Z",
-      "text": "【給水所情報（第11報）】\n7月30日（木）の応急給水場所その１\n（7：00～19：00）\n　・八代小学校\n　・第二中学校\n　・松高コミュニティセンター\n　・代陽コミュニティセンター\n　・太田郷コミュニティセンター\n　・鏡コミュニティセンター\n　・千丁コミュニティセンター\n　・泉運動公園",
-      "url": "https://x.com/yatsushiro0801/status/2082570423322202398",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
-      "content_filter": "DISASTER_RELATED"
+      "source_id": "SRC-NAT-001",
+      "account_name": "首相官邸 災害・危機管理情報",
+      "account_handle": "Kantei_Saigai",
+      "post_time": "2026-07-30T03:21:46.000Z",
+      "text": "【熊本地震】 https://t.co/HZdSW4EuJu",
+      "url": "https://x.com/Kantei_Saigai/status/2082667942484046003",
+      "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-29T20:53:24.000Z",
-      "text": "【給水所情報（第10報）】\n配布量は1回あたり５リットル程度となります。\n給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。\nまた、給水車が水の補給のため一時的に不在になることがありますので、あらかじめご了承ください。",
-      "url": "https://x.com/yatsushiro0801/status/2082570208842309750",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
-      "content_filter": "DISASTER_RELATED"
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-30T03:17:31.000Z",
+      "text": "(続き) \nこちらは甲佐町です。\n現在(2026/07/30 12:17)発令中の避難情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9 #避難情報",
+      "url": "https://x.com/Bousai_Kumamoto/status/2082666875948056892",
+      "source_type": "PREFECTURE"
     }
   ]
 }
