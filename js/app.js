@@ -80,6 +80,15 @@
     CURRENT_CONFIRMED: "CURRENT_CONFIRMED",
     CAPABILITY_UNCONFIRMED: "CAPABILITY_UNCONFIRMED"
   };
+  var EMERGENCY_SUMMARY_ID = "emergency-summary";
+  var CROSS_SEARCH_HUB_ID = "cross-search-hub";
+  var MUNICIPALITY_DETAIL_ID = "municipality-detail";
+  var OFFICIAL_INFORMATION_ID = "official-information";
+  var CROSS_SEARCH_FUTURE_CATEGORIES = [
+    { icon: "🏠", label: "避難情報", status: "planned" },
+    { icon: "🏥", label: "医療情報", status: "planned" },
+    { icon: "🛟", label: "支援情報", status: "planned" }
+  ];
   var DISASTER_MAP_SECTION_ID = "disaster-location-map-section";
   var VERIFIED_LOCATIONS_TITLE = "📍 支援地点一覧";
   var VERIFIED_LOCATIONS_EMPTY_DEFAULT = "該当する確認済み地点はありません。";
@@ -541,6 +550,258 @@
       el.textContent = text;
     }
     return el;
+  }
+
+  function createSummaryLinkCard(icon, title, description, href, ariaLabel) {
+    var card = createElement("a", "emergency-summary__card");
+    card.href = href;
+    card.setAttribute("aria-label", ariaLabel || title);
+    card.appendChild(createElement("h3", "emergency-summary__card-title", icon + " " + title));
+    card.appendChild(createElement("p", "emergency-summary__card-desc", description));
+    return card;
+  }
+
+  function countActiveWaterMunicipalities(waterCrossView) {
+    if (!waterCrossView || !waterCrossView.municipalities) {
+      return 0;
+    }
+
+    return waterCrossView.municipalities.filter(function (entry) {
+      return entry.location_count > 0;
+    }).length;
+  }
+
+  function getLatestRecordHeadline(records) {
+    if (!records || !records.length) {
+      return "最新の公式発表を確認";
+    }
+
+    var sorted = records.slice().sort(compareByDateDesc);
+    var record = sorted[0];
+    if (isEmergencyInfoRecord(record) && record.original_text) {
+      return record.original_text.length > 48
+        ? record.original_text.slice(0, 48) + "…"
+        : record.original_text;
+    }
+
+    return record.headline || record.area_name || "最新の公式発表を確認";
+  }
+
+  function renderEmergencySummary(container, records, waterCrossView, xFeedState) {
+    var section = createElement("section", "emergency-summary");
+    section.id = EMERGENCY_SUMMARY_ID;
+    section.setAttribute("aria-labelledby", "emergency-summary-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement("h2", "emergency-summary__title", "緊急情報サマリー");
+    title.id = "emergency-summary-title";
+    inner.appendChild(title);
+    inner.appendChild(createElement(
+      "p",
+      "emergency-summary__lead",
+      "初動対応に必要な情報をまとめています。詳細は各項目から確認できます。"
+    ));
+
+    var grid = createElement("div", "emergency-summary__grid");
+
+    if (xFeedState && xFeedState.status === X_FEED_STATUS_AVAILABLE && xFeedState.posts && xFeedState.posts.length > 0) {
+      grid.appendChild(createSummaryLinkCard(
+        "📢",
+        "最新公式速報",
+        "公式Xの最新投稿を確認",
+        "#x-feed",
+        "最新公式速報へ移動"
+      ));
+    }
+
+    var activeWaterCount = countActiveWaterMunicipalities(waterCrossView);
+    grid.appendChild(createSummaryLinkCard(
+      "💧",
+      "給水対応情報",
+      activeWaterCount > 0
+        ? activeWaterCount + "自治体で給水対応中"
+        : "給水所・給水車の情報を確認",
+      "#" + WATER_CROSS_VIEW_ID,
+      "給水対応情報へ移動"
+    ));
+
+    grid.appendChild(createSummaryLinkCard(
+      "🏠",
+      "避難情報",
+      "地域を指定して避難所を確認",
+      "#" + AREA_DISASTER_NAV_ID,
+      "避難情報へ移動"
+    ));
+
+    grid.appendChild(createSummaryLinkCard(
+      "📋",
+      "重要更新",
+      getLatestRecordHeadline(records),
+      "#latest-updates",
+      "重要更新へ移動"
+    ));
+
+    inner.appendChild(grid);
+    section.appendChild(inner);
+    container.appendChild(section);
+  }
+
+  function renderCrossSearchHub(container, disasterSearchIndex) {
+    if (!disasterSearchIndex) {
+      return;
+    }
+
+    var section = createElement("section", "cross-search-hub");
+    section.id = CROSS_SEARCH_HUB_ID;
+    section.setAttribute("aria-labelledby", "cross-search-hub-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement("h2", "section-title cross-search-hub__title", "横断検索");
+    title.id = "cross-search-hub-title";
+    inner.appendChild(title);
+    inner.appendChild(createElement(
+      "p",
+      "cross-search-hub__lead",
+      "水・ボランティアなど、災害関連の公式情報をカテゴリ別に検索できます。"
+    ));
+
+    var nav = createElement("nav", "cross-search-hub__nav");
+    nav.setAttribute("aria-label", "横断検索カテゴリ");
+    var navList = createElement("ul", "cross-search-hub__nav-list");
+
+    Object.keys(DISASTER_SEARCH_CATEGORY_CONFIG).forEach(function (categoryKey) {
+      var config = DISASTER_SEARCH_CATEGORY_CONFIG[categoryKey];
+      var navItem = createElement("li", "cross-search-hub__nav-item");
+      var navLink = createElement(
+        "a",
+        "cross-search-hub__nav-link",
+        config.icon + " " + config.title.replace("を探す", "")
+      );
+      navLink.href = "#" + (config.sectionId || DISASTER_SEARCH_ID);
+      navItem.appendChild(navLink);
+      navList.appendChild(navItem);
+    });
+
+    CROSS_SEARCH_FUTURE_CATEGORIES.forEach(function (entry) {
+      var plannedItem = createElement("li", "cross-search-hub__nav-item cross-search-hub__nav-item--planned");
+      plannedItem.appendChild(createElement(
+        "span",
+        "cross-search-hub__nav-label",
+        entry.icon + " " + entry.label + "（順次対応）"
+      ));
+      navList.appendChild(plannedItem);
+    });
+
+    nav.appendChild(navList);
+    inner.appendChild(nav);
+
+    var categoriesBlock = createElement("div", "cross-search-hub__categories");
+    categoriesBlock.appendChild(createElement("p", "cross-search-hub__categories-title", "現在対応："));
+    var availableList = createElement("ul", "cross-search-hub__categories-list");
+    var plannedList = createElement("ul", "cross-search-hub__categories-list cross-search-hub__categories-list--planned");
+    var plannedTitle = createElement("p", "cross-search-hub__categories-title", "順次対応：");
+    var hasPlanned = false;
+
+    DISASTER_SEARCH_PLANNED_CATEGORIES.forEach(function (entry) {
+      var item = createElement(
+        "li",
+        "cross-search-hub__category-item cross-search-hub__category-item--" + entry.status,
+        entry.icon + " " + entry.label
+      );
+      if (entry.status === "available") {
+        availableList.appendChild(item);
+      } else {
+        plannedList.appendChild(item);
+        hasPlanned = true;
+      }
+    });
+
+    CROSS_SEARCH_FUTURE_CATEGORIES.forEach(function (entry) {
+      plannedList.appendChild(createElement(
+        "li",
+        "cross-search-hub__category-item cross-search-hub__category-item--planned",
+        entry.icon + " " + entry.label
+      ));
+      hasPlanned = true;
+    });
+
+    categoriesBlock.appendChild(availableList);
+    if (hasPlanned) {
+      categoriesBlock.appendChild(plannedTitle);
+      categoriesBlock.appendChild(plannedList);
+    }
+    inner.appendChild(categoriesBlock);
+
+    var panels = createElement("div", "cross-search-hub__panels");
+    renderDisasterSearch(panels, disasterSearchIndex, "WATER", { compact: true });
+    renderDisasterSearch(panels, disasterSearchIndex, "VOLUNTEER", { compact: true });
+    inner.appendChild(panels);
+
+    section.appendChild(inner);
+    container.appendChild(section);
+  }
+
+  function renderMunicipalityDetailSection(container, navigation, areas, records, categoryAnchorsPlaced) {
+    var section = createElement("section", "municipality-detail");
+    section.id = MUNICIPALITY_DETAIL_ID;
+    section.setAttribute("aria-labelledby", "municipality-detail-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement("h2", "municipality-detail__title", "自治体別情報");
+    title.id = "municipality-detail-title";
+    inner.appendChild(title);
+    inner.appendChild(createElement(
+      "p",
+      "municipality-detail__lead",
+      "自治体ごとの公式発表一覧です。初動時は上部の入口から必要な情報へ進んでください。"
+    ));
+
+    var details = createElement("details", "municipality-detail__collapse");
+    var summary = createElement("summary", "municipality-detail__summary");
+    summary.appendChild(createElement("span", "municipality-detail__summary-title", "自治体別詳細を見る"));
+    summary.appendChild(createElement(
+      "span",
+      "municipality-detail__summary-note",
+      "自治体・カテゴリ別の公式発表一覧"
+    ));
+    details.appendChild(summary);
+
+    var body = createElement("div", "municipality-detail__body");
+    renderPageNavigation(body, navigation, records);
+    areas.forEach(function (area) {
+      renderAreaSection(body, area, records, categoryAnchorsPlaced);
+    });
+    details.appendChild(body);
+
+    inner.appendChild(details);
+    section.appendChild(inner);
+    container.appendChild(section);
+  }
+
+  function renderOfficialInformationGroup(container, xFeedState, records) {
+    var section = createElement("section", "official-information");
+    section.id = OFFICIAL_INFORMATION_ID;
+    section.setAttribute("aria-labelledby", "official-information-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement("h2", "official-information__title", "公式情報");
+    title.id = "official-information-title";
+    inner.appendChild(title);
+    inner.appendChild(createElement(
+      "p",
+      "official-information__lead",
+      "速報性の高い公式X投稿と、整理済みの公式発表を役割別に表示しています。"
+    ));
+
+    var body = createElement("div", "official-information__body");
+    renderXFeedSection(body, xFeedState);
+    if (records.length > 0) {
+      renderLatestUpdates(body, records);
+    }
+    inner.appendChild(body);
+
+    section.appendChild(inner);
+    container.appendChild(section);
   }
 
   function buildGoogleMapsSearchUrl(query) {
@@ -1265,11 +1526,12 @@
     resultsContainer.appendChild(list);
   }
 
-  function renderDisasterSearch(container, disasterSearchIndex, category) {
+  function renderDisasterSearch(container, disasterSearchIndex, category, options) {
     if (!disasterSearchIndex) {
       return;
     }
 
+    options = options || {};
     var categoryKey = category || DISASTER_SEARCH_DEFAULT_CATEGORY;
     var categoryConfig = DISASTER_SEARCH_CATEGORY_CONFIG[categoryKey];
     var guidance = DISASTER_SEARCH_GUIDANCE[categoryKey];
@@ -1283,6 +1545,9 @@
     var resultsId = sectionId + "-results";
 
     var section = createElement("section", "disaster-search");
+    if (options.compact) {
+      section.classList.add("disaster-search--compact");
+    }
     section.id = sectionId;
     section.setAttribute("data-search-category", categoryKey);
     section.setAttribute("aria-labelledby", titleId);
@@ -1295,6 +1560,14 @@
     );
     title.id = titleId;
     inner.appendChild(title);
+
+    if (categoryKey === "WATER") {
+      inner.appendChild(createElement(
+        "p",
+        "disaster-search__flow-note",
+        "入口 → 検索 → 詳細確認の流れで水情報を確認できます。詳細一覧は下の「給水情報一覧」へ。"
+      ));
+    }
 
     var guide = createElement("div", "disaster-search__guide");
     guide.appendChild(createElement("p", "disaster-search__guide-text", guidance.intro));
@@ -1325,33 +1598,35 @@
     scopeBlock.appendChild(scopeList);
     inner.appendChild(scopeBlock);
 
-    var categoriesBlock = createElement("div", "disaster-search__categories");
-    categoriesBlock.appendChild(createElement("p", "disaster-search__categories-title", "現在対応："));
-    var availableList = createElement("ul", "disaster-search__categories-list");
-    var plannedList = createElement("ul", "disaster-search__categories-list disaster-search__categories-list--planned");
-    var plannedTitle = createElement("p", "disaster-search__categories-title", "順次対応：");
-    var hasPlanned = false;
+    if (!options.compact) {
+      var categoriesBlock = createElement("div", "disaster-search__categories");
+      categoriesBlock.appendChild(createElement("p", "disaster-search__categories-title", "現在対応："));
+      var availableList = createElement("ul", "disaster-search__categories-list");
+      var plannedList = createElement("ul", "disaster-search__categories-list disaster-search__categories-list--planned");
+      var plannedTitle = createElement("p", "disaster-search__categories-title", "順次対応：");
+      var hasPlanned = false;
 
-    DISASTER_SEARCH_PLANNED_CATEGORIES.forEach(function (entry) {
-      var item = createElement(
-        "li",
-        "disaster-search__category-item disaster-search__category-item--" + entry.status,
-        entry.icon + " " + entry.label
-      );
-      if (entry.status === "available") {
-        availableList.appendChild(item);
-      } else {
-        plannedList.appendChild(item);
-        hasPlanned = true;
+      DISASTER_SEARCH_PLANNED_CATEGORIES.forEach(function (entry) {
+        var item = createElement(
+          "li",
+          "disaster-search__category-item disaster-search__category-item--" + entry.status,
+          entry.icon + " " + entry.label
+        );
+        if (entry.status === "available") {
+          availableList.appendChild(item);
+        } else {
+          plannedList.appendChild(item);
+          hasPlanned = true;
+        }
+      });
+
+      categoriesBlock.appendChild(availableList);
+      if (hasPlanned) {
+        categoriesBlock.appendChild(plannedTitle);
+        categoriesBlock.appendChild(plannedList);
       }
-    });
-
-    categoriesBlock.appendChild(availableList);
-    if (hasPlanned) {
-      categoriesBlock.appendChild(plannedTitle);
-      categoriesBlock.appendChild(plannedList);
+      inner.appendChild(categoriesBlock);
     }
-    inner.appendChild(categoriesBlock);
 
     var form = createElement("form", "disaster-search__form");
     form.setAttribute("role", "search");
@@ -1435,13 +1710,18 @@
     section.setAttribute("aria-labelledby", "water-cross-view-title");
 
     var inner = createElement("div", "container");
-    var title = createElement("h2", "section-title water-cross-view__title", "💧 " + (waterCrossView.title || "給水情報"));
+    var title = createElement("h2", "section-title water-cross-view__title", "💧 給水情報一覧");
     title.id = "water-cross-view-title";
     inner.appendChild(title);
     inner.appendChild(createElement(
       "p",
+      "water-cross-view__flow-note",
+      "水情報の確認手順：入口（水を探す）→ 横断検索 → 給水情報一覧（詳細確認）"
+    ));
+    inner.appendChild(createElement(
+      "p",
       "water-cross-view__lead",
-      waterCrossView.description || "現在利用可能な給水所"
+      waterCrossView.description || "自治体公式の給水所・給水車情報を一覧で確認できます。"
     ));
 
     if (waterCrossView.last_updated) {
@@ -1539,9 +1819,14 @@
     inner.appendChild(createElement(
       "p",
       "infrastructure-info__lead",
-      "道路・交通、水道、通信、電力の状態を公式情報に基づき表示します。"
+      "道路・通信・電力など生活基盤情報を確認できます。"
     ));
 
+    var collapse = createElement("details", "infrastructure-info__collapse");
+    var collapseSummary = createElement("summary", "infrastructure-info__summary", "インフラ情報を表示する");
+    collapse.appendChild(collapseSummary);
+
+    var collapseBody = createElement("div", "infrastructure-info__collapse-body");
     var sourceMap = buildInfrastructureSourceMap(infrastructureSources);
     var areaNameMap = buildAreaNameMap(areas);
     var allItems = (infrastructureStatus.items || []).filter(function (item) {
@@ -1559,14 +1844,16 @@
       navList.appendChild(navItem);
     });
     nav.appendChild(navList);
-    inner.appendChild(nav);
+    collapseBody.appendChild(nav);
 
     var categoriesWrap = createElement("div", "infrastructure-info__categories");
     INFRASTRUCTURE_CATEGORIES.forEach(function (categoryMeta) {
       var categoryItems = getInfrastructureItemsForCategory(allItems, categoryMeta.category, sourceMap);
       renderInfrastructureCategoryBlock(categoriesWrap, categoryMeta, categoryItems, areaNameMap, sourceMap);
     });
-    inner.appendChild(categoriesWrap);
+    collapseBody.appendChild(categoriesWrap);
+    collapse.appendChild(collapseBody);
+    inner.appendChild(collapse);
 
     section.appendChild(inner);
     container.appendChild(section);
@@ -2792,7 +3079,12 @@
       inner.appendChild(createElement("p", "x-feed__synced", "最終取得：" + syncedAt));
     }
 
-    inner.appendChild(createElement("p", "x-feed__lead", "公的機関・自治体等の公式X投稿です。最新状況はリンク先でご確認ください。"));
+    inner.appendChild(createElement("p", "x-feed__role", "速報性重視"));
+    inner.appendChild(createElement(
+      "p",
+      "x-feed__lead",
+      "自治体・公的機関の公式X投稿です。リアルタイムに近い最新投稿を表示します。詳細はリンク先でご確認ください。"
+    ));
 
     var list = createElement("ul", "x-feed__list");
 
@@ -2851,7 +3143,12 @@
     var inner = createElement("div", "container");
     inner.appendChild(createElement("h2", "section-title latest-updates__title", "最新公式情報"));
     inner.querySelector(".latest-updates__title").id = "latest-updates-title";
-    inner.appendChild(createElement("p", "latest-updates__lead", "直近の更新4件です。上の自治体別・カテゴリ別一覧とあわせてご確認ください。"));
+    inner.appendChild(createElement("p", "latest-updates__role", "整理済み公式発表"));
+    inner.appendChild(createElement(
+      "p",
+      "latest-updates__lead",
+      "自治体・公的機関の公式発表を整理して表示しています。全文と最新状況は発表元の公式ページでご確認ください。"
+    ));
 
     var sorted = records.slice().sort(compareByDateDesc).slice(0, MAX_LATEST);
     var list = createElement("ul", "latest-updates__list");
@@ -3162,24 +3459,16 @@
         renderPageHeader(page, navigation, lastVerified);
         renderDisasterSearchPromo(page);
         renderAreaNavPromo(page);
+        renderEmergencySummary(page, publicRecords, waterCrossView, xFeedState);
         renderCommunicationStatus(page, communicationStatus);
-        renderPageNavigation(page, navigation, publicRecords);
-        renderXFeedSection(page, xFeedState);
+        renderCrossSearchHub(page, disasterSearchIndex);
+        renderWaterCrossView(page, waterCrossView);
+        renderOfficialInformationGroup(page, xFeedState, publicRecords);
 
         var categoryAnchorsPlaced = {};
-        areas.forEach(function (area) {
-          renderAreaSection(page, area, publicRecords, categoryAnchorsPlaced);
-        });
-
-        if (publicRecords.length > 0) {
-          renderLatestUpdates(page, publicRecords);
-        }
+        renderMunicipalityDetailSection(page, navigation, areas, publicRecords, categoryAnchorsPlaced);
 
         renderAreaDisasterNav(page, areaNavigation, disasterLocations, locationSources);
-        renderDisasterSearch(page, disasterSearchIndex, "WATER");
-        renderDisasterSearch(page, disasterSearchIndex, "VOLUNTEER");
-        renderWaterSearch(page, waterSearchIndex);
-        renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);
         renderDisasterMapSection(page, disasterLocations, infrastructureStatus, infrastructureSources, areas);
         renderAboutSection(page);
