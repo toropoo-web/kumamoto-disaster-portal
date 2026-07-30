@@ -115,8 +115,15 @@ button:focus-visible {
 }
 
 .area-nav-promo__lead {
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.area-nav-promo__note {
+  margin: 0 0 12px;
+  font-size: 13px;
   color: var(--muted);
   line-height: 1.5;
 }
@@ -1991,6 +1998,13 @@ button:focus-visible {
   line-height: 1.6;
   color: var(--muted);
   white-space: pre-line;
+}
+
+.portal-quick-access__card-note {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
 .disaster-search {

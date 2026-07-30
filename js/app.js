@@ -1344,6 +1344,22 @@
       grid.appendChild(card);
     });
 
+    var areaCard = createElement("a", "portal-quick-access__card");
+    areaCard.href = "#" + AREA_DISASTER_NAV_ID;
+    areaCard.setAttribute("aria-label", "地域を指定して見るへ移動");
+    areaCard.appendChild(createElement("h3", "portal-quick-access__card-title", "📍 地域を指定して見る"));
+    areaCard.appendChild(createElement(
+      "p",
+      "portal-quick-access__card-desc",
+      "お住まいの地域を選択すると、その地域の災害情報を確認できます。"
+    ));
+    areaCard.appendChild(createElement(
+      "p",
+      "portal-quick-access__card-note",
+      "地域ごとの避難・給水・支援・公式情報を確認できます。"
+    ));
+    grid.appendChild(areaCard);
+
     inner.appendChild(grid);
     section.appendChild(inner);
     container.appendChild(section);
@@ -1813,10 +1829,15 @@
     inner.appendChild(createElement(
       "p",
       "area-nav-promo__lead",
-      "市町村を選択すると、地域に関連する災害情報や地図を確認できます。"
+      "お住まいの地域を選択すると、その地域の災害情報を確認できます。"
+    ));
+    inner.appendChild(createElement(
+      "p",
+      "area-nav-promo__note",
+      "地域ごとの避難・給水・支援・公式情報を確認できます。"
     ));
 
-    var button = createElement("button", "area-nav-promo__button", "地域を選択して見る");
+    var button = createElement("button", "area-nav-promo__button", "地域を指定して見る");
     button.type = "button";
     button.setAttribute("aria-label", "地域災害ナビへ移動");
     button.addEventListener("click", scrollToAreaDisasterNav);
