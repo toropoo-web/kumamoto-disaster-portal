@@ -6,13 +6,13 @@
     "public_category_label": "地震・緊急情報",
     "headline": "令和8年熊本地震に関する情報 - 熊本県ホームページ",
     "summary": "熊本県が令和8年熊本地震に関する公式情報を掲載しています。被害情報や災害対策本部会議資料などを随時追加しています。",
-    "displayed_updated_at": "2026-07-30T10:04:19.000Z",
+    "displayed_updated_at": "2026-07-30T16:04:15.000Z",
     "source_name": "熊本県",
     "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
     "department": "熊本県",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-30T10:22:24.396Z",
+    "collected_at": "2026-07-30T17:21:53.918Z",
     "display_priority": 1
   },
   {
@@ -202,13 +202,13 @@
     "public_category_label": "地震・緊急情報",
     "headline": "氷川町",
     "summary": "飲料水・食料の配布、家屋の安全確認の呼びかけなど、町からの緊急お知らせを掲載しています。",
-    "displayed_updated_at": "2026-07-30T08:02:04.000Z",
+    "displayed_updated_at": "2026-07-30T15:20:06.000Z",
     "source_name": "氷川町",
     "source_url": "https://www.town.hikawa.kumamoto.jp/",
     "department": "氷川町",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-30T10:22:24.396Z",
+    "collected_at": "2026-07-30T17:21:53.918Z",
     "display_priority": 1
   },
   {
@@ -250,13 +250,13 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災サイト / 合志市ホームページ",
     "summary": "避難所の開設状況、断水・水道のお知らせ、クーリングシェルターの状況などを掲載しています。",
-    "displayed_updated_at": "2026-07-30T09:01:06.000Z",
+    "displayed_updated_at": "2026-07-30T15:00:06.000Z",
     "source_name": "合志市",
     "source_url": "https://www.city.koshi.lg.jp/",
     "department": "合志市",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-30T10:22:24.396Z",
+    "collected_at": "2026-07-30T17:21:53.918Z",
     "display_priority": 1
   },
   {
