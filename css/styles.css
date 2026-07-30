@@ -1831,3 +1831,106 @@ button:focus-visible {
     max-width: 1100px;
   }
 }
+
+.water-search {
+  padding: 24px 0;
+  background: #f0f9ff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.water-search__regions,
+.water-search__lead,
+.water-search__hint,
+.water-search__empty,
+.water-search__summary,
+.water-search__updated {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.water-search__form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.water-search__label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.water-search__input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+  background: var(--surface);
+  box-sizing: border-box;
+}
+
+.water-search__button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #0369a1;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.water-search__results {
+  display: grid;
+  gap: 12px;
+}
+
+.water-search__card {
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.water-search__region {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.water-search__location {
+  margin: 0 0 8px;
+  font-size: 16px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.water-search__title,
+.water-search__source {
+  margin: 0 0 6px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .water-search__form {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+
+  .water-search__label,
+  .water-search__input {
+    grid-column: 1;
+  }
+
+  .water-search__button {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 120px;
+  }
+}

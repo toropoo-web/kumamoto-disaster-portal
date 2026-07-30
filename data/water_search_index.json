@@ -1,0 +1,231 @@
+{
+  "category": "WATER",
+  "regions": [
+    "熊本県",
+    "鹿児島県"
+  ],
+  "item_count": 22,
+  "last_updated": "2026-07-30T00:03:04.380Z",
+  "items": [
+    {
+      "region": "熊本県",
+      "municipality": "八代市",
+      "location": "鏡コミュニティセンター",
+      "title": "給水対応中",
+      "search_text": "熊本県 八代市 鏡コミュニティセンター 給水対応中 給水 給水所 応急給水",
+      "source_name": "八代市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T17:01:00+09:00"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "八代市",
+      "location": "千丁コミュニティセンター",
+      "title": "給水対応中",
+      "search_text": "熊本県 八代市 千丁コミュニティセンター 給水対応中 給水 給水所 応急給水",
+      "source_name": "八代市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T17:01:00+09:00"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "八代市",
+      "location": "太田郷コミュニティセンター",
+      "title": "給水対応中",
+      "search_text": "熊本県 八代市 太田郷コミュニティセンター 給水対応中 給水 給水所 応急給水",
+      "source_name": "八代市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T17:01:00+09:00"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "八代市",
+      "location": "代陽コミュニティセンター",
+      "title": "給水対応中",
+      "search_text": "熊本県 八代市 代陽コミュニティセンター 給水対応中 給水 給水所 応急給水",
+      "source_name": "八代市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T17:01:00+09:00"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "八代市",
+      "location": "第二中学校",
+      "title": "給水対応中",
+      "search_text": "熊本県 八代市 第二中学校 給水対応中 給水 給水所 応急給水",
+      "source_name": "八代市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T17:01:00+09:00"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "宇城市",
+      "location": "宇城市役所",
+      "title": "給水対応中",
+      "search_text": "熊本県 宇城市 宇城市役所 給水対応中 給水 給水所 応急給水",
+      "source_name": "宇城市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T23:19:39.141Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "宇城市",
+      "location": "戸馳地区生涯学習センター【旧戸馳小学校】",
+      "title": "給水対応中",
+      "search_text": "熊本県 宇城市 戸馳地区生涯学習センター【旧戸馳小学校】 給水対応中 給水 給水所 応急給水",
+      "source_name": "宇城市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T23:19:39.141Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "宇城市",
+      "location": "三角防災拠点センター",
+      "title": "給水対応中",
+      "search_text": "熊本県 宇城市 三角防災拠点センター 給水対応中 給水 給水所 応急給水",
+      "source_name": "宇城市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T23:19:39.141Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "宇城市",
+      "location": "三角北地区生涯学習センター【旧三角北小学校】",
+      "title": "給水対応中",
+      "search_text": "熊本県 宇城市 三角北地区生涯学習センター【旧三角北小学校】 給水対応中 給水 給水所 応急給水",
+      "source_name": "宇城市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T23:19:39.141Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "宇城市",
+      "location": "小川防災拠点センター",
+      "title": "給水対応中",
+      "search_text": "熊本県 宇城市 小川防災拠点センター 給水対応中 給水 給水所 応急給水",
+      "source_name": "宇城市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T23:19:39.141Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "宇城市",
+      "location": "松橋西防災拠点センター",
+      "title": "給水対応中",
+      "search_text": "熊本県 宇城市 松橋西防災拠点センター 給水対応中 給水 給水所 応急給水",
+      "source_name": "宇城市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T23:19:39.141Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "宇城市",
+      "location": "松橋東防災拠点センター",
+      "title": "給水対応中",
+      "search_text": "熊本県 宇城市 松橋東防災拠点センター 給水対応中 給水 給水所 応急給水",
+      "source_name": "宇城市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T23:19:39.141Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "宇城市",
+      "location": "不知火防災拠点センター",
+      "title": "給水対応中",
+      "search_text": "熊本県 宇城市 不知火防災拠点センター 給水対応中 給水 給水所 応急給水",
+      "source_name": "宇城市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T23:19:39.141Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "宇城市",
+      "location": "豊野防災拠点センター",
+      "title": "給水対応中",
+      "search_text": "熊本県 宇城市 豊野防災拠点センター 給水対応中 給水 給水所 応急給水",
+      "source_name": "宇城市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T23:19:39.141Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "人吉市",
+      "location": "大畑コミセン",
+      "title": "給水対応中",
+      "search_text": "熊本県 人吉市 大畑コミセン 給水対応中 給水 給水所 応急給水",
+      "source_name": "人吉市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T20:29:17.746Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "人吉市",
+      "location": "大畑コミュニティセンター（給水車）",
+      "title": "給水対応中",
+      "search_text": "熊本県 人吉市 大畑コミュニティセンター（給水車） 給水対応中 給水 給水所 給水車",
+      "source_name": "人吉市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T00:00:00+09:00"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "人吉市",
+      "location": "中原団地",
+      "title": "給水対応中",
+      "search_text": "熊本県 人吉市 中原団地 給水対応中 給水 給水所 応急給水",
+      "source_name": "人吉市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T20:29:17.746Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "人吉市",
+      "location": "中原団地（給水車）",
+      "title": "給水対応中",
+      "search_text": "熊本県 人吉市 中原団地（給水車） 給水対応中 給水 給水所 給水車",
+      "source_name": "人吉市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T00:00:00+09:00"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "人吉市",
+      "location": "東間コミュニティーセンター",
+      "title": "給水対応中",
+      "search_text": "熊本県 人吉市 東間コミュニティーセンター 給水対応中 給水 給水所 応急給水",
+      "source_name": "人吉市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T20:29:17.746Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "人吉市",
+      "location": "東間コミュニティセンター（給水車）",
+      "title": "給水対応中",
+      "search_text": "熊本県 人吉市 東間コミュニティセンター（給水車） 給水対応中 給水 給水所 給水車",
+      "source_name": "人吉市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T00:00:00+09:00"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "人吉市",
+      "location": "蓑野町公民館",
+      "title": "給水対応中",
+      "search_text": "熊本県 人吉市 蓑野町公民館 給水対応中 給水 給水所 応急給水",
+      "source_name": "人吉市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T20:29:17.746Z"
+    },
+    {
+      "region": "熊本県",
+      "municipality": "人吉市",
+      "location": "蓑野町公民館（給水車）",
+      "title": "給水対応中",
+      "search_text": "熊本県 人吉市 蓑野町公民館（給水車） 給水対応中 給水 給水所 給水車",
+      "source_name": "人吉市公式",
+      "source_type": "official",
+      "updated_at": "2026-07-29T00:00:00+09:00"
+    }
+  ]
+}

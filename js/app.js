@@ -13,6 +13,7 @@
   var X_FEED_EXCLUDED_ACCOUNT_HANDLES = { shinjirokoiz: true };
   var AREA_DISASTER_NAV_ID = "area-disaster-nav";
   var WATER_CROSS_VIEW_ID = "water-cross-view";
+  var WATER_SEARCH_ID = "water-search";
   var DISASTER_MAP_SECTION_ID = "disaster-location-map-section";
   var VERIFIED_LOCATIONS_TITLE = "📍 支援地点一覧";
   var VERIFIED_LOCATIONS_EMPTY_DEFAULT = "該当する確認済み地点はありません。";
@@ -808,6 +809,208 @@
     });
     block.appendChild(cards);
     container.appendChild(block);
+  }
+
+  function normalizeSearchText(value) {
+    if (!value) {
+      return "";
+    }
+
+    return String(value)
+      .toLowerCase()
+      .replace(/\u3000/g, " ")
+      .replace(/[\uff01-\uff5e]/g, function (ch) {
+        return String.fromCharCode(ch.charCodeAt(0) - 0xfee0);
+      })
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function loadWaterSearchIndex() {
+    return loadJson("water_search_index.json").catch(function () {
+      return { category: "WATER", regions: [], items: [] };
+    });
+  }
+
+  function getWaterSearchPriority(item) {
+    var hay = normalizeSearchText(
+      [item.location, item.title, item.search_text].join(" ")
+    );
+
+    if (hay.indexOf("復旧") !== -1) {
+      return 5;
+    }
+    if (hay.indexOf("断水") !== -1) {
+      return 4;
+    }
+    if (hay.indexOf("給水車") !== -1) {
+      return 3;
+    }
+    if (hay.indexOf("応急給水") !== -1) {
+      return 2;
+    }
+    return 1;
+  }
+
+  function searchWater(index, keyword) {
+    if (!index || !Array.isArray(index.items) || !keyword) {
+      return [];
+    }
+
+    var tokens = normalizeSearchText(keyword).split(" ").filter(Boolean);
+    if (!tokens.length) {
+      return [];
+    }
+
+    return index.items
+      .filter(function (item) {
+        var hay = normalizeSearchText(
+          [item.region, item.municipality, item.location, item.title, item.search_text].join(" ")
+        );
+        return tokens.every(function (token) {
+          return hay.indexOf(token) !== -1;
+        });
+      })
+      .sort(function (a, b) {
+        var priorityDiff = getWaterSearchPriority(a) - getWaterSearchPriority(b);
+        if (priorityDiff !== 0) {
+          return priorityDiff;
+        }
+        return (a.location || "").localeCompare(b.location || "", "ja");
+      });
+  }
+
+  function renderWaterSearchResult(resultsContainer, results, query) {
+    if (!resultsContainer) {
+      return;
+    }
+
+    resultsContainer.innerHTML = "";
+
+    if (!query) {
+      resultsContainer.appendChild(createElement(
+        "p",
+        "water-search__hint",
+        "地区名やキーワードを入力して検索してください。"
+      ));
+      return;
+    }
+
+    if (!results.length) {
+      resultsContainer.appendChild(createElement(
+        "p",
+        "water-search__empty",
+        "該当する公式給水情報は見つかりませんでした。"
+      ));
+      return;
+    }
+
+    resultsContainer.appendChild(createElement(
+      "p",
+      "water-search__summary",
+      "検索結果：" + results.length + "件"
+    ));
+
+    var list = createElement("div", "water-search__results");
+    results.forEach(function (item) {
+      var card = createElement("article", "water-search__card");
+      card.setAttribute(
+        "aria-label",
+        [item.region, item.municipality, item.location].filter(Boolean).join(" ")
+      );
+
+      card.appendChild(createElement(
+        "p",
+        "water-search__region",
+        item.region + " " + item.municipality
+      ));
+      card.appendChild(createElement(
+        "h3",
+        "water-search__location",
+        "📍 " + item.location
+      ));
+      card.appendChild(createElement(
+        "p",
+        "water-search__title",
+        item.title || "給水対応中"
+      ));
+
+      var sourceText = "情報源: " + (item.source_name || "公式情報");
+      card.appendChild(createElement("p", "water-search__source", sourceText));
+
+      if (item.updated_at) {
+        card.appendChild(createElement(
+          "p",
+          "water-search__updated",
+          "更新：" + formatDateTime(item.updated_at)
+        ));
+      }
+
+      list.appendChild(card);
+    });
+
+    resultsContainer.appendChild(list);
+  }
+
+  function renderWaterSearch(container, waterSearchIndex) {
+    if (!waterSearchIndex) {
+      return;
+    }
+
+    var section = createElement("section", "water-search");
+    section.id = WATER_SEARCH_ID;
+    section.setAttribute("aria-labelledby", "water-search-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement("h2", "section-title water-search__title", "💧 水を探す");
+    title.id = "water-search-title";
+    inner.appendChild(title);
+    inner.appendChild(createElement("p", "water-search__regions", "熊本県・鹿児島県"));
+    inner.appendChild(createElement(
+      "p",
+      "water-search__lead",
+      "給水・断水情報を検索"
+    ));
+
+    var form = createElement("form", "water-search__form");
+    form.setAttribute("role", "search");
+    form.setAttribute("aria-label", "給水情報検索");
+
+    var label = createElement("label", "water-search__label", "地区名・キーワード");
+    label.setAttribute("for", "water-search-input");
+
+    var input = createElement("input", "water-search__input");
+    input.id = "water-search-input";
+    input.type = "search";
+    input.name = "q";
+    input.placeholder = "例：宇城 給水 / 霧島 断水 / 給水車";
+    input.autocomplete = "off";
+    input.enterKeyHint = "search";
+
+    var button = createElement("button", "water-search__button", "検索");
+    button.type = "submit";
+
+    var resultsContainer = createElement("div", "water-search__results-wrap");
+    resultsContainer.id = "water-search-results";
+
+    function runSearch() {
+      var query = input.value.trim();
+      renderWaterSearchResult(resultsContainer, searchWater(waterSearchIndex, query), query);
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      runSearch();
+    });
+
+    form.appendChild(label);
+    form.appendChild(input);
+    form.appendChild(button);
+    inner.appendChild(form);
+    inner.appendChild(resultsContainer);
+    renderWaterSearchResult(resultsContainer, [], "");
+    section.appendChild(inner);
+    container.appendChild(section);
   }
 
   // WaterCrossView: cross-municipality official water access view
@@ -2512,6 +2715,7 @@
       loadJson("disaster_locations.json"),
       loadJson("location_sources.json"),
       loadJson("water_cross_view.json"),
+      loadWaterSearchIndex(),
       loadJson("infrastructure_status.json"),
       loadJson("infrastructure_sources.json"),
       loadXFeedPreview()
@@ -2526,9 +2730,10 @@
         var disasterLocations = results[6];
         var locationSources = results[7];
         var waterCrossView = results[8];
-        var infrastructureStatus = results[9];
-        var infrastructureSources = results[10];
-        var xFeedState = results[11];
+        var waterSearchIndex = results[9];
+        var infrastructureStatus = results[10];
+        var infrastructureSources = results[11];
+        var xFeedState = results[12];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -2557,6 +2762,7 @@
         }
 
         renderAreaDisasterNav(page, areaNavigation, disasterLocations, locationSources);
+        renderWaterSearch(page, waterSearchIndex);
         renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);
         renderDisasterMapSection(page, disasterLocations, infrastructureStatus, infrastructureSources, areas);
