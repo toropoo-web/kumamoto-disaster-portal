@@ -40,6 +40,18 @@ function validatePublicStatus(status) {
     errors.push("source_count invalid");
   }
 
+  if (status.sources_checked !== undefined && (typeof status.sources_checked !== "number" || status.sources_checked < 0)) {
+    errors.push("sources_checked invalid");
+  }
+
+  if (status.changes_detected !== undefined && (typeof status.changes_detected !== "number" || status.changes_detected < 0)) {
+    errors.push("changes_detected invalid");
+  }
+
+  if (status.last_success_at !== undefined && !status.last_success_at) {
+    errors.push("last_success_at invalid");
+  }
+
   if (!status.last_validation_at) {
     errors.push("last_validation_at missing");
   }
@@ -60,8 +72,11 @@ function savePublicStatus(options) {
 
   const status = {
     last_patrol_at: options.patrolAt,
+    last_success_at: options.patrolAt,
     system_status: options.systemStatus || "HEALTHY",
     source_count: options.sourceCount || 20,
+    sources_checked: options.sourcesChecked !== undefined ? options.sourcesChecked : options.sourceCount || 20,
+    changes_detected: options.changesDetected !== undefined ? options.changesDetected : 0,
     last_validation_at: options.lastValidationAt || options.patrolAt
   };
 

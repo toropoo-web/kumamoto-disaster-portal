@@ -11,6 +11,8 @@ permissions:
 jobs:
   patrol:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,6 +26,7 @@ jobs:
         run: npm ci
 
       - name: Restore patrol snapshot cache
+        id: patrol-cache
         uses: actions/cache@v4
         with:
           path: |
@@ -63,12 +66,34 @@ jobs:
           node scripts/validate-post-apply.js
           node scripts/validate-patrol-publish-pipeline.js
 
+      - name: Publish patrol status
+        run: |
+          set -e
+          node scripts/validate-public-status.js
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/public/status.json
+          STAGED="$(git diff --cached --name-only)"
+          if [ -z "$STAGED" ]; then
+            echo "NO_STATUS_CHANGES"
+            exit 0
+          fi
+          if [ "$STAGED" != "data/public/status.json" ]; then
+            echo "REFUSING_COMMIT: only data/public/status.json may be published"
+            echo "$STAGED"
+            git reset
+            exit 1
+          fi
+          git commit -m "chore: update patrol status"
+          git push
+
       - name: Log patrol summary on failure
         if: failure()
         run: |
           echo "Patrol workflow failed. Recent artifacts:"
           ls -la monitor/reports/ || true
           ls -la operations/patrol/ || true
+          cat monitor/reports/patrol-error-report.json || true
           cat monitor/reports/daily-report.md || true
           cat monitor/reports/source-failures.md || true
 
