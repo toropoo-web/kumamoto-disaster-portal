@@ -6,9 +6,12 @@ const path = require("path");
 const {
   CAPABILITY_STATUS,
   CAPABILITY_STATUS_VALUES,
+  VOLUNTEER_DISASTER_START_DATE,
   VOLUNTEER_SCHEMA_CANDIDATES,
   buildVolunteerSchemaExample,
   getDisasterSources,
+  isValidVolunteerDateString,
+  isVolunteerPublishedForCurrentDisaster,
   loadWaterSources,
   validateDisasterRegistry,
   validateDisasterSourceEntry,
@@ -33,6 +36,44 @@ function main() {
     pass: CAPABILITY_STATUS_VALUES.length === 3,
     values: CAPABILITY_STATUS_VALUES
   });
+
+  const volunteerExample = buildVolunteerSchemaExample();
+  checks.push({
+    check: "published_at exists",
+    pass: Boolean(volunteerExample.published_at)
+  });
+  if (!volunteerExample.published_at) {
+    errors.push("VOLUNTEER schema example missing published_at");
+  }
+
+  checks.push({
+    check: "disaster_start_date exists",
+    pass: volunteerExample.disaster_start_date === VOLUNTEER_DISASTER_START_DATE
+  });
+  if (volunteerExample.disaster_start_date !== VOLUNTEER_DISASTER_START_DATE) {
+    errors.push("VOLUNTEER schema example disaster_start_date must be " + VOLUNTEER_DISASTER_START_DATE);
+  }
+
+  checks.push({
+    check: "date format valid",
+    pass:
+      isValidVolunteerDateString(volunteerExample.published_at) &&
+      isValidVolunteerDateString(volunteerExample.disaster_start_date)
+  });
+  if (!isValidVolunteerDateString(volunteerExample.published_at)) {
+    errors.push("VOLUNTEER published_at has invalid date format");
+  }
+  if (!isValidVolunteerDateString(volunteerExample.disaster_start_date)) {
+    errors.push("VOLUNTEER disaster_start_date has invalid date format");
+  }
+
+  checks.push({
+    check: "2026-07-28 baseline eligible",
+    pass: isVolunteerPublishedForCurrentDisaster(volunteerExample)
+  });
+  if (!isVolunteerPublishedForCurrentDisaster(volunteerExample)) {
+    errors.push("VOLUNTEER example must be eligible at disaster baseline date");
+  }
 
   const volunteerExampleErrors = validateVolunteerSchemaExample();
   checks.push({
@@ -94,7 +135,9 @@ function main() {
     extractor: {},
     official: true,
     active: true,
-    capability_status: CAPABILITY_STATUS.CURRENT_CONFIRMED
+    capability_status: CAPABILITY_STATUS.CURRENT_CONFIRMED,
+    published_at: "2016-04-14",
+    disaster_start_date: VOLUNTEER_DISASTER_START_DATE
   };
   const waterFieldErrors = validateDisasterSourceEntry(waterOnlyEntry, 0);
   checks.push({
@@ -135,7 +178,11 @@ function main() {
     errors.push("loadWaterSources adapter count mismatch");
   }
 
-  const volunteerSource = buildVolunteerSchemaExample({ active: true });
+  const volunteerSource = buildVolunteerSchemaExample({
+    active: true,
+    published_at: VOLUNTEER_DISASTER_START_DATE,
+    disaster_start_date: VOLUNTEER_DISASTER_START_DATE
+  });
   const volunteerIndexEntry = toVolunteerRegistryIndexEntry(volunteerSource);
   const volunteerItems = buildVolunteerRegistryItems({
     sources: [volunteerSource]
@@ -212,6 +259,40 @@ function main() {
     errors.push("HISTORICAL_ONLY sources must not appear in current search index");
   }
 
+  const preDisasterSource = buildVolunteerSchemaExample({
+    source_id: "DSRC-VOL-PREDISASTER1",
+    municipality: "熊本市",
+    organization: "熊本市社会福祉協議会",
+    active: true,
+    published_at: "2016-04-14",
+    disaster_start_date: VOLUNTEER_DISASTER_START_DATE,
+    historical_evidence: ["熊本地震"],
+    current_capability: {
+      confirmed: true,
+      source: "公式社会福祉協議会情報"
+    }
+  });
+  const preDisasterItems = buildVolunteerRegistryItems({
+    sources: [preDisasterSource]
+  });
+  checks.push({
+    check: "pre-disaster published_at excluded from index",
+    pass: preDisasterItems.length === 0
+  });
+  if (preDisasterItems.length) {
+    errors.push("published_at before disaster_start_date must not appear in search index");
+  }
+
+  checks.push({
+    check: "historical evidence retained in source schema",
+    pass:
+      Array.isArray(preDisasterSource.historical_evidence) &&
+      preDisasterSource.historical_evidence.indexOf("熊本地震") !== -1
+  });
+  if (!Array.isArray(preDisasterSource.historical_evidence) || !preDisasterSource.historical_evidence.length) {
+    errors.push("historical_evidence must be retained on VOLUNTEER sources");
+  }
+
   checks.push({
     check: "VOLUNTEER index entry has capability_status",
     pass: volunteerIndexEntry.capability_status === CAPABILITY_STATUS.CURRENT_CONFIRMED
@@ -220,8 +301,17 @@ function main() {
     errors.push("VOLUNTEER index entry missing capability_status");
   }
 
+  checks.push({
+    check: "VOLUNTEER index entry has published_at",
+    pass: volunteerIndexEntry.published_at === VOLUNTEER_DISASTER_START_DATE
+  });
+  if (!volunteerIndexEntry.published_at) {
+    errors.push("VOLUNTEER index entry missing published_at");
+  }
+
   const output = {
     VOLUNTEER_SCHEMA_VALIDATION: errors.length === 0 ? "PASS" : "FAIL",
+    disasterStartDate: VOLUNTEER_DISASTER_START_DATE,
     capabilityStatus: CAPABILITY_STATUS,
     schemaCandidates: VOLUNTEER_SCHEMA_CANDIDATES,
     checks: checks,
@@ -235,7 +325,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log("PHASE27_VOLUNTEER_SCHEMA_EXTENSION_COMPLETE");
+  console.log("PHASE27_VOLUNTEER_DATE_FILTER_COMPLETE");
 }
 
 main();

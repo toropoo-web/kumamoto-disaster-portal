@@ -12,7 +12,9 @@ const {
   VOLUNTEER_KEYWORDS,
   CAPABILITY_STATUS,
   CAPABILITY_STATUS_VALUES,
+  VOLUNTEER_DISASTER_START_DATE,
   buildVolunteerSchemaExample,
+  isVolunteerPublishedForCurrentDisaster,
   resolveMunicipality,
   validateVolunteerSchemaExample
 } = require("./disaster-sources");
@@ -302,6 +304,8 @@ function toVolunteerRegistryIndexEntry(source) {
     content: content,
     keywords: keywords,
     capability_status: source.capability_status,
+    published_at: source.published_at,
+    disaster_start_date: source.disaster_start_date || VOLUNTEER_DISASTER_START_DATE,
     source_type: source.source_type || "SOCIAL_WELFARE",
     source_url: source.url,
     official: true,
@@ -324,6 +328,9 @@ function buildVolunteerRegistryItems(disasterSources) {
       return;
     }
     if (source.capability_status === CAPABILITY_STATUS.HISTORICAL_ONLY) {
+      return;
+    }
+    if (!isVolunteerPublishedForCurrentDisaster(source)) {
       return;
     }
     items.push(toVolunteerRegistryIndexEntry(source));
@@ -534,6 +541,12 @@ function validateDisasterSearchIndexEntry(entry, index) {
     } else if (CAPABILITY_STATUS_VALUES.indexOf(entry.capability_status) === -1) {
       errors.push(label + ": invalid capability_status " + entry.capability_status);
     }
+    if (!entry.published_at) {
+      errors.push(label + ": missing published_at");
+    }
+    if (!entry.disaster_start_date) {
+      errors.push(label + ": missing disaster_start_date");
+    }
   }
 
   return errors;
@@ -620,8 +633,10 @@ module.exports = {
   DISASTER_WATER_KEYWORDS,
   VOLUNTEER_KEYWORDS,
   CAPABILITY_STATUS,
+  VOLUNTEER_DISASTER_START_DATE,
   buildDisasterSearchIndex,
   buildVolunteerRegistryItems,
+  isVolunteerPublishedForCurrentDisaster,
   toVolunteerRegistryIndexEntry,
   buildAndWriteDisasterSearchIndex,
   searchDisasterIndex,

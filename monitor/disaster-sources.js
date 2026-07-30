@@ -59,6 +59,9 @@ const VOLUNTEER_SCHEMA_CANDIDATES = {
   HISTORICAL_ONLY: ["氷川町", "嘉島町", "美里町"]
 };
 
+const VOLUNTEER_DISASTER_START_DATE = "2026-07-28";
+const VOLUNTEER_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+
 const KAGOSHIMA_WATER_PLACEHOLDER_MUNICIPALITIES = [
   "伊佐市",
   "阿久根市",
@@ -253,10 +256,52 @@ function buildVolunteerSchemaExample(overrides) {
     current_capability: {
       confirmed: true,
       source: "公式社会福祉協議会情報"
-    }
+    },
+    published_at: VOLUNTEER_DISASTER_START_DATE,
+    disaster_start_date: VOLUNTEER_DISASTER_START_DATE
   };
 
   return Object.assign(base, overrides || {});
+}
+
+function isValidVolunteerDateString(value) {
+  if (!value || typeof value !== "string" || !VOLUNTEER_DATE_PATTERN.test(value)) {
+    return false;
+  }
+
+  const parts = value.split("-").map(Number);
+  const date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+
+  return (
+    date.getUTCFullYear() === parts[0] &&
+    date.getUTCMonth() === parts[1] - 1 &&
+    date.getUTCDate() === parts[2]
+  );
+}
+
+function compareVolunteerDates(left, right) {
+  if (left === right) {
+    return 0;
+  }
+  return left < right ? -1 : 1;
+}
+
+function isVolunteerPublishedForCurrentDisaster(source) {
+  if (!source || source.category !== "VOLUNTEER") {
+    return false;
+  }
+
+  const disasterStart = source.disaster_start_date || VOLUNTEER_DISASTER_START_DATE;
+
+  if (!isValidVolunteerDateString(source.published_at)) {
+    return false;
+  }
+
+  if (!isValidVolunteerDateString(disasterStart)) {
+    return false;
+  }
+
+  return compareVolunteerDates(source.published_at, disasterStart) >= 0;
 }
 
 function validateVolunteerSourceEntry(entry, index) {
@@ -299,6 +344,25 @@ function validateVolunteerSourceEntry(entry, index) {
 
   if (entry.official !== true) {
     errors.push(label + ": official must be true for VOLUNTEER sources");
+  }
+
+  if (!entry.published_at) {
+    errors.push(label + ": published_at missing");
+  } else if (!isValidVolunteerDateString(entry.published_at)) {
+    errors.push(label + ": invalid published_at format (expected YYYY-MM-DD)");
+  }
+
+  if (!entry.disaster_start_date) {
+    errors.push(label + ": disaster_start_date missing");
+  } else if (!isValidVolunteerDateString(entry.disaster_start_date)) {
+    errors.push(label + ": invalid disaster_start_date format (expected YYYY-MM-DD)");
+  } else if (entry.disaster_start_date !== VOLUNTEER_DISASTER_START_DATE) {
+    errors.push(
+      label +
+        ": disaster_start_date must be " +
+        VOLUNTEER_DISASTER_START_DATE +
+        " for current disaster coverage"
+    );
   }
 
   if (entry.capability_status === CAPABILITY_STATUS.CURRENT_CONFIRMED) {
@@ -450,7 +514,13 @@ function validateDisasterSourceEntry(entry, index, options) {
   }
 
   if (entry.category !== "VOLUNTEER") {
-    ["capability_status", "historical_evidence", "current_capability"].forEach(function (field) {
+    [
+      "capability_status",
+      "historical_evidence",
+      "current_capability",
+      "published_at",
+      "disaster_start_date"
+    ].forEach(function (field) {
       if (entry[field] !== undefined) {
         errors.push(label + ": " + field + " only allowed for VOLUNTEER category");
       }
@@ -569,9 +639,14 @@ module.exports = {
   CAPABILITY_STATUS,
   CAPABILITY_STATUS_VALUES,
   VOLUNTEER_SCHEMA_CANDIDATES,
+  VOLUNTEER_DISASTER_START_DATE,
+  VOLUNTEER_DATE_PATTERN,
   buildSourceId,
   buildVolunteerSchemaExample,
+  compareVolunteerDates,
   inferSourceType,
+  isValidVolunteerDateString,
+  isVolunteerPublishedForCurrentDisaster,
   resolveMunicipality,
   readDisasterRegistry,
   readWaterRegistry,
