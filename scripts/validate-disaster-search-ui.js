@@ -1,0 +1,119 @@
+#!/usr/bin/env node
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = path.join(__dirname, "..");
+
+const {
+  PUBLIC_OUTPUT_FILE,
+  buildAndWriteDisasterSearchIndex,
+  searchDisasterIndex
+} = require(path.join(__dirname, "..", "monitor", "disaster-search-index-engine"));
+
+function main() {
+  const errors = [];
+  const checks = [];
+
+  [
+    "js/app.js",
+    "css/styles.css",
+    "monitor/disaster-search-index-engine.js",
+    "scripts/build-disaster-search-index.js",
+    "scripts/validate-disaster-search-index.js"
+  ].forEach(function (file) {
+    const exists = fs.existsSync(path.join(ROOT, file));
+    checks.push({ check: file, pass: exists });
+    if (!exists) {
+      errors.push("Missing file: " + file);
+    }
+  });
+
+  const payload = buildAndWriteDisasterSearchIndex();
+  if (!fs.existsSync(PUBLIC_OUTPUT_FILE)) {
+    errors.push("Missing output: data/public/disaster_search_index.json");
+  }
+  checks.push({
+    check: "public disaster search index exists",
+    pass: fs.existsSync(PUBLIC_OUTPUT_FILE)
+  });
+
+  const appJs = fs.readFileSync(path.join(ROOT, "js", "app.js"), "utf8");
+  const css = fs.readFileSync(path.join(ROOT, "css", "styles.css"), "utf8");
+
+  [
+    { name: "disaster search load", pattern: /loadDisasterSearchIndex/ },
+    { name: "disaster search function", pattern: /function searchDisasterIndex/ },
+    { name: "disaster search render", pattern: /renderDisasterSearchResult/ },
+    { name: "disaster search section", pattern: /disaster-search/ },
+    { name: "disaster search promo", pattern: /renderDisasterSearchPromo/ },
+    { name: "disaster search category config", pattern: /DISASTER_SEARCH_CATEGORY_CONFIG/ }
+  ].forEach(function (check) {
+    const pass = check.pattern.test(appJs);
+    checks.push({ check: "JS: " + check.name, pass: pass });
+    if (!pass) {
+      errors.push("JS check failed: " + check.name);
+    }
+  });
+
+  [
+    { name: "water search preserved", pattern: /function searchWater/ },
+    { name: "water cross view preserved", pattern: /renderWaterCrossView/ },
+    { name: "water search section preserved", pattern: /WATER_SEARCH_ID/ }
+  ].forEach(function (check) {
+    const pass = check.pattern.test(appJs);
+    checks.push({ check: "JS preserve: " + check.name, pass: pass });
+    if (!pass) {
+      errors.push("Existing WATER UI check failed: " + check.name);
+    }
+  });
+
+  [
+    { name: "portal quick access styles", pattern: /\.portal-quick-access/ },
+    { name: "portal quick access card", pattern: /\.portal-quick-access__card/ },
+    { name: "disaster search styles", pattern: /\.disaster-search/ },
+    { name: "disaster search form", pattern: /\.disaster-search__form/ },
+    { name: "disaster search mobile input", pattern: /\.disaster-search__input[\s\S]*min-height:\s*44px/ },
+    { name: "disaster search desktop layout", pattern: /@media \(min-width: 768px\)[\s\S]*\.disaster-search__form/ }
+  ].forEach(function (check) {
+    const pass = check.pattern.test(css);
+    checks.push({ check: "CSS: " + check.name, pass: pass });
+    if (!pass) {
+      errors.push("CSS check failed: " + check.name);
+    }
+  });
+
+  const ukiResults = searchDisasterIndex(payload, "宇城 給水", { category: "WATER" });
+  const kagoshimaResults = searchDisasterIndex(payload, "霧島 給水", { category: "WATER" });
+  checks.push({
+    check: "search engine usable",
+    pass: ukiResults.length > 0 && kagoshimaResults.length > 0,
+    ukiCount: ukiResults.length,
+    kagoshimaCount: kagoshimaResults.length
+  });
+  if (!ukiResults.length) {
+    errors.push("search engine check failed: 宇城 給水");
+  }
+  if (!kagoshimaResults.length) {
+    errors.push("search engine check failed: 霧島 給水");
+  }
+
+  const output = {
+    DISASTER_SEARCH_UI_VALIDATION: errors.length === 0 ? "PASS" : "FAIL",
+    indexCount: payload.index.length,
+    checks: checks,
+    errors: errors
+  };
+
+  console.log("=== Disaster Search UI Validation ===");
+  console.log(JSON.stringify(output, null, 2));
+
+  if (errors.length) {
+    process.exit(1);
+  }
+
+  console.log("PHASE27_DISASTER_SEARCH_UI_INTEGRATION_COMPLETE");
+}
+
+main();

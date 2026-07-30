@@ -19,6 +19,7 @@ const CROSS_VIEW_FILE = path.join(ROOT, "data", "water_cross_view.json");
 const SNAPSHOT_FILE = path.join(__dirname, "reports", "water-snapshots.json");
 const SNAPSHOT_SEED_FILE = path.join(__dirname, "baselines", "water-snapshots.seed.json");
 const OUTPUT_FILE = path.join(ROOT, "data", "disaster_search_index.json");
+const PUBLIC_OUTPUT_FILE = path.join(ROOT, "data", "public", "disaster_search_index.json");
 
 const DISASTER_WATER_KEYWORDS = WATER_KEYWORDS.concat(["飲料水", "生活用水"]);
 
@@ -374,12 +375,15 @@ function buildDisasterSearchIndex(options) {
 }
 
 function buildAndWriteDisasterSearchIndex(options) {
+  options = options || {};
   const payload = buildDisasterSearchIndex(options);
-  writeJson(options && options.outputPath ? options.outputPath : OUTPUT_FILE, {
+  const output = {
     version: payload.version,
     region: payload.region,
     index: payload.index
-  });
+  };
+  writeJson(options.outputPath || OUTPUT_FILE, output);
+  writeJson(options.publicOutputPath || PUBLIC_OUTPUT_FILE, output);
   return payload;
 }
 
@@ -530,6 +534,7 @@ module.exports = {
   SNAPSHOT_FILE,
   SNAPSHOT_SEED_FILE,
   OUTPUT_FILE,
+  PUBLIC_OUTPUT_FILE,
   REGION_KYUSHU_SOUTH,
   CATEGORIES,
   DISASTER_WATER_KEYWORDS,

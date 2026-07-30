@@ -21,6 +21,7 @@ const REQUIRED_FILES = [
   "data/public/location_sources.json",
   "data/public/water_cross_view.json",
   "data/public/water_search_index.json",
+  "data/public/disaster_search_index.json",
   "data/public/emergency_sources.json",
   "data/public/infrastructure_sources.json",
   "data/public/infrastructure_status.json"
@@ -40,7 +41,10 @@ const CSS_CHECKS = [
   { name: "water cross view section", pattern: /\.water-cross-view/ },
   { name: "water cross view card", pattern: /\.water-cross-view__card/ },
   { name: "water search section", pattern: /\.water-search/ },
-  { name: "water search form", pattern: /\.water-search__form/ }
+  { name: "water search form", pattern: /\.water-search__form/ },
+  { name: "portal quick access section", pattern: /\.portal-quick-access/ },
+  { name: "disaster search section", pattern: /\.disaster-search/ },
+  { name: "disaster search form", pattern: /\.disaster-search__form/ }
 ];
 
 const JS_CHECKS = [
@@ -81,6 +85,11 @@ const JS_CHECKS = [
   { name: "water search function", pattern: /function searchWater/ },
   { name: "water search render", pattern: /renderWaterSearchResult/ },
   { name: "water search section id", pattern: /WATER_SEARCH_ID/ },
+  { name: "disaster search load", pattern: /loadDisasterSearchIndex/ },
+  { name: "disaster search function", pattern: /function searchDisasterIndex/ },
+  { name: "disaster search render", pattern: /renderDisasterSearchResult/ },
+  { name: "disaster search section id", pattern: /DISASTER_SEARCH_ID/ },
+  { name: "disaster search promo", pattern: /renderDisasterSearchPromo/ },
   { name: "open disaster map section", pattern: /openDisasterMapSection/ },
   { name: "scroll to page target", pattern: /scrollToPageTarget/ },
   { name: "verified locations support title", pattern: /VERIFIED_LOCATIONS_TITLE/ },

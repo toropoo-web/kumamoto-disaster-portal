@@ -14,6 +14,16 @@
   var AREA_DISASTER_NAV_ID = "area-disaster-nav";
   var WATER_CROSS_VIEW_ID = "water-cross-view";
   var WATER_SEARCH_ID = "water-search";
+  var DISASTER_SEARCH_ID = "disaster-search";
+  var DISASTER_SEARCH_DEFAULT_CATEGORY = "WATER";
+  var DISASTER_SEARCH_CATEGORY_CONFIG = {
+    WATER: {
+      icon: "💧",
+      title: "水を探す",
+      lead: "給水・断水・水道情報を検索",
+      promoDescription: "熊本県・鹿児島県\n給水・断水・水道情報を検索"
+    }
+  };
   var DISASTER_MAP_SECTION_ID = "disaster-location-map-section";
   var VERIFIED_LOCATIONS_TITLE = "📍 支援地点一覧";
   var VERIFIED_LOCATIONS_EMPTY_DEFAULT = "該当する確認済み地点はありません。";
@@ -1032,6 +1042,235 @@
     inner.appendChild(form);
     inner.appendChild(resultsContainer);
     renderWaterSearchResult(resultsContainer, [], "");
+    section.appendChild(inner);
+    container.appendChild(section);
+  }
+
+  function loadDisasterSearchIndex() {
+    return loadJson("disaster_search_index.json").catch(function () {
+      return { version: "1.0", region: "KYUSHU_SOUTH", index: [] };
+    });
+  }
+
+  function searchDisasterIndex(indexPayload, query, options) {
+    options = options || {};
+    var items = (indexPayload && indexPayload.index) || [];
+    var tokens = normalizeSearchText(query).split(" ").filter(Boolean);
+
+    if (!tokens.length) {
+      return [];
+    }
+
+    return items.filter(function (item) {
+      if (options.category && item.category !== options.category) {
+        return false;
+      }
+
+      if (options.prefecture && item.prefecture !== options.prefecture) {
+        return false;
+      }
+
+      var hay = normalizeSearchText(
+        [
+          item.prefecture,
+          item.municipality,
+          item.organization,
+          item.title,
+          (item.keywords || []).join(" "),
+          item.content
+        ].join(" ")
+      );
+
+      return tokens.every(function (token) {
+        return hay.indexOf(token) !== -1;
+      });
+    });
+  }
+
+  function renderDisasterSearchResult(resultsContainer, results, query) {
+    if (!resultsContainer) {
+      return;
+    }
+
+    resultsContainer.innerHTML = "";
+
+    if (!query) {
+      resultsContainer.appendChild(createElement(
+        "p",
+        "disaster-search__hint",
+        "地区名やキーワードを入力して検索してください。"
+      ));
+      return;
+    }
+
+    if (!results.length) {
+      resultsContainer.appendChild(createElement(
+        "p",
+        "disaster-search__empty",
+        "該当する公式災害情報は見つかりませんでした。"
+      ));
+      return;
+    }
+
+    resultsContainer.appendChild(createElement(
+      "p",
+      "disaster-search__summary",
+      "検索結果：" + results.length + "件"
+    ));
+
+    var list = createElement("div", "disaster-search__results");
+    results.forEach(function (item) {
+      var card = createElement("article", "disaster-search__card");
+      card.setAttribute(
+        "aria-label",
+        [item.prefecture, item.municipality, item.title].filter(Boolean).join(" ")
+      );
+
+      card.appendChild(createElement(
+        "p",
+        "disaster-search__region",
+        item.prefecture + " " + item.municipality
+      ));
+      card.appendChild(createElement(
+        "h3",
+        "disaster-search__title",
+        item.title || "公式情報"
+      ));
+
+      if (item.content) {
+        card.appendChild(createElement(
+          "p",
+          "disaster-search__content",
+          item.content
+        ));
+      }
+
+      var sourceText = "情報源: " + (item.organization || "公式情報");
+      card.appendChild(createElement("p", "disaster-search__source", sourceText));
+
+      if (item.source_url) {
+        var officialLink = createElement("a", "disaster-search__official-link", "公式ページへ");
+        officialLink.href = item.source_url;
+        officialLink.target = "_blank";
+        officialLink.rel = "noopener noreferrer";
+        officialLink.setAttribute(
+          "aria-label",
+          (item.organization || "公式情報") + "の公式ページへ（外部リンク）"
+        );
+        card.appendChild(officialLink);
+      }
+
+      if (item.updated_at) {
+        card.appendChild(createElement(
+          "p",
+          "disaster-search__updated",
+          "更新：" + formatDateTime(item.updated_at)
+        ));
+      }
+
+      list.appendChild(card);
+    });
+
+    resultsContainer.appendChild(list);
+  }
+
+  function renderDisasterSearch(container, disasterSearchIndex, category) {
+    if (!disasterSearchIndex) {
+      return;
+    }
+
+    var categoryKey = category || DISASTER_SEARCH_DEFAULT_CATEGORY;
+    var categoryConfig = DISASTER_SEARCH_CATEGORY_CONFIG[categoryKey];
+    if (!categoryConfig) {
+      return;
+    }
+
+    var section = createElement("section", "disaster-search");
+    section.id = DISASTER_SEARCH_ID;
+    section.setAttribute("data-search-category", categoryKey);
+    section.setAttribute("aria-labelledby", "disaster-search-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement(
+      "h2",
+      "section-title disaster-search__heading",
+      categoryConfig.icon + " " + categoryConfig.title
+    );
+    title.id = "disaster-search-title";
+    inner.appendChild(title);
+    inner.appendChild(createElement("p", "disaster-search__regions", "熊本県・鹿児島県"));
+    inner.appendChild(createElement(
+      "p",
+      "disaster-search__lead",
+      categoryConfig.lead
+    ));
+
+    var form = createElement("form", "disaster-search__form");
+    form.setAttribute("role", "search");
+    form.setAttribute("aria-label", "災害情報検索");
+
+    var label = createElement("label", "disaster-search__label", "地区名・キーワード");
+    label.setAttribute("for", "disaster-search-input");
+
+    var input = createElement("input", "disaster-search__input");
+    input.id = "disaster-search-input";
+    input.type = "search";
+    input.name = "q";
+    input.placeholder = "例：宇城 給水 / 霧島 断水";
+    input.autocomplete = "off";
+    input.enterKeyHint = "search";
+
+    var button = createElement("button", "disaster-search__button", "検索");
+    button.type = "submit";
+
+    var resultsContainer = createElement("div", "disaster-search__results-wrap");
+    resultsContainer.id = "disaster-search-results";
+
+    function runSearch() {
+      var query = input.value.trim();
+      renderDisasterSearchResult(
+        resultsContainer,
+        searchDisasterIndex(disasterSearchIndex, query, { category: categoryKey }),
+        query
+      );
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      runSearch();
+    });
+
+    form.appendChild(label);
+    form.appendChild(input);
+    form.appendChild(button);
+    inner.appendChild(form);
+    inner.appendChild(resultsContainer);
+    renderDisasterSearchResult(resultsContainer, [], "");
+    section.appendChild(inner);
+    container.appendChild(section);
+  }
+
+  function renderDisasterSearchPromo(container) {
+    var section = createElement("section", "portal-quick-access");
+    section.setAttribute("aria-labelledby", "portal-quick-access-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement("h2", "portal-quick-access__title", "支援情報を探す");
+    title.id = "portal-quick-access-title";
+    inner.appendChild(title);
+
+    var grid = createElement("div", "portal-quick-access__grid");
+    Object.keys(DISASTER_SEARCH_CATEGORY_CONFIG).forEach(function (categoryKey) {
+      var config = DISASTER_SEARCH_CATEGORY_CONFIG[categoryKey];
+      var card = createElement("a", "portal-quick-access__card");
+      card.href = "#" + DISASTER_SEARCH_ID;
+      card.setAttribute("aria-label", config.title + "の検索へ移動");
+      card.appendChild(createElement("h3", "portal-quick-access__card-title", config.icon + " " + config.title));
+      card.appendChild(createElement("p", "portal-quick-access__card-desc", config.promoDescription));
+      grid.appendChild(card);
+    });
+
+    inner.appendChild(grid);
     section.appendChild(inner);
     container.appendChild(section);
   }
@@ -2739,6 +2978,7 @@
       loadJson("location_sources.json"),
       loadJson("water_cross_view.json"),
       loadWaterSearchIndex(),
+      loadDisasterSearchIndex(),
       loadJson("infrastructure_status.json"),
       loadJson("infrastructure_sources.json"),
       loadXFeedPreview()
@@ -2754,9 +2994,10 @@
         var locationSources = results[7];
         var waterCrossView = results[8];
         var waterSearchIndex = results[9];
-        var infrastructureStatus = results[10];
-        var infrastructureSources = results[11];
-        var xFeedState = results[12];
+        var disasterSearchIndex = results[10];
+        var infrastructureStatus = results[11];
+        var infrastructureSources = results[12];
+        var xFeedState = results[13];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -2770,6 +3011,7 @@
 
         renderEmergencyNotice(page);
         renderPageHeader(page, navigation, lastVerified);
+        renderDisasterSearchPromo(page);
         renderAreaNavPromo(page);
         renderCommunicationStatus(page, communicationStatus);
         renderPageNavigation(page, navigation, publicRecords);
@@ -2785,6 +3027,7 @@
         }
 
         renderAreaDisasterNav(page, areaNavigation, disasterLocations, locationSources);
+        renderDisasterSearch(page, disasterSearchIndex);
         renderWaterSearch(page, waterSearchIndex);
         renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);
