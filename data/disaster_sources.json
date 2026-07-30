@@ -1,0 +1,573 @@
+{
+  "version": "1.0",
+  "region": "KYUSHU_SOUTH",
+  "sources": [
+    {
+      "source_id": "DSRC-WAT-BBAE1707C6",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "熊本県",
+      "organization": "熊本県防災情報",
+      "source_type": "DISASTER",
+      "url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-A300110BCE",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "熊本市",
+      "organization": "熊本市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.kumamoto.jp/kurashi/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-CFD199D361",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "熊本市上下水道局",
+      "organization": "熊本市上下水道局",
+      "source_type": "WATERWORKS",
+      "url": "https://www.city.kumamoto.jp/kurashi/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-77D9E1FAC3",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "organization": "八代市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-5328950251",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "宇城市",
+      "organization": "宇城市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-153CFA7512",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "人吉市",
+      "organization": "人吉市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-B855A99604",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "菊池市",
+      "organization": "菊池市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-C5E784625A",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "合志市",
+      "organization": "合志市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.koshi.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-77A3EFA209",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "玉名市",
+      "organization": "玉名市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.tamana.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-5A8298F0CE",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "天草市",
+      "organization": "天草市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.amakusa.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-69D434B3F8",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "鹿児島県",
+      "organization": "鹿児島県防災情報",
+      "source_type": "DISASTER",
+      "url": "https://www.pref.kagoshima.jp/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-FA6FFF4040",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "鹿児島市",
+      "organization": "鹿児島市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.kagoshima.jp/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-EB3B4BAA17",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "霧島市",
+      "organization": "霧島市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.kirishima.lg.jp/bosai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-92E61768D2",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "鹿屋市",
+      "organization": "鹿屋市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.kanoya.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-3A4E54A3DE",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "薩摩川内市",
+      "organization": "薩摩川内市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.satsumasendai.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-35A716EE69",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "姶良市",
+      "organization": "姶良市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.aira.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-2C49FAAC95",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "出水市",
+      "organization": "出水市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.izumi.lg.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-34C1626377",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "鹿児島県",
+      "organization": "鹿児島県水道企業団",
+      "source_type": "WATERWORKS",
+      "url": "https://www.watersuigen-d.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-BC0C3C7B6E",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "陸上自衛隊西部方面隊",
+      "organization": "陸上自衛隊西部方面隊",
+      "source_type": "SELF_DEFENSE",
+      "url": "https://www.mod.go.jp/gsdf/west/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-089A7463D0",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "陸上自衛隊西部方面隊",
+      "organization": "陸上自衛隊西部方面隊",
+      "source_type": "SELF_DEFENSE",
+      "url": "https://www.mod.go.jp/gsdf/west/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-C808728FD1",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "消防庁",
+      "organization": "消防庁",
+      "source_type": "FIRE",
+      "url": "https://www.fdma.go.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-7AEBD6ECB0",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "消防庁",
+      "organization": "消防庁",
+      "source_type": "FIRE",
+      "url": "https://www.fdma.go.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-6FB303259C",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "海上保安庁",
+      "organization": "海上保安庁",
+      "source_type": "COAST_GUARD",
+      "url": "https://www.kaiho.mlit.go.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-EE19857D0B",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "海上保安庁",
+      "organization": "海上保安庁",
+      "source_type": "COAST_GUARD",
+      "url": "https://www.kaiho.mlit.go.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-18146CB7B8",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "伊佐市",
+      "organization": "伊佐市",
+      "source_type": "MUNICIPALITY",
+      "url": "",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": false
+    },
+    {
+      "source_id": "DSRC-WAT-CEA0A0DE0B",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "阿久根市",
+      "organization": "阿久根市",
+      "source_type": "MUNICIPALITY",
+      "url": "",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": false
+    },
+    {
+      "source_id": "DSRC-WAT-80B8CB37A5",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "指宿市",
+      "organization": "指宿市",
+      "source_type": "MUNICIPALITY",
+      "url": "",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": false
+    }
+  ]
+}

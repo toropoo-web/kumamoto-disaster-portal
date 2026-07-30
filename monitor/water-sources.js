@@ -167,6 +167,10 @@ function validateWaterRegistry() {
   };
 }
 
+function loadWaterSourcesFromDisasterRegistry() {
+  return require("./disaster-sources").loadWaterSources();
+}
+
 module.exports = {
   WATER_SOURCES_FILE,
   SOURCE_CLASSES,
@@ -175,5 +179,6 @@ module.exports = {
   toPatrolSource,
   inferSourceClass,
   buildSourceId,
-  validateWaterRegistry
+  validateWaterRegistry,
+  loadWaterSourcesFromDisasterRegistry
 };
