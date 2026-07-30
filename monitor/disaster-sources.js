@@ -39,6 +39,26 @@ const WATER_KEYWORDS = [
   "復旧"
 ];
 
+const VOLUNTEER_KEYWORDS = ["災害ボランティア", "募集", "受付", "活動"];
+
+const CAPABILITY_STATUS = {
+  CURRENT_CONFIRMED: "CURRENT_CONFIRMED",
+  CAPABILITY_UNCONFIRMED: "CAPABILITY_UNCONFIRMED",
+  HISTORICAL_ONLY: "HISTORICAL_ONLY"
+};
+
+const CAPABILITY_STATUS_VALUES = [
+  CAPABILITY_STATUS.CURRENT_CONFIRMED,
+  CAPABILITY_STATUS.CAPABILITY_UNCONFIRMED,
+  CAPABILITY_STATUS.HISTORICAL_ONLY
+];
+
+const VOLUNTEER_SCHEMA_CANDIDATES = {
+  CURRENT_CONFIRMED: ["熊本県", "熊本市", "八代市", "人吉市", "益城町"],
+  CAPABILITY_UNCONFIRMED: ["宇土市", "宇城市", "御船町", "菊陽町", "菊池市", "合志市"],
+  HISTORICAL_ONLY: ["氷川町", "嘉島町", "美里町"]
+};
+
 const KAGOSHIMA_WATER_PLACEHOLDER_MUNICIPALITIES = [
   "伊佐市",
   "阿久根市",
@@ -215,8 +235,8 @@ function loadWaterSources() {
   };
 }
 
-function validateVolunteerSchemaExample() {
-  const example = {
+function buildVolunteerSchemaExample(overrides) {
+  const base = {
     source_id: "DSRC-VOL-EXAMPLE-0001",
     category: "VOLUNTEER",
     prefecture: "熊本県",
@@ -224,13 +244,157 @@ function validateVolunteerSchemaExample() {
     organization: "社会福祉協議会",
     source_type: "SOCIAL_WELFARE",
     url: "https://example.invalid/volunteer-placeholder",
-    keywords: ["災害ボランティア", "募集", "受付", "活動"],
+    keywords: VOLUNTEER_KEYWORDS.slice(),
     extractor: {},
     official: true,
-    active: false
+    active: false,
+    capability_status: CAPABILITY_STATUS.CURRENT_CONFIRMED,
+    historical_evidence: ["熊本地震", "令和2年7月豪雨"],
+    current_capability: {
+      confirmed: true,
+      source: "公式社会福祉協議会情報"
+    }
   };
 
+  return Object.assign(base, overrides || {});
+}
+
+function validateVolunteerSourceEntry(entry, index) {
+  const label = "sources[" + index + "]";
+  const errors = [];
+
+  if (!entry || entry.category !== "VOLUNTEER") {
+    return errors;
+  }
+
+  if (!entry.capability_status) {
+    errors.push(label + ": capability_status missing");
+  } else if (CAPABILITY_STATUS_VALUES.indexOf(entry.capability_status) === -1) {
+    errors.push(label + ": invalid capability_status " + entry.capability_status);
+  }
+
+  if (!Array.isArray(entry.historical_evidence)) {
+    errors.push(label + ": historical_evidence must be an array");
+  }
+
+  if (
+    !entry.current_capability ||
+    typeof entry.current_capability !== "object" ||
+    Array.isArray(entry.current_capability)
+  ) {
+    errors.push(label + ": current_capability must be an object");
+    return errors;
+  }
+
+  if (
+    entry.current_capability.confirmed !== true &&
+    entry.current_capability.confirmed !== false
+  ) {
+    errors.push(label + ": current_capability.confirmed must be boolean");
+  }
+
+  if (typeof entry.current_capability.source !== "string") {
+    errors.push(label + ": current_capability.source must be a string");
+  }
+
+  if (entry.official !== true) {
+    errors.push(label + ": official must be true for VOLUNTEER sources");
+  }
+
+  if (entry.capability_status === CAPABILITY_STATUS.CURRENT_CONFIRMED) {
+    if (entry.current_capability.confirmed !== true) {
+      errors.push(label + ": CURRENT_CONFIRMED requires current_capability.confirmed=true");
+    }
+    if (!entry.current_capability.source) {
+      errors.push(label + ": CURRENT_CONFIRMED requires current_capability.source");
+    }
+  }
+
+  if (entry.capability_status === CAPABILITY_STATUS.CAPABILITY_UNCONFIRMED) {
+    if (entry.current_capability.confirmed === true) {
+      errors.push(
+        label + ": CAPABILITY_UNCONFIRMED must not set current_capability.confirmed=true"
+      );
+    }
+  }
+
+  if (entry.capability_status === CAPABILITY_STATUS.HISTORICAL_ONLY) {
+    if (entry.current_capability.confirmed === true) {
+      errors.push(label + ": HISTORICAL_ONLY must not set current_capability.confirmed=true");
+    }
+    if (!entry.historical_evidence || !entry.historical_evidence.length) {
+      errors.push(label + ": HISTORICAL_ONLY requires historical_evidence entries");
+    }
+  }
+
+  if (
+    entry.current_capability.confirmed === true &&
+    !entry.current_capability.source &&
+    (!entry.historical_evidence || !entry.historical_evidence.length)
+  ) {
+    errors.push(
+      label + ": current_capability cannot be confirmed without an explicit current_capability.source"
+    );
+  }
+
+  if (
+    entry.current_capability.confirmed === true &&
+    !entry.current_capability.source &&
+    entry.historical_evidence &&
+    entry.historical_evidence.length
+  ) {
+    errors.push(
+      label +
+        ": historical_evidence alone cannot justify current_capability.confirmed=true; source required"
+    );
+  }
+
+  return errors;
+}
+
+function validateVolunteerSchemaExample() {
+  const example = buildVolunteerSchemaExample();
   return validateDisasterSourceEntry(example, 0, { allowInactiveWithoutUrl: true });
+}
+
+function validateVolunteerSchemaCandidates() {
+  const errors = [];
+
+  Object.keys(VOLUNTEER_SCHEMA_CANDIDATES).forEach(function (status) {
+    VOLUNTEER_SCHEMA_CANDIDATES[status].forEach(function (municipality, candidateIndex) {
+      const organization = municipality + "社会福祉協議会";
+      const historicalEvidence =
+        status === CAPABILITY_STATUS.HISTORICAL_ONLY ? ["熊本地震", "令和2年7月豪雨"] : [];
+      const currentCapability = {
+        confirmed: status === CAPABILITY_STATUS.CURRENT_CONFIRMED,
+        source: status === CAPABILITY_STATUS.CURRENT_CONFIRMED ? "公式社会福祉協議会情報" : ""
+      };
+      const example = buildVolunteerSchemaExample({
+        source_id: buildSourceId(
+          "VOLUNTEER",
+          "熊本県",
+          organization,
+          "placeholder:" + municipality + ":" + status
+        ),
+        municipality: municipality,
+        organization: organization,
+        url: "",
+        active: false,
+        capability_status: status,
+        historical_evidence: historicalEvidence,
+        current_capability: currentCapability
+      });
+
+      const entryErrors = validateDisasterSourceEntry(example, candidateIndex, {
+        allowInactiveWithoutUrl: true
+      });
+      entryErrors.forEach(function (message) {
+        errors.push(status + "/" + municipality + ": " + message);
+      });
+    });
+  });
+
+  return errors;
 }
 
 function validateDisasterSourceEntry(entry, index, options) {
@@ -283,6 +447,18 @@ function validateDisasterSourceEntry(entry, index, options) {
 
   if (entry.extractor === undefined || typeof entry.extractor !== "object" || Array.isArray(entry.extractor)) {
     errors.push(label + ": extractor must be an object");
+  }
+
+  if (entry.category !== "VOLUNTEER") {
+    ["capability_status", "historical_evidence", "current_capability"].forEach(function (field) {
+      if (entry[field] !== undefined) {
+        errors.push(label + ": " + field + " only allowed for VOLUNTEER category");
+      }
+    });
+  }
+
+  if (entry.category === "VOLUNTEER") {
+    errors.push.apply(errors, validateVolunteerSourceEntry(entry, index));
   }
 
   return errors;
@@ -389,7 +565,12 @@ module.exports = {
   CATEGORIES,
   SOURCE_TYPES,
   WATER_KEYWORDS,
+  VOLUNTEER_KEYWORDS,
+  CAPABILITY_STATUS,
+  CAPABILITY_STATUS_VALUES,
+  VOLUNTEER_SCHEMA_CANDIDATES,
   buildSourceId,
+  buildVolunteerSchemaExample,
   inferSourceType,
   resolveMunicipality,
   readDisasterRegistry,
@@ -401,6 +582,8 @@ module.exports = {
   toLegacyWaterSource,
   validateDisasterRegistry,
   validateDisasterSourceEntry,
+  validateVolunteerSourceEntry,
   validateWaterCompatibility,
-  validateVolunteerSchemaExample
+  validateVolunteerSchemaExample,
+  validateVolunteerSchemaCandidates
 };

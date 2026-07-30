@@ -9,6 +9,10 @@ const {
   PREFECTURES,
   CATEGORIES,
   WATER_KEYWORDS,
+  VOLUNTEER_KEYWORDS,
+  CAPABILITY_STATUS,
+  CAPABILITY_STATUS_VALUES,
+  buildVolunteerSchemaExample,
   resolveMunicipality,
   validateVolunteerSchemaExample
 } = require("./disaster-sources");
@@ -272,6 +276,62 @@ function buildCrossViewLocationItems(crossView, sourceLookup) {
   return items;
 }
 
+function toVolunteerRegistryIndexEntry(source) {
+  const keywords = mergeKeywords(
+    VOLUNTEER_KEYWORDS,
+    Array.isArray(source.keywords) ? source.keywords : []
+  );
+  const organizationLabel = buildSourceLabel(source.organization);
+  const title = "災害ボランティア募集";
+  const content = [
+    source.prefecture,
+    source.municipality,
+    source.organization,
+    title,
+    keywords.join(" "),
+    source.capability_status
+  ].join(" ");
+
+  return {
+    index_id: buildIndexId(["VOLUNTEER", "registry", source.source_id]),
+    category: "VOLUNTEER",
+    prefecture: source.prefecture,
+    municipality: source.municipality,
+    organization: organizationLabel,
+    title: title,
+    content: content,
+    keywords: keywords,
+    capability_status: source.capability_status,
+    source_type: source.source_type || "SOCIAL_WELFARE",
+    source_url: source.url,
+    official: true,
+    updated_at: null,
+    current_capability: source.current_capability || null
+  };
+}
+
+function buildVolunteerRegistryItems(disasterSources) {
+  const items = [];
+
+  (disasterSources.sources || []).forEach(function (source) {
+    if (!source || source.category !== "VOLUNTEER") {
+      return;
+    }
+    if (source.official !== true || source.active !== true) {
+      return;
+    }
+    if (!source.url) {
+      return;
+    }
+    if (source.capability_status === CAPABILITY_STATUS.HISTORICAL_ONLY) {
+      return;
+    }
+    items.push(toVolunteerRegistryIndexEntry(source));
+  });
+
+  return items;
+}
+
 function buildRegistryItems(disasterSources) {
   const items = [];
 
@@ -358,7 +418,10 @@ function buildDisasterSearchIndex(options) {
   const locationItems = buildCrossViewLocationItems(crossView, sourceLookup);
   const registryItems = buildRegistryItems(disasterSources);
   const snapshotItems = buildSnapshotFacilityItems(snapshots, disasterSources);
-  const index = dedupeIndexItems(locationItems.concat(registryItems, snapshotItems));
+  const volunteerRegistryItems = buildVolunteerRegistryItems(disasterSources);
+  const index = dedupeIndexItems(
+    locationItems.concat(registryItems, snapshotItems, volunteerRegistryItems)
+  );
 
   return {
     version: "1.0",
@@ -368,6 +431,7 @@ function buildDisasterSearchIndex(options) {
       location_item_count: locationItems.length,
       registry_item_count: registryItems.length,
       snapshot_item_count: snapshotItems.length,
+      volunteer_registry_item_count: volunteerRegistryItems.length,
       item_count: index.length,
       last_updated: new Date().toISOString()
     }
@@ -412,7 +476,8 @@ function searchDisasterIndex(indexPayload, query, options) {
         item.organization,
         item.title,
         (item.keywords || []).join(" "),
-        item.content
+        item.content,
+        item.capability_status || ""
       ].join(" ")
     );
 
@@ -463,31 +528,46 @@ function validateDisasterSearchIndexEntry(entry, index) {
     errors.push(label + ": prefecture not in KYUSHU_SOUTH coverage");
   }
 
+  if (entry.category === "VOLUNTEER") {
+    if (!entry.capability_status) {
+      errors.push(label + ": missing capability_status");
+    } else if (CAPABILITY_STATUS_VALUES.indexOf(entry.capability_status) === -1) {
+      errors.push(label + ": invalid capability_status " + entry.capability_status);
+    }
+  }
+
   return errors;
 }
 
 function validateVolunteerIndexExample() {
-  const example = {
-    index_id: buildIndexId(["VOLUNTEER", "example", "社会福祉協議会"]),
-    category: "VOLUNTEER",
-    prefecture: "熊本県",
-    municipality: "熊本県",
-    organization: "社会福祉協議会",
-    title: "災害ボランティア募集",
-    content: "熊本県 社会福祉協議会 災害ボランティア 募集 受付",
-    keywords: ["災害ボランティア", "募集", "受付"],
-    source_type: "SOCIAL_WELFARE",
-    source_url: "https://example.invalid/volunteer-placeholder",
-    official: true,
-    updated_at: null
-  };
-
+  const source = buildVolunteerSchemaExample({
+    source_id: buildIndexId(["VOLUNTEER", "example-source"]),
+    active: true
+  });
+  const example = toVolunteerRegistryIndexEntry(source);
   const schemaErrors = validateVolunteerSchemaExample();
   const indexErrors = validateDisasterSearchIndexEntry(example, 0);
+  const historicalHay = normalizeSearchText((source.historical_evidence || []).join(" "));
+  const searchHay = normalizeSearchText(
+    [
+      example.prefecture,
+      example.municipality,
+      example.organization,
+      example.title,
+      (example.keywords || []).join(" "),
+      example.content,
+      example.capability_status || ""
+    ].join(" ")
+  );
+  const separationErrors = [];
+
+  if (historicalHay && searchHay.indexOf(historicalHay) !== -1) {
+    separationErrors.push("historical_evidence must not be included in search haystack");
+  }
 
   return {
     schemaErrors: schemaErrors,
-    indexErrors: indexErrors,
+    indexErrors: indexErrors.concat(separationErrors),
     example: example
   };
 }
@@ -538,7 +618,11 @@ module.exports = {
   REGION_KYUSHU_SOUTH,
   CATEGORIES,
   DISASTER_WATER_KEYWORDS,
+  VOLUNTEER_KEYWORDS,
+  CAPABILITY_STATUS,
   buildDisasterSearchIndex,
+  buildVolunteerRegistryItems,
+  toVolunteerRegistryIndexEntry,
   buildAndWriteDisasterSearchIndex,
   searchDisasterIndex,
   normalizeSearchText,

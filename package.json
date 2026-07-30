@@ -10,7 +10,7 @@
     "validate:links": "node scripts/validate-links.js",
     "validate:url-audit": "node scripts/validate-url-audit.js",
     "validate:browser": "node scripts/validate-browser.js",
-    "test": "node scripts/validate-data.js && node scripts/validate-ui.js && node scripts/validate-water-cross-view.js && node scripts/validate-water-search.js && node scripts/validate-water-patrol.js && node scripts/validate-disaster-sources.js && node scripts/validate-disaster-search-index.js && node scripts/validate-disaster-search-ui.js && node scripts/validate-public-status.js",
+    "test": "node scripts/validate-data.js && node scripts/validate-ui.js && node scripts/validate-water-cross-view.js && node scripts/validate-water-search.js && node scripts/validate-water-patrol.js && node scripts/validate-disaster-sources.js && node scripts/validate-volunteer-schema.js && node scripts/validate-disaster-search-index.js && node scripts/validate-disaster-search-ui.js && node scripts/validate-public-status.js",
     "build": "node scripts/build-water-cross-view.js && node scripts/build-water-search-index.js && node scripts/build-disaster-search-index.js && node scripts/static-build.js",
     "sync:x-feed": "node scripts/sync-x-feed.js",
     "validate:x-feed": "node scripts/validate-x-feed-preview.js",
