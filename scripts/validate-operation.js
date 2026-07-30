@@ -19,6 +19,27 @@ function hashFile(filePath) {
   return crypto.createHash("sha256").update(fs.readFileSync(filePath)).digest("hex");
 }
 
+function findLatestPatrolReport() {
+  const reportsDir = path.join(ROOT, "monitor", "reports");
+  if (!fs.existsSync(reportsDir)) {
+    return null;
+  }
+
+  const patrolReports = fs
+    .readdirSync(reportsDir)
+    .filter(function (name) {
+      return /^patrol-\d{4}-\d{2}-\d{2}T/.test(name) && name.endsWith(".json");
+    })
+    .sort()
+    .reverse();
+
+  if (!patrolReports.length) {
+    return null;
+  }
+
+  return path.join(reportsDir, patrolReports[0]);
+}
+
 function main() {
   const errors = [];
   const publicHashesBefore = {};
@@ -59,8 +80,7 @@ function main() {
   const reportFiles = [
     "monitor/reports/daily-report.md",
     "monitor/reports/source-failures.md",
-    "monitor/reports/high-alert.md",
-    "monitor/reports/patrol-summary.json"
+    "monitor/reports/high-alert.md"
   ];
 
   reportFiles.forEach((file) => {
@@ -68,6 +88,23 @@ function main() {
       errors.push("Missing report file: " + file);
     }
   });
+
+  const latestPatrolReport = findLatestPatrolReport();
+  if (!latestPatrolReport) {
+    errors.push("Missing patrol report: monitor/reports/patrol-*.json");
+  } else {
+    try {
+      const patrolReport = JSON.parse(fs.readFileSync(latestPatrolReport, "utf8"));
+      if (!patrolReport.patrolAt) {
+        errors.push("Latest patrol report missing patrolAt");
+      }
+      if (!patrolReport.PATROL_SOURCE_COUNT) {
+        errors.push("Latest patrol report missing PATROL_SOURCE_COUNT");
+      }
+    } catch (err) {
+      errors.push("Latest patrol report invalid JSON: " + err.message);
+    }
+  }
 
   if (operationResult && operationResult.dailyReportPath) {
     const content = fs.readFileSync(operationResult.dailyReportPath, "utf8");
@@ -111,11 +148,12 @@ function main() {
     OPERATION_REPORT: errors.length === 0 ? "PASS" : "FAIL",
     HIGH_ALERT: operationResult ? "PASS" : "FAIL",
     SOURCE_FAILURE_DETECTION: operationResult ? "PASS" : "FAIL",
-    PATROL_SUMMARY: operationResult ? "PASS" : "FAIL",
+    PATROL_REPORT: latestPatrolReport ? "PASS" : "FAIL",
     AUTO_PUBLICATION: false,
     PUBLIC_DATA_PROTECTION: errors.some((e) => e.includes("Public data modified")) ? "FAIL" : "PASS",
     HIGH_PRIORITY_CHANGES_FOUND: operationResult ? operationResult.HIGH_PRIORITY_CHANGES_FOUND : false,
     FAILURE_COUNT: operationResult ? operationResult.FAILURE_COUNT : 0,
+    latestPatrolReport: latestPatrolReport ? path.relative(ROOT, latestPatrolReport) : null,
     errors
   };
 
