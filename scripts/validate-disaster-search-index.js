@@ -1,0 +1,174 @@
+#!/usr/bin/env node
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = path.join(__dirname, "..");
+
+const {
+  OUTPUT_FILE,
+  REGION_KYUSHU_SOUTH,
+  CATEGORIES,
+  buildAndWriteDisasterSearchIndex,
+  searchDisasterIndex,
+  validateDisasterSearchIndex,
+  validateVolunteerIndexExample
+} = require(path.join(__dirname, "..", "monitor", "disaster-search-index-engine"));
+
+function main() {
+  const errors = [];
+  const checks = [];
+
+  [
+    "data/disaster_sources.json",
+    "data/water_cross_view.json",
+    "monitor/disaster-search-index-engine.js",
+    "scripts/build-disaster-search-index.js"
+  ].forEach(function (file) {
+    const exists = fs.existsSync(path.join(ROOT, file));
+    checks.push({ check: file, pass: exists });
+    if (!exists) {
+      errors.push("Missing file: " + file);
+    }
+  });
+
+  const payload = buildAndWriteDisasterSearchIndex();
+  errors.push.apply(errors, validateDisasterSearchIndex(payload));
+  checks.push({
+    check: "JSON valid",
+    pass: payload.version === "1.0" && Array.isArray(payload.index)
+  });
+
+  checks.push({
+    check: "region valid",
+    pass: payload.region === REGION_KYUSHU_SOUTH,
+    region: payload.region
+  });
+
+  const categories = {};
+  payload.index.forEach(function (entry) {
+    categories[entry.category] = (categories[entry.category] || 0) + 1;
+  });
+  checks.push({
+    check: "category valid",
+    pass: Object.keys(categories).every(function (name) {
+      return CATEGORIES.indexOf(name) !== -1;
+    }),
+    categories: categories
+  });
+
+  const officialOnly = payload.index.every(function (entry) {
+    return entry.official === true;
+  });
+  checks.push({ check: "official=true only", pass: officialOnly });
+  if (!officialOnly) {
+    errors.push("index entries must all have official=true");
+  }
+
+  const sourceUrlPresent = payload.index.every(function (entry) {
+    return Boolean(entry.source_url);
+  });
+  checks.push({ check: "source_url exists", pass: sourceUrlPresent });
+  if (!sourceUrlPresent) {
+    errors.push("index entries must include source_url");
+  }
+
+  const ids = payload.index.map(function (entry) {
+    return entry.index_id;
+  });
+  const uniqueIds = new Set(ids);
+  checks.push({
+    check: "duplicate index_id none",
+    pass: ids.length === uniqueIds.size
+  });
+  if (ids.length !== uniqueIds.size) {
+    errors.push("duplicate index_id detected");
+  }
+
+  const kumamotoResults = searchDisasterIndex(payload, "熊本 給水", { category: "WATER" });
+  const kagoshimaResults = searchDisasterIndex(payload, "霧島 給水", { category: "WATER" });
+  const ukiResults = searchDisasterIndex(payload, "宇城 給水", { category: "WATER" });
+  const waterOnly = searchDisasterIndex(payload, "給水", { category: "WATER" });
+
+  checks.push({
+    check: "WATER search possible",
+    pass:
+      kumamotoResults.length > 0 &&
+      kagoshimaResults.length > 0 &&
+      ukiResults.length > 0 &&
+      waterOnly.length > 0,
+    kumamotoCount: kumamotoResults.length,
+    kagoshimaCount: kagoshimaResults.length,
+    ukiCount: ukiResults.length,
+    waterCount: waterOnly.length
+  });
+
+  if (!kumamotoResults.length) {
+    errors.push("WATER search failed: 熊本 給水");
+  }
+  if (!kagoshimaResults.length) {
+    errors.push("WATER search failed: 霧島 給水");
+  }
+  if (!ukiResults.length) {
+    errors.push("WATER search failed: 宇城 給水");
+  }
+
+  const ukiOfficial = ukiResults.some(function (item) {
+    return /宇城/.test(item.municipality) && /公式/.test(item.organization);
+  });
+  if (!ukiOfficial) {
+    errors.push("WATER search failed: 宇城市 official entry");
+  }
+
+  const volunteerResult = validateVolunteerIndexExample();
+  checks.push({
+    check: "VOLUNTEER schema compatible",
+    pass: volunteerResult.schemaErrors.length === 0 && volunteerResult.indexErrors.length === 0,
+    schemaErrors: volunteerResult.schemaErrors,
+    indexErrors: volunteerResult.indexErrors
+  });
+  errors.push.apply(
+    errors,
+    volunteerResult.schemaErrors.map(function (message) {
+      return "VOLUNTEER schema: " + message;
+    })
+  );
+  errors.push.apply(
+    errors,
+    volunteerResult.indexErrors.map(function (message) {
+      return "VOLUNTEER index: " + message;
+    })
+  );
+
+  if (!fs.existsSync(OUTPUT_FILE)) {
+    errors.push("Missing output: data/disaster_search_index.json");
+  }
+
+  const output = {
+    DISASTER_SEARCH_INDEX_VALIDATION: errors.length === 0 ? "PASS" : "FAIL",
+    region: payload.region,
+    itemCount: payload.index.length,
+    categories: categories,
+    checks: checks,
+    ukiSample: ukiResults.slice(0, 3).map(function (item) {
+      return {
+        municipality: item.municipality,
+        organization: item.organization,
+        title: item.title
+      };
+    }),
+    errors: errors
+  };
+
+  console.log("=== Disaster Search Index Validation ===");
+  console.log(JSON.stringify(output, null, 2));
+
+  if (errors.length) {
+    process.exit(1);
+  }
+
+  console.log("PHASE27_DISASTER_SEARCH_INDEX_COMPLETE");
+}
+
+main();
