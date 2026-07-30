@@ -10,19 +10,22 @@ const BASELINES_DIR = path.join(__dirname, "baselines");
 const SNAPSHOT_FILES = {
   patrol: path.join(REPORTS_DIR, "snapshots.json"),
   emergency: path.join(REPORTS_DIR, "emergency-snapshots.json"),
-  infrastructure: path.join(REPORTS_DIR, "infrastructure-snapshots.json")
+  infrastructure: path.join(REPORTS_DIR, "infrastructure-snapshots.json"),
+  water: path.join(REPORTS_DIR, "water-snapshots.json")
 };
 
 const SNAPSHOT_SEEDS = {
   patrol: path.join(BASELINES_DIR, "patrol-snapshots.seed.json"),
   emergency: path.join(BASELINES_DIR, "emergency-snapshots.seed.json"),
-  infrastructure: path.join(BASELINES_DIR, "infrastructure-snapshots.seed.json")
+  infrastructure: path.join(BASELINES_DIR, "infrastructure-snapshots.seed.json"),
+  water: path.join(BASELINES_DIR, "water-snapshots.seed.json")
 };
 
 const CACHE_PATHS = [
   SNAPSHOT_FILES.patrol,
   SNAPSHOT_FILES.emergency,
-  SNAPSHOT_FILES.infrastructure
+  SNAPSHOT_FILES.infrastructure,
+  SNAPSHOT_FILES.water
 ];
 
 function ensureDir(dirPath) {
@@ -49,7 +52,7 @@ function seedSnapshotIfMissing(kind) {
 }
 
 function seedAllSnapshotsIfMissing() {
-  return ["patrol", "emergency", "infrastructure"].map(seedSnapshotIfMissing);
+  return ["patrol", "emergency", "infrastructure", "water"].map(seedSnapshotIfMissing);
 }
 
 function countSnapshotSources(filePath) {
@@ -70,6 +73,7 @@ function inspectSnapshotStore() {
     patrolSourceCount: countSnapshotSources(SNAPSHOT_FILES.patrol),
     emergencySourceCount: countSnapshotSources(SNAPSHOT_FILES.emergency),
     infrastructureSourceCount: countSnapshotSources(SNAPSHOT_FILES.infrastructure),
+    waterSourceCount: countSnapshotSources(SNAPSHOT_FILES.water),
     files: Object.keys(SNAPSHOT_FILES).map(function (kind) {
       const filePath = SNAPSHOT_FILES[kind];
       return {

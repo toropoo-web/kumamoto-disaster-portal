@@ -1,0 +1,10 @@
+{
+  "fixtures": {
+    "WTR-PLACEHOLDER": {
+      "reachable": true,
+      "title": "応急給水情報",
+      "originalText": "八代市では応急給水所を設置しています。給水車による生活用水の配布を実施中です。",
+      "pageUpdatedAt": "2026-07-30T06:00:00+09:00"
+    }
+  }
+}

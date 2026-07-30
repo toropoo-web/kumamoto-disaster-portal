@@ -1,0 +1,50 @@
+name: Water Patrol
+
+on:
+  schedule:
+  # 06:00-10:00 JST (21:00-01:00 UTC)
+    - cron: "0 21,22,23,0,1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  water-patrol:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore water snapshot cache
+        uses: actions/cache@v4
+        with:
+          path: monitor/reports/water-snapshots.json
+          key: water-snapshots-${{ github.ref }}
+          restore-keys: |
+            water-snapshots-${{ github.ref }}
+            water-snapshots-refs/heads/main
+
+      - name: Seed water snapshots when cache is cold
+        run: node scripts/seed-patrol-snapshots.js
+
+      - name: Run water patrol
+        run: npm run patrol:water
+
+      - name: Upload water patrol artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: water-patrol-${{ github.run_id }}
+          path: |
+            monitor/reports/water-patrol-*.json
+            monitor/reports/water-snapshots.json
+            data/review/water/

@@ -99,6 +99,72 @@ GitHub Actions から手動公開する場合:
 - デフォルト: `status.json` のみ反映
 - `apply_approved=true` の場合のみ `data/approved/*.json` を反映
 
+## 7. WATER監視フロー
+
+```
+公式WATER情報 (data/water_sources.json)
+  ↓ npm run patrol:water
+Snapshot (monitor/reports/water-snapshots.json)
+  ↓ 差分検知
+data/review/water/water_review_queue.json
+  ↓ 人手レビュー / 承認
+data/approved/*.json
+  ↓ Publish Patrol Public Status
+公開データ更新
+```
+
+- 対象地域: 熊本県・鹿児島県
+- 対象分類: MUNICIPALITY / WATERWORKS / DISASTER / SELF_DEFENSE / FIRE / COAST_GUARD
+- スケジュール: 毎朝 06:00-10:00 JST（`Water Patrol` workflow）
+- `AUTO_PUBLICATION=false`（Review必須）
+
+ローカル確認:
+
+```bash
+npm run patrol:water
+npm run patrol:water -- --fixture
+node scripts/validate-water-patrol.js
+```
+
+## 8. 自動運用（CI）
+
+### Patrol workflow
+
+```
+公式サイト巡回
+  ↓ patrol
+差分検知 / update_candidates
+  ↓ review
+review_queue.md
+  ↓ finalize-patrol-run
+patrol-summary.json（成功） / patrol-error-report.json（失敗）
+monitor/evidence/*.json（変更検知時）
+```
+
+- 初回実行: `monitor/baselines/patrol-snapshots.seed.json` から snapshot を復元
+- 2回目以降: Actions cache から前回 snapshot を復元して比較
+- `AUTO_PUBLICATION=false` を維持（候補の自動公開なし）
+
+### Publish workflow
+
+```
+review_queue
+  ↓ 人手レビュー
+data/approved/*.json
+  ↓ Publish Patrol Public Status（apply_approved=true）
+data/public/*
+  ↓ git commit / push
+本番反映
+```
+
+ローカル確認:
+
+```bash
+npm run patrol:dry-run
+npm run publish:patrol
+npm run publish:patrol -- --publish-status
+```
+
 反映後は必ず:
 
 ```bash

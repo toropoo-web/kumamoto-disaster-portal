@@ -1,0 +1,10 @@
+{
+  "category": "WATER",
+  "region": "熊本県",
+  "municipality": "八代市",
+  "source": "八代市",
+  "change_type": "CONTENT_CHANGED",
+  "detected_at": "2026-07-30T06:00:00+09:00",
+  "status": "PENDING",
+  "auto_publish": false
+}
