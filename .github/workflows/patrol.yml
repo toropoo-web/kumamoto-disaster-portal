@@ -58,14 +58,6 @@ jobs:
       - name: Run URL audit
         run: npm run url-audit
 
-      - name: Validate patrol and operation infrastructure
-        run: |
-          node scripts/validate-patrol.js
-          node scripts/validate-operation.js
-          node scripts/validate-url-audit.js
-          node scripts/validate-post-apply.js
-          node scripts/validate-patrol-publish-pipeline.js
-
       - name: Publish patrol status
         run: |
           set -e
@@ -86,6 +78,14 @@ jobs:
           fi
           git commit -m "chore: update patrol status"
           git push
+
+      - name: Validate patrol and operation infrastructure
+        run: |
+          node scripts/validate-patrol.js
+          node scripts/validate-operation.js
+          node scripts/validate-url-audit.js
+          node scripts/validate-post-apply.js
+          node scripts/validate-patrol-publish-pipeline.js
 
       - name: Log patrol summary on failure
         if: failure()
