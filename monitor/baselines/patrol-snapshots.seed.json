@@ -1,0 +1,395 @@
+{
+  "version": 1,
+  "sources": {
+    "KM000-pref-hub": {
+      "url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "令和8年熊本地震に関する情報 - 熊本県ホームページ",
+      "pageUpdatedAt": "Wed, 29 Jul 2026 10:03:58 GMT",
+      "keywords": [
+        "避難",
+        "避難所",
+        "復旧",
+        "支援",
+        "災害"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "a10258a659ca25e27b01bcab4cb8b8c4898f42ff44b19fbc2d68f7de9c932a51",
+      "checkedAt": "2026-07-29T10:32:18.081Z",
+      "sourceName": "熊本県",
+      "category": "municipality"
+    },
+    "KM001-kumamoto-shelter": {
+      "url": "https://city-kumamoto.my.salesforce-sites.com/X_PUB_VF_KUMA_HinanjyoNaviList",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "避難所案内",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "避難",
+        "避難所",
+        "給水",
+        "開設",
+        "閉鎖",
+        "災害",
+        "公衆電話"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "cf05570295284c19fb779ae1269f1b7c557d4113fa98a81f7d884426beda6059",
+      "checkedAt": "2026-07-29T10:32:18.806Z",
+      "sourceName": "熊本市",
+      "category": "municipality"
+    },
+    "KM002-uto-water": {
+      "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "今回の地震に伴う断水について｜宇土市公式ホームページ",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "給水",
+        "断水",
+        "復旧"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "f8b84b25e91c9d75b50c23cfca8e86c3540b234749fd9bae73eac0d48a543ebd",
+      "checkedAt": "2026-07-29T10:32:18.925Z",
+      "sourceName": "宇土市",
+      "category": "municipality"
+    },
+    "KM003-uki-emergency": {
+      "url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "令和8年熊本地震（7月28日発生）に関する情報（7月29日 14時30分更新） / 宇城市",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "避難",
+        "避難所",
+        "給水",
+        "断水",
+        "開設",
+        "閉鎖",
+        "支援",
+        "災害"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "e494ba50a82b79223497368f8e816d992731c81ff1779943c649b43e24fda4d2",
+      "checkedAt": "2026-07-29T10:32:19.091Z",
+      "sourceName": "宇城市",
+      "category": "municipality"
+    },
+    "KM004-misato-home": {
+      "url": "https://www.town.kumamoto-misato.lg.jp/index.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "ホーム／熊本県美里町公式ウェブサイト",
+      "pageUpdatedAt": "Wed, 29 Jul 2026 05:35:07 GMT",
+      "keywords": [
+        "災害"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "8634816eacd7d2897c9222c4e05f87d1c7588bcab91866ce3839829ba71a445c",
+      "checkedAt": "2026-07-29T10:32:19.325Z",
+      "sourceName": "美里町",
+      "category": "municipality"
+    },
+    "KM005-yatsushiro-bousai": {
+      "url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "防災サイト / 熊本県八代市",
+      "pageUpdatedAt": "Wed, 29 Jul 2026 09:16:04 GMT",
+      "keywords": [
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害",
+        "伝言"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "c281d88171de7c5765b9a25ec21ff1b70a8ccf5c7e009926faa701260dc8de5c",
+      "checkedAt": "2026-07-29T10:32:19.603Z",
+      "sourceName": "八代市",
+      "category": "municipality"
+    },
+    "KM006-hitoyoshi-shelter": {
+      "url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500270",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "警戒レベル３「高齢者等避難」地震発生のため避難所を開設 / 人吉市",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "避難",
+        "避難所",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "619c9707d16b840bad4861247192da4b88dec66c221c6cb4e2d421cebba160b6",
+      "checkedAt": "2026-07-29T10:32:19.734Z",
+      "sourceName": "人吉市",
+      "category": "municipality"
+    },
+    "KM007-hikawa-emergency": {
+      "url": "https://www.town.hikawa.kumamoto.jp/",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "氷川町",
+      "pageUpdatedAt": "Wed, 29 Jul 2026 03:54:07 GMT",
+      "keywords": [
+        "避難",
+        "支援",
+        "災害"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "ddeb4daeb87549ca24b75847b20eaadb87eda13dda730fce09fc98787deba8b6",
+      "checkedAt": "2026-07-29T10:32:19.893Z",
+      "sourceName": "氷川町",
+      "category": "municipality"
+    },
+    "KM008-mashiki-shelter": {
+      "url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "避難所の開設について / 防災サイト / 益城町",
+      "pageUpdatedAt": "Tue, 28 Jul 2026 09:29:04 GMT",
+      "keywords": [
+        "避難",
+        "避難所",
+        "開設",
+        "閉鎖"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "f5ec1e7e4a1164afdbe3897aa24d73e7b8341f1d79862933f82d14e8e2d0ed43",
+      "checkedAt": "2026-07-29T10:32:20.006Z",
+      "sourceName": "益城町",
+      "category": "municipality"
+    },
+    "KM009-koshi-emergency": {
+      "url": "https://www.city.koshi.lg.jp/",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "防災サイト / 合志市ホームページ",
+      "pageUpdatedAt": "Wed, 29 Jul 2026 08:01:07 GMT",
+      "keywords": [
+        "避難",
+        "避難所",
+        "断水",
+        "復旧",
+        "開設",
+        "閉鎖",
+        "災害"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "88fbb8cae59a61b0c6492b54b9f559ec535d2d58b09c530d16fb98d6c0e4c902",
+      "checkedAt": "2026-07-29T10:32:20.115Z",
+      "sourceName": "合志市",
+      "category": "municipality"
+    },
+    "KM010-mifune-shelter": {
+      "url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "緊急情報 / 御船町",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "避難",
+        "避難所",
+        "給水",
+        "断水",
+        "復旧",
+        "開設",
+        "閉鎖",
+        "支援",
+        "災害"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "4fc2c3f652dbf0b2c4d0c478cf32fb840099764a9c5db96f3d723f698515eb81",
+      "checkedAt": "2026-07-29T10:32:20.555Z",
+      "sourceName": "御船町",
+      "category": "municipality"
+    },
+    "KM011-kikuyo-water": {
+      "url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "給水所を設置します / 防災・災害情報 / 菊陽町",
+      "pageUpdatedAt": "Wed, 29 Jul 2026 04:33:03 GMT",
+      "keywords": [
+        "給水",
+        "災害"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "fbfe83fa186c5d601fe8d52d4601d0a9647eb9f739d1dae268f7fd7c1351fe4f",
+      "checkedAt": "2026-07-29T10:32:20.662Z",
+      "sourceName": "菊陽町",
+      "category": "municipality"
+    },
+    "KM012-kashima-water": {
+      "url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/51/6008.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "������ζ���ˤĤ��� - �۵޾���ò���Į",
+      "pageUpdatedAt": "",
+      "keywords": [],
+      "contaminationRisk": true,
+      "contentHash": "35ed3c93b922e704ad774d313cac532f40ecc0cb90a8f8a709ccaa0ef1abc05b",
+      "checkedAt": "2026-07-29T10:32:20.963Z",
+      "sourceName": "嘉島町",
+      "category": "municipality"
+    },
+    "KM013-kikuchi-shelter": {
+      "url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "避難",
+        "避難所",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "a998e2722f9df57b97b81b4e3434efc1bac61d35f9a0a826b8cb68a379710bea",
+      "checkedAt": "2026-07-29T10:32:21.141Z",
+      "sourceName": "菊池市",
+      "category": "municipality"
+    },
+    "COMM-docomo": {
+      "url": "https://www.docomo.ne.jp/info/network/kanto/pages/260728_00_m.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "重要なお知らせ（通信障害等） : 【災害影響】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（第7報：7月29日午後7時00分時点） | お知らせ | NTTドコモ",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "復旧",
+        "支援",
+        "災害",
+        "通信",
+        "Wi-Fi",
+        "伝言",
+        "公衆電話"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "37b1b5925a54d69cb54ba7b20dea195fdcecd5c1ee6fdf05fec73661f164d6f4",
+      "checkedAt": "2026-07-29T10:32:22.300Z",
+      "sourceName": "NTTドコモ",
+      "category": "communication"
+    },
+    "COMM-au": {
+      "url": "https://news.kddi.com/important/news/important_202607291742.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "【災害影響】2026年7月28日 熊本県の地震の影響により携帯電話サービスがご利用できない、ご利用しづらい状況について（7月29日 午後1時00分時点）",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "復旧",
+        "開設",
+        "支援",
+        "災害",
+        "通信",
+        "Wi-Fi",
+        "伝言"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "c687bf5c2b8e49b2f067938f426b8975f53b5c0135395a6baef84c2b1553180d",
+      "checkedAt": "2026-07-29T10:32:22.487Z",
+      "sourceName": "au",
+      "category": "communication"
+    },
+    "COMM-softbank": {
+      "url": "https://www.softbank.jp/mobile/info/personal/important/",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "障害情報 | スマートフォン・携帯電話 | ソフトバンク",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "通信"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "069bb4e52325784ffff27a3a94b435d49f6375603718c7cc193bdc76c9e2fca9",
+      "checkedAt": "2026-07-29T10:32:22.632Z",
+      "sourceName": "SoftBank",
+      "category": "communication"
+    },
+    "COMM-rakuten": {
+      "url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "【災害影響】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（第6報：7月29日午後6時20分時点） | 障害情報 | 楽天モバイル",
+      "pageUpdatedAt": "Wed, 29 Jul 2026 09:49:10 GMT",
+      "keywords": [
+        "復旧",
+        "災害",
+        "通信",
+        "Wi-Fi",
+        "公衆電話"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "7ac60d990d1f2d48945ba5b1183e56d8b220bc7e5d04499e0775764b37eafcc0",
+      "checkedAt": "2026-07-29T10:32:22.702Z",
+      "sourceName": "楽天モバイル",
+      "category": "communication"
+    },
+    "COMM-00000japan": {
+      "url": "https://www.wlan-business.org/00000japan/",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "災害用統一SSID「00000JAPAN」について  |  一般社団法人 無線LANビジネス推進連絡会【WiBiz（ワイビズ）】一般社団法人 無線LANビジネス推進連絡会【WiBiz（ワイビズ）】",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "災害",
+        "通信",
+        "Wi-Fi"
+      ],
+      "contaminationRisk": true,
+      "contentHash": "3cfa983f7d9389d21c013dae3ef8ac3559c046aaf6bb8efcce0540e1d63d0453",
+      "checkedAt": "2026-07-29T10:32:22.818Z",
+      "sourceName": "00000JAPAN",
+      "category": "communication"
+    },
+    "COMM-disaster-message": {
+      "url": "https://www.soumu.go.jp/menu_seisaku/ictseisaku/net_anzen/hijyo/dengon.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "�����ȁb���S�E�M�����̌���b�ЊQ�p�`���T�[�r�X",
+      "pageUpdatedAt": "Tue, 12 May 2026 21:43:42 GMT",
+      "keywords": [],
+      "contaminationRisk": true,
+      "contentHash": "ca7d1f09bc06c4f960fb73ce04a4e34a3bd908846e8fbf495fb4357d86dccc55",
+      "checkedAt": "2026-07-29T10:32:22.933Z",
+      "sourceName": "災害用伝言サービス",
+      "category": "communication"
+    },
+    "COMM-ntt-west": {
+      "url": "https://www.ntt-west.co.jp/newscms/disasternews/15400/1_20260729.pdf",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "NTT西日本 災害支援情報（2026-07-29）",
+      "pageUpdatedAt": "2026-07-29T00:00:00+09:00",
+      "keywords": [
+        "171",
+        "Web171",
+        "Wi-Fi",
+        "公衆電話",
+        "災害支援",
+        "伝言"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "afa4b956db3b8a8492698f1712a4d397928506b984f4f399896ffa14ab06bc50",
+      "contentType": "pdf",
+      "checkedAt": "2026-07-29T10:32:23.234Z",
+      "sourceName": "NTT西日本 災害支援情報",
+      "category": "communication"
+    }
+  }
+}

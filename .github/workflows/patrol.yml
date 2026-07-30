@@ -23,6 +23,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Restore patrol snapshot cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            monitor/reports/snapshots.json
+            monitor/reports/emergency-snapshots.json
+            monitor/reports/infrastructure-snapshots.json
+          key: patrol-snapshots-${{ github.ref }}
+          restore-keys: |
+            patrol-snapshots-${{ github.ref }}
+            patrol-snapshots-refs/heads/main
+
+      - name: Seed patrol snapshots when cache is cold
+        run: node scripts/seed-patrol-snapshots.js
+
       - name: Run patrol and generate reports
         id: patrol
         run: |
@@ -46,6 +61,7 @@ jobs:
           node scripts/validate-operation.js
           node scripts/validate-url-audit.js
           node scripts/validate-post-apply.js
+          node scripts/validate-patrol-publish-pipeline.js
 
       - name: Log patrol summary on failure
         if: failure()

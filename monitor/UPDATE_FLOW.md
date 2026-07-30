@@ -87,6 +87,18 @@ npm run review
 npm run apply-approved --apply
 ```
 
+巡回ステータス（`data/public/status.json`）のみ公開する場合:
+
+```bash
+npm run publish:patrol -- --publish-status
+```
+
+GitHub Actions から手動公開する場合:
+
+- workflow: `Publish Patrol Public Status`
+- デフォルト: `status.json` のみ反映
+- `apply_approved=true` の場合のみ `data/approved/*.json` を反映
+
 反映後は必ず:
 
 ```bash
