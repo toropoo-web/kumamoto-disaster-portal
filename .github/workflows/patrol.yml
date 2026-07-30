@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: "0 0,8,16 * * *"
   workflow_dispatch:
+    inputs:
+      auto_apply:
+        description: Apply auto-approved municipality updates to phase1_updates.json
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: read
@@ -58,6 +67,14 @@ jobs:
       - name: Run URL audit
         run: npm run url-audit
 
+      - name: Auto-apply preview
+        if: github.event_name == 'workflow_dispatch'
+        run: node scripts/auto-apply-candidates.js
+
+      - name: Auto-apply municipality updates
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.auto_apply == 'true'
+        run: node scripts/auto-apply-candidates.js --apply
+
       - name: Publish patrol status
         run: |
           set -e
@@ -77,6 +94,27 @@ jobs:
             exit 1
           fi
           git commit -m "chore: update patrol status"
+          git push
+
+      - name: Publish auto-applied phase1 updates
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.auto_apply == 'true'
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/public/phase1_updates.json
+          STAGED="$(git diff --cached --name-only)"
+          if [ -z "$STAGED" ]; then
+            echo "NO_PHASE1_UPDATES_CHANGES"
+            exit 0
+          fi
+          if [ "$STAGED" != "data/public/phase1_updates.json" ]; then
+            echo "REFUSING_COMMIT: only data/public/phase1_updates.json may be published"
+            echo "$STAGED"
+            git reset
+            exit 1
+          fi
+          git commit -m "chore: auto-publish municipality phase1 updates"
           git push
 
       - name: Validate patrol and operation infrastructure
@@ -106,6 +144,7 @@ jobs:
             monitor/reports/
             monitor/change-log/
             data/update_candidates/
+            data/approved/auto-preview/
             operations/patrol/
             operations/url-audit/
             patrol-output.log
