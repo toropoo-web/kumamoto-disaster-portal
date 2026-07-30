@@ -44,7 +44,8 @@ const CSS_CHECKS = [
   { name: "water search form", pattern: /\.water-search__form/ },
   { name: "portal quick access section", pattern: /\.portal-quick-access/ },
   { name: "disaster search section", pattern: /\.disaster-search/ },
-  { name: "disaster search form", pattern: /\.disaster-search__form/ }
+  { name: "disaster search form", pattern: /\.disaster-search__form/ },
+  { name: "disaster search guide styles", pattern: /\.disaster-search__guide/ }
 ];
 
 const JS_CHECKS = [
@@ -90,6 +91,7 @@ const JS_CHECKS = [
   { name: "disaster search render", pattern: /renderDisasterSearchResult/ },
   { name: "disaster search section id", pattern: /DISASTER_SEARCH_ID/ },
   { name: "disaster search promo", pattern: /renderDisasterSearchPromo/ },
+  { name: "disaster search guidance", pattern: /DISASTER_SEARCH_GUIDANCE/ },
   { name: "open disaster map section", pattern: /openDisasterMapSection/ },
   { name: "scroll to page target", pattern: /scrollToPageTarget/ },
   { name: "verified locations support title", pattern: /VERIFIED_LOCATIONS_TITLE/ },

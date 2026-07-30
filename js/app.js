@@ -21,9 +21,32 @@
       icon: "💧",
       title: "水を探す",
       lead: "給水・断水・水道情報を検索",
-      promoDescription: "熊本県・鹿児島県\n給水・断水・水道情報を検索"
+      promoDescription:
+        "熊本県・鹿児島県の公式災害情報を横断検索します。\n\n" +
+        "給水所・給水車・断水・水道復旧など、\n" +
+        "災害時に必要な水の情報を探せます。"
     }
   };
+  var DISASTER_SEARCH_GUIDANCE = {
+    intro: "この検索では、自治体・水道局・防災機関などが公開している公式情報を対象にしています。",
+    instruction: "地域名やキーワードで検索してください。",
+    examples: ["宇城 給水", "霧島 断水", "熊本 水道 復旧"],
+    scopeLabel: "検索対象：",
+    scopeRegions: "熊本県・鹿児島県",
+    scopeInfoTitle: "対象情報：",
+    scopeInfoItems: [
+      "自治体公式情報",
+      "水道局情報",
+      "防災機関情報",
+      "公的支援情報"
+    ]
+  };
+  var DISASTER_SEARCH_PLANNED_CATEGORIES = [
+    { icon: "💧", label: "水（給水・断水情報）", status: "available" },
+    { icon: "🤝", label: "ボランティア", status: "planned" },
+    { icon: "🏠", label: "避難情報", status: "planned" },
+    { icon: "🏥", label: "医療・支援情報", status: "planned" }
+  ];
   var DISASTER_MAP_SECTION_ID = "disaster-location-map-section";
   var VERIFIED_LOCATIONS_TITLE = "📍 支援地点一覧";
   var VERIFIED_LOCATIONS_EMPTY_DEFAULT = "該当する確認済み地点はありません。";
@@ -1198,12 +1221,63 @@
     );
     title.id = "disaster-search-title";
     inner.appendChild(title);
-    inner.appendChild(createElement("p", "disaster-search__regions", "熊本県・鹿児島県"));
-    inner.appendChild(createElement(
+
+    var guide = createElement("div", "disaster-search__guide");
+    guide.appendChild(createElement("p", "disaster-search__guide-text", DISASTER_SEARCH_GUIDANCE.intro));
+    guide.appendChild(createElement("p", "disaster-search__guide-text", DISASTER_SEARCH_GUIDANCE.instruction));
+    inner.appendChild(guide);
+
+    var examplesBlock = createElement("div", "disaster-search__examples");
+    examplesBlock.appendChild(createElement("p", "disaster-search__examples-title", "検索例："));
+    var examplesList = createElement("ul", "disaster-search__examples-list");
+    DISASTER_SEARCH_GUIDANCE.examples.forEach(function (example) {
+      var item = createElement("li", "disaster-search__examples-item", "・" + example);
+      examplesList.appendChild(item);
+    });
+    examplesBlock.appendChild(examplesList);
+    inner.appendChild(examplesBlock);
+
+    var scopeBlock = createElement("div", "disaster-search__scope");
+    scopeBlock.appendChild(createElement(
       "p",
-      "disaster-search__lead",
-      categoryConfig.lead
+      "disaster-search__scope-regions",
+      DISASTER_SEARCH_GUIDANCE.scopeLabel + DISASTER_SEARCH_GUIDANCE.scopeRegions
     ));
+    scopeBlock.appendChild(createElement("p", "disaster-search__scope-title", DISASTER_SEARCH_GUIDANCE.scopeInfoTitle));
+    var scopeList = createElement("ul", "disaster-search__scope-list");
+    DISASTER_SEARCH_GUIDANCE.scopeInfoItems.forEach(function (itemText) {
+      scopeList.appendChild(createElement("li", "disaster-search__scope-item", "・" + itemText));
+    });
+    scopeBlock.appendChild(scopeList);
+    inner.appendChild(scopeBlock);
+
+    var categoriesBlock = createElement("div", "disaster-search__categories");
+    categoriesBlock.appendChild(createElement("p", "disaster-search__categories-title", "現在対応："));
+    var availableList = createElement("ul", "disaster-search__categories-list");
+    var plannedList = createElement("ul", "disaster-search__categories-list disaster-search__categories-list--planned");
+    var plannedTitle = createElement("p", "disaster-search__categories-title", "順次対応：");
+    var hasPlanned = false;
+
+    DISASTER_SEARCH_PLANNED_CATEGORIES.forEach(function (entry) {
+      var item = createElement(
+        "li",
+        "disaster-search__category-item disaster-search__category-item--" + entry.status,
+        entry.icon + " " + entry.label
+      );
+      if (entry.status === "available") {
+        availableList.appendChild(item);
+      } else {
+        plannedList.appendChild(item);
+        hasPlanned = true;
+      }
+    });
+
+    categoriesBlock.appendChild(availableList);
+    if (hasPlanned) {
+      categoriesBlock.appendChild(plannedTitle);
+      categoriesBlock.appendChild(plannedList);
+    }
+    inner.appendChild(categoriesBlock);
 
     var form = createElement("form", "disaster-search__form");
     form.setAttribute("role", "search");

@@ -48,7 +48,11 @@ function main() {
     { name: "disaster search render", pattern: /renderDisasterSearchResult/ },
     { name: "disaster search section", pattern: /disaster-search/ },
     { name: "disaster search promo", pattern: /renderDisasterSearchPromo/ },
-    { name: "disaster search category config", pattern: /DISASTER_SEARCH_CATEGORY_CONFIG/ }
+    { name: "disaster search category config", pattern: /DISASTER_SEARCH_CATEGORY_CONFIG/ },
+    { name: "disaster search guidance", pattern: /DISASTER_SEARCH_GUIDANCE/ },
+    { name: "disaster search planned categories", pattern: /DISASTER_SEARCH_PLANNED_CATEGORIES/ },
+    { name: "disaster search guide block", pattern: /disaster-search__guide/ },
+    { name: "disaster search scope block", pattern: /disaster-search__scope/ }
   ].forEach(function (check) {
     const pass = check.pattern.test(appJs);
     checks.push({ check: "JS: " + check.name, pass: pass });
@@ -75,7 +79,9 @@ function main() {
     { name: "disaster search styles", pattern: /\.disaster-search/ },
     { name: "disaster search form", pattern: /\.disaster-search__form/ },
     { name: "disaster search mobile input", pattern: /\.disaster-search__input[\s\S]*min-height:\s*44px/ },
-    { name: "disaster search desktop layout", pattern: /@media \(min-width: 768px\)[\s\S]*\.disaster-search__form/ }
+    { name: "disaster search desktop layout", pattern: /@media \(min-width: 768px\)[\s\S]*\.disaster-search__form/ },
+    { name: "disaster search guide styles", pattern: /\.disaster-search__guide/ },
+    { name: "disaster search scope styles", pattern: /\.disaster-search__scope/ }
   ].forEach(function (check) {
     const pass = check.pattern.test(css);
     checks.push({ check: "CSS: " + check.name, pass: pass });

@@ -2002,6 +2002,14 @@ button:focus-visible {
 
 .disaster-search__regions,
 .disaster-search__lead,
+.disaster-search__guide-text,
+.disaster-search__examples-title,
+.disaster-search__examples-item,
+.disaster-search__scope-regions,
+.disaster-search__scope-title,
+.disaster-search__scope-item,
+.disaster-search__categories-title,
+.disaster-search__category-item,
 .disaster-search__hint,
 .disaster-search__empty,
 .disaster-search__summary,
@@ -2010,6 +2018,44 @@ button:focus-visible {
   font-size: 14px;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.disaster-search__guide,
+.disaster-search__examples,
+.disaster-search__scope,
+.disaster-search__categories {
+  margin: 0 0 16px;
+}
+
+.disaster-search__examples-list,
+.disaster-search__scope-list,
+.disaster-search__categories-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.disaster-search__scope,
+.disaster-search__categories {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.disaster-search__scope-regions,
+.disaster-search__scope-title,
+.disaster-search__categories-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.disaster-search__category-item--planned {
+  color: var(--muted);
+}
+
+.disaster-search__categories-list--planned {
+  margin-top: 4px;
 }
 
 .disaster-search__form {
