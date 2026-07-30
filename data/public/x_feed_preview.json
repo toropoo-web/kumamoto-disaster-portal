@@ -1,9 +1,20 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-30T05:49:36.104Z",
+  "synced_at": "2026-07-30T09:04:33.188Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
+    {
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-07-30T04:08:06.000Z",
+      "text": "先ほどの投稿内容に一部誤りがありました。修正のうえ、改めてお知らせいた���ます。\n\n【濁水情報について（7月30日11：30時点）】\n\n熊本市内の一部で発生している濁水状況は、次のとおりです↓\nhttps://t.co/aiYZ2BxUQi",
+      "url": "https://x.com/kumamotocity_/status/2082679604083630590",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
+      "content_filter": "DISASTER_RELATED"
+    },
     {
       "source_id": "SRC-MUN-KM006",
       "account_name": "人吉市公式X",
@@ -27,60 +38,49 @@
       "content_filter": "DISASTER_RELATED"
     },
     {
-      "source_id": "SRC-MUN-KM001",
-      "account_name": "熊本市公式X",
-      "account_handle": "kumamotocity_",
-      "post_time": "2026-07-30T03:15:20.000Z",
-      "text": "■原稿■\n【濁水情報について（7月30日11：30時点）】\n\n熊本市内の一部で発生している濁水状況は、次のとおりです↓\nhttps://t.co/aiYZ2BxUQi",
-      "url": "https://x.com/kumamotocity_/status/2082666323948241081",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "熊本市",
-      "content_filter": "DISASTER_RELATED"
-    },
-    {
-      "source_id": "SRC-NAT-004",
-      "account_name": "総務省消防庁",
-      "account_handle": "FDMA_JAPAN",
-      "post_time": "2026-07-30T03:32:28.000Z",
-      "text": "【消防庁　令和８年熊本地震に対する消防機関の活動状況】 消防防災ヘリも、被災地で活動中です。#緊急消防援助隊 #緊援隊 #熊本県 #佐賀県防災航空隊 https://t.co/pcIC805iqJ",
-      "url": "https://x.com/FDMA_JAPAN/status/2082670634589684147",
-      "source_type": "GOVERNMENT"
-    },
-    {
       "source_id": "SRC-NAT-005",
       "account_name": "防衛省 災害対策",
       "account_handle": "ModJapan_saigai",
-      "post_time": "2026-07-30T03:25:13.000Z",
-      "text": "本日、海上自衛隊の掃海母艦「ぶんご」、多用途支援艦「えんしゅう」「げんかい」の３隻が八代港に入港しました。入港後は、搭載した救援物資を速やかに陸上自衛隊へ引き継ぎ、陸上自衛隊において被災地の避難場所等、必要な場所への輸送を開始しています。\n\n↓掃海母艦「ぶんご」の入港の様子です。 https://t.co/rRXwyeT0Yq",
-      "url": "https://x.com/ModJapan_saigai/status/2082668811069833655",
+      "post_time": "2026-07-30T06:06:22.000Z",
+      "text": "防衛省・自衛隊は、小泉大臣の指示を踏まえ、「できることはすべてやる」との決意のもと、緊張感を持って人命救助を最優先に活動しています。また、熊本県では猛暑が続いており、被災者への生活支援が重要となっています。 https://t.co/SOCk11O15M",
+      "url": "https://x.com/ModJapan_saigai/status/2082709366399197529",
       "source_type": "GOVERNMENT"
     },
     {
       "source_id": "SRC-NAT-004",
       "account_name": "総務省消防庁",
       "account_handle": "FDMA_JAPAN",
-      "post_time": "2026-07-30T03:24:23.000Z",
-      "text": "本日（7/30）は、熊本県を含めて31都府県に熱中症警戒アラートが発表されています。特に、避難所等普段とは異なる環境で過ごされている方は、こまめに水分補給をしたり、濡れたタオル等を肌に当て体を冷やすなどの熱中症対策をお願いします。周囲の方や離れて暮らすご家族への呼びかけもお願いします。 https://t.co/JcMPUwKKpi",
-      "url": "https://x.com/FDMA_JAPAN/status/2082668603833504044",
+      "post_time": "2026-07-30T05:35:00.000Z",
+      "text": "【消防庁　令和８年熊本地震に対する消防機関の活動状況】被災地にて、 警視庁と合同で救助活動を実施しております。#緊急消防援助隊 #緊援隊 #熊本県 ＃警視庁 #警備犬 https://t.co/SW1L2sACAr",
+      "url": "https://x.com/FDMA_JAPAN/status/2082701474845569443",
       "source_type": "GOVERNMENT"
     },
     {
       "source_id": "SRC-NAT-001",
       "account_name": "首相官邸 災害・危機管理情報",
       "account_handle": "Kantei_Saigai",
-      "post_time": "2026-07-30T03:21:46.000Z",
-      "text": "【熊本地震】 https://t.co/HZdSW4EuJu",
-      "url": "https://x.com/Kantei_Saigai/status/2082667942484046003",
+      "post_time": "2026-07-30T05:18:15.000Z",
+      "text": "【地震関連・官房長官記者会見】\n本日（７月３０日）１１時００分頃から行われた木原官房長官の記者会見における、令和８年熊本地震に関する関連質疑です。\n\n※要旨（速報版）\n（地震関連外冒頭発言　略）\n（記者） https://t.co/SLbUJHB2cP",
+      "url": "https://x.com/Kantei_Saigai/status/2082697258613784775",
       "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-KUM-001",
-      "account_name": "防災くまもと",
-      "account_handle": "Bousai_Kumamoto",
-      "post_time": "2026-07-30T03:17:31.000Z",
-      "text": "(続き) \nこちらは甲佐町です。\n現在(2026/07/30 12:17)発令中の避難情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9 #避難情報",
-      "url": "https://x.com/Bousai_Kumamoto/status/2082666875948056892",
-      "source_type": "PREFECTURE"
+      "source_id": "SRC-NAT-004",
+      "account_name": "総務省消防庁",
+      "account_handle": "FDMA_JAPAN",
+      "post_time": "2026-07-30T05:13:39.000Z",
+      "text": "【消防庁とりまとめ第19報】令和８年熊本地震による被害及び消防機関等の対応状況について、7月30日（木）14時00分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/naYYCk7IUF\n#総務省消防庁 #災害情報 #地震",
+      "url": "https://x.com/FDMA_JAPAN/status/2082696098368643220",
+      "source_type": "GOVERNMENT"
+    },
+    {
+      "source_id": "SRC-NAT-001",
+      "account_name": "首相官邸 災害・危機管理情報",
+      "account_handle": "Kantei_Saigai",
+      "post_time": "2026-07-30T04:32:10.000Z",
+      "text": "令和8年熊本地震に関する第3回非常災害対策本部会議のライブ配信です。 https://t.co/IiY34hcEBZ",
+      "url": "https://x.com/Kantei_Saigai/status/2082685661308711010",
+      "source_type": "GOVERNMENT"
     }
   ]
 }
