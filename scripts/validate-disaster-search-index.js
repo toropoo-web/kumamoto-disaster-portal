@@ -121,6 +121,34 @@ function main() {
     errors.push("WATER search failed: 宇城市 official entry");
   }
 
+  const volunteerKumamotoResults = searchDisasterIndex(payload, "熊本 ボランティア", {
+    category: "VOLUNTEER"
+  });
+  const volunteerUkiResults = searchDisasterIndex(payload, "宇城 災害VC", {
+    category: "VOLUNTEER"
+  });
+  const volunteerCategories = payload.index.filter(function (item) {
+    return item.category === "VOLUNTEER";
+  });
+
+  checks.push({
+    check: "VOLUNTEER search possible",
+    pass: volunteerKumamotoResults.length > 0 && volunteerUkiResults.length > 0,
+    kumamotoVolunteerCount: volunteerKumamotoResults.length,
+    ukiVolunteerCount: volunteerUkiResults.length,
+    volunteerIndexCount: volunteerCategories.length
+  });
+
+  if (!volunteerKumamotoResults.length) {
+    errors.push("VOLUNTEER search failed: 熊本 ボランティア");
+  }
+  if (!volunteerUkiResults.length) {
+    errors.push("VOLUNTEER search failed: 宇城 災害VC");
+  }
+  if (volunteerCategories.length !== 11) {
+    errors.push("expected 11 VOLUNTEER index entries (HISTORICAL_ONLY excluded)");
+  }
+
   const volunteerResult = validateVolunteerIndexExample();
   checks.push({
     check: "VOLUNTEER schema compatible",

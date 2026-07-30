@@ -157,8 +157,11 @@ function main() {
     pass:
       registryResult.errors.length === 0 &&
       registryResult.categoryCounts.WATER > 0 &&
-      registryResult.categoryCounts.VOLUNTEER === 0
+      registryResult.categoryCounts.VOLUNTEER === 14
   });
+  if (registryResult.categoryCounts.VOLUNTEER !== 14) {
+    errors.push("expected 14 VOLUNTEER sources in disaster_sources.json");
+  }
   errors.push.apply(errors, registryResult.errors);
 
   const waterCompatErrors = validateWaterCompatibility();
@@ -325,7 +328,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log("PHASE27_VOLUNTEER_DATE_FILTER_COMPLETE");
+  console.log("PHASE27_VOLUNTEER_SOURCE_IMPORT_COMPLETE");
 }
 
 main();

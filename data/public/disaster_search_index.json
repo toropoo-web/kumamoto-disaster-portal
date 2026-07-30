@@ -793,6 +793,303 @@
       "source_url": "https://www.kaiho.mlit.go.jp/",
       "official": true,
       "updated_at": null
+    },
+    {
+      "index_id": "DIDX-A8BD4003D1C2",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "熊本県",
+      "organization": "熊本県社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 熊本県 熊本県社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CURRENT_CONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "https://www.fukushi-kumamoto.or.jp/kvc/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": true,
+        "source": "熊本県災害ボランティア情報（公式）"
+      }
+    },
+    {
+      "index_id": "DIDX-82F947B44F6E",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "熊本市",
+      "organization": "熊本市社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 熊本市 熊本市社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CURRENT_CONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "http://www.kumamoto-city-csw.or.jp/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": true,
+        "source": "熊本市社会福祉協議会公式情報"
+      }
+    },
+    {
+      "index_id": "DIDX-FEFD5F37C64B",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "organization": "八代市社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 八代市 八代市社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CURRENT_CONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "http://www.yatsushiro-shakyo.jp/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": true,
+        "source": "八代市社会福祉協議会公式情報"
+      }
+    },
+    {
+      "index_id": "DIDX-D4D357987062",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "人吉市",
+      "organization": "人吉市社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 人吉市 人吉市社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CURRENT_CONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "http://www.hitoyoshi-shakyo.com/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": true,
+        "source": "人吉市社会福祉協議会公式情報"
+      }
+    },
+    {
+      "index_id": "DIDX-3D174DEDAFF1",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "益城町",
+      "organization": "益城町社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 益城町 益城町社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CURRENT_CONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "https://www.mashiki-shakyo.or.jp/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": true,
+        "source": "益城町社会福祉協議会公式情報"
+      }
+    },
+    {
+      "index_id": "DIDX-4E84006D8EE4",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "宇土市",
+      "organization": "宇土市社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 宇土市 宇土市社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CAPABILITY_UNCONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "http://www.utoshakyou.jp/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "index_id": "DIDX-4090CFEFC8F3",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "宇城市",
+      "organization": "宇城市社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 宇城市 宇城市社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CAPABILITY_UNCONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "http://www.shakyou-uki.jp/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "index_id": "DIDX-8F8B931F361D",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "御船町",
+      "organization": "御船町社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 御船町 御船町社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CAPABILITY_UNCONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "https://mifune-shakyo.jp/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "index_id": "DIDX-41AD014D4A42",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "菊陽町",
+      "organization": "菊陽町社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 菊陽町 菊陽町社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CAPABILITY_UNCONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "http://swkikuyo.or.jp/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "index_id": "DIDX-8E411B70D5B9",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "菊池市",
+      "organization": "菊池市社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 菊池市 菊池市社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CAPABILITY_UNCONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "http://kikuchi-shakyo.or.jp/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "index_id": "DIDX-D9D415E7F08E",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "合志市",
+      "organization": "合志市社会福祉協議会公式",
+      "title": "災害ボランティア募集",
+      "content": "熊本県 合志市 合志市社会福祉協議会 災害ボランティア募集 災害ボランティア 募集 受付 活動 災害VC CAPABILITY_UNCONFIRMED",
+      "keywords": [
+        "災害ボランティア",
+        "募集",
+        "受付",
+        "活動",
+        "災害VC"
+      ],
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "source_type": "SOCIAL_WELFARE",
+      "source_url": "https://www.koshi-shakyo.or.jp/",
+      "official": true,
+      "updated_at": null,
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
     }
   ]
 }

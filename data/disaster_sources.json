@@ -568,6 +568,390 @@
       "extractor": {},
       "official": true,
       "active": false
+    },
+    {
+      "source_id": "DSRC-VOL-259BD19E44",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "熊本県",
+      "organization": "熊本県社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://www.fukushi-kumamoto.or.jp/kvc/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "熊本地震",
+        "令和2年7月豪雨"
+      ],
+      "current_capability": {
+        "confirmed": true,
+        "source": "熊本県災害ボランティア情報（公式）"
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-94339E7BDF",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "熊本市",
+      "organization": "熊本市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://www.kumamoto-city-csw.or.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "熊本地震"
+      ],
+      "current_capability": {
+        "confirmed": true,
+        "source": "熊本市社会福祉協議会公式情報"
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-46D01087C0",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "organization": "八代市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://www.yatsushiro-shakyo.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "熊本地震"
+      ],
+      "current_capability": {
+        "confirmed": true,
+        "source": "八代市社会福祉協議会公式情報"
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-432B9EFB6B",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "人吉市",
+      "organization": "人吉市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://www.hitoyoshi-shakyo.com/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "熊本地震"
+      ],
+      "current_capability": {
+        "confirmed": true,
+        "source": "人吉市社会福祉協議会公式情報"
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-F8E2BCF536",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "益城町",
+      "organization": "益城町社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://www.mashiki-shakyo.or.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CURRENT_CONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "熊本地震"
+      ],
+      "current_capability": {
+        "confirmed": true,
+        "source": "益城町社会福祉協議会公式情報"
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-8A10A2C619",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "宇土市",
+      "organization": "宇土市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://www.utoshakyou.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-2720B265C2",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "宇城市",
+      "organization": "宇城市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://www.shakyou-uki.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-90D98D841C",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "御船町",
+      "organization": "御船町社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://mifune-shakyo.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-5D771C41FD",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "菊陽町",
+      "organization": "菊陽町社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://swkikuyo.or.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-B85CA9E2FD",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "菊池市",
+      "organization": "菊池市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://kikuchi-shakyo.or.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-536BC172E9",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "合志市",
+      "organization": "合志市社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "https://www.koshi-shakyo.or.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "CAPABILITY_UNCONFIRMED",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-25C22DFE6B",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "氷川町",
+      "organization": "氷川町社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://www.shakyo.or.jp/hp/1669/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "HISTORICAL_ONLY",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "熊本地震",
+        "令和2年7月豪雨"
+      ],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-8885531E25",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "嘉島町",
+      "organization": "嘉島町社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://kashima-shakyo.or.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "HISTORICAL_ONLY",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "熊本地震",
+        "令和2年7月豪雨"
+      ],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
+    },
+    {
+      "source_id": "DSRC-VOL-31937287DD",
+      "category": "VOLUNTEER",
+      "prefecture": "熊本県",
+      "municipality": "美里町",
+      "organization": "美里町社会福祉協議会",
+      "source_type": "SOCIAL_WELFARE",
+      "url": "http://misatoshakyo.or.jp/",
+      "keywords": [
+        "災害ボランティア",
+        "災害VC",
+        "募集",
+        "受付"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true,
+      "capability_status": "HISTORICAL_ONLY",
+      "published_at": "2026-07-28",
+      "disaster_start_date": "2026-07-28",
+      "historical_evidence": [
+        "熊本地震",
+        "令和2年7月豪雨"
+      ],
+      "current_capability": {
+        "confirmed": false,
+        "source": ""
+      }
     }
   ]
 }
