@@ -6,13 +6,13 @@
     "public_category_label": "地震・緊急情報",
     "headline": "令和8年熊本地震に関する情報 - 熊本県ホームページ",
     "summary": "熊本県が令和8年熊本地震に関する公式情報を掲載しています。被害情報や災害対策本部会議資料などを随時追加しています。",
-    "displayed_updated_at": "2026-07-30T09:04:06.000Z",
+    "displayed_updated_at": "2026-07-30T10:04:19.000Z",
     "source_name": "熊本県",
     "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
     "department": "熊本県",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-30T09:52:55.101Z",
+    "collected_at": "2026-07-30T10:22:24.396Z",
     "display_priority": 1
   },
   {
@@ -208,7 +208,7 @@
     "department": "氷川町",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-30T09:52:55.101Z",
+    "collected_at": "2026-07-30T10:22:24.396Z",
     "display_priority": 1
   },
   {
@@ -256,7 +256,7 @@
     "department": "合志市",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-07-30T09:52:55.101Z",
+    "collected_at": "2026-07-30T10:22:24.396Z",
     "display_priority": 1
   },
   {
