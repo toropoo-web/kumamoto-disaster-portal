@@ -1,6 +1,6 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-30T09:40:37.156Z",
+  "synced_at": "2026-07-30T11:21:44.111Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
@@ -8,9 +8,9 @@
       "source_id": "SRC-MUN-KM006",
       "account_name": "人吉市公式X",
       "account_handle": "hitoyoshishi",
-      "post_time": "2026-07-30T09:05:44.000Z",
-      "text": "【防災無線放送内容】地震による水道水の濁りについて（2026/07/30/18:05）\n水道局からのお知らせです。\n地震の影響により、市内各地で水圧低下や、断水、水道水の濁りが発生しています。水道の濁りを確認した場合は、飲料水としての使用は控...\nhttps://t.co/PWddrJ3s12",
-      "url": "https://x.com/hitoyoshishi/status/2082754504475484441",
+      "post_time": "2026-07-30T09:12:08.000Z",
+      "text": "【市民プールはしばらくの間臨時休場します】\n\n　地震に伴う節水対策のため、当面の間、市民プールを臨時休場します。ご理解とご協力をお願いします。\n\n▼詳しくはこちらをご覧ください\nhttps://t.co/6NHkpktnHN",
+      "url": "https://x.com/hitoyoshishi/status/2082756115046207792",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "人吉市",
       "content_filter": "DISASTER_RELATED"
@@ -38,6 +38,46 @@
       "content_filter": "DISASTER_RELATED"
     },
     {
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-30T09:39:35.000Z",
+      "text": "(続き) \nこちらは氷川町です。\n現在(2026/07/29 09:40)開設中の避難所情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9\n #避難所開設",
+      "url": "https://x.com/Bousai_Kumamoto/status/2082763024985887186",
+      "source_type": "PREFECTURE"
+    },
+    {
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-30T09:39:35.000Z",
+      "text": "こちらは氷川町です。\n2026/07/29 09:40 に避難所を開設しましたのでお知らせします。\n開設した避難所： 氷川町公民館・宮原公民館",
+      "url": "https://x.com/Bousai_Kumamoto/status/2082763023622746566",
+      "source_type": "PREFECTURE"
+    },
+    {
+      "source_id": "SRC-MUN-KM006",
+      "account_name": "人吉市公式X",
+      "account_handle": "hitoyoshishi",
+      "post_time": "2026-07-30T09:11:42.000Z",
+      "text": "【7/31】道の駅人吉／石野公園は臨時休園します\n\n　地震の影響による断水のため、道の駅人吉／人吉クラフトパーク石野公園を全館臨時休園とします。ご理解とご協力をお願いします。\n\n▼詳しくはこちらをご覧ください\nhttps://t.co/5i87908icE",
+      "url": "https://x.com/hitoyoshishi/status/2082756008263524536",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "人吉市",
+      "content_filter": "DISASTER_RELATED"
+    },
+    {
+      "source_id": "SRC-MUN-KM006",
+      "account_name": "人吉市公式X",
+      "account_handle": "hitoyoshishi",
+      "post_time": "2026-07-30T09:05:44.000Z",
+      "text": "【防災無線放送内容】地震による水道水の濁りについて（2026/07/30/18:05）\n水道局からのお知らせです。\n地震の影響により、市内各地で水圧低下や、断水、水道水の濁りが発生しています。水道の濁りを確認した場合は、飲料水としての使用は控...\nhttps://t.co/PWddrJ3s12",
+      "url": "https://x.com/hitoyoshishi/status/2082754504475484441",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "人吉市",
+      "content_filter": "DISASTER_RELATED"
+    },
+    {
       "source_id": "SRC-NAT-003",
       "account_name": "気象庁防災情報",
       "account_handle": "JMA_bousai",
@@ -45,46 +85,6 @@
       "text": "気象庁の「令和８年熊本地震ポータルサイト」では、地震活動の状況や、被災地域の気象情報を、まとめて掲載しています。\n被災地域での応急・復旧対応や支援活動、避難生活の中での健康管理などにご留意いただくための資料として、ご活用ください。\nhttps://t.co/CaWQARIStK\n \n#令和８年熊本地震 https://t.co/9S1lSy0DjU",
       "url": "https://x.com/JMA_bousai/status/2082747691319386622",
       "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-NAT-003",
-      "account_name": "気象庁防災情報",
-      "account_handle": "JMA_bousai",
-      "post_time": "2026-07-30T08:34:44.000Z",
-      "text": "【被災地では熱中症対策を】\n熊本県では、今後も8月上旬にかけて最高気温が35℃以上の危険な暑さが続き、40℃以上の酷暑日となる日もある。特に断水や停電が続いている地域では、 #熱中症 などの健康管理に注意を！\n#令和8年熊本地震 ポータルサイトで最新情報の確認を！\nhttps://t.co/CaWQARIStK https://t.co/8GUiOEOd92",
-      "url": "https://x.com/JMA_bousai/status/2082746702705095029",
-      "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-NAT-001",
-      "account_name": "首相官邸 災害・危機管理情報",
-      "account_handle": "Kantei_Saigai",
-      "post_time": "2026-07-30T08:26:04.000Z",
-      "text": "【お知らせ】\n本日（７月３０日）、高市総理は、令和８年熊本地震に関する非常災害対策本部会議（第３回）を開催し��した。\n\n※高市総理発言要旨（速報版）\n　今日もお疲れ様でございます。 https://t.co/ANQFfl8Lld",
-      "url": "https://x.com/Kantei_Saigai/status/2082744523516752330",
-      "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-MUN-KM001",
-      "account_name": "熊本市公式X",
-      "account_handle": "kumamotocity_",
-      "post_time": "2026-07-30T08:17:31.000Z",
-      "text": "【水道の水圧低下について（７月30日16：30時点）】\n地震の影響により、水が出にくいとのお問い合わせをいただいております。\n\n現在、復旧作業を進めておりますので、ご理解とご協力をお願いいたします。\n\n上下水道に関する最新情報はこちら↓\nhttps://t.co/aiYZ2BxUQi",
-      "url": "https://x.com/kumamotocity_/status/2082742370781843539",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "熊本市",
-      "content_filter": "DISASTER_RELATED"
-    },
-    {
-      "source_id": "SRC-MUN-KM006",
-      "account_name": "人吉市公式X",
-      "account_handle": "hitoyoshishi",
-      "post_time": "2026-07-30T08:10:43.000Z",
-      "text": "【防災無線放送内容】給水車のお知らせ（2026/07/30/17：10）\n水道局からのお知らせです。\n地震の影響により、市内各地で水圧低下や、地域によっては断水が発生しています。\n本日は東間コミュニティセンター、蓑野町公民館、中原団地、一二三...\nhttps://t.co/i8y6naMyWU",
-      "url": "https://x.com/hitoyoshishi/status/2082740661464477700",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "人吉市",
-      "content_filter": "DISASTER_RELATED"
     }
   ]
 }
