@@ -15,38 +15,71 @@
   var WATER_CROSS_VIEW_ID = "water-cross-view";
   var WATER_SEARCH_ID = "water-search";
   var DISASTER_SEARCH_ID = "disaster-search";
+  var DISASTER_SEARCH_VOLUNTEER_ID = "disaster-search-volunteer";
   var DISASTER_SEARCH_DEFAULT_CATEGORY = "WATER";
   var DISASTER_SEARCH_CATEGORY_CONFIG = {
     WATER: {
+      sectionId: "disaster-search",
       icon: "💧",
       title: "水を探す",
       lead: "給水・断水・水道情報を検索",
       promoDescription:
-        "熊本県・鹿児島県の公式災害情報を横断検索します。\n\n" +
+        "熊本県・鹿児島県の公式水情報を横断検索します。\n\n" +
         "給水所・給水車・断水・水道復旧など、\n" +
         "災害時に必要な水の情報を探せます。"
+    },
+    VOLUNTEER: {
+      sectionId: "disaster-search-volunteer",
+      icon: "🤝",
+      title: "ボランティアを探す",
+      lead: "災害ボランティア情報を検索",
+      promoDescription:
+        "支援したい方へ。\n\n" +
+        "熊本県・鹿児島県の災害ボランティア情報を検索できます。\n\n" +
+        "募集状況・受付先・参加方法を確認できます。"
     }
   };
-  var DISASTER_SEARCH_GUIDANCE = {
-    intro: "この検索では、自治体・水道局・防災機関などが公開している公式情報を対象にしています。",
-    instruction: "地域名やキーワードで検索してください。",
-    examples: ["宇城 給水", "霧島 断水", "熊本 水道 復旧"],
+  var DISASTER_SEARCH_SHARED = {
     scopeLabel: "検索対象：",
     scopeRegions: "熊本県・鹿児島県",
-    scopeInfoTitle: "対象情報：",
-    scopeInfoItems: [
-      "自治体公式情報",
-      "水道局情報",
-      "防災機関情報",
-      "公的支援情報"
-    ]
+    scopeInfoTitle: "対象情報："
+  };
+  var DISASTER_SEARCH_GUIDANCE = {
+    WATER: {
+      intro: "この検索では、自治体・水道局・防災機関などが公開している公式情報を対象にしています。",
+      instruction: "地域名やキーワードで検索してください。",
+      examples: ["宇城 給水", "霧島 断水", "熊本 水道 復旧"],
+      placeholder: "例：宇城 給水 / 霧島 断水",
+      scopeInfoItems: [
+        "自治体公式情報",
+        "水道局情報",
+        "防災機関情報",
+        "公的支援情報"
+      ]
+    },
+    VOLUNTEER: {
+      intro: "この検索では、熊本県・鹿児島県の災害ボランティアに関する公式情報を対象にしています。",
+      instruction: "地域名やキーワードで検索してください。",
+      examples: ["熊本 ボランティア", "鹿児島 災害VC", "霧島 ボランティア", "宇城 災害VC"],
+      placeholder: "例：熊本 ボランティア / 霧島 災害VC",
+      scopeInfoItems: [
+        "社会福祉協議会",
+        "災害ボランティアセンター",
+        "自治体公式情報",
+        "災害ボランティア募集情報"
+      ]
+    }
   };
   var DISASTER_SEARCH_PLANNED_CATEGORIES = [
     { icon: "💧", label: "水（給水・断水情報）", status: "available" },
-    { icon: "🤝", label: "ボランティア", status: "planned" },
+    { icon: "🤝", label: "ボランティア", status: "available" },
     { icon: "🏠", label: "避難情報", status: "planned" },
     { icon: "🏥", label: "医療・支援情報", status: "planned" }
   ];
+  var VOLUNTEER_CAPABILITY_STATUS = {
+    CURRENT_CONFIRMED: "CURRENT_CONFIRMED",
+    CAPABILITY_UNCONFIRMED: "CAPABILITY_UNCONFIRMED"
+  };
   var DISASTER_MAP_SECTION_ID = "disaster-location-map-section";
   var VERIFIED_LOCATIONS_TITLE = "📍 支援地点一覧";
   var VERIFIED_LOCATIONS_EMPTY_DEFAULT = "該当する確認済み地点はありません。";
@@ -1110,7 +1143,38 @@
     });
   }
 
-  function renderDisasterSearchResult(resultsContainer, results, query) {
+  function appendVolunteerCapabilityStatus(card, item) {
+    if (!item || !item.capability_status) {
+      return;
+    }
+
+    var statusBlock = createElement("div", "disaster-search__capability");
+
+    if (item.capability_status === VOLUNTEER_CAPABILITY_STATUS.CURRENT_CONFIRMED) {
+      statusBlock.appendChild(createElement(
+        "p",
+        "disaster-search__capability-status disaster-search__capability-status--confirmed",
+        "現在対応情報確認済み"
+      ));
+    } else if (item.capability_status === VOLUNTEER_CAPABILITY_STATUS.CAPABILITY_UNCONFIRMED) {
+      statusBlock.appendChild(createElement(
+        "p",
+        "disaster-search__capability-status disaster-search__capability-status--entity",
+        "対応主体確認済み"
+      ));
+      statusBlock.appendChild(createElement(
+        "p",
+        "disaster-search__capability-note",
+        "現在の募集状況は公式情報をご確認ください"
+      ));
+    }
+
+    if (statusBlock.childNodes.length) {
+      card.appendChild(statusBlock);
+    }
+  }
+
+  function renderDisasterSearchResult(resultsContainer, results, query, category) {
     if (!resultsContainer) {
       return;
     }
@@ -1160,6 +1224,10 @@
         item.title || "公式情報"
       ));
 
+      if (category === "VOLUNTEER") {
+        appendVolunteerCapabilityStatus(card, item);
+      }
+
       if (item.content) {
         card.appendChild(createElement(
           "p",
@@ -1204,14 +1272,20 @@
 
     var categoryKey = category || DISASTER_SEARCH_DEFAULT_CATEGORY;
     var categoryConfig = DISASTER_SEARCH_CATEGORY_CONFIG[categoryKey];
-    if (!categoryConfig) {
+    var guidance = DISASTER_SEARCH_GUIDANCE[categoryKey];
+    if (!categoryConfig || !guidance) {
       return;
     }
 
+    var sectionId = categoryConfig.sectionId || DISASTER_SEARCH_ID;
+    var titleId = sectionId + "-title";
+    var inputId = sectionId + "-input";
+    var resultsId = sectionId + "-results";
+
     var section = createElement("section", "disaster-search");
-    section.id = DISASTER_SEARCH_ID;
+    section.id = sectionId;
     section.setAttribute("data-search-category", categoryKey);
-    section.setAttribute("aria-labelledby", "disaster-search-title");
+    section.setAttribute("aria-labelledby", titleId);
 
     var inner = createElement("div", "container");
     var title = createElement(
@@ -1219,18 +1293,18 @@
       "section-title disaster-search__heading",
       categoryConfig.icon + " " + categoryConfig.title
     );
-    title.id = "disaster-search-title";
+    title.id = titleId;
     inner.appendChild(title);
 
     var guide = createElement("div", "disaster-search__guide");
-    guide.appendChild(createElement("p", "disaster-search__guide-text", DISASTER_SEARCH_GUIDANCE.intro));
-    guide.appendChild(createElement("p", "disaster-search__guide-text", DISASTER_SEARCH_GUIDANCE.instruction));
+    guide.appendChild(createElement("p", "disaster-search__guide-text", guidance.intro));
+    guide.appendChild(createElement("p", "disaster-search__guide-text", guidance.instruction));
     inner.appendChild(guide);
 
     var examplesBlock = createElement("div", "disaster-search__examples");
     examplesBlock.appendChild(createElement("p", "disaster-search__examples-title", "検索例："));
     var examplesList = createElement("ul", "disaster-search__examples-list");
-    DISASTER_SEARCH_GUIDANCE.examples.forEach(function (example) {
+    guidance.examples.forEach(function (example) {
       var item = createElement("li", "disaster-search__examples-item", "・" + example);
       examplesList.appendChild(item);
     });
@@ -1241,11 +1315,11 @@
     scopeBlock.appendChild(createElement(
       "p",
       "disaster-search__scope-regions",
-      DISASTER_SEARCH_GUIDANCE.scopeLabel + DISASTER_SEARCH_GUIDANCE.scopeRegions
+      DISASTER_SEARCH_SHARED.scopeLabel + DISASTER_SEARCH_SHARED.scopeRegions
     ));
-    scopeBlock.appendChild(createElement("p", "disaster-search__scope-title", DISASTER_SEARCH_GUIDANCE.scopeInfoTitle));
+    scopeBlock.appendChild(createElement("p", "disaster-search__scope-title", DISASTER_SEARCH_SHARED.scopeInfoTitle));
     var scopeList = createElement("ul", "disaster-search__scope-list");
-    DISASTER_SEARCH_GUIDANCE.scopeInfoItems.forEach(function (itemText) {
+    guidance.scopeInfoItems.forEach(function (itemText) {
       scopeList.appendChild(createElement("li", "disaster-search__scope-item", "・" + itemText));
     });
     scopeBlock.appendChild(scopeList);
@@ -1284,13 +1358,13 @@
     form.setAttribute("aria-label", "災害情報検索");
 
     var label = createElement("label", "disaster-search__label", "地区名・キーワード");
-    label.setAttribute("for", "disaster-search-input");
+    label.setAttribute("for", inputId);
 
     var input = createElement("input", "disaster-search__input");
-    input.id = "disaster-search-input";
+    input.id = inputId;
     input.type = "search";
     input.name = "q";
-    input.placeholder = "例：宇城 給水 / 霧島 断水";
+    input.placeholder = guidance.placeholder;
     input.autocomplete = "off";
     input.enterKeyHint = "search";
 
@@ -1298,14 +1372,15 @@
     button.type = "submit";
 
     var resultsContainer = createElement("div", "disaster-search__results-wrap");
-    resultsContainer.id = "disaster-search-results";
+    resultsContainer.id = resultsId;
 
     function runSearch() {
       var query = input.value.trim();
       renderDisasterSearchResult(
         resultsContainer,
         searchDisasterIndex(disasterSearchIndex, query, { category: categoryKey }),
-        query
+        query,
+        categoryKey
       );
     }
 
@@ -1319,7 +1394,7 @@
     form.appendChild(button);
     inner.appendChild(form);
     inner.appendChild(resultsContainer);
-    renderDisasterSearchResult(resultsContainer, [], "");
+    renderDisasterSearchResult(resultsContainer, [], "", categoryKey);
     section.appendChild(inner);
     container.appendChild(section);
   }
@@ -1337,28 +1412,12 @@
     Object.keys(DISASTER_SEARCH_CATEGORY_CONFIG).forEach(function (categoryKey) {
       var config = DISASTER_SEARCH_CATEGORY_CONFIG[categoryKey];
       var card = createElement("a", "portal-quick-access__card");
-      card.href = "#" + DISASTER_SEARCH_ID;
+      card.href = "#" + (config.sectionId || DISASTER_SEARCH_ID);
       card.setAttribute("aria-label", config.title + "の検索へ移動");
       card.appendChild(createElement("h3", "portal-quick-access__card-title", config.icon + " " + config.title));
       card.appendChild(createElement("p", "portal-quick-access__card-desc", config.promoDescription));
       grid.appendChild(card);
     });
-
-    var areaCard = createElement("a", "portal-quick-access__card");
-    areaCard.href = "#" + AREA_DISASTER_NAV_ID;
-    areaCard.setAttribute("aria-label", "地域を指定して見るへ移動");
-    areaCard.appendChild(createElement("h3", "portal-quick-access__card-title", "📍 地域を指定して見る"));
-    areaCard.appendChild(createElement(
-      "p",
-      "portal-quick-access__card-desc",
-      "お住まいの地域を選択すると、その地域の災害情報を確認できます。"
-    ));
-    areaCard.appendChild(createElement(
-      "p",
-      "portal-quick-access__card-note",
-      "地域ごとの避難・給水・支援・公式情報を確認できます。"
-    ));
-    grid.appendChild(areaCard);
 
     inner.appendChild(grid);
     section.appendChild(inner);
@@ -1829,12 +1888,7 @@
     inner.appendChild(createElement(
       "p",
       "area-nav-promo__lead",
-      "お住まいの地域を選択すると、その地域の災害情報を確認できます。"
-    ));
-    inner.appendChild(createElement(
-      "p",
-      "area-nav-promo__note",
-      "地域ごとの避難・給水・支援・公式情報を確認できます。"
+      "お住まいの地域を選択すると、地域ごとの避難・給水・支援・公式情報を確認できます。"
     ));
 
     var button = createElement("button", "area-nav-promo__button", "地域を指定して見る");
@@ -3122,7 +3176,8 @@
         }
 
         renderAreaDisasterNav(page, areaNavigation, disasterLocations, locationSources);
-        renderDisasterSearch(page, disasterSearchIndex);
+        renderDisasterSearch(page, disasterSearchIndex, "WATER");
+        renderDisasterSearch(page, disasterSearchIndex, "VOLUNTEER");
         renderWaterSearch(page, waterSearchIndex);
         renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);

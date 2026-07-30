@@ -45,7 +45,8 @@ const CSS_CHECKS = [
   { name: "portal quick access section", pattern: /\.portal-quick-access/ },
   { name: "disaster search section", pattern: /\.disaster-search/ },
   { name: "disaster search form", pattern: /\.disaster-search__form/ },
-  { name: "disaster search guide styles", pattern: /\.disaster-search__guide/ }
+  { name: "disaster search guide styles", pattern: /\.disaster-search__guide/ },
+  { name: "volunteer capability status styles", pattern: /\.disaster-search__capability-status/ }
 ];
 
 const JS_CHECKS = [
@@ -92,6 +93,9 @@ const JS_CHECKS = [
   { name: "disaster search section id", pattern: /DISASTER_SEARCH_ID/ },
   { name: "disaster search promo", pattern: /renderDisasterSearchPromo/ },
   { name: "disaster search guidance", pattern: /DISASTER_SEARCH_GUIDANCE/ },
+  { name: "disaster search volunteer section id", pattern: /DISASTER_SEARCH_VOLUNTEER_ID/ },
+  { name: "volunteer capability status labels", pattern: /現在対応情報確認済み/ },
+  { name: "portal quick access volunteer card", pattern: /ボランティアを探す/ },
   { name: "open disaster map section", pattern: /openDisasterMapSection/ },
   { name: "scroll to page target", pattern: /scrollToPageTarget/ },
   { name: "verified locations support title", pattern: /VERIFIED_LOCATIONS_TITLE/ },

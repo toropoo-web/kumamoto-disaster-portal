@@ -2131,6 +2131,32 @@ button:focus-visible {
   word-break: break-word;
 }
 
+.disaster-search__capability {
+  margin: 0 0 8px;
+}
+
+.disaster-search__capability-status {
+  margin: 0 0 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.disaster-search__capability-status--confirmed {
+  color: #166534;
+}
+
+.disaster-search__capability-status--entity {
+  color: #1d4ed8;
+}
+
+.disaster-search__capability-note {
+  margin: 0 0 4px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted, #4b5563);
+}
+
 .disaster-search__content {
   margin: 0 0 8px;
   font-size: 14px;
