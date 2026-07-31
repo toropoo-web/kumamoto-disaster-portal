@@ -76,46 +76,36 @@ jobs:
         if: env.AUTO_APPLY_ENABLED == 'true'
         run: node scripts/auto-apply-candidates.js --apply
 
-      - name: Publish patrol status
+      - name: Sync public status from patrol report
+        run: node scripts/sync-patrol-public-status.js
+
+      - name: Build public search indices
+        if: env.AUTO_APPLY_ENABLED == 'true'
+        run: npm run build
+
+      - name: Run publication validation
+        if: env.AUTO_APPLY_ENABLED == 'true'
+        run: npm test
+
+      - name: Publish public patrol data
         run: |
           set -e
           node scripts/validate-public-status.js
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/public/status.json
+          if [ "$AUTO_APPLY_ENABLED" = "true" ]; then
+            git add data/public/phase1_updates.json || true
+            git add data/public/disaster_locations.json || true
+            git add data/public/water_cross_view.json data/public/water_search_index.json data/public/disaster_search_index.json || true
+          fi
           STAGED="$(git diff --cached --name-only)"
           if [ -z "$STAGED" ]; then
-            echo "NO_STATUS_CHANGES"
+            echo "NO_PUBLIC_DATA_CHANGES"
             exit 0
           fi
-          if [ "$STAGED" != "data/public/status.json" ]; then
-            echo "REFUSING_COMMIT: only data/public/status.json may be published"
-            echo "$STAGED"
-            git reset
-            exit 1
-          fi
-          git commit -m "chore: update patrol status"
-          git push
-
-      - name: Publish auto-applied phase1 updates
-        if: env.AUTO_APPLY_ENABLED == 'true'
-        run: |
-          set -e
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/public/phase1_updates.json
-          STAGED="$(git diff --cached --name-only)"
-          if [ -z "$STAGED" ]; then
-            echo "NO_PHASE1_UPDATES_CHANGES"
-            exit 0
-          fi
-          if [ "$STAGED" != "data/public/phase1_updates.json" ]; then
-            echo "REFUSING_COMMIT: only data/public/phase1_updates.json may be published"
-            echo "$STAGED"
-            git reset
-            exit 1
-          fi
-          git commit -m "chore: auto-publish municipality phase1 updates"
+          node scripts/verify-public-commit-staging.js
+          git commit -m "chore: publish patrol public data"
           git push
 
       - name: Validate patrol and operation infrastructure

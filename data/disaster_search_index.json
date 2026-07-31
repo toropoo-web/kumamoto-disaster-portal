@@ -219,6 +219,54 @@
       "updated_at": "2026-07-29T00:00:00+09:00"
     },
     {
+      "index_id": "DIDX-9FFB209B5A96",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "菊陽町",
+      "organization": "菊陽町公式",
+      "title": "給水対応中",
+      "content": "熊本県 菊陽町 菊陽町総合体育館 給水所 給水対応中 給水 応急給水 給水所 給水車 断水 水道 復旧 飲料水 生活用水",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧",
+        "飲料水",
+        "生活用水"
+      ],
+      "source_type": "MUNICIPALITY",
+      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "official": true,
+      "updated_at": "2026-07-29T16:30:00+09:00"
+    },
+    {
+      "index_id": "DIDX-BBA53E8FEB7B",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "菊陽町",
+      "organization": "菊陽町公式",
+      "title": "給水対応中",
+      "content": "熊本県 菊陽町 西部町民センター 給水所 給水対応中 給水 応急給水 給水所 給水車 断水 水道 復旧 飲料水 生活用水",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧",
+        "飲料水",
+        "生活用水"
+      ],
+      "source_type": "MUNICIPALITY",
+      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "official": true,
+      "updated_at": "2026-07-29T16:30:00+09:00"
+    },
+    {
       "index_id": "DIDX-010B48648C62",
       "category": "WATER",
       "prefecture": "熊本県",

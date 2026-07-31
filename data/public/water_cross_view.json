@@ -2,7 +2,7 @@
   "category": "WATER",
   "title": "給水情報",
   "description": "現在利用可能な給水所",
-  "last_updated": "2026-07-29T23:19:39.141Z",
+  "last_updated": "2026-07-29T17:01:00+09:00",
   "municipality_count": 3,
   "municipalities": [
     {
@@ -81,125 +81,24 @@
     {
       "municipality": "宇城市",
       "area_id": "KM003",
-      "status": "ACTIVE",
-      "status_label": "給水対応中",
-      "location_count": 9,
+      "status": "NO_LOCATIONS",
+      "status_label": "給水情報なし",
+      "location_count": 0,
       "source_type": "official",
       "source_label": "宇城市公式",
-      "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-      "locations": [
-        {
-          "location_id": "LOC-KM003-WATER-0002",
-          "location_name": "宇城市役所",
-          "municipality": "宇城市",
-          "source_type": "official",
-          "source_name": "宇城市",
-          "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T23:19:39.141Z"
-        },
-        {
-          "location_id": "LOC-KM003-WATER-0003",
-          "location_name": "戸馳地区生涯学習センター【旧戸馳小学校】",
-          "municipality": "宇城市",
-          "source_type": "official",
-          "source_name": "宇城市",
-          "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T23:19:39.141Z"
-        },
-        {
-          "location_id": "LOC-KM003-WATER-0004",
-          "location_name": "三角防災拠点センター",
-          "municipality": "宇城市",
-          "source_type": "official",
-          "source_name": "宇城市",
-          "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T23:19:39.141Z"
-        },
-        {
-          "location_id": "LOC-KM003-WATER-0005",
-          "location_name": "三角北地区生涯学習センター【旧三角北小学校】",
-          "municipality": "宇城市",
-          "source_type": "official",
-          "source_name": "宇城市",
-          "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T23:19:39.141Z"
-        },
-        {
-          "location_id": "LOC-KM003-WATER-0006",
-          "location_name": "小川防災拠点センター",
-          "municipality": "宇城市",
-          "source_type": "official",
-          "source_name": "宇城市",
-          "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T23:19:39.141Z"
-        },
-        {
-          "location_id": "LOC-KM003-WATER-0007",
-          "location_name": "松橋西防災拠点センター",
-          "municipality": "宇城市",
-          "source_type": "official",
-          "source_name": "宇城市",
-          "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T23:19:39.141Z"
-        },
-        {
-          "location_id": "LOC-KM003-WATER-0008",
-          "location_name": "松橋東防災拠点センター",
-          "municipality": "宇城市",
-          "source_type": "official",
-          "source_name": "宇城市",
-          "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T23:19:39.141Z"
-        },
-        {
-          "location_id": "LOC-KM003-WATER-0009",
-          "location_name": "不知火防災拠点センター",
-          "municipality": "宇城市",
-          "source_type": "official",
-          "source_name": "宇城市",
-          "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T23:19:39.141Z"
-        },
-        {
-          "location_id": "LOC-KM003-WATER-0010",
-          "location_name": "豊野防災拠点センター",
-          "municipality": "宇城市",
-          "source_type": "official",
-          "source_name": "宇城市",
-          "source_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T23:19:39.141Z"
-        }
-      ]
+      "source_url": null,
+      "locations": []
     },
     {
       "municipality": "人吉市",
       "area_id": "KM006",
       "status": "ACTIVE",
       "status_label": "給水対応中",
-      "location_count": 8,
+      "location_count": 4,
       "source_type": "official",
       "source_label": "人吉市公式",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
       "locations": [
-        {
-          "location_id": "LOC-KM006-WATER-0005",
-          "location_name": "大畑コミセン",
-          "municipality": "人吉市",
-          "source_type": "official",
-          "source_name": "人吉市",
-          "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T20:29:17.746Z"
-        },
         {
           "location_id": "LOC-KM006-WATER-0004",
           "location_name": "大畑コミュニティセンター（給水車）",
@@ -209,16 +108,6 @@
           "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
           "status_label": "給水対応中",
           "updated_at": "2026-07-29T00:00:00+09:00"
-        },
-        {
-          "location_id": "LOC-KM006-WATER-0006",
-          "location_name": "中原団地",
-          "municipality": "人吉市",
-          "source_type": "official",
-          "source_name": "人吉市",
-          "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T20:29:17.746Z"
         },
         {
           "location_id": "LOC-KM006-WATER-0003",
@@ -231,16 +120,6 @@
           "updated_at": "2026-07-29T00:00:00+09:00"
         },
         {
-          "location_id": "LOC-KM006-WATER-0007",
-          "location_name": "東間コミュニティーセンター",
-          "municipality": "人吉市",
-          "source_type": "official",
-          "source_name": "人吉市",
-          "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T20:29:17.746Z"
-        },
-        {
           "location_id": "LOC-KM006-WATER-0001",
           "location_name": "東間コミュニティセンター（給水車）",
           "municipality": "人吉市",
@@ -251,16 +130,6 @@
           "updated_at": "2026-07-29T00:00:00+09:00"
         },
         {
-          "location_id": "LOC-KM006-WATER-0008",
-          "location_name": "蓑野町公民館",
-          "municipality": "人吉市",
-          "source_type": "official",
-          "source_name": "人吉市",
-          "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
-          "status_label": "給水対応中",
-          "updated_at": "2026-07-29T20:29:17.746Z"
-        },
-        {
           "location_id": "LOC-KM006-WATER-0002",
           "location_name": "蓑野町公民館（給水車）",
           "municipality": "人吉市",
@@ -269,6 +138,38 @@
           "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
           "status_label": "給水対応中",
           "updated_at": "2026-07-29T00:00:00+09:00"
+        }
+      ]
+    },
+    {
+      "municipality": "菊陽町",
+      "area_id": "KM011",
+      "status": "ACTIVE",
+      "status_label": "給水対応中",
+      "location_count": 2,
+      "source_type": "official",
+      "source_label": "菊陽町公式",
+      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "locations": [
+        {
+          "location_id": "LOC-KM011-WATER-0001",
+          "location_name": "菊陽町総合体育館 給水所",
+          "municipality": "菊陽町",
+          "source_type": "official",
+          "source_name": "菊陽町公式防災情報",
+          "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+          "status_label": "給水対応中",
+          "updated_at": "2026-07-29T16:30:00+09:00"
+        },
+        {
+          "location_id": "LOC-KM011-WATER-0002",
+          "location_name": "西部町民センター 給水所",
+          "municipality": "菊陽町",
+          "source_type": "official",
+          "source_name": "菊陽町公式防災情報",
+          "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+          "status_label": "給水対応中",
+          "updated_at": "2026-07-29T16:30:00+09:00"
         }
       ]
     }

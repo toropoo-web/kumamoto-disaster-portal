@@ -591,6 +591,62 @@
       "related_card_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
       "verification_status": "VERIFIED"
+    },
+    {
+      "location_id": "LOC-KM011-WATER-0001",
+      "area_id": "KM011",
+      "area_name": "菊陽町",
+      "category": "WATER",
+      "category_label": "給水・断水",
+      "name": "菊陽町総合体育館 給水所",
+      "address": "熊本県菊池郡菊陽町原水5352-3",
+      "lat": 32.86861,
+      "lng": 130.80328,
+      "status": "ACTIVE",
+      "status_label": "給水実施中",
+      "update_cycle": "DAILY",
+      "operation_date": "2026-07-29",
+      "source": {
+        "type": "MUNICIPALITY",
+        "name": "菊陽町公式防災情報"
+      },
+      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "verified_at": "2026-07-29T16:30:00+09:00",
+      "last_checked_at": "2026-07-29T16:30:00+09:00",
+      "expires_at": null,
+      "ended_at": null,
+      "notes": "運営：大津菊陽水道企業団。容器持参で利用。",
+      "related_card_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+      "verification_status": "VERIFIED"
+    },
+    {
+      "location_id": "LOC-KM011-WATER-0002",
+      "area_id": "KM011",
+      "area_name": "菊陽町",
+      "category": "WATER",
+      "category_label": "給水・断水",
+      "name": "西部町民センター 給水所",
+      "address": "熊本県菊池郡菊陽町武蔵ヶ丘北3丁目5番1号",
+      "lat": 32.86202,
+      "lng": 130.76653,
+      "status": "ACTIVE",
+      "status_label": "給水実施中",
+      "update_cycle": "DAILY",
+      "operation_date": "2026-07-29",
+      "source": {
+        "type": "MUNICIPALITY",
+        "name": "菊陽町公式防災情報"
+      },
+      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "verified_at": "2026-07-29T16:30:00+09:00",
+      "last_checked_at": "2026-07-29T16:30:00+09:00",
+      "expires_at": null,
+      "ended_at": null,
+      "notes": "運営：大津菊陽水道企業団。",
+      "related_card_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+      "verification_status": "VERIFIED"
     }
   ]
 }

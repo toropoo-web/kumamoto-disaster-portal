@@ -2,7 +2,7 @@ services:
   - type: web
     name: kumamoto-disaster-portal
     runtime: static
-    buildCommand: ""
+    buildCommand: npm ci && npm run build
     staticPublishPath: .
     autoDeploy: true
     headers:
@@ -19,5 +19,17 @@ services:
         name: Cache-Control
         value: no-cache, no-store, must-revalidate
       - path: /data/public/x_feed_preview.json
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+      - path: /data/public/disaster_locations.json
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+      - path: /data/public/water_cross_view.json
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+      - path: /data/public/water_search_index.json
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
+      - path: /data/public/disaster_search_index.json
         name: Cache-Control
         value: no-cache, no-store, must-revalidate

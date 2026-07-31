@@ -15,11 +15,15 @@ function main() {
   [
     "monitor/patrol-publish-pipeline.js",
     "monitor/patrol-snapshot-store.js",
+    "monitor/public-data-build.js",
     "scripts/publish-patrol-pipeline.js",
     "scripts/seed-patrol-snapshots.js",
+    "scripts/sync-patrol-public-status.js",
+    "scripts/verify-public-commit-staging.js",
     "monitor/baselines/patrol-snapshots.seed.json",
     ".github/workflows/patrol.yml",
-    ".github/workflows/publish-patrol.yml"
+    ".github/workflows/publish-patrol.yml",
+    ".github/workflows/ci.yml"
   ].forEach(function (file) {
     const exists = fs.existsSync(path.join(ROOT, file));
     checks.push({ check: file, pass: exists });
@@ -32,7 +36,12 @@ function main() {
   [
     { name: "snapshot cache restore", pattern: /actions\/cache@v4/ },
     { name: "seed patrol snapshots", pattern: /seed-patrol-snapshots\.js/ },
-    { name: "review queue generation", pattern: /npm run review/ }
+    { name: "review queue generation", pattern: /npm run review/ },
+    { name: "sync patrol public status", pattern: /sync-patrol-public-status\.js/ },
+    { name: "public index build", pattern: /npm run build/ },
+    { name: "publication validation", pattern: /npm test/ },
+    { name: "public commit guard", pattern: /verify-public-commit-staging\.js/ },
+    { name: "water cross view commit", pattern: /water_cross_view\.json/ }
   ].forEach(function (item) {
     if (!item.pattern.test(patrolWorkflow)) {
       errors.push("patrol.yml missing: " + item.name);
@@ -42,6 +51,25 @@ function main() {
   const publishWorkflow = fs.readFileSync(path.join(ROOT, ".github/workflows/publish-patrol.yml"), "utf8");
   if (!/publish-patrol-pipeline\.js/.test(publishWorkflow)) {
     errors.push("publish-patrol.yml missing publish script");
+  }
+  if (!/verify-public-commit-staging\.js/.test(publishWorkflow)) {
+    errors.push("publish-patrol.yml missing public commit staging guard");
+  }
+  if (!/--lenient/.test(publishWorkflow)) {
+    errors.push("publish-patrol.yml missing lenient publish mode");
+  }
+  if (!/water_cross_view\.json/.test(publishWorkflow)) {
+    errors.push("publish-patrol.yml missing public index commit targets");
+  }
+
+  const ciWorkflow = fs.readFileSync(path.join(ROOT, ".github/workflows/ci.yml"), "utf8");
+  if (!/npm test/.test(ciWorkflow) || !/npm run build/.test(ciWorkflow)) {
+    errors.push("ci.yml must run npm test and npm run build");
+  }
+
+  const applyApprovedJs = fs.readFileSync(path.join(ROOT, "scripts", "apply-approved.js"), "utf8");
+  if (!/runPublicDataBuild/.test(applyApprovedJs)) {
+    errors.push("apply-approved.js must run public data build after apply");
   }
 
   const pipeline = inspectPublishPipeline();

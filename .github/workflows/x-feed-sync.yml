@@ -2,7 +2,7 @@ name: X Feed Sync
 
 on:
   schedule:
-    # Align with kumamoto-disaster-x-feed fetch cadence (every 30 minutes UTC)
+    # Backup sync when repository_dispatch from x-feed fetch fails or is delayed
     - cron: "15,45 * * * *"
   workflow_dispatch:
   repository_dispatch:
@@ -22,6 +22,14 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Log sync trigger
+        run: |
+          echo "SYNC_TRIGGER=${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "repository_dispatch" ]; then
+            echo "DISPATCH_SOURCE=${{ github.event.client_payload.source }}"
+            echo "DISPATCH_UPDATED_AT=${{ github.event.client_payload.updated_at }}"
+          fi
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -37,7 +45,7 @@ jobs:
         run: npm run sync:x-feed
 
       - name: Validate x feed preview JSON
-        run: node scripts/validate-x-feed-preview.js
+        run: npm run validate:x-feed
 
       - name: Publish x feed preview
         run: |
@@ -50,11 +58,6 @@ jobs:
             echo "NO_X_FEED_CHANGES"
             exit 0
           fi
-          if [ "$STAGED" != "data/public/x_feed_preview.json" ]; then
-            echo "REFUSING_COMMIT: only data/public/x_feed_preview.json may be published"
-            echo "$STAGED"
-            git reset
-            exit 1
-          fi
+          node scripts/verify-public-commit-staging.js
           git commit -m "chore: sync x feed preview"
           git push

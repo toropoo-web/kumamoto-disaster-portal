@@ -13,7 +13,7 @@ const REGIONS = ["熊本県", "鹿児島県"];
 const DEFAULT_REGION = "熊本県";
 const DEFAULT_KEYWORDS = ["給水", "応急給水", "給水所", "給水車", "断水", "水道", "復旧"];
 
-const TARGET_MUNICIPALITIES = new Set(["八代市", "宇城市", "人吉市"]);
+const TARGET_MUNICIPALITIES = new Set(["八代市", "宇城市", "人吉市", "菊陽町"]);
 const MUNICIPALITY_PATTERN = /^(熊本|八代|宇城|人吉|菊池|合志|玉名|天草|鹿児島|霧島|鹿屋|薩摩川内|姶良|出水)市$/;
 
 function ensureDir(dirPath) {
@@ -343,14 +343,34 @@ function validateWaterSearchIndex(payload) {
     municipalities.add(item.municipality);
   });
 
-  ["八代市", "宇城市", "人吉市"].forEach(function (name) {
+  ["八代市", "宇城市", "人吉市", "菊陽町"].forEach(function (name) {
     if (!municipalities.has(name)) {
       errors.push("missing municipality items: " + name);
     }
   });
 
-  if (locationCount !== 22) {
-    errors.push("location_item_count must remain 22, got " + locationCount);
+  const expectedLocationCount = buildLocationItems(
+    readJson(CROSS_VIEW_FILE, { municipalities: [] })
+  ).length;
+
+  if (payload.location_item_count !== locationCount) {
+    errors.push(
+      "location_item_count metadata mismatch (metadata " +
+      payload.location_item_count +
+      ", items " +
+      locationCount +
+      ")"
+    );
+  }
+
+  if (locationCount !== expectedLocationCount) {
+    errors.push(
+      "location_item_count must match water_cross_view location items (" +
+      expectedLocationCount +
+      ", got " +
+      locationCount +
+      ")"
+    );
   }
 
   if (registryCount === 0) {
