@@ -1536,6 +1536,80 @@
     return String(value).slice(0, 10);
   }
 
+  var BLOCKED_EXTERNAL_HOST_SUFFIXES = ["example.local", "localhost"];
+  var BLOCKED_EXTERNAL_HOST_INCLUDES = ["dummy", "test"];
+
+  function parseExternalUrl(value) {
+    var raw = String(value || "").trim();
+    if (!/^https?:\/\//i.test(raw)) {
+      return null;
+    }
+    try {
+      return new URL(raw);
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function isBlockedExternalHostname(hostname) {
+    var host = String(hostname || "").toLowerCase();
+    var i;
+    if (!host) {
+      return true;
+    }
+    for (i = 0; i < BLOCKED_EXTERNAL_HOST_SUFFIXES.length; i += 1) {
+      var suffix = BLOCKED_EXTERNAL_HOST_SUFFIXES[i];
+      if (host === suffix || host.slice(-1 * (suffix.length + 1)) === "." + suffix) {
+        return true;
+      }
+    }
+    for (i = 0; i < BLOCKED_EXTERNAL_HOST_INCLUDES.length; i += 1) {
+      var token = BLOCKED_EXTERNAL_HOST_INCLUDES[i];
+      if (
+        host === token ||
+        host.indexOf("." + token + ".") !== -1 ||
+        host.indexOf(token + ".") === 0 ||
+        host.slice(-1 * (token.length + 1)) === "." + token
+      ) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function isBlockedExternalUrl(value) {
+    var parsed = parseExternalUrl(value);
+    if (!parsed) {
+      return true;
+    }
+    if (isBlockedExternalHostname(parsed.hostname)) {
+      return true;
+    }
+    if (parsed.hostname === "x.com" && /^\/example(\/|$)/i.test(parsed.pathname)) {
+      return true;
+    }
+    return false;
+  }
+
+  function resolveExternalUrl(value) {
+    var parsed = parseExternalUrl(value);
+    if (!parsed || isBlockedExternalUrl(parsed.href)) {
+      return "";
+    }
+    return parsed.href;
+  }
+
+  function resolveSocialEntryUrl(item) {
+    if (!item) {
+      return "";
+    }
+    return (
+      resolveExternalUrl(item.url) ||
+      resolveExternalUrl(item.source_url) ||
+      resolveExternalUrl(item.link)
+    );
+  }
+
   function resolveCategoryFromKeyword(text) {
     var token = normalizeSearchText(text);
     if (!token) {
@@ -2404,7 +2478,7 @@
     socialCard.appendChild(createElement(
       "p",
       "portal-quick-access__card-desc",
-      "SNS・民間・現地発生情報を地域と日付で検索します。\n\n" +
+      "SNS・民間・現地発生情報を地域とカテゴリで検索します。\n\n" +
         "公式情報とは別レイヤーで、現地の支援・募集・物資情報を確認できます。"
     ));
     grid.appendChild(socialCard);
@@ -2463,11 +2537,12 @@
       card.appendChild(createElement("p", "disaster-social-search__date", "日時：" + (item.date || "")));
       card.appendChild(createElement("p", "disaster-search__source", "情報元：" + sourceName));
 
-      if (item.url) {
+      var entryUrl = resolveSocialEntryUrl(item);
+      if (entryUrl) {
         var link = createElement("a", "disaster-search__official-link", "URLを開く");
-        link.href = item.url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
+        link.setAttribute("href", entryUrl);
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener");
         link.setAttribute("aria-label", sourceName + "のURLを開く（外部リンク）");
         card.appendChild(link);
       }
@@ -2496,7 +2571,7 @@
     inner.appendChild(createElement(
       "p",
       "disaster-search__guide-text",
-      "公式情報とは別レイヤーです。地域・日付・カテゴリで検索できます。カテゴリ欄には「給水」「迷子犬」「風呂」などの言葉も入力できます。"
+      "公式情報とは別レイヤーです。地域・カテゴリで検索できます。カテゴリ欄には「給水」「迷子犬」「風呂」などの言葉も入力できます。"
     ));
 
     var form = createElement("form", "disaster-search__form disaster-social-search__form");
@@ -2511,13 +2586,6 @@
     regionInput.name = "region";
     regionInput.placeholder = "例：熊本県 / 霧島市 / 阿蘇地域";
     regionInput.autocomplete = "off";
-
-    var dateLabel = createElement("label", "disaster-search__label", "日付");
-    dateLabel.setAttribute("for", "disaster-social-search-date");
-    var dateInput = createElement("input", "disaster-search__input");
-    dateInput.id = "disaster-social-search-date";
-    dateInput.type = "date";
-    dateInput.name = "date";
 
     var categoryLabel = createElement("label", "disaster-search__label", "カテゴリ・キーワード");
     categoryLabel.setAttribute("for", "disaster-social-search-category");
@@ -2545,12 +2613,11 @@
     function runSearch() {
       var options = {
         region: regionInput.value.trim(),
-        date: dateInput.value,
         categoryQuery: categoryInput.value.trim()
       };
       var results = searchDisasterSocialIndex(socialPayload.index, options);
       renderDisasterSocialSearchResult(resultsContainer, results, sourceLookup);
-      if (options.region || options.date || options.categoryQuery) {
+      if (options.region || options.categoryQuery) {
         trackUsage("search_social");
       }
     }
@@ -2562,8 +2629,6 @@
 
     form.appendChild(regionLabel);
     form.appendChild(regionInput);
-    form.appendChild(dateLabel);
-    form.appendChild(dateInput);
     form.appendChild(categoryLabel);
     form.appendChild(categoryInput);
     form.appendChild(categoryDatalist);
@@ -2573,7 +2638,7 @@
     resultsContainer.appendChild(createElement(
       "p",
       "disaster-search__hint",
-      "地域・日付・カテゴリのいずれかを指定して検索してください。都道府県のみ指定すると県内すべての情報を表示します。"
+      "地域・カテゴリのいずれかを指定して検索してください。都道府県のみ指定すると県内すべての情報を表示します。"
     ));
     section.appendChild(inner);
     container.appendChild(section);

@@ -14,6 +14,7 @@ const {
   matchesPrefectureGroupToken,
   buildCommunityRegionHaystack
 } = require("./disaster-social-region-master");
+const { resolveExternalUrl } = require("./disaster-social-url");
 
 const ROOT = path.join(__dirname, "..");
 const SOURCES_FILE = path.join(ROOT, "data", "community", "disaster_social_sources.json");
@@ -382,6 +383,14 @@ function validateSocialIndexEntry(entry, index) {
   }
 
   REQUIRED_ENTRY_FIELDS.forEach(function (field) {
+    if (field === "url") {
+      if (typeof entry.url !== "string") {
+        errors.push(label + ": missing url");
+      } else if (entry.url && !resolveExternalUrl(entry.url)) {
+        errors.push(label + ": blocked url " + entry.url);
+      }
+      return;
+    }
     if (!entry[field]) {
       errors.push(label + ": missing " + field);
     }
@@ -472,6 +481,8 @@ function validateDisasterSocialSources(payload) {
     }
     if (typeof source.url !== "string") {
       errors.push(label + ": missing url");
+    } else if (source.url && !resolveExternalUrl(source.url)) {
+      errors.push(label + ": blocked url " + source.url);
     }
     if (source.active !== false && (!source.source_type || SOURCE_TYPE_VALUES.indexOf(source.source_type) === -1)) {
       errors.push(label + ": invalid source_type " + source.source_type);

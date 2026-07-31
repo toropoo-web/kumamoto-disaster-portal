@@ -16,7 +16,7 @@
       "date": "2026-07-31",
       "title": "熊本市西区 住民有志による給水協力",
       "content": "西区春日でポリタンク持参の給水協力。午前10時から夕方まで。",
-      "url": "https://example.local/kumamoto-sns/water-20260731"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260731-002",
@@ -30,7 +30,7 @@
       "date": "2026-07-31",
       "title": "熊本市中央区 炊き出しボランティア募集",
       "content": "中央区上通付近で炊き出し支援。配布手伝いと調理補助を募集。",
-      "url": "https://example.local/kumamoto-sns/food-20260731"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260731-003",
@@ -44,7 +44,7 @@
       "date": "2026-07-31",
       "title": "八代市 支援物資の民間寄付受付",
       "content": "日用品・衛生用品の寄付受付。八代市本町の仮設受付で受け取り。",
-      "url": "https://example.local/yatsushiro-board/supplies-20260731"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260731-004",
@@ -58,7 +58,7 @@
       "date": "2026-07-31",
       "title": "宇城市 仮設トイレの場所共有",
       "content": "宇城市小川地区の仮設トイレ設置場所を市民が共有。",
-      "url": "https://example.local/uki-uto-board/toilet-20260731"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260731-005",
@@ -72,7 +72,7 @@
       "date": "2026-07-31",
       "title": "宇土市 スマホ充電スポット情報",
       "content": "宇土町の商店が停電時の充電スポットを開放。",
-      "url": "https://example.local/uki-uto-board/charging-20260731"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260731-006",
@@ -86,7 +86,7 @@
       "date": "2026-07-31",
       "title": "氷川町 泥かきボランティア募集",
       "content": "氷川町島地地区で泥かき作業のボランティア募集。",
-      "url": "https://example.local/hikawa-local/volunteer-20260731"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260731-007",
@@ -100,7 +100,7 @@
       "date": "2026-07-31",
       "title": "宇城市松橋 井水の譲渡情報",
       "content": "松橋町の住民より井水譲渡の連絡。飲用不可・生活用水向け。",
-      "url": "https://example.local/uki-uto-board/water-20260731"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260731-008",
@@ -114,7 +114,7 @@
       "date": "2026-07-31",
       "title": "益城町 炊き出し追加募集",
       "content": "益城町赤井で追加の炊き出し支援。配膳ボランティア募集。",
-      "url": "https://example.local/minamiaso-volunteer/food-20260731b"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260731-009",
@@ -143,7 +143,7 @@
       "date": "2026-07-31",
       "title": "イオン八代駐車場 生活用水配布の現地情報",
       "content": "重複確認用。既存indexと同一URL。",
-      "url": "https://example.local/yatsushiro-board/water-20260731"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-001",
@@ -157,7 +157,7 @@
       "date": "2026-08-01",
       "title": "八代市本町 民間給水ポイント開設",
       "content": "八代市本町の公民館前で生活用水の配布。ポリタンク持参。8月1日午前7時から。",
-      "url": "https://example.local/yatsushiro-board/water-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-002",
@@ -171,7 +171,7 @@
       "date": "2026-08-01",
       "title": "熊本市東区 朝食炊き出し",
       "content": "熊本市東区健軍で朝食の炊き出し実施。配膳ボランティア募集。",
-      "url": "https://example.local/kumamoto-sns/food-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-003",
@@ -185,7 +185,7 @@
       "date": "2026-08-01",
       "title": "宇城市 衛生用品の民間寄付受付",
       "content": "宇城市三角町の仮設受付で衛生用品・日用品の寄付受付中。",
-      "url": "https://example.local/uki-uto-board/supplies-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-004",
@@ -199,7 +199,7 @@
       "date": "2026-08-01",
       "title": "宇土市 仮設トイレ設置場所",
       "content": "宇土市中央町の公園に仮設トイレ設置。市民が現地で共有。",
-      "url": "https://example.local/uki-uto-board/toilet-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-005",
@@ -213,7 +213,7 @@
       "date": "2026-08-01",
       "title": "氷川町 充電スポット開放",
       "content": "氷川町高砂の集会所でスマホ充電スポットを開放。",
-      "url": "https://example.local/hikawa-local/charging-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-006",
@@ -227,7 +227,7 @@
       "date": "2026-08-01",
       "title": "熊本市南区 避難所支援ボランティア",
       "content": "熊本市南区の避難所で物資運搬・配膳のボランティア募集。",
-      "url": "https://example.local/kumamoto-sns/volunteer-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-007",
@@ -256,7 +256,7 @@
       "date": "2026-08-01",
       "title": "八代市本町 民間給水ポイント開設（重複）",
       "content": "重複確認用。INB-20260801-001と同一URL。",
-      "url": "https://example.local/yatsushiro-board/water-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-EXP-001",
@@ -270,7 +270,7 @@
       "date": "2026-08-01",
       "title": "阿蘇市 民間給水ポイント開設",
       "content": "阿蘇市黒川地区で生活用水の配布。ポリタンク持参。",
-      "url": "https://example.local/aso-local/water-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-EXP-002",
@@ -284,7 +284,7 @@
       "date": "2026-08-01",
       "title": "南阿蘇村 炊き出し支援",
       "content": "南阿蘇村河陽町で炊き出し実施。配膳ボランティア募集。",
-      "url": "https://example.local/minamiaso-local/food-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-EXP-003",
@@ -298,7 +298,7 @@
       "date": "2026-08-01",
       "title": "天草市 物資寄付受付",
       "content": "天草市本町の仮設受付で日用品・衛生用品の寄付受付。",
-      "url": "https://example.local/amakusa-local/supplies-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-EXP-004",
@@ -312,7 +312,7 @@
       "date": "2026-08-01",
       "title": "上天草市 仮設トイレ設置情報",
       "content": "上天草市大矢野町の公園に仮設トイレ設置。",
-      "url": "https://example.local/kamiamakusa-local/toilet-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-EXP-005",
@@ -326,7 +326,7 @@
       "date": "2026-08-01",
       "title": "人吉市 充電スポット開放",
       "content": "人吉市上青井町の集会所でスマホ充電スポットを開放。",
-      "url": "https://example.local/hitoyoshi-local/charging-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-EXP-006",
@@ -340,7 +340,7 @@
       "date": "2026-08-01",
       "title": "水俣市 避難所支援ボランティア",
       "content": "水俣市万田町の避難所で物資運搬ボランティア募集。",
-      "url": "https://example.local/minamata-local/volunteer-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-EXP-007",
@@ -354,7 +354,7 @@
       "date": "2026-08-01",
       "title": "芦北町 井水譲渡情報",
       "content": "芦北町田浦地区で井水譲渡の連絡。生活用水向け。",
-      "url": "https://example.local/ashikita-local/water-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-PET-001",
@@ -368,7 +368,7 @@
       "date": "2026-08-01",
       "title": "熊本市西区 迷子猫の目撃情報",
       "content": "西区春日付近で三毛猫の目撃情報。首輪なし。飼い主捜索中。",
-      "url": "https://example.local/kumamoto-sns/pet-lost-cat-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-PET-002",
@@ -382,7 +382,7 @@
       "date": "2026-08-01",
       "title": "八代市 迷子犬の保護情報",
       "content": "八代市本町で保護された中型犬。赤い首輪。飼い主の連絡を待っています。",
-      "url": "https://example.local/yatsushiro-board/pet-lost-dog-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-PET-003",
@@ -396,7 +396,7 @@
       "date": "2026-08-01",
       "title": "宇城市 迷い猫の飼い主捜索",
       "content": "松橋町で迷い猫を保護。白と黒のハチワレ。飼い主捜索の連絡を募集。",
-      "url": "https://example.local/uki-uto-board/pet-stray-cat-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-PET-004",
@@ -410,7 +410,7 @@
       "date": "2026-08-01",
       "title": "人吉市 ペット避難場所の案内",
       "content": "人吉市上青井町の体育館付属スペースでペット避難を受け付け。ケージ持参。",
-      "url": "https://example.local/hitoyoshi-local/pet-shelter-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-PET-005",
@@ -424,7 +424,7 @@
       "date": "2026-08-01",
       "title": "阿蘇市 ペット同伴可能スペース",
       "content": "阿蘇市黒川の公民館ロビーをペット同伴可能スペースとして開放。",
-      "url": "https://example.local/aso-local/pet-friendly-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-PET-006",
@@ -438,7 +438,7 @@
       "date": "2026-08-01",
       "title": "天草市 ペット用品配布",
       "content": "天草市本町の仮設受付でペット用品・ペットフードの配布を実施。",
-      "url": "https://example.local/amakusa-local/pet-supplies-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-PET-007",
@@ -452,7 +452,7 @@
       "date": "2026-08-01",
       "title": "水俣市 迷い犬の目撃情報",
       "content": "万田町付近で茶色の中型犬の目撃情報。保護情報と飼い主捜索の連絡先あり。",
-      "url": "https://example.local/minamata-local/pet-stray-dog-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-CAT-001",
@@ -466,7 +466,7 @@
       "date": "2026-08-01",
       "title": "熊本市南区 銭湯の無料開放",
       "content": "南区の銭湯が被災者向けに入浴無料開放。タオル持参。",
-      "url": "https://example.local/kumamoto-sns/bath-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-CAT-002",
@@ -480,7 +480,7 @@
       "date": "2026-08-01",
       "title": "八代市 シャワー設備の開放",
       "content": "八代市沖町の体育館で温水シャワーを開放。入浴設備利用可。",
-      "url": "https://example.local/yatsushiro-board/shower-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-CAT-003",
@@ -494,7 +494,7 @@
       "date": "2026-08-01",
       "title": "宇土市 無料開放スペース",
       "content": "宇土市中央町の集会所をフリースペース・休憩場所として無料開放。",
-      "url": "https://example.local/uki-uto-board/free-space-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-CAT-004",
@@ -508,7 +508,7 @@
       "date": "2026-08-01",
       "title": "菊陽町 Wi-Fi利用スポット",
       "content": "菊陽町役場前のテントでWi-Fi・ネット通信を提供。",
-      "url": "https://example.local/kikuyo-local/wifi-20260801"
+      "url": ""
     },
     {
       "inbox_id": "INB-20260801-OPS-001",
@@ -522,8 +522,12 @@
       "date": "2026-08-01",
       "title": "玉名市 飲料水・生活用水の配布",
       "content": "玉名町の公民館前で飲料水と生活用水を配布。ポリタンク持参。",
-      "url": "https://example.local/community-ops/tamana-water-20260801",
-      "keywords": ["給水", "飲料水", "生活用水"]
+      "url": "",
+      "keywords": [
+        "給水",
+        "飲料水",
+        "生活用水"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-002",
@@ -537,8 +541,11 @@
       "date": "2026-08-01",
       "title": "山鹿市 炊き出し・食事提供",
       "content": "山鹿市鹿央町で炊き出し実施。食料配布と食事提供を行っています。",
-      "url": "https://example.local/community-ops/yamaga-food-20260801",
-      "keywords": ["炊き出し", "食事提供"]
+      "url": "",
+      "keywords": [
+        "炊き出し",
+        "食事提供"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-003",
@@ -552,8 +559,11 @@
       "date": "2026-08-01",
       "title": "菊池市 支援物資・衛生用品配布",
       "content": "菊池町の仮設受付で生活用品と衛生用品の物資配布を実施。",
-      "url": "https://example.local/community-ops/kikuchi-supplies-20260801",
-      "keywords": ["支援物資", "衛生用品"]
+      "url": "",
+      "keywords": [
+        "支援物資",
+        "衛生用品"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-004",
@@ -567,8 +577,10 @@
       "date": "2026-08-01",
       "title": "大津町 仮設トイレ設置",
       "content": "大津町木迫地区の公園に仮設トイレを設置。",
-      "url": "https://example.local/community-ops/ozu-toilet-20260801",
-      "keywords": ["トイレ"]
+      "url": "",
+      "keywords": [
+        "トイレ"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-005",
@@ -582,8 +594,10 @@
       "date": "2026-08-01",
       "title": "上天草市 充電スポット",
       "content": "上天草市大矢野町の集会所でスマホ充電スポットを開放。",
-      "url": "https://example.local/community-ops/kamiamakusa-charging-20260801",
-      "keywords": ["充電"]
+      "url": "",
+      "keywords": [
+        "充電"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-006",
@@ -597,8 +611,12 @@
       "date": "2026-08-01",
       "title": "南関町 銭湯の無料開放",
       "content": "南関町高森の銭湯が被災者向けに風呂・入浴を無料開放。",
-      "url": "https://example.local/community-ops/nankan-bath-20260801",
-      "keywords": ["風呂", "銭湯", "入浴"]
+      "url": "",
+      "keywords": [
+        "風呂",
+        "銭湯",
+        "入浴"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-007",
@@ -612,8 +630,11 @@
       "date": "2026-08-01",
       "title": "合志市 シャワー設備開放",
       "content": "合志市の体育館で温水シャワー・入浴設備を開放。",
-      "url": "https://example.local/community-ops/koshi-shower-20260801",
-      "keywords": ["シャワー", "温水"]
+      "url": "",
+      "keywords": [
+        "シャワー",
+        "温水"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-008",
@@ -627,8 +648,11 @@
       "date": "2026-08-01",
       "title": "益城町 無料開放スペース",
       "content": "益城町赤井の集会所をフリースペース・休憩場所として無料開放。",
-      "url": "https://example.local/community-ops/mashiki-free-space-20260801",
-      "keywords": ["無料開放", "休憩場所"]
+      "url": "",
+      "keywords": [
+        "無料開放",
+        "休憩場所"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-009",
@@ -642,8 +666,11 @@
       "date": "2026-08-01",
       "title": "人吉市 一時宿泊・避難場所",
       "content": "人吉市上青井町の体育館で一時利用・寝泊まりの宿泊受付。",
-      "url": "https://example.local/community-ops/hitoyoshi-shelter-20260801",
-      "keywords": ["宿泊", "避難場所"]
+      "url": "",
+      "keywords": [
+        "宿泊",
+        "避難場所"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-010",
@@ -657,8 +684,12 @@
       "date": "2026-08-01",
       "title": "水俣市 迷子猫の目撃情報",
       "content": "万田町付近で三毛猫の目撃情報。保護情報と飼い主捜索の連絡先あり。",
-      "url": "https://example.local/community-ops/minamata-pet-20260801",
-      "keywords": ["迷子猫", "保護猫", "飼い主捜索"]
+      "url": "",
+      "keywords": [
+        "迷子猫",
+        "保護猫",
+        "飼い主捜索"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-011",
@@ -672,8 +703,11 @@
       "date": "2026-08-01",
       "title": "天草市 Wi-Fi通信スポット",
       "content": "天草市本町の仮設テントでWi-Fi・ネット通信を提供。",
-      "url": "https://example.local/community-ops/amakusa-wifi-20260801",
-      "keywords": ["Wi-Fi", "通信"]
+      "url": "",
+      "keywords": [
+        "Wi-Fi",
+        "通信"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-012",
@@ -687,8 +721,10 @@
       "date": "2026-08-01",
       "title": "八代市 支援ボランティア募集",
       "content": "八代市本町の避難所で物資運搬・配膳のボランティア募集。",
-      "url": "https://example.local/community-ops/yatsushiro-volunteer-20260801",
-      "keywords": ["ボランティア"]
+      "url": "",
+      "keywords": [
+        "ボランティア"
+      ]
     },
     {
       "inbox_id": "INB-20260801-OPS-013",
@@ -703,7 +739,10 @@
       "title": "熊本県内 井水譲渡の連絡",
       "content": "井水譲渡の連絡。市町村・場所の詳細は確認中。",
       "url": "",
-      "keywords": ["井水", "生活用水"],
+      "keywords": [
+        "井水",
+        "生活用水"
+      ],
       "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持"
     },
     {
@@ -718,8 +757,11 @@
       "date": "2026-08-01",
       "title": "霧島市 民間給水ポイント情報",
       "content": "霧島市国分中央で生活用水の配布。ポリタンク持参。熊本方面支援物資と連携。",
-      "url": "https://example.local/kirishima-support/water-20260801",
-      "keywords": ["給水", "生活用水"]
+      "url": "",
+      "keywords": [
+        "給水",
+        "生活用水"
+      ]
     },
     {
       "inbox_id": "INB-20260801-KGS-002",
@@ -734,7 +776,9 @@
       "title": "霧島市 支援物資の連絡",
       "content": "霧島市内の支援物資譲渡連絡。地区・場所の詳細は確認中。",
       "url": "",
-      "keywords": ["支援物資"],
+      "keywords": [
+        "支援物資"
+      ],
       "review_note": "district, url 未確認。推測補完せず incomplete で保持"
     }
   ]

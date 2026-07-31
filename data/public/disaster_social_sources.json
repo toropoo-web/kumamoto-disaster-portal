@@ -21,7 +21,7 @@
       "name": "八代市 市民支援掲示板",
       "type": "LOCAL",
       "platform": "WEB",
-      "url": "https://example.local/yatsushiro-board",
+      "url": "",
       "coverage_prefectures": [
         "熊本県"
       ],
@@ -36,7 +36,7 @@
       "name": "南阿蘇 現地ボランティア連絡",
       "type": "CIVIL",
       "platform": "LINE",
-      "url": "https://example.local/minamiaso-volunteer",
+      "url": "",
       "coverage_prefectures": [
         "熊本県"
       ],
@@ -51,7 +51,7 @@
       "name": "霧島市 民間支援ネットワーク",
       "type": "PRIVATE",
       "platform": "WEB",
-      "url": "https://example.local/kirishima-support",
+      "url": "",
       "coverage_prefectures": [
         "鹿児島県"
       ],
@@ -66,7 +66,7 @@
       "name": "熊本市 市民支援SNS",
       "type": "SNS",
       "platform": "X",
-      "url": "https://example.local/kumamoto-sns",
+      "url": "https://x.com/",
       "coverage_prefectures": [
         "熊本県"
       ],
@@ -81,7 +81,7 @@
       "name": "宇城市・宇土市 市民掲示板",
       "type": "LOCAL",
       "platform": "WEB",
-      "url": "https://example.local/uki-uto-board",
+      "url": "",
       "coverage_prefectures": [
         "熊本県"
       ],
@@ -97,7 +97,7 @@
       "name": "氷川町 被災者連絡ネットワーク",
       "type": "CIVIL",
       "platform": "LINE",
-      "url": "https://example.local/hikawa-local",
+      "url": "",
       "coverage_prefectures": [
         "熊本県"
       ],
