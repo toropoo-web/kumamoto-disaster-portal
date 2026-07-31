@@ -1,0 +1,262 @@
+{
+  "DISASTER_PORTAL_OPERATION_MONITORING_READY": "PASS",
+  "generatedAt": "2026-07-30T19:12:32.500Z",
+  "scope": {
+    "area_ids": [
+      "KM000",
+      "KM001",
+      "KM002",
+      "KM003",
+      "KM004",
+      "KM005",
+      "KM006",
+      "KM007",
+      "KM008",
+      "KM009",
+      "KM010",
+      "KM011",
+      "KM012",
+      "KM013",
+      "KM014",
+      "KM015",
+      "KM016",
+      "KM017",
+      "KM018",
+      "KM019",
+      "KM020",
+      "KM021",
+      "KM022"
+    ],
+    "municipality_count": 23,
+    "portal": "kumamoto-disaster-emergency-portal"
+  },
+  "sections": {
+    "infrastructure": {
+      "checks": [
+        {
+          "check": "infra.monitor.operation-monitor.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "infra.scripts.run-operation-monitor.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "infra.scripts.run-patrol-pipeline.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "infra.data.review_queue.patrol_review_queue.json",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "infra.data.public_update_queue.patrol_public_update_queue.json",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "infra.data.public_update_gate.patrol_public_update_gate.json",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "infra.data.public_update_apply.public_update_apply_queue.json",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "patrol_operation": {
+      "checks": [
+        {
+          "check": "patrol.pipeline_connected",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.page_updated_at_excluded",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.classification_on_hash_change",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.PAGE_UPDATED_AT_no_classification",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.CONTENT_CHANGED_classification",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.no_diff_stops",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.isClassifiableChangeEntry",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "review_queue": {
+      "checks": [
+        {
+          "check": "review.pending_count_available",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "review.category_summary_available",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "review.decision_log_present",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "review.auto_publish_false",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "review.source_trace_missing_zero",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "review.schema_errors_zero",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "public_update": {
+      "checks": [
+        {
+          "check": "public_update.queue_file_present",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "public_update.gate_file_present",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "public_update.apply_file_present",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "public_update.auto_apply_prohibited",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "public_update.confirm_required",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "public_update.auto_publish_false",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "report_output": {
+      "checks": [
+        {
+          "check": "report.DISASTER_PORTAL_OPERATION_MONITORING_READY",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "report.patrol_status",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "report.diff_summary",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "report.review_pending",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "report.public_update_status",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "report.validation_result",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "report.timestamp",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "report.latest_file_written",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "report.summary_file_written",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "constraints.auto_municipality_add_false",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "constraints.sources_json_auto_change_false",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "constraints.auto_publish_false",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "constraints.auto_approval_false",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "constraints.public_data_direct_edit_false",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "monitor_report": "data\\operation_monitor\\latest-report.json",
+  "errors": []
+}

@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:28.378Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "autoPublish": false,
+  "sourcePublicUpdateQueueFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\test\\portal-municipality-e2e\\runs\\KM021\\water\\patrol_public_update_queue.json",
+  "gateSummary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "blocked": 0
+  },
+  "categorySummary": {
+    "WATER": 1,
+    "SHELTER": 0,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "results": [
+    {
+      "update_id": "UPD-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+      "gate_status": "PASS",
+      "validated_at": "2026-07-30T18:42:28.378Z",
+      "checks": [
+        {
+          "name": "schema",
+          "pass": true
+        },
+        {
+          "name": "source_url_format",
+          "pass": true
+        },
+        {
+          "name": "source_trace",
+          "pass": true
+        },
+        {
+          "name": "incident_contamination",
+          "pass": true
+        },
+        {
+          "name": "auto_publish_disabled",
+          "pass": true
+        },
+        {
+          "name": "target_layer_mapping",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "candidate": {
+        "update_id": "UPD-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+        "municipality": "苓北町",
+        "category": "WATER",
+        "title": "断水情報更新",
+        "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "source_id": "KM021-reihoku-bousai",
+        "area_id": "KM021",
+        "detected_keywords": [
+          "給水",
+          "断水",
+          "水道",
+          "復旧"
+        ],
+        "target_layer": "water_search_index",
+        "status": "READY",
+        "created_at": "2026-07-30T18:42:28.378Z",
+        "auto_publish": false,
+        "source_trace": {
+          "queue_id": "RQ-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+          "classification_id": "CLS-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+          "change_log": "data/test/portal-municipality-e2e/runs/KM021/water/change-log.json",
+          "classification_file": "data/test/portal-municipality-e2e/runs/KM021/water/classified.json",
+          "diff_type": "CONTENT_AND_TITLE_CHANGED",
+          "before_hash": "e2e-KM021-WATER-before",
+          "after_hash": "e2e-KM021-WATER-after",
+          "changed_text": "更新前タイトル\n断水情報更新\n断水情報更新\n断水 水道 復旧 給水\n断水 水道 復旧 給水 情報更新",
+          "detected_at": "2026-07-30T18:42:28.375Z"
+        }
+      }
+    }
+  ],
+  "passedUpdates": [
+    {
+      "update_id": "UPD-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+      "municipality": "苓北町",
+      "category": "WATER",
+      "title": "断水情報更新",
+      "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "source_id": "KM021-reihoku-bousai",
+      "area_id": "KM021",
+      "detected_keywords": [
+        "給水",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "target_layer": "water_search_index",
+      "status": "READY",
+      "created_at": "2026-07-30T18:42:28.378Z",
+      "auto_publish": false,
+      "source_trace": {
+        "queue_id": "RQ-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+        "classification_id": "CLS-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+        "change_log": "data/test/portal-municipality-e2e/runs/KM021/water/change-log.json",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM021/water/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "e2e-KM021-WATER-before",
+        "after_hash": "e2e-KM021-WATER-after",
+        "changed_text": "更新前タイトル\n断水情報更新\n断水情報更新\n断水 水道 復旧 給水\n断水 水道 復旧 給水 情報更新",
+        "detected_at": "2026-07-30T18:42:28.375Z"
+      }
+    }
+  ],
+  "failedUpdates": []
+}

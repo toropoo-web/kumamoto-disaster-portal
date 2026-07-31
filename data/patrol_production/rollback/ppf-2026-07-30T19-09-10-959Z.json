@@ -1,0 +1,422 @@
+{
+  "run_id": "ppf-2026-07-30T19-09-10-959Z",
+  "created_at": "2026-07-30T19:09:10.977Z",
+  "sources_file": "monitor/sources.json",
+  "sources_hash": "af561e5e36db761d4bde6ffc3c070281aa7ae767ba2048f72cf612ce7a0c83fa",
+  "sources_backup": {
+    "version": 1,
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "municipalities": [
+      {
+        "id": "KM000-pref-hub",
+        "area_id": "KM000",
+        "name": "熊本県",
+        "category": "municipality",
+        "url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM001-kumamoto-shelter",
+        "area_id": "KM001",
+        "name": "熊本市",
+        "category": "municipality",
+        "url": "https://city-kumamoto.my.salesforce-sites.com/X_PUB_VF_KUMA_HinanjyoNaviList",
+        "public_category_id": "SHELTER",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM002-uto-emergency",
+        "area_id": "KM002",
+        "name": "宇土市",
+        "category": "municipality",
+        "url": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM002-uto-water",
+        "area_id": "KM002",
+        "name": "宇土市",
+        "category": "municipality",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "public_category_id": "WATER",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      {
+        "id": "KM002-uto-shelter",
+        "area_id": "KM002",
+        "name": "宇土市",
+        "category": "municipality",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16304.html",
+        "public_category_id": "SHELTER",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      {
+        "id": "KM003-uki-emergency",
+        "area_id": "KM003",
+        "name": "宇城市",
+        "category": "municipality",
+        "url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM004-misato-emergency",
+        "area_id": "KM004",
+        "name": "美里町",
+        "category": "municipality",
+        "url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary",
+        "note": "R8地震情報ハブ（旧index.htmlから差し替え）"
+      },
+      {
+        "id": "KM005-yatsushiro-bousai",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM005-yatsushiro-kinkyu",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      {
+        "id": "KM006-hitoyoshi-shelter",
+        "area_id": "KM006",
+        "name": "人吉市",
+        "category": "municipality",
+        "url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500270",
+        "public_category_id": "SHELTER",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM007-hikawa-emergency",
+        "area_id": "KM007",
+        "name": "氷川町",
+        "category": "municipality",
+        "url": "https://www.town.hikawa.kumamoto.jp/",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM008-mashiki-shelter",
+        "area_id": "KM008",
+        "name": "益城町",
+        "category": "municipality",
+        "url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+        "public_category_id": "SHELTER",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM009-koshi-emergency",
+        "area_id": "KM009",
+        "name": "合志市",
+        "category": "municipality",
+        "url": "https://www.city.koshi.lg.jp/",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM010-mifune-shelter",
+        "area_id": "KM010",
+        "name": "御船町",
+        "category": "municipality",
+        "url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8",
+        "public_category_id": "SHELTER",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM011-kikuyo-water",
+        "area_id": "KM011",
+        "name": "菊陽町",
+        "category": "municipality",
+        "url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+        "public_category_id": "WATER",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM012-kashima-water",
+        "area_id": "KM012",
+        "name": "嘉島町",
+        "category": "municipality",
+        "url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/51/6008.html",
+        "public_category_id": "WATER",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM013-kikuchi-shelter",
+        "area_id": "KM013",
+        "name": "菊池市",
+        "category": "municipality",
+        "url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+        "public_category_id": "SHELTER",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM014-minamata-emergency",
+        "area_id": "KM014",
+        "name": "水俣市",
+        "category": "municipality",
+        "url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM015-kosa-emergency",
+        "area_id": "KM015",
+        "name": "甲佐町",
+        "category": "municipality",
+        "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM016-ashikita-hinan",
+        "area_id": "KM016",
+        "name": "芦北町",
+        "category": "municipality",
+        "url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary",
+        "note": "Discovery確認済み避難・災害情報ハブ"
+      },
+      {
+        "id": "KM016-ashikita-bousai",
+        "area_id": "KM016",
+        "name": "芦北町",
+        "category": "municipality",
+        "url": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      {
+        "id": "KM016-ashikita-disaster-cert",
+        "area_id": "KM016",
+        "name": "芦北町",
+        "category": "municipality",
+        "url": "https://www.town.ashikita.lg.jp/bosai_site/oshirase_bosai/2111544",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      {
+        "id": "KM017-tsunagi-emergency",
+        "area_id": "KM017",
+        "name": "津奈木町",
+        "category": "municipality",
+        "url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM018-kamiamakusa-emergency",
+        "area_id": "KM018",
+        "name": "上天草市",
+        "category": "municipality",
+        "url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM019-amakusa-bousai",
+        "area_id": "KM019",
+        "name": "天草市",
+        "category": "municipality",
+        "url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM020-nishihara-bousai",
+        "area_id": "KM020",
+        "name": "西原村",
+        "category": "municipality",
+        "url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary",
+        "note": "R8地震防災ポータル（default.htmlから差し替え）"
+      },
+      {
+        "id": "KM021-reihoku-bousai",
+        "area_id": "KM021",
+        "name": "苓北町",
+        "category": "municipality",
+        "url": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      {
+        "id": "KM022-taragi-emergency",
+        "area_id": "KM022",
+        "name": "多良木町",
+        "category": "municipality",
+        "url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+        "public_category_id": "EMERGENCY",
+        "status": "ACTIVE",
+        "source_type": "official",
+        "patrol_role": "primary",
+        "note": "防災無線情報一覧（公式確認済み）"
+      }
+    ],
+    "communication": [
+      {
+        "id": "COMM-docomo",
+        "name": "NTTドコモ",
+        "category": "communication",
+        "url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+        "provider_id": "docomo"
+      },
+      {
+        "id": "COMM-au",
+        "name": "au",
+        "category": "communication",
+        "url": "https://news.kddi.com/important/news/important_202607291742.html",
+        "provider_id": "au"
+      },
+      {
+        "id": "COMM-softbank",
+        "name": "SoftBank",
+        "category": "communication",
+        "url": "https://www.softbank.jp/mobile/info/personal/important/",
+        "provider_id": "softbank"
+      },
+      {
+        "id": "COMM-rakuten",
+        "name": "楽天モバイル",
+        "category": "communication",
+        "url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+        "provider_id": "rakuten"
+      },
+      {
+        "id": "COMM-00000japan",
+        "name": "00000JAPAN",
+        "category": "communication",
+        "url": "https://www.wlan-business.org/00000japan/",
+        "service_id": "wifi_00000japan"
+      },
+      {
+        "id": "COMM-disaster-message",
+        "name": "災害用伝言サービス",
+        "category": "communication",
+        "url": "https://www.soumu.go.jp/menu_seisaku/ictseisaku/net_anzen/hijyo/dengon.html",
+        "service_id": "disaster_message"
+      },
+      {
+        "id": "COMM-ntt-west",
+        "name": "NTT西日本 災害支援情報",
+        "category": "communication",
+        "priority": "HIGH",
+        "url": "https://www.ntt-west.co.jp/newscms/disasternews/15400/1_20260729.pdf",
+        "service_id": "ntt_west_disaster_support"
+      }
+    ]
+  },
+  "registry_apply_history_file": "data/test/patrol-production-flow/runs/ppf-2026-07-30T19-09-10-959Z/registry_apply_history.json",
+  "registry_apply_history": {
+    "version": 1,
+    "generatedAt": "2026-07-31T00:00:00.000Z",
+    "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+    "entries": [
+      {
+        "apply_id": "RAP-FIXTURE-UTO-WATER",
+        "source_id": "KM002-uto-water",
+        "municipality": "宇土市",
+        "prefecture": "熊本県",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "official_domain": "city.uto.lg.jp",
+        "decision": {
+          "status": "APPROVED",
+          "reviewer": "manual-reviewer",
+          "reviewed_at": "2026-07-31T00:00:00.000Z",
+          "review_note": "Registry apply approved for production connection E2E"
+        },
+        "apply_status": "COMPLETE",
+        "applied_at": "2026-07-31T00:00:00.000Z",
+        "source_trace": {
+          "discovery_run_id": "NDR-FIXTURE",
+          "review_id": "PRD-FIXTURE-UTO-WATER",
+          "municipality_id": "JP432091",
+          "target_id": "DST-432091",
+          "pipeline_run_id": "PDP-FIXTURE"
+        }
+      }
+    ]
+  },
+  "snapshot_file": "data/test/patrol-production-flow/runs/ppf-2026-07-30T19-09-10-959Z/snapshots.json",
+  "snapshot_backup": {
+    "version": 1,
+    "sources": {
+      "KM002-uto-water": {
+        "title": "水道復旧状況更新",
+        "contentHash": "e2e-uto-water-after-hash-4b8e1f6a",
+        "reachable": true,
+        "sourceName": "宇土市",
+        "category": "municipality",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html"
+      }
+    }
+  },
+  "public_hash": "area_navigation.json:83a37af290d84dd15cb6025f53c475e61ee9f35057155fc9ea3c9e685c7afab5|communication_status.json:e76e88dbc4221ef6989e64e67632f154b44d01cc6b0b6dcdd1473701bce627b1|disaster_locations.json:38da9e7cec8bed59a379b16396fb429cc806368d25f9f774dc5999552fc944c7|disaster_search_index.json:cdd8cfdebfda47daf7bc79f470bd459a49bf78b55896e8b5dfb2555fbe41de37|emergency_sources.json:f73fa2d80b55bcc985da8c6e71ec441eb254e84d928787d82a5ebad7d111fc99|infrastructure_sources.json:3e6eafa7db697faab568e2c58bcdcb4f9edf26fce7278f10b71110a68951e0d0|infrastructure_status.json:c68d0ffb154afbe9bf3fd266bcf3325f2acc648a28f74a5f705537123a227f97|location_sources.json:a3241c24cff67acbcaca3c915f06e7d9537edc7e19cec1f7758ae861795edce6|phase1_areas.json:1a59b9f4769d2002a657d42348edc6589cd15117e88606df3fcb30ed2df04f32|phase1_navigation.json:1a59b9f4769d2002a657d42348edc6589cd15117e88606df3fcb30ed2df04f32|phase1_updates.json:4bc2dce0e986e8360867a6f3930059297783c9e54e4c14ff6217a6ef8f6aed61|status.json:45436ad17ba104482782ec8eabe69cbae9a2491892a83c112919894ae801c7ba|water_cross_view.json:892f376a21269f38e646ce07f56540a73dba4f92929633280f12f78b8c1cf546|water_search_index.json:5c85ce0c98c9480ceb176b7e75a495b7bec8df00783dc6e7536bd80901e6cf1b|x_feed_preview.json:6e80f3431e90c97031d2ecdd6cee5d9cbab58ca9a2cea00928b93085107e0543"
+}

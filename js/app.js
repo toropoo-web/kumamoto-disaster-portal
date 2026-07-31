@@ -31,11 +31,11 @@
     VOLUNTEER: {
       sectionId: "disaster-search-volunteer",
       icon: "🤝",
-      title: "ボランティアを探す",
+      title: "災害ボランティア募集を探す",
       lead: "災害ボランティア情報を検索",
       promoDescription:
         "支援したい方へ。\n\n" +
-        "熊本県・鹿児島県の災害ボランティア情報を検索できます。\n\n" +
+        "熊本県・鹿児島県の災害ボランティア募集情報を検索できます。\n\n" +
         "募集状況・受付先・参加方法を確認できます。"
     }
   };
@@ -239,6 +239,42 @@
       blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
     },
     KM013: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM014: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM015: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM016: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM017: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM018: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM019: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM020: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM021: {
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
+    },
+    KM022: {
       allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
       blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
     }
@@ -477,6 +513,20 @@
 
   function getServiceStatusText(service) {
     return service.status_label || COMMUNICATION_STATUS_LABELS[service.status] || COMMUNICATION_STATUS_LABELS.CHECK_OFFICIAL;
+  }
+
+  function getCommunicationLastCheckedText(item) {
+    var value = item.last_checked || item.confirmed_at || null;
+    var formatted = formatSyncedAt(value);
+    return formatted ? "最終確認：" + formatted : "";
+  }
+
+  function appendCommunicationLastChecked(parent, item) {
+    var lastCheckedText = getCommunicationLastCheckedText(item);
+    if (!lastCheckedText) {
+      return;
+    }
+    parent.appendChild(createElement("p", "communication-status__confirmed", lastCheckedText));
   }
 
   function extractDomain(url) {
@@ -2672,6 +2722,7 @@
       link.appendChild(createElement("span", "communication-status__provider", provider.provider_name));
       link.appendChild(createElement("span", "communication-status__text", getCommunicationStatusText(provider)));
       li.appendChild(link);
+      appendCommunicationLastChecked(li, provider);
       list.appendChild(li);
     });
 
@@ -2688,6 +2739,7 @@
         link.appendChild(createElement("span", "communication-status__provider", service.service_name));
         link.appendChild(createElement("span", "communication-status__text", getServiceStatusText(service)));
         li.appendChild(link);
+        appendCommunicationLastChecked(li, service);
 
         if (service.summary) {
           li.appendChild(createElement("p", "communication-status__summary", service.summary));

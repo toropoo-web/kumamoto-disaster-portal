@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "apply_id": "APL-20260730184214-20260730-KM019-AMAKUSA-BOUSAI-SH",
+      "update_id": "UPD-20260730-KM019-AMAKUSA-BOUSAI-SHELTER-01",
+      "applied_at": "2026-07-30T18:42:14.068Z",
+      "target_layer": "shelter_search_index",
+      "target_file": "data/public/disaster_search_index.json",
+      "operation": "ADD",
+      "before_hash": "2bed7dc10eb31908286864c246c5ded5e8a6c00659692e6eb492f4942d015f4c",
+      "after_hash": "23df54f8730dabfe6694cfcfe49e97bb38971693bf0f1552f96568aa7ccde483",
+      "source_trace": {
+        "queue_id": "RQ-20260730-KM019-AMAKUSA-BOUSAI-SHELTER-01",
+        "classification_id": "CLS-20260730-KM019-AMAKUSA-BOUSAI-SHELTER-01",
+        "change_log": "data/shelter_registry_apply/KM019/change-log.json",
+        "classification_file": "data/shelter_registry_apply/KM019/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "shelter-KM019-before",
+        "after_hash": "shelter-KM019-after",
+        "changed_text": "防災情報\n天草市 避難所情報\n天草市 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+        "detected_at": "2026-07-30T18:42:14.058Z"
+      },
+      "diff_file": "data/shelter_registry_apply/KM019/diff/APL-20260730184214-20260730-KM019-AMAKUSA-BOUSAI-SH.json",
+      "rollback_file": "data/shelter_registry_apply/KM019/diff/APL-20260730184214-20260730-KM019-AMAKUSA-BOUSAI-SH.json"
+    }
+  ],
+  "lastUpdatedAt": "2026-07-30T18:42:14.068Z"
+}

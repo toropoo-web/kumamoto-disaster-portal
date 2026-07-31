@@ -1,0 +1,265 @@
+{
+  "DISASTER_PIPELINE_E2E_VALIDATION": "PASS",
+  "runId": "e2e-2026-07-30T18-32-10-226Z",
+  "namespace": "data/test/disaster-pipeline-e2e",
+  "productionPublicModified": false,
+  "layerStatus": {
+    "Step1 Patrol Mock": {
+      "pass": 2,
+      "fail": 0
+    },
+    "Step2 Classification": {
+      "pass": 5,
+      "fail": 0
+    },
+    "Step3 Review Queue": {
+      "pass": 3,
+      "fail": 0
+    },
+    "Step4 Decision": {
+      "pass": 3,
+      "fail": 0
+    },
+    "Step5 Public Update Queue": {
+      "pass": 3,
+      "fail": 0
+    },
+    "Step6 Validation Gate": {
+      "pass": 2,
+      "fail": 0
+    },
+    "Step7 Apply Prepare": {
+      "pass": 4,
+      "fail": 0
+    },
+    "Step8 Apply Confirm": {
+      "pass": 5,
+      "fail": 0
+    },
+    "Step9 Rollback": {
+      "pass": 3,
+      "fail": 0
+    },
+    "Production Guard": {
+      "pass": 1,
+      "fail": 0
+    },
+    "Trace": {
+      "pass": 2,
+      "fail": 0
+    },
+    "Negative": {
+      "pass": 3,
+      "fail": 0
+    }
+  },
+  "traceIds": {
+    "source_id": "KM002-uto-water",
+    "before_hash": "e2e-uto-water-before-hash-7f3a9c2d",
+    "after_hash": "e2e-uto-water-after-hash-4b8e1f6a",
+    "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+    "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+    "update_id": "UPD-20260731-KM002-UTO-WATER-WATER-01",
+    "apply_id": "APL-20260730183210-20260731-KM002-UTO-WATER-WATER-0"
+  },
+  "rollback": {
+    "apply_id": "APL-20260730183210-20260731-KM002-UTO-WATER-WATER-0",
+    "rolledBack": true,
+    "restoredHash": "fe9881b69682c79f796fe158e3e4abb8a4ed4f3c83a1ee2cf7e4986c43a927c8",
+    "originalHash": "fe9881b69682c79f796fe158e3e4abb8a4ed4f3c83a1ee2cf7e4986c43a927c8"
+  },
+  "artifacts": {
+    "runDir": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z",
+    "changeLog": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/change-log.json",
+    "classified": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/classified.json",
+    "reviewQueue": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/patrol_review_queue.json",
+    "publicUpdateQueue": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/patrol_public_update_queue.json",
+    "gate": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/patrol_public_update_gate.json",
+    "applyQueue": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/public_update_apply_queue.json",
+    "applyHistory": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/apply_history.json",
+    "testWaterIndex": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/public/water_search_index.json"
+  },
+  "steps": [
+    {
+      "layer": "Step1 Patrol Mock",
+      "pass": true,
+      "message": "source_id preserved: KM002-uto-water"
+    },
+    {
+      "layer": "Step1 Patrol Mock",
+      "pass": true,
+      "message": "before_hash/after_hash present"
+    },
+    {
+      "layer": "Step2 Classification",
+      "pass": true,
+      "message": "WATER classification generated for 宇土市"
+    },
+    {
+      "layer": "Step2 Classification",
+      "pass": true,
+      "message": "category=WATER"
+    },
+    {
+      "layer": "Step2 Classification",
+      "pass": true,
+      "message": "confidence=HIGH"
+    },
+    {
+      "layer": "Step2 Classification",
+      "pass": true,
+      "message": "autoPublish=false"
+    },
+    {
+      "layer": "Step2 Classification",
+      "pass": true,
+      "message": "classification schema valid"
+    },
+    {
+      "layer": "Step3 Review Queue",
+      "pass": true,
+      "message": "status=PENDING"
+    },
+    {
+      "layer": "Step3 Review Queue",
+      "pass": true,
+      "message": "review_required=true"
+    },
+    {
+      "layer": "Step3 Review Queue",
+      "pass": true,
+      "message": "review queue item schema valid"
+    },
+    {
+      "layer": "Step4 Decision",
+      "pass": true,
+      "message": "manual APPROVED with reviewer"
+    },
+    {
+      "layer": "Step4 Decision",
+      "pass": true,
+      "message": "reviewer required and recorded"
+    },
+    {
+      "layer": "Step4 Decision",
+      "pass": true,
+      "message": "queue item APPROVED"
+    },
+    {
+      "layer": "Step5 Public Update Queue",
+      "pass": true,
+      "message": "status=READY"
+    },
+    {
+      "layer": "Step5 Public Update Queue",
+      "pass": true,
+      "message": "target_layer exists"
+    },
+    {
+      "layer": "Step5 Public Update Queue",
+      "pass": true,
+      "message": "public candidate schema valid"
+    },
+    {
+      "layer": "Step6 Validation Gate",
+      "pass": true,
+      "message": "Gate PASS"
+    },
+    {
+      "layer": "Step6 Validation Gate",
+      "pass": true,
+      "message": "gate batch valid"
+    },
+    {
+      "layer": "Step7 Apply Prepare",
+      "pass": true,
+      "message": "apply_queue and diff generated"
+    },
+    {
+      "layer": "Step7 Apply Prepare",
+      "pass": true,
+      "message": "apply_queue file exists"
+    },
+    {
+      "layer": "Step7 Apply Prepare",
+      "pass": true,
+      "message": "diff file exists"
+    },
+    {
+      "layer": "Step7 Apply Prepare",
+      "pass": true,
+      "message": "data/public unchanged after prepare"
+    },
+    {
+      "layer": "Step8 Apply Confirm",
+      "pass": true,
+      "message": "test namespace apply confirmed"
+    },
+    {
+      "layer": "Step8 Apply Confirm",
+      "pass": true,
+      "message": "test water index updated"
+    },
+    {
+      "layer": "Step8 Apply Confirm",
+      "pass": true,
+      "message": "after_hash generated"
+    },
+    {
+      "layer": "Step8 Apply Confirm",
+      "pass": true,
+      "message": "audit saved"
+    },
+    {
+      "layer": "Step8 Apply Confirm",
+      "pass": true,
+      "message": "before_hash matches pre-apply state"
+    },
+    {
+      "layer": "Step9 Rollback",
+      "pass": true,
+      "message": "rollbackApply succeeded"
+    },
+    {
+      "layer": "Step9 Rollback",
+      "pass": true,
+      "message": "restored state hash matches original"
+    },
+    {
+      "layer": "Step9 Rollback",
+      "pass": true,
+      "message": "test water index restored to empty"
+    },
+    {
+      "layer": "Production Guard",
+      "pass": true,
+      "message": "data/public production unchanged"
+    },
+    {
+      "layer": "Trace",
+      "pass": true,
+      "message": "queue_id/classification_id/update_id/apply_id tracked"
+    },
+    {
+      "layer": "Trace",
+      "pass": true,
+      "message": "source_trace fully preserved through pipeline"
+    },
+    {
+      "layer": "Negative",
+      "pass": true,
+      "message": "PENDING Apply rejected"
+    },
+    {
+      "layer": "Negative",
+      "pass": true,
+      "message": "REJECTED Apply rejected"
+    },
+    {
+      "layer": "Negative",
+      "pass": true,
+      "message": "Gate FAIL Apply rejected"
+    }
+  ],
+  "errors": []
+}

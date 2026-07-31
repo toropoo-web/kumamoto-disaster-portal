@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:28.356Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "itemCount": 1,
+  "pendingCount": 0,
+  "categorySummary": {
+    "WATER": 1,
+    "SHELTER": 0,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceClassificationFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\test\\portal-municipality-e2e\\runs\\KM018\\water\\classified.json",
+  "items": [
+    {
+      "queue_id": "RQ-20260730-KM018-KAMIAMAKUSA-EMERGENCY-WATER-01",
+      "municipality": "上天草市",
+      "category": "WATER",
+      "title": "断水情報更新",
+      "source_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "detected_keywords": [
+        "給水",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "status": "APPROVED",
+      "created_at": "2026-07-30T18:42:28.355Z",
+      "review_required": false,
+      "source_id": "KM018-kamiamakusa-emergency",
+      "area_id": "KM018",
+      "original_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "before_hash": "e2e-KM018-WATER-before",
+      "after_hash": "e2e-KM018-WATER-after",
+      "changed_text": "更新前タイトル\n断水情報更新\n断水情報更新\n断水 水道 復旧 給水\n断水 水道 復旧 給水 情報更新",
+      "detected_at": "2026-07-30T18:42:28.355Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "reviewed_at": "2026-07-30T18:42:28.356Z",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM018-KAMIAMAKUSA-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM018/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM018/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    }
+  ],
+  "decisionSummary": {
+    "PENDING": 0,
+    "APPROVED": 1,
+    "REJECTED": 0
+  }
+}

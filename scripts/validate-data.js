@@ -7,8 +7,8 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const DATA_DIR = path.join(ROOT, "data", "public");
 
-const EXPECTED_AREA_COUNT = 14;
-const EXPECTED_PUBLIC_CARD_COUNT = 20;
+const EXPECTED_AREA_COUNT = 23;
+const EXPECTED_PUBLIC_CARD_COUNT = 29;
 
 const ALLOWED_CATEGORIES = new Set([
   "EMERGENCY", "SHELTER", "WATER", "LIFELINE",
@@ -36,7 +36,16 @@ const AREA_RULES = {
   KM010: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
   KM011: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
   KM012: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
-  KM013: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] }
+  KM013: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
+  KM014: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
+  KM015: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
+  KM016: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
+  KM017: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
+  KM018: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
+  KM019: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
+  KM020: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
+  KM021: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
+  KM022: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] }
 };
 
 const CONTAMINATION_PATTERNS = [/2016/, /平成28/, /H28/];
@@ -281,7 +290,7 @@ function validateDisasterLocations(errors, areas) {
   }
 
   if (data.version !== 3) {
-    errors.push(`disaster_locations.json: version ${data.version} (expected 3)`);
+    errors.push(`disaster_locations.json: version ${data.version} (expected 23)`);
   }
 
   if (data.incident_scope !== INCIDENT_SCOPE) {
@@ -474,7 +483,7 @@ function validateLocationSources(errors, areas) {
   }
 
   if (data.version !== 1) {
-    errors.push(`location_sources.json: version ${data.version} (expected 1)`);
+    errors.push(`location_sources.json: version ${data.version} (expected 23)`);
   }
 
   if (!data.sources || !Array.isArray(data.sources)) {
@@ -627,7 +636,7 @@ function validateEmergencySources(errors, areas) {
   }
 
   if (data.version !== 1) {
-    errors.push(`emergency_sources.json: version ${data.version} (expected 1)`);
+    errors.push(`emergency_sources.json: version ${data.version} (expected 23)`);
   }
 
   if (!data.sources || !Array.isArray(data.sources)) {
@@ -778,7 +787,7 @@ function validateInfrastructureSources(errors, areas) {
   }
 
   if (data.version !== 1) {
-    errors.push(`infrastructure_sources.json: version ${data.version} (expected 1)`);
+    errors.push(`infrastructure_sources.json: version ${data.version} (expected 23)`);
   }
 
   if (!data.sources || !Array.isArray(data.sources)) {
@@ -882,7 +891,7 @@ function validateInfrastructureStatus(errors, areas, infrastructureSourceStats) 
   }
 
   if (data.version !== 1) {
-    errors.push(`infrastructure_status.json: version ${data.version} (expected 1)`);
+    errors.push(`infrastructure_status.json: version ${data.version} (expected 23)`);
   }
 
   if (!data.items || !Array.isArray(data.items)) {

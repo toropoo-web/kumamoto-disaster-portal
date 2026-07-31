@@ -54,7 +54,7 @@ function main() {
     { name: "disaster search volunteer section id", pattern: /DISASTER_SEARCH_VOLUNTEER_ID/ },
     { name: "volunteer capability status labels", pattern: /現在対応情報確認済み/ },
     { name: "volunteer capability unconfirmed note", pattern: /現在の募集状況は公式情報をご確認ください/ },
-    { name: "portal quick access volunteer card", pattern: /ボランティアを探す/ },
+    { name: "portal quick access volunteer card", pattern: /災害ボランティア募集を探す/ },
     { name: "portal quick access no duplicate area card", pattern: /portal-quick-access__card-note/, invert: true },
     { name: "disaster search planned categories", pattern: /DISASTER_SEARCH_PLANNED_CATEGORIES/ },
     { name: "disaster search guide block", pattern: /disaster-search__guide/ },

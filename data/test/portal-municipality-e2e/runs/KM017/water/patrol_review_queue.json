@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:28.349Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "itemCount": 1,
+  "pendingCount": 0,
+  "categorySummary": {
+    "WATER": 1,
+    "SHELTER": 0,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceClassificationFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\test\\portal-municipality-e2e\\runs\\KM017\\water\\classified.json",
+  "items": [
+    {
+      "queue_id": "RQ-20260730-KM017-TSUNAGI-EMERGENCY-WATER-01",
+      "municipality": "津奈木町",
+      "category": "WATER",
+      "title": "断水情報更新",
+      "source_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "detected_keywords": [
+        "給水",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "status": "APPROVED",
+      "created_at": "2026-07-30T18:42:28.348Z",
+      "review_required": false,
+      "source_id": "KM017-tsunagi-emergency",
+      "area_id": "KM017",
+      "original_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "before_hash": "e2e-KM017-WATER-before",
+      "after_hash": "e2e-KM017-WATER-after",
+      "changed_text": "更新前タイトル\n断水情報更新\n断水情報更新\n断水 水道 復旧 給水\n断水 水道 復旧 給水 情報更新",
+      "detected_at": "2026-07-30T18:42:28.347Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "reviewed_at": "2026-07-30T18:42:28.348Z",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM017-TSUNAGI-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM017/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM017/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    }
+  ],
+  "decisionSummary": {
+    "PENDING": 0,
+    "APPROVED": 1,
+    "REJECTED": 0
+  }
+}

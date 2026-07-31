@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T16:35:37.795Z",
+  "PATROL_DISCOVERY_ACCURACY": "PASS",
+  "primary_discovery_rate": 0.5,
+  "totals": {
+    "municipalities": 12,
+    "candidates": 120,
+    "MATCH": 10,
+    "BETTER_CANDIDATE": 57,
+    "FALSE_POSITIVE": 21,
+    "NEW_CANDIDATE": 32,
+    "primary_discovered": 5,
+    "primary_total": 10,
+    "excluded": 6
+  },
+  "municipality_count": 12,
+  "errors": []
+}

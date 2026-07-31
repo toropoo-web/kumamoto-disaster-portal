@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "rollout_phase": "KUMAMOTO_FULL",
+  "prefectures": [
+    {
+      "prefecture_id": "JP43",
+      "prefecture": "熊本県",
+      "region": "KYUSHU",
+      "status": "ACTIVE",
+      "rollout_phase": 1,
+      "municipality_count": 45,
+      "discovery_enabled": true
+    },
+    {
+      "prefecture_id": "JP40",
+      "prefecture": "福岡県",
+      "region": "KYUSHU",
+      "status": "PLANNED",
+      "rollout_phase": 2,
+      "municipality_count": 0,
+      "discovery_enabled": false
+    },
+    {
+      "prefecture_id": "JP41",
+      "prefecture": "佐賀県",
+      "region": "KYUSHU",
+      "status": "PLANNED",
+      "rollout_phase": 2,
+      "municipality_count": 0,
+      "discovery_enabled": false
+    },
+    {
+      "prefecture_id": "JP42",
+      "prefecture": "長崎県",
+      "region": "KYUSHU",
+      "status": "PLANNED",
+      "rollout_phase": 2,
+      "municipality_count": 0,
+      "discovery_enabled": false
+    },
+    {
+      "prefecture_id": "JP44",
+      "prefecture": "大分県",
+      "region": "KYUSHU",
+      "status": "PLANNED",
+      "rollout_phase": 2,
+      "municipality_count": 0,
+      "discovery_enabled": false
+    },
+    {
+      "prefecture_id": "JP45",
+      "prefecture": "宮崎県",
+      "region": "KYUSHU",
+      "status": "PLANNED",
+      "rollout_phase": 2,
+      "municipality_count": 0,
+      "discovery_enabled": false
+    },
+    {
+      "prefecture_id": "JP46",
+      "prefecture": "鹿児島県",
+      "region": "KYUSHU",
+      "status": "PLANNED",
+      "rollout_phase": 2,
+      "municipality_count": 0,
+      "discovery_enabled": false
+    }
+  ]
+}

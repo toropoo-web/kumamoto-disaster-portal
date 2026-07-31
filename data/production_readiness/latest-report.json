@@ -1,0 +1,274 @@
+{
+  "PRODUCTION_READINESS": "PASS",
+  "generatedAt": "2026-07-30T19:09:40.131Z",
+  "target_area_ids": [
+    "KM014",
+    "KM015",
+    "KM016",
+    "KM017",
+    "KM018",
+    "KM019",
+    "KM020",
+    "KM021",
+    "KM022"
+  ],
+  "constraints": {
+    "auto_municipality_add": false,
+    "sources_json_auto_change": false,
+    "auto_publish": false,
+    "speculative_classification": false
+  },
+  "sections": {
+    "snapshot_baseline": {
+      "checks": [
+        {
+          "check": "snapshot.KM014-minamata-emergency",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM015-kosa-emergency",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM016-ashikita-hinan",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM016-ashikita-bousai",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM016-ashikita-disaster-cert",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM017-tsunagi-emergency",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM018-kamiamakusa-emergency",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM019-amakusa-bousai",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM020-nishihara-bousai",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM021-reihoku-bousai",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "snapshot.KM022-taragi-emergency",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "classification_hardening": {
+      "checks": [
+        {
+          "check": "PAGE_UPDATED_AT_CHANGED excluded",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "CONTENT_CHANGED included",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "isClassifiableChangeEntry helper",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "review_queue": {
+      "checks": [
+        {
+          "check": "review_queue.autoPublish false",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "patrol_pipeline": {
+      "checks": [
+        {
+          "check": "pipeline_script.run-monitor.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline_script.classify-patrol-diffs.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline_script.build-patrol-review-queue.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline_script.run-patrol-pipeline.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline_script.apply-public-updates.js",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "registry_integrity": {
+      "checks": [
+        {
+          "check": "municipality_count_fixed",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_id_unique",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_id_unique",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol_source.KM014",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol_source.KM015",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol_source.KM016",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol_source.KM017",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol_source.KM018",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol_source.KM019",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol_source.KM020",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol_source.KM021",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol_source.KM022",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "trace_integrity": {
+      "checks": [
+        {
+          "check": "shelter_trace.KM014[63]",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_trace.KM015[64]",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_trace.KM016[65]",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_trace.KM017[66]",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_trace.KM018[67]",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_trace.KM019[68]",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_trace.KM020[69]",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_trace.KM021[70]",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_trace.KM022[71]",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "public_data_integrity": {
+      "checks": [
+        {
+          "check": "public_data_baseline_recorded",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "public_data_unchanged",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "errors": []
+}

@@ -15,9 +15,13 @@ function main() {
     { id: "repository_dispatch", pass: /repository_dispatch:/.test(workflow) },
     { id: "x-feed-updated", pass: /x-feed-updated/.test(workflow) },
     { id: "schedule_backup", pass: /15,45 \* \* \* \*/.test(workflow) },
+    { id: "workflow_dispatch", pass: /workflow_dispatch:/.test(workflow) },
     { id: "sync_script", pass: /npm run sync:x-feed/.test(workflow) },
     { id: "validate_script", pass: /validate:x-feed/.test(workflow) },
+    { id: "build_step", pass: /npm run build/.test(workflow) },
+    { id: "render_autodeploy_check", pass: /autoDeploy: true/.test(workflow) },
     { id: "commit_guard", pass: /verify-public-commit-staging\.js/.test(workflow) },
+    { id: "git_push", pass: /git push/.test(workflow) },
     { id: "dispatch_logging", pass: /Log sync trigger/.test(workflow) }
   ];
 

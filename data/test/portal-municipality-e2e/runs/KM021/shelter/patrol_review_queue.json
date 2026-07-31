@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:28.380Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "itemCount": 1,
+  "pendingCount": 0,
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 1,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceClassificationFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\test\\portal-municipality-e2e\\runs\\KM021\\shelter\\classified.json",
+  "items": [
+    {
+      "queue_id": "RQ-20260730-KM021-REIHOKU-BOUSAI-SHELTER-01",
+      "municipality": "苓北町",
+      "category": "SHELTER",
+      "title": "避難所情報更新",
+      "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "detected_keywords": [
+        "避難所",
+        "開設"
+      ],
+      "status": "APPROVED",
+      "created_at": "2026-07-30T18:42:28.379Z",
+      "review_required": false,
+      "source_id": "KM021-reihoku-bousai",
+      "area_id": "KM021",
+      "original_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "before_hash": "e2e-KM021-SHELTER-before",
+      "after_hash": "e2e-KM021-SHELTER-after",
+      "changed_text": "更新前タイトル\n避難所情報更新\n避難所情報更新\n避難所 開設\n避難所 開設 情報更新",
+      "detected_at": "2026-07-30T18:42:28.379Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "reviewed_at": "2026-07-30T18:42:28.380Z",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM021-REIHOKU-BOUSAI-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM021/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM021/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    }
+  ],
+  "decisionSummary": {
+    "PENDING": 0,
+    "APPROVED": 1,
+    "REJECTED": 0
+  }
+}

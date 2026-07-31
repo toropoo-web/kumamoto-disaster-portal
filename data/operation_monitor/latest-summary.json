@@ -1,0 +1,27 @@
+{
+  "DISASTER_PORTAL_OPERATION_MONITORING_READY": "PASS",
+  "timestamp": "2026-07-30T19:12:36.510Z",
+  "patrol_status": {
+    "last_patrol_at": "2026-07-30T16:02:05.203Z",
+    "change_count": 14,
+    "classification_count": 50,
+    "unreachable_count": 0
+  },
+  "review_pending": {
+    "pending_count": 67,
+    "category_summary": {
+      "WATER": 15,
+      "SHELTER": 13,
+      "COMMUNICATION": 15,
+      "VOLUNTEER": 0,
+      "ROAD": 12,
+      "SUPPORT": 12
+    }
+  },
+  "public_update_status": {
+    "queue_count": 0,
+    "apply_pending_count": 0
+  },
+  "incident_count": 0,
+  "validation_result": "PASS"
+}

@@ -1,0 +1,3286 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T16:44:53.643Z",
+  "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+  "item_count": 80,
+  "auto_register": false,
+  "items": [
+    {
+      "review_id": "PRD-001-B9EF77",
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "防災",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM005-EMERGENCY-17C87B1F",
+        "official_domain": "city.yatsushiro.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-002-E2B11F",
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01003.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM005-EMERGENCY-38C307B9",
+        "official_domain": "city.yatsushiro.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-003-8C2315",
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01971.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM005-EMERGENCY-49A0833E",
+        "official_domain": "city.yatsushiro.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-004-8414C7",
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01009.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM005-EMERGENCY-D87758D6",
+        "official_domain": "city.yatsushiro.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-005-B64FD4",
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01010.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bousai",
+        "地震",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM005-EMERGENCY-87320BA7",
+        "official_domain": "city.yatsushiro.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-006-DDA217",
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01012.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM005-EMERGENCY-DC8911D9",
+        "official_domain": "city.yatsushiro.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-007-ABC85F",
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01017.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "防災",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM005-EMERGENCY-9B0FC41B",
+        "official_domain": "city.yatsushiro.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-008-4751C4",
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01014.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "避難",
+        "bousai",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM005-SHELTER-7A62E8D4",
+        "official_domain": "city.yatsushiro.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-009-024849",
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01018.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM005-EMERGENCY-B5E2EF58",
+        "official_domain": "city.yatsushiro.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-010-D13A34",
+      "municipality": "宇城市",
+      "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/bosaiinfo",
+      "current_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "防災",
+        "bosai",
+        "避難",
+        "避難所",
+        "復旧",
+        "開設",
+        "閉鎖",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": null,
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+        "discovery_id": "PDU-20260730-KM003-EMERGENCY-CD4E0715",
+        "official_domain": "city.uki.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-011-396F75",
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/town_news/3352.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "罹災",
+        "令和8年",
+        "地震",
+        "復旧",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovery_id": "PDU-20260730-KM004-SUPPORT-5FF5F417",
+        "official_domain": "town.kumamoto-misato.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-012-1904A7",
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/jogesuido/3904.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "給水",
+        "断水",
+        "地震"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovery_id": "PDU-20260730-KM004-WATER-DB24F3A1",
+        "official_domain": "town.kumamoto-misato.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-013-5B7164",
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/soshiki/juminsekatsu/kankyou/3900.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "災害",
+        "地震",
+        "開設"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovery_id": "PDU-20260730-KM004-EMERGENCY-7E7BFB1C",
+        "official_domain": "town.kumamoto-misato.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-014-DAE604",
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/anzen_anshin/3/3902.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "避難",
+        "避難所",
+        "開設"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovery_id": "PDU-20260730-KM004-SHELTER-24D7F826",
+        "official_domain": "town.kumamoto-misato.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-015-F2D343",
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/2953.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "水道",
+        "給水",
+        "復旧",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+        "discovery_id": "PDU-20260730-KM004-WATER-E958087E",
+        "official_domain": "town.kumamoto-misato.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-016-787D33",
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kinkyu/index.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 82,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "緊急",
+        "kinkyu"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2",
+          "disaster_probe"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 82,
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovery_id": "PDU-20260730-KM004-EMERGENCY-4601BEF3",
+        "official_domain": "town.kumamoto-misato.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-017-C79C40",
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/3170.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 82,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "水道",
+        "令和8年"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 82,
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+        "discovery_id": "PDU-20260730-KM004-WATER-D253AC4B",
+        "official_domain": "town.kumamoto-misato.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-018-D417EA",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/kiji0034776/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "避難",
+        "bousai",
+        "令和8年",
+        "地震",
+        "避難所",
+        "開設",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM014-SHELTER-CD41853E",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-019-A4EAFD",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/kiji0034175/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bousai",
+        "地震",
+        "支援",
+        "通信"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM014-EMERGENCY-0DF65F96",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-020-512D18",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/default.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "discovery_id": "PDU-20260730-KM014-EMERGENCY-72CD0403",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-021-E8B918",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/kiji0034482/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "支援",
+        "通信"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM014-EMERGENCY-8A024310",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-022-41B09C",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/kiji0031914/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "災害",
+        "被害状況",
+        "復旧",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "discovery_id": "PDU-20260730-KM014-EMERGENCY-6E483846",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-023-4476D7",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/kiji0034776/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "避難",
+        "地震",
+        "避難所",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "discovery_id": "PDU-20260730-KM014-SHELTER-93D61F91",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-024-DA3BDC",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/new_list.xml",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM014-EMERGENCY-AAC43B37",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-025-0530AD",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/new_list.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM014-EMERGENCY-D253FD38",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-026-022120",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/list00500.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "復旧",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM014-EMERGENCY-D36E99EE",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-027-0562E9",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/list00503.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM014-EMERGENCY-19BFA804",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-028-A48095",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/list00501.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 92,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 92,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM014-SHELTER-68B3C132",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-029-4011EE",
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/kankyo/kiji0031913/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 86,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "災害",
+        "地震"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 86,
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "discovery_id": "PDU-20260730-KM014-EMERGENCY-E6EC564B",
+        "official_domain": "city.minamata.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-030-2193C4",
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=502",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "水道",
+        "給水",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": "CMS_B",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovery_id": "PDU-20260730-KM017-WATER-3968D980",
+        "official_domain": "town.tsunagi.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-031-785AEF",
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=505",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "水道",
+        "給水",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": "CMS_B",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovery_id": "PDU-20260730-KM017-WATER-DF473BD9",
+        "official_domain": "town.tsunagi.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-032-6B3178",
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=510",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "防災",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": "CMS_B",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovery_id": "PDU-20260730-KM017-EMERGENCY-3D3402C3",
+        "official_domain": "town.tsunagi.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-033-5539E9",
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=509",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 96,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "防災",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": "CMS_B",
+        "crawl_depth": 1,
+        "candidate_score": 96,
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovery_id": "PDU-20260730-KM017-ROAD-A1081801",
+        "official_domain": "town.tsunagi.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-034-92E9FE",
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=512",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 96,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "防災",
+        "避難",
+        "避難所",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": "CMS_B",
+        "crawl_depth": 1,
+        "candidate_score": 96,
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovery_id": "PDU-20260730-KM017-SHELTER-80D21F09",
+        "official_domain": "town.tsunagi.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-035-843600",
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/aview/542/23186.html",
+      "current_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "断水",
+        "令和8年",
+        "地震",
+        "給水",
+        "復旧",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": "CMS_A",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovery_id": "PDU-20260730-KM018-WATER-92F4E34C",
+        "official_domain": "city.kamiamakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-036-84DC49",
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/141.html",
+      "current_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 70,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "復旧",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_A",
+        "crawl_depth": 1,
+        "candidate_score": 70,
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovery_id": "PDU-20260730-KM018-EMERGENCY-3CE2E20D",
+        "official_domain": "city.kamiamakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-037-30653A",
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/288.html",
+      "current_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 66,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_A",
+        "crawl_depth": 1,
+        "candidate_score": 66,
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovery_id": "PDU-20260730-KM018-EMERGENCY-E60F6452",
+        "official_domain": "city.kamiamakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-038-DA5F8D",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314538/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "水道",
+        "bousai",
+        "復旧状況",
+        "避難",
+        "避難所",
+        "給水",
+        "断水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM019-WATER-63F487CF",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-039-BC6E36",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314551/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "断水",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM019-EMERGENCY-94E5601F",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-040-1560D8",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314537/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "避難",
+        "bousai",
+        "避難所",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM019-SHELTER-F01D2B90",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-041-0D42DE",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313473/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bousai",
+        "地震",
+        "避難",
+        "避難所",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM019-ROAD-CA75173A",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-042-5C0D85",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314556/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM019-EMERGENCY-4A9D7053",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-043-9C4AE9",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314302/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01514.html",
+        "discovery_id": "PDU-20260730-KM019-EMERGENCY-D1BFB543",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-044-9351BA",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313512/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovery_id": "PDU-20260730-KM019-EMERGENCY-BF375D0E",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-045-EF74DC",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314543/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovery_id": "PDU-20260730-KM019-EMERGENCY-76CBEECA",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-046-0B1D65",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313681/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "断水",
+        "開設",
+        "閉鎖",
+        "支援",
+        "災害",
+        "災害支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovery_id": "PDU-20260730-KM019-EMERGENCY-E6938E7C",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-047-1C3D05",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313605/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 100,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovery_id": "PDU-20260730-KM019-EMERGENCY-589B22AD",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-048-2D9CDF",
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313561/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 98,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "crawl_depth_2",
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 2,
+        "candidate_score": 98,
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovery_id": "PDU-20260730-KM019-SUPPORT-2B1863A3",
+        "official_domain": "city.amakusa.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-049-2C18D2",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害",
+        "伝言"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-EMERGENCY-396F1CBF",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-050-FECBB2",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00325.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "災害対策本部",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-EMERGENCY-26204AC3",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-051-FD8034",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00337.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "水道",
+        "bousai",
+        "復旧状況",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-WATER-6BB9849C",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-052-C74698",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00302.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "避難",
+        "bousai",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-SHELTER-AA27D2B0",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-053-A0E8FA",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00303.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "防災",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-EMERGENCY-011B3331",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-054-2DA035",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00306.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-EMERGENCY-032F9D15",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-055-C4FEB4",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00308.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "避難",
+        "bousai",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-SHELTER-E70FF6DD",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-056-2D5792",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00309.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-EMERGENCY-34D73D81",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-057-3AD36B",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00326.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-EMERGENCY-BCC81868",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-058-904616",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00311.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "避難",
+        "bousai",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-SHELTER-60563E4C",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-059-22472F",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00313.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "支援",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-SUPPORT-84FD8A0B",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-060-385E23",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00339.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "給水",
+        "bousai",
+        "避難",
+        "避難所",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-WATER-C9D2947B",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-061-2DC631",
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00340.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bousai",
+        "復旧状況",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovery_id": "PDU-20260730-KM020-ROAD-856690C6",
+        "official_domain": "vill.nishihara.kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-062-B8808B",
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "避難",
+        "hinan",
+        "bosai",
+        "避難所",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": null,
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovery_id": "PDU-20260730-KM016-SHELTER-B2D922B3",
+        "official_domain": "town.ashikita.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-063-63DC92",
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/saigai",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "災害",
+        "saigai",
+        "bosai",
+        "避難",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": null,
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovery_id": "PDU-20260730-KM016-EMERGENCY-3A0EACE8",
+        "official_domain": "town.ashikita.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-064-DC332A",
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/oshirase_bosai",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 98,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bosai",
+        "避難",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": null,
+        "crawl_depth": 1,
+        "candidate_score": 98,
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovery_id": "PDU-20260730-KM016-EMERGENCY-51E05C0B",
+        "official_domain": "town.ashikita.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-065-054D49",
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/news?refc=2001708",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 94,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "bosai",
+        "避難",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": null,
+        "crawl_depth": 1,
+        "candidate_score": 94,
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovery_id": "PDU-20260730-KM016-EMERGENCY-498643D4",
+        "official_domain": "town.ashikita.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-066-22C3B4",
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/article.php?id=2111544",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 80,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "罹災",
+        "地震",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": null,
+        "crawl_depth": 1,
+        "candidate_score": 80,
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovery_id": "PDU-20260730-KM016-SUPPORT-974EBE35",
+        "official_domain": "town.ashikita.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-067-382C31",
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/n_bosaimusen",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 68,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bosai"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "cms_pattern": null,
+        "crawl_depth": 1,
+        "candidate_score": 68,
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovery_id": "PDU-20260730-KM016-EMERGENCY-03BD864F",
+        "official_domain": "town.ashikita.lg.jp"
+      }
+    },
+    {
+      "review_id": "PRD-068-F41679",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00325.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "災害対策本部",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-EMERGENCY-E0FECF37",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-069-891EE1",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00337.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "水道",
+        "bousai",
+        "復旧状況",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-WATER-85CBB87F",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-070-3F509D",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00302.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "避難",
+        "bousai",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-SHELTER-4A3AEA10",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-071-D2F2DA",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00305.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "防災",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-EMERGENCY-9E998B96",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-072-639DBE",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00306.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-EMERGENCY-CCA30CDB",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-073-5E612C",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00309.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-EMERGENCY-8FF6E40F",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-074-F810EB",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00326.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-EMERGENCY-93AF05C9",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-075-461DB2",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00308.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "避難",
+        "bousai",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-SHELTER-691371C0",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-076-E01B93",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00311.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "避難",
+        "bousai",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-SHELTER-93CFEDCF",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-077-C259AF",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00313.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "支援",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-SUPPORT-DAB68B0A",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-078-67461D",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00343.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "detected_keywords": [
+        "bousai",
+        "地震",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-EMERGENCY-03DE35E4",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-079-F57AE6",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00323.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "ボランティア",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-EMERGENCY-1FA6FFB0",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    },
+    {
+      "review_id": "PRD-080-DD0BBF",
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00355.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "detected_keywords": [
+        "ボランティア",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "auto_register": false,
+      "review_required": true,
+      "source_trace": {
+        "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+        "discovery_method": "entry_link",
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "cms_pattern": "CMS_C",
+        "crawl_depth": 1,
+        "candidate_score": 100,
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovery_id": "PDU-20260730-KM021-EMERGENCY-AEE2020A",
+        "official_domain": "reihoku-kumamoto.jp"
+      }
+    }
+  ]
+}

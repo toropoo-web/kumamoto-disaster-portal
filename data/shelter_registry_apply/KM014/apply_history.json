@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "apply_id": "APL-20260730184214-20260730-KM014-MINAMATA-EMERGENC",
+      "update_id": "UPD-20260730-KM014-MINAMATA-EMERGENCY-SHELTER-01",
+      "applied_at": "2026-07-30T18:42:14.015Z",
+      "target_layer": "shelter_search_index",
+      "target_file": "data/public/disaster_search_index.json",
+      "operation": "ADD",
+      "before_hash": "4fe2b4a82467739d9b54801f5e4513262018890660d837acaad4b48c63046b18",
+      "after_hash": "926374bf6e810180e1f1dbd4642b41fe8709b56294a5c8553c2a121d8c4341e1",
+      "source_trace": {
+        "queue_id": "RQ-20260730-KM014-MINAMATA-EMERGENCY-SHELTER-01",
+        "classification_id": "CLS-20260730-KM014-MINAMATA-EMERGENCY-SHELTER-01",
+        "change_log": "data/shelter_registry_apply/KM014/change-log.json",
+        "classification_file": "data/shelter_registry_apply/KM014/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "shelter-KM014-before",
+        "after_hash": "shelter-KM014-after",
+        "changed_text": "防災情報\n水俣市 避難所情報\n水俣市 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+        "detected_at": "2026-07-30T18:42:14.002Z"
+      },
+      "diff_file": "data/shelter_registry_apply/KM014/diff/APL-20260730184214-20260730-KM014-MINAMATA-EMERGENC.json",
+      "rollback_file": "data/shelter_registry_apply/KM014/diff/APL-20260730184214-20260730-KM014-MINAMATA-EMERGENC.json"
+    }
+  ],
+  "lastUpdatedAt": "2026-07-30T18:42:14.015Z"
+}

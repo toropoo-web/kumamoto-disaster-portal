@@ -1,0 +1,690 @@
+{
+  "REAL_PATROL_OPERATION_VALIDATION": "PASS",
+  "runId": "rpo-2026-07-30T19-05-07-000Z",
+  "generatedAt": "2026-07-30T19:05:13.460Z",
+  "namespace": "data/test/real-patrol-operation/runs/rpo-2026-07-30T19-05-07-000Z",
+  "constraints": {
+    "sources_json_modified": false,
+    "public_data_modified": false,
+    "auto_approval": false,
+    "apply_confirm": false
+  },
+  "integrity": [
+    {
+      "check": "sources.json unchanged",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "check": "data/public unchanged",
+      "status": "PASS",
+      "reason": null
+    }
+  ],
+  "summary": {
+    "source_count": 11,
+    "change_count": 0,
+    "classification_count": 0,
+    "review_count": 0,
+    "approved_count": 0,
+    "public_update_count": 0,
+    "patrol_pass": 9,
+    "classification_pass": 9,
+    "review_pass": 9,
+    "gate_pass": 9
+  },
+  "global_checks": {
+    "review_batch_valid": true,
+    "gate_batch_valid": true,
+    "approved_count": 0,
+    "public_update_count": 0
+  },
+  "municipalities": [
+    {
+      "area_id": "KM014",
+      "name": "水俣市",
+      "source_count": 1,
+      "change_count": 0,
+      "patrol": {
+        "checks": [
+          {
+            "check": "source_fetch",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "update_detection_or_stable",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "hash_preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "classification": {
+        "checks": [
+          {
+            "check": "classification_entries",
+            "status": "PASS",
+            "reason": "no content change detected"
+          }
+        ],
+        "status": "PASS"
+      },
+      "review": {
+        "checks": [
+          {
+            "check": "review_queue",
+            "status": "PASS",
+            "reason": "no classifications to queue"
+          }
+        ],
+        "status": "PASS"
+      },
+      "public_update": {
+        "checks": [
+          {
+            "check": "public_update_without_approval",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "no_pending_in_public_queue",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "gate": {
+        "checks": [
+          {
+            "check": "validation_gate",
+            "status": "PASS",
+            "reason": "no candidates without approval"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM015",
+      "name": "甲佐町",
+      "source_count": 1,
+      "change_count": 0,
+      "patrol": {
+        "checks": [
+          {
+            "check": "source_fetch",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "update_detection_or_stable",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "hash_preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "classification": {
+        "checks": [
+          {
+            "check": "classification_entries",
+            "status": "PASS",
+            "reason": "no content change detected"
+          }
+        ],
+        "status": "PASS"
+      },
+      "review": {
+        "checks": [
+          {
+            "check": "review_queue",
+            "status": "PASS",
+            "reason": "no classifications to queue"
+          }
+        ],
+        "status": "PASS"
+      },
+      "public_update": {
+        "checks": [
+          {
+            "check": "public_update_without_approval",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "no_pending_in_public_queue",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "gate": {
+        "checks": [
+          {
+            "check": "validation_gate",
+            "status": "PASS",
+            "reason": "no candidates without approval"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM016",
+      "name": "芦北町",
+      "source_count": 3,
+      "change_count": 0,
+      "patrol": {
+        "checks": [
+          {
+            "check": "source_fetch",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "update_detection_or_stable",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "hash_preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "classification": {
+        "checks": [
+          {
+            "check": "classification_entries",
+            "status": "PASS",
+            "reason": "no content change detected"
+          }
+        ],
+        "status": "PASS"
+      },
+      "review": {
+        "checks": [
+          {
+            "check": "review_queue",
+            "status": "PASS",
+            "reason": "no classifications to queue"
+          }
+        ],
+        "status": "PASS"
+      },
+      "public_update": {
+        "checks": [
+          {
+            "check": "public_update_without_approval",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "no_pending_in_public_queue",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "gate": {
+        "checks": [
+          {
+            "check": "validation_gate",
+            "status": "PASS",
+            "reason": "no candidates without approval"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM017",
+      "name": "津奈木町",
+      "source_count": 1,
+      "change_count": 0,
+      "patrol": {
+        "checks": [
+          {
+            "check": "source_fetch",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "update_detection_or_stable",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "hash_preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "classification": {
+        "checks": [
+          {
+            "check": "classification_entries",
+            "status": "PASS",
+            "reason": "no content change detected"
+          }
+        ],
+        "status": "PASS"
+      },
+      "review": {
+        "checks": [
+          {
+            "check": "review_queue",
+            "status": "PASS",
+            "reason": "no classifications to queue"
+          }
+        ],
+        "status": "PASS"
+      },
+      "public_update": {
+        "checks": [
+          {
+            "check": "public_update_without_approval",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "no_pending_in_public_queue",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "gate": {
+        "checks": [
+          {
+            "check": "validation_gate",
+            "status": "PASS",
+            "reason": "no candidates without approval"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM018",
+      "name": "上天草市",
+      "source_count": 1,
+      "change_count": 0,
+      "patrol": {
+        "checks": [
+          {
+            "check": "source_fetch",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "update_detection_or_stable",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "hash_preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "classification": {
+        "checks": [
+          {
+            "check": "classification_entries",
+            "status": "PASS",
+            "reason": "no content change detected"
+          }
+        ],
+        "status": "PASS"
+      },
+      "review": {
+        "checks": [
+          {
+            "check": "review_queue",
+            "status": "PASS",
+            "reason": "no classifications to queue"
+          }
+        ],
+        "status": "PASS"
+      },
+      "public_update": {
+        "checks": [
+          {
+            "check": "public_update_without_approval",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "no_pending_in_public_queue",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "gate": {
+        "checks": [
+          {
+            "check": "validation_gate",
+            "status": "PASS",
+            "reason": "no candidates without approval"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM019",
+      "name": "天草市",
+      "source_count": 1,
+      "change_count": 0,
+      "patrol": {
+        "checks": [
+          {
+            "check": "source_fetch",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "update_detection_or_stable",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "hash_preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "classification": {
+        "checks": [
+          {
+            "check": "classification_entries",
+            "status": "PASS",
+            "reason": "no content change detected"
+          }
+        ],
+        "status": "PASS"
+      },
+      "review": {
+        "checks": [
+          {
+            "check": "review_queue",
+            "status": "PASS",
+            "reason": "no classifications to queue"
+          }
+        ],
+        "status": "PASS"
+      },
+      "public_update": {
+        "checks": [
+          {
+            "check": "public_update_without_approval",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "no_pending_in_public_queue",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "gate": {
+        "checks": [
+          {
+            "check": "validation_gate",
+            "status": "PASS",
+            "reason": "no candidates without approval"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM020",
+      "name": "西原村",
+      "source_count": 1,
+      "change_count": 0,
+      "patrol": {
+        "checks": [
+          {
+            "check": "source_fetch",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "update_detection_or_stable",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "hash_preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "classification": {
+        "checks": [
+          {
+            "check": "classification_entries",
+            "status": "PASS",
+            "reason": "no content change detected"
+          }
+        ],
+        "status": "PASS"
+      },
+      "review": {
+        "checks": [
+          {
+            "check": "review_queue",
+            "status": "PASS",
+            "reason": "no classifications to queue"
+          }
+        ],
+        "status": "PASS"
+      },
+      "public_update": {
+        "checks": [
+          {
+            "check": "public_update_without_approval",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "no_pending_in_public_queue",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "gate": {
+        "checks": [
+          {
+            "check": "validation_gate",
+            "status": "PASS",
+            "reason": "no candidates without approval"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM021",
+      "name": "苓北町",
+      "source_count": 1,
+      "change_count": 0,
+      "patrol": {
+        "checks": [
+          {
+            "check": "source_fetch",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "update_detection_or_stable",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "hash_preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "classification": {
+        "checks": [
+          {
+            "check": "classification_entries",
+            "status": "PASS",
+            "reason": "no content change detected"
+          }
+        ],
+        "status": "PASS"
+      },
+      "review": {
+        "checks": [
+          {
+            "check": "review_queue",
+            "status": "PASS",
+            "reason": "no classifications to queue"
+          }
+        ],
+        "status": "PASS"
+      },
+      "public_update": {
+        "checks": [
+          {
+            "check": "public_update_without_approval",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "no_pending_in_public_queue",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "gate": {
+        "checks": [
+          {
+            "check": "validation_gate",
+            "status": "PASS",
+            "reason": "no candidates without approval"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM022",
+      "name": "多良木町",
+      "source_count": 1,
+      "change_count": 0,
+      "patrol": {
+        "checks": [
+          {
+            "check": "source_fetch",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "update_detection_or_stable",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "hash_preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "classification": {
+        "checks": [
+          {
+            "check": "classification_entries",
+            "status": "PASS",
+            "reason": "no content change detected"
+          }
+        ],
+        "status": "PASS"
+      },
+      "review": {
+        "checks": [
+          {
+            "check": "review_queue",
+            "status": "PASS",
+            "reason": "no classifications to queue"
+          }
+        ],
+        "status": "PASS"
+      },
+      "public_update": {
+        "checks": [
+          {
+            "check": "public_update_without_approval",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "no_pending_in_public_queue",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "gate": {
+        "checks": [
+          {
+            "check": "validation_gate",
+            "status": "PASS",
+            "reason": "no candidates without approval"
+          }
+        ],
+        "status": "PASS"
+      }
+    }
+  ],
+  "artifacts": {
+    "changeLog": "data/test/real-patrol-operation/runs/rpo-2026-07-30T19-05-07-000Z/change-log.json",
+    "classified": "data/test/real-patrol-operation/runs/rpo-2026-07-30T19-05-07-000Z/classified.json",
+    "reviewQueue": "data/test/real-patrol-operation/runs/rpo-2026-07-30T19-05-07-000Z/patrol_review_queue.json",
+    "publicQueue": "data/test/real-patrol-operation/runs/rpo-2026-07-30T19-05-07-000Z/patrol_public_update_queue.json",
+    "gate": "data/test/real-patrol-operation/runs/rpo-2026-07-30T19-05-07-000Z/patrol_public_update_gate.json"
+  }
+}

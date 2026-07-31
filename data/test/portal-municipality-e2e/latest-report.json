@@ -1,0 +1,1471 @@
+{
+  "PORTAL_MUNICIPALITY_E2E_VALIDATION": "PASS",
+  "generatedAt": "2026-07-30T18:42:28.390Z",
+  "target_area_ids": [
+    "KM014",
+    "KM015",
+    "KM016",
+    "KM017",
+    "KM018",
+    "KM019",
+    "KM020",
+    "KM021",
+    "KM022"
+  ],
+  "constraints": {
+    "sources_json_modified": false,
+    "public_data_modified": false,
+    "auto_approval_in_production": false,
+    "test_namespace": "data/test/portal-municipality-e2e"
+  },
+  "integrity": [
+    {
+      "check": "sources.json unchanged",
+      "status": "PASS"
+    },
+    {
+      "check": "data/public unchanged",
+      "status": "PASS"
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "water_pass": 9,
+    "shelter_pass": 9,
+    "ui_pass": 9,
+    "trace_pass": 9
+  },
+  "municipalities": [
+    {
+      "area_id": "KM014",
+      "name": "水俣市",
+      "patrol_source": {
+        "source_id": "KM014-minamata-emergency",
+        "url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "status": "PASS"
+      },
+      "water": {
+        "checks": [
+          {
+            "check": "water_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "water_search_index",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.WATER",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "shelter": {
+        "checks": [
+          {
+            "check": "emergency_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER.schema",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "ui": {
+        "checks": [
+          {
+            "check": "phase1_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_areas",
+            "status": "PASS"
+          },
+          {
+            "check": "area_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_updates.EMERGENCY",
+            "status": "PASS"
+          },
+          {
+            "check": "AREA_DISPLAY_RULES",
+            "status": "PASS"
+          },
+          {
+            "check": "自治体選択UI",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      },
+      "trace": {
+        "checks": [
+          {
+            "check": "WATER trace chain",
+            "status": "PASS"
+          },
+          {
+            "check": "SHELTER trace chain",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM015",
+      "name": "甲佐町",
+      "patrol_source": {
+        "source_id": "KM015-kosa-emergency",
+        "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "status": "PASS"
+      },
+      "water": {
+        "checks": [
+          {
+            "check": "water_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "water_search_index",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.WATER",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "shelter": {
+        "checks": [
+          {
+            "check": "emergency_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER.schema",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "ui": {
+        "checks": [
+          {
+            "check": "phase1_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_areas",
+            "status": "PASS"
+          },
+          {
+            "check": "area_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_updates.EMERGENCY",
+            "status": "PASS"
+          },
+          {
+            "check": "AREA_DISPLAY_RULES",
+            "status": "PASS"
+          },
+          {
+            "check": "自治体選択UI",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      },
+      "trace": {
+        "checks": [
+          {
+            "check": "WATER trace chain",
+            "status": "PASS"
+          },
+          {
+            "check": "SHELTER trace chain",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM016",
+      "name": "芦北町",
+      "patrol_source": {
+        "source_id": "KM016-ashikita-hinan",
+        "url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+        "status": "PASS"
+      },
+      "water": {
+        "checks": [
+          {
+            "check": "water_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "water_search_index",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.WATER",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "shelter": {
+        "checks": [
+          {
+            "check": "emergency_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER.schema",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "ui": {
+        "checks": [
+          {
+            "check": "phase1_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_areas",
+            "status": "PASS"
+          },
+          {
+            "check": "area_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_updates.EMERGENCY",
+            "status": "PASS"
+          },
+          {
+            "check": "AREA_DISPLAY_RULES",
+            "status": "PASS"
+          },
+          {
+            "check": "自治体選択UI",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      },
+      "trace": {
+        "checks": [
+          {
+            "check": "WATER trace chain",
+            "status": "PASS"
+          },
+          {
+            "check": "SHELTER trace chain",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM017",
+      "name": "津奈木町",
+      "patrol_source": {
+        "source_id": "KM017-tsunagi-emergency",
+        "url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "status": "PASS"
+      },
+      "water": {
+        "checks": [
+          {
+            "check": "water_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "water_search_index",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.WATER",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "shelter": {
+        "checks": [
+          {
+            "check": "emergency_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER.schema",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "ui": {
+        "checks": [
+          {
+            "check": "phase1_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_areas",
+            "status": "PASS"
+          },
+          {
+            "check": "area_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_updates.EMERGENCY",
+            "status": "PASS"
+          },
+          {
+            "check": "AREA_DISPLAY_RULES",
+            "status": "PASS"
+          },
+          {
+            "check": "自治体選択UI",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      },
+      "trace": {
+        "checks": [
+          {
+            "check": "WATER trace chain",
+            "status": "PASS"
+          },
+          {
+            "check": "SHELTER trace chain",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM018",
+      "name": "上天草市",
+      "patrol_source": {
+        "source_id": "KM018-kamiamakusa-emergency",
+        "url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "status": "PASS"
+      },
+      "water": {
+        "checks": [
+          {
+            "check": "water_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "water_search_index",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.WATER",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "shelter": {
+        "checks": [
+          {
+            "check": "emergency_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER.schema",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "ui": {
+        "checks": [
+          {
+            "check": "phase1_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_areas",
+            "status": "PASS"
+          },
+          {
+            "check": "area_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_updates.EMERGENCY",
+            "status": "PASS"
+          },
+          {
+            "check": "AREA_DISPLAY_RULES",
+            "status": "PASS"
+          },
+          {
+            "check": "自治体選択UI",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      },
+      "trace": {
+        "checks": [
+          {
+            "check": "WATER trace chain",
+            "status": "PASS"
+          },
+          {
+            "check": "SHELTER trace chain",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM019",
+      "name": "天草市",
+      "patrol_source": {
+        "source_id": "KM019-amakusa-bousai",
+        "url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "status": "PASS"
+      },
+      "water": {
+        "checks": [
+          {
+            "check": "water_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "water_search_index",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.WATER",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "shelter": {
+        "checks": [
+          {
+            "check": "emergency_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER.schema",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "ui": {
+        "checks": [
+          {
+            "check": "phase1_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_areas",
+            "status": "PASS"
+          },
+          {
+            "check": "area_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_updates.EMERGENCY",
+            "status": "PASS"
+          },
+          {
+            "check": "AREA_DISPLAY_RULES",
+            "status": "PASS"
+          },
+          {
+            "check": "自治体選択UI",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      },
+      "trace": {
+        "checks": [
+          {
+            "check": "WATER trace chain",
+            "status": "PASS"
+          },
+          {
+            "check": "SHELTER trace chain",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM020",
+      "name": "西原村",
+      "patrol_source": {
+        "source_id": "KM020-nishihara-bousai",
+        "url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+        "status": "PASS"
+      },
+      "water": {
+        "checks": [
+          {
+            "check": "water_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "water_search_index",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.WATER",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "shelter": {
+        "checks": [
+          {
+            "check": "emergency_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER.schema",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "ui": {
+        "checks": [
+          {
+            "check": "phase1_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_areas",
+            "status": "PASS"
+          },
+          {
+            "check": "area_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_updates.EMERGENCY",
+            "status": "PASS"
+          },
+          {
+            "check": "AREA_DISPLAY_RULES",
+            "status": "PASS"
+          },
+          {
+            "check": "自治体選択UI",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      },
+      "trace": {
+        "checks": [
+          {
+            "check": "WATER trace chain",
+            "status": "PASS"
+          },
+          {
+            "check": "SHELTER trace chain",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM021",
+      "name": "苓北町",
+      "patrol_source": {
+        "source_id": "KM021-reihoku-bousai",
+        "url": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "status": "PASS"
+      },
+      "water": {
+        "checks": [
+          {
+            "check": "water_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "water_search_index",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.WATER",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "shelter": {
+        "checks": [
+          {
+            "check": "emergency_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER.schema",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "ui": {
+        "checks": [
+          {
+            "check": "phase1_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_areas",
+            "status": "PASS"
+          },
+          {
+            "check": "area_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_updates.EMERGENCY",
+            "status": "PASS"
+          },
+          {
+            "check": "AREA_DISPLAY_RULES",
+            "status": "PASS"
+          },
+          {
+            "check": "自治体選択UI",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      },
+      "trace": {
+        "checks": [
+          {
+            "check": "WATER trace chain",
+            "status": "PASS"
+          },
+          {
+            "check": "SHELTER trace chain",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      }
+    },
+    {
+      "area_id": "KM022",
+      "name": "多良木町",
+      "patrol_source": {
+        "source_id": "KM022-taragi-emergency",
+        "url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+        "status": "PASS"
+      },
+      "water": {
+        "checks": [
+          {
+            "check": "water_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "water_search_index",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.WATER",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "shelter": {
+        "checks": [
+          {
+            "check": "emergency_sources",
+            "status": "PASS"
+          },
+          {
+            "check": "location_sources.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER",
+            "status": "PASS"
+          },
+          {
+            "check": "disaster_search_index.SHELTER.schema",
+            "status": "PASS"
+          },
+          {
+            "check": "pipeline.Patrol Mock",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Classification",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Review Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Decision Layer",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Public Update Queue",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Validation Gate",
+            "status": "PASS",
+            "reason": null
+          },
+          {
+            "check": "pipeline.Trace Preservation",
+            "status": "PASS",
+            "reason": null
+          }
+        ],
+        "status": "PASS"
+      },
+      "ui": {
+        "checks": [
+          {
+            "check": "phase1_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_areas",
+            "status": "PASS"
+          },
+          {
+            "check": "area_navigation",
+            "status": "PASS"
+          },
+          {
+            "check": "phase1_updates.EMERGENCY",
+            "status": "PASS"
+          },
+          {
+            "check": "AREA_DISPLAY_RULES",
+            "status": "PASS"
+          },
+          {
+            "check": "自治体選択UI",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      },
+      "trace": {
+        "checks": [
+          {
+            "check": "WATER trace chain",
+            "status": "PASS"
+          },
+          {
+            "check": "SHELTER trace chain",
+            "status": "PASS"
+          }
+        ],
+        "status": "PASS"
+      }
+    }
+  ]
+}

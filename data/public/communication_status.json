@@ -11,7 +11,10 @@
         "八代市",
         "宇城市"
       ],
-      "source_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html"
+      "source_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "source_type": "official",
+      "last_checked": "2026-07-29T19:00:00+09:00",
+      "update_status": "確認済"
     },
     {
       "provider_id": "au",
@@ -24,7 +27,10 @@
         "宇城市",
         "美里町"
       ],
-      "source_url": "https://news.kddi.com/important/news/important_202607291742.html"
+      "source_url": "https://news.kddi.com/important/news/important_202607291742.html",
+      "source_type": "official",
+      "last_checked": "2026-07-29T17:42:00+09:00",
+      "update_status": "確認済"
     },
     {
       "provider_id": "softbank",
@@ -32,7 +38,10 @@
       "status": "CHECK_OFFICIAL",
       "status_label": "公式情報を確認",
       "areas": [],
-      "source_url": "https://www.softbank.jp/mobile/info/personal/important/"
+      "source_url": "https://www.softbank.jp/mobile/info/personal/important/",
+      "source_type": "official",
+      "last_checked": "2026-07-29T15:00:00+09:00",
+      "update_status": "確認済"
     },
     {
       "provider_id": "rakuten",
@@ -48,7 +57,10 @@
         "益城町",
         "氷川町"
       ],
-      "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/"
+      "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "source_type": "official",
+      "last_checked": "2026-07-29T16:00:00+09:00",
+      "update_status": "確認済"
     }
   ],
   "services": [
@@ -62,7 +74,10 @@
       "summary": "災害時に無料で利用できるWi-Fiです",
       "caution": "暗号化されていない場合があります。カード番号・暗証番号・パスワードなどの重要な個人情報は入力しないでください。",
       "source_url": "https://www.wlan-business.org/00000japan/",
-      "confirmed_at": "2026-07-28T19:45:00+09:00"
+      "confirmed_at": "2026-07-28T19:45:00+09:00",
+      "source_type": "official",
+      "last_checked": "2026-07-28T19:45:00+09:00",
+      "update_status": "確認済"
     },
     {
       "service_id": "disaster_message",
@@ -72,7 +87,10 @@
       "status": "CHECK_OFFICIAL",
       "status_label": "171・Web171",
       "source_url": "https://www.soumu.go.jp/menu_seisaku/ictseisaku/net_anzen/hijyo/dengon.html",
-      "confirmed_at": "2026-07-29T16:00:00+09:00"
+      "confirmed_at": "2026-07-29T16:00:00+09:00",
+      "source_type": "official",
+      "last_checked": "2026-07-29T16:00:00+09:00",
+      "update_status": "確認済"
     },
     {
       "service_id": "ntt_west_disaster_support",
@@ -83,7 +101,10 @@
       "status_label": "災害支援措置（第2報）",
       "summary": "更新：2026年7月29日 15:00\n・災害用伝言171 / Web171\n・Wi-Fiサービス対応\n・公衆電話無料化\n・料金等支援措置\n対象地域：八代市・宇城市・氷川町・宇土市・大津町・菊陽町ほか",
       "source_url": "https://www.ntt-west.co.jp/newscms/disasternews/15400/1_20260729.pdf",
-      "confirmed_at": "2026-07-29T15:00:00+09:00"
+      "confirmed_at": "2026-07-29T15:00:00+09:00",
+      "source_type": "official",
+      "last_checked": "2026-07-29T15:00:00+09:00",
+      "update_status": "確認済"
     }
   ]
 }

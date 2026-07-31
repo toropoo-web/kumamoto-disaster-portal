@@ -122,6 +122,78 @@
       "source_type": "EMERGENCY_PAGE",
       "url": "https://www.city.kikuchi.lg.jp/",
       "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM014-EMERGENCY-001",
+      "area_id": "KM014",
+      "municipality": "水俣市",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM015-EMERGENCY-001",
+      "area_id": "KM015",
+      "municipality": "甲佐町",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM016-EMERGENCY-001",
+      "area_id": "KM016",
+      "municipality": "芦北町",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM017-EMERGENCY-001",
+      "area_id": "KM017",
+      "municipality": "津奈木町",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM018-EMERGENCY-001",
+      "area_id": "KM018",
+      "municipality": "上天草市",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM019-EMERGENCY-001",
+      "area_id": "KM019",
+      "municipality": "天草市",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM020-EMERGENCY-001",
+      "area_id": "KM020",
+      "municipality": "西原村",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM021-EMERGENCY-001",
+      "area_id": "KM021",
+      "municipality": "苓北町",
+      "source_type": "DISASTER_PAGE",
+      "url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "status": "ACTIVE"
+    },
+    {
+      "source_id": "EMG-SRC-KM022-EMERGENCY-001",
+      "area_id": "KM022",
+      "municipality": "多良木町",
+      "source_type": "DISASTER_PAGE",
+      "url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+      "status": "ACTIVE"
     }
   ]
 }

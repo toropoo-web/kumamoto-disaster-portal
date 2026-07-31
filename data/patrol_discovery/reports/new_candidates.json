@@ -1,0 +1,905 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T16:43:53.221Z",
+  "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+  "count": 29,
+  "items": [
+    {
+      "municipality": "宇城市",
+      "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/bosaiinfo",
+      "current_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+        "discovered_at": "2026-07-30T16:44:20.036Z",
+        "matched_hints": [
+          "防災",
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇城市",
+          "official_domain": "city.uki.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/town_news/3352.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovered_at": "2026-07-30T16:44:23.119Z",
+        "matched_hints": [
+          "罹災",
+          "令和8年",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/jogesuido/3904.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovered_at": "2026-07-30T16:44:23.192Z",
+        "matched_hints": [
+          "給水",
+          "断水",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/soshiki/juminsekatsu/kankyou/3900.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovered_at": "2026-07-30T16:44:23.254Z",
+        "matched_hints": [
+          "災害",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/anzen_anshin/3/3902.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovered_at": "2026-07-30T16:44:23.396Z",
+        "matched_hints": [
+          "避難"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/2953.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+        "discovered_at": "2026-07-30T16:44:23.823Z",
+        "matched_hints": [
+          "水道"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/3170.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 82,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+        "discovered_at": "2026-07-30T16:44:23.327Z",
+        "matched_hints": [
+          "水道",
+          "令和8年"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/kiji0034776/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:26.004Z",
+        "matched_hints": [
+          "避難",
+          "bousai",
+          "令和8年",
+          "地震"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/kiji0034175/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:26.110Z",
+        "matched_hints": [
+          "bousai",
+          "地震"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/default.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "discovered_at": "2026-07-30T16:44:26.110Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/kiji0034482/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:26.331Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/kiji0031914/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "discovered_at": "2026-07-30T16:44:26.331Z",
+        "matched_hints": [
+          "災害",
+          "被害状況"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/kiji0034776/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "discovered_at": "2026-07-30T16:44:26.520Z",
+        "matched_hints": [
+          "避難",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/new_list.xml",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:26.654Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/new_list.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:26.866Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/list00500.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:27.024Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/list00503.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:27.270Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/list00501.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 92,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:27.128Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/kankyo/kiji0031913/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 86,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+        "discovered_at": "2026-07-30T16:44:26.332Z",
+        "matched_hints": [
+          "災害",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=502",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovered_at": "2026-07-30T16:44:32.654Z",
+        "matched_hints": [
+          "水道"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_B",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "津奈木町",
+          "official_domain": "town.tsunagi.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=505",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovered_at": "2026-07-30T16:44:32.937Z",
+        "matched_hints": [
+          "水道"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_B",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "津奈木町",
+          "official_domain": "town.tsunagi.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=510",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovered_at": "2026-07-30T16:44:33.482Z",
+        "matched_hints": [
+          "防災"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_B",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "津奈木町",
+          "official_domain": "town.tsunagi.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=509",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 96,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovered_at": "2026-07-30T16:44:33.230Z",
+        "matched_hints": [
+          "防災"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_B",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "津奈木町",
+          "official_domain": "town.tsunagi.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "津奈木町",
+      "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=512",
+      "current_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 96,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+        "discovered_at": "2026-07-30T16:44:33.892Z",
+        "matched_hints": [
+          "防災"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_B",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "津奈木町",
+          "official_domain": "town.tsunagi.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/aview/542/23186.html",
+      "current_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:36.329Z",
+        "matched_hints": [
+          "断水",
+          "令和8年",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314551/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:40.283Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314556/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:40.640Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314302/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01514.html",
+        "discovered_at": "2026-07-30T16:44:40.746Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314543/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "NEW_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": null,
+      "classification_note": "unregistered operational page with score >= 80",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovered_at": "2026-07-30T16:44:41.396Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    }
+  ]
+}

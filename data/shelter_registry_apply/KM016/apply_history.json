@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "apply_id": "APL-20260730184214-20260730-KM016-ASHIKITA-HINAN-SH",
+      "update_id": "UPD-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+      "applied_at": "2026-07-30T18:42:14.036Z",
+      "target_layer": "shelter_search_index",
+      "target_file": "data/public/disaster_search_index.json",
+      "operation": "ADD",
+      "before_hash": "7a9bbbf67b62ae6a144c532a33d36ebc376ecc23ee67bdf939ec8d77c7578764",
+      "after_hash": "1f7fb706dd23cd5e27518b637437cf931045ab445a51d9f2b6facff11e6b31c6",
+      "source_trace": {
+        "queue_id": "RQ-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+        "classification_id": "CLS-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+        "change_log": "data/shelter_registry_apply/KM016/change-log.json",
+        "classification_file": "data/shelter_registry_apply/KM016/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "shelter-KM016-before",
+        "after_hash": "shelter-KM016-after",
+        "changed_text": "防災情報\n芦北町 避難所情報\n芦北町 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+        "detected_at": "2026-07-30T18:42:14.027Z"
+      },
+      "diff_file": "data/shelter_registry_apply/KM016/diff/APL-20260730184214-20260730-KM016-ASHIKITA-HINAN-SH.json",
+      "rollback_file": "data/shelter_registry_apply/KM016/diff/APL-20260730184214-20260730-KM016-ASHIKITA-HINAN-SH.json"
+    }
+  ],
+  "lastUpdatedAt": "2026-07-30T18:42:14.036Z"
+}

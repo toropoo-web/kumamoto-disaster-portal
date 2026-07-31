@@ -1,0 +1,638 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "prefecture": "熊本県",
+  "count": 45,
+  "targets": [
+    {
+      "target_id": "DST-432015",
+      "municipality_id": "JP432015",
+      "prefecture": "熊本県",
+      "municipality": "熊本市",
+      "official_domain": "city.kumamoto.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432023",
+      "municipality_id": "JP432023",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432031",
+      "municipality_id": "JP432031",
+      "prefecture": "熊本県",
+      "municipality": "人吉市",
+      "official_domain": "city.hitoyoshi.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432040",
+      "municipality_id": "JP432040",
+      "prefecture": "熊本県",
+      "municipality": "荒尾市",
+      "official_domain": "city.arao.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432058",
+      "municipality_id": "JP432058",
+      "prefecture": "熊本県",
+      "municipality": "水俣市",
+      "official_domain": "city.minamata.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432066",
+      "municipality_id": "JP432066",
+      "prefecture": "熊本県",
+      "municipality": "玉名市",
+      "official_domain": "city.tamana.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432074",
+      "municipality_id": "JP432074",
+      "prefecture": "熊本県",
+      "municipality": "山鹿市",
+      "official_domain": "city.yamaga.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432082",
+      "municipality_id": "JP432082",
+      "prefecture": "熊本県",
+      "municipality": "菊池市",
+      "official_domain": "city.kikuchi.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432091",
+      "municipality_id": "JP432091",
+      "prefecture": "熊本県",
+      "municipality": "宇土市",
+      "official_domain": "city.uto.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432104",
+      "municipality_id": "JP432104",
+      "prefecture": "熊本県",
+      "municipality": "上天草市",
+      "official_domain": "city.kamiamakusa.kumamoto.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432112",
+      "municipality_id": "JP432112",
+      "prefecture": "熊本県",
+      "municipality": "宇城市",
+      "official_domain": "city.uki.kumamoto.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432121",
+      "municipality_id": "JP432121",
+      "prefecture": "熊本県",
+      "municipality": "阿蘇市",
+      "official_domain": "city.aso.kumamoto.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432139",
+      "municipality_id": "JP432139",
+      "prefecture": "熊本県",
+      "municipality": "天草市",
+      "official_domain": "city.amakusa.kumamoto.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-432147",
+      "municipality_id": "JP432147",
+      "prefecture": "熊本県",
+      "municipality": "合志市",
+      "official_domain": "city.koshi.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-433489",
+      "municipality_id": "JP433489",
+      "prefecture": "熊本県",
+      "municipality": "美里町",
+      "official_domain": "town.kumamoto-misato.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-433641",
+      "municipality_id": "JP433641",
+      "prefecture": "熊本県",
+      "municipality": "玉東町",
+      "official_domain": "town.tamato.kumamoto.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-433675",
+      "municipality_id": "JP433675",
+      "prefecture": "熊本県",
+      "municipality": "南関町",
+      "official_domain": "town.nankan.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-433683",
+      "municipality_id": "JP433683",
+      "prefecture": "熊本県",
+      "municipality": "長洲町",
+      "official_domain": "town.nagasu.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-433691",
+      "municipality_id": "JP433691",
+      "prefecture": "熊本県",
+      "municipality": "和水町",
+      "official_domain": "town.nagomi.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-433812",
+      "municipality_id": "JP433812",
+      "prefecture": "熊本県",
+      "municipality": "大津町",
+      "official_domain": "town.ozu.kumamoto.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-433821",
+      "municipality_id": "JP433821",
+      "prefecture": "熊本県",
+      "municipality": "菊陽町",
+      "official_domain": "town.kikuyo.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434035",
+      "municipality_id": "JP434035",
+      "prefecture": "熊本県",
+      "municipality": "南小国町",
+      "official_domain": "town.minamioguni.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434043",
+      "municipality_id": "JP434043",
+      "prefecture": "熊本県",
+      "municipality": "小国町",
+      "official_domain": "town.oguni.kumamoto.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434051",
+      "municipality_id": "JP434051",
+      "prefecture": "熊本県",
+      "municipality": "産山村",
+      "official_domain": "vill.ubuyama.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434060",
+      "municipality_id": "JP434060",
+      "prefecture": "熊本県",
+      "municipality": "高森町",
+      "official_domain": "town.takamori.kumamoto.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434078",
+      "municipality_id": "JP434078",
+      "prefecture": "熊本県",
+      "municipality": "西原村",
+      "official_domain": "vill.nishihara.kumamoto.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434086",
+      "municipality_id": "JP434086",
+      "prefecture": "熊本県",
+      "municipality": "南阿蘇村",
+      "official_domain": "vill.minamiaso.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434231",
+      "municipality_id": "JP434231",
+      "prefecture": "熊本県",
+      "municipality": "御船町",
+      "official_domain": "town.mifune.kumamoto.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434249",
+      "municipality_id": "JP434249",
+      "prefecture": "熊本県",
+      "municipality": "嘉島町",
+      "official_domain": "town.kumamoto-kashima.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434257",
+      "municipality_id": "JP434257",
+      "prefecture": "熊本県",
+      "municipality": "益城町",
+      "official_domain": "town.mashiki.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434265",
+      "municipality_id": "JP434265",
+      "prefecture": "熊本県",
+      "municipality": "甲佐町",
+      "official_domain": "town.kosa.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434273",
+      "municipality_id": "JP434273",
+      "prefecture": "熊本県",
+      "municipality": "山都町",
+      "official_domain": "town.yamato.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434281",
+      "municipality_id": "JP434281",
+      "prefecture": "熊本県",
+      "municipality": "氷川町",
+      "official_domain": "town.hikawa.kumamoto.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434329",
+      "municipality_id": "JP434329",
+      "prefecture": "熊本県",
+      "municipality": "芦北町",
+      "official_domain": "town.ashikita.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434337",
+      "municipality_id": "JP434337",
+      "prefecture": "熊本県",
+      "municipality": "津奈木町",
+      "official_domain": "town.tsunagi.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434418",
+      "municipality_id": "JP434418",
+      "prefecture": "熊本県",
+      "municipality": "錦町",
+      "official_domain": "town.nishiki.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434426",
+      "municipality_id": "JP434426",
+      "prefecture": "熊本県",
+      "municipality": "多良木町",
+      "official_domain": "town.taragi.lg.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434434",
+      "municipality_id": "JP434434",
+      "prefecture": "熊本県",
+      "municipality": "湯前町",
+      "official_domain": "town.yunomae.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434442",
+      "municipality_id": "JP434442",
+      "prefecture": "熊本県",
+      "municipality": "水上村",
+      "official_domain": "vill.mizukami.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434459",
+      "municipality_id": "JP434459",
+      "prefecture": "熊本県",
+      "municipality": "相良村",
+      "official_domain": "vill.sagara.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434467",
+      "municipality_id": "JP434467",
+      "prefecture": "熊本県",
+      "municipality": "五木村",
+      "official_domain": "vill.itsuki.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434475",
+      "municipality_id": "JP434475",
+      "prefecture": "熊本県",
+      "municipality": "山江村",
+      "official_domain": "vill.yamae.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434483",
+      "municipality_id": "JP434483",
+      "prefecture": "熊本県",
+      "municipality": "球磨村",
+      "official_domain": "vill.kuma.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434680",
+      "municipality_id": "JP434680",
+      "prefecture": "熊本県",
+      "municipality": "あさぎり町",
+      "official_domain": "town.asagiri.lg.jp",
+      "priority": "LOW",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    },
+    {
+      "target_id": "DST-434825",
+      "municipality_id": "JP434825",
+      "prefecture": "熊本県",
+      "municipality": "苓北町",
+      "official_domain": "reihoku-kumamoto.jp",
+      "priority": "HIGH",
+      "discovery_enabled": true,
+      "last_discovery": "",
+      "discovery_result": {
+        "status": "PENDING",
+        "candidate_count": 0
+      }
+    }
+  ]
+}

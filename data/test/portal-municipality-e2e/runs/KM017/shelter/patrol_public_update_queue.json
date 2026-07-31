@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:28.353Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "updateCount": 1,
+  "readyCount": 1,
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 1,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceReviewQueueFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\test\\portal-municipality-e2e\\runs\\KM017\\shelter\\patrol_review_queue.json",
+  "updates": [
+    {
+      "update_id": "UPD-20260730-KM017-TSUNAGI-EMERGENCY-SHELTER-01",
+      "municipality": "津奈木町",
+      "category": "SHELTER",
+      "title": "避難所情報更新",
+      "source_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "source_id": "KM017-tsunagi-emergency",
+      "area_id": "KM017",
+      "detected_keywords": [
+        "避難所",
+        "開設"
+      ],
+      "target_layer": "shelter_search_index",
+      "status": "READY",
+      "created_at": "2026-07-30T18:42:28.353Z",
+      "auto_publish": false,
+      "source_trace": {
+        "queue_id": "RQ-20260730-KM017-TSUNAGI-EMERGENCY-SHELTER-01",
+        "classification_id": "CLS-20260730-KM017-TSUNAGI-EMERGENCY-SHELTER-01",
+        "change_log": "data/test/portal-municipality-e2e/runs/KM017/shelter/change-log.json",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM017/shelter/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "e2e-KM017-SHELTER-before",
+        "after_hash": "e2e-KM017-SHELTER-after",
+        "changed_text": "更新前タイトル\n避難所情報更新\n避難所情報更新\n避難所 開設\n避難所 開設 情報更新",
+        "detected_at": "2026-07-30T18:42:28.351Z"
+      }
+    }
+  ]
+}

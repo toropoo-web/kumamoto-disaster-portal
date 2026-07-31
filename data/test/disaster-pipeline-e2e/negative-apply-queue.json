@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T19:09:34.588Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "autoPublish": false,
+  "sourceGateFile": "data/test/disaster-pipeline-e2e/gate.json",
+  "itemCount": 1,
+  "pendingCount": 1,
+  "blockedCount": 0,
+  "items": [
+    {
+      "apply_id": "APL-NEGATIVE-FAIL",
+      "update_id": "UPD-20260731-KM002-UTO-WATER-WATER-01",
+      "category": "WATER",
+      "target_layer": "water_search_index",
+      "operation": "ADD",
+      "status": "PENDING_APPLY",
+      "source_trace": {
+        "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-09-34-567Z/change-log.json",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-09-34-567Z/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "e2e-uto-water-before-hash-7f3a9c2d",
+        "after_hash": "e2e-uto-water-after-hash-4b8e1f6a",
+        "changed_text": "今回の地震に伴う断水について\n水道復旧状況更新\n水道復旧状況更新\n断水 水道 復旧\n水道復旧状況更新",
+        "detected_at": "2026-07-31T00:00:00.000Z"
+      },
+      "diff_file": "data/test/disaster-pipeline-e2e/diff/APL-NEGATIVE-FAIL.json"
+    }
+  ]
+}

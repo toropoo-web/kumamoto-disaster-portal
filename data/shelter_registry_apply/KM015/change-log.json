@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM015-kosa-emergency",
+    "sourceName": "甲佐町",
+    "category": "municipality",
+    "areaId": "KM015",
+    "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+    "detectedAt": "2026-07-30T18:42:14.016Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "shelter-KM015-before",
+    "currentHash": "shelter-KM015-after",
+    "keywords": [
+      "避難所",
+      "開設",
+      "閉鎖",
+      "避難場所"
+    ],
+    "status": "DETECTED",
+    "changed_text": "避難所 開設 閉鎖 避難場所 情報更新",
+    "titleChanged": {
+      "from": "防災情報",
+      "to": "甲佐町 避難所情報"
+    }
+  }
+]

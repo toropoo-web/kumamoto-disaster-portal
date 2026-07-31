@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM021-reihoku-bousai",
+    "sourceName": "苓北町",
+    "category": "municipality",
+    "areaId": "KM021",
+    "url": "https://reihoku-kumamoto.jp/bousai/default.html",
+    "detectedAt": "2026-07-30T18:42:14.079Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "shelter-KM021-before",
+    "currentHash": "shelter-KM021-after",
+    "keywords": [
+      "避難所",
+      "開設",
+      "閉鎖",
+      "避難場所"
+    ],
+    "status": "DETECTED",
+    "changed_text": "避難所 開設 閉鎖 避難場所 情報更新",
+    "titleChanged": {
+      "from": "防災情報",
+      "to": "苓北町 避難所情報"
+    }
+  }
+]

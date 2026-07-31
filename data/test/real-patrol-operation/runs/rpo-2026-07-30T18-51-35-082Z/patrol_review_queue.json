@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:51:41.673Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "itemCount": 5,
+  "pendingCount": 5,
+  "categorySummary": {
+    "WATER": 1,
+    "SHELTER": 1,
+    "COMMUNICATION": 1,
+    "VOLUNTEER": 0,
+    "ROAD": 1,
+    "SUPPORT": 1
+  },
+  "autoPublish": false,
+  "sourceClassificationFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\test\\real-patrol-operation\\runs\\rpo-2026-07-30T18-51-35-082Z\\classified.json",
+  "items": [
+    {
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-WATER-01",
+      "municipality": "西原村",
+      "category": "WATER",
+      "title": "防災サイト / 西原村",
+      "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "detected_keywords": [
+        "給水",
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T18:51:41.673Z",
+      "review_required": true,
+      "source_id": "KM020-nishihara-bousai",
+      "area_id": "KM020",
+      "original_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "before_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "after_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "changed_text": "防災サイト / 西原村\n避難 避難所 給水 復旧 開設 支援 災害 伝言",
+      "detected_at": "2026-07-30T18:51:38.950Z",
+      "diff_type": "PAGE_UPDATED_AT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-WATER-01",
+        "classification_file": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/classified.json",
+        "source_change_log": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/change-log.json",
+        "diff_type": "PAGE_UPDATED_AT_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-02",
+      "municipality": "西原村",
+      "category": "SHELTER",
+      "title": "防災サイト / 西原村",
+      "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "detected_keywords": [
+        "避難所",
+        "開設"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T18:51:41.673Z",
+      "review_required": true,
+      "source_id": "KM020-nishihara-bousai",
+      "area_id": "KM020",
+      "original_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "before_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "after_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "changed_text": "防災サイト / 西原村\n避難 避難所 給水 復旧 開設 支援 災害 伝言",
+      "detected_at": "2026-07-30T18:51:38.950Z",
+      "diff_type": "PAGE_UPDATED_AT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-02",
+        "classification_file": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/classified.json",
+        "source_change_log": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/change-log.json",
+        "diff_type": "PAGE_UPDATED_AT_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-COMMUNICATION-03",
+      "municipality": "西原村",
+      "category": "COMMUNICATION",
+      "title": "防災サイト / 西原村",
+      "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T18:51:41.673Z",
+      "review_required": true,
+      "source_id": "KM020-nishihara-bousai",
+      "area_id": "KM020",
+      "original_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "before_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "after_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "changed_text": "防災サイト / 西原村\n避難 避難所 給水 復旧 開設 支援 災害 伝言",
+      "detected_at": "2026-07-30T18:51:38.950Z",
+      "diff_type": "PAGE_UPDATED_AT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-COMMUNICATION-03",
+        "classification_file": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/classified.json",
+        "source_change_log": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/change-log.json",
+        "diff_type": "PAGE_UPDATED_AT_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-ROAD-04",
+      "municipality": "西原村",
+      "category": "ROAD",
+      "title": "防災サイト / 西原村",
+      "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T18:51:41.673Z",
+      "review_required": true,
+      "source_id": "KM020-nishihara-bousai",
+      "area_id": "KM020",
+      "original_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "before_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "after_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "changed_text": "防災サイト / 西原村\n避難 避難所 給水 復旧 開設 支援 災害 伝言",
+      "detected_at": "2026-07-30T18:51:38.950Z",
+      "diff_type": "PAGE_UPDATED_AT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-ROAD-04",
+        "classification_file": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/classified.json",
+        "source_change_log": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/change-log.json",
+        "diff_type": "PAGE_UPDATED_AT_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-SUPPORT-05",
+      "municipality": "西原村",
+      "category": "SUPPORT",
+      "title": "防災サイト / 西原村",
+      "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "detected_keywords": [
+        "支援"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T18:51:41.673Z",
+      "review_required": true,
+      "source_id": "KM020-nishihara-bousai",
+      "area_id": "KM020",
+      "original_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "before_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "after_hash": "9f7ff6a815199ce2503f25d262e3e0c706ebfe67fcaba4fce7c5645846582e82",
+      "changed_text": "防災サイト / 西原村\n避難 避難所 給水 復旧 開設 支援 災害 伝言",
+      "detected_at": "2026-07-30T18:51:38.950Z",
+      "diff_type": "PAGE_UPDATED_AT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-SUPPORT-05",
+        "classification_file": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/classified.json",
+        "source_change_log": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/change-log.json",
+        "diff_type": "PAGE_UPDATED_AT_CHANGED"
+      }
+    }
+  ]
+}

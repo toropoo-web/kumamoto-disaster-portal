@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM020-nishihara-bousai",
+    "sourceName": "西原村",
+    "category": "municipality",
+    "areaId": "KM020",
+    "url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+    "detectedAt": "2026-07-30T18:42:14.069Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "shelter-KM020-before",
+    "currentHash": "shelter-KM020-after",
+    "keywords": [
+      "避難所",
+      "開設",
+      "閉鎖",
+      "避難場所"
+    ],
+    "status": "DETECTED",
+    "changed_text": "避難所 開設 閉鎖 避難場所 情報更新",
+    "titleChanged": {
+      "from": "防災情報",
+      "to": "西原村 避難所情報"
+    }
+  }
+]

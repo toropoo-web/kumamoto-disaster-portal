@@ -1,0 +1,14 @@
+{
+  "category": "WATER",
+  "version": 2,
+  "regions": [
+    "熊本県"
+  ],
+  "source_registry": "data/test/disaster-pipeline-e2e/water_sources.json",
+  "location_item_count": 0,
+  "registry_item_count": 0,
+  "item_count": 0,
+  "last_updated": "2026-07-31T00:00:00.000Z",
+  "items": [],
+  "test_namespace": "disaster-pipeline-e2e"
+}

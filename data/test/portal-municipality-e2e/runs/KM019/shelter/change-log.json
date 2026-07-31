@@ -1,0 +1,23 @@
+[
+  {
+    "source": "KM019-amakusa-bousai",
+    "sourceName": "天草市",
+    "category": "municipality",
+    "areaId": "KM019",
+    "url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+    "detectedAt": "2026-07-30T18:42:28.365Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "e2e-KM019-SHELTER-before",
+    "currentHash": "e2e-KM019-SHELTER-after",
+    "keywords": [
+      "避難所",
+      "開設"
+    ],
+    "status": "DETECTED",
+    "changed_text": "避難所 開設 情報更新",
+    "titleChanged": {
+      "from": "更新前タイトル",
+      "to": "避難所情報更新"
+    }
+  }
+]

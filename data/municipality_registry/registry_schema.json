@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "municipality": {
+    "required": [
+      "municipality_id",
+      "prefecture",
+      "municipality",
+      "type",
+      "status",
+      "discovery_status",
+      "source"
+    ],
+    "fields": {
+      "municipality_id": {
+        "pattern": "^JP[0-9]{6}$",
+        "description": "National municipality identifier (JIS X 0402 based)"
+      },
+      "prefecture": { "type": "string" },
+      "municipality": { "type": "string" },
+      "type": { "enum": ["city", "town", "village", "prefecture"] },
+      "official_domain": {
+        "type": "string",
+        "nullable": true,
+        "pattern": "^[a-z0-9][a-z0-9.-]*\\.[a-z]{2,}$"
+      },
+      "official_url": {
+        "type": "string",
+        "nullable": true,
+        "pattern": "^https?://"
+      },
+      "status": { "enum": ["ACTIVE", "INACTIVE"] },
+      "discovery_status": {
+        "enum": ["READY", "PENDING", "DISABLED", "COMPLETED"]
+      },
+      "source": {
+        "required": ["created_at", "source"]
+      }
+    }
+  },
+  "discovery_target": {
+    "required": [
+      "target_id",
+      "municipality_id",
+      "prefecture",
+      "municipality",
+      "priority",
+      "discovery_enabled",
+      "discovery_result"
+    ],
+    "fields": {
+      "target_id": { "pattern": "^DST-[0-9]{6}$" },
+      "municipality_id": { "pattern": "^JP43[0-9]{4}$" },
+      "official_domain": { "type": "string", "nullable": true },
+      "priority": { "enum": ["HIGH", "MEDIUM", "LOW"] },
+      "discovery_enabled": { "type": "boolean" },
+      "last_discovery": { "type": "string", "nullable": true },
+      "discovery_result": {
+        "required": ["status", "candidate_count"]
+      }
+    }
+  },
+  "priority_rules": {
+    "HIGH": [
+      "designated_city",
+      "disaster_risk_region",
+      "existing_target_prefecture"
+    ],
+    "MEDIUM": [
+      "prefecture_capital",
+      "population_over_100000"
+    ],
+    "LOW": ["other"]
+  },
+  "safety_rules": {
+    "auto_sources_update": false,
+    "auto_approve": false,
+    "public_data_change": false,
+    "required_trace_fields": [
+      "municipality_id",
+      "discovery_run_id",
+      "source_trace"
+    ]
+  }
+}

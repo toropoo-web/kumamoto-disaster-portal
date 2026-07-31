@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-07-30T18:42:14.017Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "classificationCount": 1,
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 1,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceChangeLog": "data/shelter_registry_apply/KM015/change-log.json",
+  "classifications": [
+    {
+      "id": "CLS-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+      "source_id": "KM015-kosa-emergency",
+      "area_id": "KM015",
+      "municipality": "甲佐町",
+      "category": "SHELTER",
+      "title": "甲佐町 避難所情報",
+      "source_url": "https://www.town.kosa.lg.jp/q/list/51.html",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "detected_keywords": [
+        "避難所",
+        "開設",
+        "閉鎖",
+        "避難場所"
+      ],
+      "detected_at": "2026-07-30T18:42:14.016Z",
+      "confidence": "HIGH",
+      "autoPublish": false,
+      "source_page": {
+        "source_id": "KM015-kosa-emergency",
+        "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "changed_text": "防災情報\n甲佐町 避難所情報\n甲佐町 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+        "before": {
+          "title": "防災情報",
+          "contentHash": "shelter-KM015-before",
+          "pageUpdatedAt": null
+        },
+        "after": {
+          "title": "甲佐町 避難所情報",
+          "contentHash": "shelter-KM015-after",
+          "pageUpdatedAt": null
+        },
+        "detected_keywords": [
+          "避難所",
+          "開設",
+          "閉鎖",
+          "避難場所"
+        ]
+      }
+    }
+  ]
+}

@@ -55,6 +55,7 @@ const JS_CHECKS = [
   { name: "latest updates max 4", pattern: /MAX_LATEST = 4/ },
   { name: "external link rel noopener", pattern: /rel = "noopener noreferrer"/ },
   { name: "communication section title", pattern: /section_title \|\| "携帯電話・通信"/ },
+  { name: "communication last checked render", pattern: /getCommunicationLastCheckedText/ },
   { name: "misato placeholder", pattern: /公開可能な公式情報を確認中です/ },
   { name: "KM010 area rules", pattern: /KM010:/ },
   { name: "KM013 area rules", pattern: /KM013:/ },
@@ -95,7 +96,7 @@ const JS_CHECKS = [
   { name: "disaster search guidance", pattern: /DISASTER_SEARCH_GUIDANCE/ },
   { name: "disaster search volunteer section id", pattern: /DISASTER_SEARCH_VOLUNTEER_ID/ },
   { name: "volunteer capability status labels", pattern: /現在対応情報確認済み/ },
-  { name: "portal quick access volunteer card", pattern: /ボランティアを探す/ },
+    { name: "portal quick access volunteer card", pattern: /災害ボランティア募集を探す/ },
   { name: "open disaster map section", pattern: /openDisasterMapSection/ },
   { name: "scroll to page target", pattern: /scrollToPageTarget/ },
   { name: "verified locations support title", pattern: /VERIFIED_LOCATIONS_TITLE/ },
@@ -169,11 +170,11 @@ function main() {
   const areas = JSON.parse(readFile("data/public/phase1_areas.json"));
   const navigation = JSON.parse(readFile("data/public/phase1_navigation.json"));
 
-  if (areas.length !== 14) {
-    errors.push(`areas.json count: ${areas.length} (expected 14)`);
+  if (areas.length !== 23) {
+    errors.push(`areas.json count: ${areas.length} (expected 23)`);
   }
-  if (navigation.length !== 14) {
-    errors.push(`navigation.json count: ${navigation.length} (expected 14)`);
+  if (navigation.length !== 23) {
+    errors.push(`navigation.json count: ${navigation.length} (expected 23)`);
   }
 
   areas.forEach((area) => {
@@ -192,6 +193,18 @@ function main() {
   if (!comm.services || comm.services.length !== 3) {
     errors.push(`communication_status services: ${comm.services ? comm.services.length : 0} (expected 3)`);
   }
+
+  (comm.providers || []).concat(comm.services || []).forEach(function (item, index) {
+    var label = item.provider_name || item.service_name || ("index " + index);
+    ["source_type", "last_checked", "update_status"].forEach(function (field) {
+      if (!item[field]) {
+        errors.push("communication_status[" + label + "]: missing " + field);
+      }
+    });
+    if (item.source_type && item.source_type !== "official") {
+      errors.push("communication_status[" + label + "]: source_type must be official");
+    }
+  });
 
   const result = {
     MOBILE_320_VALIDATION: "PASS (static structure)",

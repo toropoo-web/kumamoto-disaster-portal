@@ -1,0 +1,2019 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T16:43:53.221Z",
+  "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+  "count": 67,
+  "items": [
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01007.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 43,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.280Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01016.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 43,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:56.220Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01011.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 40,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.686Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01013.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 40,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.900Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/hazardmap/index.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "hazard_map",
+      "score": 10,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.036Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/category/list/1070.html",
+      "current_url": "https://www.city.uto.lg.jp/article/list/1014.html",
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 66,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "does not meet NEW_CANDIDATE or BETTER_CANDIDATE thresholds",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:08.658Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/category/list/1054.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "disaster_special",
+      "score": 44,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:08.658Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/category/list/1105.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "disaster_special",
+      "score": 44,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:10.865Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/category/list/1012.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:07.469Z",
+        "matched_hints": [
+          "防災"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/article/list/1280.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:14.547Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/article/list/1002.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/category/list/1001.html",
+        "discovered_at": "2026-07-30T16:44:16.130Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/category/list/1013.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 28,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:08.636Z",
+        "matched_hints": [
+          "防災"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/category/list/1001.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 11,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:08.657Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/category/list/1090.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 7,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:08.659Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/category/list/1124.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 7,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:13.787Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/article/list/1282.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-30T16:44:15.033Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇土市",
+      "candidate_url": "https://www.city.uto.lg.jp/article/view/1018/1782.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "archive",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/category/list/1012.html",
+        "discovered_at": "2026-07-30T16:44:15.463Z",
+        "matched_hints": [
+          "災害",
+          "地震",
+          "豪雨"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇城市",
+      "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/tsuko",
+      "current_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "classification": "FALSE_POSITIVE",
+      "page_type": "disaster_special",
+      "score": 72,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "does not meet NEW_CANDIDATE or BETTER_CANDIDATE thresholds",
+      "source_trace": {
+        "discovered_from": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+        "discovered_at": "2026-07-30T16:44:20.680Z",
+        "matched_hints": [
+          "通行"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇城市",
+          "official_domain": "city.uki.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇城市",
+      "candidate_url": "https://www.city.uki.kumamoto.jp/kosodate/shiensenta",
+      "current_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "classification": "FALSE_POSITIVE",
+      "page_type": "disaster_special",
+      "score": 72,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "does not meet NEW_CANDIDATE or BETTER_CANDIDATE thresholds",
+      "source_trace": {
+        "discovered_from": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+        "discovered_at": "2026-07-30T16:44:21.450Z",
+        "matched_hints": [
+          "支援"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇城市",
+          "official_domain": "city.uki.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "宇城市",
+      "candidate_url": "https://www.city.uki.kumamoto.jp/kosodate/shienseido",
+      "current_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "classification": "FALSE_POSITIVE",
+      "page_type": "disaster_special",
+      "score": 72,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "does not meet NEW_CANDIDATE or BETTER_CANDIDATE thresholds",
+      "source_trace": {
+        "discovered_from": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+        "discovered_at": "2026-07-30T16:44:22.212Z",
+        "matched_hints": [
+          "支援"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇城市",
+          "official_domain": "city.uki.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 45,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovered_at": "2026-07-30T16:44:22.977Z",
+        "matched_hints": [
+          "水道"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2",
+          "disaster_probe"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/1965.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 45,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+        "discovered_at": "2026-07-30T16:44:23.520Z",
+        "matched_hints": [
+          "水道"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/2947.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 45,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+        "discovered_at": "2026-07-30T16:44:23.686Z",
+        "matched_hints": [
+          "給水"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/2988.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 45,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+        "discovered_at": "2026-07-30T16:44:23.893Z",
+        "matched_hints": [
+          "水道"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/doro_kotsu/3/3903.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 41,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovered_at": "2026-07-30T16:44:23.459Z",
+        "matched_hints": [
+          "通行"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/1966.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 41,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+        "discovered_at": "2026-07-30T16:44:23.605Z",
+        "matched_hints": [
+          "水道"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/2948.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 41,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+        "discovered_at": "2026-07-30T16:44:23.750Z",
+        "matched_hints": [
+          "水道"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/kiji0034320/index.html",
+      "current_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "classification": "FALSE_POSITIVE",
+      "page_type": "bousai_portal",
+      "score": 74,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "does not meet NEW_CANDIDATE or BETTER_CANDIDATE thresholds",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:26.208Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "水俣市",
+      "candidate_url": "https://www.city.minamata.lg.jp/bousai/list00502.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "hazard_map",
+      "score": 10,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.minamata.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:27.162Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "水俣市",
+          "official_domain": "city.minamata.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13515.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "disaster_special",
+      "score": 44,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:30.341Z",
+        "matched_hints": [
+          "災害",
+          "令和8年",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/109.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/103.html",
+        "discovered_at": "2026-07-30T16:44:29.687Z",
+        "matched_hints": [
+          "防災"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/aview/129/12487.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "disaster_special",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/127.html",
+        "discovered_at": "2026-07-30T16:44:30.163Z",
+        "matched_hints": [
+          "災害",
+          "緊急",
+          "支援",
+          "豪雨"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/701.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "disaster_special",
+      "score": 12,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/103.html",
+        "discovered_at": "2026-07-30T16:44:29.953Z",
+        "matched_hints": [
+          "地震"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/103.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:30.341Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/111.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:30.342Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/210.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:30.342Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/118.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:30.342Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/127.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:30.343Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/132.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:30.565Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/151.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:30.731Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/143.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:30.976Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/142.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:31.212Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "甲佐町",
+      "candidate_url": "https://www.town.kosa.lg.jp/q/list/226.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "discovered_at": "2026-07-30T16:44:31.389Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "甲佐町",
+          "official_domain": "town.kosa.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/1.html",
+      "current_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 58,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "does not meet NEW_CANDIDATE or BETTER_CANDIDATE thresholds",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:36.329Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/241.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 36,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:36.812Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/255.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 36,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:37.030Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/259.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 36,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:37.219Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/273.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 36,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:37.941Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/129.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:36.329Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/142.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:36.330Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/231.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:36.330Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/235.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:36.544Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/262.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:37.409Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/266.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "article_list",
+      "score": 32,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:37.637Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji0037264/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "FALSE_POSITIVE",
+      "page_type": "bousai_portal",
+      "score": 56,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "does not meet NEW_CANDIDATE or BETTER_CANDIDATE thresholds",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovered_at": "2026-07-30T16:44:40.953Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313513/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "FALSE_POSITIVE",
+      "page_type": "bousai_portal",
+      "score": 56,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": null,
+      "classification_note": "does not meet NEW_CANDIDATE or BETTER_CANDIDATE thresholds",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovered_at": "2026-07-30T16:44:41.161Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313472/index.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "bousai_portal",
+      "score": 43,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovered_at": "2026-07-30T16:44:41.725Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00305.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "emergency_list",
+      "score": 43,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:43.997Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00304.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "archive",
+      "score": 7,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:43.880Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/bosaimusen_bosai",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 69,
+      "score_tier": "MEDIUM",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:48.516Z",
+        "matched_hints": [
+          "防災",
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/shobodan",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 69,
+      "score_tier": "MEDIUM",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:49.038Z",
+        "matched_hints": [
+          "防災",
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/link_bosai",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 69,
+      "score_tier": "MEDIUM",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:49.332Z",
+        "matched_hints": [
+          "防災",
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/keikaku/2111322",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "disaster_special",
+      "score": 43,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:48.226Z",
+        "matched_hints": [
+          "防災",
+          "bosai",
+          "令和8年"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/kinkyu",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 43,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:50.164Z",
+        "matched_hints": [
+          "緊急",
+          "kinkyu"
+        ],
+        "discovery_methods": [
+          "disaster_probe"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/bosaimap",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "hazard_map",
+      "score": 10,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:48.776Z",
+        "matched_hints": [
+          "防災",
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/keikaku",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "normal_info",
+      "score": 0,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:50.694Z",
+        "matched_hints": [
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00303.html",
+      "current_url": null,
+      "classification": "FALSE_POSITIVE",
+      "page_type": "hazard_map",
+      "score": 10,
+      "score_tier": "LOW",
+      "recommended_role": "skip",
+      "matched_source_id": null,
+      "classification_note": "excluded page type or low-value candidate",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:52.541Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    }
+  ]
+}

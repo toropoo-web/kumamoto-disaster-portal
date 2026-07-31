@@ -1,0 +1,183 @@
+{
+  "DISASTER_PORTAL_PUBLIC_OPERATION_READY": "PASS",
+  "final_status": "WARNING",
+  "verdict": "運用可能だが確認事項あり",
+  "generatedAt": "2026-07-31T00:22:45.210Z",
+  "timestamp": "2026-07-31T00:22:45.211Z",
+  "autonomous_pipeline": {
+    "x_feed_cron": "*/30 * * * * (UTC)",
+    "portal_sync_cron": "15,45 * * * * (UTC backup)",
+    "render_deploy": "autoDeploy on push to main",
+    "pc_required": false
+  },
+  "summary": {
+    "review_pending_count": 67,
+    "prior_public_gate": "PASS"
+  },
+  "sections": {
+    "pipeline_integrity": {
+      "checks": [
+        {
+          "check": "pipeline.monitor/sources.json",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.snapshots.json",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.change-log/",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.review_queue",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.decision_log",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.public_update_queue",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.validation_gate",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.apply_history",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.rollback_dir",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.x_feed_sync_workflow",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.x_feed_autonomous_schedule",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.x_feed_build_on_publish",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.x_feed_fetch_workflow",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.x_feed_fetch_schedule",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "pipeline.rollback_function",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "autonomous_publish": {
+      "checks": [
+        {
+          "check": "autonomous.render_autodeploy",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "autonomous.portal_repository_dispatch",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "autonomous.portal_workflow_dispatch",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "autonomous.portal_git_push",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "autonomous.xfeed_dispatch_job",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "autonomous.xfeed_portal_token",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "autonomous.no_localhost",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "governance": {
+      "checks": [
+        {
+          "check": "governance.auto_publish_false",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "governance.rollback_available",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "operation_docs": {
+      "checks": [
+        {
+          "check": "docs.operation_manual.md",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "docs.review_flow.md",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "docs.incident_response.md",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "docs.PHASE28_WORKFLOW_AUDIT.md",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "warnings": [
+    "operational: 67 review items pending (does not block public portal)"
+  ],
+  "failures": []
+}

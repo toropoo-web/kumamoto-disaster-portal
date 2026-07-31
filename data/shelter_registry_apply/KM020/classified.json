@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-07-30T18:42:14.069Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "classificationCount": 1,
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 1,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceChangeLog": "data/shelter_registry_apply/KM020/change-log.json",
+  "classifications": [
+    {
+      "id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+      "source_id": "KM020-nishihara-bousai",
+      "area_id": "KM020",
+      "municipality": "西原村",
+      "category": "SHELTER",
+      "title": "西原村 避難所情報",
+      "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "detected_keywords": [
+        "避難所",
+        "開設",
+        "閉鎖",
+        "避難場所"
+      ],
+      "detected_at": "2026-07-30T18:42:14.069Z",
+      "confidence": "HIGH",
+      "autoPublish": false,
+      "source_page": {
+        "source_id": "KM020-nishihara-bousai",
+        "url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "changed_text": "防災情報\n西原村 避難所情報\n西原村 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+        "before": {
+          "title": "防災情報",
+          "contentHash": "shelter-KM020-before",
+          "pageUpdatedAt": null
+        },
+        "after": {
+          "title": "西原村 避難所情報",
+          "contentHash": "shelter-KM020-after",
+          "pageUpdatedAt": null
+        },
+        "detected_keywords": [
+          "避難所",
+          "開設",
+          "閉鎖",
+          "避難場所"
+        ]
+      }
+    }
+  ]
+}
