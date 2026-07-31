@@ -222,6 +222,29 @@ function main() {
     pass: (SOCIAL_CATEGORY_KEYWORDS.WATER || []).indexOf("給水") !== -1
   });
 
+  const petKeywordChecks = ["迷子猫", "迷子犬", "ペット避難", "ペット用品"];
+  const petKeywordResults = petKeywordChecks.map(function (keyword) {
+    return {
+      keyword: keyword,
+      category: resolveCategoryFromKeyword(keyword),
+      assist: matchesCategory(
+        { category: "OTHER", title: keyword + "の情報", content: "", keywords: [] },
+        "PET_SUPPORT"
+      )
+    };
+  });
+  const petKeywordPass = petKeywordResults.every(function (item) {
+    return item.category === "PET_SUPPORT" && item.assist;
+  });
+  checks.push({
+    check: "pet support keyword resolution",
+    pass: petKeywordPass,
+    results: petKeywordResults
+  });
+  if (!petKeywordPass) {
+    errors.push("pet support keywords must resolve to PET_SUPPORT");
+  }
+
   const emptyFilterResults = searchDisasterSocialIndex(payload.index, {});
   checks.push({
     check: "empty filter returns none",

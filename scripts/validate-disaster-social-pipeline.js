@@ -273,6 +273,25 @@ function main() {
     pass: (SOCIAL_CATEGORY_KEYWORDS.FOOD || []).indexOf("炊き出し") !== -1
   });
 
+  const petKeywordChecks = ["迷子猫", "迷子犬", "ペット避難", "ペット用品"];
+  const petKeywordPass = petKeywordChecks.every(function (keyword) {
+    return (
+      resolveCategoryFromKeyword(keyword) === "PET_SUPPORT" &&
+      matchesCategory(
+        { category: "OTHER", title: keyword + "の情報", content: "", keywords: [] },
+        "PET_SUPPORT"
+      )
+    );
+  });
+  checks.push({
+    check: "pet support keyword resolution",
+    pass: petKeywordPass,
+    keywords: petKeywordChecks
+  });
+  if (!petKeywordPass) {
+    errors.push("pet support keywords must resolve to PET_SUPPORT");
+  }
+
   const officialPayload = buildAndWriteDisasterSearchIndex();
   const waterResults = searchDisasterIndex(officialPayload, "給水", { category: "WATER" });
   checks.push({
