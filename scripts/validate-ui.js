@@ -24,6 +24,7 @@ const REQUIRED_FILES = [
   "data/public/water_search_index.json",
   "data/public/disaster_search_index.json",
   "data/public/emergency_sources.json",
+  "data/public/evacuation_alert_region.json",
   "data/public/infrastructure_sources.json",
   "data/public/infrastructure_status.json"
 ];

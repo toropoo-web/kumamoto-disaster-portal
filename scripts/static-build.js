@@ -28,6 +28,7 @@ const STATIC_FILES = [
   "data/public/disaster_social_sources.json",
   "data/public/support_information.json",
   "data/public/emergency_sources.json",
+  "data/public/evacuation_alert_region.json",
   "data/public/infrastructure_sources.json",
   "data/public/infrastructure_status.json",
   "admin/internal-operation/index.html",

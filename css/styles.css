@@ -2527,6 +2527,80 @@ button:focus-visible {
   margin-top: 4px;
 }
 
+.evacuation-alert-region {
+  margin: 0 0 16px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.evacuation-alert-region__label {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.evacuation-alert-region__scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.evacuation-alert-region__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: min(100%, 520px);
+}
+
+.evacuation-alert-region__item {
+  margin: 0;
+}
+
+.evacuation-alert-region__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--primary);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.evacuation-alert-region__btn:hover,
+.evacuation-alert-region__btn:focus-visible {
+  background: #eef3fa;
+  border-color: var(--primary);
+}
+
+.evacuation-alert-region__btn--active {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.evacuation-alert-region__btn--active:hover {
+  background: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .evacuation-alert-region__list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
 .disaster-search__form {
   display: grid;
   gap: 10px;
