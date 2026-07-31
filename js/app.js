@@ -105,13 +105,16 @@
   };
   var SUPPORT_SERVICE_SUBCATEGORY_LABELS = {
     BATH: "入浴・シャワー",
-    SPACE: "スペース",
+    SPACE: "休憩スペース",
     TOILET: "トイレ",
-    VEHICLE: "車両・駐車",
+    VEHICLE: "車中泊・駐車場",
     FOOD: "食事・炊き出し",
+    WATER_SUPPORT: "給水・飲料水",
     SUPPLIES: "支援物資",
-    PET: "ペット"
+    PET: "ペット支援"
   };
+  var SUPPORT_SERVICE_USER_SEARCH_CAUTION =
+    "掲載情報は情報提供元の発信内容をもとに整理しています。利用条件・提供状況は変更される場合があります。最新状況は情報提供元をご確認ください。";
   var SUPPORT_SERVICE_DETAIL_LABELS = {
     BATH: "風呂",
     SHOWER: "シャワー",
