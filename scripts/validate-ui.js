@@ -43,11 +43,6 @@ const CSS_CHECKS = [
   { name: "water search section", pattern: /\.water-search/ },
   { name: "water search form", pattern: /\.water-search__form/ },
   { name: "portal quick access section", pattern: /\.portal-quick-access/ },
-  { name: "emergency summary section", pattern: /\.emergency-summary/ },
-  { name: "cross search hub section", pattern: /\.cross-search-hub/ },
-  { name: "municipality detail collapse", pattern: /\.municipality-detail__collapse/ },
-  { name: "official information group", pattern: /\.official-information/ },
-  { name: "infrastructure collapse", pattern: /\.infrastructure-info__collapse/ },
   { name: "disaster search section", pattern: /\.disaster-search/ },
   { name: "disaster search form", pattern: /\.disaster-search__form/ },
   { name: "disaster search guide styles", pattern: /\.disaster-search__guide/ },
@@ -98,15 +93,11 @@ const JS_CHECKS = [
   { name: "disaster search render", pattern: /renderDisasterSearchResult/ },
   { name: "disaster search section id", pattern: /DISASTER_SEARCH_ID/ },
   { name: "disaster search promo", pattern: /renderDisasterSearchPromo/ },
-  { name: "disaster search guidance", pattern: /DISASTER_SEARCH_GUIDANCE/ },
-  { name: "disaster search volunteer section id", pattern: /DISASTER_SEARCH_VOLUNTEER_ID/ },
-  { name: "emergency summary section id", pattern: /EMERGENCY_SUMMARY_ID/ },
-  { name: "cross search hub section id", pattern: /CROSS_SEARCH_HUB_ID/ },
-  { name: "municipality detail section id", pattern: /MUNICIPALITY_DETAIL_ID/ },
-  { name: "official information group", pattern: /renderOfficialInformationGroup/ },
+  { name: "page navigation render", pattern: /renderPageNavigation/ },
+  { name: "emergency summary removed", pattern: /renderEmergencySummary/, invert: true },
+  { name: "area nav promo", pattern: /renderAreaNavPromo/ },
   { name: "infrastructure collapse", pattern: /infrastructure-info__collapse/ },
-  { name: "volunteer capability status labels", pattern: /現在対応情報確認済み/ },
-    { name: "portal quick access volunteer card", pattern: /災害ボランティア募集を探す/ },
+  { name: "portal quick access volunteer card", pattern: /災害ボランティア募集を探す/ },
   { name: "open disaster map section", pattern: /openDisasterMapSection/ },
   { name: "scroll to page target", pattern: /scrollToPageTarget/ },
   { name: "verified locations support title", pattern: /VERIFIED_LOCATIONS_TITLE/ },
@@ -161,10 +152,11 @@ function main() {
 
   if (checkFileExists("js/app.js")) {
     const js = readFile("js/app.js");
-    JS_CHECKS.forEach(({ name, pattern }) => {
-      const pass = pattern.test(js);
-      checks.push({ check: `JS: ${name}`, pass });
-      if (!pass) errors.push(`JS check failed: ${name}`);
+    JS_CHECKS.forEach(function (check) {
+      const matched = check.pattern.test(js);
+      const pass = check.invert ? !matched : matched;
+      checks.push({ check: "JS: " + check.name, pass: pass });
+      if (!pass) errors.push("JS check failed: " + check.name);
     });
   }
 

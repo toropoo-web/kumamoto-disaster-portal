@@ -55,11 +55,12 @@ function main() {
     { name: "volunteer capability status labels", pattern: /現在対応情報確認済み/ },
     { name: "volunteer capability unconfirmed note", pattern: /現在の募集状況は公式情報をご確認ください/ },
     { name: "portal quick access volunteer card", pattern: /災害ボランティア募集を探す/ },
-    { name: "emergency summary section", pattern: /renderEmergencySummary/ },
-    { name: "cross search hub section", pattern: /renderCrossSearchHub/ },
-    { name: "municipality detail collapse", pattern: /renderMunicipalityDetailSection/ },
-    { name: "official information group", pattern: /renderOfficialInformationGroup/ },
-    { name: "infrastructure collapse", pattern: /infrastructure-info__collapse/ },
+    { name: "page navigation render", pattern: /renderPageNavigation/ },
+    { name: "x feed section render", pattern: /renderXFeedSection/ },
+    { name: "emergency summary removed", pattern: /renderEmergencySummary/, invert: true },
+    { name: "cross search hub removed", pattern: /renderCrossSearchHub/, invert: true },
+    { name: "official information group removed", pattern: /renderOfficialInformationGroup/, invert: true },
+    { name: "municipality detail section removed", pattern: /renderMunicipalityDetailSection/, invert: true },
     { name: "portal quick access no duplicate area card", pattern: /portal-quick-access__card-note/, invert: true },
     { name: "disaster search planned categories", pattern: /DISASTER_SEARCH_PLANNED_CATEGORIES/ },
     { name: "disaster search guide block", pattern: /disaster-search__guide/ },
@@ -94,12 +95,7 @@ function main() {
     { name: "disaster search desktop layout", pattern: /@media \(min-width: 768px\)[\s\S]*\.disaster-search__form/ },
     { name: "disaster search guide styles", pattern: /\.disaster-search__guide/ },
     { name: "disaster search scope styles", pattern: /\.disaster-search__scope/ },
-    { name: "volunteer capability status styles", pattern: /\.disaster-search__capability-status/ },
-    { name: "emergency summary styles", pattern: /\.emergency-summary/ },
-    { name: "cross search hub styles", pattern: /\.cross-search-hub/ },
-    { name: "municipality detail styles", pattern: /\.municipality-detail/ },
-    { name: "official information styles", pattern: /\.official-information/ },
-    { name: "infrastructure collapse styles", pattern: /\.infrastructure-info__collapse/ }
+    { name: "volunteer capability status styles", pattern: /\.disaster-search__capability-status/ }
   ].forEach(function (check) {
     const pass = check.pattern.test(css);
     checks.push({ check: "CSS: " + check.name, pass: pass });
