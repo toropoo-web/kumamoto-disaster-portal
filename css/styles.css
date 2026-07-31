@@ -2425,6 +2425,29 @@ button:focus-visible {
   color: var(--muted);
 }
 
+.portal-quick-access__card.disaster-search-card--support-service {
+  border: 2px solid #c92a2a;
+  background: #fff8f8;
+  box-shadow: 0 1px 4px rgba(201, 42, 42, 0.1);
+}
+
+.portal-quick-access__card.disaster-search-card--support-service:hover,
+.portal-quick-access__card.disaster-search-card--support-service:focus-visible {
+  border-color: #a61e1e;
+  outline-color: #c92a2a;
+  background: #fff3f3;
+}
+
+.portal-quick-access__card.disaster-search-card--support-service .portal-quick-access__card-title {
+  color: #a61e1e;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.portal-quick-access__card.disaster-search-card--support-service .portal-quick-access__card-desc {
+  color: #5c1a1a;
+}
+
 .disaster-search {
   padding: 24px 0;
   background: #ecfeff;
@@ -2536,6 +2559,23 @@ button:focus-visible {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.disaster-social-search__form {
+  display: grid;
+  gap: 12px;
+}
+
+.disaster-social-search__select {
+  appearance: auto;
+}
+
+.disaster-social-search__category,
+.disaster-social-search__place,
+.disaster-social-search__date {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--text-muted, #475569);
 }
 
 .disaster-search__results {

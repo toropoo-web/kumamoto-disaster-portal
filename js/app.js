@@ -18,6 +18,7 @@
   var DISASTER_SEARCH_VOLUNTEER_ID = "disaster-search-volunteer";
   var DISASTER_SEARCH_SUPPORT_SERVICE_ID = "disaster-search-support-service";
   var DISASTER_SEARCH_OFFICIAL_POST_ID = "disaster-search-official-post";
+  var DISASTER_SOCIAL_SEARCH_ID = "disaster-social-search";
   var DISASTER_SEARCH_DEFAULT_CATEGORY = "WATER";
 
   function trackUsage(eventName) {
@@ -157,6 +158,18 @@
     RECOVERY: "復旧・生活支援",
     TRANSPORT: "交通",
     GENERAL: "公式発信"
+  };
+  var SOCIAL_CATEGORY_LABELS = {
+    WATER: "給水・水",
+    SHELTER: "避難所",
+    FOOD: "食料・炊き出し",
+    SUPPLIES: "物資",
+    TRANSPORT: "交通・輸送",
+    VOLUNTEER: "ボランティア",
+    MEDICAL: "医療",
+    TOILET: "トイレ",
+    CHARGING: "充電",
+    OTHER: "その他"
   };
   var SUPPORT_SERVICE_DETAIL_LABELS = {
     BATH: "風呂",
@@ -1329,6 +1342,75 @@
     });
   }
 
+  function loadDisasterSocialIndex() {
+    return Promise.all([
+      loadJson("disaster_social_index.json").catch(function () {
+        return { version: "1.0", region: "KYUSHU_SOUTH", entries: [] };
+      }),
+      loadJson("disaster_social_sources.json").catch(function () {
+        return { version: "1.0", region: "KYUSHU_SOUTH", sources: [] };
+      })
+    ]).then(function (results) {
+      return {
+        index: results[0],
+        sources: results[1]
+      };
+    });
+  }
+
+  function buildSocialSourceLookup(sourcesPayload) {
+    var lookup = {};
+    ((sourcesPayload && sourcesPayload.sources) || []).forEach(function (source) {
+      if (source && source.source_id) {
+        lookup[source.source_id] = source;
+      }
+    });
+    return lookup;
+  }
+
+  function normalizeSocialDate(value) {
+    if (!value) {
+      return "";
+    }
+    return String(value).slice(0, 10);
+  }
+
+  function searchDisasterSocialIndex(indexPayload, options) {
+    options = options || {};
+    var entries = (indexPayload && indexPayload.entries) || [];
+    var hasRegion = Boolean(normalizeSearchText(options.region));
+    var hasDate = Boolean(normalizeSocialDate(options.date));
+    var hasCategory = Boolean(options.category);
+
+    if (!hasRegion && !hasDate && !hasCategory) {
+      return [];
+    }
+
+    return entries.filter(function (entry) {
+      if (options.category && entry.category !== options.category) {
+        return false;
+      }
+
+      if (options.date && normalizeSocialDate(entry.date) !== normalizeSocialDate(options.date)) {
+        return false;
+      }
+
+      if (options.region) {
+        var tokens = normalizeSearchText(options.region).split(" ").filter(Boolean);
+        var hay = normalizeSearchText(
+          [entry.prefecture, entry.municipality, entry.district].filter(Boolean).join(" ")
+        );
+        if (!tokens.every(function (token) {
+          return hay.indexOf(token) !== -1;
+        })) {
+          return false;
+        }
+      }
+
+      return true;
+    });
+  }
+
   function searchDisasterIndex(indexPayload, query, options) {
     options = options || {};
     var items = (indexPayload && indexPayload.index) || [];
@@ -1784,7 +1866,166 @@
       grid.appendChild(card);
     });
 
+    var socialCard = createElement("a", "portal-quick-access__card");
+    socialCard.href = "#" + DISASTER_SOCIAL_SEARCH_ID;
+    socialCard.setAttribute("aria-label", "現地支援情報を探すの検索へ移動");
+    socialCard.appendChild(createElement("h3", "portal-quick-access__card-title", "🧭 現地支援情報を探す"));
+    socialCard.appendChild(createElement(
+      "p",
+      "portal-quick-access__card-desc",
+      "SNS・民間・現地発生情報を地域と日付で検索します。\n\n" +
+        "公式情報とは別レイヤーで、現地の支援・募集・物資情報を確認できます。"
+    ));
+    grid.appendChild(socialCard);
+
     inner.appendChild(grid);
+    section.appendChild(inner);
+    container.appendChild(section);
+  }
+
+  function renderDisasterSocialSearchResult(resultsContainer, results, sourceLookup) {
+    if (!resultsContainer) {
+      return;
+    }
+
+    resultsContainer.innerHTML = "";
+
+    if (!results.length) {
+      resultsContainer.appendChild(createElement(
+        "p",
+        "disaster-search__empty",
+        "該当する現地支援情報は見つかりませんでした。"
+      ));
+      return;
+    }
+
+    resultsContainer.appendChild(createElement(
+      "p",
+      "disaster-search__summary",
+      "検索結果：" + results.length + "件"
+    ));
+
+    var list = createElement("div", "disaster-search__results");
+    results.forEach(function (item) {
+      var card = createElement("article", "disaster-search__card disaster-social-search__card");
+      var categoryLabel = SOCIAL_CATEGORY_LABELS[item.category] || item.category || "その他";
+      var place = [item.prefecture, item.municipality, item.district].filter(Boolean).join(" ");
+      var sourceMeta = sourceLookup[item.source] || {};
+      var sourceName = sourceMeta.name || item.source || "情報元不明";
+
+      card.appendChild(createElement("p", "disaster-social-search__category", "カテゴリ：" + categoryLabel));
+      card.appendChild(createElement("p", "disaster-social-search__place", "場所：" + place));
+      card.appendChild(createElement("h3", "disaster-search__title", item.title || "現地支援情報"));
+      card.appendChild(createElement("p", "disaster-search__content", item.content || ""));
+      card.appendChild(createElement("p", "disaster-social-search__date", "日時：" + (item.date || "")));
+      card.appendChild(createElement("p", "disaster-search__source", "情報元：" + sourceName));
+
+      if (item.url) {
+        var link = createElement("a", "disaster-search__official-link", "URLを開く");
+        link.href = item.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.setAttribute("aria-label", sourceName + "のURLを開く（外部リンク）");
+        card.appendChild(link);
+      }
+
+      list.appendChild(card);
+    });
+
+    resultsContainer.appendChild(list);
+  }
+
+  function renderDisasterSocialSearch(container, socialPayload) {
+    if (!socialPayload || !socialPayload.index) {
+      return;
+    }
+
+    var sourceLookup = buildSocialSourceLookup(socialPayload.sources);
+    var section = createElement("section", "disaster-search disaster-social-search");
+    section.id = DISASTER_SOCIAL_SEARCH_ID;
+    section.setAttribute("aria-labelledby", "disaster-social-search-title");
+
+    var inner = createElement("div", "container");
+    var title = createElement("h2", "section-title disaster-search__heading", "🧭 現地支援情報を探す");
+    title.id = "disaster-social-search-title";
+    inner.appendChild(title);
+
+    inner.appendChild(createElement(
+      "p",
+      "disaster-search__guide-text",
+      "公式情報とは別レイヤーです。SNS・民間・現地発生情報を地域・日付・カテゴリで検索できます。"
+    ));
+
+    var form = createElement("form", "disaster-search__form disaster-social-search__form");
+    form.setAttribute("role", "search");
+    form.setAttribute("aria-label", "現地支援情報検索");
+
+    var regionLabel = createElement("label", "disaster-search__label", "地域");
+    regionLabel.setAttribute("for", "disaster-social-search-region");
+    var regionInput = createElement("input", "disaster-search__input");
+    regionInput.id = "disaster-social-search-region";
+    regionInput.type = "search";
+    regionInput.name = "region";
+    regionInput.placeholder = "例：八代 / 熊本県 / 南阿蘇";
+    regionInput.autocomplete = "off";
+
+    var dateLabel = createElement("label", "disaster-search__label", "日付");
+    dateLabel.setAttribute("for", "disaster-social-search-date");
+    var dateInput = createElement("input", "disaster-search__input");
+    dateInput.id = "disaster-social-search-date";
+    dateInput.type = "date";
+    dateInput.name = "date";
+
+    var categoryLabel = createElement("label", "disaster-search__label", "カテゴリ");
+    categoryLabel.setAttribute("for", "disaster-social-search-category");
+    var categorySelect = createElement("select", "disaster-search__input disaster-social-search__select");
+    categorySelect.id = "disaster-social-search-category";
+    categorySelect.name = "category";
+    categorySelect.appendChild(createElement("option", "", "すべて"));
+    Object.keys(SOCIAL_CATEGORY_LABELS).forEach(function (key) {
+      var option = createElement("option", "", SOCIAL_CATEGORY_LABELS[key]);
+      option.value = key;
+      categorySelect.appendChild(option);
+    });
+
+    var button = createElement("button", "disaster-search__button", "検索");
+    button.type = "submit";
+
+    var resultsContainer = createElement("div", "disaster-search__results-wrap");
+    resultsContainer.id = "disaster-social-search-results";
+
+    function runSearch() {
+      var options = {
+        region: regionInput.value.trim(),
+        date: dateInput.value,
+        category: categorySelect.value
+      };
+      var results = searchDisasterSocialIndex(socialPayload.index, options);
+      renderDisasterSocialSearchResult(resultsContainer, results, sourceLookup);
+      if (options.region || options.date || options.category) {
+        trackUsage("search_social");
+      }
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      runSearch();
+    });
+
+    form.appendChild(regionLabel);
+    form.appendChild(regionInput);
+    form.appendChild(dateLabel);
+    form.appendChild(dateInput);
+    form.appendChild(categoryLabel);
+    form.appendChild(categorySelect);
+    form.appendChild(button);
+    inner.appendChild(form);
+    inner.appendChild(resultsContainer);
+    resultsContainer.appendChild(createElement(
+      "p",
+      "disaster-search__hint",
+      "地域・日付・カテゴリのいずれかを指定して検索してください。"
+    ));
     section.appendChild(inner);
     container.appendChild(section);
   }
@@ -3494,6 +3735,7 @@
       loadJson("water_cross_view.json"),
       loadWaterSearchIndex(),
       loadDisasterSearchIndex(),
+      loadDisasterSocialIndex(),
       loadJson("infrastructure_status.json"),
       loadJson("infrastructure_sources.json"),
       loadXFeedPreview()
@@ -3510,9 +3752,10 @@
         var waterCrossView = results[8];
         var waterSearchIndex = results[9];
         var disasterSearchIndex = results[10];
-        var infrastructureStatus = results[11];
-        var infrastructureSources = results[12];
-        var xFeedState = results[13];
+        var disasterSocialPayload = results[11];
+        var infrastructureStatus = results[12];
+        var infrastructureSources = results[13];
+        var xFeedState = results[14];
 
         var publicRecords = updates
           .filter(isPublicRecord)
@@ -3546,6 +3789,7 @@
         renderDisasterSearch(page, disasterSearchIndex, "VOLUNTEER");
         renderDisasterSearch(page, disasterSearchIndex, "SUPPORT_SERVICE");
         renderDisasterSearch(page, disasterSearchIndex, "OFFICIAL_POST");
+        renderDisasterSocialSearch(page, disasterSocialPayload);
         renderWaterSearch(page, waterSearchIndex);
         renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);

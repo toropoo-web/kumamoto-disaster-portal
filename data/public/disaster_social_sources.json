@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "region": "KYUSHU_SOUTH",
+  "description": "SNS・民間・現地発生情報の情報源定義",
+  "sources": [
+    {
+      "source_id": "SOC-LOCAL-001",
+      "name": "熊本南部 被災者交流SNS",
+      "type": "SNS",
+      "platform": "X",
+      "url": "https://x.com/",
+      "coverage_prefectures": [
+        "熊本県"
+      ],
+      "active": true
+    },
+    {
+      "source_id": "SOC-LOCAL-002",
+      "name": "八代市 市民支援掲示板",
+      "type": "LOCAL",
+      "platform": "WEB",
+      "url": "https://example.local/yatsushiro-board",
+      "coverage_prefectures": [
+        "熊本県"
+      ],
+      "coverage_municipalities": [
+        "八代市"
+      ],
+      "active": true
+    },
+    {
+      "source_id": "SOC-CIVIL-001",
+      "name": "南阿蘇 現地ボランティア連絡",
+      "type": "CIVIL",
+      "platform": "LINE",
+      "url": "https://example.local/minamiaso-volunteer",
+      "coverage_prefectures": [
+        "熊本県"
+      ],
+      "coverage_municipalities": [
+        "南阿蘇村"
+      ],
+      "active": true
+    },
+    {
+      "source_id": "SOC-PRIVATE-001",
+      "name": "鹿児島県民間支援ネットワーク",
+      "type": "PRIVATE",
+      "platform": "WEB",
+      "url": "https://example.local/kagoshima-support",
+      "coverage_prefectures": [
+        "鹿児島県"
+      ],
+      "active": true
+    },
+    {
+      "source_id": "SOC-LOCAL-003",
+      "name": "熊本市 市民支援SNS",
+      "type": "SNS",
+      "platform": "X",
+      "url": "https://example.local/kumamoto-sns",
+      "coverage_prefectures": [
+        "熊本県"
+      ],
+      "coverage_municipalities": [
+        "熊本市"
+      ],
+      "active": true
+    },
+    {
+      "source_id": "SOC-LOCAL-004",
+      "name": "宇城市・宇土市 市民掲示板",
+      "type": "LOCAL",
+      "platform": "WEB",
+      "url": "https://example.local/uki-uto-board",
+      "coverage_prefectures": [
+        "熊本県"
+      ],
+      "coverage_municipalities": [
+        "宇城市",
+        "宇土市"
+      ],
+      "active": true
+    },
+    {
+      "source_id": "SOC-LOCAL-005",
+      "name": "氷川町 被災者連絡ネットワーク",
+      "type": "CIVIL",
+      "platform": "LINE",
+      "url": "https://example.local/hikawa-local",
+      "coverage_prefectures": [
+        "熊本県"
+      ],
+      "coverage_municipalities": [
+        "氷川町"
+      ],
+      "active": true
+    }
+  ]
+}
