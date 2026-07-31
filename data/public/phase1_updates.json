@@ -14,7 +14,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-30T17:21:53.918Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-31T08:03:59.000Z"
   },
   {
@@ -32,7 +32,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 2,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-31T08:03:59.000Z"
   },
   {
@@ -50,7 +50,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 3,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-31T08:03:59.000Z"
   },
   {
@@ -68,7 +68,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z"
+    "checked_at": "2026-07-31T08:34:31.288Z"
   },
   {
     "area_id": "KM001",
@@ -89,7 +89,7 @@
     "update_type": "EMERGENCY_INFO",
     "emergency_source_id": "EMG-SRC-KM001-X-001",
     "display_priority": 0,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-31T08:15:39.000Z"
   },
   {
@@ -107,7 +107,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z"
+    "checked_at": "2026-07-31T08:34:31.288Z"
   },
   {
     "area_id": "KM002",
@@ -156,7 +156,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T07:34:24.185Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-30T15:00:00.000Z"
   },
   {
@@ -166,7 +166,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "令和8年熊本地震（八代市防災サイト）",
     "summary": "避難所開設状況、給水所情報、断水のお知らせなど、八代市の最新情報を掲載しています。",
-    "displayed_updated_at": "2026-07-31T08:20:04.000Z",
+    "displayed_updated_at": "2026-07-31T08:31:04.000Z",
     "source_name": "八代市",
     "source_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
     "department": "八代市",
@@ -174,8 +174,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T08:31:28.036Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
-    "source_updated_at": "2026-07-31T08:20:04.000Z"
+    "checked_at": "2026-07-31T08:34:31.288Z",
+    "source_updated_at": "2026-07-31T08:31:04.000Z"
   },
   {
     "area_id": "KM006",
@@ -202,13 +202,13 @@
     "summary": "地震の影響により水源地が濁り、市内各地で水圧低下や断水が発生しています。8か所で給水を実施しています。",
     "displayed_updated_at": "2026-07-31T00:00:00+09:00",
     "source_name": "人吉市",
-    "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2501833",
+    "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
     "department": "水道局上水道課",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 2,
-    "checked_at": "2026-07-31T03:28:54.972Z"
+    "checked_at": "2026-07-31T08:34:31.288Z"
   },
   {
     "area_id": "KM007",
@@ -243,7 +243,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-31T00:45:08.000Z"
   },
   {
@@ -261,7 +261,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 2,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-30T15:00:00.000Z"
   },
   {
@@ -271,7 +271,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災サイト / 合志市ホームページ",
     "summary": "避難所の開設状況、断水・水道のお知らせ、クーリングシェルターの状況などを掲載しています。",
-    "displayed_updated_at": "2026-07-31T08:22:06.000Z",
+    "displayed_updated_at": "2026-07-31T08:34:05.000Z",
     "source_name": "合志市",
     "source_url": "https://www.city.koshi.lg.jp/",
     "department": "合志市",
@@ -279,8 +279,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-30T17:21:53.918Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
-    "source_updated_at": "2026-07-31T08:22:06.000Z"
+    "checked_at": "2026-07-31T08:34:31.288Z",
+    "source_updated_at": "2026-07-31T08:34:05.000Z"
   },
   {
     "area_id": "KM010",
@@ -313,7 +313,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T16:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-29T15:00:00.000Z"
   },
   {
@@ -331,7 +331,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T07:34:24.402Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-28T15:00:00.000Z"
   },
   {
@@ -349,7 +349,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T07:34:24.277Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z"
+    "checked_at": "2026-07-31T08:34:31.288Z"
   },
   {
     "area_id": "KM014",
@@ -366,7 +366,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-31T08:22:04.000Z"
   },
   {
@@ -384,7 +384,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-08-02T15:00:00.000Z"
   },
   {
@@ -402,7 +402,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2019-07-01T15:00:00.000Z"
   },
   {
@@ -420,7 +420,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-27T15:00:00.000Z"
   },
   {
@@ -438,7 +438,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-29T15:00:00.000Z"
   },
   {
@@ -456,7 +456,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-31T08:01:11.000Z"
   },
   {
@@ -474,7 +474,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T08:26:32.973Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-31T02:35:05.000Z"
   },
   {
@@ -492,7 +492,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-07-31T03:28:54.972Z",
+    "checked_at": "2026-07-31T08:34:31.288Z",
     "source_updated_at": "2026-07-30T15:00:14.000Z"
   },
   {

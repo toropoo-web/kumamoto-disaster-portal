@@ -30,7 +30,7 @@
       "municipality": "熊本市",
       "organization": "熊本市",
       "source_type": "MUNICIPALITY",
-      "url": "https://www.city.kumamoto.jp/kurashi/bosai/",
+      "url": "https://www.city.kumamoto.jp/bousai/",
       "keywords": [
         "給水",
         "応急給水",
@@ -51,7 +51,7 @@
       "municipality": "熊本市上下水道局",
       "organization": "熊本市上下水道局",
       "source_type": "WATERWORKS",
-      "url": "https://www.city.kumamoto.jp/kurashi/bosai/",
+      "url": "https://www.city.kumamoto.jp/bousai/",
       "keywords": [
         "給水",
         "応急給水",
@@ -366,7 +366,7 @@
       "municipality": "天草市",
       "organization": "天草市",
       "source_type": "MUNICIPALITY",
-      "url": "https://www.city.amakusa.lg.jp/",
+      "url": "https://www.city.amakusa.kumamoto.jp/",
       "keywords": [
         "給水",
         "応急給水",
