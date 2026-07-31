@@ -227,6 +227,20 @@ function main() {
     errors.push("prefecture search 熊本県 must return all Kumamoto entries");
   }
 
+  const kagoshimaResults = searchDisasterSocialIndex(indexPayload, { region: "鹿児島県" });
+  const kagoshimaEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "鹿児島県";
+  }).length;
+  checks.push({
+    check: "kagoshima prefecture wide search",
+    pass: kagoshimaResults.length === kagoshimaEntryCount && kagoshimaEntryCount > 0,
+    count: kagoshimaResults.length,
+    kagoshima_entry_count: kagoshimaEntryCount
+  });
+  if (kagoshimaResults.length !== kagoshimaEntryCount) {
+    errors.push("prefecture search 鹿児島県 must return all Kagoshima entries");
+  }
+
   const municipalityResults = searchDisasterSocialIndex(indexPayload, { region: "合志市" });
   checks.push({
     check: "municipality search",
@@ -263,15 +277,15 @@ function main() {
 
   const extensibleItem = normalizeInboxItem(
     {
-      source: "SOC-LOCAL-003",
+      source: "SOC-PRIVATE-001",
       category: "OTHER",
-      prefecture: "熊本県",
-      municipality: "新規受付町",
+      prefecture: "宮崎県",
+      municipality: "延岡市",
       district: "テスト",
       date: "2026-08-01",
-      title: "新規地域受付テスト",
-      content: "マスタ未登録地域の受付確認",
-      url: "https://example.local/full-region-test"
+      title: "隣接県受付テスト",
+      content: "隣接県の受付確認",
+      url: "https://example.local/adjacent-pref-test"
     },
     0
   );
@@ -279,10 +293,11 @@ function main() {
   checks.push({
     check: "extensible municipality intake",
     pass: extensibleErrors.length === 0 && extensibleItem.status === "ACTIVE",
-    municipality: extensibleItem.municipality
+    municipality: extensibleItem.municipality,
+    prefecture: extensibleItem.prefecture
   });
   if (extensibleErrors.length) {
-    errors.push("unknown municipalities must remain accepted");
+    errors.push("adjacent prefectures must remain accepted");
   }
 
   const regionResultsLegacy = searchDisasterSocialIndex(indexPayload, { region: "熊本市" });

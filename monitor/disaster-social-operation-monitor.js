@@ -15,6 +15,10 @@ const {
 } = require("./disaster-social-pipeline");
 
 const { INDEX_FILE, SOURCES_FILE } = require("./disaster-social-index-engine");
+const {
+  loadCommunityRegionMaster,
+  LAYER_SCOPE
+} = require("./disaster-social-region-master");
 
 const ROOT = path.join(__dirname, "..");
 const DEFAULT_OUTPUT_FILE = path.join(
@@ -78,12 +82,22 @@ function buildDisasterSocialOperationReport(options) {
   });
 
   const schemaErrors = validateDisasterSocialInbox(inbox);
+  const regionMaster = loadCommunityRegionMaster();
+  const prefectureSummary = {};
+  indexEntries.forEach(function (entry) {
+    const key = entry.prefecture || "UNKNOWN";
+    prefectureSummary[key] = (prefectureSummary[key] || 0) + 1;
+  });
 
   return {
-    phase: "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE10_SOCIAL_SOURCE_OPERATION",
+    phase: "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE6_MULTI_PREFECTURE_EXTENSION",
+    layer_scope: regionMaster.layer_scope || LAYER_SCOPE,
     generated_at: new Date().toISOString(),
     AUTO_PUBLISH: AUTO_PUBLISH,
+    AUTO_APPLY: false,
     STOP_AT: "REVIEW_QUEUE",
+    manual_apply_required: true,
+    ai_judgment: false,
     schema_validation: {
       pass: schemaErrors.length === 0,
       error_count: schemaErrors.length
@@ -102,6 +116,7 @@ function buildDisasterSocialOperationReport(options) {
       approved_review_count: countByStatus(reviewItems, "review_status", "APPROVED")
     },
     review_status_summary: reviewQueue.status_summary || {},
+    prefecture_summary: prefectureSummary,
     source_type_summary: sourceTypeSummary,
     last_updated: {
       inbox: inbox.last_updated || null,

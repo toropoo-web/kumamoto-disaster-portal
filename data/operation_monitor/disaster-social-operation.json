@@ -1,30 +1,38 @@
 {
-  "phase": "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE10_SOCIAL_SOURCE_OPERATION",
-  "generated_at": "2026-07-31T16:51:12.205Z",
+  "phase": "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE6_MULTI_PREFECTURE_EXTENSION",
+  "layer_scope": "九州災害 Community Layer",
+  "generated_at": "2026-07-31T17:01:47.236Z",
   "AUTO_PUBLISH": false,
+  "AUTO_APPLY": false,
   "STOP_AT": "REVIEW_QUEUE",
+  "manual_apply_required": true,
+  "ai_judgment": false,
   "schema_validation": {
     "pass": true,
     "error_count": 0
   },
   "counts": {
-    "inbox_item_count": 49,
-    "review_queue_item_count": 49,
-    "apply_queue_item_count": 47,
-    "index_entry_count": 55,
+    "inbox_item_count": 51,
+    "review_queue_item_count": 51,
+    "apply_queue_item_count": 49,
+    "index_entry_count": 57,
     "source_count": 8,
     "incomplete_inbox_count": 0,
-    "incomplete_index_count": 3,
-    "incomplete_review_count": 3,
+    "incomplete_index_count": 4,
+    "incomplete_review_count": 4,
     "duplicate_review_count": 2,
     "pending_review_count": 0,
-    "approved_review_count": 47
+    "approved_review_count": 49
   },
   "review_status_summary": {
     "PENDING": 0,
-    "APPROVED": 47,
+    "APPROVED": 49,
     "REJECTED": 0,
     "DUPLICATE": 2
+  },
+  "prefecture_summary": {
+    "熊本県": 54,
+    "鹿児島県": 3
   },
   "source_type_summary": {
     "X": 2,
@@ -34,9 +42,9 @@
   },
   "last_updated": {
     "inbox": null,
-    "review_queue": "2026-07-31T16:51:12.147Z",
-    "apply_queue": "2026-07-31T16:51:12.148Z",
-    "index": "2026-07-31T16:43:58.608Z"
+    "review_queue": "2026-07-31T17:01:46.764Z",
+    "apply_queue": "2026-07-31T17:01:46.765Z",
+    "index": "2026-07-31T17:01:46.819Z"
   },
   "incomplete_items": [
     {
@@ -66,6 +74,16 @@
         "url"
       ],
       "entry_id": "SOC-IDX-INB-20260801-OPS-013"
+    },
+    {
+      "inbox_id": "INB-20260801-KGS-002",
+      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持",
+      "missing_fields": [
+        "municipality",
+        "district",
+        "url"
+      ],
+      "entry_id": "SOC-IDX-INB-20260801-KGS-002"
     }
   ]
 }

@@ -9,6 +9,11 @@ const {
   matchesRegionGroupToken,
   validateMunicipalityMaster
 } = require("./disaster-social-municipality-master");
+const {
+  loadCommunityRegionMaster,
+  matchesPrefectureGroupToken,
+  buildCommunityRegionHaystack
+} = require("./disaster-social-region-master");
 
 const ROOT = path.join(__dirname, "..");
 const SOURCES_FILE = path.join(ROOT, "data", "community", "disaster_social_sources.json");
@@ -163,9 +168,7 @@ function normalizeDateToken(value) {
 }
 
 function buildRegionHaystack(entry) {
-  return normalizeSearchText(
-    [entry.prefecture, entry.municipality, entry.district].filter(Boolean).join(" ")
-  );
+  return normalizeSearchText(buildCommunityRegionHaystack(entry));
 }
 
 function matchesStructuredLocation(entry, options) {
@@ -202,7 +205,10 @@ function matchesRegion(entry, regionQuery) {
     if (hay.indexOf(token) !== -1) {
       return true;
     }
-    return matchesRegionGroupToken(entry, token);
+    if (matchesRegionGroupToken(entry, token)) {
+      return true;
+    }
+    return matchesPrefectureGroupToken(entry, token);
   });
 }
 
@@ -404,12 +410,11 @@ function validateSocialIndexEntry(entry, index) {
     }
   }
 
-  if (entry.status && SOCIAL_STATUS_VALUES.indexOf(entry.status) === -1) {
-    errors.push(label + ": invalid status " + entry.status);
+  if (entry.prefecture_group !== undefined && entry.prefecture_group !== null && typeof entry.prefecture_group !== "string") {
+    errors.push(label + ": prefecture_group must be a string");
   }
-
-  if (entry.prefecture && PREFECTURES[REGION_KYUSHU_SOUTH].indexOf(entry.prefecture) === -1) {
-    errors.push(label + ": prefecture out of coverage");
+  if (entry.region_group !== undefined && entry.region_group !== null && typeof entry.region_group !== "string") {
+    errors.push(label + ": region_group must be a string");
   }
 
   ["prefecture", "municipality", "district"].forEach(function (field) {
@@ -417,6 +422,10 @@ function validateSocialIndexEntry(entry, index) {
       errors.push(label + ": missing " + field);
     }
   });
+
+  if (entry.status && SOCIAL_STATUS_VALUES.indexOf(entry.status) === -1) {
+    errors.push(label + ": invalid status " + entry.status);
+  }
 
   if (entry.date && !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)) {
     errors.push(label + ": invalid date format");
@@ -525,5 +534,7 @@ module.exports = {
   loadMunicipalityMaster,
   isKumamotoMunicipality: require("./disaster-social-municipality-master").isKumamotoMunicipality,
   matchesRegionGroupToken,
+  loadCommunityRegionMaster,
+  matchesPrefectureGroupToken,
   validateMunicipalityMaster
 };

@@ -23,6 +23,12 @@ const {
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-index-engine"));
 
 const {
+  loadCommunityRegionMaster,
+  validateCommunityRegionMaster,
+  LAYER_SCOPE
+} = require(path.join(__dirname, "..", "monitor", "disaster-social-region-master"));
+
+const {
   buildAndWriteDisasterSearchIndex,
   searchDisasterIndex
 } = require(path.join(__dirname, "..", "monitor", "disaster-search-index-engine"));
@@ -35,6 +41,8 @@ function main() {
     "data/community/disaster_social_sources.json",
     "data/community/disaster_social_index.json",
     "data/community/municipality_master.json",
+    "data/community/community_region_master.json",
+    "monitor/disaster-social-region-master.js",
     "monitor/disaster-social-index-engine.js",
     "monitor/disaster-social-municipality-master.js",
     "scripts/build-disaster-social-index.js"
@@ -53,6 +61,16 @@ function main() {
     pass: validateMunicipalityMaster(masterPayload).length === 0,
     municipality_count: (masterPayload.municipalities || []).length
   });
+
+  const regionMaster = loadCommunityRegionMaster();
+  errors.push.apply(errors, validateCommunityRegionMaster(regionMaster));
+  checks.push({
+    check: "community region layer",
+    pass: regionMaster.layer_scope === LAYER_SCOPE && regionMaster.extensible === true
+  });
+  if (regionMaster.layer_scope !== LAYER_SCOPE) {
+    errors.push("community layer scope must be " + LAYER_SCOPE);
+  }
 
   const payload = buildAndWriteDisasterSocialIndex();
   const baselineEntryCount = payload.index.entries.length;
@@ -97,6 +115,34 @@ function main() {
   });
   if (!municipalityResults.length) {
     errors.push("municipality search must return results for 玉名市");
+  }
+
+  const kagoshimaResults = searchDisasterSocialIndex(payload.index, {
+    region: "鹿児島県"
+  });
+  const kagoshimaEntryCount = payload.index.entries.filter(function (entry) {
+    return entry.prefecture === "鹿児島県";
+  }).length;
+  checks.push({
+    check: "kagoshima prefecture wide search",
+    pass: kagoshimaResults.length === kagoshimaEntryCount && kagoshimaEntryCount > 0,
+    count: kagoshimaResults.length,
+    kagoshima_entry_count: kagoshimaEntryCount
+  });
+  if (kagoshimaResults.length !== kagoshimaEntryCount) {
+    errors.push("prefecture search 鹿児島県 must return all Kagoshima entries");
+  }
+
+  const prefectureGroupResults = searchDisasterSocialIndex(payload.index, {
+    region: "九州南部"
+  });
+  checks.push({
+    check: "prefecture group search",
+    pass: prefectureGroupResults.length > 0,
+    count: prefectureGroupResults.length
+  });
+  if (!prefectureGroupResults.length) {
+    errors.push("prefecture group search must return results for 九州南部");
   }
 
   const regionResults = searchDisasterSocialIndex(payload.index, {

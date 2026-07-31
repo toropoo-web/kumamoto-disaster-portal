@@ -89,22 +89,25 @@ keywords: ["給水", "生活用水"]
 
 ## 地域受付
 
-熊本県内の全市町村（45自治体）および新規地域を受付対象とする。
+災害影響地域単位の横断検索（九州災害 Community Layer）。
+
+対象都道府県:
+
+* 熊本県
+* 鹿児島県
+* 隣接県（宮崎県・大分県・福岡県・長崎県・佐賀県 ほか）
+* 今後の災害発生地域（拡張可能）
 
 マスタ:
 
 ```
-data/community/municipality_master.json
+data/community/community_region_master.json
+data/community/municipality_master.json  （熊本県市町村）
 ```
 
-被災度・情報量・初期5自治体による除外は行わない。
+被災度・情報量・固定自治体リストによる除外は行わない。
 
 地域フィルターは検索軸であり、対象地域の制限ではない。
-
-- `熊本県` のみ指定 → 熊本県内すべてのCommunity情報を表示
-- 市町村・地区は絞り込み用（件数制限・AI選別なし）
-
-地域グループ（阿蘇地域・人吉地域など）は検索補助。固定リストによる除外は行わない。
 
 地域項目（必須フィールド）:
 
@@ -115,6 +118,17 @@ data/community/municipality_master.json
   "district": ""
 }
 ```
+
+検索補助（任意）:
+
+```json
+{
+  "prefecture_group": "KYUSHU_SOUTH",
+  "region_group": "阿蘇地域"
+}
+```
+
+`prefecture_group` / `region_group` は検索補助のみ。除外・選別には使わない。
 
 不足項目がある場合は削除しない。`status: incomplete` として Review Queue へ載せる。
 

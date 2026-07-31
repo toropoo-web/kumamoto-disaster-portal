@@ -24,6 +24,17 @@ const {
   validateMunicipalityMaster
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-index-engine"));
 
+const {
+  loadCommunityRegionMaster,
+  validateCommunityRegionMaster,
+  LAYER_SCOPE
+} = require(path.join(__dirname, "..", "monitor", "disaster-social-region-master"));
+
+const {
+  buildAndWriteDisasterSearchIndex,
+  searchDisasterIndex
+} = require(path.join(__dirname, "..", "monitor", "disaster-search-index-engine"));
+
 function main() {
   const errors = [];
   const checks = [];
@@ -81,6 +92,16 @@ function main() {
   const report = buildDisasterSocialOperationReport();
   const indexPath = path.join(ROOT, "data", "community", "disaster_social_index.json");
   const indexPayload = JSON.parse(fs.readFileSync(indexPath, "utf8"));
+  const regionMaster = loadCommunityRegionMaster();
+  errors.push.apply(errors, validateCommunityRegionMaster(regionMaster));
+  checks.push({
+    check: "community region layer",
+    pass: regionMaster.layer_scope === LAYER_SCOPE && regionMaster.extensible === true
+  });
+  if (regionMaster.layer_scope !== LAYER_SCOPE) {
+    errors.push("community layer scope must be " + LAYER_SCOPE);
+  }
+
   const masterPayload = loadMunicipalityMaster();
   errors.push.apply(errors, validateMunicipalityMaster(masterPayload));
 
@@ -106,12 +127,28 @@ function main() {
     errors.push("prefecture search 熊本県 must return all Kumamoto entries");
   }
 
-  const municipalityResults = searchDisasterSocialIndex(indexPayload, { region: "御船町" });
+  const kagoshimaResults = searchDisasterSocialIndex(indexPayload, { region: "鹿児島県" });
+  const kagoshimaEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "鹿児島県";
+  }).length;
+  checks.push({
+    check: "kagoshima prefecture wide search",
+    pass: kagoshimaResults.length === kagoshimaEntryCount && kagoshimaEntryCount > 0,
+    count: kagoshimaResults.length
+  });
+  if (kagoshimaResults.length !== kagoshimaEntryCount) {
+    errors.push("prefecture search 鹿児島県 must return all Kagoshima entries");
+  }
+
+  const municipalityResults = searchDisasterSocialIndex(indexPayload, { region: "鹿児島市" });
   checks.push({
     check: "municipality search",
-    pass: municipalityResults.length >= 0,
+    pass: municipalityResults.length > 0,
     count: municipalityResults.length
   });
+  if (!municipalityResults.length) {
+    errors.push("municipality search failed for 鹿児島市");
+  }
 
   const districtResults = searchDisasterSocialIndex(indexPayload, {
     prefecture: "熊本県",
@@ -150,6 +187,34 @@ function main() {
     check: "AUTO_PUBLISH false",
     pass: AUTO_PUBLISH === false && report.AUTO_PUBLISH === false
   });
+  checks.push({
+    check: "AUTO_APPLY false",
+    pass: report.AUTO_APPLY === false
+  });
+  checks.push({
+    check: "manual apply required",
+    pass: report.manual_apply_required === true
+  });
+  checks.push({
+    check: "ai judgment disabled",
+    pass: report.ai_judgment === false
+  });
+  checks.push({
+    check: "stop at review queue",
+    pass: report.STOP_AT === "REVIEW_QUEUE"
+  });
+
+  const officialWater = searchDisasterIndex(buildAndWriteDisasterSearchIndex(), "給水", {
+    category: "WATER"
+  });
+  checks.push({
+    check: "official layer unaffected",
+    pass: officialWater.length > 0,
+    water_count: officialWater.length
+  });
+  if (!officialWater.length) {
+    errors.push("official water search must remain available");
+  }
 
   const incompleteWithNote = (report.incomplete_items || []).filter(function (item) {
     return item.review_note;
@@ -189,7 +254,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log("DISASTER_CROSS_SEARCH_COMMUNITY_PHASE10_OPERATION_COMPLETE");
+  console.log("DISASTER_CROSS_SEARCH_COMMUNITY_PHASE6_MULTI_PREFECTURE_COMPLETE");
 }
 
 main();

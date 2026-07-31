@@ -782,7 +782,44 @@
         "生活用水"
       ],
       "source_type": "MANUAL"
+    },
+    {
+      "id": "SOC-IDX-INB-20260801-KGS-001",
+      "source": "SOC-PRIVATE-001",
+      "category": "WATER",
+      "prefecture": "鹿児島県",
+      "municipality": "鹿児島市",
+      "district": "中央町",
+      "date": "2026-08-01",
+      "title": "鹿児島市 民間給水ポイント情報",
+      "content": "鹿児島市中央町で生活用水の配布。ポリタンク持参。熊本方面支援物資と連携。",
+      "url": "https://example.local/kagoshima-support/water-20260801",
+      "status": "ACTIVE",
+      "keywords": [
+        "給水",
+        "生活用水"
+      ],
+      "source_type": "X",
+      "prefecture_group": "KYUSHU_SOUTH"
+    },
+    {
+      "id": "SOC-IDX-INB-20260801-KGS-002",
+      "source": "SOC-PRIVATE-001",
+      "category": "SUPPLIES",
+      "prefecture": "鹿児島県",
+      "municipality": "",
+      "district": "",
+      "date": "2026-08-01",
+      "title": "鹿児島県内 支援物資の連絡",
+      "content": "支援物資の譲渡連絡。市町村・場所の詳細は確認中。",
+      "url": "",
+      "status": "incomplete",
+      "keywords": [
+        "支援物資"
+      ],
+      "source_type": "WEB",
+      "prefecture_group": "KYUSHU_SOUTH"
     }
   ],
-  "last_updated": "2026-07-31T16:43:58.608Z"
+  "last_updated": "2026-07-31T17:01:46.819Z"
 }

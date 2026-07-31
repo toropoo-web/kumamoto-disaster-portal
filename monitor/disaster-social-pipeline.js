@@ -172,9 +172,11 @@ function normalizeInboxItem(item, index) {
     captured_at: item.captured_at || new Date().toISOString(),
     source: normalizeText(item.source),
     category: normalizeText(item.category),
-    prefecture: normalizeText(item.prefecture) || "熊本県",
+    prefecture: normalizeText(item.prefecture),
     municipality: normalizeText(item.municipality),
     district: normalizeText(item.district),
+    prefecture_group: normalizeText(item.prefecture_group),
+    region_group: normalizeText(item.region_group),
     date: normalizeDate(item.date),
     title: normalizeText(item.title),
     content: normalizeText(item.content),
@@ -193,7 +195,7 @@ function inboxItemToIndexEntry(inboxItem, index) {
     id: buildEntryId(inboxItem, index),
     source: inboxItem.source || "UNKNOWN",
     category: inboxItem.category || "OTHER",
-    prefecture: inboxItem.prefecture || "熊本県",
+    prefecture: inboxItem.prefecture || "",
     municipality: inboxItem.municipality || "",
     district: inboxItem.district || "",
     date: inboxItem.date || "",
@@ -207,6 +209,12 @@ function inboxItemToIndexEntry(inboxItem, index) {
   }
   if (inboxItem.source_type) {
     entry.source_type = inboxItem.source_type;
+  }
+  if (inboxItem.prefecture_group) {
+    entry.prefecture_group = inboxItem.prefecture_group;
+  }
+  if (inboxItem.region_group) {
+    entry.region_group = inboxItem.region_group;
   }
   return entry;
 }
@@ -492,7 +500,7 @@ function ensureSourceExists(sourcesPayload, sourceId) {
     type: "UNKNOWN",
     platform: "MANUAL",
     url: "",
-    coverage_prefectures: ["熊本県"],
+    coverage_prefectures: [],
     active: true
   });
   sourcesPayload.sources = sources;

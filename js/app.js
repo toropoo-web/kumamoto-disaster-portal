@@ -261,6 +261,53 @@
     }
   ];
 
+  var SOCIAL_PREFECTURE_GROUPS = [
+    {
+      id: "KYUSHU_SOUTH",
+      label: "九州南部",
+      prefectures: ["熊本県", "鹿児島県"]
+    },
+    {
+      id: "KYUSHU",
+      label: "九州",
+      prefectures: ["熊本県", "鹿児島県", "宮崎県", "大分県", "福岡県", "長崎県", "佐賀県"]
+    }
+  ];
+
+  function matchesSocialPrefectureGroup(entry, token) {
+    var normalizedToken = String(token || "").trim();
+    if (!normalizedToken) {
+      return false;
+    }
+    for (var i = 0; i < SOCIAL_PREFECTURE_GROUPS.length; i += 1) {
+      var group = SOCIAL_PREFECTURE_GROUPS[i];
+      if (
+        group.label.indexOf(normalizedToken) === -1 &&
+        normalizedToken.indexOf(group.label) === -1 &&
+        group.id.toLowerCase().indexOf(normalizedToken.toLowerCase()) === -1
+      ) {
+        continue;
+      }
+      if ((group.prefectures || []).indexOf(entry.prefecture) !== -1) {
+        return true;
+      }
+      if (entry.prefecture_group && entry.prefecture_group === group.id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function buildSocialRegionHaystack(entry) {
+    return [
+      entry.prefecture,
+      entry.municipality,
+      entry.district,
+      entry.region_group,
+      entry.prefecture_group
+    ].filter(Boolean).join(" ");
+  }
+
   function matchesSocialRegionGroup(entry, token) {
     var normalizedToken = String(token || "").trim();
     if (!normalizedToken) {
@@ -1627,11 +1674,13 @@
       }
       if (hasRegion) {
         var tokens = normalizeSearchText(options.region).split(" ").filter(Boolean);
-        var hay = normalizeSearchText(
-          [entry.prefecture, entry.municipality, entry.district].filter(Boolean).join(" ")
-        );
+        var hay = normalizeSearchText(buildSocialRegionHaystack(entry));
         locationOk = locationOk && tokens.every(function (token) {
-          return hay.indexOf(token) !== -1 || matchesSocialRegionGroup(entry, token);
+          return (
+            hay.indexOf(token) !== -1 ||
+            matchesSocialRegionGroup(entry, token) ||
+            matchesSocialPrefectureGroup(entry, token)
+          );
         });
       }
 
@@ -2218,7 +2267,7 @@
     regionInput.id = "disaster-social-search-region";
     regionInput.type = "search";
     regionInput.name = "region";
-    regionInput.placeholder = "例：熊本県 / 阿蘇市 黒川 / 阿蘇地域 / 宇城市";
+    regionInput.placeholder = "例：熊本県 / 鹿児島県 / 九州南部 / 阿蘇市 黒川";
     regionInput.autocomplete = "off";
 
     var dateLabel = createElement("label", "disaster-search__label", "日付");
@@ -2282,7 +2331,7 @@
     resultsContainer.appendChild(createElement(
       "p",
       "disaster-search__hint",
-      "地域・日付・カテゴリのいずれかを指定して検索してください。熊本県のみ指定すると県内すべての情報を表示します。"
+      "地域・日付・カテゴリのいずれかを指定して検索してください。都道府県のみ指定すると県内すべての情報を表示します。"
     ));
     section.appendChild(inner);
     container.appendChild(section);

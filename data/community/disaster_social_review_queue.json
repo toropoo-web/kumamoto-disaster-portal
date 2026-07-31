@@ -3,10 +3,10 @@
   "region": "KYUSHU_SOUTH",
   "queue_type": "DISASTER_SOCIAL_REVIEW",
   "AUTO_PUBLISH": false,
-  "item_count": 49,
+  "item_count": 51,
   "status_summary": {
     "PENDING": 0,
-    "APPROVED": 47,
+    "APPROVED": 49,
     "REJECTED": 0,
     "DUPLICATE": 2
   },
@@ -1277,7 +1277,73 @@
       "captured_at": "2026-08-01T13:00:00.000Z",
       "reviewed_at": null,
       "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持"
+    },
+    {
+      "queue_id": "SOC-REV-INB-20260801-KGS-001",
+      "inbox_id": "INB-20260801-KGS-001",
+      "review_status": "APPROVED",
+      "dedupe_key": "url:https://example.local/kagoshima-support/water-20260801",
+      "duplicate_of": null,
+      "import_format": "MANUAL",
+      "source_type": "X",
+      "missing_fields": [],
+      "entry": {
+        "id": "SOC-IDX-INB-20260801-KGS-001",
+        "source": "SOC-PRIVATE-001",
+        "category": "WATER",
+        "prefecture": "鹿児島県",
+        "municipality": "鹿児島市",
+        "district": "中央町",
+        "date": "2026-08-01",
+        "title": "鹿児島市 民間給水ポイント情報",
+        "content": "鹿児島市中央町で生活用水の配布。ポリタンク持参。熊本方面支援物資と連携。",
+        "url": "https://example.local/kagoshima-support/water-20260801",
+        "status": "ACTIVE",
+        "keywords": [
+          "給水",
+          "生活用水"
+        ],
+        "source_type": "X",
+        "prefecture_group": "KYUSHU_SOUTH"
+      },
+      "captured_at": "2026-08-01T14:00:00.000Z",
+      "reviewed_at": null
+    },
+    {
+      "queue_id": "SOC-REV-INB-20260801-KGS-002",
+      "inbox_id": "INB-20260801-KGS-002",
+      "review_status": "APPROVED",
+      "dedupe_key": "hash:240908030a56cb790b42202c177dc2d83157268d2698757f48a0145b81b7dc61",
+      "duplicate_of": null,
+      "import_format": "MANUAL",
+      "source_type": "WEB",
+      "missing_fields": [
+        "municipality",
+        "district",
+        "url"
+      ],
+      "entry": {
+        "id": "SOC-IDX-INB-20260801-KGS-002",
+        "source": "SOC-PRIVATE-001",
+        "category": "SUPPLIES",
+        "prefecture": "鹿児島県",
+        "municipality": "",
+        "district": "",
+        "date": "2026-08-01",
+        "title": "鹿児島県内 支援物資の連絡",
+        "content": "支援物資の譲渡連絡。市町村・場所の詳細は確認中。",
+        "url": "",
+        "status": "incomplete",
+        "keywords": [
+          "支援物資"
+        ],
+        "source_type": "WEB",
+        "prefecture_group": "KYUSHU_SOUTH"
+      },
+      "captured_at": "2026-08-01T14:05:00.000Z",
+      "reviewed_at": null,
+      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持"
     }
   ],
-  "last_updated": "2026-07-31T16:51:12.147Z"
+  "last_updated": "2026-07-31T17:01:46.764Z"
 }
