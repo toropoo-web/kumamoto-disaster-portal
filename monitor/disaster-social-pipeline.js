@@ -9,8 +9,7 @@ const {
   SOURCES_FILE,
   INDEX_FILE,
   SOCIAL_CATEGORIES,
-  buildAndWriteDisasterSocialIndex,
-  isKumamotoMunicipality
+  buildAndWriteDisasterSocialIndex
 } = require("./disaster-social-index-engine");
 
 const ROOT = path.join(__dirname, "..");
@@ -334,14 +333,6 @@ function validateInboxItem(item, index) {
   }
   if (normalized.category && SOCIAL_CATEGORIES.indexOf(normalized.category) === -1) {
     errors.push(label + ": invalid category " + normalized.category);
-  }
-  const prefecture = normalized.prefecture || "熊本県";
-  if (
-    prefecture === "熊本県" &&
-    normalized.municipality &&
-    !isKumamotoMunicipality(normalized.municipality)
-  ) {
-    errors.push(label + ": municipality not in Kumamoto master: " + normalized.municipality);
   }
   if (normalized.source_type && SOURCE_TYPE_VALUES.indexOf(normalized.source_type) === -1) {
     errors.push(label + ": invalid source_type " + normalized.source_type);

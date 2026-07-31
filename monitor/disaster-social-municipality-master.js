@@ -41,6 +41,34 @@ function isKumamotoMunicipality(municipality, masterPayload) {
   return getKumamotoMunicipalitySet(masterPayload).has(name);
 }
 
+function loadRegionGroups(masterPayload) {
+  const master = masterPayload || loadMunicipalityMaster();
+  return master.region_groups || [];
+}
+
+function matchesRegionGroupToken(entry, token, masterPayload) {
+  const normalizedToken = String(token || "").trim();
+  if (!normalizedToken) {
+    return false;
+  }
+  const groups = loadRegionGroups(masterPayload);
+  for (let i = 0; i < groups.length; i += 1) {
+    const group = groups[i];
+    const groupLabel = String(group.label || "").trim();
+    if (!groupLabel) {
+      continue;
+    }
+    if (groupLabel.indexOf(normalizedToken) === -1 && normalizedToken.indexOf(groupLabel) === -1) {
+      continue;
+    }
+    const municipalities = group.municipalities || [];
+    if (municipalities.indexOf(entry.municipality) !== -1) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function validateMunicipalityMaster(payload) {
   const errors = [];
   if (!payload || !Array.isArray(payload.municipalities)) {
@@ -70,6 +98,15 @@ function validateMunicipalityMaster(payload) {
   if (payload.municipality_count && payload.municipality_count !== payload.municipalities.length) {
     errors.push("municipality_count mismatch");
   }
+  (payload.region_groups || []).forEach(function (group, index) {
+    const label = "region_groups[" + index + "]";
+    if (!group || !group.label) {
+      errors.push(label + ": label is required");
+    }
+    if (!Array.isArray(group.municipalities) || !group.municipalities.length) {
+      errors.push(label + ": municipalities must be a non-empty array");
+    }
+  });
   return errors;
 }
 
@@ -78,5 +115,7 @@ module.exports = {
   loadMunicipalityMaster,
   getKumamotoMunicipalitySet,
   isKumamotoMunicipality,
+  loadRegionGroups,
+  matchesRegionGroupToken,
   validateMunicipalityMaster
 };

@@ -18,7 +18,10 @@ const {
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-operation-monitor"));
 
 const {
-  validateDisasterSocialSources
+  validateDisasterSocialSources,
+  searchDisasterSocialIndex,
+  loadMunicipalityMaster,
+  validateMunicipalityMaster
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-index-engine"));
 
 function main() {
@@ -76,6 +79,54 @@ function main() {
   });
 
   const report = buildDisasterSocialOperationReport();
+  const indexPath = path.join(ROOT, "data", "community", "disaster_social_index.json");
+  const indexPayload = JSON.parse(fs.readFileSync(indexPath, "utf8"));
+  const masterPayload = loadMunicipalityMaster();
+  errors.push.apply(errors, validateMunicipalityMaster(masterPayload));
+
+  checks.push({
+    check: "municipality master extensible",
+    pass: masterPayload.extensible === true && (masterPayload.municipalities || []).length >= 45,
+    municipality_count: (masterPayload.municipalities || []).length
+  });
+  if (!masterPayload.extensible) {
+    errors.push("municipality master must remain extensible");
+  }
+
+  const prefectureResults = searchDisasterSocialIndex(indexPayload, { region: "熊本県" });
+  const kumamotoEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "熊本県";
+  }).length;
+  checks.push({
+    check: "prefecture wide search",
+    pass: prefectureResults.length === kumamotoEntryCount && kumamotoEntryCount > 0,
+    count: prefectureResults.length
+  });
+  if (prefectureResults.length !== kumamotoEntryCount) {
+    errors.push("prefecture search 熊本県 must return all Kumamoto entries");
+  }
+
+  const municipalityResults = searchDisasterSocialIndex(indexPayload, { region: "御船町" });
+  checks.push({
+    check: "municipality search",
+    pass: municipalityResults.length >= 0,
+    count: municipalityResults.length
+  });
+
+  const districtResults = searchDisasterSocialIndex(indexPayload, {
+    prefecture: "熊本県",
+    municipality: "阿蘇市",
+    district: "黒川"
+  });
+  checks.push({
+    check: "district search",
+    pass: districtResults.length > 0,
+    count: districtResults.length
+  });
+  if (!districtResults.length) {
+    errors.push("district search failed");
+  }
+
   checks.push({
     check: "operation monitor report",
     pass: report.counts.index_entry_count > 0,

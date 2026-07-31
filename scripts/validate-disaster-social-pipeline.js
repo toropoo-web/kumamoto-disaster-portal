@@ -14,6 +14,7 @@ const {
   buildReviewQueueFromInbox,
   buildApplyQueueFromReviewQueue,
   applyDisasterSocialQueue,
+  validateInboxItem,
   validateDisasterSocialInbox,
   AUTO_PUBLISH,
   SOURCE_TYPE_VALUES
@@ -212,9 +213,81 @@ function main() {
     pass: buildPayload.meta.entry_count === indexPayload.entries.length
   });
 
-  const regionResults = searchDisasterSocialIndex(indexPayload, { region: "熊本市" });
-  checks.push({ check: "region search", pass: regionResults.length > 0, count: regionResults.length });
-  if (!regionResults.length) {
+  const regionResults = searchDisasterSocialIndex(indexPayload, { region: "熊本県" });
+  const kumamotoEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "熊本県";
+  }).length;
+  checks.push({
+    check: "prefecture wide search",
+    pass: regionResults.length === kumamotoEntryCount && kumamotoEntryCount > 0,
+    count: regionResults.length,
+    kumamoto_entry_count: kumamotoEntryCount
+  });
+  if (regionResults.length !== kumamotoEntryCount) {
+    errors.push("prefecture search 熊本県 must return all Kumamoto entries");
+  }
+
+  const municipalityResults = searchDisasterSocialIndex(indexPayload, { region: "合志市" });
+  checks.push({
+    check: "municipality search",
+    pass: municipalityResults.length > 0,
+    count: municipalityResults.length
+  });
+  if (!municipalityResults.length) {
+    errors.push("municipality search failed");
+  }
+
+  const districtResults = searchDisasterSocialIndex(indexPayload, {
+    prefecture: "熊本県",
+    municipality: "阿蘇市",
+    district: "黒川"
+  });
+  checks.push({
+    check: "district search",
+    pass: districtResults.length > 0,
+    count: districtResults.length
+  });
+  if (!districtResults.length) {
+    errors.push("district search failed");
+  }
+
+  const legacyFiveResults = searchDisasterSocialIndex(indexPayload, { municipality: "八代市" });
+  checks.push({
+    check: "municipality data preserved",
+    pass: legacyFiveResults.length > 0,
+    count: legacyFiveResults.length
+  });
+  if (!legacyFiveResults.length) {
+    errors.push("municipality data must be preserved");
+  }
+
+  const extensibleItem = normalizeInboxItem(
+    {
+      source: "SOC-LOCAL-003",
+      category: "OTHER",
+      prefecture: "熊本県",
+      municipality: "新規受付町",
+      district: "テスト",
+      date: "2026-08-01",
+      title: "新規地域受付テスト",
+      content: "マスタ未登録地域の受付確認",
+      url: "https://example.local/full-region-test"
+    },
+    0
+  );
+  const extensibleErrors = validateInboxItem(extensibleItem, 0);
+  checks.push({
+    check: "extensible municipality intake",
+    pass: extensibleErrors.length === 0 && extensibleItem.status === "ACTIVE",
+    municipality: extensibleItem.municipality
+  });
+  if (extensibleErrors.length) {
+    errors.push("unknown municipalities must remain accepted");
+  }
+
+  const regionResultsLegacy = searchDisasterSocialIndex(indexPayload, { region: "熊本市" });
+  checks.push({ check: "region search", pass: regionResultsLegacy.length > 0, count: regionResultsLegacy.length });
+  if (!regionResultsLegacy.length) {
     errors.push("region search failed");
   }
 
@@ -244,16 +317,6 @@ function main() {
   });
   if (!structuredResults.length) {
     errors.push("structured search failed for 熊本県 阿蘇市 2026-08-01 WATER");
-  }
-
-  const legacyFiveResults = searchDisasterSocialIndex(indexPayload, { municipality: "八代市" });
-  checks.push({
-    check: "legacy municipality data preserved",
-    pass: legacyFiveResults.length > 0,
-    count: legacyFiveResults.length
-  });
-  if (!legacyFiveResults.length) {
-    errors.push("legacy municipality data must be preserved");
   }
 
   const expandedCategories = ["BATH", "SHOWER", "FREE_SPACE", "PET_SUPPORT", "WIFI"];

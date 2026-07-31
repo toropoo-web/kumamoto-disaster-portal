@@ -238,6 +238,49 @@
     TRANSPORT: [],
     MEDICAL: []
   };
+  var SOCIAL_REGION_GROUPS = [
+    {
+      label: "阿蘇地域",
+      municipalities: ["阿蘇市", "南阿蘇村", "西原村", "小国町", "南小国町", "産山村", "高森町"]
+    },
+    {
+      label: "人吉地域",
+      municipalities: ["人吉市", "錦町", "多良木町", "湯前町", "水上村", "相良村", "五木村", "山江村", "球磨村", "あさぎり町"]
+    },
+    {
+      label: "芦北地域",
+      municipalities: ["芦北町", "津奈木町"]
+    },
+    {
+      label: "水俣地域",
+      municipalities: ["水俣市"]
+    },
+    {
+      label: "天草地域",
+      municipalities: ["天草市", "上天草市", "苓北町"]
+    }
+  ];
+
+  function matchesSocialRegionGroup(entry, token) {
+    var normalizedToken = String(token || "").trim();
+    if (!normalizedToken) {
+      return false;
+    }
+    for (var i = 0; i < SOCIAL_REGION_GROUPS.length; i += 1) {
+      var group = SOCIAL_REGION_GROUPS[i];
+      if (
+        group.label.indexOf(normalizedToken) === -1 &&
+        normalizedToken.indexOf(group.label) === -1
+      ) {
+        continue;
+      }
+      if ((group.municipalities || []).indexOf(entry.municipality) !== -1) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   var SUPPORT_SERVICE_DETAIL_LABELS = {
     BATH: "風呂",
     SHOWER: "シャワー",
@@ -1588,7 +1631,7 @@
           [entry.prefecture, entry.municipality, entry.district].filter(Boolean).join(" ")
         );
         locationOk = locationOk && tokens.every(function (token) {
-          return hay.indexOf(token) !== -1;
+          return hay.indexOf(token) !== -1 || matchesSocialRegionGroup(entry, token);
         });
       }
 
@@ -2175,7 +2218,7 @@
     regionInput.id = "disaster-social-search-region";
     regionInput.type = "search";
     regionInput.name = "region";
-    regionInput.placeholder = "例：熊本県 阿蘇市 黒川 / 八代市 / 宇城市";
+    regionInput.placeholder = "例：熊本県 / 阿蘇市 黒川 / 阿蘇地域 / 宇城市";
     regionInput.autocomplete = "off";
 
     var dateLabel = createElement("label", "disaster-search__label", "日付");
@@ -2239,7 +2282,7 @@
     resultsContainer.appendChild(createElement(
       "p",
       "disaster-search__hint",
-      "地域・日付・カテゴリのいずれかを指定して検索してください。"
+      "地域・日付・カテゴリのいずれかを指定して検索してください。熊本県のみ指定すると県内すべての情報を表示します。"
     ));
     section.appendChild(inner);
     container.appendChild(section);

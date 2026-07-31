@@ -71,6 +71,34 @@ function main() {
     pass: fs.existsSync(PUBLIC_INDEX_FILE) && fs.existsSync(PUBLIC_SOURCES_FILE)
   });
 
+  const prefectureResults = searchDisasterSocialIndex(payload.index, {
+    region: "熊本県"
+  });
+  const kumamotoEntryCount = payload.index.entries.filter(function (entry) {
+    return entry.prefecture === "熊本県";
+  }).length;
+  checks.push({
+    check: "prefecture wide search",
+    pass: prefectureResults.length === kumamotoEntryCount && kumamotoEntryCount > 0,
+    count: prefectureResults.length,
+    kumamoto_entry_count: kumamotoEntryCount
+  });
+  if (prefectureResults.length !== kumamotoEntryCount) {
+    errors.push("prefecture search 熊本県 must return all Kumamoto entries");
+  }
+
+  const municipalityResults = searchDisasterSocialIndex(payload.index, {
+    region: "玉名市"
+  });
+  checks.push({
+    check: "municipality search",
+    pass: municipalityResults.length > 0,
+    count: municipalityResults.length
+  });
+  if (!municipalityResults.length) {
+    errors.push("municipality search must return results for 玉名市");
+  }
+
   const regionResults = searchDisasterSocialIndex(payload.index, {
     region: "八代"
   });
@@ -137,7 +165,7 @@ function main() {
     municipality: "熊本市"
   });
   checks.push({
-    check: "legacy municipality data preserved",
+    check: "municipality structured search",
     pass: legacyResults.length > 0,
     count: legacyResults.length
   });
@@ -290,6 +318,18 @@ function main() {
   });
   if (!regionHierarchyResults.length) {
     errors.push("region hierarchy search must return results");
+  }
+
+  const regionGroupResults = searchDisasterSocialIndex(payload.index, {
+    region: "阿蘇地域"
+  });
+  checks.push({
+    check: "region group search",
+    pass: regionGroupResults.length > 0,
+    count: regionGroupResults.length
+  });
+  if (!regionGroupResults.length) {
+    errors.push("region group search must return results for 阿蘇地域");
   }
 
   const emptyFilterResults = searchDisasterSocialIndex(payload.index, {});

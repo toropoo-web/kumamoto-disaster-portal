@@ -6,7 +6,7 @@ const path = require("path");
 const { REGION_KYUSHU_SOUTH, PREFECTURES } = require("./disaster-sources");
 const {
   loadMunicipalityMaster,
-  isKumamotoMunicipality,
+  matchesRegionGroupToken,
   validateMunicipalityMaster
 } = require("./disaster-social-municipality-master");
 
@@ -199,7 +199,10 @@ function matchesRegion(entry, regionQuery) {
   }
   const hay = buildRegionHaystack(entry);
   return tokens.every(function (token) {
-    return hay.indexOf(token) !== -1;
+    if (hay.indexOf(token) !== -1) {
+      return true;
+    }
+    return matchesRegionGroupToken(entry, token);
   });
 }
 
@@ -409,13 +412,11 @@ function validateSocialIndexEntry(entry, index) {
     errors.push(label + ": prefecture out of coverage");
   }
 
-  if (
-    entry.prefecture === "熊本県" &&
-    entry.municipality &&
-    !isKumamotoMunicipality(entry.municipality)
-  ) {
-    errors.push(label + ": municipality not in Kumamoto master: " + entry.municipality);
-  }
+  ["prefecture", "municipality", "district"].forEach(function (field) {
+    if (entry[field] === undefined || entry[field] === null) {
+      errors.push(label + ": missing " + field);
+    }
+  });
 
   if (entry.date && !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)) {
     errors.push(label + ": invalid date format");
@@ -522,6 +523,7 @@ module.exports = {
   validateDisasterSocialSources,
   buildAndWriteDisasterSocialIndex,
   loadMunicipalityMaster,
-  isKumamotoMunicipality,
+  isKumamotoMunicipality: require("./disaster-social-municipality-master").isKumamotoMunicipality,
+  matchesRegionGroupToken,
   validateMunicipalityMaster
 };
