@@ -202,11 +202,11 @@
   ];
   var SOCIAL_CATEGORY_KEYWORDS = {
     WATER: ["井戸水", "給水", "飲み水", "生活用水", "飲料水", "水道"],
-    FOOD: ["炊き出し", "食事提供", "食料配布"],
-    SUPPLIES: ["支援物資", "物資配布", "生活用品", "衛生用品"],
+    FOOD: ["炊き出し", "食事提供", "食料配布", "パン配布", "食料", "食事", "配食", "弁当", "給食"],
+    SUPPLIES: ["支援物資", "物資配布", "生活用品", "衛生用品", "物資", "支援物資など"],
     TOILET: [],
     CHARGING: [],
-    VOLUNTEER: [],
+    VOLUNTEER: ["ボランティア", "ボランティア募集", "人手不足", "人手募集"],
     BATH: ["風呂", "銭湯", "入浴", "無料開放"],
     SHOWER: ["シャワー", "温水", "入浴設備"],
     FREE_SPACE: ["無料開放", "スペース", "フリースペース", "休憩場所", "開放場所"],
@@ -1539,6 +1539,9 @@
   function resolveSocialSourceTypeLabel(item, sourceMeta) {
     item = item || {};
     sourceMeta = sourceMeta || {};
+    if (isInstagramCommunityEntry(item)) {
+      return "不明";
+    }
     var raw = String(item.source_type || sourceMeta.source_type || "").trim();
     if (raw && SOCIAL_SOURCE_TYPE_LABELS[raw]) {
       return SOCIAL_SOURCE_TYPE_LABELS[raw];
@@ -1764,21 +1767,29 @@
     );
   }
 
-  function matchesSocialCategory(entry, categoryQuery) {
+  function matchesSocialCategory(entry, categoryQuery, rawQuery) {
     if (!categoryQuery) {
       return true;
     }
     if (entry.category === categoryQuery) {
       return true;
     }
+    var hay = buildSocialEntrySearchHaystack(entry);
+    if (rawQuery && hay.indexOf(normalizeSearchText(rawQuery)) !== -1) {
+      return true;
+    }
     var keywords = SOCIAL_CATEGORY_KEYWORDS[categoryQuery] || [];
     if (!keywords.length) {
       return false;
     }
-    var hay = buildSocialEntrySearchHaystack(entry);
     return keywords.some(function (keyword) {
       return hay.indexOf(normalizeSearchText(keyword)) !== -1;
     });
+  }
+
+  function isInstagramCommunityEntry(entry) {
+    entry = entry || {};
+    return String(entry.source_type || "").trim() === "Instagram";
   }
 
   function searchDisasterSocialIndex(indexPayload, options) {
@@ -1796,6 +1807,9 @@
     }
 
     return entries.filter(function (entry) {
+      if (isInstagramCommunityEntry(entry)) {
+        return false;
+      }
       var locationOk = true;
       if (hasStructured) {
         if (options.prefecture) {
@@ -1835,7 +1849,7 @@
         return false;
       }
 
-      return matchesSocialCategory(entry, resolvedCategory);
+      return matchesSocialCategory(entry, resolvedCategory, categoryResolution.query);
     }).map(function (entry) {
       return {
         entry: entry,

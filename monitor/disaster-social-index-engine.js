@@ -19,6 +19,11 @@ const {
   enrichSocialIndexPayload,
   normalizeSocialSourcesPayload
 } = require("./disaster-social-source-display");
+const {
+  filterPublicCommunityEntries,
+  filterPublicCommunitySources,
+  isInstagramCommunityEntry
+} = require("./disaster-social-public-filter");
 
 const ROOT = path.join(__dirname, "..");
 const SOURCES_FILE = path.join(ROOT, "data", "community", "disaster_social_sources.json");
@@ -84,11 +89,11 @@ const SOCIAL_CATEGORY_LABELS = {
 
 const SOCIAL_CATEGORY_KEYWORDS = {
   WATER: ["井戸水", "給水", "飲み水", "生活用水", "飲料水", "水道"],
-  FOOD: ["炊き出し", "食事提供", "食料配布"],
-  SUPPLIES: ["支援物資", "物資配布", "生活用品", "衛生用品"],
+  FOOD: ["炊き出し", "食事提供", "食料配布", "パン配布", "食料", "食事", "配食", "弁当", "給食"],
+  SUPPLIES: ["支援物資", "物資配布", "生活用品", "衛生用品", "物資", "支援物資など"],
   TOILET: [],
   CHARGING: [],
-  VOLUNTEER: [],
+  VOLUNTEER: ["ボランティア", "ボランティア募集", "人手不足", "人手募集"],
   BATH: ["風呂", "銭湯", "入浴", "無料開放"],
   SHOWER: ["シャワー", "温水", "入浴設備"],
   FREE_SPACE: ["無料開放", "スペース", "フリースペース", "休憩場所", "開放場所"],
@@ -232,18 +237,21 @@ function buildEntrySearchHaystack(entry) {
   );
 }
 
-function matchesCategory(entry, categoryQuery) {
+function matchesCategory(entry, categoryQuery, rawQuery) {
   if (!categoryQuery) {
     return true;
   }
   if (entry.category === categoryQuery) {
     return true;
   }
+  const hay = buildEntrySearchHaystack(entry);
+  if (rawQuery && hay.indexOf(normalizeSearchText(rawQuery)) !== -1) {
+    return true;
+  }
   const keywords = SOCIAL_CATEGORY_KEYWORDS[categoryQuery] || [];
   if (!keywords.length) {
     return false;
   }
-  const hay = buildEntrySearchHaystack(entry);
   return keywords.some(function (keyword) {
     return hay.indexOf(normalizeSearchText(keyword)) !== -1;
   });
@@ -345,6 +353,9 @@ function searchDisasterSocialIndex(indexPayload, options) {
 
   return entries
     .filter(function (entry) {
+      if (isInstagramCommunityEntry(entry)) {
+        return false;
+      }
       const locationOk = hasStructured
         ? matchesStructuredLocation(entry, options) &&
           (hasRegion ? matchesRegion(entry, options.region) : true)
@@ -353,7 +364,7 @@ function searchDisasterSocialIndex(indexPayload, options) {
       return (
         locationOk &&
         matchesDate(entry, options.date) &&
-        matchesCategory(entry, resolvedCategory)
+        matchesCategory(entry, resolvedCategory, categoryResolution.query)
       );
     })
     .map(function (entry) {
@@ -500,14 +511,16 @@ function validateDisasterSocialSources(payload) {
 
 function buildAndWriteDisasterSocialIndex(options) {
   options = options || {};
-  const sources = normalizeSocialSourcesPayload(
-    readJson(options.sourcesPath || SOURCES_FILE, {
-      version: "1.0",
-      region: REGION_KYUSHU_SOUTH,
-      sources: []
-    })
+  const sources = filterPublicCommunitySources(
+    normalizeSocialSourcesPayload(
+      readJson(options.sourcesPath || SOURCES_FILE, {
+        version: "1.0",
+        region: REGION_KYUSHU_SOUTH,
+        sources: []
+      })
+    )
   );
-  const index = enrichSocialIndexPayload(
+  const indexPayload = enrichSocialIndexPayload(
     readJson(options.indexPath || INDEX_FILE, {
       version: "1.0",
       region: REGION_KYUSHU_SOUTH,
@@ -515,6 +528,9 @@ function buildAndWriteDisasterSocialIndex(options) {
     }),
     sources
   );
+  const index = Object.assign({}, indexPayload, {
+    entries: filterPublicCommunityEntries(indexPayload.entries, sources)
+  });
 
   writeJson(options.publicSourcesPath || PUBLIC_SOURCES_FILE, sources);
   writeJson(options.publicIndexPath || PUBLIC_INDEX_FILE, index);

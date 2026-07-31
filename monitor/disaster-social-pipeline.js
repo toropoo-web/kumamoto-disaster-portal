@@ -197,6 +197,12 @@ function normalizeInboxItem(item, index) {
   if (item.post_url) {
     normalized.post_url = normalizeText(item.post_url);
   }
+  if (item.published_at) {
+    normalized.published_at = normalizeText(item.published_at);
+  }
+  if (item.source_account) {
+    normalized.source_account = normalizeText(item.source_account);
+  }
   if (item.sns_fetch && typeof item.sns_fetch === "object") {
     normalized.sns_fetch = Object.assign({}, item.sns_fetch);
   }
@@ -225,6 +231,14 @@ function inboxItemToIndexEntry(inboxItem, index) {
   }
   if (inboxItem.captured_at) {
     entry.captured_at = inboxItem.captured_at;
+  }
+  if (inboxItem.published_at) {
+    entry.published_at = inboxItem.published_at;
+  }
+  if (inboxItem.source_account) {
+    entry.source_account = inboxItem.source_account;
+  } else if (inboxItem.sns_fetch && inboxItem.sns_fetch.source_account) {
+    entry.source_account = inboxItem.sns_fetch.source_account;
   }
   if (inboxItem.post_url) {
     entry.post_url = inboxItem.post_url;

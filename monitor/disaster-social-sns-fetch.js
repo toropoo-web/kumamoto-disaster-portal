@@ -161,12 +161,16 @@ function xPostToInboxItem(post, index, scopeMunicipalities) {
   }
   const text = getPostText(post);
   const url = resolveSnsPostUrlFromFeedPost(post, "X");
+  const publishedAt = post.postedAt || post.post_time || post.published_at || "";
+  const sourceAccount = post.accountHandle || post.account || post.username || "";
   const item = normalizeInboxItem(
     {
       inbox_id: sanitizeInboxId("SNS-X", post.postId || post.id || index + 1),
       import_format: "SNS",
       source_type: "X",
-      captured_at: post.fetchedAt || post.postedAt || new Date().toISOString(),
+      captured_at: post.fetchedAt || publishedAt || new Date().toISOString(),
+      published_at: publishedAt,
+      source_account: sourceAccount,
       source: resolveXSourceId(post),
       category: resolveCommunityCategory(post),
       prefecture: resolveMunicipalityPrefecture(municipality),
@@ -182,6 +186,7 @@ function xPostToInboxItem(post, index, scopeMunicipalities) {
         platform: "X",
         source_post_id: post.postId || post.id || "",
         source_id: post.sourceId || "",
+        source_account: sourceAccount,
         post_url: url,
         fetched_at: new Date().toISOString()
       }

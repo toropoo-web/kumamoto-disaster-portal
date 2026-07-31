@@ -17,6 +17,7 @@
     "validate:x-feed": "node scripts/validate-x-feed-preview.js",
     "validate:x-feed-fail-open": "node scripts/validate-x-feed-fail-open.js",
     "validate:x-feed-sync-workflow": "node scripts/validate-x-feed-sync-workflow.js",
+    "validate:disaster-social-support-search-migration": "node scripts/validate-disaster-social-support-search-migration.js",
     "validate:x-municipality-fetch-relax": "node scripts/validate-x-municipality-fetch-relax.js",
     "check:x-feed-operation": "node scripts/run-x-feed-operation-check.js",
     "validate:x-feed-operation-check": "node scripts/validate-x-feed-operation-check.js",
