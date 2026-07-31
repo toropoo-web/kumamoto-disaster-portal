@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>内部運用カウンター（非公開）</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../css/internal-operation-counter.css">
+</head>
+<body>
+  <main id="internal-operation-counter-page" class="page internal-operation-counter" aria-label="内部運用カウンター（非公開）">
+    <div class="container">
+      <header class="page-header internal-operation-counter__header">
+        <p class="page-header__eyebrow">運用管理（非公開）</p>
+        <h1 class="page-header__title">Portal 内部運用カウンター</h1>
+        <p class="page-header__lead">
+          公開ポータルの情報面数・カテゴリ件数・Patrol 状態を表示します。利用者追跡・Cookie・外部 Analytics は使用しません。
+        </p>
+      </header>
+
+      <section class="internal-operation-counter__summary" aria-label="サマリー">
+        <div id="counter-summary" class="internal-operation-counter__summary-grid"></div>
+      </section>
+
+      <section class="internal-operation-counter__panel" aria-label="カテゴリ利用件数">
+        <h2 class="internal-operation-counter__section-title">カテゴリ利用件数</h2>
+        <div id="category-usage" class="internal-operation-counter__table-wrap"></div>
+      </section>
+
+      <section class="internal-operation-counter__panel" aria-label="Patrol 状態サマリー">
+        <h2 class="internal-operation-counter__section-title">Patrol 状態サマリー</h2>
+        <div id="patrol-summary" class="internal-operation-counter__detail-panel"></div>
+      </section>
+
+      <section class="internal-operation-counter__panel" aria-label="更新操作">
+        <h2 class="internal-operation-counter__section-title">更新操作</h2>
+        <div class="internal-operation-counter__operations-panel">
+          <p class="internal-operation-counter__note">カウンター更新は CLI で実行してください（公開 UI には影響しません）。</p>
+          <pre id="counter-operation-command" class="internal-operation-counter__command">npm run counter:internal-operation</pre>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="../js/internal-operation-counter.js"></script>
+</body>
+</html>

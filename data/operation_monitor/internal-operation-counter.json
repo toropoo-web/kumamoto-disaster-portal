@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "view_type": "INTERNAL_OPERATION_COUNTER",
+  "generated_at": "2026-07-31T12:56:42.902Z",
+  "constraints": {
+    "no_personal_data": true,
+    "no_cookies": true,
+    "no_external_analytics": true,
+    "public_ui_unchanged": true
+  },
+  "page_view_count": 37,
+  "page_view_basis": {
+    "municipality_surfaces": 23,
+    "feature_surfaces": 14,
+    "note": "公開ポータルの情報面数（利用者追跡ではなく構成上の面数）"
+  },
+  "operator_report_count": 1,
+  "category_usage_count": {
+    "WATER": 43,
+    "VOLUNTEER": 20,
+    "SUPPORT_SERVICE": 9,
+    "SHELTER": 9,
+    "WATER_SEARCH_INDEX": 43,
+    "PUBLIC_EMERGENCY": 17,
+    "PUBLIC_SUPPORT": 1,
+    "PUBLIC_SHELTER": 5,
+    "PUBLIC_WATER": 6
+  },
+  "last_access_time": "2026-07-31T08:35:27.072Z",
+  "patrol_status_summary": {
+    "system_status": "HEALTHY",
+    "source_count": 147,
+    "sources_checked": 147,
+    "changes_detected": 0,
+    "last_patrol_at": "2026-07-31T08:34:31.288Z",
+    "last_success_at": "2026-07-31T08:34:31.288Z",
+    "last_validation_at": "2026-07-31T08:35:27.072Z"
+  },
+  "counter_state": {
+    "last_report_generated_at": "2026-07-31T12:56:42.830Z"
+  },
+  "source_files": {
+    "status_json": "data/public/status.json",
+    "disaster_search_index_json": "data/public/disaster_search_index.json",
+    "water_search_index_json": "data/public/water_search_index.json",
+    "phase1_areas_json": "data/public/phase1_areas.json",
+    "phase1_updates_json": "data/public/phase1_updates.json"
+  }
+}

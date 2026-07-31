@@ -1,0 +1,110 @@
+.internal-operation-counter__header {
+  margin-bottom: 16px;
+}
+
+.internal-operation-counter__summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.internal-operation-counter__summary-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  padding: 12px 14px;
+}
+
+.internal-operation-counter__summary-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.internal-operation-counter__summary-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.internal-operation-counter__section-title {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.internal-operation-counter__panel {
+  margin-bottom: 18px;
+}
+
+.internal-operation-counter__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.internal-operation-counter__table th,
+.internal-operation-counter__table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.internal-operation-counter__table th {
+  background: #f7f8fa;
+}
+
+.internal-operation-counter__meta {
+  display: grid;
+  grid-template-columns: 12em 1fr;
+  gap: 8px 12px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.internal-operation-counter__meta dt {
+  margin: 0;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.internal-operation-counter__meta dd {
+  margin: 0;
+}
+
+.internal-operation-counter__operations-panel {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.internal-operation-counter__note {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.internal-operation-counter__command {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+.internal-operation-counter__empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .internal-operation-counter__meta {
+    grid-template-columns: 1fr;
+  }
+}

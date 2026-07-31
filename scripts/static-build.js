@@ -26,7 +26,11 @@ const STATIC_FILES = [
   "data/public/support_information.json",
   "data/public/emergency_sources.json",
   "data/public/infrastructure_sources.json",
-  "data/public/infrastructure_status.json"
+  "data/public/infrastructure_status.json",
+  "admin/internal-operation/index.html",
+  "admin/css/internal-operation-counter.css",
+  "admin/js/internal-operation-counter.js",
+  "data/operation_monitor/internal-operation-counter.json"
 ];
 
 function main() {
