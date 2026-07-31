@@ -21,6 +21,10 @@ const {
   buildAndWriteDisasterSearchIndex,
   searchDisasterIndex
 } = require(path.join(__dirname, "..", "monitor", "disaster-search-index-engine"));
+const {
+  buildAndWriteDisasterSocialIndex,
+  searchDisasterSocialIndex
+} = require(path.join(__dirname, "..", "monitor", "disaster-social-index-engine"));
 
 const FIXTURE_POSTS_FILE = path.join(
   ROOT,
@@ -132,12 +136,12 @@ async function main() {
     return entry.category === "OFFICIAL_POST";
   }).length;
   checks.push({
-    check: "official posts merged into disaster search index",
-    pass: officialPostCount > 0,
+    check: "official posts removed from disaster search index",
+    pass: officialPostCount === 0,
     official_post_item_count: officialPostCount
   });
-  if (officialPostCount <= 0) {
-    errors.push("disaster search index must include OFFICIAL_POST entries");
+  if (officialPostCount > 0) {
+    errors.push("disaster search index must not include OFFICIAL_POST entries");
   }
 
   const waterResults = searchDisasterIndex(searchPayload, "給水", { category: "WATER" });
@@ -150,14 +154,18 @@ async function main() {
     errors.push("water search must continue to return results");
   }
 
-  const postResults = searchDisasterIndex(searchPayload, "給水", { category: "OFFICIAL_POST" });
+  buildAndWriteDisasterSocialIndex();
+  const socialResults = searchDisasterSocialIndex(
+    JSON.parse(fs.readFileSync(path.join(ROOT, "data", "public", "disaster_social_index.json"), "utf8")),
+    { categoryQuery: "給水" }
+  );
   checks.push({
-    check: "official post search by keyword",
-    pass: postResults.length > 0,
-    official_post_result_count: postResults.length
+    check: "x cross search by keyword",
+    pass: socialResults.length > 0,
+    x_cross_result_count: socialResults.length
   });
-  if (!postResults.length) {
-    errors.push("official post search must return results for 給水");
+  if (!socialResults.length) {
+    errors.push("x cross search must return results for 給水");
   }
 
   const preview = JSON.parse(

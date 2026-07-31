@@ -112,17 +112,11 @@ function isOnOrAfterSnsFetchSinceDate(dateValue) {
 
 function evaluateSnsFetchScope(item, scopePayload) {
   const reasons = [];
-  const municipality = String((item && item.municipality) || "").trim();
   const sourceType = String((item && item.source_type) || "").trim();
   const dateValue = (item && item.date) || (item && item.captured_at) || "";
 
   if (!isSnsFetchPlatform(sourceType)) {
     reasons.push("sns_platform_not_allowed:" + (sourceType || "UNKNOWN"));
-  }
-  if (!municipality) {
-    reasons.push("municipality_missing");
-  } else if (!isInCommunityScope(municipality, scopePayload)) {
-    reasons.push("municipality_out_of_scope:" + municipality);
   }
   if (!isOnOrAfterSnsFetchSinceDate(dateValue)) {
     reasons.push("date_before_sns_fetch_since:" + SNS_FETCH_SINCE_DATE);

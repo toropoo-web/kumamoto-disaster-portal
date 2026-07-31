@@ -24,6 +24,13 @@ const {
   filterPublicCommunitySources,
   isInstagramCommunityEntry
 } = require("./disaster-social-public-filter");
+const {
+  buildEntryContentHaystack,
+  matchesMunicipalityRegionToken,
+  matchesSocialSearchQuery,
+  describeSocialSearchMatch,
+  findMatchedCategoryKeyword
+} = require("./disaster-social-search-match");
 
 const ROOT = path.join(__dirname, "..");
 const SOURCES_FILE = path.join(ROOT, "data", "community", "disaster_social_sources.json");
@@ -88,16 +95,16 @@ const SOCIAL_CATEGORY_LABELS = {
 };
 
 const SOCIAL_CATEGORY_KEYWORDS = {
-  WATER: ["井戸水", "給水", "飲み水", "生活用水", "飲料水", "水道"],
+  WATER: ["井戸水", "給水", "飲み水", "生活用水", "飲料水", "水道", "水"],
   FOOD: ["炊き出し", "食事提供", "食料配布", "パン配布", "食料", "食事", "配食", "弁当", "給食"],
   SUPPLIES: ["支援物資", "物資配布", "生活用品", "衛生用品", "物資", "支援物資など"],
   TOILET: [],
-  CHARGING: [],
+  CHARGING: ["電気", "氷", "冷却", "充電"],
   VOLUNTEER: ["ボランティア", "ボランティア募集", "人手不足", "人手募集"],
   BATH: ["風呂", "銭湯", "入浴", "無料開放"],
   SHOWER: ["シャワー", "温水", "入浴設備"],
-  FREE_SPACE: ["無料開放", "スペース", "フリースペース", "休憩場所", "開放場所"],
-  SHELTER: ["宿泊", "寝泊まり", "一時利用", "避難場所"],
+  FREE_SPACE: ["無料開放", "無料", "スペース", "フリースペース", "休憩場所", "開放場所"],
+  SHELTER: ["宿泊", "寝泊まり", "一時利用", "避難場所", "車中泊"],
   PET_SUPPORT: [
     "ペット",
     "犬",
@@ -114,7 +121,8 @@ const SOCIAL_CATEGORY_KEYWORDS = {
     "保護犬",
     "飼い主捜索",
     "ペット保護",
-    "ペット用品"
+    "ペット用品",
+    "ペット支援"
   ],
   WIFI: ["wi-fi", "wifi", "ネット", "通信"],
   OTHER: [],
@@ -178,6 +186,20 @@ function normalizeDateToken(value) {
 }
 
 function buildRegionHaystack(entry) {
+  const keywordText = Array.isArray(entry.keywords) ? entry.keywords.join(" ") : "";
+  return normalizeSearchText(
+    [
+      buildCommunityRegionHaystack(entry),
+      entry.title,
+      entry.content,
+      keywordText
+    ]
+      .filter(Boolean)
+      .join(" ")
+  );
+}
+
+function buildRegionMetaHaystack(entry) {
   return normalizeSearchText(buildCommunityRegionHaystack(entry));
 }
 
@@ -191,7 +213,9 @@ function matchesStructuredLocation(entry, options) {
   }
   if (options.municipality) {
     const token = normalizeSearchText(options.municipality);
-    if (normalizeSearchText(entry.municipality).indexOf(token) === -1) {
+    const contentHay = buildEntryContentHaystack(entry);
+    const metaHay = buildRegionMetaHaystack(entry);
+    if (!matchesMunicipalityRegionToken(contentHay, metaHay, token)) {
       return false;
     }
   }
@@ -210,9 +234,10 @@ function matchesRegion(entry, regionQuery) {
   if (!tokens.length) {
     return true;
   }
-  const hay = buildRegionHaystack(entry);
+  const contentHay = buildEntryContentHaystack(entry);
+  const metaHay = buildRegionMetaHaystack(entry);
   return tokens.every(function (token) {
-    if (hay.indexOf(token) !== -1) {
+    if (matchesMunicipalityRegionToken(contentHay, metaHay, token)) {
       return true;
     }
     if (matchesRegionGroupToken(entry, token)) {
@@ -238,23 +263,7 @@ function buildEntrySearchHaystack(entry) {
 }
 
 function matchesCategory(entry, categoryQuery, rawQuery) {
-  if (!categoryQuery) {
-    return true;
-  }
-  if (entry.category === categoryQuery) {
-    return true;
-  }
-  const hay = buildEntrySearchHaystack(entry);
-  if (rawQuery && hay.indexOf(normalizeSearchText(rawQuery)) !== -1) {
-    return true;
-  }
-  const keywords = SOCIAL_CATEGORY_KEYWORDS[categoryQuery] || [];
-  if (!keywords.length) {
-    return false;
-  }
-  return keywords.some(function (keyword) {
-    return hay.indexOf(normalizeSearchText(keyword)) !== -1;
-  });
+  return matchesSocialSearchQuery(entry, categoryQuery, rawQuery, SOCIAL_CATEGORY_KEYWORDS);
 }
 
 function resolveCategoryFromKeyword(text) {
@@ -305,35 +314,23 @@ function resolveSocialCategoryInput(text) {
   };
 }
 
-function findCategoryMatchKeyword(entry, categoryId) {
-  if (!categoryId) {
-    return "";
-  }
-  const hay = buildEntrySearchHaystack(entry);
-  const keywords = SOCIAL_CATEGORY_KEYWORDS[categoryId] || [];
-  let matched = "";
-  keywords.forEach(function (keyword) {
-    if (!matched && hay.indexOf(normalizeSearchText(keyword)) !== -1) {
-      matched = keyword;
-    }
-  });
-  return matched;
+function findCategoryMatchKeyword(entry, categoryId, rawQuery) {
+  return findMatchedCategoryKeyword(
+    buildEntryContentHaystack(entry),
+    categoryId,
+    rawQuery || "",
+    SOCIAL_CATEGORY_KEYWORDS
+  );
 }
 
 function describeSocialCategoryMatch(entry, resolvedCategory, userQuery) {
-  const categoryLabel = SOCIAL_CATEGORY_LABELS[resolvedCategory] || resolvedCategory || "その他";
-  let matchedKeyword = "";
-  if (userQuery) {
-    matchedKeyword = userQuery;
-  } else if (entry.category === resolvedCategory) {
-    matchedKeyword = categoryLabel;
-  } else {
-    matchedKeyword = findCategoryMatchKeyword(entry, resolvedCategory) || categoryLabel;
-  }
-  return {
-    categoryLabel: categoryLabel,
-    matchedKeyword: matchedKeyword
-  };
+  return describeSocialSearchMatch(
+    entry,
+    resolvedCategory,
+    userQuery,
+    SOCIAL_CATEGORY_LABELS,
+    SOCIAL_CATEGORY_KEYWORDS
+  );
 }
 
 function searchDisasterSocialIndex(indexPayload, options) {

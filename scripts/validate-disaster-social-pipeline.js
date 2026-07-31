@@ -205,20 +205,19 @@ function main() {
     reviewQueuePath: reviewPath
   });
 
-  const scopeRejected = reviewQueue.items.find(function (item) {
+  const scopeAccepted = reviewQueue.items.find(function (item) {
     return item.inbox_id === "SCOPE-SNS-TEST-001";
   });
   checks.push({
-    check: "sns out-of-scope rejected",
+    check: "sns without municipality not scope-rejected",
     pass:
-      scopeRejected &&
-      scopeRejected.review_status === "REJECTED" &&
-      scopeRejected.scope_rejection &&
-      scopeRejected.scope_rejection.reasons.length > 0,
-    review_status: scopeRejected && scopeRejected.review_status
+      scopeAccepted &&
+      scopeAccepted.review_status !== "REJECTED" &&
+      !scopeAccepted.scope_rejection,
+    review_status: scopeAccepted && scopeAccepted.review_status
   });
-  if (!scopeRejected || scopeRejected.review_status !== "REJECTED") {
-    errors.push("sns item outside evacuation alert scope must be rejected");
+  if (!scopeAccepted || scopeAccepted.review_status === "REJECTED") {
+    errors.push("sns item without municipality must not be scope-rejected at acquisition");
   }
 
   reviewQueue.items.forEach(function (item) {

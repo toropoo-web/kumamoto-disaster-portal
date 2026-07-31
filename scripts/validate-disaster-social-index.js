@@ -406,17 +406,17 @@ function main() {
 
   const appJs = fs.readFileSync(path.join(ROOT, "js", "app.js"), "utf8");
   checks.push({
-    check: "community search UI",
+    check: "x cross search UI",
     pass:
-      appJs.indexOf("現地支援情報を探す") !== -1 &&
+      appJs.indexOf("X横断検索") !== -1 &&
       appJs.indexOf("カテゴリ・キーワード") !== -1 &&
       appJs.indexOf("ペット・迷子情報") !== -1
   });
   if (
-    appJs.indexOf("現地支援情報を探す") === -1 ||
+    appJs.indexOf("X横断検索") === -1 ||
     appJs.indexOf("カテゴリ・キーワード") === -1
   ) {
-    errors.push("community search UI keyword input missing");
+    errors.push("x cross search UI keyword input missing");
   }
 
   checks.push({

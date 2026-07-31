@@ -17,7 +17,6 @@
   var DISASTER_SEARCH_ID = "disaster-search";
   var DISASTER_SEARCH_VOLUNTEER_ID = "disaster-search-volunteer";
   var DISASTER_SEARCH_SUPPORT_SERVICE_ID = "disaster-search-support-service";
-  var DISASTER_SEARCH_OFFICIAL_POST_ID = "disaster-search-official-post";
   var DISASTER_SOCIAL_SEARCH_ID = "disaster-social-search";
   var DISASTER_SEARCH_DEFAULT_CATEGORY = "WATER";
 
@@ -57,22 +56,44 @@
         "被災者の方へ。\n\n" +
         "風呂・シャワー・車中泊・食事・支援物資など、\n" +
         "災害時の生活に必要な情報を探します。"
-    },
-    OFFICIAL_POST: {
-      sectionId: "disaster-search-official-post",
-      icon: "📢",
-      title: "災害公式投稿を探す",
-      lead: "自治体・防災機関の公式X投稿を検索",
-      promoDescription:
-        "災害時の公式発信を横断検索します。\n\n" +
-        "給水・避難・暑さ・物資・ボランティア・防犯・復旧など、\n" +
-        "目的語で関連する公式投稿へたどり着けます。"
     }
+  };
+  var X_CROSS_SEARCH_PROMO = {
+    icon: "𝕏",
+    title: "X横断検索",
+    promoDescription:
+      "熊本地震関連のX投稿を横断検索します。\n\n" +
+      "自治体・企業・団体・個人など、投稿者を問わず\n" +
+      "2026年7月28日以降・対象23自治体の投稿を検索できます。"
+  };
+  var OFFICIAL_INFO_PROMO = {
+    title: "公式情報を探す",
+    lead:
+      "行政・公式機関が公開している情報を検索します。",
+    scopeSummary:
+      "水・避難所・シェルター・災害ボランティア・自治体支援情報など"
+  };
+  var DISASTER_SOCIAL_LATEST_COUNT = 6;
+  var DISASTER_SOCIAL_CONTENT_EXCERPT_LENGTH = 120;
+  var X_CROSS_SEARCH_HELP = {
+    instruction: "探したい内容を入力してください",
+    examples: [
+      "炊き出し",
+      "迷子",
+      "支援物資",
+      "給水",
+      "無料開放",
+      "風呂",
+      "車中泊",
+      "Wi-Fi",
+      "ペット"
+    ]
   };
   var DISASTER_SEARCH_SHARED = {
     scopeLabel: "検索対象：",
     scopeRegions: "熊本県・鹿児島県",
-    scopeInfoTitle: "対象情報："
+    scopeInfoTitle: "対象情報：",
+    officialInfoNote: "行政・公式機関が公開している公式情報を検索します。"
   };
   var DISASTER_SEARCH_GUIDANCE = {
     WATER: {
@@ -81,10 +102,10 @@
       examples: ["宇城 給水", "霧島 断水", "熊本 水道 復旧"],
       placeholder: "例：宇城 給水 / 霧島 断水",
       scopeInfoItems: [
+        "水（給水・断水情報）",
+        "避難所・シェルター",
         "自治体公式情報",
-        "水道局情報",
-        "防災機関情報",
-        "公的支援情報"
+        "水道局・防災機関情報"
       ]
     },
     VOLUNTEER: {
@@ -93,35 +114,22 @@
       examples: ["熊本 ボランティア", "鹿児島 災害VC", "霧島 ボランティア", "宇城 災害VC"],
       placeholder: "例：熊本 ボランティア / 霧島 災害VC",
       scopeInfoItems: [
+        "災害ボランティア募集情報",
         "社会福祉協議会",
         "災害ボランティアセンター",
-        "自治体公式情報",
-        "災害ボランティア募集情報"
+        "自治体公式情報"
       ]
     },
     SUPPORT_SERVICE: {
-      intro: "この検索では、被災者向けの生活支援情報（無料開放・開放・支援提供）を対象にしています。",
+      intro: "この検索では、自治体・施設が公開している被災者向けの公式支援情報を対象にしています。",
       instruction: "地域名やキーワードで検索してください。",
       examples: ["熊本 シャワー", "合志 休憩", "人吉 車中泊", "益城 炊き出し"],
       placeholder: "例：熊本 シャワー / 人吉 車中泊",
       scopeInfoItems: [
-        "自治体公式情報",
+        "自治体支援情報",
+        "避難所・シェルター",
         "施設・団体の開放情報",
-        "入浴・休憩・駐車場",
-        "炊き出し・支援物資"
-      ]
-    },
-    OFFICIAL_POST: {
-      intro: "この検索では、自治体・政府機関・防災機関などの公式X投稿を対象にしています。",
-      instruction: "目的語や地域名で検索してください。",
-      examples: ["給水", "避難", "暑さ", "物資", "ボランティア", "防犯", "復旧"],
-      placeholder: "例：給水 / 避難 / 暑さ / 物資",
-      scopeInfoItems: [
-        "自治体公式X",
-        "政府機関",
-        "防災機関",
-        "警察・消防・自衛隊",
-        "ライフライン・公共交通"
+        "入浴・休憩・駐車場・炊き出し"
       ]
     }
   };
@@ -160,11 +168,9 @@
     GENERAL: "公式発信"
   };
   var EVACUATION_ALERT_SEARCH_SCOPE = {
-    periodLabel: "2026年熊本地震関連（投稿日・情報日ベース）",
-    officialLayerLabel: "公式X投稿（災害公式投稿検索）",
-    communityLayerLabel: "現地支援情報（Community Layer）",
-    officialCategoriesLabel: "給水・避難・暑さ・物資・ボランティア・防犯・復旧など",
-    communityCategoriesLabel: "水・食事・物資・避難・ボランティアなど全カテゴリ"
+    periodLabel: "2026年7月28日以降のX投稿",
+    xCrossSearchLayerLabel: "X横断検索",
+    categoriesLabel: "水・給水・炊き出し・物資・避難・ボランティア・風呂・ペットなど"
   };
   var SOCIAL_CATEGORY_LABELS = {
     WATER: "水",
@@ -201,16 +207,16 @@
     "MEDICAL"
   ];
   var SOCIAL_CATEGORY_KEYWORDS = {
-    WATER: ["井戸水", "給水", "飲み水", "生活用水", "飲料水", "水道"],
+    WATER: ["井戸水", "給水", "飲み水", "生活用水", "飲料水", "水道", "水"],
     FOOD: ["炊き出し", "食事提供", "食料配布", "パン配布", "食料", "食事", "配食", "弁当", "給食"],
     SUPPLIES: ["支援物資", "物資配布", "生活用品", "衛生用品", "物資", "支援物資など"],
     TOILET: [],
-    CHARGING: [],
+    CHARGING: ["電気", "氷", "冷却", "充電"],
     VOLUNTEER: ["ボランティア", "ボランティア募集", "人手不足", "人手募集"],
     BATH: ["風呂", "銭湯", "入浴", "無料開放"],
     SHOWER: ["シャワー", "温水", "入浴設備"],
-    FREE_SPACE: ["無料開放", "スペース", "フリースペース", "休憩場所", "開放場所"],
-    SHELTER: ["宿泊", "寝泊まり", "一時利用", "避難場所"],
+    FREE_SPACE: ["無料開放", "無料", "スペース", "フリースペース", "休憩場所", "開放場所"],
+    SHELTER: ["宿泊", "寝泊まり", "一時利用", "避難場所", "車中泊"],
     PET_SUPPORT: [
       "ペット",
       "犬",
@@ -227,7 +233,8 @@
       "保護犬",
       "飼い主捜索",
       "ペット保護",
-      "ペット用品"
+      "ペット用品",
+      "ペット支援"
     ],
     WIFI: ["wi-fi", "wifi", "ネット", "通信"],
     OTHER: [],
@@ -285,10 +292,11 @@
     if (!normalizedName || !entry) {
       return false;
     }
-    if (normalizeSearchText(entry.municipality).indexOf(normalizedName) !== -1) {
-      return true;
-    }
-    return normalizeSearchText(buildSocialRegionHaystack(entry)).indexOf(normalizedName) !== -1;
+    return matchesMunicipalityRegionToken(
+      buildSocialContentHaystack(entry),
+      buildSocialRegionMetaHaystack(entry),
+      normalizedName
+    );
   }
 
   function buildSocialRegionHaystack(entry) {
@@ -299,6 +307,161 @@
       entry.region_group,
       entry.prefecture_group
     ].filter(Boolean).join(" ");
+  }
+
+  function buildSocialContentHaystack(entry) {
+    return normalizeSearchText([entry.title, entry.content].filter(Boolean).join(" "));
+  }
+
+  function buildSocialRegionMetaHaystack(entry) {
+    return normalizeSearchText(buildSocialRegionHaystack(entry));
+  }
+
+  function expandMunicipalityRegionVariants(token) {
+    var normalized = normalizeSearchText(token);
+    var variants = [normalized];
+    if (/(市|町|村)$/.test(normalized)) {
+      variants.push(normalized.replace(/(市|町|村)$/, ""));
+    }
+    return variants.filter(Boolean);
+  }
+
+  function matchesMunicipalityRegionToken(contentHay, metaHay, token) {
+    var variants = expandMunicipalityRegionVariants(token);
+    return variants.some(function (variant) {
+      return metaHay.indexOf(variant) !== -1 || contentHay.indexOf(variant) !== -1;
+    });
+  }
+
+  function matchesPetQuery(content) {
+    if (/ペットボトル/.test(content)) {
+      return false;
+    }
+    return /迷子(猫|犬)?|迷い(猫|犬)|保護(猫|犬)|ペット(可|避難|支援|用品|保護)?|犬を探|猫を探|犬が迷|猫が迷|飼い主捜索/.test(
+      content
+    );
+  }
+
+  function matchesLostPetQuery(content, query) {
+    var normalized = normalizeSearchText(query);
+    if (normalized === "迷子猫" || normalized === "迷い猫") {
+      return /迷子猫|迷い猫|猫を探|猫が迷/.test(content);
+    }
+    if (normalized === "迷子犬" || normalized === "迷い犬") {
+      return /迷子犬|迷い犬|犬を探|犬が迷/.test(content);
+    }
+    if (normalized === "迷子") {
+      return /迷子(猫|犬)?|迷い(猫|犬)|を探しています/.test(content);
+    }
+    return false;
+  }
+
+  function matchesIceQuery(content) {
+    if (/氷配布|製氷|氷があり|氷を|氷の|かき氷|冷却|身体を冷やす/.test(content)) {
+      return true;
+    }
+    var stripped = content.replace(/氷川[町村]?/g, "");
+    return /氷/.test(stripped);
+  }
+
+  function matchesCoolingQuery(content) {
+    return /冷却|冷やす|クーラー|冷房|暑さ対策|熱中症/.test(content);
+  }
+
+  function matchesElectricQuery(content) {
+    return /電気|停電|発電|充電/.test(content);
+  }
+
+  function matchesWifiQuery(content) {
+    if (/インターネット/.test(content)) {
+      return false;
+    }
+    if (/(?<![ァ-ヶー])ネット(?!ワーク)/.test(content)) {
+      return false;
+    }
+    return /wi-?fi|wifi|ワイファイ|ｗｉ-?ｆｉ/i.test(content);
+  }
+
+  function matchesCarShelterQuery(content) {
+    return /車中泊|車で避難|車避難|車両避難/.test(content);
+  }
+
+  var SOCIAL_CATEGORY_KEYWORD_NO_EXPAND = {
+    井戸水: true,
+    氷: true,
+    冷却: true,
+    電気: true,
+    ペット: true,
+    迷子: true,
+    迷子猫: true,
+    迷子犬: true,
+    "wi-fi": true,
+    wifi: true,
+    車中泊: true
+  };
+
+  function matchesPreciseSearchQuery(contentHay, rawQuery) {
+    var query = normalizeSearchText(rawQuery);
+    if (!query) {
+      return false;
+    }
+    if (query === "ペット") {
+      return matchesPetQuery(contentHay);
+    }
+    if (query === "迷子" || query === "迷子猫" || query === "迷子犬") {
+      return matchesLostPetQuery(contentHay, query);
+    }
+    if (query === "氷") {
+      return matchesIceQuery(contentHay);
+    }
+    if (query === "冷却") {
+      return matchesCoolingQuery(contentHay);
+    }
+    if (query === "電気") {
+      return matchesElectricQuery(contentHay);
+    }
+    if (query === "wi-fi" || query === "wifi") {
+      return matchesWifiQuery(contentHay);
+    }
+    if (query === "車中泊") {
+      return matchesCarShelterQuery(contentHay);
+    }
+    if (query === "犬" || query === "猫") {
+      return false;
+    }
+    return contentHay.indexOf(query) !== -1;
+  }
+
+  function getSocialCategoryKeywordsForQuery(categoryId, rawQuery) {
+    var keywords = SOCIAL_CATEGORY_KEYWORDS[categoryId] || [];
+    var normalizedQuery = normalizeSearchText(rawQuery);
+    if (!normalizedQuery) {
+      return keywords;
+    }
+    if (SOCIAL_CATEGORY_KEYWORD_NO_EXPAND[normalizedQuery]) {
+      return keywords.filter(function (keyword) {
+        return normalizeSearchText(keyword) === normalizedQuery;
+      });
+    }
+    return keywords;
+  }
+
+  function matchesSocialRegion(entry, regionQuery) {
+    var tokens = normalizeSearchText(regionQuery).split(" ").filter(Boolean);
+    if (!tokens.length) {
+      return true;
+    }
+    var contentHay = buildSocialContentHaystack(entry);
+    var metaHay = buildSocialRegionMetaHaystack(entry);
+    return tokens.every(function (token) {
+      if (matchesMunicipalityRegionToken(contentHay, metaHay, token)) {
+        return true;
+      }
+      if (matchesSocialRegionGroup(entry, token)) {
+        return true;
+      }
+      return matchesSocialPrefectureGroup(entry, token);
+    });
   }
 
   function matchesSocialRegionGroup(entry, token) {
@@ -1729,15 +1892,15 @@
     };
   }
 
-  function findSocialCategoryMatchKeyword(entry, categoryId) {
+  function findSocialCategoryMatchKeyword(entry, categoryId, rawQuery) {
     if (!categoryId) {
       return "";
     }
-    var hay = buildSocialEntrySearchHaystack(entry);
-    var keywords = SOCIAL_CATEGORY_KEYWORDS[categoryId] || [];
+    var hay = buildSocialContentHaystack(entry);
+    var keywords = getSocialCategoryKeywordsForQuery(categoryId, rawQuery || "");
     var matched = "";
     keywords.forEach(function (keyword) {
-      if (!matched && hay.indexOf(normalizeSearchText(keyword)) !== -1) {
+      if (!matched && matchesPreciseSearchQuery(hay, keyword)) {
         matched = keyword;
       }
     });
@@ -1746,13 +1909,14 @@
 
   function buildSocialMatchReason(entry, resolvedCategory, userQuery) {
     var categoryLabel = SOCIAL_CATEGORY_LABELS[resolvedCategory] || resolvedCategory || "その他";
+    var contentHay = buildSocialContentHaystack(entry);
+    var query = String(userQuery || "").trim();
     var matchedKeyword = "";
-    if (userQuery) {
-      matchedKeyword = userQuery;
-    } else if (entry.category === resolvedCategory) {
-      matchedKeyword = categoryLabel;
+    if (query && matchesPreciseSearchQuery(contentHay, query)) {
+      matchedKeyword = query;
     } else {
-      matchedKeyword = findSocialCategoryMatchKeyword(entry, resolvedCategory) || categoryLabel;
+      matchedKeyword =
+        findSocialCategoryMatchKeyword(entry, resolvedCategory, query) || categoryLabel;
     }
     return {
       categoryLabel: categoryLabel,
@@ -1760,31 +1924,19 @@
     };
   }
 
-  function buildSocialEntrySearchHaystack(entry) {
-    var keywordText = Array.isArray(entry.keywords) ? entry.keywords.join(" ") : "";
-    return normalizeSearchText(
-      [entry.category, entry.title, entry.content, keywordText].filter(Boolean).join(" ")
-    );
-  }
-
   function matchesSocialCategory(entry, categoryQuery, rawQuery) {
+    if (!categoryQuery && !rawQuery) {
+      return true;
+    }
+    var contentHay = buildSocialContentHaystack(entry);
+    var query = String(rawQuery || "").trim();
+    if (query && matchesPreciseSearchQuery(contentHay, query)) {
+      return true;
+    }
     if (!categoryQuery) {
-      return true;
-    }
-    if (entry.category === categoryQuery) {
-      return true;
-    }
-    var hay = buildSocialEntrySearchHaystack(entry);
-    if (rawQuery && hay.indexOf(normalizeSearchText(rawQuery)) !== -1) {
-      return true;
-    }
-    var keywords = SOCIAL_CATEGORY_KEYWORDS[categoryQuery] || [];
-    if (!keywords.length) {
       return false;
     }
-    return keywords.some(function (keyword) {
-      return hay.indexOf(normalizeSearchText(keyword)) !== -1;
-    });
+    return Boolean(findSocialCategoryMatchKeyword(entry, categoryQuery, query));
   }
 
   function isInstagramCommunityEntry(entry) {
@@ -1830,15 +1982,7 @@
         }
       }
       if (hasRegion) {
-        var tokens = normalizeSearchText(options.region).split(" ").filter(Boolean);
-        var hay = normalizeSearchText(buildSocialRegionHaystack(entry));
-        locationOk = locationOk && tokens.every(function (token) {
-          return (
-            hay.indexOf(token) !== -1 ||
-            matchesSocialRegionGroup(entry, token) ||
-            matchesSocialPrefectureGroup(entry, token)
-          );
-        });
+        locationOk = locationOk && matchesSocialRegion(entry, options.region);
       }
 
       if (!locationOk) {
@@ -1942,22 +2086,16 @@
     });
   }
 
-  function searchEvacuationAlertRegion(municipalityName, disasterSearchIndex, socialPayload) {
-    var officialResults = searchDisasterIndex(disasterSearchIndex, "", {
-      category: "OFFICIAL_POST",
-      municipality: municipalityName,
-      municipalityOnly: true
-    });
-    var communityResults = [];
+  function searchEvacuationAlertRegion(municipalityName, socialPayload) {
+    var xResults = [];
     if (socialPayload && socialPayload.index) {
-      communityResults = searchDisasterSocialIndex(socialPayload.index, {
+      xResults = searchDisasterSocialIndex(socialPayload.index, {
         municipality: municipalityName
       });
     }
     return {
       municipality: municipalityName,
-      officialResults: officialResults,
-      communityResults: communityResults
+      xResults: xResults
     };
   }
 
@@ -2064,16 +2202,15 @@
 
     resultsContainer.innerHTML = "";
     var municipality = searchResult.municipality || "";
-    var officialResults = searchResult.officialResults || [];
-    var communityResults = searchResult.communityResults || [];
-    var totalCount = officialResults.length + communityResults.length;
+    var xResults = searchResult.xResults || [];
+    var totalCount = xResults.length;
     var sourceLookup = buildSocialSourceLookup(socialPayload && socialPayload.sources);
 
     resultsContainer.appendChild(createElement(
       "p",
       "disaster-search__summary",
-      municipality + " の検索結果：" + totalCount + "件（公式X投稿 " +
-        officialResults.length + "件 / 現地支援情報 " + communityResults.length + "件）"
+      municipality + " の検索結果：" + totalCount + "件（" +
+        EVACUATION_ALERT_SEARCH_SCOPE.xCrossSearchLayerLabel + "）"
     ));
 
     if (!totalCount) {
@@ -2081,7 +2218,7 @@
       emptyBlock.appendChild(createElement(
         "p",
         "disaster-search__empty",
-        municipality + " に該当する災害情報は見つかりませんでした。"
+        municipality + " に該当するX投稿は見つかりませんでした。"
       ));
 
       var contextBlock = createElement("div", "evacuation-alert-search__context");
@@ -2092,11 +2229,9 @@
       ));
       var contextList = createElement("ul", "evacuation-alert-search__context-list");
       [
-        "検索対象Layer：" + EVACUATION_ALERT_SEARCH_SCOPE.officialLayerLabel + " / " +
-          EVACUATION_ALERT_SEARCH_SCOPE.communityLayerLabel,
+        "検索対象：" + EVACUATION_ALERT_SEARCH_SCOPE.xCrossSearchLayerLabel,
         "対象期間：" + EVACUATION_ALERT_SEARCH_SCOPE.periodLabel,
-        "対象カテゴリ（公式）：" + EVACUATION_ALERT_SEARCH_SCOPE.officialCategoriesLabel,
-        "対象カテゴリ（現地）：" + EVACUATION_ALERT_SEARCH_SCOPE.communityCategoriesLabel
+        "対象カテゴリ：" + EVACUATION_ALERT_SEARCH_SCOPE.categoriesLabel
       ].forEach(function (line) {
         contextList.appendChild(createElement("li", "evacuation-alert-search__context-item", line));
       });
@@ -2106,35 +2241,9 @@
       return;
     }
 
-    if (officialResults.length) {
-      var officialSection = createElement("div", "evacuation-alert-search__layer");
-      officialSection.appendChild(createElement(
-        "h3",
-        "evacuation-alert-search__layer-title",
-        EVACUATION_ALERT_SEARCH_SCOPE.officialLayerLabel
-      ));
-      var officialWrap = createElement("div", "evacuation-alert-search__layer-results");
-      renderDisasterSearchResult(officialWrap, officialResults, municipality, "OFFICIAL_POST", {
-        skipSummary: true
-      });
-      officialSection.appendChild(officialWrap);
-      resultsContainer.appendChild(officialSection);
-    }
-
-    if (communityResults.length) {
-      var communitySection = createElement("div", "evacuation-alert-search__layer");
-      communitySection.appendChild(createElement(
-        "h3",
-        "evacuation-alert-search__layer-title",
-        EVACUATION_ALERT_SEARCH_SCOPE.communityLayerLabel
-      ));
-      var communityWrap = createElement("div", "evacuation-alert-search__layer-results");
-      renderDisasterSocialSearchResult(communityWrap, communityResults, sourceLookup, {
-        skipSummary: true
-      });
-      communitySection.appendChild(communityWrap);
-      resultsContainer.appendChild(communitySection);
-    }
+    renderDisasterSocialSearchResult(resultsContainer, xResults, sourceLookup, {
+      skipSummary: true
+    });
   }
 
   function renderDisasterSearchResult(resultsContainer, results, query, category, renderOptions) {
@@ -2314,6 +2423,11 @@
     }
 
     var guide = createElement("div", "disaster-search__guide");
+    guide.appendChild(createElement(
+      "p",
+      "disaster-search__official-note",
+      DISASTER_SEARCH_SHARED.officialInfoNote
+    ));
     guide.appendChild(createElement("p", "disaster-search__guide-text", guidance.intro));
     guide.appendChild(createElement("p", "disaster-search__guide-text", guidance.instruction));
     inner.appendChild(guide);
@@ -2372,41 +2486,6 @@
       inner.appendChild(categoriesBlock);
     }
 
-    var evacuationAlertRegionBlock = null;
-    if (categoryKey === "OFFICIAL_POST") {
-      var evacuationAlertMunicipalities = options.evacuationAlertMunicipalities || [];
-      if (evacuationAlertMunicipalities.length) {
-        evacuationAlertRegionBlock = createElement("div", "evacuation-alert-region");
-        evacuationAlertRegionBlock.setAttribute("aria-label", "避難・警戒表示対象自治体");
-        evacuationAlertRegionBlock.appendChild(createElement(
-          "p",
-          "evacuation-alert-region__label",
-          "避難・警戒 対象自治体"
-        ));
-        var evacuationAlertScroll = createElement("div", "evacuation-alert-region__scroll");
-        var evacuationAlertList = createElement("ul", "evacuation-alert-region__list");
-        evacuationAlertMunicipalities.forEach(function (municipalityName) {
-          var item = createElement("li", "evacuation-alert-region__item");
-          var regionButton = createElement(
-            "button",
-            "evacuation-alert-region__btn",
-            municipalityName
-          );
-          regionButton.type = "button";
-          regionButton.setAttribute("data-municipality", municipalityName);
-          regionButton.setAttribute("aria-pressed", "false");
-          regionButton.setAttribute(
-            "aria-label",
-            municipalityName + "の避難・警戒情報を検索"
-          );
-          item.appendChild(regionButton);
-          evacuationAlertList.appendChild(item);
-        });
-        evacuationAlertScroll.appendChild(evacuationAlertList);
-        evacuationAlertRegionBlock.appendChild(evacuationAlertScroll);
-      }
-    }
-
     var form = createElement("form", "disaster-search__form");
     form.setAttribute("role", "search");
     form.setAttribute("aria-label", "災害情報検索");
@@ -2428,37 +2507,8 @@
     var resultsContainer = createElement("div", "disaster-search__results-wrap");
     resultsContainer.id = resultsId;
 
-    var evacuationAlertMunicipalityList = options.evacuationAlertMunicipalities || [];
-    var socialPayload = options.socialPayload || null;
-    var activeEvacuationMunicipality = "";
-
-    function isEvacuationMunicipalityQuery(query) {
-      return evacuationAlertMunicipalityList.indexOf(query) !== -1;
-    }
-
     function runSearch() {
       var query = input.value.trim();
-
-      if (
-        categoryKey === "OFFICIAL_POST" &&
-        socialPayload &&
-        (activeEvacuationMunicipality || isEvacuationMunicipalityQuery(query))
-      ) {
-        var municipalityName = activeEvacuationMunicipality || query;
-        var evacuationSearchResult = searchEvacuationAlertRegion(
-          municipalityName,
-          disasterSearchIndex,
-          socialPayload
-        );
-        renderEvacuationAlertSearchResult(
-          resultsContainer,
-          evacuationSearchResult,
-          socialPayload
-        );
-        trackUsage("search_official_post");
-        return;
-      }
-
       var results = searchDisasterIndex(disasterSearchIndex, query, { category: categoryKey });
       renderDisasterSearchResult(
         resultsContainer,
@@ -2478,44 +2528,13 @@
         if (results.length) {
           trackUsage("view_water_detail");
         }
-      } else if (categoryKey === "OFFICIAL_POST") {
-        trackUsage("search_official_post");
       }
     }
-
-    input.addEventListener("input", function () {
-      if (activeEvacuationMunicipality && input.value.trim() !== activeEvacuationMunicipality) {
-        activeEvacuationMunicipality = "";
-        if (evacuationAlertRegionBlock) {
-          evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (button) {
-            button.classList.remove("evacuation-alert-region__btn--active");
-            button.setAttribute("aria-pressed", "false");
-          });
-        }
-      }
-    });
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       runSearch();
     });
-
-    if (evacuationAlertRegionBlock) {
-      evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (regionButton) {
-        regionButton.addEventListener("click", function () {
-          var municipalityName = regionButton.getAttribute("data-municipality") || "";
-          activeEvacuationMunicipality = municipalityName;
-          input.value = municipalityName;
-          evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (button) {
-            var isActive = button === regionButton;
-            button.classList.toggle("evacuation-alert-region__btn--active", isActive);
-            button.setAttribute("aria-pressed", isActive ? "true" : "false");
-          });
-          runSearch();
-        });
-      });
-      inner.appendChild(evacuationAlertRegionBlock);
-    }
 
     form.appendChild(label);
     form.appendChild(input);
@@ -2532,10 +2551,17 @@
     section.setAttribute("aria-labelledby", "portal-quick-access-title");
 
     var inner = createElement("div", "container");
-    var title = createElement("h2", "portal-quick-access__title", "支援情報を探す");
+    var title = createElement("h2", "portal-quick-access__title", OFFICIAL_INFO_PROMO.title);
     title.id = "portal-quick-access-title";
     inner.appendChild(title);
+    inner.appendChild(createElement("p", "portal-quick-access__lead", OFFICIAL_INFO_PROMO.lead));
+    inner.appendChild(createElement(
+      "p",
+      "portal-quick-access__scope",
+      "対象：" + OFFICIAL_INFO_PROMO.scopeSummary
+    ));
 
+    var officialGroup = createElement("div", "portal-quick-access__group portal-quick-access__group--official");
     var grid = createElement("div", "portal-quick-access__grid");
     Object.keys(DISASTER_SEARCH_CATEGORY_CONFIG).forEach(function (categoryKey) {
       var config = DISASTER_SEARCH_CATEGORY_CONFIG[categoryKey];
@@ -2549,20 +2575,22 @@
       card.appendChild(createElement("p", "portal-quick-access__card-desc", config.promoDescription));
       grid.appendChild(card);
     });
+    officialGroup.appendChild(grid);
+    inner.appendChild(officialGroup);
 
-    var socialCard = createElement("a", "portal-quick-access__card");
-    socialCard.href = "#" + DISASTER_SOCIAL_SEARCH_ID;
-    socialCard.setAttribute("aria-label", "現地支援情報を探すの検索へ移動");
-    socialCard.appendChild(createElement("h3", "portal-quick-access__card-title", "🧭 現地支援情報を探す"));
-    socialCard.appendChild(createElement(
-      "p",
-      "portal-quick-access__card-desc",
-      "SNS・民間・現地発生情報を地域とカテゴリで検索します。\n\n" +
-        "公式情報とは別レイヤーで、現地の支援・募集・物資情報を確認できます。"
+    var xGroup = createElement("div", "portal-quick-access__group portal-quick-access__group--x");
+    xGroup.appendChild(createElement(
+      "h3",
+      "portal-quick-access__group-title",
+      X_CROSS_SEARCH_PROMO.icon + " " + X_CROSS_SEARCH_PROMO.title
     ));
-    grid.appendChild(socialCard);
+    var xCard = createElement("a", "portal-quick-access__card portal-quick-access__card--x");
+    xCard.href = "#" + DISASTER_SOCIAL_SEARCH_ID;
+    xCard.setAttribute("aria-label", X_CROSS_SEARCH_PROMO.title + "の検索へ移動");
+    xCard.appendChild(createElement("p", "portal-quick-access__card-desc", X_CROSS_SEARCH_PROMO.promoDescription));
+    xGroup.appendChild(xCard);
+    inner.appendChild(xGroup);
 
-    inner.appendChild(grid);
     section.appendChild(inner);
     container.appendChild(section);
   }
@@ -2579,7 +2607,7 @@
       resultsContainer.appendChild(createElement(
         "p",
         "disaster-search__empty",
-        "該当する現地支援情報は見つかりませんでした。"
+        "該当するX投稿は見つかりませんでした。"
       ));
       return;
     }
@@ -2610,7 +2638,7 @@
         ));
       }
       card.appendChild(createElement("p", "disaster-social-search__place", "場所：" + place));
-      card.appendChild(createElement("h3", "disaster-search__title", item.title || "現地支援情報"));
+      card.appendChild(createElement("h3", "disaster-search__title", item.title || "X投稿"));
       card.appendChild(createElement("p", "disaster-search__content", item.content || ""));
       card.appendChild(createElement("p", "disaster-social-search__date", "日時：" + (item.date || "")));
       appendSocialSourceDisplay(card, item, sourceMeta);
@@ -2621,30 +2649,216 @@
     resultsContainer.appendChild(list);
   }
 
-  function renderDisasterSocialSearch(container, socialPayload) {
+  function compareSocialEntriesByDateDesc(a, b) {
+    var dateA = parseDate(a.published_at || a.date || a.captured_at);
+    var dateB = parseDate(b.published_at || b.date || b.captured_at);
+    if (dateA && dateB) {
+      return dateB - dateA;
+    }
+    if (dateA) {
+      return -1;
+    }
+    if (dateB) {
+      return 1;
+    }
+    return 0;
+  }
+
+  function excerptSocialContent(text, maxLength) {
+    var cleaned = String(text || "").replace(/\s+/g, " ").trim();
+    if (!cleaned) {
+      return "";
+    }
+    var limit = maxLength || DISASTER_SOCIAL_CONTENT_EXCERPT_LENGTH;
+    if (cleaned.length <= limit) {
+      return cleaned;
+    }
+    return cleaned.slice(0, limit) + "…";
+  }
+
+  function resolveSocialAuthorLabel(item, sourceMeta) {
+    item = item || {};
+    sourceMeta = sourceMeta || {};
+    var account = String(item.source_account || "").trim();
+    if (account) {
+      return account.indexOf("@") === 0 ? account : "@" + account;
+    }
+    if (sourceMeta.name) {
+      return sourceMeta.name;
+    }
+    if (item.source) {
+      return item.source;
+    }
+    return "投稿者";
+  }
+
+  function renderDisasterSocialLatest(container, entries, sourceLookup) {
+    if (!container || !entries || !entries.length) {
+      return;
+    }
+
+    var latestEntries = entries
+      .slice()
+      .sort(compareSocialEntriesByDateDesc)
+      .slice(0, DISASTER_SOCIAL_LATEST_COUNT);
+
+    if (!latestEntries.length) {
+      return;
+    }
+
+    var section = createElement("section", "disaster-social-search__latest");
+    section.id = "disaster-social-search-latest";
+    section.setAttribute("aria-labelledby", "disaster-social-search-latest-title");
+
+    var title = createElement("h3", "disaster-social-search__latest-title", "最新情報");
+    title.id = "disaster-social-search-latest-title";
+    section.appendChild(title);
+    section.appendChild(createElement(
+      "p",
+      "disaster-social-search__latest-lead",
+      "直近のX投稿です。検索結果とは別に、現在の情報の動きを確認できます。"
+    ));
+
+    var list = createElement("ul", "disaster-social-search__latest-list");
+    latestEntries.forEach(function (item) {
+      var sourceMeta = sourceLookup[item.source] || {};
+      var li = createElement("li", "disaster-social-search__latest-item");
+      var meta = createElement("div", "disaster-social-search__latest-meta");
+
+      var datetime = formatDateTime(item.published_at || item.date);
+      if (datetime) {
+        meta.appendChild(createElement("time", "disaster-social-search__latest-date", datetime));
+      }
+
+      meta.appendChild(createElement(
+        "span",
+        "disaster-social-search__latest-author",
+        resolveSocialAuthorLabel(item, sourceMeta)
+      ));
+      li.appendChild(meta);
+
+      var excerpt = excerptSocialContent(item.content || item.title || "");
+      if (excerpt) {
+        li.appendChild(createElement("p", "disaster-social-search__latest-excerpt", excerpt));
+      }
+
+      var entryUrl = resolveSocialEntryUrl(item);
+      if (entryUrl) {
+        var link = createElement(
+          "a",
+          "disaster-social-search__latest-link disaster-social-search__post-link",
+          resolveSocialPostLinkLabel(item)
+        );
+        link.href = entryUrl;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.setAttribute(
+          "aria-label",
+          resolveSocialAuthorLabel(item, sourceMeta) + "の投稿を見る（外部リンク）"
+        );
+        li.appendChild(link);
+      }
+
+      list.appendChild(li);
+    });
+
+    section.appendChild(list);
+    container.appendChild(section);
+  }
+
+  function renderDisasterSocialSearchHelp(container) {
+    var helpDetails = createElement("details", "disaster-social-search__help");
+    helpDetails.id = "disaster-social-search-help";
+
+    var helpSummary = createElement("summary", "disaster-social-search__help-trigger");
+    helpSummary.setAttribute("aria-label", "検索方法の説明");
+    helpSummary.textContent = "?";
+    helpDetails.appendChild(helpSummary);
+
+    var helpBody = createElement("div", "disaster-social-search__help-body");
+    helpBody.appendChild(createElement(
+      "p",
+      "disaster-social-search__help-text",
+      X_CROSS_SEARCH_HELP.instruction
+    ));
+    helpBody.appendChild(createElement("p", "disaster-social-search__help-label", "例："));
+    var helpList = createElement("ul", "disaster-social-search__help-examples");
+    X_CROSS_SEARCH_HELP.examples.forEach(function (example) {
+      helpList.appendChild(createElement("li", "disaster-social-search__help-example", example));
+    });
+    helpBody.appendChild(helpList);
+    helpDetails.appendChild(helpBody);
+    container.appendChild(helpDetails);
+  }
+
+  function renderDisasterSocialSearch(container, socialPayload, options) {
     if (!socialPayload || !socialPayload.index) {
       return;
     }
 
+    options = options || {};
+    var evacuationAlertMunicipalities = options.evacuationAlertMunicipalities || [];
     var sourceLookup = buildSocialSourceLookup(socialPayload.sources);
     var section = createElement("section", "disaster-search disaster-social-search");
     section.id = DISASTER_SOCIAL_SEARCH_ID;
     section.setAttribute("aria-labelledby", "disaster-social-search-title");
 
     var inner = createElement("div", "container");
-    var title = createElement("h2", "section-title disaster-search__heading", "🧭 現地支援情報を探す");
+    var titleRow = createElement("div", "disaster-social-search__title-row");
+    var title = createElement("h2", "section-title disaster-search__heading", "𝕏 X横断検索");
     title.id = "disaster-social-search-title";
-    inner.appendChild(title);
+    titleRow.appendChild(title);
+    renderDisasterSocialSearchHelp(titleRow);
+    inner.appendChild(titleRow);
 
     inner.appendChild(createElement(
       "p",
       "disaster-search__guide-text",
-      "公式情報とは別レイヤーです。地域・カテゴリで検索できます。カテゴリ欄には「給水」「迷子犬」「風呂」などの言葉も入力できます。"
+      "熊本地震関連のX投稿を横断検索します。投稿者（自治体・企業・団体・個人）を問わず、" +
+        EVACUATION_ALERT_SEARCH_SCOPE.periodLabel + "・対象23自治体の投稿が対象です。"
     ));
+
+    renderDisasterSocialLatest(
+      inner,
+      (socialPayload.index && socialPayload.index.entries) || [],
+      sourceLookup
+    );
+
+    var evacuationAlertRegionBlock = null;
+    if (evacuationAlertMunicipalities.length) {
+      evacuationAlertRegionBlock = createElement("div", "evacuation-alert-region");
+      evacuationAlertRegionBlock.setAttribute("aria-label", "避難・警戒表示対象自治体");
+      evacuationAlertRegionBlock.appendChild(createElement(
+        "p",
+        "evacuation-alert-region__label",
+        "避難・警戒 対象自治体"
+      ));
+      var evacuationAlertScroll = createElement("div", "evacuation-alert-region__scroll");
+      var evacuationAlertList = createElement("ul", "evacuation-alert-region__list");
+      evacuationAlertMunicipalities.forEach(function (municipalityName) {
+        var item = createElement("li", "evacuation-alert-region__item");
+        var regionButton = createElement(
+          "button",
+          "evacuation-alert-region__btn",
+          municipalityName
+        );
+        regionButton.type = "button";
+        regionButton.setAttribute("data-municipality", municipalityName);
+        regionButton.setAttribute("aria-pressed", "false");
+        regionButton.setAttribute(
+          "aria-label",
+          municipalityName + "のX投稿を検索"
+        );
+        item.appendChild(regionButton);
+        evacuationAlertList.appendChild(item);
+      });
+      evacuationAlertScroll.appendChild(evacuationAlertList);
+      evacuationAlertRegionBlock.appendChild(evacuationAlertScroll);
+    }
 
     var form = createElement("form", "disaster-search__form disaster-social-search__form");
     form.setAttribute("role", "search");
-    form.setAttribute("aria-label", "現地支援情報検索");
+    form.setAttribute("aria-label", "X横断検索");
 
     var regionLabel = createElement("label", "disaster-search__label", "地域");
     regionLabel.setAttribute("for", "disaster-social-search-region");
@@ -2677,23 +2891,87 @@
 
     var resultsContainer = createElement("div", "disaster-search__results-wrap");
     resultsContainer.id = "disaster-social-search-results";
+    var activeEvacuationMunicipality = "";
 
     function runSearch() {
-      var options = {
+      if (activeEvacuationMunicipality) {
+        var evacuationSearchResult = searchEvacuationAlertRegion(
+          activeEvacuationMunicipality,
+          socialPayload
+        );
+        renderEvacuationAlertSearchResult(
+          resultsContainer,
+          evacuationSearchResult,
+          socialPayload
+        );
+        trackUsage("search_x_cross");
+        return;
+      }
+
+      var searchOptions = {
         region: regionInput.value.trim(),
         categoryQuery: categoryInput.value.trim()
       };
-      var results = searchDisasterSocialIndex(socialPayload.index, options);
+      var results = searchDisasterSocialIndex(socialPayload.index, searchOptions);
       renderDisasterSocialSearchResult(resultsContainer, results, sourceLookup);
-      if (options.region || options.categoryQuery) {
-        trackUsage("search_social");
+      if (searchOptions.region || searchOptions.categoryQuery) {
+        trackUsage("search_x_cross");
       }
     }
 
+    regionInput.addEventListener("input", function () {
+      if (activeEvacuationMunicipality) {
+        activeEvacuationMunicipality = "";
+        if (evacuationAlertRegionBlock) {
+          evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (button) {
+            button.classList.remove("evacuation-alert-region__btn--active");
+            button.setAttribute("aria-pressed", "false");
+          });
+        }
+      }
+    });
+
+    categoryInput.addEventListener("input", function () {
+      if (activeEvacuationMunicipality) {
+        activeEvacuationMunicipality = "";
+        if (evacuationAlertRegionBlock) {
+          evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (button) {
+            button.classList.remove("evacuation-alert-region__btn--active");
+            button.setAttribute("aria-pressed", "false");
+          });
+        }
+      }
+    });
+
     form.addEventListener("submit", function (event) {
       event.preventDefault();
+      activeEvacuationMunicipality = "";
+      if (evacuationAlertRegionBlock) {
+        evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (button) {
+          button.classList.remove("evacuation-alert-region__btn--active");
+          button.setAttribute("aria-pressed", "false");
+        });
+      }
       runSearch();
     });
+
+    if (evacuationAlertRegionBlock) {
+      evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (regionButton) {
+        regionButton.addEventListener("click", function () {
+          var municipalityName = regionButton.getAttribute("data-municipality") || "";
+          activeEvacuationMunicipality = municipalityName;
+          regionInput.value = municipalityName;
+          categoryInput.value = "";
+          evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (button) {
+            var isActive = button === regionButton;
+            button.classList.toggle("evacuation-alert-region__btn--active", isActive);
+            button.setAttribute("aria-pressed", isActive ? "true" : "false");
+          });
+          runSearch();
+        });
+      });
+      inner.appendChild(evacuationAlertRegionBlock);
+    }
 
     form.appendChild(regionLabel);
     form.appendChild(regionInput);
@@ -4472,11 +4750,9 @@
         renderDisasterSearch(page, disasterSearchIndex, "WATER");
         renderDisasterSearch(page, disasterSearchIndex, "VOLUNTEER");
         renderDisasterSearch(page, disasterSearchIndex, "SUPPORT_SERVICE");
-        renderDisasterSearch(page, disasterSearchIndex, "OFFICIAL_POST", {
-          evacuationAlertMunicipalities: evacuationAlertMunicipalities,
-          socialPayload: disasterSocialPayload
+        renderDisasterSocialSearch(page, disasterSocialPayload, {
+          evacuationAlertMunicipalities: evacuationAlertMunicipalities
         });
-        renderDisasterSocialSearch(page, disasterSocialPayload);
         renderWaterSearch(page, waterSearchIndex);
         renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);

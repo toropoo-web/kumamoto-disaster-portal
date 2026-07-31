@@ -15,14 +15,11 @@ const {
   DEFAULT_X_SOURCE_ID
 } = require("./disaster-social-x-source-registry");
 const { resolveCategoryFromKeyword } = require("./disaster-social-index-engine");
-const { resolveSnsPostUrlFromFeedPost } = require("./disaster-social-url");
+const { resolveSnsPostUrlFromFeedPost, isXPostUrl } = require("./disaster-social-url");
 const { normalizeInboxItem } = require("./disaster-social-pipeline");
 
 const DEFAULT_X_FEED_URL =
   "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json";
-
-const EXCLUDED_SOURCE_IDS = new Set(["SRC-PER-001"]);
-const EXCLUDED_ACCOUNT_HANDLES = new Set(["shinjirokoiz"]);
 
 function fetchJson(url) {
   return new Promise(function (resolve, reject) {
@@ -97,6 +94,46 @@ function resolveMunicipalityFromPost(post, scopeMunicipalities) {
   return "";
 }
 
+function resolveRelatedRegionKeywords(post) {
+  const keywords = [];
+  const regions = Array.isArray(post.regions) ? post.regions : [];
+  regions.forEach(function (region) {
+    const value = String(region || "").trim();
+    if (value && keywords.indexOf(value) === -1) {
+      keywords.push(value);
+    }
+  });
+  const text = getPostText(post);
+  ["熊本県", "鹿児島県", "熊本", "鹿児島"].forEach(function (token) {
+    if (text.indexOf(token) !== -1 && keywords.indexOf(token) === -1) {
+      keywords.push(token);
+    }
+  });
+  return keywords;
+}
+
+function resolvePrefectureFromPost(post, municipality) {
+  if (municipality) {
+    return resolveMunicipalityPrefecture(municipality);
+  }
+  const text = getPostText(post);
+  const regions = Array.isArray(post.regions) ? post.regions.join(" ") : "";
+  const haystack = text + " " + regions;
+  if (haystack.indexOf("鹿児島") !== -1) {
+    return "鹿児島県";
+  }
+  return "熊本県";
+}
+
+function resolvePostRegionMetadata(post, scopeMunicipalities) {
+  const municipality = resolveMunicipalityFromPost(post, scopeMunicipalities);
+  return {
+    municipality: municipality,
+    prefecture: resolvePrefectureFromPost(post, municipality),
+    keywords: resolveRelatedRegionKeywords(post)
+  };
+}
+
 function resolveCommunityCategory(post) {
   const text = getPostText(post);
   const resolved = resolveCategoryFromKeyword(text);
@@ -137,30 +174,20 @@ function isActivePost(post) {
   return post && (!post.status || post.status === "ACTIVE");
 }
 
-function isExcludedPost(post) {
-  if (!post) {
-    return true;
-  }
-  if (EXCLUDED_SOURCE_IDS.has(post.sourceId)) {
-    return true;
-  }
-  if (post.accountHandle && EXCLUDED_ACCOUNT_HANDLES.has(post.accountHandle)) {
-    return true;
-  }
-  return false;
-}
-
 function xPostToInboxItem(post, index, scopeMunicipalities) {
-  const municipality = resolveMunicipalityFromPost(post, scopeMunicipalities);
-  if (!municipality) {
-    return null;
-  }
+  const regionMeta = resolvePostRegionMetadata(post, scopeMunicipalities);
   const postDate = String(post.postedAt || post.post_time || post.published_at || "").slice(0, 10);
   if (!isOnOrAfterSnsFetchSinceDate(postDate)) {
     return null;
   }
   const text = getPostText(post);
+  if (!text) {
+    return null;
+  }
   const url = resolveSnsPostUrlFromFeedPost(post, "X");
+  if (!url || !isXPostUrl(url)) {
+    return null;
+  }
   const publishedAt = post.postedAt || post.post_time || post.published_at || "";
   const sourceAccount = post.accountHandle || post.account || post.username || "";
   const item = normalizeInboxItem(
@@ -173,15 +200,15 @@ function xPostToInboxItem(post, index, scopeMunicipalities) {
       source_account: sourceAccount,
       source: resolveXSourceId(post),
       category: resolveCommunityCategory(post),
-      prefecture: resolveMunicipalityPrefecture(municipality),
-      municipality: municipality,
+      prefecture: regionMeta.prefecture,
+      municipality: regionMeta.municipality,
       district: "",
       date: postDate,
       title: buildTitle(text),
       content: text,
       url: url,
       post_url: url,
-      keywords: [],
+      keywords: regionMeta.keywords,
       sns_fetch: {
         platform: "X",
         source_post_id: post.postId || post.id || "",
@@ -214,11 +241,7 @@ async function fetchXInboxItems(options) {
   const scopeMunicipalities = getScopeMunicipalities(options.scopePayload);
   const feedUrl = options.xFeedUrl || DEFAULT_X_FEED_URL;
   const payload = await fetchJson(feedUrl);
-  const posts = normalizePostsPayload(payload)
-    .filter(isActivePost)
-    .filter(function (post) {
-      return !isExcludedPost(post);
-    });
+  const posts = normalizePostsPayload(payload).filter(isActivePost);
   const items = [];
   posts.forEach(function (post, index) {
     const item = xPostToInboxItem(post, index, scopeMunicipalities);
@@ -250,8 +273,9 @@ async function fetchDisasterSocialSnsInbox(options) {
     categorySummary[key] = (categorySummary[key] || 0) + 1;
   });
   return {
-    phase: "DISASTER_CROSS_SEARCH_COMMUNITY_DATA_REBUILD",
-    acquisition_mode: "SNS_AUTO_FETCH",
+    phase: "DISASTER_X_CROSS_SEARCH_CONTENT_SCOPE",
+    acquisition_mode: "SNS_CONTENT_CROSS_FETCH",
+    region_filter_at_search: true,
     since_date: SNS_FETCH_SINCE_DATE,
     fetch_categories: COMMUNITY_FETCH_CATEGORIES.slice(),
     ai_judgment: false,
@@ -277,5 +301,6 @@ module.exports = {
   xPostToInboxItem,
   dedupeInboxItems,
   resolveMunicipalityFromPost,
+  resolvePostRegionMetadata,
   resolveCommunityCategory
 };

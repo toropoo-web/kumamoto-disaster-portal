@@ -146,7 +146,20 @@ function main() {
         source_type: "X",
         municipality: "玉名市",
         date: "2026-07-30",
-        title: "scope fail municipality",
+        title: "scope pass municipality",
+        content: "test"
+      },
+      0
+    )
+  );
+  const rejectedMissingMunicipality = evaluateSnsFetchScope(
+    normalizeInboxItem(
+      {
+        import_format: "SNS",
+        source_type: "X",
+        prefecture: "熊本県",
+        date: "2026-07-30",
+        title: "scope pass missing municipality",
         content: "test"
       },
       0
@@ -169,10 +182,11 @@ function main() {
     check: "sns scope evaluation",
     pass:
       acceptedSns.pass === true &&
-      rejectedMunicipality.pass === false &&
+      rejectedMunicipality.pass === true &&
+      rejectedMissingMunicipality.pass === true &&
       rejectedDate.pass === false
   });
-  if (!acceptedSns.pass || rejectedMunicipality.pass || rejectedDate.pass) {
+  if (!acceptedSns.pass || !rejectedMunicipality.pass || !rejectedMissingMunicipality.pass || rejectedDate.pass) {
     errors.push("sns scope evaluation failed");
   }
 
@@ -183,14 +197,14 @@ function main() {
       items: [
         normalizeInboxItem(
           {
-            inbox_id: "SCOPE-REJECT-001",
+            inbox_id: "SCOPE-ACCEPT-001",
             import_format: "SNS",
             source_type: "X",
             municipality: "玉名市",
             date: "2026-07-30",
             source: "SOC-LOCAL-001",
             category: "WATER",
-            title: "out of scope",
+            title: "region metadata preserved",
             content: "test"
           },
           0
@@ -201,16 +215,16 @@ function main() {
       indexPath: path.join(ROOT, "data", "community", "disaster_social_index.json")
     }
   );
-  const rejectedItem = (reviewQueue.items || []).find(function (item) {
-    return item.inbox_id === "SCOPE-REJECT-001";
+  const acceptedItem = (reviewQueue.items || []).find(function (item) {
+    return item.inbox_id === "SCOPE-ACCEPT-001";
   });
   checks.push({
-    check: "sns out-of-scope rejected in review queue",
-    pass: rejectedItem && rejectedItem.review_status === "REJECTED" && rejectedItem.scope_rejection,
-    review_status: rejectedItem && rejectedItem.review_status
+    check: "sns municipality not rejected at acquisition",
+    pass: acceptedItem && acceptedItem.review_status === "PENDING" && !acceptedItem.scope_rejection,
+    review_status: acceptedItem && acceptedItem.review_status
   });
-  if (!rejectedItem || rejectedItem.review_status !== "REJECTED") {
-    errors.push("sns out-of-scope item must be rejected in review queue");
+  if (!acceptedItem || acceptedItem.review_status === "REJECTED") {
+    errors.push("sns item must not be rejected at acquisition based on municipality");
   }
 
   const appJs = fs.readFileSync(path.join(ROOT, "js", "app.js"), "utf8");

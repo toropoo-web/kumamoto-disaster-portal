@@ -846,7 +846,6 @@ function buildDisasterSearchIndex(options) {
   const volunteerRegistryItems = buildVolunteerRegistryItems(disasterSources);
   const supportServiceRegistryItems = buildSupportServiceIndexItems(disasterSources, options);
   const preservedShelterItems = readPreservedShelterRegistryEntries(options);
-  const officialPostItems = buildOfficialPostSearchItems(options);
   const timestampLookup = buildPatrolTimestampLookup(options);
   const index = dedupeIndexItems(
     applyPatrolTimestampsToItems(
@@ -855,8 +854,7 @@ function buildDisasterSearchIndex(options) {
         snapshotItems,
         volunteerRegistryItems,
         supportServiceRegistryItems,
-        preservedShelterItems,
-        officialPostItems
+        preservedShelterItems
       ),
       timestampLookup,
       ["WATER", "VOLUNTEER"]
@@ -874,7 +872,6 @@ function buildDisasterSearchIndex(options) {
       volunteer_registry_item_count: volunteerRegistryItems.length,
       support_service_registry_item_count: supportServiceRegistryItems.length,
       shelter_registry_item_count: preservedShelterItems.length,
-      official_post_item_count: officialPostItems.length,
       item_count: index.length,
       last_updated: new Date().toISOString()
     }
