@@ -1,6 +1,6 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-31T01:15:49.749Z",
+  "synced_at": "2026-07-31T03:00:52.979Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
@@ -8,20 +8,31 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-30T23:30:00.000Z",
-      "text": "支援物資などの受入窓口　���合せ先一覧\n\n　令和8年熊本地震における支援物資などの受入窓口を設置しました。詳しくはホームページを確認ください。\nhttps://t.co/x5MnWENxyU",
-      "url": "https://x.com/yatsushiro0801/status/2082972004890603566",
+      "post_time": "2026-07-31T02:45:48.000Z",
+      "text": "【応急給水情報】 \n7月31日(金)の応急給水を1カ所追加します。 \n配布量は１回あたり５L程度となります。 給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。 \n給水車が水の補給で一時的に不在になることがあります。 \n\n 時間　１２：００～１９：００ \n・八代支援学校",
+      "url": "https://x.com/yatsushiro0801/status/2083021278500569245",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
+      "content_filter": "DISASTER_RELATED"
+    },
+    {
+      "source_id": "SRC-MUN-KM009",
+      "account_name": "合志市公式X",
+      "account_handle": "Koshi_city",
+      "post_time": "2026-07-31T02:34:11.000Z",
+      "text": "応急給水について（8月1日〜）\n＜実施場所＞\n●8月1日（土）～濁水が収まるまで\n・御代志市民センター（午前9時～午後5時）\n・泉ヶ丘市民センター（午前9時～午後5時）\n・合志市役所（午後6時～午後8時）\n※配布量は1人あたり4リットル以内。給水容器（ポリタンクやペットボトルなど）を持参ください。",
+      "url": "https://x.com/Koshi_city/status/2083018356882653450",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "合志市",
       "content_filter": "DISASTER_RELATED"
     },
     {
       "source_id": "SRC-MUN-KM001",
       "account_name": "熊本市公式X",
       "account_handle": "kumamotocity_",
-      "post_time": "2026-07-30T23:09:56.000Z",
-      "text": "【応急給水活動について（7月31日07：00時点）】\n7月31日（金）の応急給水活動について下記のとおり実施します。\n\n詳しくは↓\nhttps://t.co/aiYZ2BxUQi",
-      "url": "https://x.com/kumamotocity_/status/2082966956555239458",
+      "post_time": "2026-07-31T01:20:00.000Z",
+      "text": "【熊本市の感染症情報】 ３０週\n避難所での感染対策について\n災害時には、感染症の拡大リスクが高まります。特に避難所では、衛生状態を保つことが大切です。感染症に「自分がかからない」ように、かかっても「他人にうつさない」ために、感染対策を行いましょう。\n詳しくは↓\nhttps://t.co/oORBUGP04C",
+      "url": "https://x.com/kumamotocity_/status/2082999687255101827",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "熊本市",
       "content_filter": "DISASTER_RELATED"
@@ -31,57 +42,50 @@
       "account_name": "人吉市公式X",
       "account_handle": "hitoyoshishi",
       "post_time": "2026-07-30T22:45:44.000Z",
-      "text": "【防災無線放送内容】地震による水道水の��りについて（2026/07/31/07:45）\n環境課からのお知らせです。\n地震の影響により、市内各地で断水および水圧低下が発生しています。\n生活用水として、下原田町荒毛の熊本フクスケ株式会社、下林町の市...\nhttps://t.co/bIsgEXJRpC",
+      "text": "【防災無線放送内容】地震による水道水の濁りについて（2026/07/31/07:45）\n環境課からのお知らせです。\n地震の影響により、市内各地で断水および水圧低下が発生しています。\n生活用水として、下原田町荒毛の熊本フクスケ株式会社、下林町の市...\nhttps://t.co/bIsgEXJRpC",
       "url": "https://x.com/hitoyoshishi/status/2082960866992066624",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "人吉市",
       "content_filter": "DISASTER_RELATED"
     },
     {
-      "source_id": "SRC-KUM-001",
-      "account_name": "防災くまもと",
-      "account_handle": "Bousai_Kumamoto",
-      "post_time": "2026-07-30T23:33:24.000Z",
-      "text": "(続き) \nこちらは多良木町です。\n現在(2026/07/31 08:33)発令中の避難情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9 #避難情報",
-      "url": "https://x.com/Bousai_Kumamoto/status/2082972862240133369",
-      "source_type": "PREFECTURE"
-    },
-    {
-      "source_id": "SRC-KUM-001",
-      "account_name": "防災くまもと",
-      "account_handle": "Bousai_Kumamoto",
-      "post_time": "2026-07-30T23:32:50.000Z",
-      "text": "(続き) \nこちらは多良木町です。\n現在(2026/07/31 08:32)発令中の避難情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9 #避難情報",
-      "url": "https://x.com/Bousai_Kumamoto/status/2082972719487033440",
-      "source_type": "PREFECTURE"
-    },
-    {
-      "source_id": "SRC-KUM-001",
-      "account_name": "防災くまもと",
-      "account_handle": "Bousai_Kumamoto",
-      "post_time": "2026-07-30T23:32:50.000Z",
-      "text": "こちらは多良木町です。\n2026/07/31 08:30に高齢者等避難を解除しました。\n\n解除地区：\n多良木町全域",
-      "url": "https://x.com/Bousai_Kumamoto/status/2082972718052626740",
-      "source_type": "PREFECTURE"
+      "source_id": "SRC-MUN-KM009",
+      "account_name": "合志市公式X",
+      "account_handle": "Koshi_city",
+      "post_time": "2026-07-31T02:30:28.000Z",
+      "text": "濁水が発生している地域への応急給水を実施します。\n＜実施場所＞\n●7月31日（金）\n・御代志市民センター（午前11時～午後5時）\n・泉ヶ丘市民センター（正午～午後5時）\n・合志市役所（午後6時～午後8時）\n※配布量は1人あたり4リットル以内。給水容器（ポリタンク、ペットボトル等）を持参ください。",
+      "url": "https://x.com/Koshi_city/status/2083017419459809617",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "合志市",
+      "content_filter": "DISASTER_RELATED"
     },
     {
       "source_id": "SRC-NAT-004",
       "account_name": "総務省消防庁",
       "account_handle": "FDMA_JAPAN",
-      "post_time": "2026-07-30T22:55:11.000Z",
-      "text": "【消防庁とりまとめ第22報】令和８年熊本地震による被害及び消防機関等の対応状況について、7月31日（金）7時30分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/aaB4gV6wEV #総務省消防庁 #災害情報 #地震",
-      "url": "https://x.com/FDMA_JAPAN/status/2082963245334401264",
+      "post_time": "2026-07-31T01:51:31.000Z",
+      "text": "【消防庁とりまとめ第23報】令和８年熊本地震による被害及び消防機関等の対応状況について、7月31日（金）10時30分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/68Q39KukQb #総務省消防庁 #災害情報 #地震",
+      "url": "https://x.com/FDMA_JAPAN/status/2083007620819165297",
       "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-MUN-KM006",
-      "account_name": "人吉市公式X",
-      "account_handle": "hitoyoshishi",
-      "post_time": "2026-07-30T22:05:45.000Z",
-      "text": "【防災無線放送内容】給水について（2026/07/31/7:00）\n水道局からのお知らせです。\n本日（３1日）、午前７時から一部の地域を除き水が使える地域が広がります。\n水を出した時に濁った水が出る場合があります。\nその際は、しばらく出してから...\nhttps://t.co/4aXvLVzaO5",
-      "url": "https://x.com/hitoyoshishi/status/2082950802415759458",
+      "source_id": "SRC-NAT-004",
+      "account_name": "総務省消防庁",
+      "account_handle": "FDMA_JAPAN",
+      "post_time": "2026-07-31T01:06:55.000Z",
+      "text": "【消防庁　令和８年熊本地震に対する消防機関の活動状況】被災地にて、重機による活動も実施しております。#緊急消防援助隊 #緊援隊 #熊本県 ＃福岡県大隊 https://t.co/JDjKwmZ6wj",
+      "url": "https://x.com/FDMA_JAPAN/status/2082996395167129871",
+      "source_type": "GOVERNMENT"
+    },
+    {
+      "source_id": "SRC-MUN-KM009",
+      "account_name": "合志市公式X",
+      "account_handle": "Koshi_city",
+      "post_time": "2026-07-31T00:30:34.000Z",
+      "text": "地震発生に伴い開設中の避難所は次の通りです（31日午前8時30分時点）。\n\n(1)合志市防災拠点センター\n(2)泉ヶ丘市民センター\n(3)野々島防災拠点センター\n(4)黒石防災拠点センター\n(5)須屋市民センター\n\n※避難する時は食べ物や飲み物など身の回り品をお持ちください",
+      "url": "https://x.com/Koshi_city/status/2082987249571156438",
       "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "人吉市",
+      "municipality": "合志市",
       "content_filter": "DISASTER_RELATED"
     }
   ]
