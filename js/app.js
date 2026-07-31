@@ -333,6 +333,111 @@
     });
   }
 
+  var SEARCH_DICTIONARIES = [
+    {
+      id: "FOOD_SERVICE",
+      expandQueries: ["炊き出し"],
+      keywords: [
+        "炊き出し",
+        "食事提供",
+        "食料提供",
+        "食料配布",
+        "食品配布",
+        "弁当",
+        "お弁当",
+        "パン配布",
+        "おにぎり",
+        "無料提供",
+        "食事支援",
+        "配食"
+      ]
+    },
+    {
+      id: "WATER",
+      expandQueries: ["給水", "水"],
+      keywords: [
+        "給水",
+        "給水車",
+        "応急給水",
+        "飲料水",
+        "飲み水",
+        "生活用水",
+        "断水",
+        "井戸水",
+        "水道",
+        "水道復旧",
+        "水"
+      ]
+    },
+    {
+      id: "BATH",
+      expandQueries: ["風呂", "シャワー", "入浴", "温泉", "銭湯"],
+      keywords: ["入浴", "無料入浴", "風呂", "シャワー", "温泉", "銭湯"]
+    },
+    {
+      id: "SUPPLIES",
+      expandQueries: ["支援物資", "物資"],
+      keywords: ["支援物資", "物資", "救援物資", "配布", "提供", "生活用品"]
+    },
+    {
+      id: "CAR_SHELTER",
+      expandQueries: ["車中泊"],
+      keywords: ["車中泊", "車避難", "車両避難", "車内避難", "車で避難"]
+    },
+    {
+      id: "PET",
+      expandQueries: ["ペット", "迷子"],
+      keywords: ["ペット", "迷子", "保護犬", "保護猫"]
+    },
+    {
+      id: "HEAT",
+      expandQueries: ["氷", "冷却", "暑さ", "暑さ対策"],
+      keywords: ["氷", "製氷", "冷却", "冷房", "熱中症", "暑さ対策", "氷配布", "かき氷", "身体を冷やす"]
+    }
+  ];
+
+  function resolveSearchDictionary(rawQuery) {
+    var query = normalizeSearchText(rawQuery);
+    if (!query) {
+      return null;
+    }
+    for (var i = 0; i < SEARCH_DICTIONARIES.length; i += 1) {
+      var dict = SEARCH_DICTIONARIES[i];
+      var expands = dict.expandQueries.map(normalizeSearchText);
+      if (expands.indexOf(query) !== -1) {
+        return dict;
+      }
+    }
+    return null;
+  }
+
+  function findDictionaryForKeyword(rawQuery) {
+    var query = normalizeSearchText(rawQuery);
+    if (!query) {
+      return null;
+    }
+    for (var i = 0; i < SEARCH_DICTIONARIES.length; i += 1) {
+      var dict = SEARCH_DICTIONARIES[i];
+      for (var j = 0; j < dict.keywords.length; j += 1) {
+        if (normalizeSearchText(dict.keywords[j]) === query) {
+          return dict;
+        }
+      }
+    }
+    return null;
+  }
+
+  function expandSearchDictionaryKeywords(rawQuery) {
+    var dict = resolveSearchDictionary(rawQuery);
+    if (!dict) {
+      return null;
+    }
+    return {
+      dict: dict,
+      keywords: dict.keywords.slice()
+    };
+  }
+
   function matchesPetQuery(content) {
     if (/ペットボトル/.test(content)) {
       return false;
@@ -383,7 +488,51 @@
   }
 
   function matchesCarShelterQuery(content) {
-    return /車中泊|車で避難|車避難|車両避難/.test(content);
+    return /車中泊|車で避難|車避難|車両避難|車内避難/.test(content);
+  }
+
+  function matchesDictionaryKeyword(contentHay, keyword, dictId) {
+    var normalizedKeyword = normalizeSearchText(keyword);
+
+    if (dictId === "PET") {
+      if (normalizedKeyword === "ペット") {
+        return matchesPetQuery(contentHay);
+      }
+      if (normalizedKeyword === "迷子") {
+        return matchesLostPetQuery(contentHay, "迷子");
+      }
+      if (normalizedKeyword === "保護犬") {
+        return /保護犬/.test(contentHay) && !/救助犬|警備犬/.test(contentHay);
+      }
+      if (normalizedKeyword === "保護猫") {
+        return /保護猫/.test(contentHay);
+      }
+    }
+
+    if (dictId === "HEAT") {
+      if (normalizedKeyword === "氷" || normalizedKeyword === "製氷" || normalizedKeyword === "氷配布") {
+        return matchesIceQuery(contentHay);
+      }
+      if (normalizedKeyword === "冷却") {
+        return matchesCoolingQuery(contentHay);
+      }
+    }
+
+    if (dictId === "CAR_SHELTER") {
+      return matchesCarShelterQuery(contentHay);
+    }
+
+    return contentHay.indexOf(normalizedKeyword) !== -1;
+  }
+
+  function matchesExpandedDictionaryQuery(contentHay, rawQuery) {
+    var expansion = expandSearchDictionaryKeywords(rawQuery);
+    if (!expansion) {
+      return false;
+    }
+    return expansion.keywords.some(function (keyword) {
+      return matchesDictionaryKeyword(contentHay, keyword, expansion.dict.id);
+    });
   }
 
   var SOCIAL_CATEGORY_KEYWORD_NO_EXPAND = {
@@ -405,17 +554,13 @@
     if (!query) {
       return false;
     }
-    if (query === "ペット") {
-      return matchesPetQuery(contentHay);
+
+    if (matchesExpandedDictionaryQuery(contentHay, rawQuery)) {
+      return true;
     }
-    if (query === "迷子" || query === "迷子猫" || query === "迷子犬") {
+
+    if (query === "迷子猫" || query === "迷子犬") {
       return matchesLostPetQuery(contentHay, query);
-    }
-    if (query === "氷") {
-      return matchesIceQuery(contentHay);
-    }
-    if (query === "冷却") {
-      return matchesCoolingQuery(contentHay);
     }
     if (query === "電気") {
       return matchesElectricQuery(contentHay);
@@ -423,12 +568,15 @@
     if (query === "wi-fi" || query === "wifi") {
       return matchesWifiQuery(contentHay);
     }
-    if (query === "車中泊") {
-      return matchesCarShelterQuery(contentHay);
-    }
     if (query === "犬" || query === "猫") {
       return false;
     }
+
+    var keywordDict = findDictionaryForKeyword(rawQuery);
+    if (keywordDict) {
+      return matchesDictionaryKeyword(contentHay, rawQuery, keywordDict.id);
+    }
+
     return contentHay.indexOf(query) !== -1;
   }
 
@@ -1930,6 +2078,9 @@
     }
     var contentHay = buildSocialContentHaystack(entry);
     var query = String(rawQuery || "").trim();
+    if (query && (resolveSearchDictionary(query) || findDictionaryForKeyword(query))) {
+      return matchesPreciseSearchQuery(contentHay, query);
+    }
     if (query && matchesPreciseSearchQuery(contentHay, query)) {
       return true;
     }
