@@ -1,0 +1,118 @@
+{
+  "version": "1.0",
+  "view_type": "X_FEED_OPERATION_CHECK",
+  "phase": "PHASE39E",
+  "generated_at": "2026-07-31T13:06:27.685Z",
+  "constraints": {
+    "public_ui_display": false,
+    "fetch_method_unchanged": true,
+    "exclusion_rules_unchanged": true
+  },
+  "preview_sync_status": "FRESH",
+  "preview_synced_at": "2026-07-31T13:03:14.833Z",
+  "municipality_x_feed_summary": [
+    {
+      "account": "hitoyoshishi",
+      "source_id": "SRC-MUN-KM006",
+      "municipality": "人吉市",
+      "count": 1,
+      "latest_post": "2026-07-31T09:05:44.000Z",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "Koshi_city",
+      "source_id": "SRC-MUN-KM009",
+      "municipality": "合志市",
+      "count": 1,
+      "latest_post": "2026-07-31T02:34:11.000Z",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "kumamotocity_",
+      "source_id": "SRC-MUN-KM001",
+      "municipality": "熊本市",
+      "count": 3,
+      "latest_post": "2026-07-31T11:17:01.000Z",
+      "status": "ACTIVE"
+    },
+    {
+      "account": "yatsushiro0801",
+      "source_id": "SRC-MUN-KM005",
+      "municipality": "八代市",
+      "count": 1,
+      "latest_post": "2026-07-31T08:29:41.000Z",
+      "status": "ACTIVE"
+    }
+  ],
+  "municipality_post_count": 6,
+  "preview_post_count": 8,
+  "content_classification": {
+    "counts": {
+      "A": 6,
+      "B": 0,
+      "C": 0
+    },
+    "ratios": {
+      "A": 1,
+      "B": 0,
+      "C": 0
+    },
+    "samples": {
+      "A": [
+        {
+          "source_id": "SRC-MUN-KM001",
+          "account": "kumamotocity_",
+          "post_time": "2026-07-31T11:17:01.000Z",
+          "text_preview": "【第19報】南区城南町における試験通水の実施について(続報)（７月31日19：00時点） 南区城南町で実施している断水解消に向けた試験通水の詳細及び上下水道局か"
+        },
+        {
+          "source_id": "SRC-MUN-KM006",
+          "account": "hitoyoshishi",
+          "post_time": "2026-07-31T09:05:44.000Z",
+          "text_preview": "【防災無線放送内容】熱中症警戒アラートの発表について（2026/07/31/18:05） 市役所からのお知らせです。 明日（１日）も、熱中症警戒アラートが発表さ"
+        },
+        {
+          "source_id": "SRC-MUN-KM005",
+          "account": "yatsushiro0801",
+          "post_time": "2026-07-31T08:29:41.000Z",
+          "text_preview": "【生活用水の配布のお知らせ】 場所 イオン八代ショッピングセンター駐車場 （八代市沖町六番割3987-3） 時間 ８月１日（土）午後～なくなり次第終了 ・配布量"
+        }
+      ],
+      "B": [],
+      "C": []
+    },
+    "ab_information_captured": true
+  },
+  "disaster_related_ratio": 1,
+  "fetch_success_rate": 1,
+  "fetch_success": {
+    "rate": 1,
+    "sync_status": "FRESH",
+    "synced_at": "2026-07-31T13:03:14.833Z",
+    "last_successful_sync_at": "2026-07-31T13:03:14.833Z"
+  },
+  "noise_check": {
+    "normal_post_excess": false,
+    "normal_post_ratio": 0,
+    "disaster_posts_buried": false,
+    "buried_accounts": [],
+    "assessment": "ACCEPTABLE"
+  },
+  "fail_open_check": {
+    "fail_open_enabled": true,
+    "stale_retention_supported": true,
+    "portal_stop_on_fetch_failure": false,
+    "portal_fail_open_render": true,
+    "status": "PASS"
+  },
+  "phase39d_comparison": {
+    "relaxed_municipality_count": 4,
+    "strict_municipality_count": 2,
+    "count_delta": 2,
+    "content_filter": "RECENT_POSTS"
+  },
+  "source_files": {
+    "preview_json": "data/public/x_feed_preview.json",
+    "sync_script": "scripts/sync-x-feed.js"
+  }
+}
