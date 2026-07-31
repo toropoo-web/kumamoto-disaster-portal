@@ -17,6 +17,7 @@
   var DISASTER_SEARCH_ID = "disaster-search";
   var DISASTER_SEARCH_VOLUNTEER_ID = "disaster-search-volunteer";
   var DISASTER_SEARCH_SUPPORT_SERVICE_ID = "disaster-search-support-service";
+  var DISASTER_SEARCH_OFFICIAL_POST_ID = "disaster-search-official-post";
   var DISASTER_SEARCH_DEFAULT_CATEGORY = "WATER";
 
   function trackUsage(eventName) {
@@ -55,6 +56,16 @@
         "被災者の方へ。\n\n" +
         "風呂・シャワー・車中泊・食事・支援物資など、\n" +
         "災害時の生活に必要な情報を探します。"
+    },
+    OFFICIAL_POST: {
+      sectionId: "disaster-search-official-post",
+      icon: "📢",
+      title: "災害公式投稿を探す",
+      lead: "自治体・防災機関の公式X投稿を検索",
+      promoDescription:
+        "災害時の公式発信を横断検索します。\n\n" +
+        "給水・避難・暑さ・物資・ボランティア・防犯・復旧など、\n" +
+        "目的語で関連する公式投稿へたどり着けます。"
     }
   };
   var DISASTER_SEARCH_SHARED = {
@@ -98,6 +109,19 @@
         "入浴・休憩・駐車場",
         "炊き出し・支援物資"
       ]
+    },
+    OFFICIAL_POST: {
+      intro: "この検索では、自治体・政府機関・防災機関などの公式X投稿を対象にしています。",
+      instruction: "目的語や地域名で検索してください。",
+      examples: ["給水", "避難", "暑さ", "物資", "ボランティア", "防犯", "復旧"],
+      placeholder: "例：給水 / 避難 / 暑さ / 物資",
+      scopeInfoItems: [
+        "自治体公式X",
+        "政府機関",
+        "防災機関",
+        "警察・消防・自衛隊",
+        "ライフライン・公共交通"
+      ]
     }
   };
   var DISASTER_SEARCH_PLANNED_CATEGORIES = [
@@ -121,7 +145,19 @@
     PET: "ペット支援"
   };
   var SUPPORT_SERVICE_USER_SEARCH_CAUTION =
-    "掲載情報は情報提供元の発信内容をもとに整理しています。利用条件・提供状況は変更される場合があります。最新状況は情報提供元をご確認ください。";
+    "掲載情報は自治体・施設・団体・SNS等から収集しています。情報は変更・終了される場合があります。利用前に日時・場所・条件をご確認ください。";
+  var OFFICIAL_POST_CATEGORY_LABELS = {
+    WATER: "給水・断水",
+    SHELTER: "避難所",
+    COOLING: "暑さ・熱中症",
+    FOOD: "食料・物資",
+    MEDICAL: "医療",
+    SECURITY: "防犯・警察",
+    VOLUNTEER: "災害ボランティア",
+    RECOVERY: "復旧・生活支援",
+    TRANSPORT: "交通",
+    GENERAL: "公式発信"
+  };
   var SUPPORT_SERVICE_DETAIL_LABELS = {
     BATH: "風呂",
     SHOWER: "シャワー",
@@ -1491,7 +1527,26 @@
         appendSupportServiceCardDetails(card, item);
       }
 
-      if (item.content && category !== "SUPPORT_SERVICE") {
+      if (category === "OFFICIAL_POST") {
+        var categoryLabel =
+          item.post_category_label ||
+          OFFICIAL_POST_CATEGORY_LABELS[item.post_category] ||
+          OFFICIAL_POST_CATEGORY_LABELS.GENERAL;
+        card.appendChild(createElement(
+          "p",
+          "disaster-search__official-post-meta",
+          "カテゴリ：" + categoryLabel
+        ));
+        if (item.post_summary || item.content) {
+          card.appendChild(createElement(
+            "p",
+            "disaster-search__content",
+            item.post_summary || item.content
+          ));
+        }
+      }
+
+      if (item.content && category !== "SUPPORT_SERVICE" && category !== "OFFICIAL_POST") {
         card.appendChild(createElement(
           "p",
           "disaster-search__content",
@@ -1516,6 +1571,12 @@
 
       if (category === "VOLUNTEER") {
         appendSearchResultTimestamps(card, item, "disaster-search");
+      } else if (category === "OFFICIAL_POST" && item.published_at) {
+        card.appendChild(createElement(
+          "p",
+          "disaster-search__updated",
+          "投稿：" + formatDateTime(item.published_at)
+        ));
       } else if (item.updated_at) {
         card.appendChild(createElement(
           "p",
@@ -3484,6 +3545,7 @@
         renderDisasterSearch(page, disasterSearchIndex, "WATER");
         renderDisasterSearch(page, disasterSearchIndex, "VOLUNTEER");
         renderDisasterSearch(page, disasterSearchIndex, "SUPPORT_SERVICE");
+        renderDisasterSearch(page, disasterSearchIndex, "OFFICIAL_POST");
         renderWaterSearch(page, waterSearchIndex);
         renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);

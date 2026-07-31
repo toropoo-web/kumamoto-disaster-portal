@@ -43,6 +43,11 @@ const {
   SUPPORT_SERVICE_USER_SEARCH_CAUTION
 } = require("./support-service-search-dictionary");
 
+const {
+  buildOfficialPostSearchItems,
+  POST_CATEGORY_LABELS
+} = require("./disaster-post-index-engine");
+
 const ROOT = path.join(__dirname, "..");
 const DISASTER_SOURCES_FILE = path.join(ROOT, "data", "disaster_sources.json");
 const CROSS_VIEW_FILE = path.join(ROOT, "data", "water_cross_view.json");
@@ -841,6 +846,7 @@ function buildDisasterSearchIndex(options) {
   const volunteerRegistryItems = buildVolunteerRegistryItems(disasterSources);
   const supportServiceRegistryItems = buildSupportServiceIndexItems(disasterSources, options);
   const preservedShelterItems = readPreservedShelterRegistryEntries(options);
+  const officialPostItems = buildOfficialPostSearchItems(options);
   const timestampLookup = buildPatrolTimestampLookup(options);
   const index = dedupeIndexItems(
     applyPatrolTimestampsToItems(
@@ -849,7 +855,8 @@ function buildDisasterSearchIndex(options) {
         snapshotItems,
         volunteerRegistryItems,
         supportServiceRegistryItems,
-        preservedShelterItems
+        preservedShelterItems,
+        officialPostItems
       ),
       timestampLookup,
       ["WATER", "VOLUNTEER"]
@@ -867,6 +874,7 @@ function buildDisasterSearchIndex(options) {
       volunteer_registry_item_count: volunteerRegistryItems.length,
       support_service_registry_item_count: supportServiceRegistryItems.length,
       shelter_registry_item_count: preservedShelterItems.length,
+      official_post_item_count: officialPostItems.length,
       item_count: index.length,
       last_updated: new Date().toISOString()
     }
@@ -915,26 +923,44 @@ function searchDisasterIndex(indexPayload, query, options) {
     const hay =
       item.category === "SUPPORT_SERVICE"
         ? buildSupportServiceSearchHaystack(item, normalizeSearchText)
-        : normalizeSearchText(
-            [
-              item.prefecture,
-              item.municipality,
-              item.organization,
-              item.title,
-              (item.keywords || []).join(" "),
-              item.content,
-              item.capability_status || "",
-              item.subcategory || "",
-              item.subcategory_detail || "",
-              item.opening_type || "",
-              item.facility_name || "",
-              item.provider_type || "",
-              getSupportServiceSubcategoryLabel(item.subcategory),
-              getSupportServiceDetailLabel(item.subcategory_detail),
-              getOpeningTypeLabel(item.opening_type),
-              getProviderTypeLabel(item.provider_type)
-            ].join(" ")
-          );
+        : item.category === "OFFICIAL_POST"
+          ? normalizeSearchText(
+              [
+                item.prefecture,
+                item.municipality,
+                item.organization,
+                item.title,
+                (item.keywords || []).join(" "),
+                item.content,
+                item.post_summary || "",
+                item.post_category || "",
+                item.post_category_label || "",
+                POST_CATEGORY_LABELS[item.post_category] || "",
+                item.subcategory || "",
+                item.subcategory_detail || "",
+                item.account || ""
+              ].join(" ")
+            )
+          : normalizeSearchText(
+              [
+                item.prefecture,
+                item.municipality,
+                item.organization,
+                item.title,
+                (item.keywords || []).join(" "),
+                item.content,
+                item.capability_status || "",
+                item.subcategory || "",
+                item.subcategory_detail || "",
+                item.opening_type || "",
+                item.facility_name || "",
+                item.provider_type || "",
+                getSupportServiceSubcategoryLabel(item.subcategory),
+                getSupportServiceDetailLabel(item.subcategory_detail),
+                getOpeningTypeLabel(item.opening_type),
+                getProviderTypeLabel(item.provider_type)
+              ].join(" ")
+            );
 
     const regionMatched =
       item.category !== "SUPPORT_SERVICE" ||
@@ -1054,6 +1080,17 @@ function validateDisasterSearchIndexEntry(entry, index) {
     }
     if (!entry.source_trace.queue_id) {
       errors.push(label + ": source_trace.queue_id is required");
+    }
+  }
+
+  if (entry.category === "OFFICIAL_POST") {
+    ["post_id", "published_at", "post_category", "post_summary"].forEach(function (field) {
+      if (!entry[field]) {
+        errors.push(label + ": missing " + field);
+      }
+    });
+    if (entry.verification !== "official") {
+      errors.push(label + ": verification must be official");
     }
   }
 
@@ -1180,6 +1217,7 @@ module.exports = {
   buildSupportServiceRegistryItems,
   buildSupportServicePublicItems,
   buildSupportServiceIndexItems,
+  buildOfficialPostSearchItems,
   resolveSupportServiceSourceMeta,
   toSupportServicePublicIndexEntry,
   isVolunteerPublishedForCurrentDisaster,

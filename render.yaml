@@ -33,3 +33,6 @@ services:
       - path: /data/public/disaster_search_index.json
         name: Cache-Control
         value: no-cache, no-store, must-revalidate
+      - path: /data/public/disaster_post_index.json
+        name: Cache-Control
+        value: no-cache, no-store, must-revalidate
