@@ -14,15 +14,26 @@
       "patrol_role": "primary"
     },
     {
+      "id": "KM001-kumamoto-city-bousai",
+      "area_id": "KM001",
+      "name": "熊本市",
+      "category": "municipality",
+      "url": "https://www.city.kumamoto.jp/bousai/",
+      "public_category_id": "EMERGENCY",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "primary"
+    },
+    {
       "id": "KM001-kumamoto-shelter",
       "area_id": "KM001",
       "name": "熊本市",
       "category": "municipality",
-      "url": "https://city-kumamoto.my.salesforce-sites.com/X_PUB_VF_KUMA_HinanjyoNaviList",
+      "url": "https://city-kumamoto.my.salesforce-sites.com/",
       "public_category_id": "SHELTER",
       "status": "ACTIVE",
       "source_type": "official",
-      "patrol_role": "primary"
+      "patrol_role": "secondary"
     },
     {
       "id": "KM002-uto-emergency",
@@ -69,6 +80,17 @@
       "patrol_role": "primary"
     },
     {
+      "id": "KM003-uki-water",
+      "area_id": "KM003",
+      "name": "宇城市",
+      "category": "municipality",
+      "url": "https://www.city.uki.kumamoto.jp/toppage/important/2606682",
+      "public_category_id": "WATER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
+    },
+    {
       "id": "KM004-misato-emergency",
       "area_id": "KM004",
       "name": "美里町",
@@ -103,15 +125,37 @@
       "patrol_role": "secondary"
     },
     {
+      "id": "KM006-hitoyoshi-emergency",
+      "area_id": "KM006",
+      "name": "人吉市",
+      "category": "municipality",
+      "url": "https://www.city.hitoyoshi.lg.jp/",
+      "public_category_id": "EMERGENCY",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "primary"
+    },
+    {
+      "id": "KM006-hitoyoshi-water",
+      "area_id": "KM006",
+      "name": "人吉市",
+      "category": "municipality",
+      "url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2501833",
+      "public_category_id": "WATER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
+    },
+    {
       "id": "KM006-hitoyoshi-shelter",
       "area_id": "KM006",
       "name": "人吉市",
       "category": "municipality",
-      "url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500270",
+      "url": "https://www.city.hitoyoshi.lg.jp/",
       "public_category_id": "SHELTER",
       "status": "ACTIVE",
       "source_type": "official",
-      "patrol_role": "primary"
+      "patrol_role": "secondary"
     },
     {
       "id": "KM007-hikawa-emergency",
@@ -125,15 +169,70 @@
       "patrol_role": "primary"
     },
     {
+      "id": "KM007-hikawa-water",
+      "area_id": "KM007",
+      "name": "氷川町",
+      "category": "municipality",
+      "url": "https://www.town.hikawa.kumamoto.jp/",
+      "public_category_id": "WATER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
+    },
+    {
+      "id": "KM007-hikawa-shelter",
+      "area_id": "KM007",
+      "name": "氷川町",
+      "category": "municipality",
+      "url": "https://www.town.hikawa.kumamoto.jp/",
+      "public_category_id": "SHELTER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
+    },
+    {
+      "id": "KM008-mashiki-emergency",
+      "area_id": "KM008",
+      "name": "益城町",
+      "category": "municipality",
+      "url": "https://www.town.mashiki.lg.jp/list01385.html",
+      "public_category_id": "EMERGENCY",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "primary"
+    },
+    {
+      "id": "KM008-mashiki-water",
+      "area_id": "KM008",
+      "name": "益城町",
+      "category": "municipality",
+      "url": "https://www.town.mashiki.lg.jp/kiji0038070/index.html",
+      "public_category_id": "WATER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
+    },
+    {
       "id": "KM008-mashiki-shelter",
       "area_id": "KM008",
       "name": "益城町",
       "category": "municipality",
-      "url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+      "url": "https://www.town.mashiki.lg.jp/kiji0038078/index.html",
       "public_category_id": "SHELTER",
       "status": "ACTIVE",
       "source_type": "official",
-      "patrol_role": "primary"
+      "patrol_role": "secondary"
+    },
+    {
+      "id": "KM008-mashiki-support",
+      "area_id": "KM008",
+      "name": "益城町",
+      "category": "municipality",
+      "url": "https://www.town.mashiki.lg.jp/kiji0038077/index.html",
+      "public_category_id": "SUPPORT",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
     },
     {
       "id": "KM009-koshi-emergency",
@@ -147,12 +246,45 @@
       "patrol_role": "primary"
     },
     {
+      "id": "KM010-mifune-emergency",
+      "area_id": "KM010",
+      "name": "御船町",
+      "category": "municipality",
+      "url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8#kid335",
+      "public_category_id": "EMERGENCY",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "primary"
+    },
+    {
+      "id": "KM010-mifune-water",
+      "area_id": "KM010",
+      "name": "御船町",
+      "category": "municipality",
+      "url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8#kid337",
+      "public_category_id": "WATER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
+    },
+    {
       "id": "KM010-mifune-shelter",
       "area_id": "KM010",
       "name": "御船町",
       "category": "municipality",
-      "url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8",
+      "url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8#kid345",
       "public_category_id": "SHELTER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
+    },
+    {
+      "id": "KM011-kikuyo-emergency",
+      "area_id": "KM011",
+      "name": "菊陽町",
+      "category": "municipality",
+      "url": "https://www.town.kikuyo.lg.jp/list00113.html",
+      "public_category_id": "EMERGENCY",
       "status": "ACTIVE",
       "source_type": "official",
       "patrol_role": "primary"
@@ -162,8 +294,30 @@
       "area_id": "KM011",
       "name": "菊陽町",
       "category": "municipality",
-      "url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "public_category_id": "WATER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
+    },
+    {
+      "id": "KM011-kikuyo-shelter",
+      "area_id": "KM011",
+      "name": "菊陽町",
+      "category": "municipality",
+      "url": "https://www.town.kikuyo.lg.jp/kiji0033563/index.html",
+      "public_category_id": "SHELTER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
+    },
+    {
+      "id": "KM012-kashima-emergency",
+      "area_id": "KM012",
+      "name": "嘉島町",
+      "category": "municipality",
+      "url": "https://www.town.kumamoto-kashima.lg.jp/",
+      "public_category_id": "EMERGENCY",
       "status": "ACTIVE",
       "source_type": "official",
       "patrol_role": "primary"
@@ -173,11 +327,22 @@
       "area_id": "KM012",
       "name": "嘉島町",
       "category": "municipality",
-      "url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/51/6008.html",
+      "url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/55/6037.html",
       "public_category_id": "WATER",
       "status": "ACTIVE",
       "source_type": "official",
-      "patrol_role": "primary"
+      "patrol_role": "secondary"
+    },
+    {
+      "id": "KM012-kashima-shelter",
+      "area_id": "KM012",
+      "name": "嘉島町",
+      "category": "municipality",
+      "url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/111/606.html",
+      "public_category_id": "SHELTER",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "secondary"
     },
     {
       "id": "KM013-kikuchi-shelter",
