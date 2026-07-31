@@ -52,8 +52,14 @@ function main() {
     { name: "disaster search guidance", pattern: /DISASTER_SEARCH_GUIDANCE/ },
     { name: "disaster search volunteer category", pattern: /VOLUNTEER:\s*\{/ },
     { name: "disaster search volunteer section id", pattern: /DISASTER_SEARCH_VOLUNTEER_ID/ },
+    { name: "disaster search support service category", pattern: /SUPPORT_SERVICE:\s*\{/ },
+    { name: "disaster search support service section id", pattern: /DISASTER_SEARCH_SUPPORT_SERVICE_ID/ },
+    { name: "support service caution notice", pattern: /施設・団体等が提供する支援情報を含みます/ },
+    { name: "support service card meta", pattern: /disaster-search__support-meta/ },
+    { name: "support service render init", pattern: /renderDisasterSearch\(page, disasterSearchIndex, "SUPPORT_SERVICE"\)/ },
     { name: "volunteer capability status labels", pattern: /現在対応情報確認済み/ },
     { name: "volunteer capability unconfirmed note", pattern: /現在の募集状況は公式情報をご確認ください/ },
+    { name: "volunteer search timestamps", pattern: /category === "VOLUNTEER"[\s\S]*appendSearchResultTimestamps/ },
     { name: "portal quick access volunteer card", pattern: /災害ボランティア募集を探す/ },
     { name: "page navigation render", pattern: /renderPageNavigation/ },
     { name: "x feed section render", pattern: /renderXFeedSection/ },
@@ -95,7 +101,9 @@ function main() {
     { name: "disaster search desktop layout", pattern: /@media \(min-width: 768px\)[\s\S]*\.disaster-search__form/ },
     { name: "disaster search guide styles", pattern: /\.disaster-search__guide/ },
     { name: "disaster search scope styles", pattern: /\.disaster-search__scope/ },
-    { name: "volunteer capability status styles", pattern: /\.disaster-search__capability-status/ }
+    { name: "volunteer capability status styles", pattern: /\.disaster-search__capability-status/ },
+    { name: "support service caution styles", pattern: /\.disaster-search__caution/ },
+    { name: "support service meta styles", pattern: /\.disaster-search__support-meta/ }
   ].forEach(function (check) {
     const pass = check.pattern.test(css);
     checks.push({ check: "CSS: " + check.name, pass: pass });
@@ -118,6 +126,14 @@ function main() {
   const volunteerKagoshimaResults = searchDisasterIndex(payload, "鹿児島 災害VC", { category: "VOLUNTEER" });
   const volunteerKirishimaResults = searchDisasterIndex(payload, "霧島 ボランティア", { category: "VOLUNTEER" });
   const volunteerUkiResults = searchDisasterIndex(payload, "宇城 災害VC", { category: "VOLUNTEER" });
+  const volunteerCount = payload.index.filter(function (item) {
+    return item.category === "VOLUNTEER";
+  }).length;
+  const supportShowerResults = searchDisasterIndex(payload, "シャワー", { category: "SUPPORT_SERVICE" });
+  const supportCarCampResults = searchDisasterIndex(payload, "車中泊", { category: "SUPPORT_SERVICE" });
+  const supportServiceCount = payload.index.filter(function (item) {
+    return item.category === "SUPPORT_SERVICE";
+  }).length;
   checks.push({
     check: "search engine usable",
     pass: ukiResults.length > 0 && kagoshimaResults.length > 0 && kikuyoResults.length > 0,
@@ -142,6 +158,22 @@ function main() {
     kagoshimaCount: volunteerKagoshimaResults.length,
     kirishimaCount: volunteerKirishimaResults.length,
     ukiCount: volunteerUkiResults.length
+  });
+  checks.push({
+    check: "volunteer index count preserved",
+    pass: volunteerCount === 20,
+    volunteerCount: volunteerCount
+  });
+  checks.push({
+    check: "support service search examples usable",
+    pass: supportShowerResults.length > 0 && supportCarCampResults.length > 0,
+    showerCount: supportShowerResults.length,
+    carCampCount: supportCarCampResults.length
+  });
+  checks.push({
+    check: "support service index count",
+    pass: supportServiceCount === 5,
+    supportServiceCount: supportServiceCount
   });
   if (!ukiResults.length) {
     errors.push("search engine check failed: 宇城 給水");
@@ -171,6 +203,18 @@ function main() {
   }
   if (!volunteerUkiResults.length) {
     errors.push("volunteer search check failed: 宇城 災害VC");
+  }
+  if (volunteerCount !== 20) {
+    errors.push("volunteer index count check failed: expected 20, got " + volunteerCount);
+  }
+  if (!supportShowerResults.length) {
+    errors.push("support service search check failed: シャワー");
+  }
+  if (!supportCarCampResults.length) {
+    errors.push("support service search check failed: 車中泊");
+  }
+  if (supportServiceCount !== 5) {
+    errors.push("support service index count check failed: expected 5, got " + supportServiceCount);
   }
 
   const output = {

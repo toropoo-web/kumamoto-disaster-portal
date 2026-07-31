@@ -1462,6 +1462,15 @@ button:focus-visible {
   font-weight: 600;
 }
 
+.latest-updates__timestamp {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.latest-updates__timestamp-label {
+  font-weight: 600;
+}
+
 .latest-updates__area,
 .latest-updates__category {
   font-weight: 600;
@@ -2158,11 +2167,25 @@ button:focus-visible {
 .water-search__hint,
 .water-search__empty,
 .water-search__summary,
-.water-search__updated {
+.water-search__updated,
+.water-search__timestamps,
+.water-search__timestamp {
   margin: 0 0 12px;
   font-size: 14px;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.water-search__timestamps {
+  margin-bottom: 0;
+}
+
+.water-search__timestamp {
+  margin-bottom: 4px;
+}
+
+.water-search__timestamp-label {
+  font-weight: 600;
 }
 
 .water-search__form {
@@ -2334,11 +2357,25 @@ button:focus-visible {
 .disaster-search__hint,
 .disaster-search__empty,
 .disaster-search__summary,
-.disaster-search__updated {
+.disaster-search__updated,
+.disaster-search__timestamps,
+.disaster-search__timestamp {
   margin: 0 0 12px;
   font-size: 14px;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.disaster-search__timestamps {
+  margin-bottom: 0;
+}
+
+.disaster-search__timestamp {
+  margin-bottom: 4px;
+}
+
+.disaster-search__timestamp-label {
+  font-weight: 600;
 }
 
 .disaster-search__guide,
@@ -2462,6 +2499,44 @@ button:focus-visible {
   font-size: 13px;
   line-height: 1.5;
   color: var(--text-muted, #4b5563);
+}
+
+.disaster-search__caution {
+  margin: 0 0 12px;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted, #4b5563);
+  background: #fff8e6;
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+}
+
+.disaster-search__facility {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.disaster-search__support-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.disaster-search__support-meta-label {
+  margin: 0;
+  color: var(--text-muted, #4b5563);
+}
+
+.disaster-search__support-meta-value {
+  margin: 0;
+  color: var(--text);
 }
 
 .disaster-search__content {

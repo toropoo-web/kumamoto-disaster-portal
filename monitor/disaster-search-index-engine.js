@@ -3,6 +3,10 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const {
+  buildPatrolTimestampLookup,
+  applyPatrolTimestampsToItems
+} = require("./patrol-timestamp-lookup");
 
 const {
   REGION_KYUSHU_SOUTH,
@@ -13,10 +17,18 @@ const {
   CAPABILITY_STATUS,
   CAPABILITY_STATUS_VALUES,
   VOLUNTEER_DISASTER_START_DATE,
+  SUPPORT_SERVICE_SUBCATEGORIES,
+  OPENING_TYPE,
+  OPENING_TYPE_VALUES,
+  PROVIDER_TYPE_VALUES,
+  SUPPORT_SERVICE_VERIFICATION_STATUS,
+  SUPPORT_SERVICE_VERIFICATION_STATUS_VALUES,
   buildVolunteerSchemaExample,
+  buildSupportServiceSchemaExample,
   isVolunteerPublishedForCurrentDisaster,
   resolveMunicipality,
-  validateVolunteerSchemaExample
+  validateVolunteerSchemaExample,
+  validateSupportServiceSchemaExample
 } = require("./disaster-sources");
 
 const ROOT = path.join(__dirname, "..");
@@ -25,9 +37,118 @@ const CROSS_VIEW_FILE = path.join(ROOT, "data", "water_cross_view.json");
 const SNAPSHOT_FILE = path.join(__dirname, "reports", "water-snapshots.json");
 const SNAPSHOT_SEED_FILE = path.join(__dirname, "baselines", "water-snapshots.seed.json");
 const OUTPUT_FILE = path.join(ROOT, "data", "disaster_search_index.json");
+const SUPPORT_INFORMATION_PUBLIC_FILE = path.join(
+  ROOT,
+  "data",
+  "public",
+  "support_information.json"
+);
 const PUBLIC_OUTPUT_FILE = path.join(ROOT, "data", "public", "disaster_search_index.json");
 
 const DISASTER_WATER_KEYWORDS = WATER_KEYWORDS.concat(["飲料水", "生活用水"]);
+
+const SUPPORT_SERVICE_SUBCATEGORY_LABELS = {
+  BATH: "入浴・シャワー",
+  SPACE: "スペース",
+  TOILET: "トイレ",
+  VEHICLE: "車両・駐車",
+  FOOD: "食事・炊き出し",
+  SUPPLIES: "支援物資",
+  PET: "ペット"
+};
+
+const SUPPORT_SERVICE_DETAIL_LABELS = {
+  BATH: "風呂",
+  SHOWER: "シャワー",
+  REST_SPACE: "休憩スペース",
+  ROOM: "個室",
+  PARKING: "駐車場",
+  CAR_CAMP: "車中泊",
+  COOKING: "炊き出し"
+};
+
+const OPENING_TYPE_LABELS = {
+  FREE_OPEN: "無料開放",
+  OPEN: "開放",
+  SUPPORT: "支援"
+};
+
+const PROVIDER_TYPE_LABELS = {
+  MUNICIPALITY: "自治体",
+  PUBLIC_ORGANIZATION: "公共団体",
+  FACILITY: "施設提供",
+  COMPANY: "企業",
+  ORGANIZATION: "団体",
+  INDIVIDUAL: "個人"
+};
+
+const SUPPORT_SERVICE_VERIFICATION_LABELS = {
+  VERIFIED: "確認済",
+  REQUIRES_MANUAL_REVIEW: "要確認"
+};
+
+function getSupportServiceSubcategoryLabel(subcategory) {
+  return SUPPORT_SERVICE_SUBCATEGORY_LABELS[subcategory] || subcategory || "";
+}
+
+function getSupportServiceDetailLabel(detail) {
+  return SUPPORT_SERVICE_DETAIL_LABELS[detail] || detail || "";
+}
+
+function getOpeningTypeLabel(openingType) {
+  return OPENING_TYPE_LABELS[openingType] || openingType || "";
+}
+
+function getProviderTypeLabel(providerType) {
+  return PROVIDER_TYPE_LABELS[providerType] || providerType || "";
+}
+
+function buildSupportServiceTitle(source) {
+  const detailLabel = source.subcategory_detail
+    ? getSupportServiceDetailLabel(source.subcategory_detail)
+    : getSupportServiceSubcategoryLabel(source.subcategory);
+
+  if (source.opening_type === OPENING_TYPE.FREE_OPEN) {
+    return "無料" + detailLabel;
+  }
+  if (source.opening_type === OPENING_TYPE.OPEN) {
+    return detailLabel + " 開放";
+  }
+  return detailLabel + " 支援";
+}
+
+function buildSupportServiceKeywords(source) {
+  const keywords = Array.isArray(source.keywords) ? source.keywords.slice() : [];
+  const extras = [
+    source.subcategory,
+    source.subcategory_detail,
+    source.opening_type,
+    source.provider_type,
+    source.facility_name,
+    getSupportServiceSubcategoryLabel(source.subcategory),
+    getSupportServiceDetailLabel(source.subcategory_detail),
+    getOpeningTypeLabel(source.opening_type),
+    getProviderTypeLabel(source.provider_type)
+  ];
+
+  return mergeKeywords(keywords, extras);
+}
+
+function buildSupportServiceContent(source, title) {
+  return [
+    source.prefecture,
+    source.municipality,
+    source.facility_name || source.organization,
+    title,
+    getSupportServiceSubcategoryLabel(source.subcategory),
+    getSupportServiceDetailLabel(source.subcategory_detail),
+    getOpeningTypeLabel(source.opening_type),
+    getProviderTypeLabel(source.provider_type),
+    (source.keywords || []).join(" ")
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
 
 function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) {
@@ -339,6 +460,180 @@ function buildVolunteerRegistryItems(disasterSources) {
   return items;
 }
 
+function toSupportServiceRegistryIndexEntry(source) {
+  const keywords = buildSupportServiceKeywords(source);
+  const title = buildSupportServiceTitle(source);
+  const organizationLabel = source.facility_name || buildSourceLabel(source.organization);
+  const content = buildSupportServiceContent(source, title);
+  const verificationStatus =
+    source.verification_status || SUPPORT_SERVICE_VERIFICATION_STATUS.REQUIRES_MANUAL_REVIEW;
+
+  return {
+    index_id: buildIndexId(["SUPPORT_SERVICE", "registry", source.source_id]),
+    category: "SUPPORT_SERVICE",
+    prefecture: source.prefecture,
+    municipality: source.municipality,
+    organization: organizationLabel,
+    title: title,
+    content: content,
+    keywords: keywords,
+    subcategory: source.subcategory,
+    subcategory_detail: source.subcategory_detail || null,
+    opening_type: source.opening_type,
+    provider_type: source.provider_type,
+    facility_name: source.facility_name || source.organization,
+    address: source.address || null,
+    available_from: source.available_from || null,
+    available_until: source.available_until || null,
+    verification_status: verificationStatus,
+    source_type: source.source_type || "PUBLIC_ORGANIZATION",
+    source_url: source.url,
+    official: true,
+    updated_at: source.available_from || null,
+    source_name: source.organization || source.facility_name || null,
+    source_platform: "WEB",
+    checked_at: source.available_from || null,
+    information_status: "ACTIVE"
+  };
+}
+
+function buildSupportServiceRegistryItems(disasterSources) {
+  const items = [];
+
+  (disasterSources.sources || []).forEach(function (source) {
+    if (!source || source.category !== "SUPPORT_SERVICE") {
+      return;
+    }
+    if (source.official !== true || source.active !== true) {
+      return;
+    }
+    if (!source.url) {
+      return;
+    }
+    items.push(toSupportServiceRegistryIndexEntry(source));
+  });
+
+  return items;
+}
+
+function buildSupportServiceSourceLookup(disasterSources) {
+  const lookup = {};
+
+  (disasterSources.sources || []).forEach(function (source) {
+    if (!source || source.category !== "SUPPORT_SERVICE") {
+      return;
+    }
+    lookup[source.source_id] = source;
+  });
+
+  return lookup;
+}
+
+function toSupportServicePublicIndexEntry(information, sourceMeta) {
+  const source = Object.assign({}, sourceMeta || {}, {
+    source_id: information.source_id,
+    subcategory: information.subcategory || sourceMeta.subcategory,
+    subcategory_detail: information.subcategory_detail || sourceMeta.subcategory_detail || null,
+    opening_type: information.opening_type || sourceMeta.opening_type,
+    provider_type: sourceMeta.provider_type,
+    facility_name: information.facility_name || sourceMeta.facility_name,
+    organization: information.facility_name || sourceMeta.organization,
+    address: information.address || sourceMeta.address || null,
+    municipality: information.municipality || sourceMeta.municipality,
+    prefecture: sourceMeta.prefecture || "熊本県",
+    available_from: information.available_from || sourceMeta.available_from || null,
+    available_until:
+      information.available_until === "UNKNOWN"
+        ? null
+        : information.available_until || sourceMeta.available_until || null,
+    url: information.source_url || sourceMeta.url,
+    verification_status:
+      sourceMeta.verification_status || SUPPORT_SERVICE_VERIFICATION_STATUS.REQUIRES_MANUAL_REVIEW,
+    keywords: sourceMeta.keywords || []
+  });
+
+  const entry = toSupportServiceRegistryIndexEntry(source);
+  entry.index_id = buildIndexId(["SUPPORT_SERVICE", "public", information.information_id]);
+  entry.information_status = information.status || "ACTIVE";
+  entry.checked_at = information.checked_at || null;
+  entry.updated_at = information.published_at || information.checked_at || null;
+  entry.title = information.title || entry.title;
+  return entry;
+}
+
+function resolveSupportServiceSourceMeta(information, sourceLookup) {
+  if (information.source_id && sourceLookup[information.source_id]) {
+    return sourceLookup[information.source_id];
+  }
+
+  const candidates = Object.keys(sourceLookup)
+    .map(function (key) {
+      return sourceLookup[key];
+    })
+    .filter(function (source) {
+      return (
+        source &&
+        source.category === "SUPPORT_SERVICE" &&
+        source.subcategory === information.subcategory &&
+        (source.municipality === information.municipality ||
+          source.facility_name === information.facility_name)
+      );
+    });
+
+  if (candidates.length === 1) {
+    return candidates[0];
+  }
+
+  if (information.source_url) {
+    return {
+      prefecture: "熊本県",
+      municipality: information.municipality || null,
+      organization: information.facility_name || information.title,
+      url: information.source_url,
+      provider_type: "PUBLIC_ORGANIZATION",
+      verification_status: SUPPORT_SERVICE_VERIFICATION_STATUS.REQUIRES_MANUAL_REVIEW
+    };
+  }
+
+  return null;
+}
+
+function buildSupportServicePublicItems(publicPayload, disasterSources) {
+  const items = [];
+  const sourceLookup = buildSupportServiceSourceLookup(disasterSources);
+
+  (publicPayload.informations || []).forEach(function (information) {
+    if (!information || information.category !== "SUPPORT_SERVICE") {
+      return;
+    }
+    const sourceMeta = resolveSupportServiceSourceMeta(information, sourceLookup);
+    if (!sourceMeta || !sourceMeta.url) {
+      return;
+    }
+    items.push(toSupportServicePublicIndexEntry(information, sourceMeta));
+  });
+
+  return items;
+}
+
+function buildSupportServiceIndexItems(disasterSources, options) {
+  options = options || {};
+  const publicPayload = readJson(
+    options.supportInformationPath || SUPPORT_INFORMATION_PUBLIC_FILE,
+    null
+  );
+
+  if (
+    publicPayload &&
+    Array.isArray(publicPayload.informations) &&
+    publicPayload.informations.length
+  ) {
+    return buildSupportServicePublicItems(publicPayload, disasterSources);
+  }
+
+  return buildSupportServiceRegistryItems(disasterSources);
+}
+
 function buildRegistryItems(disasterSources) {
   const items = [];
 
@@ -441,9 +736,21 @@ function buildDisasterSearchIndex(options) {
   const registryItems = buildRegistryItems(disasterSources);
   const snapshotItems = buildSnapshotFacilityItems(snapshots, disasterSources);
   const volunteerRegistryItems = buildVolunteerRegistryItems(disasterSources);
+  const supportServiceRegistryItems = buildSupportServiceIndexItems(disasterSources, options);
   const preservedShelterItems = readPreservedShelterRegistryEntries(options);
+  const timestampLookup = buildPatrolTimestampLookup(options);
   const index = dedupeIndexItems(
-    locationItems.concat(registryItems, snapshotItems, volunteerRegistryItems, preservedShelterItems)
+    applyPatrolTimestampsToItems(
+      locationItems.concat(
+        registryItems,
+        snapshotItems,
+        volunteerRegistryItems,
+        supportServiceRegistryItems,
+        preservedShelterItems
+      ),
+      timestampLookup,
+      ["WATER", "VOLUNTEER"]
+    )
   );
 
   return {
@@ -455,6 +762,7 @@ function buildDisasterSearchIndex(options) {
       registry_item_count: registryItems.length,
       snapshot_item_count: snapshotItems.length,
       volunteer_registry_item_count: volunteerRegistryItems.length,
+      support_service_registry_item_count: supportServiceRegistryItems.length,
       shelter_registry_item_count: preservedShelterItems.length,
       item_count: index.length,
       last_updated: new Date().toISOString()
@@ -501,7 +809,16 @@ function searchDisasterIndex(indexPayload, query, options) {
         item.title,
         (item.keywords || []).join(" "),
         item.content,
-        item.capability_status || ""
+        item.capability_status || "",
+        item.subcategory || "",
+        item.subcategory_detail || "",
+        item.opening_type || "",
+        item.facility_name || "",
+        item.provider_type || "",
+        getSupportServiceSubcategoryLabel(item.subcategory),
+        getSupportServiceDetailLabel(item.subcategory_detail),
+        getOpeningTypeLabel(item.opening_type),
+        getProviderTypeLabel(item.provider_type)
       ].join(" ")
     );
 
@@ -566,6 +883,44 @@ function validateDisasterSearchIndexEntry(entry, index) {
     }
   }
 
+  if (entry.source_updated_at && Number.isNaN(Date.parse(entry.source_updated_at))) {
+    errors.push(label + ": invalid source_updated_at");
+  }
+
+  if (entry.checked_at && Number.isNaN(Date.parse(entry.checked_at))) {
+    errors.push(label + ": invalid checked_at");
+  }
+
+  if (entry.category === "SUPPORT_SERVICE") {
+    ["subcategory", "opening_type", "provider_type", "verification_status"].forEach(function (field) {
+      if (!entry[field]) {
+        errors.push(label + ": missing " + field);
+      }
+    });
+
+    if (entry.subcategory && SUPPORT_SERVICE_SUBCATEGORIES[entry.subcategory]) {
+      const allowedDetails = SUPPORT_SERVICE_SUBCATEGORIES[entry.subcategory].details;
+      if (allowedDetails.length && !entry.subcategory_detail) {
+        errors.push(label + ": missing subcategory_detail for " + entry.subcategory);
+      }
+    }
+
+    if (entry.opening_type && OPENING_TYPE_VALUES.indexOf(entry.opening_type) === -1) {
+      errors.push(label + ": invalid opening_type " + entry.opening_type);
+    }
+
+    if (entry.provider_type && PROVIDER_TYPE_VALUES.indexOf(entry.provider_type) === -1) {
+      errors.push(label + ": invalid provider_type " + entry.provider_type);
+    }
+
+    if (
+      entry.verification_status &&
+      SUPPORT_SERVICE_VERIFICATION_STATUS_VALUES.indexOf(entry.verification_status) === -1
+    ) {
+      errors.push(label + ": invalid verification_status " + entry.verification_status);
+    }
+  }
+
   if (entry.category === "SHELTER" && entry.source_trace) {
     ["area_id", "source_id", "status"].forEach(function (field) {
       if (!entry[field]) {
@@ -581,6 +936,22 @@ function validateDisasterSearchIndexEntry(entry, index) {
   }
 
   return errors;
+}
+
+function validateSupportServiceIndexExample() {
+  const source = buildSupportServiceSchemaExample({
+    source_id: buildIndexId(["SUPPORT_SERVICE", "example-source"]),
+    active: true
+  });
+  const example = toSupportServiceRegistryIndexEntry(source);
+  const schemaErrors = validateSupportServiceSchemaExample();
+  const indexErrors = validateDisasterSearchIndexEntry(example, 0);
+
+  return {
+    schemaErrors: schemaErrors,
+    indexErrors: indexErrors,
+    example: example
+  };
 }
 
 function validateVolunteerIndexExample() {
@@ -659,21 +1030,37 @@ module.exports = {
   SNAPSHOT_SEED_FILE,
   OUTPUT_FILE,
   PUBLIC_OUTPUT_FILE,
+  SUPPORT_INFORMATION_PUBLIC_FILE,
   REGION_KYUSHU_SOUTH,
   CATEGORIES,
   DISASTER_WATER_KEYWORDS,
   VOLUNTEER_KEYWORDS,
   CAPABILITY_STATUS,
   VOLUNTEER_DISASTER_START_DATE,
+  OPENING_TYPE,
+  OPENING_TYPE_VALUES,
+  PROVIDER_TYPE_VALUES,
+  SUPPORT_SERVICE_SUBCATEGORY_LABELS,
+  SUPPORT_SERVICE_DETAIL_LABELS,
+  OPENING_TYPE_LABELS,
+  PROVIDER_TYPE_LABELS,
+  SUPPORT_SERVICE_VERIFICATION_LABELS,
   buildDisasterSearchIndex,
   buildVolunteerRegistryItems,
+  buildSupportServiceRegistryItems,
+  buildSupportServicePublicItems,
+  buildSupportServiceIndexItems,
+  resolveSupportServiceSourceMeta,
+  toSupportServicePublicIndexEntry,
   isVolunteerPublishedForCurrentDisaster,
   toVolunteerRegistryIndexEntry,
+  toSupportServiceRegistryIndexEntry,
   buildAndWriteDisasterSearchIndex,
   searchDisasterIndex,
   normalizeSearchText,
   validateDisasterSearchIndex,
   validateDisasterSearchIndexEntry,
   validateVolunteerIndexExample,
+  validateSupportServiceIndexExample,
   parseFacilitiesFromOriginalText
 };

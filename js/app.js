@@ -16,6 +16,7 @@
   var WATER_SEARCH_ID = "water-search";
   var DISASTER_SEARCH_ID = "disaster-search";
   var DISASTER_SEARCH_VOLUNTEER_ID = "disaster-search-volunteer";
+  var DISASTER_SEARCH_SUPPORT_SERVICE_ID = "disaster-search-support-service";
   var DISASTER_SEARCH_DEFAULT_CATEGORY = "WATER";
   var DISASTER_SEARCH_CATEGORY_CONFIG = {
     WATER: {
@@ -37,6 +38,16 @@
         "支援したい方へ。\n\n" +
         "熊本県・鹿児島県の災害ボランティア募集情報を検索できます。\n\n" +
         "募集状況・受付先・参加方法を確認できます。"
+    },
+    SUPPORT_SERVICE: {
+      sectionId: "disaster-search-support-service",
+      icon: "🏠",
+      title: "生活支援情報を探す",
+      lead: "無料開放・生活支援情報を検索",
+      promoDescription:
+        "被災者の方へ。\n\n" +
+        "風呂・シャワー・休憩スペース・トイレ・駐車場・炊き出しなど、\n" +
+        "生活支援に関する情報を検索できます。"
     }
   };
   var DISASTER_SEARCH_SHARED = {
@@ -68,6 +79,18 @@
         "自治体公式情報",
         "災害ボランティア募集情報"
       ]
+    },
+    SUPPORT_SERVICE: {
+      intro: "この検索では、被災者向けの生活支援情報（無料開放・開放・支援提供）を対象にしています。",
+      instruction: "地域名やキーワードで検索してください。",
+      examples: ["熊本 シャワー", "合志 休憩", "人吉 車中泊", "益城 炊き出し"],
+      placeholder: "例：熊本 シャワー / 人吉 車中泊",
+      scopeInfoItems: [
+        "自治体公式情報",
+        "施設・団体の開放情報",
+        "入浴・休憩・駐車場",
+        "炊き出し・支援物資"
+      ]
     }
   };
   var DISASTER_SEARCH_PLANNED_CATEGORIES = [
@@ -79,6 +102,36 @@
   var VOLUNTEER_CAPABILITY_STATUS = {
     CURRENT_CONFIRMED: "CURRENT_CONFIRMED",
     CAPABILITY_UNCONFIRMED: "CAPABILITY_UNCONFIRMED"
+  };
+  var SUPPORT_SERVICE_SUBCATEGORY_LABELS = {
+    BATH: "入浴・シャワー",
+    SPACE: "スペース",
+    TOILET: "トイレ",
+    VEHICLE: "車両・駐車",
+    FOOD: "食事・炊き出し",
+    SUPPLIES: "支援物資",
+    PET: "ペット"
+  };
+  var SUPPORT_SERVICE_DETAIL_LABELS = {
+    BATH: "風呂",
+    SHOWER: "シャワー",
+    REST_SPACE: "休憩スペース",
+    ROOM: "個室",
+    PARKING: "駐車場",
+    CAR_CAMP: "車中泊",
+    COOKING: "炊き出し"
+  };
+  var SUPPORT_SERVICE_PROVIDER_LABELS = {
+    MUNICIPALITY: "自治体",
+    PUBLIC_ORGANIZATION: "公共団体",
+    FACILITY: "施設提供",
+    COMPANY: "企業",
+    ORGANIZATION: "団体",
+    INDIVIDUAL: "個人"
+  };
+  var SUPPORT_SERVICE_VERIFICATION_LABELS = {
+    VERIFIED: "確認済",
+    REQUIRES_MANUAL_REVIEW: "要確認"
   };
   var DISASTER_MAP_SECTION_ID = "disaster-location-map-section";
   var VERIFIED_LOCATIONS_TITLE = "📍 支援地点一覧";
@@ -550,6 +603,73 @@
       return 1;
     }
     return (a.display_priority || 0) - (b.display_priority || 0);
+  }
+
+  function getOfficialSourceUpdatedAt(record) {
+    if (!record) {
+      return null;
+    }
+    return record.source_updated_at || record.displayed_updated_at || null;
+  }
+
+  function appendPublicCardTimestampMeta(meta, record) {
+    var officialUpdated = formatDateTime(getOfficialSourceUpdatedAt(record));
+    if (officialUpdated) {
+      meta.appendChild(createElement("dt", null, "公式更新"));
+      meta.appendChild(createElement("dd", null, officialUpdated));
+    }
+    var checked = formatDateTime(record.checked_at);
+    if (checked) {
+      meta.appendChild(createElement("dt", null, "確認日時"));
+      meta.appendChild(createElement("dd", null, checked));
+    }
+  }
+
+  function formatSearchOfficialUpdate(item) {
+    if (!item || !item.source_updated_at) {
+      return "確認できません";
+    }
+    return formatDateTime(item.source_updated_at) || "確認できません";
+  }
+
+  function appendSearchResultTimestamps(card, item, classBase) {
+    var timestamps = createElement("div", classBase + "__timestamps");
+
+    var officialRow = createElement("p", classBase + "__timestamp");
+    officialRow.appendChild(createElement("span", classBase + "__timestamp-label", "公式更新："));
+    officialRow.appendChild(document.createTextNode(formatSearchOfficialUpdate(item)));
+    timestamps.appendChild(officialRow);
+
+    var checked = formatDateTime(item.checked_at);
+    if (checked) {
+      var checkedRow = createElement("p", classBase + "__timestamp");
+      checkedRow.appendChild(createElement("span", classBase + "__timestamp-label", "確認日時："));
+      checkedRow.appendChild(document.createTextNode(checked));
+      timestamps.appendChild(checkedRow);
+    }
+
+    card.appendChild(timestamps);
+  }
+
+  function appendLatestUpdateTimestamps(meta, record) {
+    var officialUpdated = formatDateTime(getOfficialSourceUpdatedAt(record));
+    if (officialUpdated) {
+      var officialWrap = createElement("span", "latest-updates__timestamp");
+      officialWrap.appendChild(createElement("span", "latest-updates__timestamp-label", "公式更新"));
+      officialWrap.appendChild(document.createTextNode(" "));
+      var officialTime = createElement("time", "latest-updates__datetime", officialUpdated);
+      officialWrap.appendChild(officialTime);
+      meta.appendChild(officialWrap);
+    }
+    var checked = formatDateTime(record.checked_at);
+    if (checked) {
+      var checkedWrap = createElement("span", "latest-updates__timestamp");
+      checkedWrap.appendChild(createElement("span", "latest-updates__timestamp-label", "確認日時"));
+      checkedWrap.appendChild(document.createTextNode(" "));
+      var checkedTime = createElement("time", "latest-updates__datetime", checked);
+      checkedWrap.appendChild(checkedTime);
+      meta.appendChild(checkedWrap);
+    }
   }
 
   function getCategoryOrderIndex(categoryId) {
@@ -1077,13 +1197,7 @@
         card.appendChild(createElement("p", "water-search__source", sourceText));
       }
 
-      if (item.updated_at) {
-        card.appendChild(createElement(
-          "p",
-          "water-search__updated",
-          "更新：" + formatDateTime(item.updated_at)
-        ));
-      }
+      appendSearchResultTimestamps(card, item, "water-search");
 
       list.appendChild(card);
     });
@@ -1183,7 +1297,16 @@
           item.organization,
           item.title,
           (item.keywords || []).join(" "),
-          item.content
+          item.content,
+          item.capability_status || "",
+          item.subcategory || "",
+          item.subcategory_detail || "",
+          item.opening_type || "",
+          item.facility_name || "",
+          item.provider_type || "",
+          SUPPORT_SERVICE_SUBCATEGORY_LABELS[item.subcategory] || "",
+          SUPPORT_SERVICE_DETAIL_LABELS[item.subcategory_detail] || "",
+          SUPPORT_SERVICE_PROVIDER_LABELS[item.provider_type] || ""
         ].join(" ")
       );
 
@@ -1191,6 +1314,71 @@
         return hay.indexOf(token) !== -1;
       });
     });
+  }
+
+  function formatSupportServiceDate(value) {
+    if (!value || value === "UNKNOWN") {
+      return "不明";
+    }
+    return String(value).slice(0, 10);
+  }
+
+  function formatSupportServicePeriod(item) {
+    var from = formatSupportServiceDate(item.available_from);
+    var until = formatSupportServiceDate(item.available_until);
+    if (from === "不明" && until === "不明") {
+      return "不明";
+    }
+    if (until === "不明") {
+      return from + "〜";
+    }
+    return from + "〜" + until;
+  }
+
+  function formatSupportServiceSourceLabel(item) {
+    if (item.source_name && item.source_platform) {
+      return item.source_name + " " + item.source_platform;
+    }
+    if (item.source_name) {
+      return item.source_name;
+    }
+    if (item.organization) {
+      return item.organization;
+    }
+    return "不明";
+  }
+
+  function appendSupportServiceCardDetails(card, item) {
+    if (!item || item.category !== "SUPPORT_SERVICE") {
+      return;
+    }
+
+    if (item.facility_name) {
+      card.appendChild(createElement(
+        "p",
+        "disaster-search__facility",
+        item.facility_name
+      ));
+    }
+
+    var meta = createElement("dl", "disaster-search__support-meta");
+    var subcategoryLabel = SUPPORT_SERVICE_SUBCATEGORY_LABELS[item.subcategory] || item.subcategory || "";
+    var locationText = [item.municipality, item.address].filter(Boolean).join(" ");
+    var periodText = formatSupportServicePeriod(item);
+    var sourceLabel = formatSupportServiceSourceLabel(item);
+    var checkedLabel = formatSupportServiceDate(item.checked_at || item.updated_at || item.available_from);
+
+    meta.appendChild(createElement("dt", "disaster-search__support-meta-label", "分類："));
+    meta.appendChild(createElement("dd", "disaster-search__support-meta-value", subcategoryLabel));
+    meta.appendChild(createElement("dt", "disaster-search__support-meta-label", "場所："));
+    meta.appendChild(createElement("dd", "disaster-search__support-meta-value", locationText || "不明"));
+    meta.appendChild(createElement("dt", "disaster-search__support-meta-label", "利用期間："));
+    meta.appendChild(createElement("dd", "disaster-search__support-meta-value", periodText));
+    meta.appendChild(createElement("dt", "disaster-search__support-meta-label", "情報提供元："));
+    meta.appendChild(createElement("dd", "disaster-search__support-meta-value", sourceLabel));
+    meta.appendChild(createElement("dt", "disaster-search__support-meta-label", "最終確認："));
+    meta.appendChild(createElement("dd", "disaster-search__support-meta-value", checkedLabel));
+    card.appendChild(meta);
   }
 
   function appendVolunteerCapabilityStatus(card, item) {
@@ -1271,14 +1459,18 @@
       card.appendChild(createElement(
         "h3",
         "disaster-search__title",
-        item.title || "公式情報"
+        (category === "SUPPORT_SERVICE" ? "🏠 " : "") + (item.title || "公式情報")
       ));
 
       if (category === "VOLUNTEER") {
         appendVolunteerCapabilityStatus(card, item);
       }
 
-      if (item.content) {
+      if (category === "SUPPORT_SERVICE") {
+        appendSupportServiceCardDetails(card, item);
+      }
+
+      if (item.content && category !== "SUPPORT_SERVICE") {
         card.appendChild(createElement(
           "p",
           "disaster-search__content",
@@ -1301,7 +1493,9 @@
         card.appendChild(officialLink);
       }
 
-      if (item.updated_at) {
+      if (category === "VOLUNTEER") {
+        appendSearchResultTimestamps(card, item, "disaster-search");
+      } else if (item.updated_at) {
         card.appendChild(createElement(
           "p",
           "disaster-search__updated",
@@ -1355,6 +1549,14 @@
         "p",
         "disaster-search__flow-note",
         "入口 → 検索 → 詳細確認の流れで水情報を確認できます。詳細一覧は下の「給水情報一覧」へ。"
+      ));
+    }
+
+    if (categoryKey === "SUPPORT_SERVICE") {
+      inner.appendChild(createElement(
+        "p",
+        "disaster-search__caution",
+        "※この情報には自治体等の公的情報に加え、施設・団体等が提供する支援情報を含みます。利用前に最新状況や利用条件を提供元へご確認ください。"
       ));
     }
 
@@ -2951,10 +3153,7 @@
       }
       var meta = createElement("div", "latest-updates__meta");
 
-      var datetime = formatDateTime(record.displayed_updated_at);
-      if (datetime) {
-        meta.appendChild(createElement("time", "latest-updates__datetime", datetime));
-      }
+      appendLatestUpdateTimestamps(meta, record);
       meta.appendChild(createElement("span", "latest-updates__area", record.area_name));
       meta.appendChild(createElement("span", "latest-updates__category", record.public_category_label));
 
@@ -3022,11 +3221,7 @@
       meta.appendChild(createElement("dt", null, "取得日時"));
       meta.appendChild(createElement("dd", null, formatDateTime(record.collected_at)));
     }
-    var updated = formatDateTime(record.displayed_updated_at);
-    if (updated && !isEmergencyInfoRecord(record)) {
-      meta.appendChild(createElement("dt", null, "更新："));
-      meta.appendChild(createElement("dd", null, updated));
-    }
+    appendPublicCardTimestampMeta(meta, record);
 
     var sourceLabel = record.department || record.source_name || record.area_name;
     if (sourceLabel) {
@@ -3266,6 +3461,7 @@
         renderAreaDisasterNav(page, areaNavigation, disasterLocations, locationSources);
         renderDisasterSearch(page, disasterSearchIndex, "WATER");
         renderDisasterSearch(page, disasterSearchIndex, "VOLUNTEER");
+        renderDisasterSearch(page, disasterSearchIndex, "SUPPORT_SERVICE");
         renderWaterSearch(page, waterSearchIndex);
         renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);

@@ -24,7 +24,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "index_id": "DIDX-CBA0C17B0FD5",
@@ -48,7 +50,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "index_id": "DIDX-8D6A40BFA26E",
@@ -72,7 +76,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "index_id": "DIDX-5C136E4FC248",
@@ -96,7 +102,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "index_id": "DIDX-10A9468D3D4D",
@@ -120,7 +128,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "index_id": "DIDX-7DBB32BBFAC4",
@@ -144,7 +154,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
       "official": true,
-      "updated_at": "2026-07-29T00:00:00+09:00"
+      "updated_at": "2026-07-29T00:00:00+09:00",
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "index_id": "DIDX-5E09F1097D4E",
@@ -168,7 +179,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
       "official": true,
-      "updated_at": "2026-07-29T00:00:00+09:00"
+      "updated_at": "2026-07-29T00:00:00+09:00",
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "index_id": "DIDX-FB5F07D026B8",
@@ -192,7 +204,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
       "official": true,
-      "updated_at": "2026-07-29T00:00:00+09:00"
+      "updated_at": "2026-07-29T00:00:00+09:00",
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "index_id": "DIDX-1E8C074FF041",
@@ -216,7 +229,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
       "official": true,
-      "updated_at": "2026-07-29T00:00:00+09:00"
+      "updated_at": "2026-07-29T00:00:00+09:00",
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "index_id": "DIDX-9FFB209B5A96",
@@ -240,7 +254,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "official": true,
-      "updated_at": "2026-07-29T16:30:00+09:00"
+      "updated_at": "2026-07-29T16:30:00+09:00",
+      "source_updated_at": "2026-07-28T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:38.723Z"
     },
     {
       "index_id": "DIDX-BBA53E8FEB7B",
@@ -264,7 +280,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "official": true,
-      "updated_at": "2026-07-29T16:30:00+09:00"
+      "updated_at": "2026-07-29T16:30:00+09:00",
+      "source_updated_at": "2026-07-28T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:38.723Z"
     },
     {
       "index_id": "DIDX-010B48648C62",
@@ -288,7 +306,9 @@
       "source_type": "DISASTER",
       "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:03:59.000Z",
+      "checked_at": "2026-07-31T08:34:31.483Z"
     },
     {
       "index_id": "DIDX-6AAC8681D8F4",
@@ -312,7 +332,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.kumamoto.jp/bousai/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T06:00:09.000Z",
+      "checked_at": "2026-07-31T08:34:31.655Z"
     },
     {
       "index_id": "DIDX-46EB4F200FB8",
@@ -336,7 +358,9 @@
       "source_type": "WATERWORKS",
       "source_url": "https://www.city.kumamoto.jp/bousai/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T06:00:09.000Z",
+      "checked_at": "2026-07-31T08:34:31.655Z"
     },
     {
       "index_id": "DIDX-407654443FFF",
@@ -360,7 +384,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "index_id": "DIDX-9EEE4573D419",
@@ -384,7 +410,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-30T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:36.054Z"
     },
     {
       "index_id": "DIDX-7EF2845EB558",
@@ -408,7 +436,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "index_id": "DIDX-E1A8A78303AB",
@@ -432,7 +461,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T08:34:41.158Z"
     },
     {
       "index_id": "DIDX-3559DF78038A",
@@ -456,7 +486,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.koshi.lg.jp/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:34:05.000Z",
+      "checked_at": "2026-07-31T08:34:37.611Z"
     },
     {
       "index_id": "DIDX-B47BC27A3623",
@@ -480,7 +512,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.tamana.lg.jp/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:22.381Z"
     },
     {
       "index_id": "DIDX-990D29DEC5F9",
@@ -504,7 +537,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:22:04.000Z",
+      "checked_at": "2026-07-31T08:34:41.265Z"
     },
     {
       "index_id": "DIDX-D2FC067E6CB6",
@@ -528,7 +563,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.town.kosa.lg.jp/q/list/51.html",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-08-02T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:41.679Z"
     },
     {
       "index_id": "DIDX-411D5F79D0CA",
@@ -552,7 +589,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.town.ashikita.lg.jp/bosai_site/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-29T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:42.677Z"
     },
     {
       "index_id": "DIDX-8FF3079DBB35",
@@ -576,7 +615,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-27T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:43.304Z"
     },
     {
       "index_id": "DIDX-BF8B03D17B36",
@@ -600,7 +641,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T08:34:43.454Z"
     },
     {
       "index_id": "DIDX-B57F825D470F",
@@ -624,7 +666,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T02:35:05.000Z",
+      "checked_at": "2026-07-31T08:34:43.960Z"
     },
     {
       "index_id": "DIDX-C26021A020F2",
@@ -648,7 +692,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-30T15:00:14.000Z",
+      "checked_at": "2026-07-31T08:34:44.203Z"
     },
     {
       "index_id": "DIDX-2A5E4D4E6D89",
@@ -696,7 +742,9 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.amakusa.kumamoto.jp/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:01:23.000Z",
+      "checked_at": "2026-07-31T08:34:56.079Z"
     },
     {
       "index_id": "DIDX-A4643DA2A13B",
@@ -720,7 +768,8 @@
       "source_type": "DISASTER",
       "source_url": "https://www.pref.kagoshima.jp/bosai/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:47.280Z"
     },
     {
       "index_id": "DIDX-A4526C00C381",
@@ -792,7 +841,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.kanoya.lg.jp/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:47.636Z"
     },
     {
       "index_id": "DIDX-F295CC74C634",
@@ -816,7 +866,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.satsumasendai.lg.jp/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:47.863Z"
     },
     {
       "index_id": "DIDX-A04E254D7A08",
@@ -840,7 +891,8 @@
       "source_type": "MUNICIPALITY",
       "source_url": "https://www.city.aira.lg.jp/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:48.130Z"
     },
     {
       "index_id": "DIDX-9FA7B441EA11",
@@ -1008,7 +1060,8 @@
       "source_type": "COAST_GUARD",
       "source_url": "https://www.kaiho.mlit.go.jp/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:48.681Z"
     },
     {
       "index_id": "DIDX-A50322EDD48F",
@@ -1032,7 +1085,8 @@
       "source_type": "COAST_GUARD",
       "source_url": "https://www.kaiho.mlit.go.jp/",
       "official": true,
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:48.681Z"
     },
     {
       "index_id": "DIDX-A8BD4003D1C2",
@@ -1059,7 +1113,8 @@
       "current_capability": {
         "confirmed": true,
         "source": "熊本県災害ボランティア情報（公式）"
-      }
+      },
+      "checked_at": "2026-07-31T08:35:04.821Z"
     },
     {
       "index_id": "DIDX-82F947B44F6E",
@@ -1113,7 +1168,9 @@
       "current_capability": {
         "confirmed": true,
         "source": "八代市社会福祉協議会公式情報"
-      }
+      },
+      "source_updated_at": "2026-07-31T00:36:26.000Z",
+      "checked_at": "2026-07-31T08:35:05.459Z"
     },
     {
       "index_id": "DIDX-D4D357987062",
@@ -1167,7 +1224,9 @@
       "current_capability": {
         "confirmed": true,
         "source": "益城町社会福祉協議会公式情報"
-      }
+      },
+      "source_updated_at": "2026-05-31T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:35:08.117Z"
     },
     {
       "index_id": "DIDX-4E84006D8EE4",
@@ -1248,7 +1307,8 @@
       "current_capability": {
         "confirmed": false,
         "source": ""
-      }
+      },
+      "checked_at": "2026-07-31T08:35:10.199Z"
     },
     {
       "index_id": "DIDX-41AD014D4A42",
@@ -1302,7 +1362,9 @@
       "current_capability": {
         "confirmed": false,
         "source": ""
-      }
+      },
+      "source_updated_at": "2025-06-17T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:35:10.855Z"
     },
     {
       "index_id": "DIDX-D9D415E7F08E",
@@ -1329,7 +1391,9 @@
       "current_capability": {
         "confirmed": false,
         "source": ""
-      }
+      },
+      "source_updated_at": "2026-05-27T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:35:11.396Z"
     },
     {
       "index_id": "DIDX-19BB10291BB5",

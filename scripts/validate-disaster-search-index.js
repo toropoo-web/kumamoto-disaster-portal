@@ -10,10 +10,13 @@ const {
   OUTPUT_FILE,
   REGION_KYUSHU_SOUTH,
   CATEGORIES,
+  OPENING_TYPE_VALUES,
+  PROVIDER_TYPE_VALUES,
   buildAndWriteDisasterSearchIndex,
   searchDisasterIndex,
   validateDisasterSearchIndex,
-  validateVolunteerIndexExample
+  validateVolunteerIndexExample,
+  validateSupportServiceIndexExample
 } = require(path.join(__dirname, "..", "monitor", "disaster-search-index-engine"));
 
 function main() {
@@ -175,6 +178,106 @@ function main() {
   if (volunteerCategories.length !== 20) {
     errors.push("expected 20 VOLUNTEER index entries (11 Kumamoto + 9 Kagoshima)");
   }
+
+  const volunteerPrefectureEntry = volunteerCategories.find(function (item) {
+    return item.source_url === "https://www.fukushi-kumamoto.or.jp/kvc/";
+  });
+  checks.push({
+    check: "VOLUNTEER checked_at propagated",
+    pass: Boolean(volunteerPrefectureEntry && volunteerPrefectureEntry.checked_at),
+    checked_at: volunteerPrefectureEntry ? volunteerPrefectureEntry.checked_at : null
+  });
+  if (!volunteerPrefectureEntry || !volunteerPrefectureEntry.checked_at) {
+    errors.push("timestamp propagation failed: 熊本県災害VC missing checked_at");
+  }
+
+  const waterLocationEntry = payload.index.find(function (item) {
+    return (
+      item.category === "WATER" &&
+      item.municipality === "八代市" &&
+      /鏡/.test(item.content || item.title || "")
+    );
+  });
+  checks.push({
+    check: "WATER source_updated_at propagated",
+    pass: Boolean(waterLocationEntry && waterLocationEntry.source_updated_at),
+    source_updated_at: waterLocationEntry ? waterLocationEntry.source_updated_at : null
+  });
+  if (!waterLocationEntry || !waterLocationEntry.source_updated_at) {
+    errors.push("timestamp propagation failed: 八代市 WATER location missing source_updated_at");
+  }
+
+  const supportServiceCategories = payload.index.filter(function (item) {
+    return item.category === "SUPPORT_SERVICE";
+  });
+  const supportShowerResults = searchDisasterIndex(payload, "シャワー", {
+    category: "SUPPORT_SERVICE"
+  });
+  const supportCarCampResults = searchDisasterIndex(payload, "車中泊", {
+    category: "SUPPORT_SERVICE"
+  });
+  const supportKumamotoResults = searchDisasterIndex(payload, "熊本 シャワー", {
+    category: "SUPPORT_SERVICE"
+  });
+
+  checks.push({
+    check: "SUPPORT_SERVICE search possible",
+    pass:
+      supportShowerResults.length > 0 &&
+      supportCarCampResults.length > 0 &&
+      supportKumamotoResults.length > 0,
+    showerCount: supportShowerResults.length,
+    carCampCount: supportCarCampResults.length,
+    kumamotoCount: supportKumamotoResults.length,
+    supportServiceIndexCount: supportServiceCategories.length
+  });
+
+  if (!supportShowerResults.length) {
+    errors.push("SUPPORT_SERVICE search failed: シャワー");
+  }
+  if (!supportCarCampResults.length) {
+    errors.push("SUPPORT_SERVICE search failed: 車中泊");
+  }
+  if (!supportKumamotoResults.length) {
+    errors.push("SUPPORT_SERVICE search failed: 熊本 シャワー");
+  }
+  if (supportServiceCategories.length !== 5) {
+    errors.push("expected 5 SUPPORT_SERVICE index entries (test data)");
+  }
+
+  supportServiceCategories.forEach(function (entry, index) {
+    if (!entry.subcategory || !entry.opening_type || !entry.provider_type || !entry.verification_status) {
+      errors.push("SUPPORT_SERVICE index[" + index + "]: missing required support fields");
+    }
+    if (OPENING_TYPE_VALUES.indexOf(entry.opening_type) === -1) {
+      errors.push("SUPPORT_SERVICE index[" + index + "]: invalid opening_type " + entry.opening_type);
+    }
+    if (PROVIDER_TYPE_VALUES.indexOf(entry.provider_type) === -1) {
+      errors.push("SUPPORT_SERVICE index[" + index + "]: invalid provider_type " + entry.provider_type);
+    }
+  });
+
+  const supportServiceResult = validateSupportServiceIndexExample();
+  checks.push({
+    check: "SUPPORT_SERVICE schema compatible",
+    pass:
+      supportServiceResult.schemaErrors.length === 0 &&
+      supportServiceResult.indexErrors.length === 0,
+    schemaErrors: supportServiceResult.schemaErrors,
+    indexErrors: supportServiceResult.indexErrors
+  });
+  errors.push.apply(
+    errors,
+    supportServiceResult.schemaErrors.map(function (message) {
+      return "SUPPORT_SERVICE schema: " + message;
+    })
+  );
+  errors.push.apply(
+    errors,
+    supportServiceResult.indexErrors.map(function (message) {
+      return "SUPPORT_SERVICE index: " + message;
+    })
+  );
 
   const volunteerResult = validateVolunteerIndexExample();
   checks.push({

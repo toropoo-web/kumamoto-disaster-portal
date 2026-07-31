@@ -9,7 +9,7 @@
   "location_item_count": 11,
   "registry_item_count": 32,
   "item_count": 43,
-  "last_updated": "2026-07-31T08:34:26.125Z",
+  "last_updated": "2026-07-31T08:49:52.790Z",
   "items": [
     {
       "item_kind": "location",
@@ -22,7 +22,9 @@
       "source_name": "八代市公式",
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "item_kind": "location",
@@ -35,7 +37,9 @@
       "source_name": "八代市公式",
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "item_kind": "location",
@@ -48,7 +52,9 @@
       "source_name": "八代市公式",
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "item_kind": "location",
@@ -61,7 +67,9 @@
       "source_name": "八代市公式",
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "item_kind": "location",
@@ -74,7 +82,9 @@
       "source_name": "八代市公式",
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
-      "updated_at": "2026-07-29T17:01:00+09:00"
+      "updated_at": "2026-07-29T17:01:00+09:00",
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "item_kind": "location",
@@ -87,7 +97,8 @@
       "source_name": "人吉市公式",
       "source_type": "official",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
-      "updated_at": "2026-07-29T00:00:00+09:00"
+      "updated_at": "2026-07-29T00:00:00+09:00",
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "item_kind": "location",
@@ -100,7 +111,8 @@
       "source_name": "人吉市公式",
       "source_type": "official",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
-      "updated_at": "2026-07-29T00:00:00+09:00"
+      "updated_at": "2026-07-29T00:00:00+09:00",
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "item_kind": "location",
@@ -113,7 +125,8 @@
       "source_name": "人吉市公式",
       "source_type": "official",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
-      "updated_at": "2026-07-29T00:00:00+09:00"
+      "updated_at": "2026-07-29T00:00:00+09:00",
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "item_kind": "location",
@@ -126,7 +139,8 @@
       "source_name": "人吉市公式",
       "source_type": "official",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
-      "updated_at": "2026-07-29T00:00:00+09:00"
+      "updated_at": "2026-07-29T00:00:00+09:00",
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "item_kind": "location",
@@ -139,7 +153,9 @@
       "source_name": "菊陽町公式",
       "source_type": "official",
       "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
-      "updated_at": "2026-07-29T16:30:00+09:00"
+      "updated_at": "2026-07-29T16:30:00+09:00",
+      "source_updated_at": "2026-07-28T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:38.723Z"
     },
     {
       "item_kind": "location",
@@ -152,7 +168,9 @@
       "source_name": "菊陽町公式",
       "source_type": "official",
       "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
-      "updated_at": "2026-07-29T16:30:00+09:00"
+      "updated_at": "2026-07-29T16:30:00+09:00",
+      "source_updated_at": "2026-07-28T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:38.723Z"
     },
     {
       "item_kind": "registry",
@@ -165,7 +183,9 @@
       "source_name": "熊本県防災情報",
       "source_type": "official",
       "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:03:59.000Z",
+      "checked_at": "2026-07-31T08:34:31.483Z"
     },
     {
       "item_kind": "registry",
@@ -178,7 +198,9 @@
       "source_name": "熊本市公式",
       "source_type": "official",
       "source_url": "https://www.city.kumamoto.jp/bousai/",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T06:00:09.000Z",
+      "checked_at": "2026-07-31T08:34:31.655Z"
     },
     {
       "item_kind": "registry",
@@ -191,7 +213,9 @@
       "source_name": "熊本市上下水道局",
       "source_type": "official",
       "source_url": "https://www.city.kumamoto.jp/bousai/",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T06:00:09.000Z",
+      "checked_at": "2026-07-31T08:34:31.655Z"
     },
     {
       "item_kind": "registry",
@@ -204,7 +228,9 @@
       "source_name": "八代市公式",
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:31:02.000Z",
+      "checked_at": "2026-07-31T08:34:36.614Z"
     },
     {
       "item_kind": "registry",
@@ -217,7 +243,9 @@
       "source_name": "宇城市公式",
       "source_type": "official",
       "source_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-30T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:36.054Z"
     },
     {
       "item_kind": "registry",
@@ -230,7 +258,8 @@
       "source_name": "人吉市公式",
       "source_type": "official",
       "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T08:34:36.874Z"
     },
     {
       "item_kind": "registry",
@@ -243,7 +272,8 @@
       "source_name": "菊池市公式",
       "source_type": "official",
       "source_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T08:34:41.158Z"
     },
     {
       "item_kind": "registry",
@@ -256,7 +286,9 @@
       "source_name": "合志市公式",
       "source_type": "official",
       "source_url": "https://www.city.koshi.lg.jp/",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:34:05.000Z",
+      "checked_at": "2026-07-31T08:34:37.611Z"
     },
     {
       "item_kind": "registry",
@@ -269,7 +301,8 @@
       "source_name": "玉名市公式",
       "source_type": "official",
       "source_url": "https://www.city.tamana.lg.jp/",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:22.381Z"
     },
     {
       "item_kind": "registry",
@@ -282,7 +315,9 @@
       "source_name": "水俣市公式",
       "source_type": "official",
       "source_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:22:04.000Z",
+      "checked_at": "2026-07-31T08:34:41.265Z"
     },
     {
       "item_kind": "registry",
@@ -295,7 +330,9 @@
       "source_name": "甲佐町公式",
       "source_type": "official",
       "source_url": "https://www.town.kosa.lg.jp/q/list/51.html",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-08-02T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:41.679Z"
     },
     {
       "item_kind": "registry",
@@ -308,7 +345,9 @@
       "source_name": "芦北町公式",
       "source_type": "official",
       "source_url": "https://www.town.ashikita.lg.jp/bosai_site/",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-29T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:42.677Z"
     },
     {
       "item_kind": "registry",
@@ -321,7 +360,9 @@
       "source_name": "津奈木町公式",
       "source_type": "official",
       "source_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-27T15:00:00.000Z",
+      "checked_at": "2026-07-31T08:34:43.304Z"
     },
     {
       "item_kind": "registry",
@@ -334,7 +375,8 @@
       "source_name": "上天草市公式",
       "source_type": "official",
       "source_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T08:34:43.454Z"
     },
     {
       "item_kind": "registry",
@@ -347,7 +389,9 @@
       "source_name": "西原村公式",
       "source_type": "official",
       "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T02:35:05.000Z",
+      "checked_at": "2026-07-31T08:34:43.960Z"
     },
     {
       "item_kind": "registry",
@@ -360,7 +404,9 @@
       "source_name": "苓北町公式",
       "source_type": "official",
       "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-30T15:00:14.000Z",
+      "checked_at": "2026-07-31T08:34:44.203Z"
     },
     {
       "item_kind": "registry",
@@ -386,7 +432,9 @@
       "source_name": "天草市公式",
       "source_type": "official",
       "source_url": "https://www.city.amakusa.kumamoto.jp/",
-      "updated_at": null
+      "updated_at": null,
+      "source_updated_at": "2026-07-31T08:01:23.000Z",
+      "checked_at": "2026-07-31T08:34:56.079Z"
     },
     {
       "item_kind": "registry",
@@ -399,7 +447,8 @@
       "source_name": "鹿児島県防災情報",
       "source_type": "official",
       "source_url": "https://www.pref.kagoshima.jp/bosai/",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:47.280Z"
     },
     {
       "item_kind": "registry",
@@ -438,7 +487,8 @@
       "source_name": "鹿屋市公式",
       "source_type": "official",
       "source_url": "https://www.city.kanoya.lg.jp/",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:47.636Z"
     },
     {
       "item_kind": "registry",
@@ -451,7 +501,8 @@
       "source_name": "薩摩川内市公式",
       "source_type": "official",
       "source_url": "https://www.city.satsumasendai.lg.jp/",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:47.863Z"
     },
     {
       "item_kind": "registry",
@@ -464,7 +515,8 @@
       "source_name": "姶良市公式",
       "source_type": "official",
       "source_url": "https://www.city.aira.lg.jp/",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:48.130Z"
     },
     {
       "item_kind": "registry",
@@ -555,7 +607,8 @@
       "source_name": "海上保安庁公式",
       "source_type": "official",
       "source_url": "https://www.kaiho.mlit.go.jp/",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:48.681Z"
     },
     {
       "item_kind": "registry",
@@ -568,7 +621,8 @@
       "source_name": "海上保安庁公式",
       "source_type": "official",
       "source_url": "https://www.kaiho.mlit.go.jp/",
-      "updated_at": null
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:48.681Z"
     }
   ]
 }

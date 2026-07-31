@@ -33,11 +33,19 @@ function main() {
   if (!appJs.includes("publicStatus.last_patrol_at")) {
     errors.push("app.js does not use publicStatus.last_patrol_at");
   }
+  if (!appJs.includes('"公式更新"')) {
+    errors.push("app.js does not label public card official update time");
+  }
+  if (!appJs.includes('"確認日時"')) {
+    errors.push("app.js does not label public card checked_at time");
+  }
 
   const result = {
     STATUS_JSON: errors.length === 0 ? "PASS" : "FAIL",
     HEADER_TIME_SOURCE: "status.json",
     CARD_UPDATE_SOURCE: "displayed_updated_at",
+    CARD_OFFICIAL_UPDATE_SOURCE: "source_updated_at",
+    CARD_CHECKED_AT_SOURCE: "checked_at",
     AUTO_PUBLICATION: false,
     status: status || null,
     errors

@@ -74,7 +74,7 @@ async function validateViewport(page, viewport, anchors) {
     const commConfirmedText = commConfirmed ? commConfirmed.textContent.trim() : "";
 
     const cardUpdatedLabels = Array.from(document.querySelectorAll(".official-info-card__meta dt"))
-      .filter((el) => el.textContent.trim() === "更新：")
+      .filter((el) => el.textContent.trim() === "公式更新")
       .length;
 
     const latestItems = Array.from(document.querySelectorAll(".latest-updates__item"));

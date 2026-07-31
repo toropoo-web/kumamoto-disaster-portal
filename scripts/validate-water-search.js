@@ -86,6 +86,7 @@ function main() {
     { name: "water search load", pattern: /loadWaterSearchIndex/ },
     { name: "water search function", pattern: /function searchWater/ },
     { name: "water search render", pattern: /renderWaterSearchResult/ },
+    { name: "water search timestamps", pattern: /appendSearchResultTimestamps\(card, item, "water-search"\)/ },
     { name: "water search section", pattern: /water-search/ }
   ].forEach(function (check) {
     if (!check.pattern.test(appJs)) {
@@ -132,6 +133,23 @@ function main() {
   });
   if (!kirishimaOfficial) {
     errors.push("search check failed: 霧島 official registry item");
+  }
+
+  const yatsushiroLocation = payload.items.find(function (item) {
+    return item.item_kind === "location" && item.municipality === "八代市";
+  });
+  if (!yatsushiroLocation || !yatsushiroLocation.checked_at) {
+    errors.push("timestamp propagation failed: 八代市 location missing checked_at");
+  }
+  if (!yatsushiroLocation || !yatsushiroLocation.source_updated_at) {
+    errors.push("timestamp propagation failed: 八代市 location missing source_updated_at");
+  }
+
+  const timestampedRegistryCount = payload.items.filter(function (item) {
+    return item.checked_at;
+  }).length;
+  if (timestampedRegistryCount === 0) {
+    errors.push("timestamp propagation failed: no registry items with checked_at");
   }
 
   payload.items.forEach(function (item, index) {

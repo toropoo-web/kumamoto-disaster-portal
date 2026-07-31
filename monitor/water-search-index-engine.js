@@ -2,6 +2,10 @@
 
 const fs = require("fs");
 const path = require("path");
+const {
+  buildPatrolTimestampLookup,
+  applyPatrolTimestampsToItems
+} = require("./patrol-timestamp-lookup");
 
 const ROOT = path.join(__dirname, "..");
 const CROSS_VIEW_FILE = path.join(ROOT, "data", "water_cross_view.json");
@@ -181,6 +185,12 @@ function buildWaterSearchIndex(options) {
   const waterSources = readJson(options.waterSourcesPath || WATER_SOURCES_FILE, { sources: [] });
   const locationItems = buildLocationItems(crossView);
   const registryItems = buildRegistryItems(waterSources);
+  const timestampLookup = buildPatrolTimestampLookup(options);
+  const items = applyPatrolTimestampsToItems(
+    locationItems.concat(registryItems),
+    timestampLookup,
+    ["WATER"]
+  );
 
   return {
     category: "WATER",
@@ -191,7 +201,7 @@ function buildWaterSearchIndex(options) {
     registry_item_count: registryItems.length,
     item_count: locationItems.length + registryItems.length,
     last_updated: new Date().toISOString(),
-    items: locationItems.concat(registryItems)
+    items: items
   };
 }
 
@@ -338,6 +348,14 @@ function validateWaterSearchIndex(payload) {
 
     if (item.region === "鹿児島県") {
       kagoshimaCount += 1;
+    }
+
+    if (item.source_updated_at && Number.isNaN(Date.parse(item.source_updated_at))) {
+      errors.push(label + ": invalid source_updated_at");
+    }
+
+    if (item.checked_at && Number.isNaN(Date.parse(item.checked_at))) {
+      errors.push(label + ": invalid checked_at");
     }
 
     municipalities.add(item.municipality);
