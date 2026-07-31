@@ -11,9 +11,16 @@ const {
   SOCIAL_CATEGORIES,
   buildAndWriteDisasterSocialIndex
 } = require("./disaster-social-index-engine");
+const {
+  evaluateSnsFetchScope,
+  isSnsAutoFetchItem,
+  SNS_FETCH_PLATFORMS,
+  SNS_FETCH_SINCE_DATE
+} = require("./disaster-social-community-scope");
 
 const ROOT = path.join(__dirname, "..");
 const INBOX_FILE = path.join(ROOT, "data", "community", "disaster_social_inbox.json");
+const INBOX_TEST_FILE = path.join(ROOT, "data", "community", "disaster_social_inbox_test.json");
 const REVIEW_QUEUE_FILE = path.join(ROOT, "data", "community", "disaster_social_review_queue.json");
 const APPLY_QUEUE_FILE = path.join(ROOT, "data", "community", "disaster_social_apply_queue.json");
 
@@ -187,6 +194,12 @@ function normalizeInboxItem(item, index) {
     missing_fields: missingFields.slice(),
     dedupe_key: buildDedupeKey(item)
   };
+  if (item.post_url) {
+    normalized.post_url = normalizeText(item.post_url);
+  }
+  if (item.sns_fetch && typeof item.sns_fetch === "object") {
+    normalized.sns_fetch = Object.assign({}, item.sns_fetch);
+  }
   return normalized;
 }
 
@@ -209,6 +222,19 @@ function inboxItemToIndexEntry(inboxItem, index) {
   }
   if (inboxItem.source_type) {
     entry.source_type = inboxItem.source_type;
+  }
+  if (inboxItem.captured_at) {
+    entry.captured_at = inboxItem.captured_at;
+  }
+  if (inboxItem.post_url) {
+    entry.post_url = inboxItem.post_url;
+  } else if (inboxItem.sns_fetch && inboxItem.sns_fetch.post_url) {
+    entry.post_url = inboxItem.sns_fetch.post_url;
+  } else if (
+    (inboxItem.source_type === "X" || inboxItem.source_type === "Instagram") &&
+    inboxItem.url
+  ) {
+    entry.post_url = inboxItem.url;
   }
   if (inboxItem.prefecture_group) {
     entry.prefecture_group = inboxItem.prefecture_group;
@@ -405,6 +431,13 @@ function buildReviewQueueFromInbox(inboxPayload, options) {
       reviewStatus = "DUPLICATE";
       duplicateOf = dedupeLookup.get(item.dedupe_key) || null;
     }
+    let scopeEvaluation = null;
+    if (isSnsAutoFetchItem(item)) {
+      scopeEvaluation = evaluateSnsFetchScope(item);
+      if (!scopeEvaluation.pass && reviewStatus === "PENDING") {
+        reviewStatus = "REJECTED";
+      }
+    }
     seenDedupe.add(item.dedupe_key);
 
     const queueItem = {
@@ -420,7 +453,15 @@ function buildReviewQueueFromInbox(inboxPayload, options) {
       captured_at: item.captured_at,
       reviewed_at: null
     };
-    if (item.status === "incomplete" || item.review_note) {
+    if (scopeEvaluation && !scopeEvaluation.pass) {
+      queueItem.scope_rejection = {
+        reasons: scopeEvaluation.reasons.slice(),
+        sns_fetch_since: SNS_FETCH_SINCE_DATE,
+        allowed_platforms: SNS_FETCH_PLATFORMS.slice()
+      };
+      queueItem.review_note = (item.review_note ? item.review_note + " " : "") +
+        "scope_rejected:" + scopeEvaluation.reasons.join(",");
+    } else if (item.status === "incomplete" || item.review_note) {
       queueItem.review_note = item.review_note || "";
     }
     queueItems.push(queueItem);
@@ -590,6 +631,7 @@ function runDisasterSocialReviewPipeline(options) {
 module.exports = {
   AUTO_PUBLISH,
   INBOX_FILE,
+  INBOX_TEST_FILE,
   REVIEW_QUEUE_FILE,
   APPLY_QUEUE_FILE,
   IMPORT_MINIMUM_FIELDS,

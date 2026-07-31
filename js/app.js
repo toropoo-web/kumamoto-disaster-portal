@@ -1557,10 +1557,19 @@
     return "不明";
   }
 
+  function resolveSocialPostLinkLabel(item) {
+    var sourceType = String((item && item.source_type) || "").trim();
+    if (sourceType === "X" || sourceType === "Instagram") {
+      return "▶ 投稿を見る";
+    }
+    return "情報を見る";
+  }
+
   function appendSocialSourceDisplay(card, item, sourceMeta) {
     var sourceTypeLabel = resolveSocialSourceTypeLabel(item, sourceMeta);
     var sourceName = (sourceMeta && sourceMeta.name) || item.source || "情報元";
     var entryUrl = resolveSocialEntryUrl(item);
+    var linkLabel = resolveSocialPostLinkLabel(item);
 
     card.appendChild(createElement(
       "p",
@@ -1571,15 +1580,15 @@
     if (entryUrl) {
       var link = createElement(
         "a",
-        "disaster-search__official-link disaster-social-search__info-link",
-        "情報を見る"
+        "disaster-search__official-link disaster-social-search__post-link",
+        linkLabel
       );
       link.setAttribute("href", entryUrl);
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener");
       link.setAttribute(
         "aria-label",
-        sourceName + "（" + sourceTypeLabel + "）の情報を見る（外部リンク）"
+        sourceName + "（" + sourceTypeLabel + "）の投稿を見る（外部リンク）"
       );
       card.appendChild(link);
     }
@@ -1661,6 +1670,7 @@
     }
     return (
       resolveExternalUrl(item.url) ||
+      resolveExternalUrl(item.post_url) ||
       resolveExternalUrl(item.source_url) ||
       resolveExternalUrl(item.link)
     );
@@ -2629,7 +2639,7 @@
     regionInput.id = "disaster-social-search-region";
     regionInput.type = "search";
     regionInput.name = "region";
-    regionInput.placeholder = "例：熊本県 / 霧島市 / 阿蘇地域";
+    regionInput.placeholder = "例：八代市 / 霧島市 / 阿蘇市";
     regionInput.autocomplete = "off";
 
     var categoryLabel = createElement("label", "disaster-search__label", "カテゴリ・キーワード");

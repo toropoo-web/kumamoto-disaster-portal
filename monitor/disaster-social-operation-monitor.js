@@ -19,6 +19,12 @@ const {
   loadCommunityRegionMaster,
   LAYER_SCOPE
 } = require("./disaster-social-region-master");
+const {
+  loadEvacuationAlertScope,
+  SNS_FETCH_PLATFORMS,
+  SNS_FETCH_SINCE_DATE,
+  COMMUNITY_SCOPE_MUNICIPALITY_COUNT
+} = require("./disaster-social-community-scope");
 
 const ROOT = path.join(__dirname, "..");
 const DEFAULT_OUTPUT_FILE = path.join(
@@ -130,15 +136,26 @@ function buildDisasterSocialOperationReport(options) {
 
   const schemaErrors = validateDisasterSocialInbox(inbox);
   const regionMaster = loadCommunityRegionMaster();
+  const scope = loadEvacuationAlertScope();
   const prefectureSummary = countByField(indexEntries, function (entry) {
     return entry.prefecture;
   });
   const prefectureDetail = buildPrefectureDetail(indexEntries, reviewItems);
 
   return {
-    phase: "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE7_CORRECTION_2",
+    phase: "DISASTER_CROSS_SEARCH_COMMUNITY_DATA_REBUILD",
     layer_scope: regionMaster.layer_scope || LAYER_SCOPE,
     region_group: regionMaster.region_group || "KYUSHU",
+    community_scope: {
+      municipality_count: scope.municipality_count,
+      municipalities: scope.municipalities,
+      source_path: scope.source_path,
+      extensible: false
+    },
+    sns_fetch: {
+      platforms: SNS_FETCH_PLATFORMS.slice(),
+      since_date: SNS_FETCH_SINCE_DATE
+    },
     generated_at: new Date().toISOString(),
     AUTO_PUBLISH: AUTO_PUBLISH,
     AUTO_APPLY: false,

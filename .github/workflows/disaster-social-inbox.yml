@@ -29,6 +29,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Sync Instagram feed
+        run: npm run sync:disaster-social-instagram-feed
+
+      - name: Fetch disaster social SNS inbox
+        run: npm run fetch:disaster-social-sns -- --merge
+
       - name: Validate inbox schema
         run: npm run validate:disaster-social-inbox-schema
 
@@ -46,6 +52,8 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/community/disaster_social_inbox.json
+          git add data/community/disaster_social_instagram_feed.json
           git add data/community/disaster_social_review_queue.json
           git add data/community/disaster_social_apply_queue.json
           git add data/operation_monitor/disaster-social-operation.json

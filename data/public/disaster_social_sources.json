@@ -1,7 +1,15 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "region": "KYUSHU_SOUTH",
-  "description": "SNS・民間・現地発生情報の情報源定義",
+  "description": "SNS・民間・現地発生情報の情報源定義（避難・警戒対象自治体23件）",
+  "scope_source": "data/public/evacuation_alert_region.json",
+  "sns_fetch": {
+    "platforms": [
+      "X",
+      "Instagram"
+    ],
+    "since_date": "2026-07-28"
+  },
   "sources": [
     {
       "source_id": "SOC-LOCAL-001",
@@ -10,8 +18,29 @@
       "type": "SNS",
       "platform": "X",
       "url": "https://x.com/",
-      "coverage_prefectures": [
-        "熊本県"
+      "coverage_municipalities": [
+        "熊本市",
+        "八代市",
+        "水俣市",
+        "宇土市",
+        "上天草市",
+        "宇城市",
+        "天草市",
+        "美里町",
+        "甲佐町",
+        "芦北町",
+        "津奈木町",
+        "苓北町",
+        "益城町",
+        "御船町",
+        "嘉島町",
+        "人吉市",
+        "菊陽町",
+        "菊池市",
+        "合志市",
+        "氷川町",
+        "阿蘇市",
+        "南阿蘇村"
       ],
       "active": true,
       "source_url": "https://x.com/"
@@ -23,9 +52,6 @@
       "type": "LOCAL",
       "platform": "WEB",
       "url": "",
-      "coverage_prefectures": [
-        "熊本県"
-      ],
       "coverage_municipalities": [
         "八代市"
       ],
@@ -39,9 +65,6 @@
       "type": "CIVIL",
       "platform": "LINE",
       "url": "",
-      "coverage_prefectures": [
-        "熊本県"
-      ],
       "coverage_municipalities": [
         "南阿蘇村"
       ],
@@ -55,9 +78,6 @@
       "type": "PRIVATE",
       "platform": "WEB",
       "url": "",
-      "coverage_prefectures": [
-        "鹿児島県"
-      ],
       "coverage_municipalities": [
         "霧島市"
       ],
@@ -71,9 +91,6 @@
       "type": "SNS",
       "platform": "X",
       "url": "https://x.com/",
-      "coverage_prefectures": [
-        "熊本県"
-      ],
       "coverage_municipalities": [
         "熊本市"
       ],
@@ -87,9 +104,6 @@
       "type": "LOCAL",
       "platform": "WEB",
       "url": "",
-      "coverage_prefectures": [
-        "熊本県"
-      ],
       "coverage_municipalities": [
         "宇城市",
         "宇土市"
@@ -104,9 +118,6 @@
       "type": "CIVIL",
       "platform": "LINE",
       "url": "",
-      "coverage_prefectures": [
-        "熊本県"
-      ],
       "coverage_municipalities": [
         "氷川町"
       ],
@@ -116,12 +127,34 @@
     {
       "source_id": "SOC-LOCAL-006",
       "source_type": "Instagram",
-      "name": "熊本県 災害支援Instagram",
+      "name": "避難・警戒対象自治体 災害支援Instagram",
       "type": "SNS",
       "platform": "Instagram",
       "url": "https://www.instagram.com/",
-      "coverage_prefectures": [
-        "熊本県"
+      "coverage_municipalities": [
+        "熊本市",
+        "八代市",
+        "水俣市",
+        "宇土市",
+        "上天草市",
+        "宇城市",
+        "天草市",
+        "美里町",
+        "甲佐町",
+        "芦北町",
+        "津奈木町",
+        "苓北町",
+        "益城町",
+        "御船町",
+        "嘉島町",
+        "人吉市",
+        "菊陽町",
+        "菊池市",
+        "合志市",
+        "氷川町",
+        "阿蘇市",
+        "南阿蘇村",
+        "霧島市"
       ],
       "active": true,
       "source_url": "https://www.instagram.com/"

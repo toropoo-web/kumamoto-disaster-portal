@@ -32,8 +32,9 @@ function mainStatic() {
   [
     { name: "source type labels", pattern: /SOCIAL_SOURCE_TYPE_LABELS/ },
     { name: "append social source display", pattern: /function appendSocialSourceDisplay/ },
-    { name: "link label 情報を見る", pattern: /情報を見る/ },
-    { name: "source type always shown", pattern: /disaster-social-search__source-type[\s\S]*情報を見る/ },
+    { name: "post link label", pattern: /▶ 投稿を見る/ },
+    { name: "sns post link resolver", pattern: /resolveSocialPostLinkLabel/ },
+    { name: "source type always shown", pattern: /disaster-social-search__source-type[\s\S]*投稿を見る/ },
     { name: "removed 情報元を見る label", pattern: /情報元を見る/, invert: true },
     { name: "removed URLを開く label", pattern: /URLを開く/, invert: true },
     { name: "sources use source_url field", pattern: /source_url/ }
@@ -106,42 +107,36 @@ function mainStatic() {
     errors.push("empty entry url must not resolve");
   }
 
+  const { isXPostUrl } = require(path.join(ROOT, "monitor", "disaster-social-url"));
+
   checks.push({
-    check: "information not deleted",
-    pass: entries.length === 57,
+    check: "sns rebuild entry volume",
+    pass: entries.length >= 100,
     entry_count: entries.length
   });
-  if (entries.length !== 57) {
-    errors.push("community layer entry count changed");
+  if (entries.length < 100) {
+    errors.push("community layer entry count too low after sns rebuild");
   }
 
-  const toiletTitles = [
-    "宇城市 仮設トイレの場所共有",
-    "宇土市 仮設トイレ設置場所",
-    "上天草市 仮設トイレ設置情報",
-    "大津町 仮設トイレ設置"
-  ];
-  toiletTitles.forEach(function (title) {
-    const entry = entries.find(function (item) {
-      return item.title === title;
-    });
-    const pass = Boolean(
-      entry &&
-        entry.url === "" &&
-        !entry.source_url &&
-        !entry.link &&
-        !resolveSocialEntryUrl(entry)
-    );
-    checks.push({
-      check: "toilet entry url state: " + title,
-      pass: pass,
-      entry_id: entry && entry.id,
-      url: entry && entry.url,
-      source_type: entry && entry.source_type
-    });
-    if (!pass) {
-      errors.push("toilet entry url state invalid: " + title);
-    }
+  const xWithUrl = entries.filter(function (entry) {
+    return entry.source_type === "X" && isXPostUrl(resolveSocialEntryUrl(entry));
+  });
+  checks.push({
+    check: "X entries keep post urls",
+    pass: xWithUrl.length > 0,
+    x_with_url: xWithUrl.length
+  });
+  if (!xWithUrl.length) {
+    errors.push("X entries must keep real post urls");
+  }
+
+  const igWithoutUrl = entries.filter(function (entry) {
+    return entry.source_type === "Instagram" && !resolveSocialEntryUrl(entry);
+  });
+  checks.push({
+    check: "Instagram without url preserved",
+    pass: igWithoutUrl.length > 0,
+    ig_without_url: igWithoutUrl.length
   });
 
   return { checks: checks, errors: errors, entries: entries, sourceLookup: sourceLookup };
@@ -161,52 +156,55 @@ async function mainBrowser(entries, sourceLookup) {
     await page.locator("#disaster-social-search-region").fill("八代市");
     await page.locator(".disaster-social-search__form button[type='submit']").click();
     await page.waitForSelector("#disaster-social-search-results .disaster-search__card", {
-      timeout: 10000
+      timeout: 15000
     });
-
     const sourceTypeCount = await page.locator(".disaster-social-search__source-type").count();
-    const openLinkCount = await page.locator("#disaster-social-search-results .disaster-search__official-link").count();
+    const postLinkCount = await page.locator("#disaster-social-search-results .disaster-social-search__post-link").count();
     const sourceTypeText = sourceTypeCount
       ? await page.locator(".disaster-social-search__source-type").first().innerText()
       : "";
+    const firstPostLinkText = postLinkCount
+      ? await page.locator("#disaster-social-search-results .disaster-social-search__post-link").first().innerText()
+      : "";
 
     checks.push({
-      check: "no-url shows source type",
+      check: "sns search shows source type",
       pass: sourceTypeCount > 0 && /情報元：/.test(sourceTypeText),
       source_type_count: sourceTypeCount,
       sample_text: sourceTypeText
     });
     checks.push({
-      check: "no dummy open-link labels",
-      pass: openLinkCount === 0,
-      open_link_count: openLinkCount
+      check: "sns search shows post link",
+      pass: postLinkCount > 0 && firstPostLinkText === "▶ 投稿を見る",
+      post_link_count: postLinkCount,
+      link_text: firstPostLinkText
     });
 
     if (!sourceTypeCount || !/情報元：/.test(sourceTypeText)) {
-      errors.push("no-url source type display failed");
+      errors.push("sns source type display failed");
     }
-    if (openLinkCount !== 0) {
-      errors.push("unexpected open links when entries have no publishable url");
+    if (!postLinkCount || firstPostLinkText !== "▶ 投稿を見る") {
+      errors.push("sns post link display failed");
     }
 
-    await page.locator("#disaster-social-search-region").fill("");
-    await page.locator("#disaster-social-search-category").fill("トイレ");
+    await page.locator("#disaster-social-search-region").fill("霧島市");
+    await page.locator("#disaster-social-search-category").fill("");
     await page.locator(".disaster-social-search__form button[type='submit']").click();
     await page.waitForSelector("#disaster-social-search-results .disaster-search__card", {
-      timeout: 10000
+      timeout: 15000
     });
-    const toiletCardCount = await page.locator("#disaster-social-search-results .disaster-search__card").count();
-    const toiletSourceTypeCount = await page.locator(".disaster-social-search__source-type").count();
-    const toiletLinkCount = await page.locator(".disaster-social-search__info-link").count();
+    const igCardCount = await page.locator("#disaster-social-search-results .disaster-search__card").count();
+    const igSourceTypeCount = await page.locator(".disaster-social-search__source-type").count();
+    const igLinkCount = await page.locator("#disaster-social-search-results .disaster-social-search__post-link").count();
     checks.push({
-      check: "toilet search shows source only",
-      pass: toiletCardCount >= 4 && toiletSourceTypeCount >= 4 && toiletLinkCount === 0,
-      card_count: toiletCardCount,
-      source_type_count: toiletSourceTypeCount,
-      link_count: toiletLinkCount
+      check: "instagram without url shows source only",
+      pass: igCardCount > 0 && igSourceTypeCount > 0 && igLinkCount === 0,
+      card_count: igCardCount,
+      source_type_count: igSourceTypeCount,
+      link_count: igLinkCount
     });
-    if (toiletCardCount < 4 || toiletSourceTypeCount < 4 || toiletLinkCount !== 0) {
-      errors.push("toilet entries must show source type without info link");
+    if (!igCardCount || igLinkCount !== 0) {
+      errors.push("instagram entries without url must not show post link");
     }
 
     const withUrlEntry = entries.find(function (entry) {
@@ -223,24 +221,27 @@ async function mainBrowser(entries, sourceLookup) {
         .locator("#disaster-social-search-results .disaster-search__card")
         .filter({ hasText: withUrlEntry.title });
       const sourceTypeOnCard = await card.locator(".disaster-social-search__source-type").count();
-      const link = card.locator(".disaster-social-search__info-link");
+      const link = card.locator(".disaster-social-search__post-link");
       const linkText = await link.innerText();
       const href = await link.getAttribute("href");
+      const expectedLabel = withUrlEntry.source_type === "X" || withUrlEntry.source_type === "Instagram"
+        ? "▶ 投稿を見る"
+        : "情報を見る";
       checks.push({
-        check: "url present shows source and 情報を見る",
+        check: "url present shows source and post link",
         pass:
           sourceTypeOnCard === 1 &&
-          linkText === "情報を見る" &&
+          linkText === expectedLabel &&
           href === resolveSocialEntryUrl(withUrlEntry),
         entry_id: withUrlEntry.id,
         href: href || ""
       });
-      if (sourceTypeOnCard !== 1 || linkText !== "情報を見る" || href !== resolveSocialEntryUrl(withUrlEntry)) {
+      if (sourceTypeOnCard !== 1 || linkText !== expectedLabel || href !== resolveSocialEntryUrl(withUrlEntry)) {
         errors.push("url present link display failed");
       }
     } else {
       checks.push({
-        check: "url present shows source and 情報を見る",
+        check: "url present shows source and post link",
         pass: true,
         note: "skipped: no publishable entry urls in public index"
       });

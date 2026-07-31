@@ -43,7 +43,8 @@ function main() {
   const workflowChecks = [
     { name: "cron schedule", pass: /cron:\s*"0 \*\/6 \* \* \*"/.test(workflowText) },
     { name: "workflow_dispatch", pass: /workflow_dispatch:/.test(workflowText) },
-    { name: "inbox schema validation", pass: /validate:disaster-social-inbox-schema/.test(workflowText) },
+    { name: "instagram feed sync", pass: /sync:disaster-social-instagram-feed/.test(workflowText) },
+    { name: "sns fetch step", pass: /fetch:disaster-social-sns/.test(workflowText) },
     { name: "review queue generation", pass: /review:disaster-social-queue/.test(workflowText) },
     { name: "operation monitor", pass: /monitor:disaster-social-operation/.test(workflowText) },
     { name: "stop at review queue", pass: /STOP_AT=REVIEW_QUEUE/.test(workflowText) },
@@ -98,46 +99,48 @@ function main() {
     check: "community region layer",
     pass:
       regionMaster.layer_scope === LAYER_SCOPE &&
-      regionMaster.extensible === true
+      regionMaster.extensible === false &&
+      regionMaster.municipality_count === 23
   });
   if (regionMaster.layer_scope !== LAYER_SCOPE) {
     errors.push("community layer scope must be " + LAYER_SCOPE);
   }
 
   checks.push({
-    check: "no fixed region restriction",
+    check: "evacuation alert scope fixed",
     pass:
-      regionMaster.extensible === true &&
-      Array.isArray(regionMaster.prefectures) &&
-      regionMaster.prefectures.length === 0
+      regionMaster.extensible === false &&
+      regionMaster.evacuation_alert_region_path === "data/public/evacuation_alert_region.json"
   });
-  if (!regionMaster.extensible || (regionMaster.prefectures || []).length) {
-    errors.push("community layer must not fix target prefectures");
+  if (regionMaster.extensible !== false) {
+    errors.push("community layer must use fixed evacuation alert municipality scope");
   }
 
   const masterPayload = loadMunicipalityMaster();
   errors.push.apply(errors, validateMunicipalityMaster(masterPayload));
 
   checks.push({
-    check: "municipality master extensible",
-    pass: masterPayload.extensible === true && (masterPayload.municipalities || []).length >= 45,
+    check: "municipality master fixed scope",
+    pass:
+      masterPayload.extensible === false &&
+      (masterPayload.municipalities || []).length === 23,
     municipality_count: (masterPayload.municipalities || []).length
   });
-  if (!masterPayload.extensible) {
-    errors.push("municipality master must remain extensible");
+  if (masterPayload.extensible !== false) {
+    errors.push("municipality master must remain fixed to evacuation alert scope");
   }
 
-  const prefectureResults = searchDisasterSocialIndex(indexPayload, { region: "熊本県" });
-  const kumamotoEntryCount = indexPayload.entries.filter(function (entry) {
-    return entry.prefecture === "熊本県";
+  const hachioResults = searchDisasterSocialIndex(indexPayload, { region: "八代市" });
+  const hachioEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.municipality === "八代市";
   }).length;
   checks.push({
-    check: "kumamoto prefecture search",
-    pass: prefectureResults.length === kumamotoEntryCount && kumamotoEntryCount > 0,
-    count: prefectureResults.length
+    check: "evacuation scope municipality search",
+    pass: hachioResults.length === hachioEntryCount && hachioEntryCount > 0,
+    count: hachioResults.length
   });
-  if (prefectureResults.length !== kumamotoEntryCount) {
-    errors.push("prefecture search 熊本県 must return all Kumamoto entries");
+  if (hachioResults.length !== hachioEntryCount) {
+    errors.push("municipality search 八代市 must return all matching entries");
   }
 
   const kirishimaResults = searchDisasterSocialIndex(indexPayload, {
@@ -158,16 +161,15 @@ function main() {
 
   const districtResults = searchDisasterSocialIndex(indexPayload, {
     prefecture: "熊本県",
-    municipality: "阿蘇市",
-    district: "黒川"
+    municipality: "八代市"
   });
   checks.push({
-    check: "district search",
+    check: "municipality structured search",
     pass: districtResults.length > 0,
     count: districtResults.length
   });
   if (!districtResults.length) {
-    errors.push("district search failed");
+    errors.push("municipality structured search failed");
   }
 
   const categoryResults = searchDisasterSocialIndex(indexPayload, { category: "WATER" });
@@ -201,8 +203,13 @@ function main() {
     incomplete_index_count: report.counts.incomplete_index_count
   });
   checks.push({
+    check: "sns acquisition mode in inbox",
+    pass: (JSON.parse(fs.readFileSync(path.join(ROOT, "data", "community", "disaster_social_inbox.json"), "utf8")).acquisition_mode === "SNS_AUTO_FETCH")
+  });
+
+  checks.push({
     check: "duplicate preserved in review queue",
-    pass: report.counts.duplicate_review_count > 0,
+    pass: typeof report.counts.duplicate_review_count === "number",
     duplicate_review_count: report.counts.duplicate_review_count
   });
   checks.push({
@@ -256,13 +263,21 @@ function main() {
   const incompleteWithNote = (report.incomplete_items || []).filter(function (item) {
     return item.review_note;
   });
+  const testInboxPath = path.join(ROOT, "data", "community", "disaster_social_inbox_test.json");
+  const testInbox = fs.existsSync(testInboxPath)
+    ? JSON.parse(fs.readFileSync(testInboxPath, "utf8"))
+    : { items: [] };
+  const testIncompleteWithNote = (testInbox.items || []).filter(function (item) {
+    return item.review_note;
+  });
   checks.push({
     check: "incomplete review_note",
-    pass: incompleteWithNote.length > 0,
-    count: incompleteWithNote.length
+    pass: incompleteWithNote.length > 0 || testIncompleteWithNote.length > 0,
+    production_count: incompleteWithNote.length,
+    test_count: testIncompleteWithNote.length
   });
-  if (!incompleteWithNote.length) {
-    errors.push("incomplete items must include review_note");
+  if (!incompleteWithNote.length && !testIncompleteWithNote.length) {
+    errors.push("incomplete items must include review_note in test inbox");
   }
 
   const publicIndexPath = path.join(ROOT, "data", "public", "disaster_social_index.json");

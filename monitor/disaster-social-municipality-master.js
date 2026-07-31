@@ -3,6 +3,16 @@
 const fs = require("fs");
 const path = require("path");
 
+const {
+  loadEvacuationAlertScope,
+  getScopeMunicipalitySet,
+  isInCommunityScope,
+  validateCommunityScopeMaster,
+  COMMUNITY_SCOPE_MUNICIPALITY_COUNT,
+  resolveMunicipalityPrefecture,
+  EVACUATION_ALERT_REGION_FILE
+} = require("./disaster-social-community-scope");
+
 const ROOT = path.join(__dirname, "..");
 const MUNICIPALITY_MASTER_FILE = path.join(ROOT, "data", "community", "municipality_master.json");
 
@@ -15,30 +25,28 @@ function readJson(filePath, fallback) {
 
 function loadMunicipalityMaster(options) {
   options = options || {};
-  return readJson(options.masterPath || MUNICIPALITY_MASTER_FILE, {
-    version: "1.0",
-    prefecture: "熊本県",
+  const payload = readJson(options.masterPath || MUNICIPALITY_MASTER_FILE, {
+    version: "1.1",
+    municipality_count: COMMUNITY_SCOPE_MUNICIPALITY_COUNT,
     municipalities: []
+  });
+  const scope = loadEvacuationAlertScope();
+  return Object.assign({}, payload, {
+    municipality_count: scope.municipality_count,
+    scope_source: scope.source_path
   });
 }
 
-function getKumamotoMunicipalitySet(masterPayload) {
-  const master = masterPayload || loadMunicipalityMaster();
-  const set = new Set();
-  (master.municipalities || []).forEach(function (item) {
-    if (item.municipality) {
-      set.add(item.municipality);
-    }
-  });
-  return set;
+function getCommunityMunicipalitySet(masterPayload) {
+  return getScopeMunicipalitySet();
 }
 
 function isKumamotoMunicipality(municipality, masterPayload) {
-  const name = String(municipality || "").trim();
-  if (!name) {
-    return false;
-  }
-  return getKumamotoMunicipalitySet(masterPayload).has(name);
+  return isInCommunityScope(municipality);
+}
+
+function isCommunityScopeMunicipality(municipality, masterPayload) {
+  return isInCommunityScope(municipality);
 }
 
 function loadRegionGroups(masterPayload) {
@@ -71,22 +79,35 @@ function matchesRegionGroupToken(entry, token, masterPayload) {
 
 function validateMunicipalityMaster(payload) {
   const errors = [];
+  const scopeErrors = validateCommunityScopeMaster();
+  errors.push.apply(errors, scopeErrors);
+
   if (!payload || !Array.isArray(payload.municipalities)) {
     errors.push("municipality_master municipalities must be an array");
     return errors;
   }
-  if (payload.prefecture !== "熊本県") {
-    errors.push("municipality_master prefecture must be 熊本県");
+  if (payload.extensible !== false) {
+    errors.push("municipality_master extensible must be false");
   }
+  if (payload.municipality_count !== COMMUNITY_SCOPE_MUNICIPALITY_COUNT) {
+    errors.push("municipality_master municipality_count must be " + COMMUNITY_SCOPE_MUNICIPALITY_COUNT);
+  }
+  const scopeSet = getScopeMunicipalitySet();
   const seen = new Set();
   payload.municipalities.forEach(function (item, index) {
     const label = "municipalities[" + index + "]";
-    if (!item || item.prefecture !== "熊本県") {
-      errors.push(label + ": prefecture must be 熊本県");
-    }
-    if (!item.municipality) {
+    if (!item || !item.municipality) {
       errors.push(label + ": municipality is required");
-    } else if (seen.has(item.municipality)) {
+      return;
+    }
+    const expectedPrefecture = resolveMunicipalityPrefecture(item.municipality);
+    if (item.prefecture !== expectedPrefecture) {
+      errors.push(label + ": prefecture must be " + expectedPrefecture);
+    }
+    if (!scopeSet.has(item.municipality)) {
+      errors.push(label + ": municipality out of evacuation alert scope " + item.municipality);
+    }
+    if (seen.has(item.municipality)) {
       errors.push(label + ": duplicate municipality " + item.municipality);
     } else {
       seen.add(item.municipality);
@@ -95,8 +116,8 @@ function validateMunicipalityMaster(payload) {
       errors.push(label + ": districts must be an array");
     }
   });
-  if (payload.municipality_count && payload.municipality_count !== payload.municipalities.length) {
-    errors.push("municipality_count mismatch");
+  if (seen.size !== COMMUNITY_SCOPE_MUNICIPALITY_COUNT) {
+    errors.push("municipality_master must include all evacuation alert municipalities");
   }
   (payload.region_groups || []).forEach(function (group, index) {
     const label = "region_groups[" + index + "]";
@@ -105,16 +126,25 @@ function validateMunicipalityMaster(payload) {
     }
     if (!Array.isArray(group.municipalities) || !group.municipalities.length) {
       errors.push(label + ": municipalities must be a non-empty array");
+      return;
     }
+    group.municipalities.forEach(function (name) {
+      if (!scopeSet.has(name)) {
+        errors.push(label + ": municipality out of scope " + name);
+      }
+    });
   });
   return errors;
 }
 
 module.exports = {
   MUNICIPALITY_MASTER_FILE,
+  EVACUATION_ALERT_REGION_FILE,
   loadMunicipalityMaster,
-  getKumamotoMunicipalitySet,
+  getCommunityMunicipalitySet,
+  getKumamotoMunicipalitySet: getCommunityMunicipalitySet,
   isKumamotoMunicipality,
+  isCommunityScopeMunicipality,
   loadRegionGroups,
   matchesRegionGroupToken,
   validateMunicipalityMaster

@@ -16,6 +16,7 @@ const {
   applyDisasterSocialQueue,
   validateInboxItem,
   validateDisasterSocialInbox,
+  INBOX_TEST_FILE,
   AUTO_PUBLISH,
   SOURCE_TYPE_VALUES
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-pipeline"));
@@ -76,28 +77,27 @@ function main() {
     check: "municipality master",
     pass:
       validateMunicipalityMaster(masterPayload).length === 0 &&
-      masterPayload.municipality_count >= 45,
+      masterPayload.municipality_count === 23,
     municipality_count: (masterPayload.municipalities || []).length
   });
-  if (masterPayload.municipality_count < 45) {
-    errors.push("municipality master must include all Kumamoto municipalities");
+  if (masterPayload.municipality_count !== 23) {
+    errors.push("municipality master must include exactly 23 evacuation alert municipalities");
   }
 
   const regionMaster = loadCommunityRegionMaster();
   errors.push.apply(errors, validateCommunityRegionMaster(regionMaster));
   checks.push({
-    check: "no fixed region restriction",
+    check: "evacuation alert scope fixed",
     pass:
-      regionMaster.extensible === true &&
-      Array.isArray(regionMaster.prefectures) &&
-      regionMaster.prefectures.length === 0
+      regionMaster.extensible === false &&
+      regionMaster.evacuation_alert_region_path === "data/public/evacuation_alert_region.json"
   });
-  if (!regionMaster.extensible || (regionMaster.prefectures || []).length) {
-    errors.push("community layer must not fix target prefectures");
+  if (regionMaster.extensible !== false) {
+    errors.push("community layer must use fixed evacuation alert municipality scope");
   }
 
   const inboxPayload = JSON.parse(
-    fs.readFileSync(path.join(ROOT, "data", "community", "disaster_social_inbox.json"), "utf8")
+    fs.readFileSync(INBOX_TEST_FILE, "utf8")
   );
   errors.push.apply(errors, validateDisasterSocialInbox(inboxPayload));
   checks.push({ check: "inbox load", pass: validateDisasterSocialInbox(inboxPayload).length === 0 });
@@ -124,7 +124,7 @@ function main() {
 
   const csvItems = parseCsvImport(
     "source,category,prefecture,municipality,district,date,title,content,url\n" +
-      "SOC-LOCAL-005,CHARGING,熊本県,氷川町,吉井,2026-07-30,CSV充電スポット,公民館前の充電提供,https://example.local/hikawa-csv-charging\n"
+      "SOC-LOCAL-005,CHARGING,熊本県,氷川町,吉井,2026-07-30,CSV充電スポット,公民館前の充電提供,\n"
   );
   checks.push({ check: "csv import", pass: csvItems.length === 1 });
   if (!csvItems.length) {
@@ -141,13 +141,14 @@ function main() {
       date: "2026-07-30",
       title: "JSONインポート検証",
       content: "東区での片付けボランティア募集。",
-      url: "https://example.local/kumamoto-json-volunteer"
+      url: ""
     }
   ]);
   checks.push({ check: "json import", pass: jsonItems.length === 1 });
 
   const snsItems = parseJsonImport([
     {
+      inbox_id: "SCOPE-SNS-TEST-001",
       import_format: "SNS",
       source_type: "X",
       source: "SOC-LOCAL-001",
@@ -156,7 +157,7 @@ function main() {
       date: "2026-08-01",
       title: "SNS抽出テスト",
       content: "市町村・地区は確認中",
-      url: "https://x.com/example/status/sns-import-test",
+      url: "",
       keywords: ["給水", "SNS"]
     }
   ]);
@@ -203,6 +204,23 @@ function main() {
     indexPath: indexPath,
     reviewQueuePath: reviewPath
   });
+
+  const scopeRejected = reviewQueue.items.find(function (item) {
+    return item.inbox_id === "SCOPE-SNS-TEST-001";
+  });
+  checks.push({
+    check: "sns out-of-scope rejected",
+    pass:
+      scopeRejected &&
+      scopeRejected.review_status === "REJECTED" &&
+      scopeRejected.scope_rejection &&
+      scopeRejected.scope_rejection.reasons.length > 0,
+    review_status: scopeRejected && scopeRejected.review_status
+  });
+  if (!scopeRejected || scopeRejected.review_status !== "REJECTED") {
+    errors.push("sns item outside evacuation alert scope must be rejected");
+  }
+
   reviewQueue.items.forEach(function (item) {
     if (item.review_status === "PENDING") {
       item.review_status = "APPROVED";
@@ -257,18 +275,18 @@ function main() {
     pass: buildPayload.meta.entry_count === indexPayload.entries.length
   });
 
-  const regionResults = searchDisasterSocialIndex(indexPayload, { region: "熊本県" });
-  const kumamotoEntryCount = indexPayload.entries.filter(function (entry) {
-    return entry.prefecture === "熊本県";
+  const hachioResults = searchDisasterSocialIndex(indexPayload, { region: "八代市" });
+  const hachioEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.municipality === "八代市";
   }).length;
   checks.push({
-    check: "kumamoto prefecture search",
-    pass: regionResults.length === kumamotoEntryCount && kumamotoEntryCount > 0,
-    count: regionResults.length,
-    kumamoto_entry_count: kumamotoEntryCount
+    check: "evacuation scope municipality search",
+    pass: hachioResults.length === hachioEntryCount && hachioEntryCount > 0,
+    count: hachioResults.length,
+    hachio_entry_count: hachioEntryCount
   });
-  if (regionResults.length !== kumamotoEntryCount) {
-    errors.push("prefecture search 熊本県 must return all Kumamoto entries");
+  if (hachioResults.length !== hachioEntryCount) {
+    errors.push("municipality search 八代市 must return all matching entries");
   }
 
   const kirishimaResults = searchDisasterSocialIndex(indexPayload, {
@@ -332,7 +350,7 @@ function main() {
       date: "2026-08-01",
       title: "霧島市 受付テスト",
       content: "霧島市の受付確認",
-      url: "https://example.local/kirishima-intake-test"
+      url: ""
     },
     0
   );

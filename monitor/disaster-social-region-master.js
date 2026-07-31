@@ -149,8 +149,14 @@ function validateCommunityRegionMaster(payload) {
     errors.push("community_region_master prefectures must be an array");
     return errors;
   }
-  if (!payload.extensible) {
-    errors.push("community_region_master must remain extensible");
+  if (payload.extensible !== false) {
+    errors.push("community_region_master extensible must be false");
+  }
+  if (payload.municipality_count !== 23) {
+    errors.push("community_region_master municipality_count must be 23");
+  }
+  if (!payload.evacuation_alert_region_path) {
+    errors.push("community_region_master evacuation_alert_region_path is required");
   }
   if (payload.layer_scope !== LAYER_SCOPE) {
     errors.push("community_region_master layer_scope must be " + LAYER_SCOPE);
