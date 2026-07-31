@@ -128,7 +128,8 @@
       "date": "2026-07-31",
       "title": "氷川町 毛布寄付の連絡",
       "content": "毛布の寄付受付。場所の詳細は確認中。",
-      "url": ""
+      "url": "",
+      "review_note": "district, url 未確認。削除せず incomplete で保持"
     },
     {
       "inbox_id": "INB-DUP-001",
@@ -240,7 +241,8 @@
       "date": "2026-08-01",
       "title": "氷川町 段ボール寄付の連絡",
       "content": "段ボールの寄付受付。場所の詳細は確認中。",
-      "url": ""
+      "url": "",
+      "review_note": "district, url 未確認。削除せず incomplete で保持"
     },
     {
       "inbox_id": "INB-DUP-002",
@@ -701,7 +703,8 @@
       "title": "熊本県内 井水譲渡の連絡",
       "content": "井水譲渡の連絡。市町村・場所の詳細は確認中。",
       "url": "",
-      "keywords": ["井水", "生活用水"]
+      "keywords": ["井水", "生活用水"],
+      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持"
     }
   ]
 }

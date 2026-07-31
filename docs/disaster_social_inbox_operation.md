@@ -37,6 +37,18 @@ Index
 | JSON | `items` 配列へ直接追加 |
 | CSV | `source,category,prefecture,municipality,district,date,title,content,url` 形式 |
 | 手動 | `import_format: "MANUAL"` で inbox に登録 |
+| SNS抽出 | `import_format: "SNS"` で抽出結果を投入（`source_type` 指定推奨） |
+| WEB取得 | `import_format: "JSON"` または CSV で取得結果を投入 |
+
+投入時に必ず保持する項目:
+
+```
+source
+source_type
+captured_at
+url
+keywords
+```
 
 ## 最低項目
 
@@ -89,6 +101,44 @@ data/community/municipality_master.json
 
 不足項目がある場合は削除しない。`status: incomplete` として Review Queue へ載せる。
 
+地域不明・URL未確認などは推測補完しない。`review_note` に確認事項のみ記録する。
+
+```
+review_note: "municipality, district 未確認"
+```
+
+## 情報源管理
+
+```
+data/community/disaster_social_sources.json
+```
+
+各 source に `source_type` を設定する。
+
+```
+X / Instagram / WEB / MANUAL / OTHER
+```
+
+## 運用監視
+
+```bash
+npm run monitor:disaster-social-operation
+```
+
+出力:
+
+```
+data/operation_monitor/disaster-social-operation.json
+```
+
+監視項目:
+
+- Index件数
+- Review Queue件数
+- incomplete件数
+- duplicate件数
+- last_updated
+
 ## 運用コマンド
 
 ```bash
@@ -133,7 +183,8 @@ npm run build:disaster-social-index
 GitHub Actions `disaster-social-inbox.yml` が以下を実行する。
 
 1. Inbox Schema 検証
-2. Review Queue 生成
-3. 検証レポート出力
+2. Pipeline 検証
+3. Review Queue 生成
+4. 運用監視レポート出力
 
 Apply は実行しない。Review Queue で停止する。

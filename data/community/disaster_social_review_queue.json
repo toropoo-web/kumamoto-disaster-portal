@@ -228,7 +228,8 @@
         "status": "incomplete"
       },
       "captured_at": "2026-07-31T10:40:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z"
+      "reviewed_at": "2026-07-31T16:12:09.785Z",
+      "review_note": "district, url 未確認。削除せず incomplete で保持"
     },
     {
       "queue_id": "SOC-REV-INB-DUP-001",
@@ -423,7 +424,8 @@
         "status": "incomplete"
       },
       "captured_at": "2026-08-01T09:15:00.000Z",
-      "reviewed_at": "2026-07-31T16:18:10.176Z"
+      "reviewed_at": "2026-07-31T16:18:10.176Z",
+      "review_note": "district, url 未確認。削除せず incomplete で保持"
     },
     {
       "queue_id": "SOC-REV-INB-DUP-002",
@@ -1273,8 +1275,9 @@
         "source_type": "MANUAL"
       },
       "captured_at": "2026-08-01T13:00:00.000Z",
-      "reviewed_at": null
+      "reviewed_at": null,
+      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持"
     }
   ],
-  "last_updated": "2026-07-31T16:43:58.549Z"
+  "last_updated": "2026-07-31T16:51:12.147Z"
 }

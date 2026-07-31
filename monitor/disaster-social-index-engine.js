@@ -447,10 +447,26 @@ function validateDisasterSocialIndex(payload) {
 
 function validateDisasterSocialSources(payload) {
   const errors = [];
+  const SOURCE_TYPE_VALUES = ["X", "Instagram", "WEB", "MANUAL", "OTHER"];
   if (!payload || !Array.isArray(payload.sources)) {
     errors.push("sources must be an array");
     return errors;
   }
+  payload.sources.forEach(function (source, index) {
+    const label = "sources[" + index + "]";
+    if (!source.source_id) {
+      errors.push(label + ": missing source_id");
+    }
+    if (!source.name) {
+      errors.push(label + ": missing name");
+    }
+    if (typeof source.url !== "string") {
+      errors.push(label + ": missing url");
+    }
+    if (source.active !== false && (!source.source_type || SOURCE_TYPE_VALUES.indexOf(source.source_type) === -1)) {
+      errors.push(label + ": invalid source_type " + source.source_type);
+    }
+  });
   return errors;
 }
 

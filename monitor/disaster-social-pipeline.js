@@ -154,6 +154,9 @@ function normalizeSourceType(value, importFormat) {
   if (format === "MANUAL") {
     return "MANUAL";
   }
+  if (format === "SNS") {
+    return "X";
+  }
   if (format === "CSV" || format === "JSON") {
     return "WEB";
   }
@@ -178,6 +181,7 @@ function normalizeInboxItem(item, index) {
     content: normalizeText(item.content),
     url: normalizeText(item.url),
     keywords: normalizeKeywords(item.keywords),
+    review_note: normalizeText(item.review_note),
     status: resolveEntryStatus(item),
     missing_fields: missingFields.slice(),
     dedupe_key: buildDedupeKey(item)
@@ -384,7 +388,14 @@ function buildReviewQueueFromInbox(inboxPayload, options) {
 
   (inboxPayload.items || []).forEach(function (rawItem, index) {
     const item = normalizeInboxItem(rawItem, index);
-    if (seenInbox.has(item.inbox_id) || queueByInbox.has(item.inbox_id)) {
+    if (queueByInbox.has(item.inbox_id)) {
+      const existing = queueByInbox.get(item.inbox_id);
+      if (item.review_note && !existing.review_note) {
+        existing.review_note = item.review_note;
+      }
+      return;
+    }
+    if (seenInbox.has(item.inbox_id)) {
       return;
     }
     seenInbox.add(item.inbox_id);
@@ -410,6 +421,9 @@ function buildReviewQueueFromInbox(inboxPayload, options) {
       captured_at: item.captured_at,
       reviewed_at: null
     };
+    if (item.status === "incomplete" || item.review_note) {
+      queueItem.review_note = item.review_note || "";
+    }
     queueItems.push(queueItem);
     queueByInbox.set(item.inbox_id, queueItem);
   });
@@ -483,6 +497,7 @@ function ensureSourceExists(sourcesPayload, sourceId) {
   sources.push({
     source_id: sourceId,
     name: sourceId,
+    source_type: "MANUAL",
     type: "UNKNOWN",
     platform: "MANUAL",
     url: "",

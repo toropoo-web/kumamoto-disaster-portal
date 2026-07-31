@@ -133,7 +133,8 @@ function main() {
       category: "SUPPLIES",
       prefecture: "熊本県",
       municipality: "氷川町",
-      title: "不足項目テスト"
+      title: "不足項目テスト",
+      review_note: "district, url 未確認"
     },
     0
   );
@@ -355,6 +356,15 @@ function main() {
     pass: incompleteEntries.length > 0,
     incomplete_count: incompleteEntries.length
   });
+
+  const reviewNotePass = incompleteItem.review_note && incompleteItem.status === "incomplete";
+  checks.push({
+    check: "incomplete review_note preserved",
+    pass: reviewNotePass
+  });
+  if (!reviewNotePass) {
+    errors.push("incomplete items must preserve review_note");
+  }
 
   console.log("=== Disaster Social Pipeline Validation ===");
   console.log(

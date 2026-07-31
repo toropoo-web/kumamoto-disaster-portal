@@ -5,6 +5,7 @@
   "sources": [
     {
       "source_id": "SOC-LOCAL-001",
+      "source_type": "X",
       "name": "熊本南部 被災者交流SNS",
       "type": "SNS",
       "platform": "X",
@@ -16,6 +17,7 @@
     },
     {
       "source_id": "SOC-LOCAL-002",
+      "source_type": "WEB",
       "name": "八代市 市民支援掲示板",
       "type": "LOCAL",
       "platform": "WEB",
@@ -30,6 +32,7 @@
     },
     {
       "source_id": "SOC-CIVIL-001",
+      "source_type": "OTHER",
       "name": "南阿蘇 現地ボランティア連絡",
       "type": "CIVIL",
       "platform": "LINE",
@@ -44,6 +47,7 @@
     },
     {
       "source_id": "SOC-PRIVATE-001",
+      "source_type": "WEB",
       "name": "鹿児島県民間支援ネットワーク",
       "type": "PRIVATE",
       "platform": "WEB",
@@ -55,6 +59,7 @@
     },
     {
       "source_id": "SOC-LOCAL-003",
+      "source_type": "X",
       "name": "熊本市 市民支援SNS",
       "type": "SNS",
       "platform": "X",
@@ -69,6 +74,7 @@
     },
     {
       "source_id": "SOC-LOCAL-004",
+      "source_type": "WEB",
       "name": "宇城市・宇土市 市民掲示板",
       "type": "LOCAL",
       "platform": "WEB",
@@ -84,6 +90,7 @@
     },
     {
       "source_id": "SOC-LOCAL-005",
+      "source_type": "OTHER",
       "name": "氷川町 被災者連絡ネットワーク",
       "type": "CIVIL",
       "platform": "LINE",
@@ -93,6 +100,18 @@
       ],
       "coverage_municipalities": [
         "氷川町"
+      ],
+      "active": true
+    },
+    {
+      "source_id": "SOC-LOCAL-006",
+      "source_type": "Instagram",
+      "name": "熊本県 災害支援Instagram",
+      "type": "SNS",
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/",
+      "coverage_prefectures": [
+        "熊本県"
       ],
       "active": true
     }

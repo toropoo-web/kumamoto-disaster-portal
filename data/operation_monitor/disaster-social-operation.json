@@ -1,0 +1,71 @@
+{
+  "phase": "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE10_SOCIAL_SOURCE_OPERATION",
+  "generated_at": "2026-07-31T16:51:12.205Z",
+  "AUTO_PUBLISH": false,
+  "STOP_AT": "REVIEW_QUEUE",
+  "schema_validation": {
+    "pass": true,
+    "error_count": 0
+  },
+  "counts": {
+    "inbox_item_count": 49,
+    "review_queue_item_count": 49,
+    "apply_queue_item_count": 47,
+    "index_entry_count": 55,
+    "source_count": 8,
+    "incomplete_inbox_count": 0,
+    "incomplete_index_count": 3,
+    "incomplete_review_count": 3,
+    "duplicate_review_count": 2,
+    "pending_review_count": 0,
+    "approved_review_count": 47
+  },
+  "review_status_summary": {
+    "PENDING": 0,
+    "APPROVED": 47,
+    "REJECTED": 0,
+    "DUPLICATE": 2
+  },
+  "source_type_summary": {
+    "X": 2,
+    "WEB": 3,
+    "OTHER": 2,
+    "Instagram": 1
+  },
+  "last_updated": {
+    "inbox": null,
+    "review_queue": "2026-07-31T16:51:12.147Z",
+    "apply_queue": "2026-07-31T16:51:12.148Z",
+    "index": "2026-07-31T16:43:58.608Z"
+  },
+  "incomplete_items": [
+    {
+      "inbox_id": "INB-20260731-009",
+      "review_note": "district, url 未確認。削除せず incomplete で保持",
+      "missing_fields": [
+        "district",
+        "url"
+      ],
+      "entry_id": "SOC-IDX-20260731-009"
+    },
+    {
+      "inbox_id": "INB-20260801-007",
+      "review_note": "district, url 未確認。削除せず incomplete で保持",
+      "missing_fields": [
+        "district",
+        "url"
+      ],
+      "entry_id": "SOC-IDX-INB-20260801-007"
+    },
+    {
+      "inbox_id": "INB-20260801-OPS-013",
+      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持",
+      "missing_fields": [
+        "municipality",
+        "district",
+        "url"
+      ],
+      "entry_id": "SOC-IDX-INB-20260801-OPS-013"
+    }
+  ]
+}
