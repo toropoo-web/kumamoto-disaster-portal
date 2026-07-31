@@ -1,27 +1,16 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-30T23:19:05.508Z",
+  "synced_at": "2026-07-31T01:15:49.749Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
     {
-      "source_id": "SRC-MUN-KM006",
-      "account_name": "人吉市公式X",
-      "account_handle": "hitoyoshishi",
-      "post_time": "2026-07-30T22:45:44.000Z",
-      "text": "【防災無線放送内容】地震による水道水の濁りについて（2026/07/31/07:45）\n環境課からのお知らせです。\n地震の影響により、市内各地で断水および水圧低下が発生しています。\n生活用水として、下原田町荒毛の熊本フクスケ株式会社、下林町の市...\nhttps://t.co/bIsgEXJRpC",
-      "url": "https://x.com/hitoyoshishi/status/2082960866992066624",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "人吉市",
-      "content_filter": "DISASTER_RELATED"
-    },
-    {
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-30T21:49:21.000Z",
-      "text": "【給水所情報　7月31日（金）】\n八代市及び八代生活環境事務組合からのお知らせです。\n応急給水を次のとおり行います。\n配布量は１回あたり５L程度となります。\n給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。\n給水車が水の補給で一時的に不在になることがあります。",
-      "url": "https://x.com/yatsushiro0801/status/2082946676143300746",
+      "post_time": "2026-07-30T23:30:00.000Z",
+      "text": "支援物資などの受入窓口　���合せ先一覧\n\n　令和8年熊本地震における支援物資などの受入窓口を設置しました。詳しくはホームページを確認ください。\nhttps://t.co/x5MnWENxyU",
+      "url": "https://x.com/yatsushiro0801/status/2082972004890603566",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "DISASTER_RELATED"
@@ -30,12 +19,50 @@
       "source_id": "SRC-MUN-KM001",
       "account_name": "熊本市公式X",
       "account_handle": "kumamotocity_",
-      "post_time": "2026-07-30T11:14:13.000Z",
-      "text": "【試験通水の実施について（7月30日20：00時点）】\n断水中の下記対象地区におきまして、段階的な試験通水を実施いたします。↓\nhttps://t.co/aiYZ2BxUQi\n※また、試験通水中は一時的に水が出る場合がありますが、あくまで試験のための通水ですので、ご使用はお控えくださいますようお願いいたします。",
-      "url": "https://x.com/kumamotocity_/status/2082786838834757638",
+      "post_time": "2026-07-30T23:09:56.000Z",
+      "text": "【応急給水活動について（7月31日07：00時点）】\n7月31日（金）の応急給水活動について下記のとおり実施します。\n\n詳しくは↓\nhttps://t.co/aiYZ2BxUQi",
+      "url": "https://x.com/kumamotocity_/status/2082966956555239458",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "熊本市",
       "content_filter": "DISASTER_RELATED"
+    },
+    {
+      "source_id": "SRC-MUN-KM006",
+      "account_name": "人吉市公式X",
+      "account_handle": "hitoyoshishi",
+      "post_time": "2026-07-30T22:45:44.000Z",
+      "text": "【防災無線放送内容】地震による水道水の��りについて（2026/07/31/07:45）\n環境課からのお知らせです。\n地震の影響により、市内各地で断水および水圧低下が発生しています。\n生活用水として、下原田町荒毛の熊本フクスケ株式会社、下林町の市...\nhttps://t.co/bIsgEXJRpC",
+      "url": "https://x.com/hitoyoshishi/status/2082960866992066624",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "人吉市",
+      "content_filter": "DISASTER_RELATED"
+    },
+    {
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-30T23:33:24.000Z",
+      "text": "(続き) \nこちらは多良木町です。\n現在(2026/07/31 08:33)発令中の避難情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9 #避難情報",
+      "url": "https://x.com/Bousai_Kumamoto/status/2082972862240133369",
+      "source_type": "PREFECTURE"
+    },
+    {
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-30T23:32:50.000Z",
+      "text": "(続き) \nこちらは多良木町です。\n現在(2026/07/31 08:32)発令中の避難情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9 #避難情報",
+      "url": "https://x.com/Bousai_Kumamoto/status/2082972719487033440",
+      "source_type": "PREFECTURE"
+    },
+    {
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-30T23:32:50.000Z",
+      "text": "こちらは多良木町です。\n2026/07/31 08:30に高齢者等避難を解除しました。\n\n解除地区：\n多良木町全域",
+      "url": "https://x.com/Bousai_Kumamoto/status/2082972718052626740",
+      "source_type": "PREFECTURE"
     },
     {
       "source_id": "SRC-NAT-004",
@@ -51,38 +78,11 @@
       "account_name": "人吉市公式X",
       "account_handle": "hitoyoshishi",
       "post_time": "2026-07-30T22:05:45.000Z",
-      "text": "【防災無線放送内容】給水について（2026/07/31/7:00）\n水道局からのお知らせです。\n本日（３1日）、午前７時から一部の地域を除き水が使える地域が広がります。\n水を出した時に濁った水が出る���合があります。\nその際は、しばらく出してから...\nhttps://t.co/4aXvLVzaO5",
+      "text": "【防災無線放送内容】給水について（2026/07/31/7:00）\n水道局からのお知らせです。\n本日（３1日）、午前７時から一部の地域を除き水が使える地域が広がります。\n水を出した時に濁った水が出る場合があります。\nその際は、しばらく出してから...\nhttps://t.co/4aXvLVzaO5",
       "url": "https://x.com/hitoyoshishi/status/2082950802415759458",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "人吉市",
       "content_filter": "DISASTER_RELATED"
-    },
-    {
-      "source_id": "SRC-NAT-005",
-      "account_name": "防衛省 災害対策",
-      "account_handle": "ModJapan_saigai",
-      "post_time": "2026-07-30T12:58:57.000Z",
-      "text": "熊本県において、人工透析に必要な水が不足している「うきクリニック」「松田病院」「熊本泌尿器科」「八代北部医療センター」の４か所に対し、本日、合計約90トンの給水を完了しました。 https://t.co/etIsbtvPOv",
-      "url": "https://x.com/ModJapan_saigai/status/2082813194502910256",
-      "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-NAT-002",
-      "account_name": "内閣府防災",
-      "account_handle": "CAO_BOUSAI",
-      "post_time": "2026-07-30T11:41:50.000Z",
-      "text": "令和８年熊本���震の被害状況等を掲載しました。\n#令和８年熊本地震 #被害状況 https://t.co/e5fsH6XhUU",
-      "url": "https://x.com/CAO_BOUSAI/status/2082793790038012381",
-      "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-NAT-005",
-      "account_name": "防衛省 災害対策",
-      "account_handle": "ModJapan_saigai",
-      "post_time": "2026-07-30T11:24:07.000Z",
-      "text": "本日、熊本県の八代港に入港した海上自衛隊の艦艇から、飲料水や非常用糧食、生活用品などの支援物資を陸上自衛隊が引き継ぎ、避難所等への輸送を開始しました。\nあわせて、熊本県内各地で給水支援などの生活支援活動を実施しています。 https://t.co/HkJ2oFm6uj",
-      "url": "https://x.com/ModJapan_saigai/status/2082789328959557910",
-      "source_type": "GOVERNMENT"
     }
   ]
 }
