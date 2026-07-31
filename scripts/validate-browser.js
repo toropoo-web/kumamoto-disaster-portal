@@ -1,4 +1,5 @@
 const { chromium } = require("playwright");
+const CommunicationDisplayAdapter = require("../js/communication-display-adapter");
 
 const SERVE_URL = process.env.SERVE_URL || "http://localhost:3000";
 
@@ -19,18 +20,6 @@ function formatDateTime(value) {
   const h = String(date.getHours()).padStart(2, "0");
   const min = String(date.getMinutes()).padStart(2, "0");
   return `${y}年${m}月${d}日 ${h}:${min}`;
-}
-
-function formatConfirmedAtShort(value) {
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) {
-    return "";
-  }
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  const h = String(date.getHours()).padStart(2, "0");
-  const min = String(date.getMinutes()).padStart(2, "0");
-  return `${m}月${d}日 ${h}:${min}確認`;
 }
 
 async function validateViewport(page, viewport, anchors) {
@@ -70,8 +59,10 @@ async function validateViewport(page, viewport, anchors) {
       ? verifiedText.textContent.replace((verifiedLabel && verifiedLabel.textContent) || "", "").trim()
       : "";
 
-    const commConfirmed = document.querySelector(".communication-status__confirmed");
+    const commConfirmed = document.querySelector(".communication-status__item .communication-status__checked-value");
     const commConfirmedText = commConfirmed ? commConfirmed.textContent.trim() : "";
+    const commStatusPartial = !!document.querySelector(".communication-status__status--partial");
+    const commOfficialLink = !!document.querySelector(".communication-status__official-link");
 
     const cardUpdatedLabels = Array.from(document.querySelectorAll(".official-info-card__meta dt"))
       .filter((el) => el.textContent.trim() === "公式更新")
@@ -104,7 +95,9 @@ async function validateViewport(page, viewport, anchors) {
       commConfirmedText,
       cardUpdatedLabels,
       hasWifiCaution: !!document.querySelector(".communication-status__caution"),
-      hasDisasterMessage: Array.from(document.querySelectorAll(".communication-status__provider")).some((el) => el.textContent.trim() === "災害用伝言サービス"),
+      hasDisasterMessage: Array.from(document.querySelectorAll(".communication-status__carrier")).some((el) => el.textContent.trim() === "災害用伝言サービス"),
+      commStatusPartial: commStatusPartial,
+      commOfficialLink: commOfficialLink,
       latestCount: latestItems.length,
       latestDates,
       hasAreaNavPromo: !!areaNavPromo,
@@ -276,15 +269,17 @@ async function validateViewport(page, viewport, anchors) {
     checks.linkIssueCount === 0 &&
     checks.misatoPlaceholder &&
     checks.linkCount > 0 &&
-    checks.muniCount === 14 &&
+    checks.muniCount === 23 &&
     checks.commCount === 7 &&
     checks.commTitleText === "携帯電話・通信" &&
+    checks.commStatusPartial &&
+    checks.commOfficialLink &&
     checks.hasWifiCaution &&
     checks.hasDisasterMessage &&
     checks.latestCount === 4 &&
     checks.hasAreaNavPromo &&
     checks.hasAreaDisasterNav &&
-    checks.areaNavOptionCount === 14 &&
+    checks.areaNavOptionCount === 23 &&
     checks.areaNavPromoTitle === "地域の災害情報を地図で確認" &&
     checks.areaDisasterNavTitle === "地域災害ナビ" &&
     areaNavLinkChecks.panelVisible &&
@@ -342,7 +337,10 @@ async function main() {
   const communicationStatus = await commRes.json();
 
   const expectedHeader = formatDateTime(publicStatus.last_patrol_at);
-  const expectedCommConfirmed = formatConfirmedAtShort(communicationStatus.confirmed_at);
+  const firstProvider = communicationStatus.providers[0];
+  const expectedCommConfirmed = CommunicationDisplayAdapter.formatCheckedAt(
+    firstProvider ? firstProvider.last_checked : ""
+  );
 
   const browser = await chromium.launch();
   const context = await browser.newContext({ serviceWorkers: "block" });

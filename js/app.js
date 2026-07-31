@@ -333,15 +333,6 @@
     }
   };
 
-  var COMMUNICATION_STATUS_LABELS = {
-    PARTIAL_OUTAGE: "一部地域",
-    RESTORED: "復旧済み",
-    NO_REPORTED_IMPACT: "影響情報なし",
-    CHECK_OFFICIAL: "公式情報を確認"
-  };
-
-  var MAX_COMMUNICATION_AREAS = 4;
-
   var EXCLUDED_STATUSES = [
     "REQUIRES_MANUAL_REVIEW",
     "NOT_FOUND",
@@ -521,18 +512,6 @@
     return y + "年" + m + "月" + d + "日 " + h + ":" + min;
   }
 
-  function formatConfirmedAtShort(value) {
-    var date = parseDate(value);
-    if (!date) {
-      return "";
-    }
-    var m = date.getMonth() + 1;
-    var d = date.getDate();
-    var h = String(date.getHours()).padStart(2, "0");
-    var min = String(date.getMinutes()).padStart(2, "0");
-    return m + "月" + d + "日 " + h + ":" + min + "確認";
-  }
-
   function formatSyncedAt(value) {
     var date = parseDate(value);
     if (!date) {
@@ -546,40 +525,66 @@
     return y + "/" + m + "/" + d + " " + h + ":" + min;
   }
 
-  function formatCommunicationAreas(areas) {
-    if (!areas || areas.length === 0) {
-      return "";
+  function getCommunicationServiceKindLabel(service) {
+    if (!service || !service.type) {
+      return "📡 通信サービス";
     }
-    if (areas.length <= MAX_COMMUNICATION_AREAS) {
-      return "（" + areas.join("・") + "）";
+    if (service.type === "DISASTER_WIFI") {
+      return "📶 Wi-Fi";
     }
-    return "（" + areas.slice(0, MAX_COMMUNICATION_AREAS).join("・") + "ほか）";
-  }
-
-  function getCommunicationStatusText(provider) {
-    var label = provider.status_label || COMMUNICATION_STATUS_LABELS[provider.status] || COMMUNICATION_STATUS_LABELS.CHECK_OFFICIAL;
-    if (provider.status === "PARTIAL_OUTAGE") {
-      return label + formatCommunicationAreas(provider.areas);
+    if (service.type === "DISASTER_MESSAGE") {
+      return "📞 伝言サービス";
     }
-    return label;
+    if (service.type === "DISASTER_SUPPORT") {
+      return "📡 固定通信";
+    }
+    return "📡 通信サービス";
   }
 
-  function getServiceStatusText(service) {
-    return service.status_label || COMMUNICATION_STATUS_LABELS[service.status] || COMMUNICATION_STATUS_LABELS.CHECK_OFFICIAL;
-  }
-
-  function getCommunicationLastCheckedText(item) {
-    var value = item.last_checked || item.confirmed_at || null;
-    var formatted = formatSyncedAt(value);
-    return formatted ? "最終確認：" + formatted : "";
-  }
-
-  function appendCommunicationLastChecked(parent, item) {
-    var lastCheckedText = getCommunicationLastCheckedText(item);
-    if (!lastCheckedText) {
+  function renderCommunicationCard(parent, display, options) {
+    var adapter = window.CommunicationDisplayAdapter;
+    if (!adapter || !display) {
       return;
     }
-    parent.appendChild(createElement("p", "communication-status__confirmed", lastCheckedText));
+
+    var kindLabel = (options && options.kindLabel) || "📱 通信状況";
+    var card = createElement("article", "communication-status__card");
+
+    card.appendChild(createElement("p", "communication-status__kind", kindLabel));
+
+    var statusClass = "communication-status__status communication-status__status--" + display.status.toLowerCase();
+    card.appendChild(createElement("p", statusClass, display.status_label));
+
+    card.appendChild(createElement("h3", "communication-status__carrier", display.carrier));
+
+    if (display.areas && display.areas.length > 0) {
+      var areasBlock = createElement("div", "communication-status__areas");
+      areasBlock.appendChild(createElement("p", "communication-status__areas-label", "対象地域:"));
+      var areasList = createElement("ul", "communication-status__areas-list");
+      display.areas.forEach(function (area) {
+        areasList.appendChild(createElement("li", "communication-status__areas-item", area));
+      });
+      areasBlock.appendChild(areasList);
+      card.appendChild(areasBlock);
+    }
+
+    if (display.checked_at) {
+      var checked = createElement("p", "communication-status__checked");
+      checked.appendChild(createElement("span", "communication-status__checked-label", "確認日時:"));
+      checked.appendChild(createElement("time", "communication-status__checked-value", display.checked_at));
+      card.appendChild(checked);
+    }
+
+    if (display.source_url) {
+      var link = createElement("a", "communication-status__official-link", "公式情報を見る");
+      link.href = display.source_url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", display.carrier + "の公式情報へ（外部リンク）");
+      card.appendChild(link);
+    }
+
+    parent.appendChild(card);
   }
 
   function extractDomain(url) {
@@ -1556,7 +1561,7 @@
       inner.appendChild(createElement(
         "p",
         "disaster-search__caution",
-        "※この情報には自治体等の公的情報に加え、施設・団体等が提供する支援情報を含みます。利用前に最新状況や利用条件を提供元へご確認ください。"
+        SUPPORT_SERVICE_USER_SEARCH_CAUTION
       ));
     }
 
@@ -2928,6 +2933,11 @@
       return;
     }
 
+    var adapter = window.CommunicationDisplayAdapter;
+    if (!adapter) {
+      return;
+    }
+
     var section = createElement("section", "communication-status");
     section.setAttribute("aria-labelledby", "communication-status-title");
 
@@ -2941,33 +2951,16 @@
 
     communicationStatus.providers.forEach(function (provider) {
       var li = createElement("li", "communication-status__item");
-      var link = createElement("a", "communication-status__link");
-      link.href = provider.source_url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.setAttribute("aria-label", provider.provider_name + "の公式障害情報へ（外部リンク）");
-
-      link.appendChild(createElement("span", "communication-status__provider", provider.provider_name));
-      link.appendChild(createElement("span", "communication-status__text", getCommunicationStatusText(provider)));
-      li.appendChild(link);
-      appendCommunicationLastChecked(li, provider);
+      var display = adapter.adaptCommunicationProvider(provider);
+      renderCommunicationCard(li, display, { kindLabel: "📱 通信状況" });
       list.appendChild(li);
     });
 
     if (communicationStatus.services && communicationStatus.services.length > 0) {
       communicationStatus.services.forEach(function (service) {
         var li = createElement("li", "communication-status__item communication-status__item--service");
-        var displayName = service.display_name || service.service_name;
-        var link = createElement("a", "communication-status__link");
-        link.href = service.source_url;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        link.setAttribute("aria-label", displayName + "の公式情報へ（外部リンク）");
-
-        link.appendChild(createElement("span", "communication-status__provider", service.service_name));
-        link.appendChild(createElement("span", "communication-status__text", getServiceStatusText(service)));
-        li.appendChild(link);
-        appendCommunicationLastChecked(li, service);
+        var display = adapter.adaptCommunicationService(service);
+        renderCommunicationCard(li, display, { kindLabel: getCommunicationServiceKindLabel(service) });
 
         if (service.summary) {
           li.appendChild(createElement("p", "communication-status__summary", service.summary));
@@ -2982,12 +2975,6 @@
     }
 
     inner.appendChild(list);
-
-    var confirmedAt = formatConfirmedAtShort(communicationStatus.confirmed_at);
-    if (confirmedAt) {
-      inner.appendChild(createElement("p", "communication-status__confirmed", confirmedAt));
-    }
-
     section.appendChild(inner);
     container.appendChild(section);
   }

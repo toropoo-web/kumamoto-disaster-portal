@@ -9,6 +9,7 @@ const ROOT = path.join(__dirname, "..");
 const STATIC_FILES = [
   "index.html",
   "css/styles.css",
+  "js/communication-display-adapter.js",
   "js/app.js",
   "data/public/phase1_areas.json",
   "data/public/phase1_navigation.json",
