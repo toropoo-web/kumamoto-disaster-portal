@@ -3,24 +3,25 @@
   "region": "KYUSHU_SOUTH",
   "queue_type": "DISASTER_SOCIAL_REVIEW",
   "AUTO_PUBLISH": false,
-  "item_count": 56,
+  "item_count": 51,
   "status_summary": {
-    "PENDING": 0,
-    "APPROVED": 54,
+    "PENDING": 2,
+    "APPROVED": 0,
     "REJECTED": 0,
-    "DUPLICATE": 2
+    "DUPLICATE": 49
   },
   "items": [
     {
       "queue_id": "SOC-REV-INB-20260731-001",
       "inbox_id": "INB-20260731-001",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/kumamoto-sns/water-20260731",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260731-001",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
-        "id": "SOC-IDX-20260731-001",
+        "id": "SOC-IDX-INB-20260731-001",
         "source": "SOC-LOCAL-003",
         "category": "WATER",
         "prefecture": "熊本県",
@@ -30,21 +31,23 @@
         "title": "熊本市西区 住民有志による給水協力",
         "content": "西区春日でポリタンク持参の給水協力。午前10時から夕方まで。",
         "url": "https://example.local/kumamoto-sns/water-20260731",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-07-31T10:00:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260731-002",
       "inbox_id": "INB-20260731-002",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/kumamoto-sns/food-20260731",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260731-002",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
-        "id": "SOC-IDX-20260731-002",
+        "id": "SOC-IDX-INB-20260731-002",
         "source": "SOC-LOCAL-003",
         "category": "FOOD",
         "prefecture": "熊本県",
@@ -54,21 +57,23 @@
         "title": "熊本市中央区 炊き出しボランティア募集",
         "content": "中央区上通付近で炊き出し支援。配布手伝いと調理補助を募集。",
         "url": "https://example.local/kumamoto-sns/food-20260731",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-07-31T10:05:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260731-003",
       "inbox_id": "INB-20260731-003",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/yatsushiro-board/supplies-20260731",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260731-003",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [],
       "entry": {
-        "id": "SOC-IDX-20260731-003",
+        "id": "SOC-IDX-INB-20260731-003",
         "source": "SOC-LOCAL-002",
         "category": "SUPPLIES",
         "prefecture": "熊本県",
@@ -78,21 +83,23 @@
         "title": "八代市 支援物資の民間寄付受付",
         "content": "日用品・衛生用品の寄付受付。八代市本町の仮設受付で受け取り。",
         "url": "https://example.local/yatsushiro-board/supplies-20260731",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-07-31T10:10:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260731-004",
       "inbox_id": "INB-20260731-004",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/uki-uto-board/toilet-20260731",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260731-004",
       "import_format": "CSV",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
-        "id": "SOC-IDX-20260731-004",
+        "id": "SOC-IDX-INB-20260731-004",
         "source": "SOC-LOCAL-004",
         "category": "TOILET",
         "prefecture": "熊本県",
@@ -102,21 +109,23 @@
         "title": "宇城市 仮設トイレの場所共有",
         "content": "宇城市小川地区の仮設トイレ設置場所を市民が共有。",
         "url": "https://example.local/uki-uto-board/toilet-20260731",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-07-31T10:15:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260731-005",
       "inbox_id": "INB-20260731-005",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/uki-uto-board/charging-20260731",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260731-005",
       "import_format": "CSV",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
-        "id": "SOC-IDX-20260731-005",
+        "id": "SOC-IDX-INB-20260731-005",
         "source": "SOC-LOCAL-004",
         "category": "CHARGING",
         "prefecture": "熊本県",
@@ -126,21 +135,23 @@
         "title": "宇土市 スマホ充電スポット情報",
         "content": "宇土町の商店が停電時の充電スポットを開放。",
         "url": "https://example.local/uki-uto-board/charging-20260731",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-07-31T10:20:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260731-006",
       "inbox_id": "INB-20260731-006",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/hikawa-local/volunteer-20260731",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260731-006",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [],
       "entry": {
-        "id": "SOC-IDX-20260731-006",
+        "id": "SOC-IDX-INB-20260731-006",
         "source": "SOC-LOCAL-005",
         "category": "VOLUNTEER",
         "prefecture": "熊本県",
@@ -150,21 +161,23 @@
         "title": "氷川町 泥かきボランティア募集",
         "content": "氷川町島地地区で泥かき作業のボランティア募集。",
         "url": "https://example.local/hikawa-local/volunteer-20260731",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-07-31T10:25:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260731-007",
       "inbox_id": "INB-20260731-007",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/uki-uto-board/water-20260731",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260731-007",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
-        "id": "SOC-IDX-20260731-007",
+        "id": "SOC-IDX-INB-20260731-007",
         "source": "SOC-LOCAL-004",
         "category": "WATER",
         "prefecture": "熊本県",
@@ -174,21 +187,23 @@
         "title": "宇城市松橋 井水の譲渡情報",
         "content": "松橋町の住民より井水譲渡の連絡。飲用不可・生活用水向け。",
         "url": "https://example.local/uki-uto-board/water-20260731",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-07-31T10:30:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260731-008",
       "inbox_id": "INB-20260731-008",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/minamiaso-volunteer/food-20260731b",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260731-008",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
-        "id": "SOC-IDX-20260731-008",
+        "id": "SOC-IDX-INB-20260731-008",
         "source": "SOC-CIVIL-001",
         "category": "FOOD",
         "prefecture": "熊本県",
@@ -198,24 +213,26 @@
         "title": "益城町 炊き出し追加募集",
         "content": "益城町赤井で追加の炊き出し支援。配膳ボランティア募集。",
         "url": "https://example.local/minamiaso-volunteer/food-20260731b",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-07-31T10:35:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260731-009",
       "inbox_id": "INB-20260731-009",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "hash:3a99e3d949b6f08c75c3bf5f958be116c46dd43ac7926eb7ada88db9dcdb4fed",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260731-009",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [
         "district",
         "url"
       ],
       "entry": {
-        "id": "SOC-IDX-20260731-009",
+        "id": "SOC-IDX-INB-20260731-009",
         "source": "SOC-LOCAL-005",
         "category": "SUPPLIES",
         "prefecture": "熊本県",
@@ -225,10 +242,11 @@
         "title": "氷川町 毛布寄付の連絡",
         "content": "毛布の寄付受付。場所の詳細は確認中。",
         "url": "",
-        "status": "incomplete"
+        "status": "incomplete",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-07-31T10:40:00.000Z",
-      "reviewed_at": "2026-07-31T16:12:09.785Z",
+      "reviewed_at": null,
       "review_note": "district, url 未確認。削除せず incomplete で保持"
     },
     {
@@ -238,9 +256,10 @@
       "dedupe_key": "url:https://example.local/yatsushiro-board/water-20260731",
       "duplicate_of": "SOC-IDX-20260731-001",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
-        "id": "SOC-IDX-20260731-010",
+        "id": "SOC-IDX-INB-DUP-001",
         "source": "SOC-LOCAL-002",
         "category": "WATER",
         "prefecture": "熊本県",
@@ -250,7 +269,8 @@
         "title": "イオン八代駐車場 生活用水配布の現地情報",
         "content": "重複確認用。既存indexと同一URL。",
         "url": "https://example.local/yatsushiro-board/water-20260731",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-07-31T10:45:00.000Z",
       "reviewed_at": null
@@ -258,10 +278,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-001",
       "inbox_id": "INB-20260801-001",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/yatsushiro-board/water-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-001",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-001",
@@ -274,18 +295,20 @@
         "title": "八代市本町 民間給水ポイント開設",
         "content": "八代市本町の公民館前で生活用水の配布。ポリタンク持参。8月1日午前7時から。",
         "url": "https://example.local/yatsushiro-board/water-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T06:30:00.000Z",
-      "reviewed_at": "2026-07-31T16:18:10.176Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260801-002",
       "inbox_id": "INB-20260801-002",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/kumamoto-sns/food-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-002",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-002",
@@ -298,18 +321,20 @@
         "title": "熊本市東区 朝食炊き出し",
         "content": "熊本市東区健軍で朝食の炊き出し実施。配膳ボランティア募集。",
         "url": "https://example.local/kumamoto-sns/food-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T07:00:00.000Z",
-      "reviewed_at": "2026-07-31T16:18:10.176Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260801-003",
       "inbox_id": "INB-20260801-003",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/uki-uto-board/supplies-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-003",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-003",
@@ -322,18 +347,20 @@
         "title": "宇城市 衛生用品の民間寄付受付",
         "content": "宇城市三角町の仮設受付で衛生用品・日用品の寄付受付中。",
         "url": "https://example.local/uki-uto-board/supplies-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-08-01T07:30:00.000Z",
-      "reviewed_at": "2026-07-31T16:18:10.176Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260801-004",
       "inbox_id": "INB-20260801-004",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/uki-uto-board/toilet-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-004",
       "import_format": "CSV",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-004",
@@ -346,18 +373,20 @@
         "title": "宇土市 仮設トイレ設置場所",
         "content": "宇土市中央町の公園に仮設トイレ設置。市民が現地で共有。",
         "url": "https://example.local/uki-uto-board/toilet-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T08:00:00.000Z",
-      "reviewed_at": "2026-07-31T16:18:10.176Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260801-005",
       "inbox_id": "INB-20260801-005",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/hikawa-local/charging-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-005",
       "import_format": "CSV",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-005",
@@ -370,18 +399,20 @@
         "title": "氷川町 充電スポット開放",
         "content": "氷川町高砂の集会所でスマホ充電スポットを開放。",
         "url": "https://example.local/hikawa-local/charging-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T08:30:00.000Z",
-      "reviewed_at": "2026-07-31T16:18:10.176Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260801-006",
       "inbox_id": "INB-20260801-006",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/kumamoto-sns/volunteer-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-006",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-006",
@@ -394,18 +425,20 @@
         "title": "熊本市南区 避難所支援ボランティア",
         "content": "熊本市南区の避難所で物資運搬・配膳のボランティア募集。",
         "url": "https://example.local/kumamoto-sns/volunteer-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-08-01T09:00:00.000Z",
-      "reviewed_at": "2026-07-31T16:18:10.176Z"
+      "reviewed_at": null
     },
     {
       "queue_id": "SOC-REV-INB-20260801-007",
       "inbox_id": "INB-20260801-007",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "hash:6a9b9ebd4b9540d88e220d3b882151be1d2b032245d92143df9830d23e19bda9",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-007",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [
         "district",
         "url"
@@ -421,10 +454,11 @@
         "title": "氷川町 段ボール寄付の連絡",
         "content": "段ボールの寄付受付。場所の詳細は確認中。",
         "url": "",
-        "status": "incomplete"
+        "status": "incomplete",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-08-01T09:15:00.000Z",
-      "reviewed_at": "2026-07-31T16:18:10.176Z",
+      "reviewed_at": null,
       "review_note": "district, url 未確認。削除せず incomplete で保持"
     },
     {
@@ -432,8 +466,9 @@
       "inbox_id": "INB-DUP-002",
       "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/yatsushiro-board/water-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-001",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-DUP-002",
@@ -446,7 +481,8 @@
         "title": "八代市本町 民間給水ポイント開設（重複）",
         "content": "重複確認用。INB-20260801-001と同一URL。",
         "url": "https://example.local/yatsushiro-board/water-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T09:30:00.000Z",
       "reviewed_at": null
@@ -454,10 +490,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-EXP-001",
       "inbox_id": "INB-20260801-EXP-001",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/aso-local/water-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-EXP-001",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-EXP-001",
@@ -470,7 +507,8 @@
         "title": "阿蘇市 民間給水ポイント開設",
         "content": "阿蘇市黒川地区で生活用水の配布。ポリタンク持参。",
         "url": "https://example.local/aso-local/water-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T10:00:00.000Z",
       "reviewed_at": null
@@ -478,10 +516,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-EXP-002",
       "inbox_id": "INB-20260801-EXP-002",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/minamiaso-local/food-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-EXP-002",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-EXP-002",
@@ -494,7 +533,8 @@
         "title": "南阿蘇村 炊き出し支援",
         "content": "南阿蘇村河陽町で炊き出し実施。配膳ボランティア募集。",
         "url": "https://example.local/minamiaso-local/food-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T10:05:00.000Z",
       "reviewed_at": null
@@ -502,10 +542,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-EXP-003",
       "inbox_id": "INB-20260801-EXP-003",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/amakusa-local/supplies-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-EXP-003",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-EXP-003",
@@ -518,7 +559,8 @@
         "title": "天草市 物資寄付受付",
         "content": "天草市本町の仮設受付で日用品・衛生用品の寄付受付。",
         "url": "https://example.local/amakusa-local/supplies-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-08-01T10:10:00.000Z",
       "reviewed_at": null
@@ -526,10 +568,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-EXP-004",
       "inbox_id": "INB-20260801-EXP-004",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/kamiamakusa-local/toilet-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-EXP-004",
       "import_format": "CSV",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-EXP-004",
@@ -542,7 +585,8 @@
         "title": "上天草市 仮設トイレ設置情報",
         "content": "上天草市大矢野町の公園に仮設トイレ設置。",
         "url": "https://example.local/kamiamakusa-local/toilet-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T10:15:00.000Z",
       "reviewed_at": null
@@ -550,10 +594,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-EXP-005",
       "inbox_id": "INB-20260801-EXP-005",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/hitoyoshi-local/charging-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-EXP-005",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-EXP-005",
@@ -566,7 +611,8 @@
         "title": "人吉市 充電スポット開放",
         "content": "人吉市上青井町の集会所でスマホ充電スポットを開放。",
         "url": "https://example.local/hitoyoshi-local/charging-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T10:20:00.000Z",
       "reviewed_at": null
@@ -574,10 +620,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-EXP-006",
       "inbox_id": "INB-20260801-EXP-006",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/minamata-local/volunteer-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-EXP-006",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-EXP-006",
@@ -590,7 +637,8 @@
         "title": "水俣市 避難所支援ボランティア",
         "content": "水俣市万田町の避難所で物資運搬ボランティア募集。",
         "url": "https://example.local/minamata-local/volunteer-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-08-01T10:25:00.000Z",
       "reviewed_at": null
@@ -598,10 +646,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-EXP-007",
       "inbox_id": "INB-20260801-EXP-007",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/ashikita-local/water-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-EXP-007",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-EXP-007",
@@ -614,7 +663,8 @@
         "title": "芦北町 井水譲渡情報",
         "content": "芦北町田浦地区で井水譲渡の連絡。生活用水向け。",
         "url": "https://example.local/ashikita-local/water-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T10:30:00.000Z",
       "reviewed_at": null
@@ -622,10 +672,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-PET-001",
       "inbox_id": "INB-20260801-PET-001",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/kumamoto-sns/pet-lost-cat-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-PET-001",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-PET-001",
@@ -638,7 +689,8 @@
         "title": "熊本市西区 迷子猫の目撃情報",
         "content": "西区春日付近で三毛猫の目撃情報。首輪なし。飼い主捜索中。",
         "url": "https://example.local/kumamoto-sns/pet-lost-cat-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T11:00:00.000Z",
       "reviewed_at": null
@@ -646,10 +698,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-PET-002",
       "inbox_id": "INB-20260801-PET-002",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/yatsushiro-board/pet-lost-dog-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-PET-002",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-PET-002",
@@ -662,7 +715,8 @@
         "title": "八代市 迷子犬の保護情報",
         "content": "八代市本町で保護された中型犬。赤い首輪。飼い主の連絡を待っています。",
         "url": "https://example.local/yatsushiro-board/pet-lost-dog-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T11:05:00.000Z",
       "reviewed_at": null
@@ -670,10 +724,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-PET-003",
       "inbox_id": "INB-20260801-PET-003",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/uki-uto-board/pet-stray-cat-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-PET-003",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-PET-003",
@@ -686,7 +741,8 @@
         "title": "宇城市 迷い猫の飼い主捜索",
         "content": "松橋町で迷い猫を保護。白と黒のハチワレ。飼い主捜索の連絡を募集。",
         "url": "https://example.local/uki-uto-board/pet-stray-cat-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-08-01T11:10:00.000Z",
       "reviewed_at": null
@@ -694,10 +750,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-PET-004",
       "inbox_id": "INB-20260801-PET-004",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/hitoyoshi-local/pet-shelter-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-PET-004",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-PET-004",
@@ -710,7 +767,8 @@
         "title": "人吉市 ペット避難場所の案内",
         "content": "人吉市上青井町の体育館付属スペースでペット避難を受け付け。ケージ持参。",
         "url": "https://example.local/hitoyoshi-local/pet-shelter-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T11:15:00.000Z",
       "reviewed_at": null
@@ -718,10 +776,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-PET-005",
       "inbox_id": "INB-20260801-PET-005",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/aso-local/pet-friendly-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-PET-005",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-PET-005",
@@ -734,7 +793,8 @@
         "title": "阿蘇市 ペット同伴可能スペース",
         "content": "阿蘇市黒川の公民館ロビーをペット同伴可能スペースとして開放。",
         "url": "https://example.local/aso-local/pet-friendly-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-08-01T11:20:00.000Z",
       "reviewed_at": null
@@ -742,10 +802,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-PET-006",
       "inbox_id": "INB-20260801-PET-006",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/amakusa-local/pet-supplies-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-PET-006",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-PET-006",
@@ -758,7 +819,8 @@
         "title": "天草市 ペット用品配布",
         "content": "天草市本町の仮設受付でペット用品・ペットフードの配布を実施。",
         "url": "https://example.local/amakusa-local/pet-supplies-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T11:25:00.000Z",
       "reviewed_at": null
@@ -766,10 +828,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-PET-007",
       "inbox_id": "INB-20260801-PET-007",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/minamata-local/pet-stray-dog-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-PET-007",
       "import_format": "CSV",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-PET-007",
@@ -782,7 +845,8 @@
         "title": "水俣市 迷い犬の目撃情報",
         "content": "万田町付近で茶色の中型犬の目撃情報。保護情報と飼い主捜索の連絡先あり。",
         "url": "https://example.local/minamata-local/pet-stray-dog-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T11:30:00.000Z",
       "reviewed_at": null
@@ -790,10 +854,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-CAT-001",
       "inbox_id": "INB-20260801-CAT-001",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/kumamoto-sns/bath-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-CAT-001",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-CAT-001",
@@ -806,7 +871,8 @@
         "title": "熊本市南区 銭湯の無料開放",
         "content": "南区の銭湯が被災者向けに入浴無料開放。タオル持参。",
         "url": "https://example.local/kumamoto-sns/bath-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T11:35:00.000Z",
       "reviewed_at": null
@@ -814,10 +880,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-CAT-002",
       "inbox_id": "INB-20260801-CAT-002",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/yatsushiro-board/shower-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-CAT-002",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-CAT-002",
@@ -830,7 +897,8 @@
         "title": "八代市 シャワー設備の開放",
         "content": "八代市沖町の体育館で温水シャワーを開放。入浴設備利用可。",
         "url": "https://example.local/yatsushiro-board/shower-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T11:40:00.000Z",
       "reviewed_at": null
@@ -838,10 +906,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-CAT-003",
       "inbox_id": "INB-20260801-CAT-003",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/uki-uto-board/free-space-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-CAT-003",
       "import_format": "MANUAL",
+      "source_type": "MANUAL",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-CAT-003",
@@ -854,7 +923,8 @@
         "title": "宇土市 無料開放スペース",
         "content": "宇土市中央町の集会所をフリースペース・休憩場所として無料開放。",
         "url": "https://example.local/uki-uto-board/free-space-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "MANUAL"
       },
       "captured_at": "2026-08-01T11:45:00.000Z",
       "reviewed_at": null
@@ -862,10 +932,11 @@
     {
       "queue_id": "SOC-REV-INB-20260801-CAT-004",
       "inbox_id": "INB-20260801-CAT-004",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/kikuyo-local/wifi-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-CAT-004",
       "import_format": "JSON",
+      "source_type": "WEB",
       "missing_fields": [],
       "entry": {
         "id": "SOC-IDX-INB-20260801-CAT-004",
@@ -878,7 +949,8 @@
         "title": "菊陽町 Wi-Fi利用スポット",
         "content": "菊陽町役場前のテントでWi-Fi・ネット通信を提供。",
         "url": "https://example.local/kikuyo-local/wifi-20260801",
-        "status": "ACTIVE"
+        "status": "ACTIVE",
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T11:50:00.000Z",
       "reviewed_at": null
@@ -886,9 +958,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-001",
       "inbox_id": "INB-20260801-OPS-001",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/tamana-water-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-001",
       "import_format": "MANUAL",
       "source_type": "X",
       "missing_fields": [],
@@ -917,9 +989,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-002",
       "inbox_id": "INB-20260801-OPS-002",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/yamaga-food-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-002",
       "import_format": "MANUAL",
       "source_type": "Instagram",
       "missing_fields": [],
@@ -947,9 +1019,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-003",
       "inbox_id": "INB-20260801-OPS-003",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/kikuchi-supplies-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-003",
       "import_format": "MANUAL",
       "source_type": "WEB",
       "missing_fields": [],
@@ -977,9 +1049,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-004",
       "inbox_id": "INB-20260801-OPS-004",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/ozu-toilet-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-004",
       "import_format": "MANUAL",
       "source_type": "MANUAL",
       "missing_fields": [],
@@ -1006,9 +1078,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-005",
       "inbox_id": "INB-20260801-OPS-005",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/kamiamakusa-charging-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-005",
       "import_format": "MANUAL",
       "source_type": "X",
       "missing_fields": [],
@@ -1035,9 +1107,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-006",
       "inbox_id": "INB-20260801-OPS-006",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/nankan-bath-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-006",
       "import_format": "MANUAL",
       "source_type": "WEB",
       "missing_fields": [],
@@ -1066,9 +1138,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-007",
       "inbox_id": "INB-20260801-OPS-007",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/koshi-shower-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-007",
       "import_format": "MANUAL",
       "source_type": "OTHER",
       "missing_fields": [],
@@ -1096,9 +1168,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-008",
       "inbox_id": "INB-20260801-OPS-008",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/mashiki-free-space-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-008",
       "import_format": "MANUAL",
       "source_type": "MANUAL",
       "missing_fields": [],
@@ -1126,9 +1198,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-009",
       "inbox_id": "INB-20260801-OPS-009",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/hitoyoshi-shelter-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-009",
       "import_format": "MANUAL",
       "source_type": "WEB",
       "missing_fields": [],
@@ -1156,9 +1228,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-010",
       "inbox_id": "INB-20260801-OPS-010",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/minamata-pet-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-010",
       "import_format": "MANUAL",
       "source_type": "X",
       "missing_fields": [],
@@ -1187,9 +1259,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-011",
       "inbox_id": "INB-20260801-OPS-011",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/amakusa-wifi-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-011",
       "import_format": "MANUAL",
       "source_type": "WEB",
       "missing_fields": [],
@@ -1217,9 +1289,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-012",
       "inbox_id": "INB-20260801-OPS-012",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "url:https://example.local/community-ops/yatsushiro-volunteer-20260801",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-012",
       "import_format": "MANUAL",
       "source_type": "Instagram",
       "missing_fields": [],
@@ -1246,9 +1318,9 @@
     {
       "queue_id": "SOC-REV-INB-20260801-OPS-013",
       "inbox_id": "INB-20260801-OPS-013",
-      "review_status": "APPROVED",
+      "review_status": "DUPLICATE",
       "dedupe_key": "hash:3ca8e9a22f45c8e26112cf480645f03061c83e900a3cfab9a176c9c176ada784",
-      "duplicate_of": null,
+      "duplicate_of": "SOC-IDX-INB-20260801-OPS-013",
       "import_format": "MANUAL",
       "source_type": "MANUAL",
       "missing_fields": [
@@ -1282,7 +1354,7 @@
       "queue_id": "SOC-REV-INB-20260801-KGS-001",
       "inbox_id": "INB-20260801-KGS-001",
       "review_status": "APPROVED",
-      "dedupe_key": "url:https://example.local/kagoshima-support/water-20260801",
+      "dedupe_key": "url:https://example.local/kirishima-support/water-20260801",
       "duplicate_of": null,
       "import_format": "MANUAL",
       "source_type": "X",
@@ -1292,33 +1364,31 @@
         "source": "SOC-PRIVATE-001",
         "category": "WATER",
         "prefecture": "鹿児島県",
-        "municipality": "鹿児島市",
-        "district": "中央町",
+        "municipality": "霧島市",
+        "district": "国分中央",
         "date": "2026-08-01",
-        "title": "鹿児島市 民間給水ポイント情報",
-        "content": "鹿児島市中央町で生活用水の配布。ポリタンク持参。熊本方面支援物資と連携。",
-        "url": "https://example.local/kagoshima-support/water-20260801",
+        "title": "霧島市 民間給水ポイント情報",
+        "content": "霧島市国分中央で生活用水の配布。ポリタンク持参。熊本方面支援物資と連携。",
+        "url": "https://example.local/kirishima-support/water-20260801",
         "status": "ACTIVE",
         "keywords": [
           "給水",
           "生活用水"
         ],
-        "source_type": "X",
-        "prefecture_group": "KYUSHU_SOUTH"
+        "source_type": "X"
       },
       "captured_at": "2026-08-01T14:00:00.000Z",
-      "reviewed_at": null
+      "reviewed_at": "2026-07-31T17:12:17.814Z"
     },
     {
       "queue_id": "SOC-REV-INB-20260801-KGS-002",
       "inbox_id": "INB-20260801-KGS-002",
       "review_status": "APPROVED",
-      "dedupe_key": "hash:240908030a56cb790b42202c177dc2d83157268d2698757f48a0145b81b7dc61",
+      "dedupe_key": "hash:a84c5c94918e3c580e7b0789d13a9a81a441bc8c03a339c7f518e4e53360e9cf",
       "duplicate_of": null,
       "import_format": "MANUAL",
       "source_type": "WEB",
       "missing_fields": [
-        "municipality",
         "district",
         "url"
       ],
@@ -1327,191 +1397,22 @@
         "source": "SOC-PRIVATE-001",
         "category": "SUPPLIES",
         "prefecture": "鹿児島県",
-        "municipality": "",
+        "municipality": "霧島市",
         "district": "",
         "date": "2026-08-01",
-        "title": "鹿児島県内 支援物資の連絡",
-        "content": "支援物資の譲渡連絡。市町村・場所の詳細は確認中。",
+        "title": "霧島市 支援物資の連絡",
+        "content": "霧島市内の支援物資譲渡連絡。地区・場所の詳細は確認中。",
         "url": "",
         "status": "incomplete",
         "keywords": [
           "支援物資"
         ],
-        "source_type": "WEB",
-        "prefecture_group": "KYUSHU_SOUTH"
+        "source_type": "WEB"
       },
       "captured_at": "2026-08-01T14:05:00.000Z",
-      "reviewed_at": null,
-      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持"
-    },
-    {
-      "queue_id": "SOC-REV-INB-20260801-MYZ-001",
-      "inbox_id": "INB-20260801-MYZ-001",
-      "review_status": "APPROVED",
-      "dedupe_key": "url:https://example.local/miyazaki-support/water-20260801",
-      "duplicate_of": null,
-      "import_format": "MANUAL",
-      "source_type": "WEB",
-      "missing_fields": [],
-      "entry": {
-        "id": "SOC-IDX-INB-20260801-MYZ-001",
-        "source": "SOC-PRIVATE-001",
-        "category": "WATER",
-        "prefecture": "宮崎県",
-        "municipality": "延岡市",
-        "district": "中央町",
-        "date": "2026-08-01",
-        "title": "延岡市 民間給水ポイント情報",
-        "content": "延岡市中央町で生活用水の配布。ポリタンク持参。",
-        "url": "https://example.local/miyazaki-support/water-20260801",
-        "status": "ACTIVE",
-        "keywords": [
-          "給水",
-          "生活用水"
-        ],
-        "source_type": "WEB",
-        "prefecture_group": "KYUSHU_SOUTH",
-        "region_group": "KYUSHU"
-      },
-      "captured_at": "2026-08-01T14:10:00.000Z",
-      "reviewed_at": null
-    },
-    {
-      "queue_id": "SOC-REV-INB-20260801-MYZ-002",
-      "inbox_id": "INB-20260801-MYZ-002",
-      "review_status": "APPROVED",
-      "dedupe_key": "hash:aaa91a467c2ce8e4802a77fe0d686c353b4bc3c9bfc879f8f4553522312883cc",
-      "duplicate_of": null,
-      "import_format": "MANUAL",
-      "source_type": "MANUAL",
-      "missing_fields": [
-        "municipality",
-        "district",
-        "url"
-      ],
-      "entry": {
-        "id": "SOC-IDX-INB-20260801-MYZ-002",
-        "source": "SOC-PRIVATE-001",
-        "category": "SUPPLIES",
-        "prefecture": "宮崎県",
-        "municipality": "",
-        "district": "",
-        "date": "2026-08-01",
-        "title": "宮崎県内 支援物資の連絡",
-        "content": "支援物資の譲渡連絡。市町村・場所の詳細は確認中。",
-        "url": "",
-        "status": "incomplete",
-        "keywords": [
-          "支援物資"
-        ],
-        "source_type": "MANUAL",
-        "prefecture_group": "KYUSHU_SOUTH",
-        "region_group": "KYUSHU"
-      },
-      "captured_at": "2026-08-01T14:12:00.000Z",
-      "reviewed_at": null,
-      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持"
-    },
-    {
-      "queue_id": "SOC-REV-INB-20260801-OIT-001",
-      "inbox_id": "INB-20260801-OIT-001",
-      "review_status": "APPROVED",
-      "dedupe_key": "url:https://example.local/oita-support/food-20260801",
-      "duplicate_of": null,
-      "import_format": "MANUAL",
-      "source_type": "X",
-      "missing_fields": [],
-      "entry": {
-        "id": "SOC-IDX-INB-20260801-OIT-001",
-        "source": "SOC-PRIVATE-001",
-        "category": "FOOD",
-        "prefecture": "大分県",
-        "municipality": "大分市",
-        "district": "府内町",
-        "date": "2026-08-01",
-        "title": "大分市 炊き出し支援情報",
-        "content": "大分市府内町で炊き出し実施。配膳ボランティア募集。",
-        "url": "https://example.local/oita-support/food-20260801",
-        "status": "ACTIVE",
-        "keywords": [
-          "炊き出し"
-        ],
-        "source_type": "X",
-        "region_group": "KYUSHU"
-      },
-      "captured_at": "2026-08-01T14:15:00.000Z",
-      "reviewed_at": null
-    },
-    {
-      "queue_id": "SOC-REV-INB-20260801-OIT-002",
-      "inbox_id": "INB-20260801-OIT-002",
-      "review_status": "APPROVED",
-      "dedupe_key": "hash:988981363ed0ab08a7afdf974f92df52bf5ff6aa5341e26930d7266a7cc2a140",
-      "duplicate_of": null,
-      "import_format": "MANUAL",
-      "source_type": "OTHER",
-      "missing_fields": [
-        "municipality",
-        "district",
-        "url"
-      ],
-      "entry": {
-        "id": "SOC-IDX-INB-20260801-OIT-002",
-        "source": "SOC-PRIVATE-001",
-        "category": "VOLUNTEER",
-        "prefecture": "大分県",
-        "municipality": "",
-        "district": "",
-        "date": "2026-08-01",
-        "title": "大分県内 ボランティア募集の連絡",
-        "content": "ボランティア募集の連絡。市町村・場所の詳細は確認中。",
-        "url": "",
-        "status": "incomplete",
-        "keywords": [
-          "ボランティア"
-        ],
-        "source_type": "OTHER",
-        "region_group": "KYUSHU"
-      },
-      "captured_at": "2026-08-01T14:18:00.000Z",
-      "reviewed_at": null,
-      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持"
-    },
-    {
-      "queue_id": "SOC-REV-INB-20260801-SNS-001",
-      "inbox_id": "INB-20260801-SNS-001",
-      "review_status": "APPROVED",
-      "dedupe_key": "url:https://x.com/example/status/sns-water-20260801",
-      "duplicate_of": null,
-      "import_format": "SNS",
-      "source_type": "X",
-      "missing_fields": [
-        "municipality",
-        "district"
-      ],
-      "entry": {
-        "id": "SOC-IDX-INB-20260801-SNS-001",
-        "source": "SOC-LOCAL-001",
-        "category": "WATER",
-        "prefecture": "福岡県",
-        "municipality": "",
-        "district": "",
-        "date": "2026-08-01",
-        "title": "SNS抽出 給水情報（地域未確定）",
-        "content": "SNSから抽出した給水関連投稿。市町村・地区は確認中。",
-        "url": "https://x.com/example/status/sns-water-20260801",
-        "status": "incomplete",
-        "keywords": [
-          "給水",
-          "SNS"
-        ],
-        "source_type": "X",
-        "region_group": "KYUSHU"
-      },
-      "captured_at": "2026-08-01T14:20:00.000Z",
-      "reviewed_at": null,
-      "review_note": "municipality, district 未確認。SNS抽出のため incomplete で保持"
+      "reviewed_at": "2026-07-31T17:12:17.814Z",
+      "review_note": "district, url 未確認。推測補完せず incomplete で保持"
     }
   ],
-  "last_updated": "2026-07-31T17:05:18.959Z"
+  "last_updated": "2026-07-31T17:12:17.813Z"
 }

@@ -261,41 +261,16 @@
     }
   ];
 
-  var SOCIAL_PREFECTURE_GROUPS = [
-    {
-      id: "KYUSHU_SOUTH",
-      label: "九州南部",
-      prefectures: ["熊本県", "鹿児島県", "宮崎県"]
-    },
-    {
-      id: "KYUSHU",
-      label: "九州全域",
-      prefectures: ["熊本県", "鹿児島県", "宮崎県", "大分県", "福岡県", "長崎県", "佐賀県"]
-    }
-  ];
-
   function matchesSocialPrefectureGroup(entry, token) {
-    var normalizedToken = String(token || "").trim();
-    if (!normalizedToken) {
+    var normalizedToken = String(token || "").trim().toLowerCase();
+    if (!normalizedToken || !entry.prefecture_group) {
       return false;
     }
-    for (var i = 0; i < SOCIAL_PREFECTURE_GROUPS.length; i += 1) {
-      var group = SOCIAL_PREFECTURE_GROUPS[i];
-      if (
-        group.label.indexOf(normalizedToken) === -1 &&
-        normalizedToken.indexOf(group.label) === -1 &&
-        group.id.toLowerCase().indexOf(normalizedToken.toLowerCase()) === -1
-      ) {
-        continue;
-      }
-      if ((group.prefectures || []).indexOf(entry.prefecture) !== -1) {
-        return true;
-      }
-      if (entry.prefecture_group && entry.prefecture_group === group.id) {
-        return true;
-      }
-    }
-    return false;
+    var groupValue = String(entry.prefecture_group).trim().toLowerCase();
+    return (
+      groupValue.indexOf(normalizedToken) !== -1 ||
+      normalizedToken.indexOf(groupValue) !== -1
+    );
   }
 
   function buildSocialRegionHaystack(entry) {
@@ -2267,7 +2242,7 @@
     regionInput.id = "disaster-social-search-region";
     regionInput.type = "search";
     regionInput.name = "region";
-    regionInput.placeholder = "例：熊本県 / 鹿児島県 / 九州南部 / 九州全域";
+    regionInput.placeholder = "例：熊本県 / 霧島市 / 阿蘇地域";
     regionInput.autocomplete = "off";
 
     var dateLabel = createElement("label", "disaster-search__label", "日付");

@@ -38,6 +38,11 @@ const {
   searchDisasterIndex
 } = require(path.join(__dirname, "..", "monitor", "disaster-search-index-engine"));
 
+const {
+  loadCommunityRegionMaster,
+  validateCommunityRegionMaster
+} = require(path.join(__dirname, "..", "monitor", "disaster-social-region-master"));
+
 function copyJson(fromPath, toPath) {
   fs.mkdirSync(path.dirname(toPath), { recursive: true });
   fs.copyFileSync(fromPath, toPath);
@@ -76,6 +81,19 @@ function main() {
   });
   if (masterPayload.municipality_count < 45) {
     errors.push("municipality master must include all Kumamoto municipalities");
+  }
+
+  const regionMaster = loadCommunityRegionMaster();
+  errors.push.apply(errors, validateCommunityRegionMaster(regionMaster));
+  checks.push({
+    check: "no fixed region restriction",
+    pass:
+      regionMaster.extensible === true &&
+      Array.isArray(regionMaster.prefectures) &&
+      regionMaster.prefectures.length === 0
+  });
+  if (!regionMaster.extensible || (regionMaster.prefectures || []).length) {
+    errors.push("community layer must not fix target prefectures");
   }
 
   const inboxPayload = JSON.parse(
@@ -244,7 +262,7 @@ function main() {
     return entry.prefecture === "熊本県";
   }).length;
   checks.push({
-    check: "prefecture wide search",
+    check: "kumamoto prefecture search",
     pass: regionResults.length === kumamotoEntryCount && kumamotoEntryCount > 0,
     count: regionResults.length,
     kumamoto_entry_count: kumamotoEntryCount
@@ -253,46 +271,22 @@ function main() {
     errors.push("prefecture search 熊本県 must return all Kumamoto entries");
   }
 
-  const kagoshimaResults = searchDisasterSocialIndex(indexPayload, { region: "鹿児島県" });
-  const kagoshimaEntryCount = indexPayload.entries.filter(function (entry) {
-    return entry.prefecture === "鹿児島県";
+  const kirishimaResults = searchDisasterSocialIndex(indexPayload, {
+    prefecture: "鹿児島県",
+    municipality: "霧島市"
+  });
+  const kirishimaEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "鹿児島県" && entry.municipality === "霧島市";
   }).length;
   checks.push({
-    check: "kagoshima prefecture wide search",
-    pass: kagoshimaResults.length === kagoshimaEntryCount && kagoshimaEntryCount > 0,
-    count: kagoshimaResults.length,
-    kagoshima_entry_count: kagoshimaEntryCount
+    check: "kirishima city search",
+    pass: kirishimaResults.length === kirishimaEntryCount && kirishimaEntryCount > 0,
+    count: kirishimaResults.length,
+    kirishima_entry_count: kirishimaEntryCount
   });
-  if (kagoshimaResults.length !== kagoshimaEntryCount) {
-    errors.push("prefecture search 鹿児島県 must return all Kagoshima entries");
+  if (kirishimaResults.length !== kirishimaEntryCount) {
+    errors.push("search 鹿児島県霧島市 must return all Kirishima entries");
   }
-
-  const miyazakiResults = searchDisasterSocialIndex(indexPayload, { region: "宮崎県" });
-  const miyazakiEntryCount = indexPayload.entries.filter(function (entry) {
-    return entry.prefecture === "宮崎県";
-  }).length;
-  checks.push({
-    check: "miyazaki prefecture wide search",
-    pass: miyazakiResults.length === miyazakiEntryCount && miyazakiEntryCount > 0,
-    count: miyazakiResults.length
-  });
-
-  const oitaResults = searchDisasterSocialIndex(indexPayload, { region: "大分県" });
-  const oitaEntryCount = indexPayload.entries.filter(function (entry) {
-    return entry.prefecture === "大分県";
-  }).length;
-  checks.push({
-    check: "oita prefecture wide search",
-    pass: oitaResults.length === oitaEntryCount && oitaEntryCount > 0,
-    count: oitaResults.length
-  });
-
-  const kyushuAllResults = searchDisasterSocialIndex(indexPayload, { region: "九州全域" });
-  checks.push({
-    check: "kyushu region search",
-    pass: kyushuAllResults.length === indexPayload.entries.length,
-    count: kyushuAllResults.length
-  });
 
   const municipalityResults = searchDisasterSocialIndex(indexPayload, { region: "合志市" });
   checks.push({
@@ -332,25 +326,25 @@ function main() {
     {
       source: "SOC-PRIVATE-001",
       category: "OTHER",
-      prefecture: "宮崎県",
-      municipality: "延岡市",
+      prefecture: "鹿児島県",
+      municipality: "霧島市",
       district: "テスト",
       date: "2026-08-01",
-      title: "隣接県受付テスト",
-      content: "隣接県の受付確認",
-      url: "https://example.local/adjacent-pref-test"
+      title: "霧島市 受付テスト",
+      content: "霧島市の受付確認",
+      url: "https://example.local/kirishima-intake-test"
     },
     0
   );
   const extensibleErrors = validateInboxItem(extensibleItem, 0);
   checks.push({
-    check: "extensible municipality intake",
+    check: "kirishima city intake",
     pass: extensibleErrors.length === 0 && extensibleItem.status === "ACTIVE",
     municipality: extensibleItem.municipality,
     prefecture: extensibleItem.prefecture
   });
   if (extensibleErrors.length) {
-    errors.push("adjacent prefectures must remain accepted");
+    errors.push("鹿児島県霧島市 must remain accepted at intake");
   }
 
   const regionResultsLegacy = searchDisasterSocialIndex(indexPayload, { region: "熊本市" });

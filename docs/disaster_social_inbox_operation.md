@@ -89,34 +89,19 @@ keywords: ["給水", "生活用水"]
 
 ## 地域受付
 
-災害影響地域単位の横断検索（九州災害 Community Layer）。
+災害情報の横断収集（九州災害 Community Layer）。
 
-対象都道府県:
-
-* 熊本県
-* 鹿児島県
-* 宮崎県
-* 大分県
-* 福岡県
-* 長崎県
-* 佐賀県
-* 今後の災害発生地域（拡張可能）
+* 今回の運用データ対象: 熊本県、鹿児島県霧島市
+* AI判断・推測による地域拡張は行わない（鹿児島県全域・他市町村の追加禁止）
 
 マスタ:
 
 ```
-data/community/community_region_master.json
-data/community/municipality_master.json  （熊本県市町村）
+data/community/community_region_master.json  （extensible: true）
+data/community/municipality_master.json    （熊本県市町村の検索補助）
 ```
 
-`region_group: KYUSHU` は検索補助のみ。
-
-地域グループ:
-
-* 九州南部 → 熊本県 / 鹿児島県 / 宮崎県
-* 九州全域 → 上記7県すべて
-
-被災度・情報量・固定自治体リストによる除外は行わない。
+システム側で対象地域を固定・絞り込まない。隣接県や被災可能性による地域選定は行わない。
 
 地域フィルターは検索軸であり、対象地域の制限ではない。
 

@@ -29,7 +29,8 @@ function loadCommunityRegionMaster(options) {
     region: "KYUSHU_SOUTH",
     extensible: true,
     prefectures: [],
-    prefecture_groups: []
+    prefecture_groups: [],
+    region_groups: []
   });
 }
 
@@ -57,32 +58,46 @@ function resolvePrefectureGroupLabel(prefectureGroupId, masterPayload) {
   return match ? match.label : "";
 }
 
+function tokenMatchesField(token, fieldValue) {
+  const normalizedToken = String(token || "").trim().toLowerCase();
+  const normalizedField = String(fieldValue || "").trim().toLowerCase();
+  if (!normalizedToken || !normalizedField) {
+    return false;
+  }
+  return (
+    normalizedField.indexOf(normalizedToken) !== -1 ||
+    normalizedToken.indexOf(normalizedField) !== -1
+  );
+}
+
 function matchesPrefectureGroupToken(entry, token, masterPayload) {
   const normalizedToken = String(token || "").trim();
   if (!normalizedToken) {
     return false;
   }
-  const groups = loadPrefectureGroups(masterPayload);
-  for (let i = 0; i < groups.length; i += 1) {
-    const group = groups[i];
-    const groupLabel = String(group.label || "").trim();
-    const groupId = String(group.id || "").trim();
-    if (
-      groupLabel.indexOf(normalizedToken) === -1 &&
-      normalizedToken.indexOf(groupLabel) === -1 &&
-      groupId.toLowerCase().indexOf(normalizedToken.toLowerCase()) === -1
-    ) {
-      continue;
-    }
-    const prefectures = group.prefectures || [];
-    if (prefectures.indexOf(entry.prefecture) !== -1) {
+  if (entry.prefecture_group) {
+    if (tokenMatchesField(normalizedToken, entry.prefecture_group)) {
       return true;
     }
-    if (entry.prefecture_group && entry.prefecture_group === group.id) {
+    const label = resolvePrefectureGroupLabel(entry.prefecture_group, masterPayload);
+    if (label && tokenMatchesField(normalizedToken, label)) {
       return true;
     }
   }
-  return matchesCommunityRegionGroupToken(entry, token, masterPayload);
+  const groups = loadPrefectureGroups(masterPayload);
+  for (let i = 0; i < groups.length; i += 1) {
+    const group = groups[i];
+    if (entry.prefecture_group !== group.id) {
+      continue;
+    }
+    if (
+      tokenMatchesField(normalizedToken, group.id) ||
+      tokenMatchesField(normalizedToken, group.label)
+    ) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function matchesCommunityRegionGroupToken(entry, token, masterPayload) {
@@ -90,36 +105,25 @@ function matchesCommunityRegionGroupToken(entry, token, masterPayload) {
   if (!normalizedToken) {
     return false;
   }
-  const master = masterPayload || loadCommunityRegionMaster();
-  if (master.region_group) {
-    const masterGroup = String(master.region_group).trim();
-    if (
-      masterGroup.toLowerCase().indexOf(normalizedToken.toLowerCase()) !== -1 ||
-      normalizedToken.toLowerCase().indexOf(masterGroup.toLowerCase()) !== -1
-    ) {
-      const covered = master.prefectures || [];
-      if (!entry.prefecture || covered.indexOf(entry.prefecture) !== -1) {
-        return true;
-      }
-    }
-  }
-  const groups = loadRegionGroups(master);
-  for (let i = 0; i < groups.length; i += 1) {
-    const group = groups[i];
-    const groupLabel = String(group.label || "").trim();
-    const groupId = String(group.id || "").trim();
-    if (
-      groupLabel.indexOf(normalizedToken) === -1 &&
-      normalizedToken.indexOf(groupLabel) === -1 &&
-      groupId.toLowerCase().indexOf(normalizedToken.toLowerCase()) === -1
-    ) {
-      continue;
-    }
-    const prefectures = group.prefectures || [];
-    if (prefectures.indexOf(entry.prefecture) !== -1) {
+  if (entry.region_group) {
+    if (tokenMatchesField(normalizedToken, entry.region_group)) {
       return true;
     }
-    if (entry.region_group && entry.region_group === group.id) {
+    const label = resolveRegionGroupLabel(entry.region_group, masterPayload);
+    if (label && tokenMatchesField(normalizedToken, label)) {
+      return true;
+    }
+  }
+  const groups = loadRegionGroups(masterPayload);
+  for (let i = 0; i < groups.length; i += 1) {
+    const group = groups[i];
+    if (entry.region_group !== group.id) {
+      continue;
+    }
+    if (
+      tokenMatchesField(normalizedToken, group.id) ||
+      tokenMatchesField(normalizedToken, group.label)
+    ) {
       return true;
     }
   }
@@ -136,10 +140,6 @@ function buildCommunityRegionHaystack(entry, masterPayload) {
   if (entry.region_group) {
     parts.push(resolveRegionGroupLabel(entry.region_group, master));
   }
-  if (master.region_group) {
-    parts.push(master.region_group);
-    parts.push(resolveRegionGroupLabel(master.region_group, master));
-  }
   return parts.filter(Boolean).join(" ");
 }
 
@@ -155,16 +155,13 @@ function validateCommunityRegionMaster(payload) {
   if (payload.layer_scope !== LAYER_SCOPE) {
     errors.push("community_region_master layer_scope must be " + LAYER_SCOPE);
   }
-  if (!payload.region_group) {
-    errors.push("community_region_master region_group is required");
-  }
   (payload.region_groups || []).forEach(function (group, index) {
     const label = "region_groups[" + index + "]";
     if (!group || !group.id || !group.label) {
       errors.push(label + ": id and label are required");
     }
-    if (!Array.isArray(group.prefectures) || !group.prefectures.length) {
-      errors.push(label + ": prefectures must be a non-empty array");
+    if (!Array.isArray(group.prefectures)) {
+      errors.push(label + ": prefectures must be an array");
     }
   });
   (payload.prefecture_groups || []).forEach(function (group, index) {
@@ -172,8 +169,8 @@ function validateCommunityRegionMaster(payload) {
     if (!group || !group.id || !group.label) {
       errors.push(label + ": id and label are required");
     }
-    if (!Array.isArray(group.prefectures) || !group.prefectures.length) {
-      errors.push(label + ": prefectures must be a non-empty array");
+    if (!Array.isArray(group.prefectures)) {
+      errors.push(label + ": prefectures must be an array");
     }
   });
   return errors;

@@ -98,14 +98,21 @@ function main() {
     check: "community region layer",
     pass:
       regionMaster.layer_scope === LAYER_SCOPE &&
-      regionMaster.extensible === true &&
-      regionMaster.region_group === "KYUSHU"
+      regionMaster.extensible === true
   });
   if (regionMaster.layer_scope !== LAYER_SCOPE) {
     errors.push("community layer scope must be " + LAYER_SCOPE);
   }
-  if (regionMaster.region_group !== "KYUSHU") {
-    errors.push("community region_group must be KYUSHU");
+
+  checks.push({
+    check: "no fixed region restriction",
+    pass:
+      regionMaster.extensible === true &&
+      Array.isArray(regionMaster.prefectures) &&
+      regionMaster.prefectures.length === 0
+  });
+  if (!regionMaster.extensible || (regionMaster.prefectures || []).length) {
+    errors.push("community layer must not fix target prefectures");
   }
 
   const masterPayload = loadMunicipalityMaster();
@@ -125,7 +132,7 @@ function main() {
     return entry.prefecture === "熊本県";
   }).length;
   checks.push({
-    check: "prefecture wide search",
+    check: "kumamoto prefecture search",
     pass: prefectureResults.length === kumamotoEntryCount && kumamotoEntryCount > 0,
     count: prefectureResults.length
   });
@@ -133,27 +140,20 @@ function main() {
     errors.push("prefecture search 熊本県 must return all Kumamoto entries");
   }
 
-  const kagoshimaResults = searchDisasterSocialIndex(indexPayload, { region: "鹿児島県" });
-  const kagoshimaEntryCount = indexPayload.entries.filter(function (entry) {
-    return entry.prefecture === "鹿児島県";
+  const kirishimaResults = searchDisasterSocialIndex(indexPayload, {
+    prefecture: "鹿児島県",
+    municipality: "霧島市"
+  });
+  const kirishimaEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "鹿児島県" && entry.municipality === "霧島市";
   }).length;
   checks.push({
-    check: "kagoshima prefecture wide search",
-    pass: kagoshimaResults.length === kagoshimaEntryCount && kagoshimaEntryCount > 0,
-    count: kagoshimaResults.length
+    check: "kirishima city search",
+    pass: kirishimaResults.length === kirishimaEntryCount && kirishimaEntryCount > 0,
+    count: kirishimaResults.length
   });
-  if (kagoshimaResults.length !== kagoshimaEntryCount) {
-    errors.push("prefecture search 鹿児島県 must return all Kagoshima entries");
-  }
-
-  const municipalityResults = searchDisasterSocialIndex(indexPayload, { region: "鹿児島市" });
-  checks.push({
-    check: "municipality search",
-    pass: municipalityResults.length > 0,
-    count: municipalityResults.length
-  });
-  if (!municipalityResults.length) {
-    errors.push("municipality search failed for 鹿児島市");
+  if (kirishimaResults.length !== kirishimaEntryCount) {
+    errors.push("search 鹿児島県霧島市 must return all Kirishima entries");
   }
 
   const districtResults = searchDisasterSocialIndex(indexPayload, {
@@ -170,53 +170,24 @@ function main() {
     errors.push("district search failed");
   }
 
-  const miyazakiResults = searchDisasterSocialIndex(indexPayload, { region: "宮崎県" });
-  const miyazakiEntryCount = indexPayload.entries.filter(function (entry) {
-    return entry.prefecture === "宮崎県";
-  }).length;
+  const categoryResults = searchDisasterSocialIndex(indexPayload, { category: "WATER" });
   checks.push({
-    check: "miyazaki prefecture wide search",
-    pass: miyazakiResults.length === miyazakiEntryCount && miyazakiEntryCount > 0,
-    count: miyazakiResults.length
+    check: "category search",
+    pass: categoryResults.length > 0,
+    count: categoryResults.length
   });
-  if (!miyazakiEntryCount || miyazakiResults.length !== miyazakiEntryCount) {
-    errors.push("prefecture search 宮崎県 must return all Miyazaki entries");
+  if (!categoryResults.length) {
+    errors.push("category search failed for WATER");
   }
 
-  const oitaResults = searchDisasterSocialIndex(indexPayload, { region: "大分県" });
-  const oitaEntryCount = indexPayload.entries.filter(function (entry) {
-    return entry.prefecture === "大分県";
-  }).length;
+  const dateResults = searchDisasterSocialIndex(indexPayload, { date: "2026-07-31" });
   checks.push({
-    check: "oita prefecture wide search",
-    pass: oitaResults.length === oitaEntryCount && oitaEntryCount > 0,
-    count: oitaResults.length
+    check: "date search",
+    pass: dateResults.length > 0,
+    count: dateResults.length
   });
-  if (!oitaEntryCount || oitaResults.length !== oitaEntryCount) {
-    errors.push("prefecture search 大分県 must return all Oita entries");
-  }
-
-  const kyushuSouthResults = searchDisasterSocialIndex(indexPayload, { region: "九州南部" });
-  const kyushuSouthCount = indexPayload.entries.filter(function (entry) {
-    return ["熊本県", "鹿児島県", "宮崎県"].indexOf(entry.prefecture) !== -1;
-  }).length;
-  checks.push({
-    check: "kyushu south region search",
-    pass: kyushuSouthResults.length === kyushuSouthCount && kyushuSouthCount > 0,
-    count: kyushuSouthResults.length
-  });
-  if (kyushuSouthResults.length !== kyushuSouthCount) {
-    errors.push("九州南部 search must return all south Kyushu entries");
-  }
-
-  const kyushuAllResults = searchDisasterSocialIndex(indexPayload, { region: "九州全域" });
-  checks.push({
-    check: "kyushu all region search",
-    pass: kyushuAllResults.length === indexPayload.entries.length,
-    count: kyushuAllResults.length
-  });
-  if (kyushuAllResults.length !== indexPayload.entries.length) {
-    errors.push("九州全域 search must return all indexed entries");
+  if (!dateResults.length) {
+    errors.push("date search failed for 2026-07-31");
   }
 
   checks.push({
@@ -320,7 +291,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log("DISASTER_CROSS_SEARCH_COMMUNITY_PHASE7_KYUSHU_REGION_COMPLETE");
+  console.log("DISASTER_CROSS_SEARCH_COMMUNITY_PHASE7_CORRECTION_2_COMPLETE");
 }
 
 main();

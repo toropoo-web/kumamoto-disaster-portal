@@ -784,136 +784,40 @@
       "source_type": "MANUAL"
     },
     {
-      "id": "SOC-IDX-INB-20260801-KGS-001",
-      "source": "SOC-PRIVATE-001",
-      "category": "WATER",
-      "prefecture": "鹿児島県",
-      "municipality": "鹿児島市",
-      "district": "中央町",
-      "date": "2026-08-01",
-      "title": "鹿児島市 民間給水ポイント情報",
-      "content": "鹿児島市中央町で生活用水の配布。ポリタンク持参。熊本方面支援物資と連携。",
-      "url": "https://example.local/kagoshima-support/water-20260801",
-      "status": "ACTIVE",
-      "keywords": [
-        "給水",
-        "生活用水"
-      ],
-      "source_type": "X",
-      "prefecture_group": "KYUSHU_SOUTH"
-    },
-    {
       "id": "SOC-IDX-INB-20260801-KGS-002",
       "source": "SOC-PRIVATE-001",
       "category": "SUPPLIES",
       "prefecture": "鹿児島県",
-      "municipality": "",
+      "municipality": "霧島市",
       "district": "",
       "date": "2026-08-01",
-      "title": "鹿児島県内 支援物資の連絡",
-      "content": "支援物資の譲渡連絡。市町村・場所の詳細は確認中。",
+      "title": "霧島市 支援物資の連絡",
+      "content": "霧島市内の支援物資譲渡連絡。地区・場所の詳細は確認中。",
       "url": "",
       "status": "incomplete",
       "keywords": [
         "支援物資"
       ],
-      "source_type": "WEB",
-      "prefecture_group": "KYUSHU_SOUTH"
+      "source_type": "WEB"
     },
     {
-      "id": "SOC-IDX-INB-20260801-MYZ-001",
+      "id": "SOC-IDX-INB-20260801-KGS-001",
       "source": "SOC-PRIVATE-001",
       "category": "WATER",
-      "prefecture": "宮崎県",
-      "municipality": "延岡市",
-      "district": "中央町",
+      "prefecture": "鹿児島県",
+      "municipality": "霧島市",
+      "district": "国分中央",
       "date": "2026-08-01",
-      "title": "延岡市 民間給水ポイント情報",
-      "content": "延岡市中央町で生活用水の配布。ポリタンク持参。",
-      "url": "https://example.local/miyazaki-support/water-20260801",
+      "title": "霧島市 民間給水ポイント情報",
+      "content": "霧島市国分中央で生活用水の配布。ポリタンク持参。熊本方面支援物資と連携。",
+      "url": "https://example.local/kirishima-support/water-20260801",
       "status": "ACTIVE",
       "keywords": [
         "給水",
         "生活用水"
       ],
-      "source_type": "WEB",
-      "prefecture_group": "KYUSHU_SOUTH",
-      "region_group": "KYUSHU"
-    },
-    {
-      "id": "SOC-IDX-INB-20260801-MYZ-002",
-      "source": "SOC-PRIVATE-001",
-      "category": "SUPPLIES",
-      "prefecture": "宮崎県",
-      "municipality": "",
-      "district": "",
-      "date": "2026-08-01",
-      "title": "宮崎県内 支援物資の連絡",
-      "content": "支援物資の譲渡連絡。市町村・場所の詳細は確認中。",
-      "url": "",
-      "status": "incomplete",
-      "keywords": [
-        "支援物資"
-      ],
-      "source_type": "MANUAL",
-      "prefecture_group": "KYUSHU_SOUTH",
-      "region_group": "KYUSHU"
-    },
-    {
-      "id": "SOC-IDX-INB-20260801-OIT-001",
-      "source": "SOC-PRIVATE-001",
-      "category": "FOOD",
-      "prefecture": "大分県",
-      "municipality": "大分市",
-      "district": "府内町",
-      "date": "2026-08-01",
-      "title": "大分市 炊き出し支援情報",
-      "content": "大分市府内町で炊き出し実施。配膳ボランティア募集。",
-      "url": "https://example.local/oita-support/food-20260801",
-      "status": "ACTIVE",
-      "keywords": [
-        "炊き出し"
-      ],
-      "source_type": "X",
-      "region_group": "KYUSHU"
-    },
-    {
-      "id": "SOC-IDX-INB-20260801-OIT-002",
-      "source": "SOC-PRIVATE-001",
-      "category": "VOLUNTEER",
-      "prefecture": "大分県",
-      "municipality": "",
-      "district": "",
-      "date": "2026-08-01",
-      "title": "大分県内 ボランティア募集の連絡",
-      "content": "ボランティア募集の連絡。市町村・場所の詳細は確認中。",
-      "url": "",
-      "status": "incomplete",
-      "keywords": [
-        "ボランティア"
-      ],
-      "source_type": "OTHER",
-      "region_group": "KYUSHU"
-    },
-    {
-      "id": "SOC-IDX-INB-20260801-SNS-001",
-      "source": "SOC-LOCAL-001",
-      "category": "WATER",
-      "prefecture": "福岡県",
-      "municipality": "",
-      "district": "",
-      "date": "2026-08-01",
-      "title": "SNS抽出 給水情報（地域未確定）",
-      "content": "SNSから抽出した給水関連投稿。市町村・地区は確認中。",
-      "url": "https://x.com/example/status/sns-water-20260801",
-      "status": "incomplete",
-      "keywords": [
-        "給水",
-        "SNS"
-      ],
-      "source_type": "X",
-      "region_group": "KYUSHU"
+      "source_type": "X"
     }
   ],
-  "last_updated": "2026-07-31T17:05:19.016Z"
+  "last_updated": "2026-07-31T17:12:31.998Z"
 }

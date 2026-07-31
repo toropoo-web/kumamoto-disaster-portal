@@ -48,12 +48,15 @@
     {
       "source_id": "SOC-PRIVATE-001",
       "source_type": "WEB",
-      "name": "鹿児島県民間支援ネットワーク",
+      "name": "霧島市 民間支援ネットワーク",
       "type": "PRIVATE",
       "platform": "WEB",
-      "url": "https://example.local/kagoshima-support",
+      "url": "https://example.local/kirishima-support",
       "coverage_prefectures": [
         "鹿児島県"
+      ],
+      "coverage_municipalities": [
+        "霧島市"
       ],
       "active": true
     },

@@ -136,7 +136,7 @@ function buildDisasterSocialOperationReport(options) {
   const prefectureDetail = buildPrefectureDetail(indexEntries, reviewItems);
 
   return {
-    phase: "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE7_KYUSHU_REGION_OPERATION",
+    phase: "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE7_CORRECTION_2",
     layer_scope: regionMaster.layer_scope || LAYER_SCOPE,
     region_group: regionMaster.region_group || "KYUSHU",
     generated_at: new Date().toISOString(),
