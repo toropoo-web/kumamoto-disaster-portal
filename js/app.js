@@ -1558,28 +1558,31 @@
   }
 
   function appendSocialSourceDisplay(card, item, sourceMeta) {
-    var entryUrl = resolveSocialEntryUrl(item);
     var sourceTypeLabel = resolveSocialSourceTypeLabel(item, sourceMeta);
     var sourceName = (sourceMeta && sourceMeta.name) || item.source || "情報元";
-
-    if (entryUrl) {
-      var link = createElement("a", "disaster-search__official-link", "情報元を見る");
-      link.setAttribute("href", entryUrl);
-      link.setAttribute("target", "_blank");
-      link.setAttribute("rel", "noopener");
-      link.setAttribute(
-        "aria-label",
-        sourceName + "（" + sourceTypeLabel + "）の情報元を見る（外部リンク）"
-      );
-      card.appendChild(link);
-      return;
-    }
+    var entryUrl = resolveSocialEntryUrl(item);
 
     card.appendChild(createElement(
       "p",
       "disaster-search__source disaster-social-search__source-type",
       "情報元：" + sourceTypeLabel
     ));
+
+    if (entryUrl) {
+      var link = createElement(
+        "a",
+        "disaster-search__official-link disaster-social-search__info-link",
+        "情報を見る"
+      );
+      link.setAttribute("href", entryUrl);
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+      link.setAttribute(
+        "aria-label",
+        sourceName + "（" + sourceTypeLabel + "）の情報を見る（外部リンク）"
+      );
+      card.appendChild(link);
+    }
   }
 
   function normalizeSocialDate(value) {

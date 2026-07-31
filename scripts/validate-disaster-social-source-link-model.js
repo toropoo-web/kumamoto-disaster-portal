@@ -32,8 +32,9 @@ function mainStatic() {
   [
     { name: "source type labels", pattern: /SOCIAL_SOURCE_TYPE_LABELS/ },
     { name: "append social source display", pattern: /function appendSocialSourceDisplay/ },
-    { name: "link label 情報元を見る", pattern: /情報元を見る/ },
-    { name: "no-url source type display", pattern: /disaster-social-search__source-type/ },
+    { name: "link label 情報を見る", pattern: /情報を見る/ },
+    { name: "source type always shown", pattern: /disaster-social-search__source-type[\s\S]*情報を見る/ },
+    { name: "removed 情報元を見る label", pattern: /情報元を見る/, invert: true },
     { name: "removed URLを開く label", pattern: /URLを開く/, invert: true },
     { name: "sources use source_url field", pattern: /source_url/ }
   ].forEach(function (item) {
@@ -114,6 +115,35 @@ function mainStatic() {
     errors.push("community layer entry count changed");
   }
 
+  const toiletTitles = [
+    "宇城市 仮設トイレの場所共有",
+    "宇土市 仮設トイレ設置場所",
+    "上天草市 仮設トイレ設置情報",
+    "大津町 仮設トイレ設置"
+  ];
+  toiletTitles.forEach(function (title) {
+    const entry = entries.find(function (item) {
+      return item.title === title;
+    });
+    const pass = Boolean(
+      entry &&
+        entry.url === "" &&
+        !entry.source_url &&
+        !entry.link &&
+        !resolveSocialEntryUrl(entry)
+    );
+    checks.push({
+      check: "toilet entry url state: " + title,
+      pass: pass,
+      entry_id: entry && entry.id,
+      url: entry && entry.url,
+      source_type: entry && entry.source_type
+    });
+    if (!pass) {
+      errors.push("toilet entry url state invalid: " + title);
+    }
+  });
+
   return { checks: checks, errors: errors, entries: entries, sourceLookup: sourceLookup };
 }
 
@@ -159,6 +189,26 @@ async function mainBrowser(entries, sourceLookup) {
       errors.push("unexpected open links when entries have no publishable url");
     }
 
+    await page.locator("#disaster-social-search-region").fill("");
+    await page.locator("#disaster-social-search-category").fill("トイレ");
+    await page.locator(".disaster-social-search__form button[type='submit']").click();
+    await page.waitForSelector("#disaster-social-search-results .disaster-search__card", {
+      timeout: 10000
+    });
+    const toiletCardCount = await page.locator("#disaster-social-search-results .disaster-search__card").count();
+    const toiletSourceTypeCount = await page.locator(".disaster-social-search__source-type").count();
+    const toiletLinkCount = await page.locator(".disaster-social-search__info-link").count();
+    checks.push({
+      check: "toilet search shows source only",
+      pass: toiletCardCount >= 4 && toiletSourceTypeCount >= 4 && toiletLinkCount === 0,
+      card_count: toiletCardCount,
+      source_type_count: toiletSourceTypeCount,
+      link_count: toiletLinkCount
+    });
+    if (toiletCardCount < 4 || toiletSourceTypeCount < 4 || toiletLinkCount !== 0) {
+      errors.push("toilet entries must show source type without info link");
+    }
+
     const withUrlEntry = entries.find(function (entry) {
       return Boolean(resolveSocialEntryUrl(entry));
     });
@@ -172,21 +222,25 @@ async function mainBrowser(entries, sourceLookup) {
       const card = page
         .locator("#disaster-social-search-results .disaster-search__card")
         .filter({ hasText: withUrlEntry.title });
-      const link = card.locator(".disaster-search__official-link");
+      const sourceTypeOnCard = await card.locator(".disaster-social-search__source-type").count();
+      const link = card.locator(".disaster-social-search__info-link");
       const linkText = await link.innerText();
       const href = await link.getAttribute("href");
       checks.push({
-        check: "url present shows 情報元を見る",
-        pass: linkText === "情報元を見る" && href === resolveSocialEntryUrl(withUrlEntry),
+        check: "url present shows source and 情報を見る",
+        pass:
+          sourceTypeOnCard === 1 &&
+          linkText === "情報を見る" &&
+          href === resolveSocialEntryUrl(withUrlEntry),
         entry_id: withUrlEntry.id,
         href: href || ""
       });
-      if (linkText !== "情報元を見る" || href !== resolveSocialEntryUrl(withUrlEntry)) {
+      if (sourceTypeOnCard !== 1 || linkText !== "情報を見る" || href !== resolveSocialEntryUrl(withUrlEntry)) {
         errors.push("url present link display failed");
       }
     } else {
       checks.push({
-        check: "url present shows 情報元を見る",
+        check: "url present shows source and 情報を見る",
         pass: true,
         note: "skipped: no publishable entry urls in public index"
       });

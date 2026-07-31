@@ -36,7 +36,7 @@ function mainStatic() {
     { name: "category search field kept", pattern: /disaster-social-search-category/ },
     { name: "social entry url resolver", pattern: /function resolveSocialEntryUrl/ },
     { name: "external url resolver", pattern: /function resolveExternalUrl/ },
-    { name: "link label 情報元を見る", pattern: /情報元を見る/ },
+    { name: "link label 情報を見る", pattern: /情報を見る/ },
     { name: "url link uses setAttribute href", pattern: /appendSocialSourceDisplay[\s\S]*setAttribute\("href"/ },
     { name: "url link target blank", pattern: /resolveSocialEntryUrl\(item\)[\s\S]*setAttribute\("target", "_blank"\)/ },
     { name: "url link rel noopener", pattern: /resolveSocialEntryUrl\(item\)[\s\S]*setAttribute\("rel", "noopener"\)/ },
