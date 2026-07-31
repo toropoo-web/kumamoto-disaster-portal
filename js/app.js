@@ -1529,6 +1529,59 @@
     return lookup;
   }
 
+  var SOCIAL_SOURCE_TYPE_LABELS = {
+    X: "X",
+    Instagram: "Instagram",
+    WEB: "WEB",
+    MANUAL: "MANUAL",
+    OTHER: "その他"
+  };
+
+  function resolveSocialSourceTypeLabel(item, sourceMeta) {
+    item = item || {};
+    sourceMeta = sourceMeta || {};
+    var raw = String(item.source_type || sourceMeta.source_type || "").trim();
+    if (raw && SOCIAL_SOURCE_TYPE_LABELS[raw]) {
+      return SOCIAL_SOURCE_TYPE_LABELS[raw];
+    }
+    if (raw) {
+      return raw;
+    }
+    var platform = String(sourceMeta.platform || "").trim();
+    if (platform && SOCIAL_SOURCE_TYPE_LABELS[platform]) {
+      return SOCIAL_SOURCE_TYPE_LABELS[platform];
+    }
+    if (platform) {
+      return platform;
+    }
+    return "不明";
+  }
+
+  function appendSocialSourceDisplay(card, item, sourceMeta) {
+    var entryUrl = resolveSocialEntryUrl(item);
+    var sourceTypeLabel = resolveSocialSourceTypeLabel(item, sourceMeta);
+    var sourceName = (sourceMeta && sourceMeta.name) || item.source || "情報元";
+
+    if (entryUrl) {
+      var link = createElement("a", "disaster-search__official-link", "情報元を見る");
+      link.setAttribute("href", entryUrl);
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+      link.setAttribute(
+        "aria-label",
+        sourceName + "（" + sourceTypeLabel + "）の情報元を見る（外部リンク）"
+      );
+      card.appendChild(link);
+      return;
+    }
+
+    card.appendChild(createElement(
+      "p",
+      "disaster-search__source disaster-social-search__source-type",
+      "情報元：" + sourceTypeLabel
+    ));
+  }
+
   function normalizeSocialDate(value) {
     if (!value) {
       return "";
@@ -2521,7 +2574,6 @@
       var categoryLabel = SOCIAL_CATEGORY_LABELS[item.category] || item.category || "その他";
       var place = [item.prefecture, item.municipality, item.district].filter(Boolean).join(" ");
       var sourceMeta = sourceLookup[item.source] || {};
-      var sourceName = sourceMeta.name || item.source || "情報元不明";
 
       card.appendChild(createElement("p", "disaster-social-search__category", "カテゴリ：" + categoryLabel));
       if (matchReason && matchReason.matchedKeyword) {
@@ -2535,17 +2587,7 @@
       card.appendChild(createElement("h3", "disaster-search__title", item.title || "現地支援情報"));
       card.appendChild(createElement("p", "disaster-search__content", item.content || ""));
       card.appendChild(createElement("p", "disaster-social-search__date", "日時：" + (item.date || "")));
-      card.appendChild(createElement("p", "disaster-search__source", "情報元：" + sourceName));
-
-      var entryUrl = resolveSocialEntryUrl(item);
-      if (entryUrl) {
-        var link = createElement("a", "disaster-search__official-link", "URLを開く");
-        link.setAttribute("href", entryUrl);
-        link.setAttribute("target", "_blank");
-        link.setAttribute("rel", "noopener");
-        link.setAttribute("aria-label", sourceName + "のURLを開く（外部リンク）");
-        card.appendChild(link);
-      }
+      appendSocialSourceDisplay(card, item, sourceMeta);
 
       list.appendChild(card);
     });

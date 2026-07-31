@@ -14,7 +14,9 @@
       "title": "イオン八代駐車場 生活用水配布の現地情報",
       "content": "イオン八代ショッピングセンター駐車場で生活用水配布。ポリタンク持参。飲料水ではないとの市民投稿。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-20260731-002",
@@ -27,7 +29,9 @@
       "title": "体育館避難所 毛布不足の現地投稿",
       "content": "人吉市立体育館避難所で毛布が不足しているとの現地投稿。近隣からの支援募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-20260730-003",
@@ -40,7 +44,9 @@
       "title": "南阿蘇 炊き出しボランティア募集",
       "content": "南阿蘇村河陽町で7月30日夕方から炊き出し支援。調理ボランティアと配布手伝いを募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-20260731-004",
@@ -53,7 +59,9 @@
       "title": "御代志 段ボール・生活用品の譲渡",
       "content": "段ボール箱・生活用品の譲渡希望。合志市御代志エリアで受け渡し可能。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-20260729-005",
@@ -66,7 +74,9 @@
       "title": "霧島市 物資輸送ドライバー募集",
       "content": "熊本方面への支援物資輸送に協力できるドライバーを民間ネットワークで募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-20260731-006",
@@ -79,7 +89,9 @@
       "title": "益城町 瓦撤去ボランティア募集",
       "content": "益城町赤井地区で瓦撤去作業のボランティア募集。安全靴・軍手持参。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-20260730-007",
@@ -92,7 +104,9 @@
       "title": "宇城市 常備薬の譲渡連絡",
       "content": "宇城市松橋町在住者より、常備薬の譲渡可能情報。近隣住民向け。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-20260728-008",
@@ -105,7 +119,9 @@
       "title": "南区 停電時の充電スポット共有",
       "content": "停電時にスマートフォン充電可能な場所を共有。民間カフェの協力情報。",
       "url": "",
-      "status": "ARCHIVED"
+      "status": "ARCHIVED",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260731-001",
@@ -118,7 +134,9 @@
       "title": "熊本市西区 住民有志による給水協力",
       "content": "西区春日でポリタンク持参の給水協力。午前10時から夕方まで。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260731-002",
@@ -131,7 +149,9 @@
       "title": "熊本市中央区 炊き出しボランティア募集",
       "content": "中央区上通付近で炊き出し支援。配布手伝いと調理補助を募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260731-003",
@@ -144,7 +164,9 @@
       "title": "八代市 支援物資の民間寄付受付",
       "content": "日用品・衛生用品の寄付受付。八代市本町の仮設受付で受け取り。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260731-004",
@@ -157,7 +179,9 @@
       "title": "宇城市 仮設トイレの場所共有",
       "content": "宇城市小川地区の仮設トイレ設置場所を市民が共有。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260731-005",
@@ -170,7 +194,9 @@
       "title": "宇土市 スマホ充電スポット情報",
       "content": "宇土町の商店が停電時の充電スポットを開放。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260731-006",
@@ -183,7 +209,9 @@
       "title": "氷川町 泥かきボランティア募集",
       "content": "氷川町島地地区で泥かき作業のボランティア募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260731-007",
@@ -196,7 +224,9 @@
       "title": "宇城市松橋 井水の譲渡情報",
       "content": "松橋町の住民より井水譲渡の連絡。飲用不可・生活用水向け。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260731-008",
@@ -209,7 +239,9 @@
       "title": "益城町 炊き出し追加募集",
       "content": "益城町赤井で追加の炊き出し支援。配膳ボランティア募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260731-009",
@@ -222,7 +254,9 @@
       "title": "氷川町 毛布寄付の連絡",
       "content": "毛布の寄付受付。場所の詳細は確認中。",
       "url": "",
-      "status": "incomplete"
+      "status": "incomplete",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-001",
@@ -235,7 +269,9 @@
       "title": "八代市本町 民間給水ポイント開設",
       "content": "八代市本町の公民館前で生活用水の配布。ポリタンク持参。8月1日午前7時から。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-002",
@@ -248,7 +284,9 @@
       "title": "熊本市東区 朝食炊き出し",
       "content": "熊本市東区健軍で朝食の炊き出し実施。配膳ボランティア募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-003",
@@ -261,7 +299,9 @@
       "title": "宇城市 衛生用品の民間寄付受付",
       "content": "宇城市三角町の仮設受付で衛生用品・日用品の寄付受付中。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-004",
@@ -274,7 +314,9 @@
       "title": "宇土市 仮設トイレ設置場所",
       "content": "宇土市中央町の公園に仮設トイレ設置。市民が現地で共有。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-005",
@@ -287,7 +329,9 @@
       "title": "氷川町 充電スポット開放",
       "content": "氷川町高砂の集会所でスマホ充電スポットを開放。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-006",
@@ -300,7 +344,9 @@
       "title": "熊本市南区 避難所支援ボランティア",
       "content": "熊本市南区の避難所で物資運搬・配膳のボランティア募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-007",
@@ -313,7 +359,9 @@
       "title": "氷川町 段ボール寄付の連絡",
       "content": "段ボールの寄付受付。場所の詳細は確認中。",
       "url": "",
-      "status": "incomplete"
+      "status": "incomplete",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-EXP-001",
@@ -326,7 +374,9 @@
       "title": "阿蘇市 民間給水ポイント開設",
       "content": "阿蘇市黒川地区で生活用水の配布。ポリタンク持参。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-EXP-002",
@@ -339,7 +389,9 @@
       "title": "南阿蘇村 炊き出し支援",
       "content": "南阿蘇村河陽町で炊き出し実施。配膳ボランティア募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-EXP-003",
@@ -352,7 +404,9 @@
       "title": "天草市 物資寄付受付",
       "content": "天草市本町の仮設受付で日用品・衛生用品の寄付受付。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-EXP-004",
@@ -365,7 +419,9 @@
       "title": "上天草市 仮設トイレ設置情報",
       "content": "上天草市大矢野町の公園に仮設トイレ設置。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-EXP-005",
@@ -378,7 +434,9 @@
       "title": "人吉市 充電スポット開放",
       "content": "人吉市上青井町の集会所でスマホ充電スポットを開放。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-EXP-006",
@@ -391,7 +449,9 @@
       "title": "水俣市 避難所支援ボランティア",
       "content": "水俣市万田町の避難所で物資運搬ボランティア募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-EXP-007",
@@ -404,7 +464,9 @@
       "title": "芦北町 井水譲渡情報",
       "content": "芦北町田浦地区で井水譲渡の連絡。生活用水向け。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-PET-001",
@@ -417,7 +479,9 @@
       "title": "熊本市西区 迷子猫の目撃情報",
       "content": "西区春日付近で三毛猫の目撃情報。首輪なし。飼い主捜索中。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-PET-002",
@@ -430,7 +494,9 @@
       "title": "八代市 迷子犬の保護情報",
       "content": "八代市本町で保護された中型犬。赤い首輪。飼い主の連絡を待っています。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-PET-003",
@@ -443,7 +509,9 @@
       "title": "宇城市 迷い猫の飼い主捜索",
       "content": "松橋町で迷い猫を保護。白と黒のハチワレ。飼い主捜索の連絡を募集。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-PET-004",
@@ -456,7 +524,9 @@
       "title": "人吉市 ペット避難場所の案内",
       "content": "人吉市上青井町の体育館付属スペースでペット避難を受け付け。ケージ持参。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-PET-005",
@@ -469,7 +539,9 @@
       "title": "阿蘇市 ペット同伴可能スペース",
       "content": "阿蘇市黒川の公民館ロビーをペット同伴可能スペースとして開放。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-PET-006",
@@ -482,7 +554,9 @@
       "title": "天草市 ペット用品配布",
       "content": "天草市本町の仮設受付でペット用品・ペットフードの配布を実施。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-PET-007",
@@ -495,7 +569,9 @@
       "title": "水俣市 迷い犬の目撃情報",
       "content": "万田町付近で茶色の中型犬の目撃情報。保護情報と飼い主捜索の連絡先あり。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-CAT-001",
@@ -508,7 +584,9 @@
       "title": "熊本市南区 銭湯の無料開放",
       "content": "南区の銭湯が被災者向けに入浴無料開放。タオル持参。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-CAT-002",
@@ -521,7 +599,9 @@
       "title": "八代市 シャワー設備の開放",
       "content": "八代市沖町の体育館で温水シャワーを開放。入浴設備利用可。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-CAT-003",
@@ -534,7 +614,9 @@
       "title": "宇土市 無料開放スペース",
       "content": "宇土市中央町の集会所をフリースペース・休憩場所として無料開放。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-CAT-004",
@@ -547,7 +629,9 @@
       "title": "菊陽町 Wi-Fi利用スポット",
       "content": "菊陽町役場前のテントでWi-Fi・ネット通信を提供。",
       "url": "",
-      "status": "ACTIVE"
+      "status": "ACTIVE",
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-001",
@@ -566,7 +650,8 @@
         "飲料水",
         "生活用水"
       ],
-      "source_type": "X"
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-002",
@@ -584,7 +669,8 @@
         "炊き出し",
         "食事提供"
       ],
-      "source_type": "Instagram"
+      "source_type": "Instagram",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-003",
@@ -602,7 +688,8 @@
         "支援物資",
         "衛生用品"
       ],
-      "source_type": "WEB"
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-004",
@@ -619,7 +706,8 @@
       "keywords": [
         "トイレ"
       ],
-      "source_type": "MANUAL"
+      "source_type": "MANUAL",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-005",
@@ -636,7 +724,8 @@
       "keywords": [
         "充電"
       ],
-      "source_type": "X"
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-006",
@@ -655,7 +744,8 @@
         "銭湯",
         "入浴"
       ],
-      "source_type": "WEB"
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-007",
@@ -673,7 +763,8 @@
         "シャワー",
         "温水"
       ],
-      "source_type": "OTHER"
+      "source_type": "OTHER",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-008",
@@ -691,7 +782,8 @@
         "無料開放",
         "休憩場所"
       ],
-      "source_type": "MANUAL"
+      "source_type": "MANUAL",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-009",
@@ -709,7 +801,8 @@
         "宿泊",
         "避難場所"
       ],
-      "source_type": "WEB"
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-010",
@@ -728,7 +821,8 @@
         "保護猫",
         "飼い主捜索"
       ],
-      "source_type": "X"
+      "source_type": "X",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-011",
@@ -746,7 +840,8 @@
         "Wi-Fi",
         "通信"
       ],
-      "source_type": "WEB"
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-012",
@@ -763,7 +858,8 @@
       "keywords": [
         "ボランティア"
       ],
-      "source_type": "Instagram"
+      "source_type": "Instagram",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-OPS-013",
@@ -781,7 +877,8 @@
         "井水",
         "生活用水"
       ],
-      "source_type": "MANUAL"
+      "source_type": "MANUAL",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-KGS-002",
@@ -798,7 +895,8 @@
       "keywords": [
         "支援物資"
       ],
-      "source_type": "WEB"
+      "source_type": "WEB",
+      "captured_at": ""
     },
     {
       "id": "SOC-IDX-INB-20260801-KGS-001",
@@ -816,7 +914,8 @@
         "給水",
         "生活用水"
       ],
-      "source_type": "X"
+      "source_type": "X",
+      "captured_at": ""
     }
   ],
   "last_updated": "2026-07-31T17:12:31.998Z"

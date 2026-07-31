@@ -13,7 +13,8 @@
       "coverage_prefectures": [
         "熊本県"
       ],
-      "active": true
+      "active": true,
+      "source_url": "https://x.com/"
     },
     {
       "source_id": "SOC-LOCAL-002",
@@ -28,7 +29,8 @@
       "coverage_municipalities": [
         "八代市"
       ],
-      "active": true
+      "active": true,
+      "source_url": ""
     },
     {
       "source_id": "SOC-CIVIL-001",
@@ -43,7 +45,8 @@
       "coverage_municipalities": [
         "南阿蘇村"
       ],
-      "active": true
+      "active": true,
+      "source_url": ""
     },
     {
       "source_id": "SOC-PRIVATE-001",
@@ -58,7 +61,8 @@
       "coverage_municipalities": [
         "霧島市"
       ],
-      "active": true
+      "active": true,
+      "source_url": ""
     },
     {
       "source_id": "SOC-LOCAL-003",
@@ -73,7 +77,8 @@
       "coverage_municipalities": [
         "熊本市"
       ],
-      "active": true
+      "active": true,
+      "source_url": "https://x.com/"
     },
     {
       "source_id": "SOC-LOCAL-004",
@@ -89,7 +94,8 @@
         "宇城市",
         "宇土市"
       ],
-      "active": true
+      "active": true,
+      "source_url": ""
     },
     {
       "source_id": "SOC-LOCAL-005",
@@ -104,7 +110,8 @@
       "coverage_municipalities": [
         "氷川町"
       ],
-      "active": true
+      "active": true,
+      "source_url": ""
     },
     {
       "source_id": "SOC-LOCAL-006",
@@ -116,7 +123,8 @@
       "coverage_prefectures": [
         "熊本県"
       ],
-      "active": true
+      "active": true,
+      "source_url": "https://www.instagram.com/"
     }
   ]
 }

@@ -15,6 +15,10 @@ const {
   buildCommunityRegionHaystack
 } = require("./disaster-social-region-master");
 const { resolveExternalUrl } = require("./disaster-social-url");
+const {
+  enrichSocialIndexPayload,
+  normalizeSocialSourcesPayload
+} = require("./disaster-social-source-display");
 
 const ROOT = path.join(__dirname, "..");
 const SOURCES_FILE = path.join(ROOT, "data", "community", "disaster_social_sources.json");
@@ -479,10 +483,13 @@ function validateDisasterSocialSources(payload) {
     if (!source.name) {
       errors.push(label + ": missing name");
     }
-    if (typeof source.url !== "string") {
-      errors.push(label + ": missing url");
-    } else if (source.url && !resolveExternalUrl(source.url)) {
-      errors.push(label + ": blocked url " + source.url);
+    if (typeof source.source_url !== "string" && typeof source.url !== "string") {
+      errors.push(label + ": missing source_url");
+    } else {
+      const sourceUrl = source.source_url || source.url || "";
+      if (sourceUrl && !resolveExternalUrl(sourceUrl)) {
+        errors.push(label + ": blocked source_url " + sourceUrl);
+      }
     }
     if (source.active !== false && (!source.source_type || SOURCE_TYPE_VALUES.indexOf(source.source_type) === -1)) {
       errors.push(label + ": invalid source_type " + source.source_type);
@@ -493,16 +500,21 @@ function validateDisasterSocialSources(payload) {
 
 function buildAndWriteDisasterSocialIndex(options) {
   options = options || {};
-  const sources = readJson(options.sourcesPath || SOURCES_FILE, {
-    version: "1.0",
-    region: REGION_KYUSHU_SOUTH,
-    sources: []
-  });
-  const index = readJson(options.indexPath || INDEX_FILE, {
-    version: "1.0",
-    region: REGION_KYUSHU_SOUTH,
-    entries: []
-  });
+  const sources = normalizeSocialSourcesPayload(
+    readJson(options.sourcesPath || SOURCES_FILE, {
+      version: "1.0",
+      region: REGION_KYUSHU_SOUTH,
+      sources: []
+    })
+  );
+  const index = enrichSocialIndexPayload(
+    readJson(options.indexPath || INDEX_FILE, {
+      version: "1.0",
+      region: REGION_KYUSHU_SOUTH,
+      entries: []
+    }),
+    sources
+  );
 
   writeJson(options.publicSourcesPath || PUBLIC_SOURCES_FILE, sources);
   writeJson(options.publicIndexPath || PUBLIC_INDEX_FILE, index);
