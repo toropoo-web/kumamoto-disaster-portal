@@ -153,9 +153,13 @@ function resolveDisplayedUpdatedAt(candidate, snapshot) {
 }
 
 function buildPublicUpdateFields(candidate, publicRecord, snapshot) {
+  const sourceUpdatedAt = resolveDisplayedUpdatedAt(candidate, snapshot);
+  const checkedAt = candidate.detectedAt || new Date().toISOString();
   const fields = {
-    collected_at: candidate.detectedAt || new Date().toISOString(),
-    displayed_updated_at: resolveDisplayedUpdatedAt(candidate, snapshot)
+    collected_at: checkedAt,
+    checked_at: checkedAt,
+    displayed_updated_at: sourceUpdatedAt,
+    source_updated_at: sourceUpdatedAt
   };
 
   const nextTitle = candidate.after && candidate.after.title;
@@ -482,6 +486,10 @@ function applyApprovedCandidatesToPhase1Updates(approvedCandidates) {
     }
 
     record.collected_at = new Date().toISOString();
+    record.checked_at = record.collected_at;
+    if (candidate.publicUpdate.fields && candidate.publicUpdate.fields.source_updated_at) {
+      record.source_updated_at = candidate.publicUpdate.fields.source_updated_at;
+    }
 
     applied.push({
       id: candidate.id,

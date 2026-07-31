@@ -107,6 +107,56 @@ function inspectPublishPipeline() {
   };
 }
 
+function normalizePageUpdatedAt(pageUpdatedAt) {
+  if (!pageUpdatedAt) {
+    return null;
+  }
+  const parsed = Date.parse(pageUpdatedAt);
+  if (!Number.isNaN(parsed)) {
+    return new Date(parsed).toISOString();
+  }
+  return pageUpdatedAt;
+}
+
+function refreshPhase1TimestampsFromSnapshots(patrolAt) {
+  const snapshotsPath = path.join(ROOT, "monitor", "reports", "snapshots.json");
+  const updatesPath = path.join(ROOT, "data", "public", "phase1_updates.json");
+
+  if (!fs.existsSync(snapshotsPath) || !fs.existsSync(updatesPath)) {
+    return { updated: 0, reason: "snapshots or phase1_updates missing" };
+  }
+
+  const snapshots = JSON.parse(fs.readFileSync(snapshotsPath, "utf8"));
+  const updates = JSON.parse(fs.readFileSync(updatesPath, "utf8"));
+  const checkedAt = patrolAt || new Date().toISOString();
+  let updated = 0;
+
+  updates.forEach(function (record) {
+    const snapshot = Object.values(snapshots.sources || {}).find(function (entry) {
+      return entry.url === record.source_url;
+    });
+
+    if (!snapshot || snapshot.reachable !== true) {
+      return;
+    }
+
+    record.checked_at = checkedAt;
+    const sourceUpdatedAt = normalizePageUpdatedAt(snapshot.pageUpdatedAt);
+    if (sourceUpdatedAt) {
+      record.source_updated_at = sourceUpdatedAt;
+      record.displayed_updated_at = sourceUpdatedAt;
+    }
+    updated += 1;
+  });
+
+  fs.writeFileSync(updatesPath, JSON.stringify(updates, null, 2) + "\n", "utf8");
+
+  return {
+    updated: updated,
+    checkedAt: checkedAt
+  };
+}
+
 function syncPublicStatusFromLatestPatrol() {
   const latestPatrol = readLatestPatrolReport();
   if (!latestPatrol || !latestPatrol.patrolAt) {
@@ -120,7 +170,7 @@ function syncPublicStatusFromLatestPatrol() {
   const { savePublicStatus } = require("./public-status");
   return savePublicStatus({
     patrolAt: latestPatrol.patrolAt,
-    sourceCount: latestPatrol.PATROL_SOURCE_COUNT || 21,
+    sourceCount: latestPatrol.PATROL_SOURCE_COUNT || 35,
     successCount: latestPatrol.PATROL_SUCCESS_COUNT,
     lastValidationAt:
       latestPatrol.currentStatus && latestPatrol.currentStatus.LAST_VALIDATION
@@ -136,6 +186,7 @@ function syncPublicStatusFromLatestPatrol() {
 module.exports = {
   inspectPublishPipeline,
   syncPublicStatusFromLatestPatrol,
+  refreshPhase1TimestampsFromSnapshots,
   readLatestPatrolReport,
   STATUS_PATH,
   PUBLIC_TARGETS

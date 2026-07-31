@@ -74,8 +74,8 @@ function savePublicStatus(options) {
     last_patrol_at: options.patrolAt,
     last_success_at: options.patrolAt,
     system_status: options.systemStatus || "HEALTHY",
-    source_count: options.sourceCount || 20,
-    sources_checked: options.sourcesChecked !== undefined ? options.sourcesChecked : options.sourceCount || 20,
+    source_count: options.sourceCount || 35,
+    sources_checked: options.sourcesChecked !== undefined ? options.sourcesChecked : options.sourceCount || 35,
     changes_detected: options.changesDetected !== undefined ? options.changesDetected : 0,
     last_validation_at: options.lastValidationAt || options.patrolAt
   };
