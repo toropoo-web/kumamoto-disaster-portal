@@ -6,6 +6,17 @@ const path = require("path");
 const crypto = require("crypto");
 
 const ROOT = path.join(__dirname, "..");
+const { getMunicipalityPatrolSources } = require(path.join(
+  ROOT,
+  "monitor",
+  "municipality-patrol-sources"
+));
+
+const EXPECTED_MUNICIPALITY_AREA_COUNT = 23;
+const EXPECTED_MUNICIPALITY_PATROL_SOURCE_COUNT = 140;
+const EXPECTED_COMMUNICATION_SOURCE_COUNT = 7;
+const EXPECTED_PATROL_SOURCE_COUNT =
+  EXPECTED_MUNICIPALITY_PATROL_SOURCE_COUNT + EXPECTED_COMMUNICATION_SOURCE_COUNT;
 
 const PUBLIC_FILES = [
   "data/public/phase1_areas.json",
@@ -70,33 +81,43 @@ function main() {
   });
 
   const sourcesPath = path.join(ROOT, "monitor", "sources.json");
-  let municipalityCount = 0;
+  let municipalityPatrolCount = 0;
+  let municipalityAreaCount = 0;
   let communicationCount = 0;
   let sourceCount = 0;
 
+  const municipalityPatrolSources = getMunicipalityPatrolSources();
+  municipalityPatrolCount = municipalityPatrolSources.length;
+  municipalityAreaCount = new Set(
+    municipalityPatrolSources.map(function (item) {
+      return item.area_id;
+    })
+  ).size;
+
   if (fs.existsSync(sourcesPath)) {
     const sources = JSON.parse(fs.readFileSync(sourcesPath, "utf8"));
-    municipalityCount = sources.municipalities ? sources.municipalities.length : 0;
     communicationCount = sources.communication ? sources.communication.length : 0;
-    sourceCount = municipalityCount + communicationCount;
+    sourceCount = municipalityPatrolCount + communicationCount;
 
-    const uniqueAreaIds = new Set(
-      (sources.municipalities || []).map(function (item) {
-        return item.area_id;
-      })
-    );
-
-    if (uniqueAreaIds.size !== 23) {
-      errors.push(`Unique municipality area count: ${uniqueAreaIds.size} (expected 23)`);
+    if (municipalityAreaCount !== EXPECTED_MUNICIPALITY_AREA_COUNT) {
+      errors.push(
+        `Municipality patrol area count: ${municipalityAreaCount} (expected ${EXPECTED_MUNICIPALITY_AREA_COUNT})`
+      );
     }
-    if (municipalityCount !== 28) {
-      errors.push(`Municipality monitor entries: ${municipalityCount} (expected 28)`);
+    if (municipalityPatrolCount !== EXPECTED_MUNICIPALITY_PATROL_SOURCE_COUNT) {
+      errors.push(
+        `Municipality patrol source count: ${municipalityPatrolCount} (expected ${EXPECTED_MUNICIPALITY_PATROL_SOURCE_COUNT})`
+      );
     }
-    if (communicationCount !== 7) {
-      errors.push(`Communication monitor count: ${communicationCount} (expected 7)`);
+    if (communicationCount !== EXPECTED_COMMUNICATION_SOURCE_COUNT) {
+      errors.push(
+        `Communication monitor count: ${communicationCount} (expected ${EXPECTED_COMMUNICATION_SOURCE_COUNT})`
+      );
     }
-    if (sourceCount !== 35) {
-      errors.push(`Monitor source count: ${sourceCount} (expected 35)`);
+    if (sourceCount !== EXPECTED_PATROL_SOURCE_COUNT) {
+      errors.push(
+        `Patrol source count: ${sourceCount} (expected ${EXPECTED_PATROL_SOURCE_COUNT})`
+      );
     }
 
     const nttWest = (sources.communication || []).find((item) => item.id === "COMM-ntt-west");
@@ -150,7 +171,8 @@ function main() {
   const result = {
     PATROL_ENGINE: errors.length === 0 && diffEngineOk ? "READY" : "FAIL",
     PATROL_SOURCE_COUNT: sourceCount,
-    MUNICIPALITY_MONITOR_COUNT: municipalityCount,
+    MUNICIPALITY_PATROL_SOURCE_COUNT: municipalityPatrolCount,
+    MUNICIPALITY_PATROL_AREA_COUNT: municipalityAreaCount,
     COMMUNICATION_MONITOR_COUNT: communicationCount,
     DIFF_ENGINE: diffEngineOk ? "PASS" : "FAIL",
     UPDATE_CANDIDATE_OUTPUT: fs.existsSync(candidateDir) ? "READY" : "FAIL",

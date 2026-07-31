@@ -106,6 +106,7 @@ jobs:
           fi
           node scripts/verify-public-commit-staging.js
           git commit -m "chore: publish patrol public data"
+          git pull --rebase origin main
           git push
 
       - name: Validate patrol and operation infrastructure
