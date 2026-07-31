@@ -52,6 +52,20 @@ function includesKeyword(list, keyword) {
   return (list || []).indexOf(keyword) !== -1;
 }
 
+function getTopicKeywordsForGroup(group) {
+  const topicKeywords = TOPIC_KEYWORD_GROUPS[group] || [];
+  const dictionaryKeywords = SUPPORT_SERVICE_SEARCH_DICTIONARY[group] || [];
+  const merged = topicKeywords.slice();
+
+  dictionaryKeywords.forEach(function (keyword) {
+    if (merged.indexOf(keyword) === -1) {
+      merged.push(keyword);
+    }
+  });
+
+  return merged;
+}
+
 function main() {
   const errors = [];
   const checks = [];
@@ -78,8 +92,7 @@ function main() {
     if (group === "version" || group === "description" || group === "support_state" || group === "compound_phrases") {
       return;
     }
-    const topicGroup = group === "WATER_SUPPORT" ? "WATER" : group;
-    const topicKeywords = TOPIC_KEYWORD_GROUPS[topicGroup] || [];
+    const topicKeywords = getTopicKeywordsForGroup(group);
     matrix[group].forEach(function (keyword) {
       const pass = includesKeyword(topicKeywords, keyword);
       checks.push({

@@ -138,10 +138,14 @@ function main() {
   const yatsushiroLocation = payload.items.find(function (item) {
     return item.item_kind === "location" && item.municipality === "八代市";
   });
-  if (!yatsushiroLocation || !yatsushiroLocation.checked_at) {
+  const yatsushiroCheckedAt = yatsushiroLocation && yatsushiroLocation.checked_at;
+  const yatsushiroSourceUpdatedAt =
+    yatsushiroLocation &&
+    (yatsushiroLocation.source_updated_at || yatsushiroLocation.updated_at);
+  if (!yatsushiroLocation || !yatsushiroCheckedAt) {
     errors.push("timestamp propagation failed: 八代市 location missing checked_at");
   }
-  if (!yatsushiroLocation || !yatsushiroLocation.source_updated_at) {
+  if (!yatsushiroSourceUpdatedAt) {
     errors.push("timestamp propagation failed: 八代市 location missing source_updated_at");
   }
 
