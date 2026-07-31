@@ -36,6 +36,12 @@ const SOURCE_REGISTRY = {
     source_type: "LOCAL_GOVERNMENT",
     content_filter: "DISASTER_RELATED",
     account_handle: "hitoyoshishi"
+  },
+  "SRC-MUN-KM009": {
+    municipality: "合志市",
+    source_type: "LOCAL_GOVERNMENT",
+    content_filter: "DISASTER_RELATED",
+    account_handle: "Koshi_city"
   }
 };
 
