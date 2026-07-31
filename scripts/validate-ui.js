@@ -3,6 +3,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
 const ROOT = path.join(__dirname, "..");
 
@@ -157,6 +158,14 @@ function main() {
   }
 
   if (checkFileExists("js/app.js")) {
+    try {
+      execSync("node --check js/app.js", { cwd: ROOT, stdio: "pipe" });
+      checks.push({ check: "JS: app.js syntax valid", pass: true });
+    } catch (error) {
+      checks.push({ check: "JS: app.js syntax valid", pass: false });
+      errors.push("JS syntax check failed: js/app.js");
+    }
+
     const js = readFile("js/app.js");
     JS_CHECKS.forEach(function (check) {
       const matched = check.pattern.test(js);

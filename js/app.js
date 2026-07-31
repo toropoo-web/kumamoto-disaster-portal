@@ -3012,6 +3012,8 @@
     container.appendChild(section);
     trackUsage("view_communication");
   }
+
+  function renderPageNavigation(container, navigation, records) {
     var wrap = createElement("div", "page-nav");
 
     var muniNav = createElement("nav", "municipality-nav");
@@ -3262,6 +3264,8 @@
     trackUsage("view_official_info");
     return card;
   }
+
+  function groupRecordsByCategory(records) {
     var groups = {};
     records.forEach(function (record) {
       var id = record.public_category_id;
