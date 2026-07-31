@@ -2572,10 +2572,16 @@ button:focus-visible {
 
 .disaster-social-search__category,
 .disaster-social-search__place,
-.disaster-social-search__date {
+.disaster-social-search__date,
+.disaster-social-search__match {
   margin: 0 0 8px;
   font-size: 14px;
   color: var(--text-muted, #475569);
+}
+
+.disaster-social-search__match {
+  color: var(--text, #0f172a);
+  font-weight: 600;
 }
 
 .disaster-search__results {

@@ -18,7 +18,8 @@ const {
   loadMunicipalityMaster,
   validateMunicipalityMaster,
   matchesCategory,
-  resolveCategoryFromKeyword
+  resolveCategoryFromKeyword,
+  resolveSocialCategoryInput
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-index-engine"));
 
 const {
@@ -245,6 +246,52 @@ function main() {
     errors.push("pet support keywords must resolve to PET_SUPPORT");
   }
 
+  const operationalSearches = [
+    { keyword: "迷子犬", category: "PET_SUPPORT" },
+    { keyword: "給水", category: "WATER" },
+    { keyword: "風呂", category: "BATH" }
+  ];
+  const operationalResults = operationalSearches.map(function (item) {
+    const resolution = resolveSocialCategoryInput(item.keyword);
+    const results = searchDisasterSocialIndex(payload.index, {
+      region: "熊本県",
+      date: "2026-08-01",
+      categoryQuery: item.keyword
+    });
+    return {
+      keyword: item.keyword,
+      resolved_category: resolution.category,
+      expected_category: item.category,
+      count: results.length,
+      pass: resolution.category === item.category && results.length > 0
+    };
+  });
+  const operationalPass = operationalResults.every(function (item) {
+    return item.pass;
+  });
+  checks.push({
+    check: "operational keyword search",
+    pass: operationalPass,
+    results: operationalResults
+  });
+  if (!operationalPass) {
+    errors.push("operational keyword search failed");
+  }
+
+  const regionHierarchyResults = searchDisasterSocialIndex(payload.index, {
+    region: "熊本県 阿蘇市 黒川",
+    date: "2026-08-01",
+    categoryQuery: "給水"
+  });
+  checks.push({
+    check: "region hierarchy search",
+    pass: regionHierarchyResults.length > 0,
+    count: regionHierarchyResults.length
+  });
+  if (!regionHierarchyResults.length) {
+    errors.push("region hierarchy search must return results");
+  }
+
   const emptyFilterResults = searchDisasterSocialIndex(payload.index, {});
   checks.push({
     check: "empty filter returns none",
@@ -268,10 +315,16 @@ function main() {
   const appJs = fs.readFileSync(path.join(ROOT, "js", "app.js"), "utf8");
   checks.push({
     check: "community search UI",
-    pass: appJs.indexOf("現地支援情報を探す") !== -1
+    pass:
+      appJs.indexOf("現地支援情報を探す") !== -1 &&
+      appJs.indexOf("カテゴリ・キーワード") !== -1 &&
+      appJs.indexOf("ペット・迷子情報") !== -1
   });
-  if (appJs.indexOf("現地支援情報を探す") === -1) {
-    errors.push("community search UI section missing");
+  if (
+    appJs.indexOf("現地支援情報を探す") === -1 ||
+    appJs.indexOf("カテゴリ・キーワード") === -1
+  ) {
+    errors.push("community search UI keyword input missing");
   }
 
   checks.push({

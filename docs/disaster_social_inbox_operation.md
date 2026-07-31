@@ -41,6 +41,8 @@ Index
 ## 最低項目
 
 ```
+source_type
+captured_at
 source
 category
 prefecture
@@ -50,6 +52,27 @@ date
 title
 content
 url
+keywords
+```
+
+### source_type
+
+```
+X
+Instagram
+WEB
+MANUAL
+OTHER
+```
+
+未指定時は import_format から推定（MANUAL→MANUAL、JSON/CSV→WEB）。
+
+### keywords
+
+任意。検索補助用の文字列配列。
+
+```
+keywords: ["給水", "生活用水"]
 ```
 
 ## 地域受付

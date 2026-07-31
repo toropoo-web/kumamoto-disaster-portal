@@ -15,7 +15,8 @@ const {
   buildApplyQueueFromReviewQueue,
   applyDisasterSocialQueue,
   validateDisasterSocialInbox,
-  AUTO_PUBLISH
+  AUTO_PUBLISH,
+  SOURCE_TYPE_VALUES
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-pipeline"));
 
 const {
@@ -27,7 +28,8 @@ const {
   SOCIAL_CATEGORIES,
   SOCIAL_CATEGORY_KEYWORDS,
   matchesCategory,
-  resolveCategoryFromKeyword
+  resolveCategoryFromKeyword,
+  resolveSocialCategoryInput
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-index-engine"));
 
 const {
@@ -80,6 +82,26 @@ function main() {
   );
   errors.push.apply(errors, validateDisasterSocialInbox(inboxPayload));
   checks.push({ check: "inbox load", pass: validateDisasterSocialInbox(inboxPayload).length === 0 });
+
+  const opsItems = (inboxPayload.items || []).filter(function (item) {
+    return String(item.inbox_id || "").indexOf("OPS-") !== -1;
+  });
+  const opsSourceTypes = opsItems.map(function (item) {
+    return item.source_type;
+  });
+  checks.push({
+    check: "operation inbox source_type",
+    pass:
+      opsItems.length >= 12 &&
+      opsSourceTypes.indexOf("X") !== -1 &&
+      opsSourceTypes.indexOf("Instagram") !== -1 &&
+      opsSourceTypes.indexOf("WEB") !== -1 &&
+      opsSourceTypes.indexOf("MANUAL") !== -1,
+    ops_count: opsItems.length
+  });
+  if (opsItems.length < 12) {
+    errors.push("operation inbox items missing");
+  }
 
   const csvItems = parseCsvImport(
     "source,category,prefecture,municipality,district,date,title,content,url\n" +
@@ -290,6 +312,28 @@ function main() {
   });
   if (!petKeywordPass) {
     errors.push("pet support keywords must resolve to PET_SUPPORT");
+  }
+
+  const operationalSearches = [
+    { keyword: "迷子犬", category: "PET_SUPPORT" },
+    { keyword: "給水", category: "WATER" },
+    { keyword: "風呂", category: "BATH" }
+  ];
+  const operationalPass = operationalSearches.every(function (item) {
+    const resolution = resolveSocialCategoryInput(item.keyword);
+    const results = searchDisasterSocialIndex(indexPayload, {
+      region: "熊本県",
+      date: "2026-08-01",
+      categoryQuery: item.keyword
+    });
+    return resolution.category === item.category && results.length > 0;
+  });
+  checks.push({
+    check: "operational keyword search",
+    pass: operationalPass
+  });
+  if (!operationalPass) {
+    errors.push("operational keyword search failed");
   }
 
   const officialPayload = buildAndWriteDisasterSearchIndex();

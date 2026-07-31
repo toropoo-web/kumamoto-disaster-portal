@@ -263,31 +263,93 @@ function resolveCategoryFromKeyword(text) {
   return resolved;
 }
 
+function resolveSocialCategoryInput(text) {
+  const raw = String(text || "").trim();
+  if (!raw) {
+    return { category: "", query: "" };
+  }
+  if (SOCIAL_CATEGORIES.indexOf(raw) !== -1) {
+    return { category: raw, query: raw };
+  }
+  const labelMatch = SOCIAL_CATEGORIES.find(function (categoryKey) {
+    return SOCIAL_CATEGORY_LABELS[categoryKey] === raw;
+  });
+  if (labelMatch) {
+    return { category: labelMatch, query: raw };
+  }
+  return {
+    category: resolveCategoryFromKeyword(raw),
+    query: raw
+  };
+}
+
+function findCategoryMatchKeyword(entry, categoryId) {
+  if (!categoryId) {
+    return "";
+  }
+  const hay = buildEntrySearchHaystack(entry);
+  const keywords = SOCIAL_CATEGORY_KEYWORDS[categoryId] || [];
+  let matched = "";
+  keywords.forEach(function (keyword) {
+    if (!matched && hay.indexOf(normalizeSearchText(keyword)) !== -1) {
+      matched = keyword;
+    }
+  });
+  return matched;
+}
+
+function describeSocialCategoryMatch(entry, resolvedCategory, userQuery) {
+  const categoryLabel = SOCIAL_CATEGORY_LABELS[resolvedCategory] || resolvedCategory || "その他";
+  let matchedKeyword = "";
+  if (userQuery) {
+    matchedKeyword = userQuery;
+  } else if (entry.category === resolvedCategory) {
+    matchedKeyword = categoryLabel;
+  } else {
+    matchedKeyword = findCategoryMatchKeyword(entry, resolvedCategory) || categoryLabel;
+  }
+  return {
+    categoryLabel: categoryLabel,
+    matchedKeyword: matchedKeyword
+  };
+}
+
 function searchDisasterSocialIndex(indexPayload, options) {
   options = options || {};
   const entries = (indexPayload && indexPayload.entries) || [];
+  const categoryResolution = resolveSocialCategoryInput(options.categoryQuery || options.category || "");
+  const resolvedCategory = categoryResolution.category;
 
   const hasStructured = Boolean(options.prefecture || options.municipality || options.district);
   const hasRegion = Boolean(normalizeSearchText(options.region));
   const hasDate = Boolean(normalizeDateToken(options.date));
-  const hasCategory = Boolean(options.category);
+  const hasCategory = Boolean(resolvedCategory);
 
   if (!hasRegion && !hasStructured && !hasDate && !hasCategory) {
     return [];
   }
 
-  return entries.filter(function (entry) {
-    const locationOk = hasStructured
-      ? matchesStructuredLocation(entry, options) &&
-        (hasRegion ? matchesRegion(entry, options.region) : true)
-      : matchesRegion(entry, options.region);
+  return entries
+    .filter(function (entry) {
+      const locationOk = hasStructured
+        ? matchesStructuredLocation(entry, options) &&
+          (hasRegion ? matchesRegion(entry, options.region) : true)
+        : matchesRegion(entry, options.region);
 
-    return (
-      locationOk &&
-      matchesDate(entry, options.date) &&
-      matchesCategory(entry, options.category)
-    );
-  });
+      return (
+        locationOk &&
+        matchesDate(entry, options.date) &&
+        matchesCategory(entry, resolvedCategory)
+      );
+    })
+    .map(function (entry) {
+      return {
+        entry: entry,
+        matchReason: hasCategory
+          ? describeSocialCategoryMatch(entry, resolvedCategory, categoryResolution.query)
+          : null
+      };
+    });
 }
 
 function validateSocialIndexEntry(entry, index) {
@@ -329,6 +391,13 @@ function validateSocialIndexEntry(entry, index) {
           errors.push(label + ": keywords[" + keywordIndex + "] must be a non-empty string");
         }
       });
+    }
+  }
+
+  if (entry.source_type) {
+    const SOURCE_TYPE_VALUES = ["X", "Instagram", "WEB", "MANUAL", "OTHER"];
+    if (SOURCE_TYPE_VALUES.indexOf(entry.source_type) === -1) {
+      errors.push(label + ": invalid source_type " + entry.source_type);
     }
   }
 
@@ -428,6 +497,8 @@ module.exports = {
   buildEntrySearchHaystack,
   matchesCategory,
   resolveCategoryFromKeyword,
+  resolveSocialCategoryInput,
+  describeSocialCategoryMatch,
   matchesStructuredLocation,
   searchDisasterSocialIndex,
   validateSocialIndexEntry,

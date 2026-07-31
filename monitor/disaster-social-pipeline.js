@@ -35,6 +35,7 @@ const IMPORT_MINIMUM_FIELDS = [
 const REVIEW_STATUS_VALUES = ["PENDING", "APPROVED", "REJECTED", "DUPLICATE"];
 const APPLY_STATUS_VALUES = ["PENDING", "APPLIED", "SKIPPED"];
 const INBOX_PROCESS_STATUS_VALUES = ["NEW", "QUEUED", "DUPLICATE"];
+const SOURCE_TYPE_VALUES = ["X", "Instagram", "WEB", "MANUAL", "OTHER"];
 
 function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) {
@@ -131,11 +132,41 @@ function buildEntryId(inboxItem, index) {
   return "SOC-IDX-" + datePart + "-" + suffix;
 }
 
+function normalizeKeywords(value) {
+  if (!value) {
+    return [];
+  }
+  if (Array.isArray(value)) {
+    return value.map(normalizeText).filter(Boolean);
+  }
+  return String(value)
+    .split(/[,、]/)
+    .map(normalizeText)
+    .filter(Boolean);
+}
+
+function normalizeSourceType(value, importFormat) {
+  const normalized = normalizeText(value);
+  if (SOURCE_TYPE_VALUES.indexOf(normalized) !== -1) {
+    return normalized;
+  }
+  const format = normalizeText(importFormat).toUpperCase();
+  if (format === "MANUAL") {
+    return "MANUAL";
+  }
+  if (format === "CSV" || format === "JSON") {
+    return "WEB";
+  }
+  return "OTHER";
+}
+
 function normalizeInboxItem(item, index) {
   const missingFields = listMissingImportFields(item);
+  const importFormat = normalizeText(item.import_format) || "MANUAL";
   const normalized = {
     inbox_id: normalizeText(item.inbox_id) || "INB-" + String(index + 1).padStart(4, "0"),
-    import_format: normalizeText(item.import_format) || "MANUAL",
+    import_format: importFormat,
+    source_type: normalizeSourceType(item.source_type, importFormat),
     captured_at: item.captured_at || new Date().toISOString(),
     source: normalizeText(item.source),
     category: normalizeText(item.category),
@@ -146,6 +177,7 @@ function normalizeInboxItem(item, index) {
     title: normalizeText(item.title),
     content: normalizeText(item.content),
     url: normalizeText(item.url),
+    keywords: normalizeKeywords(item.keywords),
     status: resolveEntryStatus(item),
     missing_fields: missingFields.slice(),
     dedupe_key: buildDedupeKey(item)
@@ -154,7 +186,7 @@ function normalizeInboxItem(item, index) {
 }
 
 function inboxItemToIndexEntry(inboxItem, index) {
-  return {
+  const entry = {
     id: buildEntryId(inboxItem, index),
     source: inboxItem.source || "UNKNOWN",
     category: inboxItem.category || "OTHER",
@@ -167,6 +199,13 @@ function inboxItemToIndexEntry(inboxItem, index) {
     url: inboxItem.url || "",
     status: inboxItem.status || "incomplete"
   };
+  if (inboxItem.keywords && inboxItem.keywords.length) {
+    entry.keywords = inboxItem.keywords.slice();
+  }
+  if (inboxItem.source_type) {
+    entry.source_type = inboxItem.source_type;
+  }
+  return entry;
 }
 
 function parseCsvLine(line) {
@@ -300,6 +339,12 @@ function validateInboxItem(item, index) {
   ) {
     errors.push(label + ": municipality not in Kumamoto master: " + normalized.municipality);
   }
+  if (normalized.source_type && SOURCE_TYPE_VALUES.indexOf(normalized.source_type) === -1) {
+    errors.push(label + ": invalid source_type " + normalized.source_type);
+  }
+  if (normalized.keywords !== undefined && !Array.isArray(normalized.keywords)) {
+    errors.push(label + ": keywords must be an array");
+  }
   return errors;
 }
 
@@ -359,6 +404,7 @@ function buildReviewQueueFromInbox(inboxPayload, options) {
       dedupe_key: item.dedupe_key,
       duplicate_of: duplicateOf,
       import_format: item.import_format,
+      source_type: item.source_type,
       missing_fields: item.missing_fields,
       entry: inboxItemToIndexEntry(item, index),
       captured_at: item.captured_at,
@@ -535,6 +581,7 @@ module.exports = {
   IMPORT_MINIMUM_FIELDS,
   REVIEW_STATUS_VALUES,
   APPLY_STATUS_VALUES,
+  SOURCE_TYPE_VALUES,
   parseCsvImport,
   parseJsonImport,
   normalizeInboxItem,

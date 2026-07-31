@@ -193,6 +193,17 @@
     "TRANSPORT",
     "MEDICAL"
   ];
+  var SOCIAL_CATEGORY_KEYWORD_SUGGESTIONS = [];
+  SOCIAL_CATEGORY_UI_ORDER.forEach(function (categoryKey) {
+    if (SOCIAL_CATEGORY_LABELS[categoryKey]) {
+      SOCIAL_CATEGORY_KEYWORD_SUGGESTIONS.push(SOCIAL_CATEGORY_LABELS[categoryKey]);
+    }
+    (SOCIAL_CATEGORY_KEYWORDS[categoryKey] || []).forEach(function (keyword) {
+      if (SOCIAL_CATEGORY_KEYWORD_SUGGESTIONS.indexOf(keyword) === -1) {
+        SOCIAL_CATEGORY_KEYWORD_SUGGESTIONS.push(keyword);
+      }
+    });
+  });
   var SOCIAL_CATEGORY_KEYWORDS = {
     WATER: ["井戸水", "給水", "飲み水", "生活用水", "飲料水", "水道"],
     FOOD: ["炊き出し", "食事提供", "食料配布"],
@@ -1431,6 +1442,88 @@
     return String(value).slice(0, 10);
   }
 
+  function resolveCategoryFromKeyword(text) {
+    var token = normalizeSearchText(text);
+    if (!token) {
+      return "";
+    }
+    if (SOCIAL_CATEGORY_UI_ORDER.indexOf(text) !== -1) {
+      return text;
+    }
+    var resolved = "";
+    SOCIAL_CATEGORY_UI_ORDER.forEach(function (category) {
+      if (resolved) {
+        return;
+      }
+      var keywords = SOCIAL_CATEGORY_KEYWORDS[category] || [];
+      keywords.forEach(function (keyword) {
+        if (!resolved && token.indexOf(normalizeSearchText(keyword)) !== -1) {
+          resolved = category;
+        }
+      });
+      if (!resolved && SOCIAL_CATEGORY_LABELS[category]) {
+        if (normalizeSearchText(SOCIAL_CATEGORY_LABELS[category]).indexOf(token) !== -1) {
+          resolved = category;
+        }
+      }
+    });
+    return resolved;
+  }
+
+  function resolveSocialCategoryInput(text) {
+    var raw = String(text || "").trim();
+    if (!raw) {
+      return { category: "", query: "" };
+    }
+    if (SOCIAL_CATEGORY_UI_ORDER.indexOf(raw) !== -1) {
+      return { category: raw, query: raw };
+    }
+    var labelMatch = "";
+    SOCIAL_CATEGORY_UI_ORDER.forEach(function (categoryKey) {
+      if (!labelMatch && SOCIAL_CATEGORY_LABELS[categoryKey] === raw) {
+        labelMatch = categoryKey;
+      }
+    });
+    if (labelMatch) {
+      return { category: labelMatch, query: raw };
+    }
+    return {
+      category: resolveCategoryFromKeyword(raw),
+      query: raw
+    };
+  }
+
+  function findSocialCategoryMatchKeyword(entry, categoryId) {
+    if (!categoryId) {
+      return "";
+    }
+    var hay = buildSocialEntrySearchHaystack(entry);
+    var keywords = SOCIAL_CATEGORY_KEYWORDS[categoryId] || [];
+    var matched = "";
+    keywords.forEach(function (keyword) {
+      if (!matched && hay.indexOf(normalizeSearchText(keyword)) !== -1) {
+        matched = keyword;
+      }
+    });
+    return matched;
+  }
+
+  function buildSocialMatchReason(entry, resolvedCategory, userQuery) {
+    var categoryLabel = SOCIAL_CATEGORY_LABELS[resolvedCategory] || resolvedCategory || "その他";
+    var matchedKeyword = "";
+    if (userQuery) {
+      matchedKeyword = userQuery;
+    } else if (entry.category === resolvedCategory) {
+      matchedKeyword = categoryLabel;
+    } else {
+      matchedKeyword = findSocialCategoryMatchKeyword(entry, resolvedCategory) || categoryLabel;
+    }
+    return {
+      categoryLabel: categoryLabel,
+      matchedKeyword: matchedKeyword
+    };
+  }
+
   function buildSocialEntrySearchHaystack(entry) {
     var keywordText = Array.isArray(entry.keywords) ? entry.keywords.join(" ") : "";
     return normalizeSearchText(
@@ -1458,10 +1551,12 @@
   function searchDisasterSocialIndex(indexPayload, options) {
     options = options || {};
     var entries = (indexPayload && indexPayload.entries) || [];
+    var categoryResolution = resolveSocialCategoryInput(options.categoryQuery || options.category || "");
+    var resolvedCategory = categoryResolution.category;
     var hasStructured = Boolean(options.prefecture || options.municipality || options.district);
     var hasRegion = Boolean(normalizeSearchText(options.region));
     var hasDate = Boolean(normalizeSocialDate(options.date));
-    var hasCategory = Boolean(options.category);
+    var hasCategory = Boolean(resolvedCategory);
 
     if (!hasRegion && !hasStructured && !hasDate && !hasCategory) {
       return [];
@@ -1505,7 +1600,14 @@
         return false;
       }
 
-      return matchesSocialCategory(entry, options.category);
+      return matchesSocialCategory(entry, resolvedCategory);
+    }).map(function (entry) {
+      return {
+        entry: entry,
+        matchReason: hasCategory
+          ? buildSocialMatchReason(entry, resolvedCategory, categoryResolution.query)
+          : null
+      };
     });
   }
 
@@ -2004,7 +2106,9 @@
     ));
 
     var list = createElement("div", "disaster-search__results");
-    results.forEach(function (item) {
+    results.forEach(function (resultItem) {
+      var item = resultItem.entry || resultItem;
+      var matchReason = resultItem.matchReason || null;
       var card = createElement("article", "disaster-search__card disaster-social-search__card");
       var categoryLabel = SOCIAL_CATEGORY_LABELS[item.category] || item.category || "その他";
       var place = [item.prefecture, item.municipality, item.district].filter(Boolean).join(" ");
@@ -2012,6 +2116,13 @@
       var sourceName = sourceMeta.name || item.source || "情報元不明";
 
       card.appendChild(createElement("p", "disaster-social-search__category", "カテゴリ：" + categoryLabel));
+      if (matchReason && matchReason.matchedKeyword) {
+        card.appendChild(createElement(
+          "p",
+          "disaster-social-search__match",
+          "一致：" + matchReason.matchedKeyword
+        ));
+      }
       card.appendChild(createElement("p", "disaster-social-search__place", "場所：" + place));
       card.appendChild(createElement("h3", "disaster-search__title", item.title || "現地支援情報"));
       card.appendChild(createElement("p", "disaster-search__content", item.content || ""));
@@ -2051,7 +2162,7 @@
     inner.appendChild(createElement(
       "p",
       "disaster-search__guide-text",
-      "公式情報とは別レイヤーです。SNS・民間・現地発生情報を地域・日付・カテゴリで検索できます。"
+      "公式情報とは別レイヤーです。地域・日付・カテゴリで検索できます。カテゴリ欄には「給水」「迷子犬」「風呂」などの言葉も入力できます。"
     ));
 
     var form = createElement("form", "disaster-search__form disaster-social-search__form");
@@ -2064,7 +2175,7 @@
     regionInput.id = "disaster-social-search-region";
     regionInput.type = "search";
     regionInput.name = "region";
-    regionInput.placeholder = "例：八代 / 熊本県 / 南阿蘇";
+    regionInput.placeholder = "例：熊本県 阿蘇市 黒川 / 八代市 / 宇城市";
     regionInput.autocomplete = "off";
 
     var dateLabel = createElement("label", "disaster-search__label", "日付");
@@ -2074,19 +2185,21 @@
     dateInput.type = "date";
     dateInput.name = "date";
 
-    var categoryLabel = createElement("label", "disaster-search__label", "カテゴリ");
+    var categoryLabel = createElement("label", "disaster-search__label", "カテゴリ・キーワード");
     categoryLabel.setAttribute("for", "disaster-social-search-category");
-    var categorySelect = createElement("select", "disaster-search__input disaster-social-search__select");
-    categorySelect.id = "disaster-social-search-category";
-    categorySelect.name = "category";
-    categorySelect.appendChild(createElement("option", "", "すべて"));
-    SOCIAL_CATEGORY_UI_ORDER.forEach(function (key) {
-      if (!SOCIAL_CATEGORY_LABELS[key]) {
-        return;
-      }
-      var option = createElement("option", "", SOCIAL_CATEGORY_LABELS[key]);
-      option.value = key;
-      categorySelect.appendChild(option);
+    var categoryInput = createElement("input", "disaster-search__input disaster-social-search__category-input");
+    categoryInput.id = "disaster-social-search-category";
+    categoryInput.type = "search";
+    categoryInput.name = "category";
+    categoryInput.placeholder = "例：給水 / 迷子犬 / 風呂 / 水";
+    categoryInput.autocomplete = "off";
+    categoryInput.setAttribute("list", "disaster-social-search-category-suggestions");
+    var categoryDatalist = createElement("datalist", "disaster-social-search__datalist");
+    categoryDatalist.id = "disaster-social-search-category-suggestions";
+    SOCIAL_CATEGORY_KEYWORD_SUGGESTIONS.forEach(function (suggestion) {
+      var option = document.createElement("option");
+      option.value = suggestion;
+      categoryDatalist.appendChild(option);
     });
 
     var button = createElement("button", "disaster-search__button", "検索");
@@ -2099,11 +2212,11 @@
       var options = {
         region: regionInput.value.trim(),
         date: dateInput.value,
-        category: categorySelect.value
+        categoryQuery: categoryInput.value.trim()
       };
       var results = searchDisasterSocialIndex(socialPayload.index, options);
       renderDisasterSocialSearchResult(resultsContainer, results, sourceLookup);
-      if (options.region || options.date || options.category) {
+      if (options.region || options.date || options.categoryQuery) {
         trackUsage("search_social");
       }
     }
@@ -2118,7 +2231,8 @@
     form.appendChild(dateLabel);
     form.appendChild(dateInput);
     form.appendChild(categoryLabel);
-    form.appendChild(categorySelect);
+    form.appendChild(categoryInput);
+    form.appendChild(categoryDatalist);
     form.appendChild(button);
     inner.appendChild(form);
     inner.appendChild(resultsContainer);
