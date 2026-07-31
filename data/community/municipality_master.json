@@ -1,0 +1,233 @@
+{
+  "version": "1.0",
+  "region": "KYUSHU_SOUTH",
+  "prefecture": "熊本県",
+  "municipality_count": 45,
+  "municipalities": [
+    {
+      "prefecture": "熊本県",
+      "municipality": "熊本市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "人吉市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "荒尾市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "水俣市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "玉名市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "山鹿市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "菊池市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "宇土市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "上天草市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "宇城市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "阿蘇市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "天草市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "合志市",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "美里町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "玉東町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "南関町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "長洲町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "和水町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "大津町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "菊陽町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "南小国町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "小国町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "産山村",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "高森町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "西原村",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "南阿蘇村",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "御船町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "嘉島町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "益城町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "甲佐町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "山都町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "氷川町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "芦北町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "津奈木町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "錦町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "多良木町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "湯前町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "水上村",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "相良村",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "五木村",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "山江村",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "球磨村",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "あさぎり町",
+      "districts": []
+    },
+    {
+      "prefecture": "熊本県",
+      "municipality": "苓北町",
+      "districts": []
+    }
+  ]
+}

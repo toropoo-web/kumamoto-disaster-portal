@@ -21,7 +21,13 @@ const {
 const {
   searchDisasterSocialIndex,
   buildAndWriteDisasterSocialIndex,
-  validateDisasterSocialIndex
+  validateDisasterSocialIndex,
+  loadMunicipalityMaster,
+  validateMunicipalityMaster,
+  SOCIAL_CATEGORIES,
+  SOCIAL_CATEGORY_KEYWORDS,
+  matchesCategory,
+  resolveCategoryFromKeyword
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-index-engine"));
 
 const {
@@ -55,6 +61,19 @@ function main() {
     path.join(ROOT, "data", "community", "disaster_social_sources.json"),
     sourcesPath
   );
+
+  const masterPayload = loadMunicipalityMaster();
+  errors.push.apply(errors, validateMunicipalityMaster(masterPayload));
+  checks.push({
+    check: "municipality master",
+    pass:
+      validateMunicipalityMaster(masterPayload).length === 0 &&
+      masterPayload.municipality_count >= 45,
+    municipality_count: (masterPayload.municipalities || []).length
+  });
+  if (masterPayload.municipality_count < 45) {
+    errors.push("municipality master must include all Kumamoto municipalities");
+  }
 
   const inboxPayload = JSON.parse(
     fs.readFileSync(path.join(ROOT, "data", "community", "disaster_social_inbox.json"), "utf8")
@@ -157,6 +176,7 @@ function main() {
   });
 
   const indexPayload = JSON.parse(fs.readFileSync(indexPath, "utf8"));
+  const baselineEntryCount = indexPayload.entries.length;
   errors.push.apply(errors, validateDisasterSocialIndex(indexPayload));
   const buildPayload = buildAndWriteDisasterSocialIndex({
     sourcesPath: sourcesPath,
@@ -186,6 +206,72 @@ function main() {
   if (!categoryResults.length) {
     errors.push("category search failed");
   }
+
+  const structuredResults = searchDisasterSocialIndex(indexPayload, {
+    prefecture: "熊本県",
+    municipality: "阿蘇市",
+    date: "2026-08-01",
+    category: "WATER"
+  });
+  checks.push({
+    check: "prefecture municipality date category search",
+    pass: structuredResults.length > 0,
+    count: structuredResults.length,
+    sample_id: structuredResults[0] && structuredResults[0].id
+  });
+  if (!structuredResults.length) {
+    errors.push("structured search failed for 熊本県 阿蘇市 2026-08-01 WATER");
+  }
+
+  const legacyFiveResults = searchDisasterSocialIndex(indexPayload, { municipality: "八代市" });
+  checks.push({
+    check: "legacy municipality data preserved",
+    pass: legacyFiveResults.length > 0,
+    count: legacyFiveResults.length
+  });
+  if (!legacyFiveResults.length) {
+    errors.push("legacy municipality data must be preserved");
+  }
+
+  const expandedCategories = ["BATH", "SHOWER", "FREE_SPACE", "PET_SUPPORT", "WIFI"];
+  const missingExpanded = expandedCategories.filter(function (category) {
+    return SOCIAL_CATEGORIES.indexOf(category) === -1;
+  });
+  checks.push({
+    check: "expanded categories defined",
+    pass: missingExpanded.length === 0,
+    missing: missingExpanded
+  });
+  if (missingExpanded.length) {
+    errors.push("missing expanded categories");
+  }
+
+  checks.push({
+    check: "keyword category resolution",
+    pass: resolveCategoryFromKeyword("シャワー") === "SHOWER"
+  });
+  if (resolveCategoryFromKeyword("シャワー") !== "SHOWER") {
+    errors.push("keyword シャワー must resolve to SHOWER");
+  }
+
+  checks.push({
+    check: "keyword assist category match",
+    pass: matchesCategory(
+      { category: "OTHER", title: "Wi-Fi利用可", content: "", keywords: [] },
+      "WIFI"
+    )
+  });
+
+  checks.push({
+    check: "existing entries preserved",
+    pass: baselineEntryCount >= 31,
+    entry_count: baselineEntryCount
+  });
+
+  checks.push({
+    check: "category keywords defined",
+    pass: (SOCIAL_CATEGORY_KEYWORDS.FOOD || []).indexOf("炊き出し") !== -1
+  });
 
   const officialPayload = buildAndWriteDisasterSearchIndex();
   const waterResults = searchDisasterIndex(officialPayload, "給水", { category: "WATER" });

@@ -10,10 +10,15 @@ const {
   PUBLIC_INDEX_FILE,
   PUBLIC_SOURCES_FILE,
   SOCIAL_CATEGORIES,
+  SOCIAL_CATEGORY_KEYWORDS,
   buildAndWriteDisasterSocialIndex,
   searchDisasterSocialIndex,
   validateDisasterSocialIndex,
-  validateDisasterSocialSources
+  validateDisasterSocialSources,
+  loadMunicipalityMaster,
+  validateMunicipalityMaster,
+  matchesCategory,
+  resolveCategoryFromKeyword
 } = require(path.join(__dirname, "..", "monitor", "disaster-social-index-engine"));
 
 const {
@@ -28,7 +33,9 @@ function main() {
   [
     "data/community/disaster_social_sources.json",
     "data/community/disaster_social_index.json",
+    "data/community/municipality_master.json",
     "monitor/disaster-social-index-engine.js",
+    "monitor/disaster-social-municipality-master.js",
     "scripts/build-disaster-social-index.js"
   ].forEach(function (file) {
     const exists = fs.existsSync(path.join(ROOT, file));
@@ -38,7 +45,16 @@ function main() {
     }
   });
 
+  const masterPayload = loadMunicipalityMaster();
+  errors.push.apply(errors, validateMunicipalityMaster(masterPayload));
+  checks.push({
+    check: "municipality master valid",
+    pass: validateMunicipalityMaster(masterPayload).length === 0,
+    municipality_count: (masterPayload.municipalities || []).length
+  });
+
   const payload = buildAndWriteDisasterSocialIndex();
+  const baselineEntryCount = payload.index.entries.length;
   errors.push.apply(errors, validateDisasterSocialSources(payload.sources));
   errors.push.apply(errors, validateDisasterSocialIndex(payload.index));
 
@@ -91,14 +107,119 @@ function main() {
   }
 
   const combinedResults = searchDisasterSocialIndex(payload.index, {
-    region: "熊本県",
-    date: "2026-07-31",
-    category: "VOLUNTEER"
+    prefecture: "熊本県",
+    municipality: "阿蘇市",
+    date: "2026-08-01",
+    category: "WATER"
   });
   checks.push({
-    check: "combined region date category search",
+    check: "prefecture municipality date category search",
     pass: combinedResults.length > 0,
     count: combinedResults.length
+  });
+  if (!combinedResults.length) {
+    errors.push("structured search must return results for 熊本県 阿蘇市 2026-08-01 WATER");
+  }
+
+  const districtResults = searchDisasterSocialIndex(payload.index, {
+    prefecture: "熊本県",
+    municipality: "阿蘇市",
+    district: "黒川"
+  });
+  checks.push({
+    check: "district search",
+    pass: districtResults.length > 0,
+    count: districtResults.length
+  });
+
+  const legacyResults = searchDisasterSocialIndex(payload.index, {
+    municipality: "熊本市"
+  });
+  checks.push({
+    check: "legacy municipality data preserved",
+    pass: legacyResults.length > 0,
+    count: legacyResults.length
+  });
+
+  const requiredCategories = [
+    "WATER",
+    "FOOD",
+    "SUPPLIES",
+    "TOILET",
+    "CHARGING",
+    "VOLUNTEER",
+    "BATH",
+    "SHOWER",
+    "FREE_SPACE",
+    "SHELTER",
+    "PET_SUPPORT",
+    "WIFI",
+    "OTHER"
+  ];
+  const missingCategories = requiredCategories.filter(function (category) {
+    return SOCIAL_CATEGORIES.indexOf(category) === -1;
+  });
+  checks.push({
+    check: "expanded categories defined",
+    pass: missingCategories.length === 0,
+    missing: missingCategories
+  });
+  if (missingCategories.length) {
+    errors.push("missing expanded categories: " + missingCategories.join(", "));
+  }
+
+  const newCategoryResults = searchDisasterSocialIndex(payload.index, {
+    category: "SHELTER"
+  });
+  checks.push({
+    check: "new category search",
+    pass: newCategoryResults.length > 0,
+    count: newCategoryResults.length
+  });
+
+  const keywordCategory = resolveCategoryFromKeyword("給水");
+  const keywordResults = searchDisasterSocialIndex(payload.index, {
+    category: keywordCategory
+  });
+  checks.push({
+    check: "keyword category resolution",
+    pass: keywordCategory === "WATER" && keywordResults.length > 0,
+    resolved_category: keywordCategory,
+    count: keywordResults.length
+  });
+  if (keywordCategory !== "WATER") {
+    errors.push("keyword 給水 must resolve to WATER");
+  }
+
+  const keywordAssistPass = matchesCategory(
+    {
+      category: "OTHER",
+      title: "地域の銭湯が無料開放",
+      content: "",
+      keywords: []
+    },
+    "BATH"
+  );
+  checks.push({
+    check: "keyword assist category match",
+    pass: keywordAssistPass
+  });
+  if (!keywordAssistPass) {
+    errors.push("keyword assist must match BATH for 銭湯 text");
+  }
+
+  checks.push({
+    check: "existing entries preserved",
+    pass: baselineEntryCount >= 31,
+    entry_count: baselineEntryCount
+  });
+  if (baselineEntryCount < 31) {
+    errors.push("existing community entries must be preserved");
+  }
+
+  checks.push({
+    check: "category keywords defined",
+    pass: (SOCIAL_CATEGORY_KEYWORDS.WATER || []).indexOf("給水") !== -1
   });
 
   const emptyFilterResults = searchDisasterSocialIndex(payload.index, {});
@@ -132,7 +253,7 @@ function main() {
 
   checks.push({
     check: "social categories defined",
-    pass: SOCIAL_CATEGORIES.length >= 8
+    pass: SOCIAL_CATEGORIES.length >= 13
   });
 
   console.log("=== Disaster Social Index Validation ===");

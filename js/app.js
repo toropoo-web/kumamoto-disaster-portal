@@ -160,16 +160,55 @@
     GENERAL: "公式発信"
   };
   var SOCIAL_CATEGORY_LABELS = {
-    WATER: "給水・水",
-    SHELTER: "避難所",
-    FOOD: "食料・炊き出し",
+    WATER: "水",
+    FOOD: "食事",
     SUPPLIES: "物資",
-    TRANSPORT: "交通・輸送",
-    VOLUNTEER: "ボランティア",
-    MEDICAL: "医療",
     TOILET: "トイレ",
     CHARGING: "充電",
-    OTHER: "その他"
+    VOLUNTEER: "ボランティア",
+    BATH: "風呂",
+    SHOWER: "シャワー",
+    FREE_SPACE: "無料スペース",
+    SHELTER: "宿泊",
+    PET_SUPPORT: "ペット",
+    WIFI: "Wi-Fi",
+    OTHER: "その他",
+    TRANSPORT: "交通・輸送",
+    MEDICAL: "医療"
+  };
+  var SOCIAL_CATEGORY_UI_ORDER = [
+    "WATER",
+    "FOOD",
+    "SUPPLIES",
+    "TOILET",
+    "CHARGING",
+    "BATH",
+    "SHOWER",
+    "FREE_SPACE",
+    "SHELTER",
+    "PET_SUPPORT",
+    "WIFI",
+    "VOLUNTEER",
+    "OTHER",
+    "TRANSPORT",
+    "MEDICAL"
+  ];
+  var SOCIAL_CATEGORY_KEYWORDS = {
+    WATER: ["井戸水", "給水", "飲み水", "生活用水", "飲料水", "水道"],
+    FOOD: ["炊き出し", "食事提供", "食料配布"],
+    SUPPLIES: ["支援物資", "物資配布", "生活用品", "衛生用品"],
+    TOILET: [],
+    CHARGING: [],
+    VOLUNTEER: [],
+    BATH: ["風呂", "銭湯", "入浴", "無料開放"],
+    SHOWER: ["シャワー", "温水", "入浴設備"],
+    FREE_SPACE: ["無料開放", "スペース", "フリースペース", "休憩場所", "開放場所"],
+    SHELTER: ["宿泊", "寝泊まり", "一時利用", "避難場所"],
+    PET_SUPPORT: ["ペット", "犬", "猫", "ペット同伴", "ペット可"],
+    WIFI: ["wi-fi", "wifi", "ネット", "通信"],
+    OTHER: [],
+    TRANSPORT: [],
+    MEDICAL: []
   };
   var SUPPORT_SERVICE_DETAIL_LABELS = {
     BATH: "風呂",
@@ -1375,19 +1414,73 @@
     return String(value).slice(0, 10);
   }
 
+  function buildSocialEntrySearchHaystack(entry) {
+    var keywordText = Array.isArray(entry.keywords) ? entry.keywords.join(" ") : "";
+    return normalizeSearchText(
+      [entry.category, entry.title, entry.content, keywordText].filter(Boolean).join(" ")
+    );
+  }
+
+  function matchesSocialCategory(entry, categoryQuery) {
+    if (!categoryQuery) {
+      return true;
+    }
+    if (entry.category === categoryQuery) {
+      return true;
+    }
+    var keywords = SOCIAL_CATEGORY_KEYWORDS[categoryQuery] || [];
+    if (!keywords.length) {
+      return false;
+    }
+    var hay = buildSocialEntrySearchHaystack(entry);
+    return keywords.some(function (keyword) {
+      return hay.indexOf(normalizeSearchText(keyword)) !== -1;
+    });
+  }
+
   function searchDisasterSocialIndex(indexPayload, options) {
     options = options || {};
     var entries = (indexPayload && indexPayload.entries) || [];
+    var hasStructured = Boolean(options.prefecture || options.municipality || options.district);
     var hasRegion = Boolean(normalizeSearchText(options.region));
     var hasDate = Boolean(normalizeSocialDate(options.date));
     var hasCategory = Boolean(options.category);
 
-    if (!hasRegion && !hasDate && !hasCategory) {
+    if (!hasRegion && !hasStructured && !hasDate && !hasCategory) {
       return [];
     }
 
     return entries.filter(function (entry) {
-      if (options.category && entry.category !== options.category) {
+      var locationOk = true;
+      if (hasStructured) {
+        if (options.prefecture) {
+          locationOk =
+            locationOk &&
+            normalizeSearchText(entry.prefecture).indexOf(normalizeSearchText(options.prefecture)) !== -1;
+        }
+        if (options.municipality) {
+          locationOk =
+            locationOk &&
+            normalizeSearchText(entry.municipality).indexOf(normalizeSearchText(options.municipality)) !== -1;
+        }
+        if (options.district) {
+          var districtHay = normalizeSearchText(entry.district);
+          locationOk =
+            locationOk &&
+            districtHay.indexOf(normalizeSearchText(options.district)) !== -1;
+        }
+      }
+      if (hasRegion) {
+        var tokens = normalizeSearchText(options.region).split(" ").filter(Boolean);
+        var hay = normalizeSearchText(
+          [entry.prefecture, entry.municipality, entry.district].filter(Boolean).join(" ")
+        );
+        locationOk = locationOk && tokens.every(function (token) {
+          return hay.indexOf(token) !== -1;
+        });
+      }
+
+      if (!locationOk) {
         return false;
       }
 
@@ -1395,19 +1488,7 @@
         return false;
       }
 
-      if (options.region) {
-        var tokens = normalizeSearchText(options.region).split(" ").filter(Boolean);
-        var hay = normalizeSearchText(
-          [entry.prefecture, entry.municipality, entry.district].filter(Boolean).join(" ")
-        );
-        if (!tokens.every(function (token) {
-          return hay.indexOf(token) !== -1;
-        })) {
-          return false;
-        }
-      }
-
-      return true;
+      return matchesSocialCategory(entry, options.category);
     });
   }
 
@@ -1982,7 +2063,10 @@
     categorySelect.id = "disaster-social-search-category";
     categorySelect.name = "category";
     categorySelect.appendChild(createElement("option", "", "すべて"));
-    Object.keys(SOCIAL_CATEGORY_LABELS).forEach(function (key) {
+    SOCIAL_CATEGORY_UI_ORDER.forEach(function (key) {
+      if (!SOCIAL_CATEGORY_LABELS[key]) {
+        return;
+      }
       var option = createElement("option", "", SOCIAL_CATEGORY_LABELS[key]);
       option.value = key;
       categorySelect.appendChild(option);

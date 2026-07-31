@@ -4,6 +4,11 @@ const fs = require("fs");
 const path = require("path");
 
 const { REGION_KYUSHU_SOUTH, PREFECTURES } = require("./disaster-sources");
+const {
+  loadMunicipalityMaster,
+  isKumamotoMunicipality,
+  validateMunicipalityMaster
+} = require("./disaster-social-municipality-master");
 
 const ROOT = path.join(__dirname, "..");
 const SOURCES_FILE = path.join(ROOT, "data", "community", "disaster_social_sources.json");
@@ -13,30 +18,76 @@ const PUBLIC_INDEX_FILE = path.join(ROOT, "data", "public", "disaster_social_ind
 
 const SOCIAL_CATEGORIES = [
   "WATER",
-  "SHELTER",
   "FOOD",
   "SUPPLIES",
-  "TRANSPORT",
-  "VOLUNTEER",
-  "MEDICAL",
   "TOILET",
   "CHARGING",
-  "OTHER"
+  "VOLUNTEER",
+  "BATH",
+  "SHOWER",
+  "FREE_SPACE",
+  "SHELTER",
+  "PET_SUPPORT",
+  "WIFI",
+  "OTHER",
+  "TRANSPORT",
+  "MEDICAL"
+];
+
+const SOCIAL_CATEGORY_UI_ORDER = [
+  "WATER",
+  "FOOD",
+  "SUPPLIES",
+  "TOILET",
+  "CHARGING",
+  "BATH",
+  "SHOWER",
+  "FREE_SPACE",
+  "SHELTER",
+  "PET_SUPPORT",
+  "WIFI",
+  "VOLUNTEER",
+  "OTHER",
+  "TRANSPORT",
+  "MEDICAL"
 ];
 
 const SOCIAL_STATUS_VALUES = ["ACTIVE", "ARCHIVED", "incomplete"];
 
 const SOCIAL_CATEGORY_LABELS = {
-  WATER: "給水・水",
-  SHELTER: "避難所",
-  FOOD: "食料・炊き出し",
+  WATER: "水",
+  FOOD: "食事",
   SUPPLIES: "物資",
-  TRANSPORT: "交通・輸送",
-  VOLUNTEER: "ボランティア",
-  MEDICAL: "医療",
   TOILET: "トイレ",
   CHARGING: "充電",
-  OTHER: "その他"
+  VOLUNTEER: "ボランティア",
+  BATH: "風呂",
+  SHOWER: "シャワー",
+  FREE_SPACE: "無料スペース",
+  SHELTER: "宿泊",
+  PET_SUPPORT: "ペット",
+  WIFI: "Wi-Fi",
+  OTHER: "その他",
+  TRANSPORT: "交通・輸送",
+  MEDICAL: "医療"
+};
+
+const SOCIAL_CATEGORY_KEYWORDS = {
+  WATER: ["井戸水", "給水", "飲み水", "生活用水", "飲料水", "水道"],
+  FOOD: ["炊き出し", "食事提供", "食料配布"],
+  SUPPLIES: ["支援物資", "物資配布", "生活用品", "衛生用品"],
+  TOILET: [],
+  CHARGING: [],
+  VOLUNTEER: [],
+  BATH: ["風呂", "銭湯", "入浴", "無料開放"],
+  SHOWER: ["シャワー", "温水", "入浴設備"],
+  FREE_SPACE: ["無料開放", "スペース", "フリースペース", "休憩場所", "開放場所"],
+  SHELTER: ["宿泊", "寝泊まり", "一時利用", "避難場所"],
+  PET_SUPPORT: ["ペット", "犬", "猫", "ペット同伴", "ペット可"],
+  WIFI: ["wi-fi", "wifi", "ネット", "通信"],
+  OTHER: [],
+  TRANSPORT: [],
+  MEDICAL: []
 };
 
 const REQUIRED_ENTRY_FIELDS = [
@@ -100,6 +151,30 @@ function buildRegionHaystack(entry) {
   );
 }
 
+function matchesStructuredLocation(entry, options) {
+  options = options || {};
+  if (options.prefecture) {
+    const token = normalizeSearchText(options.prefecture);
+    if (normalizeSearchText(entry.prefecture).indexOf(token) === -1) {
+      return false;
+    }
+  }
+  if (options.municipality) {
+    const token = normalizeSearchText(options.municipality);
+    if (normalizeSearchText(entry.municipality).indexOf(token) === -1) {
+      return false;
+    }
+  }
+  if (options.district) {
+    const token = normalizeSearchText(options.district);
+    const districtHay = normalizeSearchText(entry.district);
+    if (!districtHay || districtHay.indexOf(token) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
 function matchesRegion(entry, regionQuery) {
   const tokens = normalizeSearchText(regionQuery).split(" ").filter(Boolean);
   if (!tokens.length) {
@@ -119,28 +194,79 @@ function matchesDate(entry, dateQuery) {
   return normalizeDateToken(entry.date) === normalized;
 }
 
+function buildEntrySearchHaystack(entry) {
+  const keywordText = Array.isArray(entry.keywords) ? entry.keywords.join(" ") : "";
+  return normalizeSearchText(
+    [entry.category, entry.title, entry.content, keywordText].filter(Boolean).join(" ")
+  );
+}
+
 function matchesCategory(entry, categoryQuery) {
   if (!categoryQuery) {
     return true;
   }
-  return entry.category === categoryQuery;
+  if (entry.category === categoryQuery) {
+    return true;
+  }
+  const keywords = SOCIAL_CATEGORY_KEYWORDS[categoryQuery] || [];
+  if (!keywords.length) {
+    return false;
+  }
+  const hay = buildEntrySearchHaystack(entry);
+  return keywords.some(function (keyword) {
+    return hay.indexOf(normalizeSearchText(keyword)) !== -1;
+  });
+}
+
+function resolveCategoryFromKeyword(text) {
+  const token = normalizeSearchText(text);
+  if (!token) {
+    return "";
+  }
+  if (SOCIAL_CATEGORIES.indexOf(text) !== -1) {
+    return text;
+  }
+  let resolved = "";
+  SOCIAL_CATEGORIES.forEach(function (category) {
+    if (resolved) {
+      return;
+    }
+    const keywords = SOCIAL_CATEGORY_KEYWORDS[category] || [];
+    keywords.forEach(function (keyword) {
+      if (!resolved && token.indexOf(normalizeSearchText(keyword)) !== -1) {
+        resolved = category;
+      }
+    });
+    if (!resolved && SOCIAL_CATEGORY_LABELS[category]) {
+      if (normalizeSearchText(SOCIAL_CATEGORY_LABELS[category]).indexOf(token) !== -1) {
+        resolved = category;
+      }
+    }
+  });
+  return resolved;
 }
 
 function searchDisasterSocialIndex(indexPayload, options) {
   options = options || {};
   const entries = (indexPayload && indexPayload.entries) || [];
 
+  const hasStructured = Boolean(options.prefecture || options.municipality || options.district);
   const hasRegion = Boolean(normalizeSearchText(options.region));
   const hasDate = Boolean(normalizeDateToken(options.date));
   const hasCategory = Boolean(options.category);
 
-  if (!hasRegion && !hasDate && !hasCategory) {
+  if (!hasRegion && !hasStructured && !hasDate && !hasCategory) {
     return [];
   }
 
   return entries.filter(function (entry) {
+    const locationOk = hasStructured
+      ? matchesStructuredLocation(entry, options) &&
+        (hasRegion ? matchesRegion(entry, options.region) : true)
+      : matchesRegion(entry, options.region);
+
     return (
-      matchesRegion(entry, options.region) &&
+      locationOk &&
       matchesDate(entry, options.date) &&
       matchesCategory(entry, options.category)
     );
@@ -177,12 +303,32 @@ function validateSocialIndexEntry(entry, index) {
     errors.push(label + ": invalid category " + entry.category);
   }
 
+  if (entry.keywords !== undefined) {
+    if (!Array.isArray(entry.keywords)) {
+      errors.push(label + ": keywords must be an array");
+    } else {
+      entry.keywords.forEach(function (keyword, keywordIndex) {
+        if (typeof keyword !== "string" || !keyword.trim()) {
+          errors.push(label + ": keywords[" + keywordIndex + "] must be a non-empty string");
+        }
+      });
+    }
+  }
+
   if (entry.status && SOCIAL_STATUS_VALUES.indexOf(entry.status) === -1) {
     errors.push(label + ": invalid status " + entry.status);
   }
 
   if (entry.prefecture && PREFECTURES[REGION_KYUSHU_SOUTH].indexOf(entry.prefecture) === -1) {
     errors.push(label + ": prefecture out of coverage");
+  }
+
+  if (
+    entry.prefecture === "熊本県" &&
+    entry.municipality &&
+    !isKumamotoMunicipality(entry.municipality)
+  ) {
+    errors.push(label + ": municipality not in Kumamoto master: " + entry.municipality);
   }
 
   if (entry.date && !/^\d{4}-\d{2}-\d{2}$/.test(entry.date)) {
@@ -255,14 +401,23 @@ module.exports = {
   PUBLIC_SOURCES_FILE,
   PUBLIC_INDEX_FILE,
   SOCIAL_CATEGORIES,
+  SOCIAL_CATEGORY_UI_ORDER,
   SOCIAL_STATUS_VALUES,
   SOCIAL_CATEGORY_LABELS,
+  SOCIAL_CATEGORY_KEYWORDS,
   REQUIRED_ENTRY_FIELDS,
   normalizeSearchText,
   normalizeDateToken,
+  buildEntrySearchHaystack,
+  matchesCategory,
+  resolveCategoryFromKeyword,
+  matchesStructuredLocation,
   searchDisasterSocialIndex,
   validateSocialIndexEntry,
   validateDisasterSocialIndex,
   validateDisasterSocialSources,
-  buildAndWriteDisasterSocialIndex
+  buildAndWriteDisasterSocialIndex,
+  loadMunicipalityMaster,
+  isKumamotoMunicipality,
+  validateMunicipalityMaster
 };
