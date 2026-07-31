@@ -2,6 +2,7 @@
   "use strict";
 
   var COUNTER_URL = "../../data/operation_monitor/internal-operation-counter.json";
+  var USAGE_COUNTER_URL = "../../data/operation_monitor/user-usage-counter.json";
 
   function escapeHtml(value) {
     return String(value || "")
@@ -54,6 +55,78 @@
         );
       })
       .join("");
+  }
+
+  function renderUsageSummary(report) {
+    var container = document.getElementById("usage-summary");
+    if (!container) {
+      return;
+    }
+
+    if (!report) {
+      container.innerHTML = '<p class="internal-operation-counter__empty">利用実績データがありません。</p>';
+      return;
+    }
+
+    var cards = [
+      { label: "累計訪問数", value: report.page_views },
+      { label: "本日の訪問数", value: report.today_views },
+      { label: "最終訪問時刻", value: formatDate(report.last_access_at) },
+      { label: "集計日", value: report.today_key || "—" }
+    ];
+
+    container.innerHTML = cards
+      .map(function (card) {
+        return (
+          '<div class="internal-operation-counter__summary-card">' +
+          '<div class="internal-operation-counter__summary-label">' +
+          escapeHtml(card.label) +
+          "</div>" +
+          '<div class="internal-operation-counter__summary-value">' +
+          escapeHtml(card.value) +
+          "</div>" +
+          "</div>"
+        );
+      })
+      .join("");
+  }
+
+  function renderUsageEvents(report) {
+    var container = document.getElementById("usage-events");
+    if (!container) {
+      return;
+    }
+
+    if (!report || !report.events) {
+      container.innerHTML = '<p class="internal-operation-counter__empty">利用アクションがありません。</p>';
+      return;
+    }
+
+    var labels = {
+      water_search: "WATER検索回数",
+      water_detail_view: "給水情報表示回数",
+      volunteer_search: "VOLUNTEER検索回数",
+      support_service_search: "SUPPORT_SERVICE検索回数",
+      communication_view: "通信情報表示回数",
+      official_info_view: "公式情報カード表示回数"
+    };
+
+    var keys = Object.keys(labels);
+    container.innerHTML =
+      '<table class="internal-operation-counter__table" aria-label="利用アクション一覧">' +
+      "<thead><tr><th>アクション</th><th>回数</th></tr></thead><tbody>" +
+      keys
+        .map(function (key) {
+          return (
+            "<tr><td>" +
+            escapeHtml(labels[key]) +
+            "</td><td>" +
+            escapeHtml(report.events[key] || 0) +
+            "</td></tr>"
+          );
+        })
+        .join("") +
+      "</tbody></table>";
   }
 
   function renderCategoryUsage(report) {
@@ -133,9 +206,18 @@
   }
 
   function init() {
-    loadJson(COUNTER_URL)
-      .then(function (report) {
+    Promise.all([
+      loadJson(COUNTER_URL),
+      loadJson(USAGE_COUNTER_URL).catch(function () {
+        return null;
+      })
+    ])
+      .then(function (results) {
+        var report = results[0];
+        var usageReport = results[1];
         renderSummary(report);
+        renderUsageSummary(usageReport);
+        renderUsageEvents(usageReport);
         renderCategoryUsage(report);
         renderPatrolSummary(report);
       })

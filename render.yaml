@@ -1,9 +1,9 @@
 services:
   - type: web
     name: kumamoto-disaster-portal
-    runtime: static
+    runtime: node
     buildCommand: npm ci && npm run build
-    staticPublishPath: .
+    startCommand: node server/portal-server.js
     autoDeploy: true
     headers:
       - path: /index.html

@@ -18,6 +18,13 @@
   var DISASTER_SEARCH_VOLUNTEER_ID = "disaster-search-volunteer";
   var DISASTER_SEARCH_SUPPORT_SERVICE_ID = "disaster-search-support-service";
   var DISASTER_SEARCH_DEFAULT_CATEGORY = "WATER";
+
+  function trackUsage(eventName) {
+    if (window.UserUsageBeacon && typeof window.UserUsageBeacon.track === "function") {
+      window.UserUsageBeacon.track(eventName);
+    }
+  }
+
   var DISASTER_SEARCH_CATEGORY_CONFIG = {
     WATER: {
       sectionId: "disaster-search",
@@ -42,12 +49,12 @@
     SUPPORT_SERVICE: {
       sectionId: "disaster-search-support-service",
       icon: "🏠",
-      title: "生活支援情報を探す",
+      title: "生活支援を探す",
       lead: "無料開放・生活支援情報を検索",
       promoDescription:
         "被災者の方へ。\n\n" +
-        "風呂・シャワー・休憩スペース・トイレ・駐車場・炊き出しなど、\n" +
-        "生活支援に関する情報を検索できます。"
+        "風呂・シャワー・車中泊・食事・支援物資など、\n" +
+        "災害時の生活に必要な情報を探します。"
     }
   };
   var DISASTER_SEARCH_SHARED = {
@@ -1156,6 +1163,8 @@
       return;
     }
 
+    trackUsage("view_water_detail");
+
     resultsContainer.appendChild(createElement(
       "p",
       "water-search__summary",
@@ -1256,7 +1265,11 @@
 
     function runSearch() {
       var query = input.value.trim();
-      renderWaterSearchResult(resultsContainer, searchWater(waterSearchIndex, query), query);
+      var results = searchWater(waterSearchIndex, query);
+      renderWaterSearchResult(resultsContainer, results, query);
+      if (query) {
+        trackUsage("search_water");
+      }
     }
 
     form.addEventListener("submit", function (event) {
@@ -1650,12 +1663,26 @@
 
     function runSearch() {
       var query = input.value.trim();
+      var results = searchDisasterIndex(disasterSearchIndex, query, { category: categoryKey });
       renderDisasterSearchResult(
         resultsContainer,
-        searchDisasterIndex(disasterSearchIndex, query, { category: categoryKey }),
+        results,
         query,
         categoryKey
       );
+      if (!query) {
+        return;
+      }
+      if (categoryKey === "VOLUNTEER") {
+        trackUsage("search_volunteer");
+      } else if (categoryKey === "SUPPORT_SERVICE") {
+        trackUsage("search_support_service");
+      } else if (categoryKey === "WATER") {
+        trackUsage("search_water");
+        if (results.length) {
+          trackUsage("view_water_detail");
+        }
+      }
     }
 
     form.addEventListener("submit", function (event) {
@@ -1686,6 +1713,9 @@
     Object.keys(DISASTER_SEARCH_CATEGORY_CONFIG).forEach(function (categoryKey) {
       var config = DISASTER_SEARCH_CATEGORY_CONFIG[categoryKey];
       var card = createElement("a", "portal-quick-access__card");
+      if (categoryKey === "SUPPORT_SERVICE") {
+        card.classList.add("disaster-search-card--support-service");
+      }
       card.href = "#" + (config.sectionId || DISASTER_SEARCH_ID);
       card.setAttribute("aria-label", config.title + "の検索へ移動");
       card.appendChild(createElement("h3", "portal-quick-access__card-title", config.icon + " " + config.title));
@@ -2980,9 +3010,8 @@
     inner.appendChild(list);
     section.appendChild(inner);
     container.appendChild(section);
+    trackUsage("view_communication");
   }
-
-  function renderPageNavigation(container, navigation, records) {
     var wrap = createElement("div", "page-nav");
 
     var muniNav = createElement("nav", "municipality-nav");
@@ -3230,10 +3259,9 @@
     actions.appendChild(createElement("span", "official-info-card__domain", extractDomain(record.source_url)));
     card.appendChild(actions);
 
+    trackUsage("view_official_info");
     return card;
   }
-
-  function groupRecordsByCategory(records) {
     var groups = {};
     records.forEach(function (record) {
       var id = record.public_category_id;
@@ -3460,6 +3488,7 @@
         renderCautionSection(page);
         renderPageFooter(page);
         initBackToTop(document.getElementById("page-hero"));
+        trackUsage("page_view");
       })
       .catch(function () {
         renderLoadError(page);

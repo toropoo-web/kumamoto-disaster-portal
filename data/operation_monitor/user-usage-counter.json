@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "view_type": "USER_USAGE_COUNTER",
+  "generated_at": "2026-07-31T13:15:26.745Z",
+  "constraints": {
+    "no_personal_data": true,
+    "no_cookies": true,
+    "no_ip_storage": true,
+    "no_external_analytics": true,
+    "public_ui_display": false
+  },
+  "page_views": 0,
+  "today_views": 0,
+  "today_key": "2026-07-31",
+  "events": {
+    "water_search": 0,
+    "water_detail_view": 0,
+    "volunteer_search": 0,
+    "support_service_search": 0,
+    "communication_view": 0,
+    "official_info_view": 0
+  },
+  "last_access_at": null,
+  "event_log_count": 0,
+  "source_files": {
+    "event_log_json": "data/operation_monitor/user-usage-event-log.json"
+  }
+}

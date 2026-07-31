@@ -30,7 +30,8 @@ const STATIC_FILES = [
   "admin/internal-operation/index.html",
   "admin/css/internal-operation-counter.css",
   "admin/js/internal-operation-counter.js",
-  "data/operation_monitor/internal-operation-counter.json"
+  "data/operation_monitor/internal-operation-counter.json",
+  "data/operation_monitor/user-usage-counter.json"
 ];
 
 function main() {
