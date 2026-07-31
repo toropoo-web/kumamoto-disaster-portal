@@ -2,7 +2,7 @@
   "version": 3,
   "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
   "section_title": "確認済み災害地点",
-  "confirmed_at": "2026-07-29T15:00:00+09:00",
+  "confirmed_at": "2026-07-31T11:40:00+09:00",
   "locations": [
     {
       "location_id": "LOC-KM008-WATER-0001",
@@ -106,13 +106,13 @@
         "type": "MUNICIPALITY",
         "name": "益城町"
       },
-      "source_url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+      "source_url": "https://www.town.mashiki.lg.jp/kiji0038078/index.html",
       "verified_at": "2026-07-29T14:38:00+09:00",
       "last_checked_at": "2026-07-29T14:38:00+09:00",
       "expires_at": null,
       "ended_at": null,
       "notes": null,
-      "related_card_url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+      "related_card_url": "https://www.town.mashiki.lg.jp/kiji0038078/index.html",
       "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
       "verification_status": "VERIFIED"
     },
@@ -140,7 +140,7 @@
       "expires_at": null,
       "ended_at": null,
       "notes": "避難所の開設情報（7月29日14時現在）に基づく。",
-      "related_card_url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+      "related_card_url": "https://www.town.mashiki.lg.jp/kiji0038078/index.html",
       "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
       "verification_status": "VERIFIED"
     },
@@ -168,7 +168,7 @@
       "expires_at": null,
       "ended_at": "2026-07-29T14:38:00+09:00",
       "notes": "公式発表で閉鎖確認。",
-      "related_card_url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+      "related_card_url": "https://www.town.mashiki.lg.jp/kiji0038078/index.html",
       "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
       "verification_status": "VERIFIED"
     },
@@ -196,7 +196,7 @@
       "expires_at": null,
       "ended_at": "2026-07-29T14:38:00+09:00",
       "notes": "公式発表で閉鎖確認。",
-      "related_card_url": "https://www.town.mashiki.lg.jp/bousai/kiji0038053/index.html",
+      "related_card_url": "https://www.town.mashiki.lg.jp/kiji0038078/index.html",
       "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
       "verification_status": "VERIFIED"
     },
@@ -610,13 +610,13 @@
         "type": "MUNICIPALITY",
         "name": "菊陽町公式防災情報"
       },
-      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "verified_at": "2026-07-29T16:30:00+09:00",
       "last_checked_at": "2026-07-29T16:30:00+09:00",
       "expires_at": null,
       "ended_at": null,
       "notes": "運営：大津菊陽水道企業団。容器持参で利用。",
-      "related_card_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "related_card_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
       "verification_status": "VERIFIED"
     },
@@ -638,13 +638,41 @@
         "type": "MUNICIPALITY",
         "name": "菊陽町公式防災情報"
       },
-      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "verified_at": "2026-07-29T16:30:00+09:00",
       "last_checked_at": "2026-07-29T16:30:00+09:00",
       "expires_at": null,
       "ended_at": null,
       "notes": "運営：大津菊陽水道企業団。",
-      "related_card_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "related_card_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
+      "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+      "verification_status": "VERIFIED"
+    },
+    {
+      "location_id": "LOC-KM012-WATER-0001",
+      "area_id": "KM012",
+      "area_name": "嘉島町",
+      "category": "WATER",
+      "category_label": "給水・断水",
+      "name": "嘉島町文化財センター（自衛隊給水）",
+      "address": "熊本県上益城郡嘉島町上島531",
+      "lat": 32.7896,
+      "lng": 130.7851,
+      "status": "ACTIVE",
+      "status_label": "給水実施中",
+      "update_cycle": "DAILY",
+      "operation_date": "2026-07-31",
+      "source": {
+        "type": "MUNICIPALITY",
+        "name": "嘉島町"
+      },
+      "source_url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/55/6037.html",
+      "verified_at": "2026-07-31T00:00:00+09:00",
+      "last_checked_at": "2026-07-31T00:00:00+09:00",
+      "expires_at": null,
+      "ended_at": null,
+      "notes": "自衛隊による給水。7:00〜19:00。容器持参。飲用前に煮沸推奨。",
+      "related_card_url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/55/6037.html",
       "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
       "verification_status": "VERIFIED"
     }

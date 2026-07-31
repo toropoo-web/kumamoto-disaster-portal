@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "description": "SUPPORT_SERVICE X discovery fixture posts (Phase27 / Phase27.1)",
+  "referenceDate": "2026-07-31",
+  "posts": [
+    {
+      "id": "phase27-case-a",
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/phase27-case-a",
+      "account": "kumamoto_city_support",
+      "text": "熊本市 被災者向けに無料シャワーを開放しています。利用できます。",
+      "published_at": "2026-07-31",
+      "municipality": "熊本市"
+    },
+    {
+      "id": "phase27-case-b",
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/phase27-case-b",
+      "account": "uki_city_support",
+      "text": "宇城市 駐車場を車中泊利用できます。被災された方はご利用ください。",
+      "published_at": "2026-07-31",
+      "municipality": "宇城市"
+    },
+    {
+      "id": "phase27-case-c",
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/phase27-case-c",
+      "account": "yatsushiro_water",
+      "text": "八代市 井戸水を提供しています。飲料水として利用できます。",
+      "published_at": "2026-07-31",
+      "municipality": "八代市"
+    },
+    {
+      "id": "phase27-case-d",
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/phase27-case-d",
+      "account": "mashiki_food",
+      "text": "益城町 本日炊き出しを実施します。食事提供します。",
+      "published_at": "2026-07-31",
+      "municipality": "益城町"
+    },
+    {
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/shower-free",
+      "account": "kumamoto_support_user",
+      "text": "熊本市で被災者向け無料シャワーを提供しています",
+      "published_at": "2026-07-31",
+      "municipality": "熊本市"
+    },
+    {
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/car-camp",
+      "account": "hitoyoshi_support",
+      "text": "人吉市の駐車場で車中泊できます",
+      "published_at": "2026-07-31",
+      "municipality": "人吉市"
+    },
+    {
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/well-water",
+      "account": "aso_support",
+      "text": "阿蘇市の井戸水あります。飲料水として利用できます",
+      "published_at": "2026-07-31",
+      "municipality": "阿蘇市"
+    },
+    {
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/normal-business",
+      "account": "onsen_shop",
+      "text": "温泉営業しています",
+      "published_at": "2026-07-31"
+    },
+    {
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/standalone-onsen",
+      "account": "onsen_only",
+      "text": "温泉",
+      "published_at": "2026-07-31"
+    },
+    {
+      "source_type": "X",
+      "source_url": "https://x.com/example/status/out-of-area",
+      "account": "osaka_support",
+      "text": "大阪府で炊き出しを提供します",
+      "published_at": "2026-07-31"
+    }
+  ]
+}

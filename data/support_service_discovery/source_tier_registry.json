@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "description": "SUPPORT_SERVICE discovery source tiers (read-only registry)",
+  "AUTO_PUBLISH": false,
+  "tiers": {
+    "TIER1": {
+      "label": "自治体・公共機関",
+      "source_confidence": "HIGH",
+      "patterns": [
+        "自治体",
+        "市役所",
+        "町役場",
+        "村役場",
+        "県庁",
+        "社会福祉協議会",
+        "社協",
+        "防災",
+        "消防庁",
+        "LOCAL_GOVERNMENT",
+        "GOVERNMENT",
+        "SOCIAL_WELFARE"
+      ]
+    },
+    "TIER2": {
+      "label": "施設・商業",
+      "source_confidence": "HIGH",
+      "patterns": [
+        "温泉",
+        "ホテル",
+        "旅館",
+        "道の駅",
+        "商業施設",
+        "入浴",
+        "体育館",
+        "会館",
+        "センター"
+      ]
+    },
+    "TIER3": {
+      "label": "企業・団体",
+      "source_confidence": "MEDIUM",
+      "patterns": ["企業", "株式会社", "有限会社", "NPO", "団体", "協会", "ネットワーク"]
+    },
+    "TIER4": {
+      "label": "個人投稿",
+      "source_confidence": "LOW",
+      "patterns": ["個人", "転載", "匿名", "情報提供"]
+    }
+  }
+}

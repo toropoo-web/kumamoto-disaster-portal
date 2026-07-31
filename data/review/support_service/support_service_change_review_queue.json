@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "category": "SUPPORT_SERVICE",
+  "queue_type": "CHANGE_REVIEW",
+  "generated_at": "2026-07-31T09:44:20.054Z",
+  "AUTO_PUBLISH": false,
+  "auto_publish": false,
+  "item_count": 1,
+  "status_summary": {
+    "NEW": 0,
+    "REVIEWING": 0,
+    "APPROVED": 1,
+    "REJECTED": 0,
+    "APPLIED": 0
+  },
+  "source_change_queue_file": "data/support_service_discovery/support_service_change_queue.json",
+  "items": [
+    {
+      "review_id": "SSREV-CCB3F32D81",
+      "queue_id": "SSREV-CCB3F32D81",
+      "change_id": "SSCHG-82518AC970",
+      "information_id": "SSINF-E93AC8B3EF",
+      "change_type": "NEW",
+      "before": {},
+      "after": {
+        "title": "無料温泉",
+        "subcategory": "BATH",
+        "facility_name": "熊本市内の○○温泉",
+        "address": "UNKNOWN",
+        "opening_type": "FREE_OPEN",
+        "available_from": "2026-07-31",
+        "available_until": "UNKNOWN",
+        "status": "ACTIVE"
+      },
+      "source_id": "SSRC-8F1A3C67B2",
+      "municipality": "熊本市",
+      "detected_at": "2026-07-31T09:44:19.913Z",
+      "status": "APPROVED",
+      "auto_publish": false,
+      "reviewer": "phase29-operator",
+      "reviewed_at": "2026-07-31T09:44:20.053Z",
+      "review_note": "",
+      "created_at": "2026-07-31T09:44:19.914Z"
+    }
+  ]
+}

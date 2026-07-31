@@ -1,0 +1,279 @@
+{
+  "version": 2,
+  "engineVersion": 2,
+  "generatedAt": "2026-07-31T08:40:52.902Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "input": {
+    "prefecture": "熊本県",
+    "municipality": "宇土市",
+    "official_domain": "city.uto.lg.jp"
+  },
+  "municipality": "宇土市",
+  "prefecture": "熊本県",
+  "official_domain": "city.uto.lg.jp",
+  "area_id": "KM002",
+  "entry_url": "https://www.city.uto.lg.jp/article/list/1014.html",
+  "candidateCount": 3,
+  "discoveredCount": 0,
+  "alreadyRegisteredCount": 3,
+  "autoRegister": false,
+  "sourceRegistryFile": "monitor/sources.json",
+  "candidates": [
+    {
+      "discovery_id": "PDU-20260731-KM002-EMERGENCY-E10B521C",
+      "prefecture": "熊本県",
+      "municipality": "宇土市",
+      "official_domain": "city.uto.lg.jp",
+      "area_id": "KM002",
+      "entry_url": "https://www.city.uto.lg.jp/article/list/1014.html",
+      "candidate_url": "https://www.city.uto.lg.jp/article/list/1014.html",
+      "link_label": "防災・災害情報一覧",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "primary",
+      "recommended_role": "primary",
+      "confidence": "HIGH",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "emergency_list",
+      "detected_keywords": [
+        "災害",
+        "防災",
+        "避難",
+        "避難所",
+        "断水",
+        "復旧",
+        "開設"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "ALREADY_REGISTERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM002-uto-emergency",
+        "area_id": "KM002",
+        "name": "宇土市",
+        "category": "municipality",
+        "url": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "宇土市 緊急情報一覧",
+        "text_length": 71,
+        "keywords": [
+          "避難",
+          "避難所",
+          "断水",
+          "復旧",
+          "開設",
+          "災害"
+        ],
+        "content_hash": "a0661dc9c5966a22e8c36f4e9595067e028ec32674d7531db59a4443b939bc5c",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T08:40:52.862Z",
+        "final_url": "https://www.city.uto.lg.jp/article/list/1014.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-31T08:40:52.863Z",
+        "matched_hints": [
+          "災害",
+          "防災"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2",
+          "registered_seed"
+        ],
+        "crawl_depth": 0,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": "KM002-uto-emergency",
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM002-WATER-4887E46E",
+      "prefecture": "熊本県",
+      "municipality": "宇土市",
+      "official_domain": "city.uto.lg.jp",
+      "area_id": "KM002",
+      "entry_url": "https://www.city.uto.lg.jp/article/list/1014.html",
+      "candidate_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "link_label": "水道の復旧状況について（断水・復旧）",
+      "public_category_id": "WATER",
+      "patrol_role": "secondary",
+      "recommended_role": "secondary",
+      "confidence": "MEDIUM",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "disaster_special",
+      "detected_keywords": [
+        "断水",
+        "水道",
+        "復旧状況",
+        "災害",
+        "給水",
+        "復旧"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "ALREADY_REGISTERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM002-uto-water",
+        "area_id": "KM002",
+        "name": "宇土市",
+        "category": "municipality",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "public_category_id": "WATER",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "水道の復旧状況について",
+        "text_length": 57,
+        "keywords": [
+          "給水",
+          "断水",
+          "復旧",
+          "災害"
+        ],
+        "content_hash": "9e14bc858d2775afe808cfa485f241e1a89542339cabacf2fd2cc5093c4b2806",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T08:40:52.863Z",
+        "final_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-31T08:40:52.863Z",
+        "matched_hints": [
+          "断水",
+          "水道",
+          "復旧状況",
+          "災害"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2",
+          "registered_seed"
+        ],
+        "crawl_depth": 0,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": "KM002-uto-water",
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM002-SHELTER-C1374B15",
+      "prefecture": "熊本県",
+      "municipality": "宇土市",
+      "official_domain": "city.uto.lg.jp",
+      "area_id": "KM002",
+      "entry_url": "https://www.city.uto.lg.jp/article/list/1014.html",
+      "candidate_url": "https://www.city.uto.lg.jp/article/view/1014/16304.html",
+      "link_label": "避難所の開設状況について",
+      "public_category_id": "SHELTER",
+      "patrol_role": "secondary",
+      "recommended_role": "secondary",
+      "confidence": "MEDIUM",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "disaster_special",
+      "detected_keywords": [
+        "避難",
+        "災害",
+        "避難所",
+        "開設",
+        "閉鎖"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "ALREADY_REGISTERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM002-uto-shelter",
+        "area_id": "KM002",
+        "name": "宇土市",
+        "category": "municipality",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16304.html",
+        "public_category_id": "SHELTER",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "避難所について（7/30 9:00更新）｜宇土市公式ホームページ",
+        "text_length": 926,
+        "keywords": [
+          "避難",
+          "避難所",
+          "開設",
+          "閉鎖"
+        ],
+        "content_hash": "acbf3b9119350c97d51027c4514ed49bed6ffacb2eadbebe40846dc3bbcca1bf",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T08:40:52.902Z",
+        "final_url": "https://www.city.uto.lg.jp/article/view/1014/16304.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.uto.lg.jp/article/list/1014.html",
+        "discovered_at": "2026-07-31T08:40:52.902Z",
+        "matched_hints": [
+          "避難",
+          "災害"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2",
+          "registered_seed"
+        ],
+        "crawl_depth": 0,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": "KM002-uto-shelter",
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "宇土市",
+          "official_domain": "city.uto.lg.jp"
+        }
+      }
+    }
+  ]
+}

@@ -472,7 +472,7 @@
       "area_id": "KM022",
       "name": "多良木町",
       "category": "municipality",
-      "url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+      "url": "https://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
       "public_category_id": "EMERGENCY",
       "status": "ACTIVE",
       "source_type": "official",

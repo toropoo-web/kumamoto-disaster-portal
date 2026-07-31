@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "category": "SUPPORT_SERVICE",
+  "generated_at": "2026-07-31T09:44:20.200Z",
+  "AUTO_PUBLISH": false,
+  "auto_publish": false,
+  "audit_entry_count": 1,
+  "audit_entries": [
+    {
+      "audit_id": "SSAUD-20260731094420-A37780AC",
+      "apply_id": "SSAPL-20260731094420-FE20FDF0",
+      "information_id": "SSINF-E93AC8B3EF",
+      "action": "ADD",
+      "before": {},
+      "after": {
+        "information_id": "SSINF-E93AC8B3EF",
+        "title": "無料温泉",
+        "subcategory": "BATH",
+        "facility_name": "熊本市内の○○温泉",
+        "address": "UNKNOWN",
+        "municipality": "熊本市",
+        "opening_type": "FREE_OPEN",
+        "published_at": "2026-07-31",
+        "available_from": "2026-07-31",
+        "available_until": "UNKNOWN",
+        "status": "ACTIVE",
+        "source_id": "SSRC-8F1A3C67B2",
+        "checked_at": "2026-07-31T09:17:13.611Z"
+      },
+      "approved_source": "support_service_change_review_queue:SSREV-CCB3F32D81",
+      "applied_at": "2026-07-31T09:44:20.199Z",
+      "status": "SUCCESS",
+      "trace": {
+        "review_id": "SSREV-CCB3F32D81",
+        "change_id": "SSCHG-82518AC970",
+        "source_id": "SSRC-8F1A3C67B2"
+      }
+    }
+  ]
+}

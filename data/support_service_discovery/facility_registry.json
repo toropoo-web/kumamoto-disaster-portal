@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "facilities": [
+    {
+      "facility_id": "SFAC-A3E7B9124F",
+      "facility_name": "○○温泉",
+      "address": "熊本県熊本市中央区○○町1-1",
+      "municipality": "熊本市",
+      "website": "https://example.invalid/facilities/oo-onsen",
+      "x_account": "",
+      "categories": ["BATH"]
+    },
+    {
+      "facility_id": "SFAC-6D2C8F15E0",
+      "facility_name": "人吉市 車中泊支援駐車場",
+      "address": "熊本県人吉市上林町",
+      "municipality": "人吉市",
+      "website": "https://example.invalid/facilities/hitoyoshi-parking",
+      "x_account": "",
+      "categories": ["VEHICLE"]
+    }
+  ]
+}

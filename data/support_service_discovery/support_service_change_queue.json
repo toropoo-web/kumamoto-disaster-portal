@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "category": "SUPPORT_SERVICE",
+  "generated_at": "2026-07-31T09:44:19.913Z",
+  "AUTO_PUBLISH": false,
+  "auto_publish": false,
+  "change_count": 1,
+  "reviewable_change_count": 1,
+  "change_type_summary": {
+    "NEW": 1,
+    "UPDATED": 0,
+    "ENDED": 0,
+    "UNCHANGED": 0
+  },
+  "source_information_file": "data/public/support_information.json",
+  "discovered_information_file": "data/candidates/support_service_candidates.json",
+  "changes": [
+    {
+      "change_id": "SSCHG-82518AC970",
+      "information_id": "SSINF-E93AC8B3EF",
+      "change_type": "NEW",
+      "before": {},
+      "after": {
+        "title": "無料温泉",
+        "subcategory": "BATH",
+        "facility_name": "熊本市内の○○温泉",
+        "address": "UNKNOWN",
+        "opening_type": "FREE_OPEN",
+        "available_from": "2026-07-31",
+        "available_until": "UNKNOWN",
+        "status": "ACTIVE"
+      },
+      "detected_at": "2026-07-31T09:44:19.913Z",
+      "status": "NEW_CHANGE",
+      "checked_at": {
+        "last_checked_at": null,
+        "current_checked_at": "2026-07-31T09:44:19.913Z"
+      },
+      "changed_fields": [
+        "title",
+        "subcategory",
+        "facility_name",
+        "address",
+        "opening_type",
+        "available_from",
+        "available_until",
+        "status"
+      ]
+    }
+  ],
+  "updated_informations": [
+    {
+      "information_id": "SSINF-E93AC8B3EF",
+      "source_id": "SSRC-8F1A3C67B2",
+      "category": "SUPPORT_SERVICE",
+      "subcategory": "BATH",
+      "subcategory_detail": "BATH",
+      "title": "無料温泉",
+      "facility_name": "熊本市内の○○温泉",
+      "address": "UNKNOWN",
+      "municipality": "熊本市",
+      "opening_type": "FREE_OPEN",
+      "published_at": "2026-07-31",
+      "available_from": "2026-07-31",
+      "available_until": "UNKNOWN",
+      "checked_at": "2026-07-31T09:44:19.913Z",
+      "status": "ACTIVE",
+      "source_name": "熊本市公式X",
+      "source_platform": "X",
+      "source_url": "https://x.com/kumamotocity_",
+      "source_account": "kumamotocity_",
+      "candidate_id": "SSCAND-3D45F5AED5"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "category": "SUPPORT_SERVICE",
+  "generated_at": "2026-07-31T09:44:20.201Z",
+  "AUTO_PUBLISH": false,
+  "auto_publish": false,
+  "item_count": 1,
+  "status_summary": {
+    "PENDING": 0,
+    "APPLIED": 1,
+    "FAILED": 0
+  },
+  "source_review_queue_file": "data/review/support_service/support_service_change_review_queue.json",
+  "items": [
+    {
+      "apply_id": "SSAPL-20260731094420-FE20FDF0",
+      "information_id": "SSINF-E93AC8B3EF",
+      "action": "ADD",
+      "approved_at": "2026-07-31T09:44:20.129Z",
+      "approved_source": "support_service_change_review_queue:SSREV-CCB3F32D81",
+      "status": "APPLIED",
+      "change_id": "SSCHG-82518AC970",
+      "queue_id": "SSREV-CCB3F32D81",
+      "change_type": "NEW",
+      "applied_at": "2026-07-31T09:44:20.199Z"
+    }
+  ]
+}

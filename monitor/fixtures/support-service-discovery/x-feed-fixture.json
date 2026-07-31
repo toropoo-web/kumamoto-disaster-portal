@@ -1,0 +1,30 @@
+{
+  "section_title": "公式X速報",
+  "synced_at": "2026-07-31T00:00:00.000Z",
+  "source_feed_url": "fixture://support-service-discovery/x-feed-fixture.json",
+  "item_count": 2,
+  "posts": [
+    {
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-07-31T08:00:00.000Z",
+      "text": "熊本市内の○○温泉を被災者向けに無料開放します。",
+      "url": "https://x.com/kumamotocity_/status/fixture-support-001",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
+      "content_filter": "DISASTER_RELATED"
+    },
+    {
+      "source_id": "SRC-MUN-KM006",
+      "account_name": "人吉市公式X",
+      "account_handle": "hitoyoshishi",
+      "post_time": "2026-07-31T09:00:00.000Z",
+      "text": "人吉市の駐車場を車中泊利用できます。",
+      "url": "https://x.com/hitoyoshishi/status/fixture-support-002",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "人吉市",
+      "content_filter": "DISASTER_RELATED"
+    }
+  ]
+}

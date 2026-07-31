@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "category": "SUPPORT_SERVICE",
+  "generated_at": "2026-07-31T09:44:20.055Z",
+  "AUTO_PUBLISH": false,
+  "auto_publish": false,
+  "alert_count": 0,
+  "status_summary": {
+    "NEW": 0,
+    "RESOLVED": 0
+  },
+  "source_change_queue_file": "data/support_service_discovery/support_service_change_queue.json",
+  "alerts": []
+}

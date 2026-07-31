@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "apply_id": "APL-20260731082401-20260731-KM002-UTO-WATER-WATER-0",
+      "update_id": "UPD-20260731-KM002-UTO-WATER-WATER-01",
+      "applied_at": "2026-07-31T08:24:01.827Z",
+      "target_layer": "water_search_index",
+      "target_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/public/water_search_index.json",
+      "operation": "ADD",
+      "before_hash": "fe9881b69682c79f796fe158e3e4abb8a4ed4f3c83a1ee2cf7e4986c43a927c8",
+      "after_hash": "84ea0a5570edbe54bfbc4d8e70f21eb5855ca40307248faaa4d747836af184c1",
+      "source_trace": {
+        "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/change-log.json",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "e2e-uto-water-before-hash-7f3a9c2d",
+        "after_hash": "e2e-uto-water-after-hash-4b8e1f6a",
+        "changed_text": "今回の地震に伴う断水について\n水道復旧状況更新\n水道復旧状況更新\n断水 水道 復旧\n水道復旧状況更新",
+        "detected_at": "2026-07-31T00:00:00.000Z"
+      },
+      "diff_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/diff/APL-20260731082401-20260731-KM002-UTO-WATER-WATER-0.json",
+      "rollback_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/diff/APL-20260731082401-20260731-KM002-UTO-WATER-WATER-0.json"
+    },
+    {
+      "apply_id": "APL-20260731082401-20260731-KM002-UTO-WATER-WATER-0",
+      "update_id": "UPD-20260731-KM002-UTO-WATER-WATER-01",
+      "rolled_back_at": "2026-07-31T08:24:01.829Z",
+      "action": "ROLLBACK",
+      "target_layer": "water_search_index",
+      "target_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/public/water_search_index.json",
+      "before_hash": "fe9881b69682c79f796fe158e3e4abb8a4ed4f3c83a1ee2cf7e4986c43a927c8",
+      "source_trace": {
+        "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/change-log.json",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "e2e-uto-water-before-hash-7f3a9c2d",
+        "after_hash": "e2e-uto-water-after-hash-4b8e1f6a",
+        "changed_text": "今回の地震に伴う断水について\n水道復旧状況更新\n水道復旧状況更新\n断水 水道 復旧\n水道復旧状況更新",
+        "detected_at": "2026-07-31T00:00:00.000Z"
+      }
+    }
+  ],
+  "lastUpdatedAt": "2026-07-31T08:24:01.827Z"
+}

@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "description": "SUPPORT_SERVICE production WEB source fixture posts",
+  "referenceDate": "2026-07-31",
+  "x_feed_path": "monitor/fixtures/support-service-production-source/x-feed-fixture.json",
+  "web_posts": {
+    "SSRC-PROD-W0001": [
+      {
+        "source_url": "https://www.city.koshi.lg.jp/soshiki/3/12345.html",
+        "title": "合志市役所 休憩スペース開放",
+        "text": "合志市役所 休憩スペース開放",
+        "published_at": "2026-07-31",
+        "content": "合志市役所 休憩スペース開放"
+      }
+    ],
+    "SSRC-PROD-W0002": [
+      {
+        "source_url": "https://example.invalid/support-service/osaka-out-of-area",
+        "title": "大阪府 炊き出し",
+        "text": "大阪府内で炊き出しを提供します",
+        "published_at": "2026-07-31",
+        "content": "大阪府内で炊き出しを提供します"
+      }
+    ]
+  }
+}

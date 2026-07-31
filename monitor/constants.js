@@ -39,6 +39,7 @@ const LOCATION_LIST_REVIEW_SOURCE_IDS = new Set([
   "KM008-mashiki-shelter",
   "KM010-mifune-shelter",
   "KM011-kikuyo-water",
+  "KM011-kikuyo-shelter",
   "KM012-kashima-water",
   "KM013-kikuchi-shelter"
 ]);

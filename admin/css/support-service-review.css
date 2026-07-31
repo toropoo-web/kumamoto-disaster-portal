@@ -1,0 +1,175 @@
+.support-service-review {
+  background: var(--surface-muted, #f7f7f8);
+  min-height: 100vh;
+  padding: 24px 0 48px;
+}
+
+.support-service-review__header {
+  margin-bottom: 24px;
+}
+
+.support-service-review__section-title {
+  font-size: 1.125rem;
+  margin: 0 0 12px;
+}
+
+.support-service-review__summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.support-service-review__summary-card {
+  background: #fff;
+  border: 1px solid var(--border, #d9dde3);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.support-service-review__summary-label {
+  color: var(--text-muted, #5b6472);
+  font-size: 0.875rem;
+}
+
+.support-service-review__summary-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.support-service-review__table-wrap,
+.support-service-review__detail-panel,
+.support-service-review__operations-panel,
+.support-service-review__alert-list {
+  background: #fff;
+  border: 1px solid var(--border, #d9dde3);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.support-service-review__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.support-service-review__table th,
+.support-service-review__table td {
+  border-bottom: 1px solid var(--border, #d9dde3);
+  padding: 10px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.support-service-review__table th {
+  font-size: 0.875rem;
+  color: var(--text-muted, #5b6472);
+}
+
+.support-service-review__row-button {
+  background: transparent;
+  border: 0;
+  color: var(--primary, #0b57d0);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.support-service-review__meta-grid {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.support-service-review__meta-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px;
+}
+
+.support-service-review__meta-label {
+  color: var(--text-muted, #5b6472);
+}
+
+.support-service-review__diff-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.support-service-review__diff-table th,
+.support-service-review__diff-table td {
+  border: 1px solid var(--border, #d9dde3);
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.support-service-review__logs {
+  margin-top: 16px;
+}
+
+.support-service-review__log-item {
+  border-left: 3px solid var(--primary, #0b57d0);
+  margin-bottom: 8px;
+  padding-left: 10px;
+}
+
+.support-service-review__action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.support-service-review__action-button {
+  background: #fff;
+  border: 1px solid var(--border, #d9dde3);
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 8px 12px;
+}
+
+.support-service-review__command {
+  background: #111827;
+  border-radius: 8px;
+  color: #f9fafb;
+  overflow-x: auto;
+  padding: 12px;
+  white-space: pre-wrap;
+}
+
+.support-service-review__empty,
+.support-service-review__note {
+  color: var(--text-muted, #5b6472);
+}
+
+.support-service-review__status {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.support-service-review__status--NEW {
+  color: #0b57d0;
+}
+
+.support-service-review__status--REVIEWING {
+  color: #9a6700;
+}
+
+.support-service-review__status--APPROVED {
+  color: #1b7f3b;
+}
+
+.support-service-review__status--REJECTED {
+  color: #b42318;
+}
+
+.support-service-review__status--APPLIED {
+  color: #475467;
+}

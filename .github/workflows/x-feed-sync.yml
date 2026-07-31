@@ -17,8 +17,11 @@ permissions:
   contents: write
 
 jobs:
-  sync-and-publish:
+  sync-x-feed:
     runs-on: ubuntu-latest
+    outputs:
+      sync_status: ${{ steps.sync.outputs.sync_status }}
+      has_preview: ${{ steps.sync.outputs.has_preview }}
     steps:
       - name: Log sync trigger
         run: |
@@ -43,7 +46,50 @@ jobs:
         run: npm ci
 
       - name: Sync x feed preview from upstream posts.json
+        id: sync
+        env:
+          X_FEED_FAIL_OPEN: "true"
         run: npm run sync:x-feed
+
+      - name: Upload x feed preview artifact
+        if: steps.sync.outputs.has_preview == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: x-feed-preview
+          path: data/public/x_feed_preview.json
+          if-no-files-found: error
+
+  publish-x-feed-preview:
+    needs: sync-x-feed
+    if: >-
+      always() &&
+      (needs.sync-x-feed.result == 'success' || needs.sync-x-feed.outputs.sync_status == 'FAIL_OPEN') &&
+      needs.sync-x-feed.outputs.has_preview == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log publish context
+        run: |
+          echo "SYNC_STATUS=${{ needs.sync-x-feed.outputs.sync_status }}"
+          echo "HAS_PREVIEW=${{ needs.sync-x-feed.outputs.has_preview }}"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download x feed preview artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: x-feed-preview
+          path: data/public
 
       - name: Validate x feed preview JSON
         run: npm run validate:x-feed

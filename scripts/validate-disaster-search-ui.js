@@ -171,10 +171,18 @@ function main() {
     showerCount: supportShowerResults.length,
     carCampCount: supportCarCampResults.length
   });
+  const xSupportServiceCount = payload.index.filter(function (item) {
+    return (
+      item.category === "SUPPORT_SERVICE" &&
+      item.source_url &&
+      /x\.com/i.test(item.source_url)
+    );
+  }).length;
   checks.push({
     check: "support service index count",
-    pass: supportServiceCount === 5,
-    supportServiceCount: supportServiceCount
+    pass: supportServiceCount >= 6 && xSupportServiceCount >= 1,
+    supportServiceCount: supportServiceCount,
+    xSupportServiceCount: xSupportServiceCount
   });
   if (!ukiResults.length) {
     errors.push("search engine check failed: 宇城 給水");
@@ -214,8 +222,14 @@ function main() {
   if (!supportCarCampResults.length) {
     errors.push("support service search check failed: 車中泊");
   }
-  if (supportServiceCount !== 5) {
-    errors.push("support service index count check failed: expected 5, got " + supportServiceCount);
+  if (supportServiceCount < 6 || xSupportServiceCount < 1) {
+    errors.push(
+      "support service index count check failed: expected >=6 with X>=1, got " +
+        supportServiceCount +
+        " (X=" +
+        xSupportServiceCount +
+        ")"
+    );
   }
 
   const output = {

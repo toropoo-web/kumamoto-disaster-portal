@@ -14,7 +14,8 @@ const { getMunicipalityPatrolSources, countSourcesByMunicipality } = require(pat
 
 const EXPECTED_MUNICIPALITY_AREA_COUNT = 23;
 const EXPECTED_COMMUNICATION_SOURCE_COUNT = 7;
-const MIN_MUNICIPALITY_PATROL_SOURCE_COUNT = 120;
+const EXPECTED_PATROL_SOURCE_COUNT = 147;
+const MIN_MUNICIPALITY_PATROL_SOURCE_COUNT = 140;
 const MIN_SOURCES_PER_MUNICIPALITY = 3;
 
 const PUBLIC_FILES = [
@@ -124,9 +125,14 @@ function main() {
         `Municipality patrol area count: ${municipalityAreaCount} (expected ${EXPECTED_MUNICIPALITY_AREA_COUNT})`
       );
     }
-    if (municipalityPatrolCount < MIN_MUNICIPALITY_PATROL_SOURCE_COUNT) {
+    if (municipalityPatrolCount !== MIN_MUNICIPALITY_PATROL_SOURCE_COUNT) {
       errors.push(
-        `Municipality patrol source count: ${municipalityPatrolCount} (expected at least ${MIN_MUNICIPALITY_PATROL_SOURCE_COUNT})`
+        `Municipality patrol source count: ${municipalityPatrolCount} (expected ${MIN_MUNICIPALITY_PATROL_SOURCE_COUNT})`
+      );
+    }
+    if (sourceCount !== EXPECTED_PATROL_SOURCE_COUNT) {
+      errors.push(
+        `Patrol source count: ${sourceCount} (expected ${EXPECTED_PATROL_SOURCE_COUNT})`
       );
     }
     if (communicationCount !== EXPECTED_COMMUNICATION_SOURCE_COUNT) {

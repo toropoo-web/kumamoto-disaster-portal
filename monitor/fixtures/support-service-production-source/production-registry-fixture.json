@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "description": "SUPPORT_SERVICE production source registry fixture",
+  "AUTO_PUBLISH": false,
+  "sources": [
+    {
+      "source_id": "SSRC-PROD-X0001",
+      "source_name": "熊本市公式X",
+      "platform": "X",
+      "url": "https://x.com/kumamotocity_",
+      "account": "kumamotocity_",
+      "area": "熊本県熊本市",
+      "categories": ["BATH", "SHOWER"]
+    },
+    {
+      "source_id": "SSRC-PROD-W0001",
+      "source_name": "合志市役所",
+      "platform": "WEB",
+      "url": "https://www.city.koshi.lg.jp/soshiki/3/12345.html",
+      "account": "",
+      "area": "熊本県合志市",
+      "categories": ["SPACE"]
+    },
+    {
+      "source_id": "SSRC-PROD-W0002",
+      "source_name": "大阪府支援情報",
+      "platform": "WEB",
+      "url": "https://example.invalid/support-service/osaka-out-of-area",
+      "account": "",
+      "area": "大阪府大阪市",
+      "categories": ["FOOD"]
+    }
+  ]
+}

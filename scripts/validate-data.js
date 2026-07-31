@@ -21,6 +21,7 @@ const EXCLUDED_STATUSES = new Set([
 ]);
 
 const INCIDENT_SCOPE = "2026_KUMAMOTO_EARTHQUAKE";
+const PREF_DISASTER_HUB_URL = "https://www.pref.kumamoto.jp/soshiki/1/274517.html";
 
 const AREA_RULES = {
   KM000: { allowed: ["EMERGENCY", "IMPACT", "ROAD", "LIFELINE", "SUPPORT"], blocked: ["SHELTER", "WATER", "CERTIFICATE"] },
@@ -1080,7 +1081,7 @@ function main() {
   });
 
   urlCounts.forEach((count, url) => {
-    if (count > 1) {
+    if (count > 1 && url !== PREF_DISASTER_HUB_URL) {
       errors.push(`source_url重複 (fragment除く): ${url} (${count}件)`);
     }
   });

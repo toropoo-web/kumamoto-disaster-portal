@@ -1,13 +1,13 @@
 {
   "PHASE28_FORCE_UPDATE_PIPELINE": "PASS",
   "final_status": "PASS",
-  "generatedAt": "2026-07-31T00:22:35.998Z",
+  "generatedAt": "2026-07-31T10:12:34.402Z",
   "pipeline": [
     "kumamoto-disaster-x-feed: Fetch X Posts (*/30 UTC cron)",
     "kumamoto-disaster-x-feed: commit data/posts.json",
-    "kumamoto-disaster-x-feed: repository_dispatch -> portal",
-    "kumamoto-disaster-portal: X Feed Sync and Portal Publish",
-    "kumamoto-disaster-portal: npm run build + commit + push",
+    "kumamoto-disaster-x-feed: repository_dispatch -> portal (non-blocking when token missing)",
+    "kumamoto-disaster-portal: sync-x-feed job (fail-open, retains stale preview)",
+    "kumamoto-disaster-portal: publish-x-feed-preview job (validate/build/commit)",
     "Render: autoDeploy on main push"
   ],
   "required_secrets": {
@@ -44,6 +44,16 @@
         },
         {
           "check": "portal.sync_script",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.fail_open_env",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.sync_job_split",
           "status": "PASS",
           "reason": null
         },
@@ -129,6 +139,11 @@
         },
         {
           "check": "xfeed.portal_dispatch_token",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.dispatch_non_blocking",
           "status": "PASS",
           "reason": null
         },

@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "category": "SUPPORT_SERVICE",
+  "generated_at": "2026-07-31T09:44:20.200Z",
+  "AUTO_PUBLISH": false,
+  "auto_publish": false,
+  "current": {
+    "version_id": "SSPV-20260731094420-B6931667",
+    "created_at": "2026-07-31T09:44:20.200Z",
+    "item_count": 6,
+    "apply_count": 1
+  },
+  "history": [
+    {
+      "version_id": "SSPV-20260731085000-INIT0000",
+      "created_at": "2026-07-31T08:50:00.000Z",
+      "item_count": 5,
+      "apply_count": 0
+    },
+    {
+      "version_id": "SSPV-20260731094420-B6931667",
+      "created_at": "2026-07-31T09:44:20.200Z",
+      "item_count": 6,
+      "apply_count": 1
+    }
+  ]
+}

@@ -213,61 +213,207 @@ function selectPosts(posts) {
   return selected.slice(0, MAX_ITEMS);
 }
 
-function loadRawPosts() {
-  const localFile = process.env.X_FEED_POSTS_FILE;
+function loadRawPosts(options) {
+  const localFile = options.postsFile || process.env.X_FEED_POSTS_FILE;
   if (localFile && fs.existsSync(localFile)) {
     return Promise.resolve(JSON.parse(fs.readFileSync(localFile, "utf8")));
   }
 
-  return fetchJson(X_FEED_POSTS_URL);
+  const url = options.postsUrl || X_FEED_POSTS_URL;
+  return fetchJson(url);
 }
 
-async function main() {
-  const rawPosts = await loadRawPosts();
+function loadExistingPreview(outputPath) {
+  if (!fs.existsSync(outputPath)) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(fs.readFileSync(outputPath, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function resolveFailOpen(options) {
+  if (typeof options.failOpen === "boolean") {
+    return options.failOpen;
+  }
+  return process.env.X_FEED_FAIL_OPEN !== "false";
+}
+
+function resolveSourceFeedUrl(options) {
+  return options.postsFile || process.env.X_FEED_POSTS_FILE || options.postsUrl || X_FEED_POSTS_URL;
+}
+
+function buildPreviewOutput(posts, meta) {
+  const output = {
+    section_title: "公式X速報",
+    synced_at: meta.attemptedAt,
+    source_feed_url: meta.sourceFeedUrl,
+    item_count: posts.length,
+    posts
+  };
+
+  if (meta.syncStatus) {
+    output.sync_status = meta.syncStatus;
+  }
+  if (meta.syncError) {
+    output.sync_error = meta.syncError;
+  }
+  if (meta.lastSuccessfulSyncAt) {
+    output.last_successful_sync_at = meta.lastSuccessfulSyncAt;
+  }
+
+  return output;
+}
+
+function writePreviewOutput(outputPath, output) {
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  fs.writeFileSync(outputPath, JSON.stringify(output, null, 2) + "\n", "utf8");
+}
+
+function buildResult(status, fields) {
+  return Object.assign({ X_FEED_SYNC: status }, fields);
+}
+
+function writeGithubOutput(result) {
+  const githubOutput = process.env.GITHUB_OUTPUT;
+  if (!githubOutput) {
+    return;
+  }
+
+  const lines = [
+    "sync_status=" + result.X_FEED_SYNC,
+    "has_preview=" + (result.selectedCount > 0 ? "true" : "false")
+  ];
+  fs.appendFileSync(githubOutput, lines.join("\n") + "\n", "utf8");
+}
+
+function retainStalePreview(outputPath, sourceFeedUrl, errorMessage) {
+  const existing = loadExistingPreview(outputPath);
+  if (!existing || !Array.isArray(existing.posts) || existing.posts.length === 0) {
+    return null;
+  }
+
+  const attemptedAt = new Date().toISOString();
+  const lastSuccessfulSyncAt = existing.last_successful_sync_at || existing.synced_at;
+
+  const output = buildPreviewOutput(existing.posts, {
+    attemptedAt,
+    sourceFeedUrl: existing.source_feed_url || sourceFeedUrl,
+    syncStatus: "STALE",
+    syncError: errorMessage,
+    lastSuccessfulSyncAt
+  });
+
+  writePreviewOutput(outputPath, output);
+
+  return buildResult("FAIL_OPEN", {
+    source: sourceFeedUrl,
+    error: errorMessage,
+    rawCount: 0,
+    selectedCount: existing.posts.length,
+    retainedFrom: path.relative(ROOT, outputPath),
+    sync_status: "STALE",
+    last_successful_sync_at: lastSuccessfulSyncAt,
+    output: path.relative(ROOT, outputPath)
+  });
+}
+
+async function syncXFeed(options) {
+  options = options || {};
+  const outputPath = options.outputPath || OUTPUT_PATH;
+  const failOpen = resolveFailOpen(options);
+  const sourceFeedUrl = resolveSourceFeedUrl(options);
+  const attemptedAt = new Date().toISOString();
+
+  let rawPosts;
+  try {
+    rawPosts = await loadRawPosts(options);
+  } catch (err) {
+    if (failOpen) {
+      const stale = retainStalePreview(outputPath, sourceFeedUrl, err.message);
+      if (stale) {
+        return stale;
+      }
+    }
+    throw err;
+  }
+
   if (!Array.isArray(rawPosts)) {
-    throw new Error("x-feed posts.json must be an array");
+    const message = "x-feed posts.json must be an array";
+    if (failOpen) {
+      const stale = retainStalePreview(outputPath, sourceFeedUrl, message);
+      if (stale) {
+        return stale;
+      }
+    }
+    throw new Error(message);
   }
 
   const posts = selectPosts(rawPosts);
 
   if (posts.length < MIN_ITEMS) {
     console.warn(
-      `Warning: only ${posts.length} posts selected (minimum recommended: ${MIN_ITEMS})`
+      "Warning: only " + posts.length + " posts selected (minimum recommended: " + MIN_ITEMS + ")"
     );
   }
 
-  const output = {
-    section_title: "公式X速報",
-    synced_at: new Date().toISOString(),
-    source_feed_url: process.env.X_FEED_POSTS_FILE || X_FEED_POSTS_URL,
-    item_count: posts.length,
-    posts
-  };
+  if (posts.length === 0) {
+    if (failOpen) {
+      const stale = retainStalePreview(outputPath, sourceFeedUrl, "no posts selected from upstream feed");
+      if (stale) {
+        return stale;
+      }
+    }
+    throw new Error("no posts selected from upstream feed");
+  }
 
-  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2) + "\n", "utf8");
+  const output = buildPreviewOutput(posts, {
+    attemptedAt,
+    sourceFeedUrl,
+    syncStatus: "FRESH"
+  });
 
-  const result = {
-    X_FEED_SYNC: "PASS",
-    source: process.env.X_FEED_POSTS_FILE || X_FEED_POSTS_URL,
+  writePreviewOutput(outputPath, output);
+
+  return buildResult("PASS", {
+    source: sourceFeedUrl,
     rawCount: rawPosts.length,
     selectedCount: posts.length,
     excludedSourceIds: Array.from(EXCLUDED_SOURCE_IDS),
     localGovernmentCount: posts.filter((post) => post.source_type === "LOCAL_GOVERNMENT").length,
     personalSourceCount: posts.filter((post) => post.source_id === "SRC-PER-001").length,
-    output: path.relative(ROOT, OUTPUT_PATH)
-  };
+    sync_status: "FRESH",
+    output: path.relative(ROOT, outputPath)
+  });
+}
 
+async function main() {
+  const result = await syncXFeed();
   console.log("=== X Feed Sync ===");
   console.log(JSON.stringify(result, null, 2));
+  writeGithubOutput(result);
 
-  if (posts.length === 0) {
+  if (result.X_FEED_SYNC === "FAIL") {
     process.exit(1);
   }
 }
 
-main().catch((err) => {
-  console.error("=== X Feed Sync ===");
-  console.error(JSON.stringify({ X_FEED_SYNC: "FAIL", error: err.message }, null, 2));
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch((err) => {
+    console.error("=== X Feed Sync ===");
+    console.error(JSON.stringify({ X_FEED_SYNC: "FAIL", error: err.message }, null, 2));
+    process.exit(1);
+  });
+}
+
+module.exports = {
+  syncXFeed,
+  selectPosts,
+  loadExistingPreview,
+  retainStalePreview,
+  OUTPUT_PATH,
+  X_FEED_POSTS_URL
+};

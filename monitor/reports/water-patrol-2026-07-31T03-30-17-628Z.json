@@ -1,0 +1,24 @@
+{
+  "patrolAt": "2026-07-31T03:30:17.628Z",
+  "patrolType": "WATER",
+  "manualOnly": true,
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "WATER_SOURCE_COUNT": 38,
+  "PATROL_SUCCESS_COUNT": 27,
+  "PATROL_FAILED_COUNT": 11,
+  "CHANGE_DETECTED_COUNT": 0,
+  "WATER_REVIEW_COUNT": 0,
+  "SOURCE_CLASS_COUNTS": {
+    "DISASTER": 2,
+    "MUNICIPALITY": 28,
+    "WATERWORKS": 2,
+    "SELF_DEFENSE": 2,
+    "FIRE": 2,
+    "COAST_GUARD": 2
+  },
+  "reviewQueuePath": null,
+  "snapshotPath": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\monitor\\reports\\water-snapshots.json",
+  "fixtureMode": false,
+  "NO_PUBLIC_DATA_CHANGE": true,
+  "AUTO_PUBLICATION": false
+}

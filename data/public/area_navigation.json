@@ -8,7 +8,7 @@
         "water": "熊本県 給水場所",
         "shelter": "熊本県 避難所",
         "road": "熊本県 通行止め",
-        "disaster_map": "https://www.portal.pref.kumamoto.jp/hazard/"
+        "disaster_map": "https://www.pref.kumamoto.jp/soshiki/1/274517.html"
       }
     },
     {
@@ -48,7 +48,7 @@
         "water": "宇土市 給水場所",
         "shelter": "宇土市 避難所",
         "road": "宇土市 通行止め",
-        "disaster_map": "https://www.city.uto.lg.jp/"
+        "disaster_map": "https://www.city.uto.lg.jp/article/list/1014.html"
       }
     },
     {
@@ -58,7 +58,7 @@
         "water": "益城町 給水場所",
         "shelter": "益城町 避難所",
         "road": "益城町 通行止め",
-        "disaster_map": "https://www.town.mashiki.lg.jp/bousai/"
+        "disaster_map": "https://www.town.mashiki.lg.jp/list01385.html"
       }
     },
     {
@@ -68,7 +68,7 @@
         "water": "御船町 給水場所",
         "shelter": "御船町 避難所",
         "road": "御船町 通行止め",
-        "disaster_map": "https://www.town.mifune.kumamoto.jp/"
+        "disaster_map": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8#kid335"
       }
     },
     {
@@ -88,7 +88,7 @@
         "water": "人吉市 給水場所",
         "shelter": "人吉市 避難所",
         "road": "人吉市 通行止め",
-        "disaster_map": "https://www.city.hitoyoshi.lg.jp/disaster_mode/"
+        "disaster_map": "https://www.city.hitoyoshi.lg.jp/"
       }
     },
     {
@@ -98,7 +98,7 @@
         "water": "熊本市 給水場所",
         "shelter": "熊本市 避難所",
         "road": "熊本市 通行止め",
-        "disaster_map": "https://www.city.kumamoto.jp/kurashi/bosai/"
+        "disaster_map": "https://www.city.kumamoto.jp/bousai/"
       }
     },
     {
@@ -108,7 +108,7 @@
         "water": "菊陽町 給水場所",
         "shelter": "菊陽町 避難所",
         "road": "菊陽町 通行止め",
-        "disaster_map": "https://www.town.kikuyo.lg.jp/bousai/"
+        "disaster_map": "https://www.town.kikuyo.lg.jp/list00113.html"
       }
     },
     {
@@ -138,7 +138,7 @@
         "water": "美里町 給水場所",
         "shelter": "美里町 避難所",
         "road": "美里町 通行止め",
-        "disaster_map": "https://www.town.kumamoto-misato.lg.jp/"
+        "disaster_map": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html"
       }
     },
     {

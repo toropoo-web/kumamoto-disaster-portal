@@ -1,0 +1,1062 @@
+{
+  "version": 2,
+  "engineVersion": 2,
+  "generatedAt": "2026-07-31T03:16:02.499Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "input": {
+    "prefecture": "熊本県",
+    "municipality": "八代市",
+    "official_domain": "city.yatsushiro.lg.jp"
+  },
+  "municipality": "八代市",
+  "prefecture": "熊本県",
+  "official_domain": "city.yatsushiro.lg.jp",
+  "area_id": "KM005",
+  "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+  "candidateCount": 12,
+  "discoveredCount": 8,
+  "alreadyRegisteredCount": 2,
+  "autoRegister": false,
+  "sourceRegistryFile": "monitor/sources.json",
+  "candidates": [
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-09007508",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "link_label": "防災情報トップ",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "primary",
+      "recommended_role": "primary",
+      "confidence": "HIGH",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "bousai_portal",
+      "detected_keywords": [
+        "防災",
+        "bousai",
+        "災害",
+        "避難",
+        "避難所",
+        "給水",
+        "断水",
+        "開設"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "ALREADY_REGISTERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-yatsushiro-bousai",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "primary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "八代市 防災情報",
+        "text_length": 113,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "断水",
+          "開設",
+          "災害"
+        ],
+        "content_hash": "71352781f54dce71d8d87ae90e6121a1562f1158f93e3b8a86d0d81180300321",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T03:16:00.637Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-31T03:16:00.637Z",
+        "matched_hints": [
+          "防災",
+          "bousai",
+          "災害"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2",
+          "registered_seed"
+        ],
+        "crawl_depth": 0,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": "KM005-yatsushiro-bousai",
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-6DCD50AA",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
+      "link_label": "緊急情報",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "secondary",
+      "confidence": "HIGH",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "disaster_special",
+      "detected_keywords": [
+        "緊急",
+        "kinkyu",
+        "災害",
+        "避難",
+        "避難所",
+        "給水",
+        "断水",
+        "開設"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "ALREADY_REGISTERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-yatsushiro-kinkyu",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "八代市 防災情報",
+        "text_length": 113,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "断水",
+          "開設",
+          "災害"
+        ],
+        "content_hash": "71352781f54dce71d8d87ae90e6121a1562f1158f93e3b8a86d0d81180300321",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T03:16:00.637Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-31T03:16:00.637Z",
+        "matched_hints": [
+          "緊急",
+          "kinkyu",
+          "災害"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2",
+          "registered_seed"
+        ],
+        "crawl_depth": 0,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": "KM005-yatsushiro-kinkyu",
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-17C87B1F",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+      "link_label": "災害情報一覧",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "primary",
+      "confidence": "HIGH",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "emergency_list",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "DISCOVERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "防災 / 防災サイトTOP / 熊本県八代市",
+        "text_length": 2820,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "復旧",
+          "開設",
+          "支援",
+          "災害"
+        ],
+        "content_hash": "19286353dd9a24f5779f9885f52f4cd61302613b6c3ec74e0ea03cf80e3c142d",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T03:16:00.748Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-31T03:16:00.748Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-38C307B9",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01003.html",
+      "link_label": "気象・災害情報等",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "primary",
+      "confidence": "HIGH",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "emergency_list",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "DISCOVERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/list01003.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "気象・災害情報等 / 防災サイトTOP / 熊本県八代市",
+        "text_length": 2307,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "復旧",
+          "開設",
+          "支援",
+          "災害"
+        ],
+        "content_hash": "94d1a43f0f068c1edbc17a9249d9e13999b9146f1ad84306d6e3b1bc3747195e",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T03:16:00.925Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01003.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "discovered_at": "2026-07-31T03:16:00.925Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-49A0833E",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01971.html",
+      "link_label": "災害発生時",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "primary",
+      "confidence": "HIGH",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "emergency_list",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "DISCOVERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/list01971.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "災害発生時 / 防災サイトTOP / 熊本県八代市",
+        "text_length": 2178,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "復旧",
+          "開設",
+          "支援",
+          "災害"
+        ],
+        "content_hash": "8df1fc0841eb91b4aea1ff33edfab9c81ac4e573c62facb20a3a9183d3054814",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T03:16:01.083Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01971.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "discovered_at": "2026-07-31T03:16:01.083Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-D87758D6",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01009.html",
+      "link_label": "災害協定",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "primary",
+      "confidence": "HIGH",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "emergency_list",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "DISCOVERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/list01009.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "災害協定 / 防災サイトTOP / 熊本県八代市",
+        "text_length": 1973,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "復旧",
+          "開設",
+          "支援",
+          "災害"
+        ],
+        "content_hash": "a40079e4331132dfd656e74ca62171ddb6ddac665d09245682ea6a341a80ece2",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T03:16:01.657Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01009.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "discovered_at": "2026-07-31T03:16:01.657Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-87320BA7",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01010.html",
+      "link_label": "地震への備え",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "secondary",
+      "confidence": "HIGH",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "disaster_special",
+      "detected_keywords": [
+        "bousai",
+        "地震",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "DISCOVERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/list01010.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "地震への備え / 防災サイトTOP / 熊本県八代市",
+        "text_length": 2061,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "復旧",
+          "開設",
+          "支援",
+          "災害"
+        ],
+        "content_hash": "ad0c74ee6b59502b9fb97aa6dc0ef6db342c57d805558a40ad3af5da0d331010",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T03:16:01.966Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01010.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "discovered_at": "2026-07-31T03:16:01.966Z",
+        "matched_hints": [
+          "bousai",
+          "地震"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-DC8911D9",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01012.html",
+      "link_label": "土砂災害について",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "primary",
+      "confidence": "HIGH",
+      "score": 100,
+      "score_tier": "HIGH",
+      "page_type": "emergency_list",
+      "detected_keywords": [
+        "災害",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "DISCOVERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/list01012.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "土砂災害について / 防災サイトTOP / 熊本県八代市",
+        "text_length": 1739,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "復旧",
+          "開設",
+          "支援",
+          "災害"
+        ],
+        "content_hash": "96a09957d5ed1d18b99acc459773fde3144b3e7db5f2eb8e0b99545105d7643e",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T03:16:02.387Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01012.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "discovered_at": "2026-07-31T03:16:02.388Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-E1D33394",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01007.html",
+      "link_label": "八代市地域防災計画",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "skip",
+      "confidence": "HIGH",
+      "score": 43,
+      "score_tier": "LOW",
+      "page_type": "emergency_list",
+      "detected_keywords": [
+        "防災",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "exclusion": {
+        "excluded": true,
+        "exclusion_type": "pdf",
+        "exclusion_reason": "matched exclusion rule: pdf"
+      },
+      "discovery_status": "SKIPPED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/list01007.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "八代市地域防災計画 / 防災サイトTOP / 熊本県八代市",
+        "text_length": 1891,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "復旧",
+          "開設",
+          "支援",
+          "災害"
+        ],
+        "content_hash": "cb367e7fd2cd320a56cef60e4b1bdc3dce1ae57ce86629026bd29295472e9be6",
+        "contamination_risk": false,
+        "verdict": "PASS",
+        "reason": "disaster keywords detected",
+        "checked_at": "2026-07-31T03:16:01.246Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01007.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "discovered_at": "2026-07-31T03:16:01.246Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-B98DA988",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01011.html",
+      "link_label": "防災対策",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "skip",
+      "confidence": "HIGH",
+      "score": 34,
+      "score_tier": "LOW",
+      "page_type": "emergency_list",
+      "detected_keywords": [
+        "防災",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "DISCOVERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/list01011.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "防災対策 / 防災サイトTOP / 熊本県八代市",
+        "text_length": 2462,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "復旧",
+          "開設",
+          "支援",
+          "災害"
+        ],
+        "content_hash": "f089c593cd67f00f14fc6229e2696f6b5c666385792b732ecf934e64424d77ae",
+        "contamination_risk": true,
+        "verdict": "FAIL",
+        "reason": "possible 2016 contamination",
+        "checked_at": "2026-07-31T03:16:02.139Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01011.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "discovered_at": "2026-07-31T03:16:02.139Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-115E7DCF",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01013.html",
+      "link_label": "自主防災組織",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "skip",
+      "confidence": "HIGH",
+      "score": 34,
+      "score_tier": "LOW",
+      "page_type": "emergency_list",
+      "detected_keywords": [
+        "防災",
+        "bousai",
+        "避難",
+        "避難所",
+        "給水",
+        "復旧",
+        "開設",
+        "支援",
+        "災害"
+      ],
+      "exclusion": {
+        "excluded": false,
+        "exclusion_type": null,
+        "exclusion_reason": null
+      },
+      "discovery_status": "DISCOVERED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/list01013.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "自主防災組織 / 防災サイトTOP / 熊本県八代市",
+        "text_length": 2327,
+        "keywords": [
+          "避難",
+          "避難所",
+          "給水",
+          "復旧",
+          "開設",
+          "支援",
+          "災害"
+        ],
+        "content_hash": "5e171beaf28b8c8729ea7c78fdbc80b47083473cdfbdb0d403691f416415fece",
+        "contamination_risk": true,
+        "verdict": "FAIL",
+        "reason": "possible 2016 contamination",
+        "checked_at": "2026-07-31T03:16:02.499Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01013.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "discovered_at": "2026-07-31T03:16:02.499Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "discovery_id": "PDU-20260731-KM005-EMERGENCY-71437E5B",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "area_id": "KM005",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/hazardmap/index.html",
+      "link_label": "防災マップ",
+      "public_category_id": "EMERGENCY",
+      "patrol_role": "secondary",
+      "recommended_role": "skip",
+      "confidence": "HIGH",
+      "score": 10,
+      "score_tier": "LOW",
+      "page_type": "hazard_map",
+      "detected_keywords": [
+        "防災",
+        "bousai"
+      ],
+      "exclusion": {
+        "excluded": true,
+        "exclusion_type": "hazard_map",
+        "exclusion_reason": "matched exclusion rule: hazard_map"
+      },
+      "discovery_status": "SKIPPED",
+      "registration_status": "PENDING_REVIEW",
+      "auto_register": false,
+      "proposed_source": {
+        "id": "KM005-emergency",
+        "area_id": "KM005",
+        "name": "八代市",
+        "category": "municipality",
+        "url": "https://www.city.yatsushiro.lg.jp/bousai/hazardmap/index.html",
+        "public_category_id": "EMERGENCY",
+        "status": "CANDIDATE",
+        "source_type": "official",
+        "patrol_role": "secondary"
+      },
+      "page_analysis": {
+        "http_status": 200,
+        "http_pass": true,
+        "html_pass": true,
+        "title": "八代市総合防災マップ（Web版）|トップ画面",
+        "text_length": 349,
+        "keywords": [],
+        "content_hash": "603fd60f6bc75af3e942b0e4398796cd551acc8881fa9ca97fb41911e612a978",
+        "contamination_risk": false,
+        "verdict": "WARNING",
+        "reason": "page fetched but weak disaster signals",
+        "checked_at": "2026-07-31T03:16:00.747Z",
+        "final_url": "https://www.city.yatsushiro.lg.jp/bousai/hazardmap/index.html"
+      },
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+        "discovered_at": "2026-07-31T03:16:00.747Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    }
+  ]
+}

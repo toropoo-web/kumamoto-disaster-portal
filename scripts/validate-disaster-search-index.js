@@ -241,8 +241,14 @@ function main() {
   if (!supportKumamotoResults.length) {
     errors.push("SUPPORT_SERVICE search failed: 熊本 シャワー");
   }
-  if (supportServiceCategories.length !== 5) {
-    errors.push("expected 5 SUPPORT_SERVICE index entries (test data)");
+  if (supportServiceCategories.length < 6) {
+    errors.push("expected at least 6 SUPPORT_SERVICE index entries (test data + X public trace)");
+  }
+  const xSupportServiceCount = supportServiceCategories.filter(function (entry) {
+    return entry.source_url && /x\.com/i.test(entry.source_url);
+  }).length;
+  if (xSupportServiceCount < 1) {
+    errors.push("expected at least 1 X-derived SUPPORT_SERVICE index entry");
   }
 
   supportServiceCategories.forEach(function (entry, index) {

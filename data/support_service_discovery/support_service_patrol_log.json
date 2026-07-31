@@ -1,0 +1,123 @@
+{
+  "version": "1.0",
+  "description": "SUPPORT_SERVICE patrol execution log",
+  "runs": [
+    {
+      "run_id": "SSPTR-AE04056E13",
+      "executed_at": "2026-07-31T08:23:54.005Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-8E6E9D61F5",
+      "executed_at": "2026-07-31T08:28:03.098Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-114C1F3F0A",
+      "executed_at": "2026-07-31T08:39:19.642Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-7FE49A36CB",
+      "executed_at": "2026-07-31T08:40:36.084Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-A0833ADC71",
+      "executed_at": "2026-07-31T08:40:50.201Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-5B22429084",
+      "executed_at": "2026-07-31T08:48:51.295Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-267934DDCF",
+      "executed_at": "2026-07-31T08:55:02.693Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-68C96E2FF6",
+      "executed_at": "2026-07-31T08:55:25.563Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-B9E5DA5D83",
+      "executed_at": "2026-07-31T08:55:43.453Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-073FDC2971",
+      "executed_at": "2026-07-31T08:57:26.425Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-4D4D6BA8A2",
+      "executed_at": "2026-07-31T08:59:57.174Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-3B77AFBECE",
+      "executed_at": "2026-07-31T09:09:29.354Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "run_id": "SSPTR-383CD0E1CB",
+      "executed_at": "2026-07-31T09:17:13.606Z",
+      "source_count": 6,
+      "discovered_count": 6,
+      "candidate_count": 5,
+      "change_count": 5,
+      "status": "SUCCESS"
+    }
+  ]
+}

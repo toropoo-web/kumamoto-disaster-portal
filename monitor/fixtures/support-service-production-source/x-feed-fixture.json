@@ -1,0 +1,19 @@
+{
+  "section_title": "公式X速報",
+  "synced_at": "2026-07-31T08:00:00.000Z",
+  "source_feed_url": "fixture://support-service-production-source/x-feed-fixture.json",
+  "item_count": 1,
+  "posts": [
+    {
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-07-31T08:00:00.000Z",
+      "text": "熊本市内の○○温泉を被災者向けに無料開放します。シャワー利用も可能です。",
+      "url": "https://x.com/kumamotocity_/status/production-support-001",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
+      "content_filter": "DISASTER_RELATED"
+    }
+  ]
+}

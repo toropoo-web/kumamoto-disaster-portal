@@ -41,6 +41,8 @@ function auditPortalWorkflows() {
   checks.push(check("portal.workflow_dispatch", /workflow_dispatch:/.test(sync) ? "PASS" : "FAIL"));
   checks.push(check("portal.repository_dispatch", /repository_dispatch:/.test(sync) && /x-feed-updated/.test(sync) ? "PASS" : "FAIL"));
   checks.push(check("portal.sync_script", /npm run sync:x-feed/.test(sync) ? "PASS" : "FAIL"));
+  checks.push(check("portal.fail_open_env", /X_FEED_FAIL_OPEN:\s*"true"/.test(sync) ? "PASS" : "FAIL"));
+  checks.push(check("portal.sync_job_split", /sync-x-feed:/.test(sync) && /publish-x-feed-preview:/.test(sync) ? "PASS" : "FAIL"));
   checks.push(check("portal.validate_script", /validate:x-feed/.test(sync) ? "PASS" : "FAIL"));
   checks.push(check("portal.build_step", /npm run build/.test(sync) ? "PASS" : "FAIL"));
   checks.push(check("portal.commit_push", /git push/.test(sync) ? "PASS" : "FAIL"));
@@ -72,6 +74,7 @@ function auditXFeedWorkflows() {
   checks.push(check("xfeed.commit_push", /git push/.test(fetch) ? "PASS" : "FAIL"));
   checks.push(check("xfeed.portal_dispatch_job", /dispatch-portal:/.test(fetch) ? "PASS" : "FAIL"));
   checks.push(check("xfeed.portal_dispatch_token", /PORTAL_DISPATCH_TOKEN/.test(fetch) ? "PASS" : "FAIL"));
+  checks.push(check("xfeed.dispatch_non_blocking", /PORTAL_DISPATCH_SKIPPED=true/.test(fetch) ? "PASS" : "FAIL"));
   checks.push(check("xfeed.repository_dispatch_event", /event_type=x-feed-updated/.test(fetch) ? "PASS" : "FAIL"));
   checks.push(check("xfeed.no_pc_dependency", !/localhost|127\.0\.0\.1/.test(fetch) ? "PASS" : "FAIL"));
 
@@ -144,9 +147,9 @@ function main() {
     pipeline: [
       "kumamoto-disaster-x-feed: Fetch X Posts (*/30 UTC cron)",
       "kumamoto-disaster-x-feed: commit data/posts.json",
-      "kumamoto-disaster-x-feed: repository_dispatch -> portal",
-      "kumamoto-disaster-portal: X Feed Sync and Portal Publish",
-      "kumamoto-disaster-portal: npm run build + commit + push",
+      "kumamoto-disaster-x-feed: repository_dispatch -> portal (non-blocking when token missing)",
+      "kumamoto-disaster-portal: sync-x-feed job (fail-open, retains stale preview)",
+      "kumamoto-disaster-portal: publish-x-feed-preview job (validate/build/commit)",
       "Render: autoDeploy on main push"
     ],
     required_secrets: {

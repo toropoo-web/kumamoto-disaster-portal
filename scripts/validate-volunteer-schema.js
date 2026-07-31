@@ -160,7 +160,7 @@ function main() {
       registryResult.categoryCounts.VOLUNTEER === 23
   });
   if (registryResult.categoryCounts.VOLUNTEER !== 23) {
-    errors.push("expected 23 VOLUNTEER sources in disaster_sources.json (14 Kumamoto + 9 Kagoshima)");
+    errors.push("expected 23 VOLUNTEER sources in disaster_sources.json");
   }
   errors.push.apply(errors, registryResult.errors);
 

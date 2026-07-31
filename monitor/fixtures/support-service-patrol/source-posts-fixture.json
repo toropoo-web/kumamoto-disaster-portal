@@ -1,0 +1,43 @@
+{
+  "version": "1.0",
+  "description": "SUPPORT_SERVICE patrol fixture posts keyed by source_id",
+  "referenceDate": "2026-07-31",
+  "x_feed_path": "monitor/fixtures/support-service-discovery/x-feed-fixture.json",
+  "web_posts": {
+    "SSRC-7E2F4A91B0": [
+      {
+        "source_url": "https://example.invalid/support-service/bath-shower-kumamoto",
+        "text": "熊本市総合体育館 シャワー無料開放",
+        "published_at": "2026-07-31"
+      }
+    ],
+    "SSRC-3C8D1F52A4": [
+      {
+        "source_url": "https://example.invalid/support-service/space-koshi",
+        "text": "合志市役所 休憩スペース開放",
+        "published_at": "2026-07-31"
+      }
+    ],
+    "SSRC-9B1E6D73C2": [
+      {
+        "source_url": "https://example.invalid/support-service/toilet-kikuyo",
+        "text": "菊陽町防災センター トイレ開放",
+        "published_at": "2026-07-31"
+      }
+    ],
+    "SSRC-5A4F8E21D9": [
+      {
+        "source_url": "https://example.invalid/support-service/car-camp-hitoyoshi",
+        "text": "人吉市 駐車場 車中泊利用可能",
+        "published_at": "2026-07-31"
+      }
+    ],
+    "SSRC-2D7C9A45E8": [
+      {
+        "source_url": "https://example.invalid/support-service/cooking-mashiki",
+        "text": "益城町 炊き出し 食料配布",
+        "published_at": "2026-07-31"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "description": "SUPPORT_SERVICE production source registry",
+  "registry_mode": "PRODUCTION",
+  "AUTO_PUBLISH": false,
+  "sources": [
+    {
+      "source_id": "SSRC-7E2F4A91B0",
+      "source_name": "熊本市総合体育館",
+      "platform": "WEB",
+      "url": "https://example.invalid/support-service/bath-shower-kumamoto",
+      "account": "",
+      "area": "熊本県熊本市",
+      "categories": ["BATH", "SHOWER"]
+    },
+    {
+      "source_id": "SSRC-3C8D1F52A4",
+      "source_name": "合志市役所",
+      "platform": "WEB",
+      "url": "https://example.invalid/support-service/space-koshi",
+      "account": "",
+      "area": "熊本県合志市",
+      "categories": ["SPACE"]
+    },
+    {
+      "source_id": "SSRC-9B1E6D73C2",
+      "source_name": "菊陽町防災センター",
+      "platform": "WEB",
+      "url": "https://example.invalid/support-service/toilet-kikuyo",
+      "account": "",
+      "area": "熊本県菊陽町",
+      "categories": ["TOILET"]
+    },
+    {
+      "source_id": "SSRC-5A4F8E21D9",
+      "source_name": "人吉市災害支援ネットワーク",
+      "platform": "WEB",
+      "url": "https://example.invalid/support-service/car-camp-hitoyoshi",
+      "account": "",
+      "area": "熊本県人吉市",
+      "categories": ["VEHICLE"]
+    },
+    {
+      "source_id": "SSRC-2D7C9A45E8",
+      "source_name": "益城町社会福祉協議会",
+      "platform": "WEB",
+      "url": "https://example.invalid/support-service/cooking-mashiki",
+      "account": "",
+      "area": "熊本県益城町",
+      "categories": ["FOOD"]
+    },
+    {
+      "source_id": "SSRC-8F1A3C67B2",
+      "source_name": "熊本市公式X",
+      "platform": "X",
+      "url": "https://x.com/kumamotocity_",
+      "account": "kumamotocity_",
+      "area": "熊本県熊本市",
+      "categories": ["BATH", "SHOWER", "FREE_OPEN"]
+    }
+  ]
+}

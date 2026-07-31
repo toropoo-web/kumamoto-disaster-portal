@@ -1,0 +1,130 @@
+{
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "classificationCount": 3,
+  "categorySummary": {
+    "WATER": 1,
+    "SHELTER": 0,
+    "COMMUNICATION": 1,
+    "VOLUNTEER": 0,
+    "ROAD": 1,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceChangeLog": "data/test/patrol-production-flow/runs/ppf-2026-07-31T08-55-06-382Z/change-log.json",
+  "classifications": [
+    {
+      "id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+      "source_id": "KM002-uto-water",
+      "area_id": "KM002",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "title": "水道復旧状況更新",
+      "source_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "detected_keywords": [
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "detected_at": "2026-07-31T00:00:00.000Z",
+      "confidence": "HIGH",
+      "autoPublish": false,
+      "source_page": {
+        "source_id": "KM002-uto-water",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "changed_text": "今回の地震に伴う断水について\n水道復旧状況更新\n水道復旧状況更新\n断水 水道 復旧\n水道復旧状況更新",
+        "before": {
+          "title": "今回の地震に伴う断水について",
+          "contentHash": "e2e-uto-water-before-hash-7f3a9c2d",
+          "pageUpdatedAt": null
+        },
+        "after": {
+          "title": "水道復旧状況更新",
+          "contentHash": "e2e-uto-water-after-hash-4b8e1f6a",
+          "pageUpdatedAt": null
+        },
+        "detected_keywords": [
+          "断水",
+          "水道",
+          "復旧"
+        ]
+      }
+    },
+    {
+      "id": "CLS-20260731-KM002-UTO-WATER-COMMUNICATION-02",
+      "source_id": "KM002-uto-water",
+      "area_id": "KM002",
+      "municipality": "宇土市",
+      "category": "COMMUNICATION",
+      "title": "水道復旧状況更新",
+      "source_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "detected_at": "2026-07-31T00:00:00.000Z",
+      "confidence": "HIGH",
+      "autoPublish": false,
+      "source_page": {
+        "source_id": "KM002-uto-water",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "changed_text": "今回の地震に伴う断水について\n水道復旧状況更新\n水道復旧状況更新\n断水 水道 復旧\n水道復旧状況更新",
+        "before": {
+          "title": "今回の地震に伴う断水について",
+          "contentHash": "e2e-uto-water-before-hash-7f3a9c2d",
+          "pageUpdatedAt": null
+        },
+        "after": {
+          "title": "水道復旧状況更新",
+          "contentHash": "e2e-uto-water-after-hash-4b8e1f6a",
+          "pageUpdatedAt": null
+        },
+        "detected_keywords": [
+          "断水",
+          "水道",
+          "復旧"
+        ]
+      }
+    },
+    {
+      "id": "CLS-20260731-KM002-UTO-WATER-ROAD-03",
+      "source_id": "KM002-uto-water",
+      "area_id": "KM002",
+      "municipality": "宇土市",
+      "category": "ROAD",
+      "title": "水道復旧状況更新",
+      "source_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "detected_at": "2026-07-31T00:00:00.000Z",
+      "confidence": "HIGH",
+      "autoPublish": false,
+      "source_page": {
+        "source_id": "KM002-uto-water",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "changed_text": "今回の地震に伴う断水について\n水道復旧状況更新\n水道復旧状況更新\n断水 水道 復旧\n水道復旧状況更新",
+        "before": {
+          "title": "今回の地震に伴う断水について",
+          "contentHash": "e2e-uto-water-before-hash-7f3a9c2d",
+          "pageUpdatedAt": null
+        },
+        "after": {
+          "title": "水道復旧状況更新",
+          "contentHash": "e2e-uto-water-after-hash-4b8e1f6a",
+          "pageUpdatedAt": null
+        },
+        "detected_keywords": [
+          "断水",
+          "水道",
+          "復旧"
+        ]
+      }
+    }
+  ]
+}

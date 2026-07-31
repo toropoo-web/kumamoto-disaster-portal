@@ -1472,7 +1472,996 @@
         "reviewer": "e2e-manual-reviewer",
         "review_note": "E2E validation approval"
       }
+    },
+    {
+      "logged_at": "2026-07-31T00:57:49.892Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T00:57:49.892Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T00-57-49-886Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T00-57-49-886Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:03:09.874Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:03:09.874Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-03-09-868Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-03-09-868Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:16:45.273Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:16:45.273Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-16-45-267Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-16-45-267Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:26:59.692Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:26:59.692Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-26-59-681Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-26-59-681Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:28:18.238Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:28:18.238Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-28-18-232Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-28-18-232Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:29:36.261Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:29:36.261Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-29-36-254Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-29-36-254Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:30:54.086Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:30:54.086Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-30-54-075Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-30-54-075Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:36:08.318Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:36:08.318Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-36-08-311Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-36-08-311Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:38:04.283Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:38:04.283Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-38-04-277Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-38-04-277Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:40:56.490Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:40:56.490Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-40-56-484Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-40-56-484Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:43:34.144Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:43:34.144Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-43-34-138Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-43-34-138Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:48:39.933Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:48:39.933Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-48-39-926Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-48-39-926Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:50:34.889Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:50:34.889Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-50-34-882Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-50-34-882Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T01:51:29.926Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T01:51:29.926Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-51-29-920Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T01-51-29-920Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T02:17:29.853Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T02:17:29.853Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T02-17-29-847Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T02-17-29-847Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T02:24:58.901Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T02:24:58.901Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T02-24-58-895Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T02-24-58-895Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T02:30:10.733Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T02:30:10.733Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T02-30-10-726Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T02-30-10-726Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T02:44:43.894Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T02:44:43.894Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T02-44-43-887Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T02-44-43-887Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T03:15:55.718Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T03:15:55.718Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-15-55-710Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-15-55-710Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T03:19:04.858Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T03:19:04.858Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-19-04-852Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-19-04-852Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T03:21:30.786Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T03:21:30.786Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-21-30-779Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-21-30-779Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T03:25:50.937Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T03:25:50.937Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-25-50-931Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-25-50-931Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T03:44:11.274Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T03:44:11.274Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-44-11-268Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T03-44-11-268Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:18:26.429Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:18:26.429Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-18-26-422Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-18-26-422Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:24:01.818Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:24:01.818Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-24-01-810Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:39:20.332Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:39:20.332Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-39-20-325Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-39-20-325Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:40:36.818Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:40:36.818Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-40-36-809Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-40-36-809Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:40:51.054Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:40:51.054Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-40-51-047Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-40-51-047Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:48:52.273Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:48:52.273Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-48-52-266Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-48-52-266Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:55:03.638Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:55:03.638Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-55-03-632Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-55-03-632Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:55:26.601Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:55:26.601Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-55-26-592Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-55-26-592Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:55:44.335Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:55:44.335Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-55-44-328Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-55-44-328Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:57:27.389Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:57:27.389Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-57-27-382Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-57-27-382Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T08:59:57.990Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T08:59:57.990Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-59-57-984Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T08-59-57-984Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T09:09:30.178Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T09:09:30.178Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-09-30-171Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-09-30-171Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T09:17:14.455Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T09:17:14.455Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-17-14-446Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-17-14-446Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T09:20:29.839Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T09:20:29.839Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-20-29-832Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-20-29-832Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T09:21:18.062Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T09:21:18.062Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-21-18-056Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-21-18-056Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T09:27:17.281Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T09:27:17.281Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-27-17-274Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-27-17-274Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T09:36:54.660Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T09:36:54.659Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-36-54-649Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-36-54-649Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T09:38:10.292Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T09:38:10.292Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-38-10-286Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-38-10-286Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T09:49:59.328Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T09:49:59.328Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-49-59-322Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T09-49-59-322Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-31T10:12:27.280Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-31T10:12:27.280Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T10-12-27-273Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-31T10-12-27-273Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
     }
   ],
-  "lastUpdatedAt": "2026-07-30T19:09:34.574Z"
+  "lastUpdatedAt": "2026-07-31T10:12:27.281Z"
 }

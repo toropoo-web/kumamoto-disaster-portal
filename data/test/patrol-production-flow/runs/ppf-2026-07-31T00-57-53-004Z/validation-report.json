@@ -1,0 +1,107 @@
+{
+  "PATROL_PRODUCTION_CONNECTION_PASS": "PASS",
+  "run_id": "ppf-2026-07-31T00-57-53-004Z",
+  "checks": [
+    {
+      "check": "registry apply APPROVED + COMPLETE",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "registry apply trace preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "sources.json integrity",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "sources.json hash captured",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "production flow SUCCESS",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "patrol executed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "patrol no failures",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "snapshot generated",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "snapshot source_id match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "snapshot URL match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "diff classification connected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "WATER classification in review queue",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "review queue schema valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "review queue status PENDING",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "review queue trace preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "classification schema valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "sources.json unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "public data unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "rollback bundle created",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "rollback dry-run possible",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "errors": []
+}

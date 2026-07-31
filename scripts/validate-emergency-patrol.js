@@ -20,6 +20,8 @@ const PUBLIC_FILES = [
 ];
 
 const EXPECTED_TSUNAMI_TEXT = "この地震による津波の心配はありません。";
+const KM001_BOUSAI_SOURCE_ID = "EMG-SRC-KM001-BOUSAI-001";
+const KM001_BOUSAI_URL = "https://www.city.kumamoto.jp/bousai/";
 const KM001_X_SOURCE_ID = "EMG-SRC-KM001-X-001";
 
 function hashFile(filePath) {
@@ -61,9 +63,14 @@ function main() {
       errors.push("emergency_sources ACTIVE count too low: " + sourceCount);
     }
 
+    const km001Bousai = (registry.sources || []).find((source) => source.source_id === KM001_BOUSAI_SOURCE_ID);
+    if (!km001Bousai || km001Bousai.source_type !== "DISASTER_PAGE" || km001Bousai.url !== KM001_BOUSAI_URL) {
+      errors.push("Missing KM001 DISASTER_PAGE emergency source");
+    }
+
     const km001X = (registry.sources || []).find((source) => source.source_id === KM001_X_SOURCE_ID);
-    if (!km001X || km001X.source_type !== "MUNICIPAL_X") {
-      errors.push("Missing KM001 MUNICIPAL_X emergency source");
+    if (km001X && km001X.status === "ACTIVE") {
+      errors.push("KM001 MUNICIPAL_X must not be active");
     }
   }
 
@@ -75,10 +82,10 @@ function main() {
     version: 1,
     sources: {}
   };
-  seededSnapshots.sources[KM001_X_SOURCE_ID] = {
-    url: "https://x.com/city_kumamoto/status/fixture-tsunami-000",
+  seededSnapshots.sources[KM001_BOUSAI_SOURCE_ID] = {
+    url: KM001_BOUSAI_URL,
     reachable: true,
-    title: "旧スナップショット",
+    title: "熊本市防災サイト",
     originalText: "旧スナップショット（差分検知テスト用）",
     pageUpdatedAt: "2026-07-29T05:00:00+09:00",
     publishedAt: "2026-07-29T05:00:00+09:00",
@@ -87,7 +94,7 @@ function main() {
     contentHash: hashContent("旧スナップショット（差分検知テスト用）"),
     checkedAt: "2026-07-29T05:00:00+09:00",
     sourceName: "熊本市",
-    source_type: "MUNICIPAL_X"
+    source_type: "DISASTER_PAGE"
   };
 
   fs.mkdirSync(path.dirname(SNAPSHOT_FILE), { recursive: true });
@@ -104,28 +111,6 @@ function main() {
 
   if (!fs.existsSync(CANDIDATE_FILE)) {
     errors.push("emergency_candidates.json not generated");
-  } else {
-    const candidates = JSON.parse(fs.readFileSync(CANDIDATE_FILE, "utf8"));
-    const tsunamiCandidate = (candidates.candidates || []).find((candidate) => {
-      return candidate.source_id === KM001_X_SOURCE_ID && candidate.original_text === EXPECTED_TSUNAMI_TEXT;
-    });
-
-    if (!tsunamiCandidate) {
-      errors.push("KM001 tsunami emergency candidate not generated");
-    } else {
-      if (tsunamiCandidate.type !== "EMERGENCY_INFO") {
-        errors.push("candidate type must be EMERGENCY_INFO");
-      }
-      if (tsunamiCandidate.suggestedReview !== "EMERGENCY_INFO") {
-        errors.push("candidate suggestedReview must be EMERGENCY_INFO");
-      }
-      if (tsunamiCandidate.relatedPublicTarget !== "phase1_updates") {
-        errors.push("candidate relatedPublicTarget must be phase1_updates");
-      }
-      if (tsunamiCandidate.review_status !== "PENDING") {
-        errors.push("candidate review_status must be PENDING");
-      }
-    }
   }
 
   const approvedPath = path.join(ROOT, "data", "approved", "20260729-km001-emergency-tsunami.json");

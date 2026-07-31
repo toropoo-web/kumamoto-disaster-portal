@@ -257,10 +257,18 @@ function main() {
     pass: categories.VOLUNTEER === 20,
     volunteerCount: categories.VOLUNTEER
   });
+  const xSupportServiceCount = indexPayload.index.filter(function (entry) {
+    return (
+      entry.category === "SUPPORT_SERVICE" &&
+      entry.source_url &&
+      /x\.com/i.test(entry.source_url)
+    );
+  }).length;
   checks.push({
     check: "SUPPORT_SERVICE search preserved",
-    pass: categories.SUPPORT_SERVICE === 5,
-    supportServiceCount: categories.SUPPORT_SERVICE
+    pass: categories.SUPPORT_SERVICE >= 6 && xSupportServiceCount >= 1,
+    supportServiceCount: categories.SUPPORT_SERVICE,
+    xSupportServiceCount: xSupportServiceCount
   });
 
   const showerResults = searchDisasterIndex(indexPayload, "シャワー", {

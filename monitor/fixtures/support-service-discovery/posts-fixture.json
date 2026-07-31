@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "description": "SUPPORT_SERVICE discovery fixture posts (Phase8)",
+  "referenceDate": "2026-07-31",
+  "posts": [
+    {
+      "id": "fixture-bath-free-open",
+      "source_type": "X",
+      "source_url": "https://example.invalid/x/bath-free-open",
+      "account": "kumamoto_onsen_official",
+      "text": "熊本市 ○○温泉 被災者向け無料開放",
+      "published_at": "2026-07-31"
+    },
+    {
+      "id": "fixture-vehicle-car-camp",
+      "source_type": "X",
+      "source_url": "https://example.invalid/x/car-camp",
+      "account": "hitoyoshi_city",
+      "text": "人吉市 駐車場 車中泊利用可能",
+      "published_at": "2026-07-31"
+    },
+    {
+      "id": "fixture-out-of-area",
+      "source_type": "X",
+      "source_url": "https://example.invalid/x/osaka-onsen",
+      "account": "osaka_info",
+      "text": "大阪 温泉無料開放",
+      "published_at": "2026-07-31"
+    },
+    {
+      "id": "fixture-excluded-commercial",
+      "source_type": "X",
+      "source_url": "https://example.invalid/x/commercial-discount",
+      "account": "onsen_shop",
+      "text": "通常営業 温泉割引",
+      "published_at": "2026-07-31"
+    }
+  ]
+}

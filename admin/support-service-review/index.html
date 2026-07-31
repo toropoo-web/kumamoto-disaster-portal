@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SUPPORT_SERVICE 変更確認（運用）</title>
+  <link rel="stylesheet" href="../../css/styles.css">
+  <link rel="stylesheet" href="../css/support-service-review.css">
+</head>
+<body>
+  <main id="support-service-review-page" class="page support-service-review" aria-label="SUPPORT_SERVICE 変更確認（運用）">
+    <div class="container">
+      <header class="page-header support-service-review__header">
+        <p class="page-header__eyebrow">運用管理（非公開）</p>
+        <h1 class="page-header__title">SUPPORT_SERVICE 変更確認</h1>
+        <p class="page-header__lead">変更内容・情報提供元・確認状態のみを表示します。判断は担当者が行います。</p>
+      </header>
+
+      <section class="support-service-review__summary" aria-label="確認状況サマリー">
+        <div id="review-status-summary" class="support-service-review__summary-grid"></div>
+      </section>
+
+      <section class="support-service-review__alerts" aria-label="確認対象アラート">
+        <h2 class="support-service-review__section-title">確認対象アラート</h2>
+        <div id="review-alert-list" class="support-service-review__alert-list"></div>
+      </section>
+
+      <section class="support-service-review__list" aria-label="変更確認一覧">
+        <h2 class="support-service-review__section-title">変更確認一覧</h2>
+        <div id="review-list" class="support-service-review__table-wrap"></div>
+      </section>
+
+      <section class="support-service-review__detail" aria-label="変更詳細">
+        <h2 class="support-service-review__section-title">変更詳細</h2>
+        <div id="review-detail" class="support-service-review__detail-panel">
+          <p class="support-service-review__empty">一覧から確認項目を選択してください。</p>
+        </div>
+      </section>
+
+      <section class="support-service-review__operations" aria-label="確認操作">
+        <h2 class="support-service-review__section-title">確認操作</h2>
+        <div id="review-operations" class="support-service-review__operations-panel">
+          <p class="support-service-review__note">操作は CLI で実行してください（自動承認・自動公開は行いません）。</p>
+          <pre id="review-operation-command" class="support-service-review__command">npm run review:support-service-change -- --review-id=... --action=START --reviewer=担当者名</pre>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="../js/support-service-review.js"></script>
+</body>
+</html>

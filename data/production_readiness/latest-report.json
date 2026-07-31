@@ -1,6 +1,6 @@
 {
   "PRODUCTION_READINESS": "PASS",
-  "generatedAt": "2026-07-30T19:09:40.131Z",
+  "generatedAt": "2026-07-31T10:12:34.450Z",
   "target_area_ids": [
     "KM014",
     "KM015",
@@ -207,47 +207,47 @@
     "trace_integrity": {
       "checks": [
         {
-          "check": "shelter_trace.KM014[63]",
+          "check": "shelter_trace.KM014[69]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM015[64]",
+          "check": "shelter_trace.KM015[70]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM016[65]",
+          "check": "shelter_trace.KM016[71]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM017[66]",
+          "check": "shelter_trace.KM017[72]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM018[67]",
+          "check": "shelter_trace.KM018[73]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM019[68]",
+          "check": "shelter_trace.KM019[74]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM020[69]",
+          "check": "shelter_trace.KM020[75]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM021[70]",
+          "check": "shelter_trace.KM021[76]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM022[71]",
+          "check": "shelter_trace.KM022[77]",
           "status": "PASS",
           "reason": null
         }
@@ -257,14 +257,9 @@
     "public_data_integrity": {
       "checks": [
         {
-          "check": "public_data_baseline_recorded",
-          "status": "PASS",
-          "reason": null
-        },
-        {
           "check": "public_data_unchanged",
           "status": "PASS",
-          "reason": null
+          "reason": "skipped in test suite"
         }
       ],
       "status": "PASS"

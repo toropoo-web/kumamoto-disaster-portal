@@ -14,7 +14,81 @@ const PREFECTURES = {
   KYUSHU_SOUTH: ["熊本県", "鹿児島県"]
 };
 
-const CATEGORIES = ["WATER", "VOLUNTEER", "SHELTER", "MEDICAL", "SUPPORT"];
+const CATEGORIES = ["WATER", "VOLUNTEER", "SHELTER", "MEDICAL", "SUPPORT", "SUPPORT_SERVICE"];
+
+const SUPPORT_SERVICE_SUBCATEGORIES = {
+  BATH: { details: ["BATH", "SHOWER"] },
+  SPACE: { details: ["REST_SPACE", "ROOM"] },
+  TOILET: { details: [] },
+  VEHICLE: { details: ["PARKING", "CAR_CAMP"] },
+  FOOD: { details: ["COOKING"] },
+  WATER_SUPPORT: { details: [] },
+  SUPPLIES: { details: [] },
+  PET: { details: [] }
+};
+
+const SUPPORT_SERVICE_SUBCATEGORY_VALUES = Object.keys(SUPPORT_SERVICE_SUBCATEGORIES);
+
+const SUPPORT_SERVICE_DETAIL_VALUES = SUPPORT_SERVICE_SUBCATEGORY_VALUES.reduce(function (acc, key) {
+  SUPPORT_SERVICE_SUBCATEGORIES[key].details.forEach(function (detail) {
+    if (acc.indexOf(detail) === -1) {
+      acc.push(detail);
+    }
+  });
+  return acc;
+}, []);
+
+const OPENING_TYPE = {
+  FREE_OPEN: "FREE_OPEN",
+  OPEN: "OPEN",
+  SUPPORT: "SUPPORT"
+};
+
+const OPENING_TYPE_VALUES = [
+  OPENING_TYPE.FREE_OPEN,
+  OPENING_TYPE.OPEN,
+  OPENING_TYPE.SUPPORT
+];
+
+const PROVIDER_TYPE = {
+  MUNICIPALITY: "MUNICIPALITY",
+  PUBLIC_ORGANIZATION: "PUBLIC_ORGANIZATION",
+  FACILITY: "FACILITY",
+  COMPANY: "COMPANY",
+  ORGANIZATION: "ORGANIZATION",
+  INDIVIDUAL: "INDIVIDUAL"
+};
+
+const PROVIDER_TYPE_VALUES = [
+  PROVIDER_TYPE.MUNICIPALITY,
+  PROVIDER_TYPE.PUBLIC_ORGANIZATION,
+  PROVIDER_TYPE.FACILITY,
+  PROVIDER_TYPE.COMPANY,
+  PROVIDER_TYPE.ORGANIZATION,
+  PROVIDER_TYPE.INDIVIDUAL
+];
+
+const SUPPORT_SERVICE_VERIFICATION_STATUS = {
+  VERIFIED: "VERIFIED",
+  REQUIRES_MANUAL_REVIEW: "REQUIRES_MANUAL_REVIEW"
+};
+
+const SUPPORT_SERVICE_VERIFICATION_STATUS_VALUES = [
+  SUPPORT_SERVICE_VERIFICATION_STATUS.VERIFIED,
+  SUPPORT_SERVICE_VERIFICATION_STATUS.REQUIRES_MANUAL_REVIEW
+];
+
+const SUPPORT_SERVICE_ONLY_FIELDS = [
+  "subcategory",
+  "subcategory_detail",
+  "opening_type",
+  "provider_type",
+  "facility_name",
+  "address",
+  "available_from",
+  "available_until",
+  "verification_status"
+];
 
 const SOURCE_TYPES = [
   "MUNICIPALITY",
@@ -304,6 +378,130 @@ function isVolunteerPublishedForCurrentDisaster(source) {
   return compareVolunteerDates(source.published_at, disasterStart) >= 0;
 }
 
+function isValidSupportServiceDateString(value) {
+  if (!value || typeof value !== "string") {
+    return false;
+  }
+  if (!VOLUNTEER_DATE_PATTERN.test(value)) {
+    return false;
+  }
+
+  const parts = value.split("-").map(Number);
+  const date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+
+  return (
+    date.getUTCFullYear() === parts[0] &&
+    date.getUTCMonth() === parts[1] - 1 &&
+    date.getUTCDate() === parts[2]
+  );
+}
+
+function validateSupportServiceSourceEntry(entry, index) {
+  const label = "sources[" + index + "]";
+  const errors = [];
+
+  if (!entry || entry.category !== "SUPPORT_SERVICE") {
+    return errors;
+  }
+
+  if (!entry.subcategory) {
+    errors.push(label + ": subcategory missing");
+  } else if (SUPPORT_SERVICE_SUBCATEGORY_VALUES.indexOf(entry.subcategory) === -1) {
+    errors.push(label + ": invalid subcategory " + entry.subcategory);
+  }
+
+  if (!entry.opening_type) {
+    errors.push(label + ": opening_type missing");
+  } else if (OPENING_TYPE_VALUES.indexOf(entry.opening_type) === -1) {
+    errors.push(label + ": invalid opening_type " + entry.opening_type);
+  }
+
+  if (!entry.provider_type) {
+    errors.push(label + ": provider_type missing");
+  } else if (PROVIDER_TYPE_VALUES.indexOf(entry.provider_type) === -1) {
+    errors.push(label + ": invalid provider_type " + entry.provider_type);
+  }
+
+  if (entry.subcategory && SUPPORT_SERVICE_SUBCATEGORIES[entry.subcategory]) {
+    const allowedDetails = SUPPORT_SERVICE_SUBCATEGORIES[entry.subcategory].details;
+    if (allowedDetails.length) {
+      if (!entry.subcategory_detail) {
+        errors.push(label + ": subcategory_detail required for " + entry.subcategory);
+      } else if (allowedDetails.indexOf(entry.subcategory_detail) === -1) {
+        errors.push(
+          label +
+            ": invalid subcategory_detail " +
+            entry.subcategory_detail +
+            " for " +
+            entry.subcategory
+        );
+      }
+    } else if (entry.subcategory_detail) {
+      errors.push(label + ": subcategory_detail not allowed for " + entry.subcategory);
+    }
+  }
+
+  if (entry.verification_status !== undefined) {
+    if (SUPPORT_SERVICE_VERIFICATION_STATUS_VALUES.indexOf(entry.verification_status) === -1) {
+      errors.push(label + ": invalid verification_status " + entry.verification_status);
+    }
+  }
+
+  if (entry.available_from !== undefined && entry.available_from !== null && entry.available_from !== "") {
+    if (!isValidSupportServiceDateString(entry.available_from)) {
+      errors.push(label + ": invalid available_from format (expected YYYY-MM-DD)");
+    }
+  }
+
+  if (entry.available_until !== undefined && entry.available_until !== null && entry.available_until !== "") {
+    if (!isValidSupportServiceDateString(entry.available_until)) {
+      errors.push(label + ": invalid available_until format (expected YYYY-MM-DD)");
+    }
+  }
+
+  if (entry.facility_name !== undefined && typeof entry.facility_name !== "string") {
+    errors.push(label + ": facility_name must be a string");
+  }
+
+  if (entry.address !== undefined && typeof entry.address !== "string") {
+    errors.push(label + ": address must be a string");
+  }
+
+  return errors;
+}
+
+function buildSupportServiceSchemaExample(overrides) {
+  const base = {
+    source_id: "DSRC-SVC-EXAMPLE-0001",
+    category: "SUPPORT_SERVICE",
+    prefecture: "熊本県",
+    municipality: "熊本市",
+    organization: "テスト支援施設",
+    source_type: "PUBLIC_ORGANIZATION",
+    url: "https://example.invalid/support-service-placeholder",
+    keywords: ["シャワー", "無料開放", "入浴"],
+    extractor: {},
+    official: true,
+    active: false,
+    subcategory: "BATH",
+    subcategory_detail: "SHOWER",
+    opening_type: OPENING_TYPE.FREE_OPEN,
+    provider_type: PROVIDER_TYPE.FACILITY,
+    facility_name: "テスト支援施設",
+    address: "熊本県熊本市中央区",
+    available_from: "2026-07-28",
+    available_until: null,
+    verification_status: SUPPORT_SERVICE_VERIFICATION_STATUS.VERIFIED
+  };
+
+  return Object.assign(base, overrides || {});
+}
+
+function validateSupportServiceSchemaExample() {
+  const example = buildSupportServiceSchemaExample();
+  return validateDisasterSourceEntry(example, 0, { allowInactiveWithoutUrl: true });
+}
+
 function validateVolunteerSourceEntry(entry, index) {
   const label = "sources[" + index + "]";
   const errors = [];
@@ -527,8 +725,20 @@ function validateDisasterSourceEntry(entry, index, options) {
     });
   }
 
+  if (entry.category !== "SUPPORT_SERVICE") {
+    SUPPORT_SERVICE_ONLY_FIELDS.forEach(function (field) {
+      if (entry[field] !== undefined) {
+        errors.push(label + ": " + field + " only allowed for SUPPORT_SERVICE category");
+      }
+    });
+  }
+
   if (entry.category === "VOLUNTEER") {
     errors.push.apply(errors, validateVolunteerSourceEntry(entry, index));
+  }
+
+  if (entry.category === "SUPPORT_SERVICE") {
+    errors.push.apply(errors, validateSupportServiceSourceEntry(entry, index));
   }
 
   return errors;
@@ -641,11 +851,23 @@ module.exports = {
   VOLUNTEER_SCHEMA_CANDIDATES,
   VOLUNTEER_DISASTER_START_DATE,
   VOLUNTEER_DATE_PATTERN,
+  SUPPORT_SERVICE_SUBCATEGORIES,
+  SUPPORT_SERVICE_SUBCATEGORY_VALUES,
+  SUPPORT_SERVICE_DETAIL_VALUES,
+  OPENING_TYPE,
+  OPENING_TYPE_VALUES,
+  PROVIDER_TYPE,
+  PROVIDER_TYPE_VALUES,
+  SUPPORT_SERVICE_VERIFICATION_STATUS,
+  SUPPORT_SERVICE_VERIFICATION_STATUS_VALUES,
+  SUPPORT_SERVICE_ONLY_FIELDS,
   buildSourceId,
   buildVolunteerSchemaExample,
+  buildSupportServiceSchemaExample,
   compareVolunteerDates,
   inferSourceType,
   isValidVolunteerDateString,
+  isValidSupportServiceDateString,
   isVolunteerPublishedForCurrentDisaster,
   resolveMunicipality,
   readDisasterRegistry,
@@ -658,7 +880,9 @@ module.exports = {
   validateDisasterRegistry,
   validateDisasterSourceEntry,
   validateVolunteerSourceEntry,
+  validateSupportServiceSourceEntry,
   validateWaterCompatibility,
   validateVolunteerSchemaExample,
-  validateVolunteerSchemaCandidates
+  validateVolunteerSchemaCandidates,
+  validateSupportServiceSchemaExample
 };
