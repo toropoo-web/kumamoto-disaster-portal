@@ -3,7 +3,7 @@
   "region": "KYUSHU_SOUTH",
   "queue_type": "DISASTER_SOCIAL_APPLY",
   "AUTO_PUBLISH": false,
-  "item_count": 9,
+  "item_count": 16,
   "items": [
     {
       "apply_id": "SOC-APP-SOC-REV-INB-20260731-001",
@@ -193,7 +193,154 @@
       },
       "created_at": "2026-07-31T16:12:09.786Z",
       "applied_at": "2026-07-31T16:12:09.787Z"
+    },
+    {
+      "apply_id": "SOC-APP-SOC-REV-INB-20260801-001",
+      "queue_id": "SOC-REV-INB-20260801-001",
+      "inbox_id": "INB-20260801-001",
+      "apply_status": "APPLIED",
+      "entry": {
+        "id": "SOC-IDX-INB-20260801-001",
+        "source": "SOC-LOCAL-002",
+        "category": "WATER",
+        "prefecture": "熊本県",
+        "municipality": "八代市",
+        "district": "本町",
+        "date": "2026-08-01",
+        "title": "八代市本町 民間給水ポイント開設",
+        "content": "八代市本町の公民館前で生活用水の配布。ポリタンク持参。8月1日午前7時から。",
+        "url": "https://example.local/yatsushiro-board/water-20260801",
+        "status": "ACTIVE"
+      },
+      "created_at": "2026-07-31T16:18:21.153Z",
+      "applied_at": "2026-07-31T16:18:21.429Z"
+    },
+    {
+      "apply_id": "SOC-APP-SOC-REV-INB-20260801-002",
+      "queue_id": "SOC-REV-INB-20260801-002",
+      "inbox_id": "INB-20260801-002",
+      "apply_status": "APPLIED",
+      "entry": {
+        "id": "SOC-IDX-INB-20260801-002",
+        "source": "SOC-LOCAL-003",
+        "category": "FOOD",
+        "prefecture": "熊本県",
+        "municipality": "熊本市",
+        "district": "東区",
+        "date": "2026-08-01",
+        "title": "熊本市東区 朝食炊き出し",
+        "content": "熊本市東区健軍で朝食の炊き出し実施。配膳ボランティア募集。",
+        "url": "https://example.local/kumamoto-sns/food-20260801",
+        "status": "ACTIVE"
+      },
+      "created_at": "2026-07-31T16:18:21.153Z",
+      "applied_at": "2026-07-31T16:18:21.429Z"
+    },
+    {
+      "apply_id": "SOC-APP-SOC-REV-INB-20260801-003",
+      "queue_id": "SOC-REV-INB-20260801-003",
+      "inbox_id": "INB-20260801-003",
+      "apply_status": "APPLIED",
+      "entry": {
+        "id": "SOC-IDX-INB-20260801-003",
+        "source": "SOC-LOCAL-004",
+        "category": "SUPPLIES",
+        "prefecture": "熊本県",
+        "municipality": "宇城市",
+        "district": "三角町",
+        "date": "2026-08-01",
+        "title": "宇城市 衛生用品の民間寄付受付",
+        "content": "宇城市三角町の仮設受付で衛生用品・日用品の寄付受付中。",
+        "url": "https://example.local/uki-uto-board/supplies-20260801",
+        "status": "ACTIVE"
+      },
+      "created_at": "2026-07-31T16:18:21.153Z",
+      "applied_at": "2026-07-31T16:18:21.429Z"
+    },
+    {
+      "apply_id": "SOC-APP-SOC-REV-INB-20260801-004",
+      "queue_id": "SOC-REV-INB-20260801-004",
+      "inbox_id": "INB-20260801-004",
+      "apply_status": "APPLIED",
+      "entry": {
+        "id": "SOC-IDX-INB-20260801-004",
+        "source": "SOC-LOCAL-004",
+        "category": "TOILET",
+        "prefecture": "熊本県",
+        "municipality": "宇土市",
+        "district": "中央町",
+        "date": "2026-08-01",
+        "title": "宇土市 仮設トイレ設置場所",
+        "content": "宇土市中央町の公園に仮設トイレ設置。市民が現地で共有。",
+        "url": "https://example.local/uki-uto-board/toilet-20260801",
+        "status": "ACTIVE"
+      },
+      "created_at": "2026-07-31T16:18:21.153Z",
+      "applied_at": "2026-07-31T16:18:21.429Z"
+    },
+    {
+      "apply_id": "SOC-APP-SOC-REV-INB-20260801-005",
+      "queue_id": "SOC-REV-INB-20260801-005",
+      "inbox_id": "INB-20260801-005",
+      "apply_status": "APPLIED",
+      "entry": {
+        "id": "SOC-IDX-INB-20260801-005",
+        "source": "SOC-LOCAL-005",
+        "category": "CHARGING",
+        "prefecture": "熊本県",
+        "municipality": "氷川町",
+        "district": "高砂",
+        "date": "2026-08-01",
+        "title": "氷川町 充電スポット開放",
+        "content": "氷川町高砂の集会所でスマホ充電スポットを開放。",
+        "url": "https://example.local/hikawa-local/charging-20260801",
+        "status": "ACTIVE"
+      },
+      "created_at": "2026-07-31T16:18:21.153Z",
+      "applied_at": "2026-07-31T16:18:21.429Z"
+    },
+    {
+      "apply_id": "SOC-APP-SOC-REV-INB-20260801-006",
+      "queue_id": "SOC-REV-INB-20260801-006",
+      "inbox_id": "INB-20260801-006",
+      "apply_status": "APPLIED",
+      "entry": {
+        "id": "SOC-IDX-INB-20260801-006",
+        "source": "SOC-CIVIL-001",
+        "category": "VOLUNTEER",
+        "prefecture": "熊本県",
+        "municipality": "熊本市",
+        "district": "南区",
+        "date": "2026-08-01",
+        "title": "熊本市南区 避難所支援ボランティア",
+        "content": "熊本市南区の避難所で物資運搬・配膳のボランティア募集。",
+        "url": "https://example.local/kumamoto-sns/volunteer-20260801",
+        "status": "ACTIVE"
+      },
+      "created_at": "2026-07-31T16:18:21.153Z",
+      "applied_at": "2026-07-31T16:18:21.429Z"
+    },
+    {
+      "apply_id": "SOC-APP-SOC-REV-INB-20260801-007",
+      "queue_id": "SOC-REV-INB-20260801-007",
+      "inbox_id": "INB-20260801-007",
+      "apply_status": "APPLIED",
+      "entry": {
+        "id": "SOC-IDX-INB-20260801-007",
+        "source": "SOC-LOCAL-005",
+        "category": "SUPPLIES",
+        "prefecture": "熊本県",
+        "municipality": "氷川町",
+        "district": "",
+        "date": "2026-08-01",
+        "title": "氷川町 段ボール寄付の連絡",
+        "content": "段ボールの寄付受付。場所の詳細は確認中。",
+        "url": "",
+        "status": "incomplete"
+      },
+      "created_at": "2026-07-31T16:18:21.153Z",
+      "applied_at": "2026-07-31T16:18:21.429Z"
     }
   ],
-  "last_updated": "2026-07-31T16:17:41.395Z"
+  "last_updated": "2026-07-31T16:18:21.153Z"
 }
