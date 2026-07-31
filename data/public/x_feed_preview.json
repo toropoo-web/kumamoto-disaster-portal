@@ -1,9 +1,31 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-31T11:12:43.774Z",
+  "synced_at": "2026-07-31T13:03:14.833Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
+    {
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-07-31T11:17:01.000Z",
+      "text": "【第19報】南区城南町における試験通水の実施について(続報)（７月31日19：00時点）\n\n南区城南町で実施している断水解消に向けた試験通水の詳細及び上下水道局からのお願いです↓\nhttps://t.co/aiYZ2BxUQi",
+      "url": "https://x.com/kumamotocity_/status/2083149931129500052",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
+      "content_filter": "RECENT_POSTS"
+    },
+    {
+      "source_id": "SRC-MUN-KM006",
+      "account_name": "人吉市公式X",
+      "account_handle": "hitoyoshishi",
+      "post_time": "2026-07-31T09:05:44.000Z",
+      "text": "【防災無線放送内容】熱中症警戒アラートの発表について（2026/07/31/18:05）\n市役所からのお知らせです。\n明日（１日）も、熱中症警戒アラートが発表され、その後も数日にわたり暑さが継続する見込みです。屋外での活動をできるだけ避け、こ...\nhttps://t.co/CkT4hhdYVu",
+      "url": "https://x.com/hitoyoshishi/status/2083116892508803167",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "人吉市",
+      "content_filter": "RECENT_POSTS"
+    },
     {
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
@@ -13,29 +35,7 @@
       "url": "https://x.com/yatsushiro0801/status/2083107823131787351",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
-      "content_filter": "DISASTER_RELATED"
-    },
-    {
-      "source_id": "SRC-MUN-KM006",
-      "account_name": "人吉市公式X",
-      "account_handle": "hitoyoshishi",
-      "post_time": "2026-07-31T07:55:41.000Z",
-      "text": "【防災無線放���内容】生活用水提供のお知らせ（2026/07/31/16:55）\n環境課からのお知らせです。\n生活用水として市内各地で開放しておりました井戸水は、市民プールを除き、本日（３１日）、午後５時をもって終了いたします。\nなお、下林町の市...\nhttps://t.co/29s96gridQ",
-      "url": "https://x.com/hitoyoshishi/status/2083099266609033568",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "人吉市",
-      "content_filter": "DISASTER_RELATED"
-    },
-    {
-      "source_id": "SRC-MUN-KM001",
-      "account_name": "熊本市公式X",
-      "account_handle": "kumamotocity_",
-      "post_time": "2026-07-31T07:34:03.000Z",
-      "text": "【応急給水活動について（７月31日15：30時点）】\n飽田南小、城南小、天明中の応急給水所は、７月31日（金）17時をもって終了します。\n\nなお、その他の応急給水活動は次のとおりです。↓\nhttps://t.co/aiYZ2BxUQi https://t.co/L8SkrttGrP",
-      "url": "https://x.com/kumamotocity_/status/2083093821995536775",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "熊本市",
-      "content_filter": "DISASTER_RELATED"
+      "content_filter": "RECENT_POSTS"
     },
     {
       "source_id": "SRC-MUN-KM009",
@@ -46,43 +46,47 @@
       "url": "https://x.com/Koshi_city/status/2083018356882653450",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "合志市",
-      "content_filter": "DISASTER_RELATED"
+      "content_filter": "RECENT_POSTS"
     },
     {
-      "source_id": "SRC-NAT-001",
-      "account_name": "首相官邸 災害・危機管理情報",
-      "account_handle": "Kantei_Saigai",
-      "post_time": "2026-07-31T08:24:09.000Z",
-      "text": "【エコノミークラス症候群にご注意ください】\n慣れない避難生活では、エコノミークラス症候群が発生しやすくなります。 https://t.co/tP39xJhtBo",
-      "url": "https://x.com/Kantei_Saigai/status/2083106426894131684",
+      "source_id": "SRC-NAT-005",
+      "account_name": "防衛省 災害対策",
+      "account_handle": "ModJapan_saigai",
+      "post_time": "2026-07-31T11:16:05.000Z",
+      "text": "本日も、自衛隊は熊本県内41か所で給水支援を実施しています。\n約160名の隊員と給水車49両が活動しており、昨日より支援体制を拡大しています。\nまた、人工透析に必要な水を確保するため、「菊池郡市医師会立病院」「松岡内科クリニック」への給水を昨日完了しました。 https://t.co/fvh5tNV1fb",
+      "url": "https://x.com/ModJapan_saigai/status/2083149697074803048",
       "source_type": "GOVERNMENT"
     },
     {
       "source_id": "SRC-NAT-001",
       "account_name": "首相官邸 災害・危機管理情報",
       "account_handle": "Kantei_Saigai",
-      "post_time": "2026-07-31T08:23:31.000Z",
-      "text": "令和8年熊本地震に関する第4回非常災害対策本部会議のライブ配信です。 https://t.co/h8Wmdk3gy3",
-      "url": "https://x.com/Kantei_Saigai/status/2083106270865952849",
+      "post_time": "2026-07-31T10:29:28.000Z",
+      "text": "【地震関連・官房長官記者会見】\n本日（７月３１日）１６時００分頃から行われた木原官房長官の記者会見における、令和８年熊本地震に関する冒頭発言と関連質疑です。 \n\n※要旨（速報版） https://t.co/O0FBmsxv0s",
+      "url": "https://x.com/Kantei_Saigai/status/2083137967322001534",
       "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-NAT-004",
-      "account_name": "総務省消防庁",
-      "account_handle": "FDMA_JAPAN",
-      "post_time": "2026-07-31T08:19:37.000Z",
-      "text": "【消防庁とりまとめ第25報】令和８年熊本地震による被害及び消防機関等の対応状況について、7月31日（金）17時00分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/q3gSBJb1IC\n#総務省消防庁 #災害情報 #地震",
-      "url": "https://x.com/FDMA_JAPAN/status/2083105286517309543",
-      "source_type": "GOVERNMENT"
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-07-31T10:28:23.000Z",
+      "text": "【り災証明書の臨時窓口開設】\n令和8年熊本地震に伴う、り災証明書の臨時窓口を8月1日（土）2日（日）に開設します。\nなお、り災証明書（住家）はマイナポータルからの電子申請も可能です。\n開設窓口：各区福祉課、城南総合出張所\n受付時間：午前9時～午後4時\n詳細は→https://t.co/cp5eBhHrAa https://t.co/tOyhkQsgHb",
+      "url": "https://x.com/kumamotocity_/status/2083137693551374350",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
+      "content_filter": "RECENT_POSTS"
     },
     {
-      "source_id": "SRC-NAT-001",
-      "account_name": "首相官邸 災害・危機管理情報",
-      "account_handle": "Kantei_Saigai",
-      "post_time": "2026-07-31T07:25:36.000Z",
-      "text": "【地震関連・官房長官記者会見】\n本日（７月３１日）１１時００分頃から行われた木原官房長官の記者会見における、令和８年熊本地震に関する冒頭発言と関連質疑です。\n\n※要旨（速報版）\n （地震関連外冒頭発言　略） https://t.co/MApNPnYJa2",
-      "url": "https://x.com/Kantei_Saigai/status/2083091694078378275",
-      "source_type": "GOVERNMENT"
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-07-31T10:27:38.000Z",
+      "text": "【８月１日の応急給水所について（７月31日19：00時点）】\n８月１日（土）の応急給水所は次のとおりです。↓\nhttps://t.co/aiYZ2BxUQi https://t.co/p1GFeGOW2A",
+      "url": "https://x.com/kumamotocity_/status/2083137504564445535",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
+      "content_filter": "RECENT_POSTS"
     }
   ],
   "sync_status": "FRESH"

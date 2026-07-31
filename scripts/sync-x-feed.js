@@ -18,32 +18,72 @@ const EXCLUDED_PATTERNS = [/DEMO/i, /SEED/i, /デモ/];
 const EXCLUDED_SOURCE_IDS = new Set(["SRC-PER-001"]);
 const EXCLUDED_ACCOUNT_HANDLES = new Set(["shinjirokoiz"]);
 
+const MUNICIPALITY_CONTENT_FILTER = "RECENT_POSTS";
+const STRICT_MUNICIPALITY_CONTENT_FILTER = "DISASTER_RELATED";
+
+const DISASTER_CONTENT_KEYWORDS = [
+  "地震",
+  "災害",
+  "避難",
+  "津波",
+  "熊本地震",
+  "余震",
+  "震度",
+  "防災",
+  "気象",
+  "土砂",
+  "豪雨",
+  "大雨",
+  "浸水",
+  "警戒",
+  "被災",
+  "罹災"
+];
+
+const DISASTER_RELATED_CATEGORIES = new Set([
+  "EARTHQUAKE_TSUNAMI",
+  "DISASTER",
+  "EVACUATION",
+  "ALERT",
+  "TSUNAMI"
+]);
+
 const SOURCE_REGISTRY = {
   "SRC-MUN-KM001": {
     municipality: "熊本市",
     source_type: "LOCAL_GOVERNMENT",
-    content_filter: "DISASTER_RELATED",
+    content_filter: MUNICIPALITY_CONTENT_FILTER,
     account_handle: "kumamotocity_"
   },
   "SRC-MUN-KM005": {
     municipality: "八代市",
     source_type: "LOCAL_GOVERNMENT",
-    content_filter: "DISASTER_RELATED",
+    content_filter: MUNICIPALITY_CONTENT_FILTER,
     account_handle: "yatsushiro0801"
   },
   "SRC-MUN-KM006": {
     municipality: "人吉市",
     source_type: "LOCAL_GOVERNMENT",
-    content_filter: "DISASTER_RELATED",
+    content_filter: MUNICIPALITY_CONTENT_FILTER,
     account_handle: "hitoyoshishi"
   },
   "SRC-MUN-KM009": {
     municipality: "合志市",
     source_type: "LOCAL_GOVERNMENT",
-    content_filter: "DISASTER_RELATED",
+    content_filter: MUNICIPALITY_CONTENT_FILTER,
     account_handle: "Koshi_city"
   }
 };
+
+function buildStrictMunicipalityRegistry() {
+  const strict = {};
+  Object.keys(SOURCE_REGISTRY).forEach(function (sourceId) {
+    strict[sourceId] = Object.assign({}, SOURCE_REGISTRY[sourceId], {
+      content_filter: STRICT_MUNICIPALITY_CONTENT_FILTER
+    });
+  });
+  return strict;
+}
 
 function fetchJson(url) {
   return new Promise((resolve, reject) => {
@@ -89,8 +129,42 @@ function isExcludedPost(post) {
   return EXCLUDED_PATTERNS.some((pattern) => pattern.test(haystack));
 }
 
-function getSourceMeta(post) {
-  return SOURCE_REGISTRY[post.sourceId] || null;
+function getSourceMeta(post, sourceRegistry) {
+  const registry = sourceRegistry || SOURCE_REGISTRY;
+  return registry[post.sourceId] || null;
+}
+
+function isOfficialMunicipalityPost(post, registryMeta) {
+  return Boolean(registryMeta && registryMeta.source_type === "LOCAL_GOVERNMENT");
+}
+
+function matchesDisasterRelatedContent(post) {
+  const text = getPostText(post);
+  const haystack = [text, post.category, post.title, post.sourceName].filter(Boolean).join(" ");
+
+  if (post.category && DISASTER_RELATED_CATEGORIES.has(post.category)) {
+    return true;
+  }
+
+  return DISASTER_CONTENT_KEYWORDS.some(function (keyword) {
+    return haystack.indexOf(keyword) !== -1;
+  });
+}
+
+function passesContentFilter(post, registryMeta) {
+  if (!registryMeta || !registryMeta.content_filter) {
+    return true;
+  }
+
+  if (registryMeta.content_filter === MUNICIPALITY_CONTENT_FILTER) {
+    return true;
+  }
+
+  if (registryMeta.content_filter === STRICT_MUNICIPALITY_CONTENT_FILTER) {
+    return matchesDisasterRelatedContent(post);
+  }
+
+  return true;
 }
 
 function resolveSourceType(post, registryMeta) {
@@ -124,8 +198,8 @@ function getPostText(post) {
   return "";
 }
 
-function toPreviewPost(post) {
-  const registryMeta = getSourceMeta(post);
+function toPreviewPost(post, sourceRegistry) {
+  const registryMeta = getSourceMeta(post, sourceRegistry);
   const accountHandle = post.accountHandle || (registryMeta && registryMeta.account_handle) || null;
   const preview = {
     source_id: post.sourceId,
@@ -161,7 +235,9 @@ function isValidPreviewPost(post) {
   );
 }
 
-function selectPosts(posts) {
+function selectPosts(posts, options) {
+  options = options || {};
+  const sourceRegistry = options.sourceRegistry || SOURCE_REGISTRY;
   const seen = new Set();
   const selected = [];
   const localGovernmentBySource = new Map();
@@ -173,7 +249,12 @@ function selectPosts(posts) {
     .sort((a, b) => new Date(b.postedAt) - new Date(a.postedAt));
 
   for (const post of sorted) {
-    const preview = toPreviewPost(post);
+    const registryMeta = getSourceMeta(post, sourceRegistry);
+    if (!passesContentFilter(post, registryMeta)) {
+      continue;
+    }
+
+    const preview = toPreviewPost(post, sourceRegistry);
     if (!isValidPreviewPost(preview)) {
       continue;
     }
@@ -196,12 +277,17 @@ function selectPosts(posts) {
       break;
     }
 
+    const registryMeta = getSourceMeta(post, sourceRegistry);
+    if (!passesContentFilter(post, registryMeta)) {
+      continue;
+    }
+
     const dedupeKey = post.postUrl || post.postId;
     if (!dedupeKey || seen.has(dedupeKey)) {
       continue;
     }
 
-    const preview = toPreviewPost(post);
+    const preview = toPreviewPost(post, sourceRegistry);
     if (!isValidPreviewPost(preview)) {
       continue;
     }
@@ -211,6 +297,12 @@ function selectPosts(posts) {
   }
 
   return selected.slice(0, MAX_ITEMS);
+}
+
+function countSelectedMunicipalityPosts(posts, options) {
+  return selectPosts(posts, options).filter(function (post) {
+    return post.source_type === "LOCAL_GOVERNMENT";
+  }).length;
 }
 
 function loadRawPosts(options) {
@@ -412,8 +504,16 @@ if (require.main === module) {
 module.exports = {
   syncXFeed,
   selectPosts,
+  countSelectedMunicipalityPosts,
   loadExistingPreview,
   retainStalePreview,
+  passesContentFilter,
+  matchesDisasterRelatedContent,
+  isOfficialMunicipalityPost,
+  buildStrictMunicipalityRegistry,
+  SOURCE_REGISTRY,
+  MUNICIPALITY_CONTENT_FILTER,
+  STRICT_MUNICIPALITY_CONTENT_FILTER,
   OUTPUT_PATH,
   X_FEED_POSTS_URL
 };
