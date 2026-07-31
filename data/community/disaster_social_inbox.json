@@ -4,7 +4,7 @@
   "AUTO_PUBLISH": false,
   "acquisition_mode": "SNS_AUTO_FETCH",
   "description": "SNS自動取得Inbox（本番運用）",
-  "last_fetched_at": "2026-07-31T18:51:50.856Z",
+  "last_fetched_at": "2026-07-31T19:03:48.058Z",
   "fetch_summary": {
     "since_date": "2026-07-28",
     "platforms": {
@@ -69,7 +69,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083161692293537951",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083161692293537951",
-        "fetched_at": "2026-07-31T18:51:50.836Z"
+        "fetched_at": "2026-07-31T19:03:48.030Z"
       }
     },
     {
@@ -101,7 +101,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2083159966542901373",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2083159966542901373",
-        "fetched_at": "2026-07-31T18:51:50.837Z"
+        "fetched_at": "2026-07-31T19:03:48.030Z"
       }
     },
     {
@@ -133,7 +133,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083157609402773651",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083157609402773651",
-        "fetched_at": "2026-07-31T18:51:50.838Z"
+        "fetched_at": "2026-07-31T19:03:48.031Z"
       }
     },
     {
@@ -165,7 +165,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083157505723789344",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083157505723789344",
-        "fetched_at": "2026-07-31T18:51:50.839Z"
+        "fetched_at": "2026-07-31T19:03:48.031Z"
       }
     },
     {
@@ -197,7 +197,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083157394230772217",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083157394230772217",
-        "fetched_at": "2026-07-31T18:51:50.839Z"
+        "fetched_at": "2026-07-31T19:03:48.031Z"
       }
     },
     {
@@ -229,7 +229,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2083154193318285821",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2083154193318285821",
-        "fetched_at": "2026-07-31T18:51:50.840Z"
+        "fetched_at": "2026-07-31T19:03:48.031Z"
       }
     },
     {
@@ -261,7 +261,7 @@
         "source_post_id": "POST-SRC-KUM-001-2083151109737320529",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2083151109737320529",
-        "fetched_at": "2026-07-31T18:51:50.840Z"
+        "fetched_at": "2026-07-31T19:03:48.031Z"
       }
     },
     {
@@ -293,7 +293,7 @@
         "source_post_id": "POST-SRC-KUM-001-2083151108604936402",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2083151108604936402",
-        "fetched_at": "2026-07-31T18:51:50.840Z"
+        "fetched_at": "2026-07-31T19:03:48.031Z"
       }
     },
     {
@@ -325,7 +325,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2083149931129500052",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2083149931129500052",
-        "fetched_at": "2026-07-31T18:51:50.840Z"
+        "fetched_at": "2026-07-31T19:03:48.031Z"
       }
     },
     {
@@ -357,7 +357,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2083137693551374350",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2083137693551374350",
-        "fetched_at": "2026-07-31T18:51:50.840Z"
+        "fetched_at": "2026-07-31T19:03:48.032Z"
       }
     },
     {
@@ -389,7 +389,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2083137504564445535",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2083137504564445535",
-        "fetched_at": "2026-07-31T18:51:50.840Z"
+        "fetched_at": "2026-07-31T19:03:48.032Z"
       }
     },
     {
@@ -406,7 +406,7 @@
       "region_group": "",
       "date": "2026-07-31",
       "title": "【防災無線放送内容】熱中症警戒アラートの発表について（2026/07/31/18:05） 【防災無線放送内容】熱中症警戒アラートの発表について（2026/...",
-      "content": "【防災無線放送内容】熱中症警戒アラートの発表について（2026/07/31/18:05） 【防災無線放送内容】熱中症警戒アラートの発表について（2026/07/31/18:05） 市役所からのお知らせです。 明日（１日）も、熱中症警戒アラートが発表され、その後も数日にわたり暑さが継続する見込みです。屋外での活動をできるだけ避け、こ... https://t.co/CkT4hhdYVu",
+      "content": "【防災無線放送内容】熱中症警戒アラートの発表について（2026/07/31/18:05） 【防災無線放送内容】熱中症警戒アラートの発表について（2026/07/31/18:05） 市役所からのお知らせです。 明日（１日）も、熱中症警���アラートが発表され、その後も数日にわたり暑さが継続する見込みです。屋外での活動をできるだけ避け、こ... https://t.co/CkT4hhdYVu",
       "url": "https://x.com/hitoyoshishi/status/2083116892508803167",
       "keywords": [],
       "review_note": "",
@@ -421,7 +421,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2083116892508803167",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2083116892508803167",
-        "fetched_at": "2026-07-31T18:51:50.840Z"
+        "fetched_at": "2026-07-31T19:03:48.032Z"
       }
     },
     {
@@ -453,7 +453,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2083116636727611631",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2083116636727611631",
-        "fetched_at": "2026-07-31T18:51:50.840Z"
+        "fetched_at": "2026-07-31T19:03:48.032Z"
       }
     },
     {
@@ -485,7 +485,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083107823131787351",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083107823131787351",
-        "fetched_at": "2026-07-31T18:51:50.840Z"
+        "fetched_at": "2026-07-31T19:03:48.032Z"
       }
     },
     {
@@ -517,7 +517,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2083099266609033568",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2083099266609033568",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.032Z"
       }
     },
     {
@@ -549,7 +549,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2083093821995536775",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2083093821995536775",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.032Z"
       }
     },
     {
@@ -581,7 +581,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083085255175741807",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083085255175741807",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.033Z"
       }
     },
     {
@@ -613,7 +613,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083085214541312212",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083085214541312212",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.033Z"
       }
     },
     {
@@ -645,7 +645,7 @@
         "source_post_id": "POST-SRC-NAT-005-2083083518083838221",
         "source_id": "SRC-NAT-005",
         "post_url": "https://x.com/ModJapan_saigai/status/2083083518083838221",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.033Z"
       }
     },
     {
@@ -677,7 +677,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083082675573977167",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083082675573977167",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.033Z"
       }
     },
     {
@@ -709,7 +709,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083078725911126386",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083078725911126386",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.033Z"
       }
     },
     {
@@ -741,7 +741,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2083077742443343920",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2083077742443343920",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.033Z"
       }
     },
     {
@@ -773,7 +773,7 @@
         "source_post_id": "POST-SRC-NAT-004-2083072796931068304",
         "source_id": "SRC-NAT-004",
         "post_url": "https://x.com/FDMA_JAPAN/status/2083072796931068304",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.033Z"
       }
     },
     {
@@ -805,7 +805,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083071674090729713",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083071674090729713",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.033Z"
       }
     },
     {
@@ -837,7 +837,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083063889189802248",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083063889189802248",
-        "fetched_at": "2026-07-31T18:51:50.841Z"
+        "fetched_at": "2026-07-31T19:03:48.033Z"
       }
     },
     {
@@ -869,7 +869,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083062144200028400",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083062144200028400",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -901,7 +901,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2083060434492613105",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2083060434492613105",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -933,7 +933,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083049104024936784",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083049104024936784",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -965,7 +965,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2083048947820667249",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2083048947820667249",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -997,7 +997,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083029345589936494",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083029345589936494",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -1029,7 +1029,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083027461915468189",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083027461915468189",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -1061,7 +1061,7 @@
         "source_post_id": "POST-SRC-KUM-001-2083025586377949476",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2083025586377949476",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -1093,7 +1093,7 @@
         "source_post_id": "POST-SRC-KUM-001-2083025584133919118",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2083025584133919118",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -1125,7 +1125,7 @@
         "source_post_id": "POST-SRC-KUM-001-2083024935883313199",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2083024935883313199",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -1157,7 +1157,7 @@
         "source_post_id": "POST-SRC-KUM-001-2083024934490853405",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2083024934490853405",
-        "fetched_at": "2026-07-31T18:51:50.842Z"
+        "fetched_at": "2026-07-31T19:03:48.034Z"
       }
     },
     {
@@ -1189,7 +1189,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2083021278500569245",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2083021278500569245",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.035Z"
       }
     },
     {
@@ -1221,7 +1221,7 @@
         "source_post_id": "POST-SRC-MUN-KM009-2083018356882653450",
         "source_id": "SRC-MUN-KM009",
         "post_url": "https://x.com/Koshi_city/status/2083018356882653450",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.035Z"
       }
     },
     {
@@ -1253,7 +1253,7 @@
         "source_post_id": "POST-SRC-MUN-KM009-2083017419459809617",
         "source_id": "SRC-MUN-KM009",
         "post_url": "https://x.com/Koshi_city/status/2083017419459809617",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.035Z"
       }
     },
     {
@@ -1285,7 +1285,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082999687255101827",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082999687255101827",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.035Z"
       }
     },
     {
@@ -1317,7 +1317,7 @@
         "source_post_id": "POST-SRC-MUN-KM009-2082987249571156438",
         "source_id": "SRC-MUN-KM009",
         "post_url": "https://x.com/Koshi_city/status/2082987249571156438",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.035Z"
       }
     },
     {
@@ -1349,7 +1349,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082972004890603566",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082972004890603566",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.035Z"
       }
     },
     {
@@ -1381,7 +1381,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082966956555239458",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082966956555239458",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.035Z"
       }
     },
     {
@@ -1413,7 +1413,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082960866992066624",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082960866992066624",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.035Z"
       }
     },
     {
@@ -1445,7 +1445,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082950802415759458",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082950802415759458",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1477,7 +1477,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082946676143300746",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082946676143300746",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1509,7 +1509,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082786838834757638",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082786838834757638",
-        "fetched_at": "2026-07-31T18:51:50.843Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1541,7 +1541,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082774997098287150",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082774997098287150",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1573,7 +1573,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082764494758113550",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082764494758113550",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1605,7 +1605,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082764118038393161",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082764118038393161",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1637,7 +1637,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082763739938640346",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082763739938640346",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1669,7 +1669,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082763738898440390",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082763738898440390",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1701,7 +1701,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082763024985887186",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082763024985887186",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1733,7 +1733,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082763023622746566",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082763023622746566",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.036Z"
       }
     },
     {
@@ -1765,7 +1765,7 @@
         "source_post_id": "POST-SRC-MUN-KM009-2082760334000136215",
         "source_id": "SRC-MUN-KM009",
         "post_url": "https://x.com/Koshi_city/status/2082760334000136215",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.037Z"
       }
     },
     {
@@ -1797,7 +1797,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082756115046207792",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082756115046207792",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.037Z"
       }
     },
     {
@@ -1829,7 +1829,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082756008263524536",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082756008263524536",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.037Z"
       }
     },
     {
@@ -1861,7 +1861,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082754504475484441",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082754504475484441",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.037Z"
       }
     },
     {
@@ -1893,7 +1893,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082754041306812514",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082754041306812514",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.037Z"
       }
     },
     {
@@ -1910,7 +1910,7 @@
       "region_group": "",
       "date": "2026-07-30",
       "title": "【応急給水活動について】 【応急給水活動について】 ７月３０日（木）の応急給水を1箇所追加いたします",
-      "content": "【応急給水活動について】 【応急給水活動について】 ７月３０日（木）の応急給水を1箇所追加いたします。 配布量は１回あたり５L程度となります。 給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。 時間 １８：００～１９：００ 場所 龍峯コミュニティセンター",
+      "content": "【応急給水活動について】 【応急給水活動について】 ７月３０日（木）の応急給水を1箇所追加いたします。 配布量は１回あたり５L程度となります。 給水容器（ポリタンクやペット��トルなど）をご持参のうえ、お越しください。 時間 １８：００～１９：００ 場所 龍峯コミュニティセンター",
       "url": "https://x.com/yatsushiro0801/status/2082745887831605417",
       "keywords": [],
       "review_note": "",
@@ -1925,7 +1925,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082745887831605417",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082745887831605417",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.037Z"
       }
     },
     {
@@ -1957,7 +1957,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082742370781843539",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082742370781843539",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.037Z"
       }
     },
     {
@@ -1989,7 +1989,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082740661464477700",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082740661464477700",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.038Z"
       }
     },
     {
@@ -2021,7 +2021,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082733678602723834",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082733678602723834",
-        "fetched_at": "2026-07-31T18:51:50.844Z"
+        "fetched_at": "2026-07-31T19:03:48.038Z"
       }
     },
     {
@@ -2053,7 +2053,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082725106103804226",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082725106103804226",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.038Z"
       }
     },
     {
@@ -2085,7 +2085,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082679604083630590",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082679604083630590",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.038Z"
       }
     },
     {
@@ -2117,7 +2117,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082673973696012359",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082673973696012359",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.039Z"
       }
     },
     {
@@ -2149,7 +2149,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082673617285026301",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082673617285026301",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.039Z"
       }
     },
     {
@@ -2181,7 +2181,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082666875948056892",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082666875948056892",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.039Z"
       }
     },
     {
@@ -2213,7 +2213,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082666874861683131",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082666874861683131",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.039Z"
       }
     },
     {
@@ -2245,7 +2245,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082666323948241081",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082666323948241081",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.039Z"
       }
     },
     {
@@ -2277,7 +2277,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082663081700925468",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082663081700925468",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.039Z"
       }
     },
     {
@@ -2309,7 +2309,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082663080518201456",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082663080518201456",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.039Z"
       }
     },
     {
@@ -2341,7 +2341,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082662475955089576",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082662475955089576",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.039Z"
       }
     },
     {
@@ -2373,7 +2373,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082662471668789654",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082662471668789654",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2405,7 +2405,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082662469831696811",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082662469831696811",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082657800531128748",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082657800531128748",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2469,7 +2469,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082647545130713272",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082647545130713272",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2501,7 +2501,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082634284687667293",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082634284687667293",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2518,7 +2518,7 @@
       "region_group": "",
       "date": "2026-07-30",
       "title": "こちらは熊本市です",
-      "content": "こちらは熊本市です。 こちらは熊本市です。 2026/07/28 19:30 に避難所を開設しましたのでお知らせ��ます。 開設した避難所： 済々黌高校【広域】",
+      "content": "こちらは熊本市です。 こちらは熊本市です。 2026/07/28 19:30 に避難所を開設しましたのでお知らせします。 開設した避難所： 済々黌高校【広域】",
       "url": "https://x.com/Bousai_Kumamoto/status/2082634283613876343",
       "keywords": [],
       "review_note": "",
@@ -2533,7 +2533,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082634283613876343",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082634283613876343",
-        "fetched_at": "2026-07-31T18:51:50.845Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2565,7 +2565,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082621938015564147",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082621938015564147",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2597,7 +2597,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082619223013278101",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082619223013278101",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2629,7 +2629,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082619221880770723",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082619221880770723",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2661,7 +2661,7 @@
         "source_post_id": "POST-SRC-NAT-004-2082619189416845701",
         "source_id": "SRC-NAT-004",
         "post_url": "https://x.com/FDMA_JAPAN/status/2082619189416845701",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2693,7 +2693,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082598480045031466",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082598480045031466",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2725,7 +2725,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082594232414753207",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082594232414753207",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2757,7 +2757,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082594231307345979",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082594231307345979",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2789,7 +2789,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082586976499441809",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082586976499441809",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2821,7 +2821,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082570557103710717",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082570557103710717",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.040Z"
       }
     },
     {
@@ -2853,7 +2853,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082570423322202398",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082570423322202398",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -2885,7 +2885,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082570208842309750",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082570208842309750",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -2917,7 +2917,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082478768191594671",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082478768191594671",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -2949,7 +2949,7 @@
         "source_post_id": "POST-SRC-NAT-005-2082465537192575002",
         "source_id": "SRC-NAT-005",
         "post_url": "https://x.com/ModJapan_saigai/status/2082465537192575002",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -2981,7 +2981,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082456239569826171",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082456239569826171",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -3013,7 +3013,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082446223722876985",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082446223722876985",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -3045,7 +3045,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082443702681935918",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082443702681935918",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -3077,7 +3077,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082434097482535265",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082434097482535265",
-        "fetched_at": "2026-07-31T18:51:50.846Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -3109,7 +3109,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082414347494813849",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082414347494813849",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -3141,7 +3141,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082414093286445297",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082414093286445297",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -3173,7 +3173,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082412824010301517",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082412824010301517",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -3205,7 +3205,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082412822991151150",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082412822991151150",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -3222,7 +3222,7 @@
       "region_group": "",
       "date": "2026-07-29",
       "title": "【消防庁 令和８年熊本地震に対する消防機関の活動状況】 嘉島町のイオンモール熊本被災現場において、救助活動中です",
-      "content": "【消防庁 令和８年熊本地震に対する消防機関の活動状況】 嘉島町のイオンモール熊本被災現場において、救助活動中です。 https://t.co/ba4Tqw3rl 【消防庁 令和８年熊本地震に対する消防機関の活動状況】 嘉島町のイオンモール熊本被災現場において、救助活動中です。 https://t.co/ba4Tqw3rlJ",
+      "content": "【消防庁 令和８年熊本地震に対する消防機関の活動状況】 嘉島町のイオンモール熊本被災現場において、救助活動中です。 https://t.co/ba4Tqw3rl 【消防庁 令和８年熊本地震に対する消防機関の活動状況】 嘉島町のイオンモー���熊本被災現場において、救助活動中です。 https://t.co/ba4Tqw3rlJ",
       "url": "https://x.com/FDMA_JAPAN/status/2082403247655108877",
       "keywords": [],
       "review_note": "",
@@ -3237,7 +3237,7 @@
         "source_post_id": "POST-SRC-NAT-004-2082403247655108877",
         "source_id": "SRC-NAT-004",
         "post_url": "https://x.com/FDMA_JAPAN/status/2082403247655108877",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.041Z"
       }
     },
     {
@@ -3269,7 +3269,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082399658559910092",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082399658559910092",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3301,7 +3301,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082385753850659034",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082385753850659034",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3333,7 +3333,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082385752743354634",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082385752743354634",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3365,7 +3365,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082382501075685403",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082382501075685403",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3397,7 +3397,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082382500048023912",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082382500048023912",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3429,7 +3429,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082378560581554452",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082378560581554452",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3461,7 +3461,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082378559524684243",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082378559524684243",
-        "fetched_at": "2026-07-31T18:51:50.847Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3493,7 +3493,7 @@
         "source_post_id": "POST-SRC-NAT-004-2082370940349116782",
         "source_id": "SRC-NAT-004",
         "post_url": "https://x.com/FDMA_JAPAN/status/2082370940349116782",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3525,7 +3525,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082366055448715346",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082366055448715346",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3557,7 +3557,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082363983613595785",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082363983613595785",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3589,7 +3589,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082363549192700140",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082363549192700140",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.042Z"
       }
     },
     {
@@ -3621,7 +3621,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082361527408243046",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082361527408243046",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3653,7 +3653,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082358366953980263",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082358366953980263",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3685,7 +3685,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082353237420810511",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082353237420810511",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3717,7 +3717,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082349636468236726",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082349636468236726",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3749,7 +3749,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082344127715533065",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082344127715533065",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3781,7 +3781,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082341169594614131",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082341169594614131",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3813,7 +3813,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082340197107470578",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082340197107470578",
-        "fetched_at": "2026-07-31T18:51:50.848Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3845,7 +3845,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082336932282142994",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082336932282142994",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3877,7 +3877,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082333090404581436",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082333090404581436",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3909,7 +3909,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082331061959442779",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082331061959442779",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3941,7 +3941,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082328538838147079",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082328538838147079",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -3973,7 +3973,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082327862401806355",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082327862401806355",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.043Z"
       }
     },
     {
@@ -4005,7 +4005,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082323839820947676",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082323839820947676",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4037,7 +4037,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082323305030389878",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082323305030389878",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4069,7 +4069,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082317015881314558",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082317015881314558",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4101,7 +4101,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082314387885604963",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082314387885604963",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4133,7 +4133,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082311647130210543",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082311647130210543",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4165,7 +4165,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082302949762744793",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082302949762744793",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4197,7 +4197,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082302580609393107",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082302580609393107",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4229,7 +4229,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082302325369254250",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082302325369254250",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4261,7 +4261,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082302313725911380",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082302313725911380",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4293,7 +4293,7 @@
         "source_post_id": "POST-SRC-NAT-004-2082302161661399344",
         "source_id": "SRC-NAT-004",
         "post_url": "https://x.com/FDMA_JAPAN/status/2082302161661399344",
-        "fetched_at": "2026-07-31T18:51:50.849Z"
+        "fetched_at": "2026-07-31T19:03:48.044Z"
       }
     },
     {
@@ -4325,7 +4325,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082300559747580261",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082300559747580261",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.045Z"
       }
     },
     {
@@ -4357,7 +4357,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082292893033939088",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082292893033939088",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.045Z"
       }
     },
     {
@@ -4389,7 +4389,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082288733710418240",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082288733710418240",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.045Z"
       }
     },
     {
@@ -4421,7 +4421,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082286007031128303",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082286007031128303",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.045Z"
       }
     },
     {
@@ -4453,7 +4453,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082280127631868092",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082280127631868092",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.045Z"
       }
     },
     {
@@ -4485,7 +4485,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082279317527240739",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082279317527240739",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.045Z"
       }
     },
     {
@@ -4517,7 +4517,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082276482194575578",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082276482194575578",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.045Z"
       }
     },
     {
@@ -4549,7 +4549,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082272279027912964",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082272279027912964",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.045Z"
       }
     },
     {
@@ -4581,7 +4581,7 @@
         "source_post_id": "POST-SRC-NAT-004-2082262699023777877",
         "source_id": "SRC-NAT-004",
         "post_url": "https://x.com/FDMA_JAPAN/status/2082262699023777877",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.045Z"
       }
     },
     {
@@ -4613,7 +4613,7 @@
         "source_post_id": "POST-SRC-NAT-004-2082261198352048426",
         "source_id": "SRC-NAT-004",
         "post_url": "https://x.com/FDMA_JAPAN/status/2082261198352048426",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.046Z"
       }
     },
     {
@@ -4645,7 +4645,7 @@
         "source_post_id": "POST-SRC-NAT-004-2082259005754454524",
         "source_id": "SRC-NAT-004",
         "post_url": "https://x.com/FDMA_JAPAN/status/2082259005754454524",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.046Z"
       }
     },
     {
@@ -4677,7 +4677,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082257592257217008",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082257592257217008",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.046Z"
       }
     },
     {
@@ -4709,7 +4709,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082253110509215900",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082253110509215900",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.046Z"
       }
     },
     {
@@ -4741,7 +4741,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082246153714979087",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082246153714979087",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.046Z"
       }
     },
     {
@@ -4773,7 +4773,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082239685120729488",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082239685120729488",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.047Z"
       }
     },
     {
@@ -4805,7 +4805,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082237342119797017",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082237342119797017",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.047Z"
       }
     },
     {
@@ -4837,7 +4837,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082230075127382290",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082230075127382290",
-        "fetched_at": "2026-07-31T18:51:50.850Z"
+        "fetched_at": "2026-07-31T19:03:48.047Z"
       }
     },
     {
@@ -4869,7 +4869,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082228538560884740",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082228538560884740",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.047Z"
       }
     },
     {
@@ -4901,7 +4901,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082206692893467039",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082206692893467039",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.047Z"
       }
     },
     {
@@ -4933,7 +4933,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082187864729845797",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082187864729845797",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.047Z"
       }
     },
     {
@@ -4965,7 +4965,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082182781367656542",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082182781367656542",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.048Z"
       }
     },
     {
@@ -4997,7 +4997,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082134167341691296",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082134167341691296",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.048Z"
       }
     },
     {
@@ -5029,7 +5029,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082131011748646968",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082131011748646968",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.048Z"
       }
     },
     {
@@ -5061,7 +5061,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082130339363959218",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082130339363959218",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.048Z"
       }
     },
     {
@@ -5093,7 +5093,7 @@
         "source_post_id": "POST-SRC-MUN-KM009-2082116920166535220",
         "source_id": "SRC-MUN-KM009",
         "post_url": "https://x.com/Koshi_city/status/2082116920166535220",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.048Z"
       }
     },
     {
@@ -5125,7 +5125,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082116517471416606",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082116517471416606",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.048Z"
       }
     },
     {
@@ -5157,7 +5157,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082115179274543325",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082115179274543325",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.048Z"
       }
     },
     {
@@ -5189,7 +5189,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082114879914406048",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082114879914406048",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.049Z"
       }
     },
     {
@@ -5221,7 +5221,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082114542642041251",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082114542642041251",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.051Z"
       }
     },
     {
@@ -5253,7 +5253,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082114370411344136",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082114370411344136",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.051Z"
       }
     },
     {
@@ -5269,8 +5269,8 @@
       "prefecture_group": "",
       "region_group": "",
       "date": "2026-07-28",
-      "title": "避難所開設状況 その３（7月28日23時00分現在） 避難所開設状況 その３（7���28日23時00分現在） ・八代支援学校 ・松高コミュニティセンター...",
-      "content": "避難所開設状況 その３（7月28日23時00分現在） 避難所開設状況 その３（7���28日23時00分現在） ・八代支援学校 ・松高コミュニティセンター ・松高小学校 ・大島公民館 ・八千把コミュニティセンター ・八千把小学校 ・第四中学校 ・高田コミュニティセンター ・第五中学校",
+      "title": "避難所開設状況 その３（7月28日23時00分現在） 避難所開設状況 その３（7月28日23時00分現在） ・八代支援学校 ・松高コミュニティセンター ・...",
+      "content": "避難所開設状況 その３（7月28日23時00分現在） 避難所開設状況 その３（7月28日23時00分現在） ・八代支援学校 ・松高コミュニティセンター ・松高小学校 ・大島公民館 ・八千把コミュニティセンター ・八千把小学校 ・第四中学校 ・高田コミュニティセンター ・第五中学校",
       "url": "https://x.com/yatsushiro0801/status/2082114011781538178",
       "keywords": [],
       "review_note": "",
@@ -5285,7 +5285,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082114011781538178",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082114011781538178",
-        "fetched_at": "2026-07-31T18:51:50.851Z"
+        "fetched_at": "2026-07-31T19:03:48.051Z"
       }
     },
     {
@@ -5317,7 +5317,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082113515587076505",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082113515587076505",
-        "fetched_at": "2026-07-31T18:51:50.852Z"
+        "fetched_at": "2026-07-31T19:03:48.051Z"
       }
     },
     {
@@ -5349,7 +5349,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082113261764563150",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082113261764563150",
-        "fetched_at": "2026-07-31T18:51:50.852Z"
+        "fetched_at": "2026-07-31T19:03:48.051Z"
       }
     },
     {
@@ -5381,7 +5381,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082095845353398326",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082095845353398326",
-        "fetched_at": "2026-07-31T18:51:50.852Z"
+        "fetched_at": "2026-07-31T19:03:48.051Z"
       }
     },
     {
@@ -5413,7 +5413,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082095524388434422",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082095524388434422",
-        "fetched_at": "2026-07-31T18:51:50.852Z"
+        "fetched_at": "2026-07-31T19:03:48.051Z"
       }
     },
     {
@@ -5445,7 +5445,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082095320645996820",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082095320645996820",
-        "fetched_at": "2026-07-31T18:51:50.852Z"
+        "fetched_at": "2026-07-31T19:03:48.052Z"
       }
     },
     {
@@ -5477,7 +5477,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082094764070158760",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082094764070158760",
-        "fetched_at": "2026-07-31T18:51:50.852Z"
+        "fetched_at": "2026-07-31T19:03:48.052Z"
       }
     },
     {
@@ -5509,7 +5509,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082094299483976046",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082094299483976046",
-        "fetched_at": "2026-07-31T18:51:50.852Z"
+        "fetched_at": "2026-07-31T19:03:48.052Z"
       }
     },
     {
@@ -5541,7 +5541,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082093703792046258",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082093703792046258",
-        "fetched_at": "2026-07-31T18:51:50.852Z"
+        "fetched_at": "2026-07-31T19:03:48.052Z"
       }
     },
     {
@@ -5573,7 +5573,7 @@
         "source_post_id": "POST-SRC-NAT-005-2082093272873529449",
         "source_id": "SRC-NAT-005",
         "post_url": "https://x.com/ModJapan_saigai/status/2082093272873529449",
-        "fetched_at": "2026-07-31T18:51:50.853Z"
+        "fetched_at": "2026-07-31T19:03:48.052Z"
       }
     },
     {
@@ -5605,7 +5605,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082089060345258439",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082089060345258439",
-        "fetched_at": "2026-07-31T18:51:50.853Z"
+        "fetched_at": "2026-07-31T19:03:48.052Z"
       }
     },
     {
@@ -5637,7 +5637,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082085406322126975",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082085406322126975",
-        "fetched_at": "2026-07-31T18:51:50.853Z"
+        "fetched_at": "2026-07-31T19:03:48.052Z"
       }
     },
     {
@@ -5669,7 +5669,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082075023838449690",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082075023838449690",
-        "fetched_at": "2026-07-31T18:51:50.853Z"
+        "fetched_at": "2026-07-31T19:03:48.052Z"
       }
     },
     {
@@ -5701,7 +5701,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082074988476252326",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082074988476252326",
-        "fetched_at": "2026-07-31T18:51:50.853Z"
+        "fetched_at": "2026-07-31T19:03:48.052Z"
       }
     },
     {
@@ -5733,7 +5733,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082066213900067193",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082066213900067193",
-        "fetched_at": "2026-07-31T18:51:50.853Z"
+        "fetched_at": "2026-07-31T19:03:48.053Z"
       }
     },
     {
@@ -5765,7 +5765,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082066035533062421",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082066035533062421",
-        "fetched_at": "2026-07-31T18:51:50.853Z"
+        "fetched_at": "2026-07-31T19:03:48.053Z"
       }
     },
     {
@@ -5797,7 +5797,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082064811878449435",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082064811878449435",
-        "fetched_at": "2026-07-31T18:51:50.853Z"
+        "fetched_at": "2026-07-31T19:03:48.053Z"
       }
     },
     {
@@ -5829,7 +5829,7 @@
         "source_post_id": "POST-SRC-MUN-KM009-2082060988615188894",
         "source_id": "SRC-MUN-KM009",
         "post_url": "https://x.com/Koshi_city/status/2082060988615188894",
-        "fetched_at": "2026-07-31T18:51:50.853Z"
+        "fetched_at": "2026-07-31T19:03:48.053Z"
       }
     },
     {
@@ -5861,7 +5861,7 @@
         "source_post_id": "POST-SRC-MUN-KM009-2082051649443639500",
         "source_id": "SRC-MUN-KM009",
         "post_url": "https://x.com/Koshi_city/status/2082051649443639500",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.053Z"
       }
     },
     {
@@ -5893,7 +5893,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082045109194154251",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082045109194154251",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.053Z"
       }
     },
     {
@@ -5925,7 +5925,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082032403888157083",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082032403888157083",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.053Z"
       }
     },
     {
@@ -5957,7 +5957,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082030867741073490",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082030867741073490",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.054Z"
       }
     },
     {
@@ -5989,7 +5989,7 @@
         "source_post_id": "POST-SRC-MUN-KM009-2082029294566724060",
         "source_id": "SRC-MUN-KM009",
         "post_url": "https://x.com/Koshi_city/status/2082029294566724060",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.054Z"
       }
     },
     {
@@ -6021,7 +6021,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082029272538259543",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082029272538259543",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.054Z"
       }
     },
     {
@@ -6053,7 +6053,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082025998481260795",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082025998481260795",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.054Z"
       }
     },
     {
@@ -6085,7 +6085,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082025952398479752",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082025952398479752",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.054Z"
       }
     },
     {
@@ -6117,7 +6117,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082024977004671115",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082024977004671115",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.054Z"
       }
     },
     {
@@ -6149,7 +6149,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082022732196458525",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082022732196458525",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.054Z"
       }
     },
     {
@@ -6181,7 +6181,7 @@
         "source_post_id": "POST-SRC-MUN-KM001-2082022732196458525",
         "source_id": "SRC-MUN-KM001",
         "post_url": "https://x.com/kumamotocity_/status/2082022732196458525",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.054Z"
       }
     },
     {
@@ -6213,7 +6213,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082022083056574767",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082022083056574767",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6245,7 +6245,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082022081907376455",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082022081907376455",
-        "fetched_at": "2026-07-31T18:51:50.854Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6277,7 +6277,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082022083056574767",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082022083056574767",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6309,7 +6309,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082021405261230247",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082021405261230247",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6341,7 +6341,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082021364832301379",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082021364832301379",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6373,7 +6373,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082021363704070614",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082021363704070614",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6405,7 +6405,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082021256367656991",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082021256367656991",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6437,7 +6437,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082021254866022588",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082021254866022588",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6469,7 +6469,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082020954956517502",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082020954956517502",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6501,7 +6501,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082020953425596458",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082020953425596458",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6533,7 +6533,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082020942574952483",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082020942574952483",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6565,7 +6565,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082020940914000170",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082020940914000170",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.055Z"
       }
     },
     {
@@ -6597,7 +6597,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082020662126985218",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082020662126985218",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.056Z"
       }
     },
     {
@@ -6629,7 +6629,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082020659832803810",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082020659832803810",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.056Z"
       }
     },
     {
@@ -6661,7 +6661,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082019984734343331",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082019984734343331",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.056Z"
       }
     },
     {
@@ -6693,7 +6693,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082019978166055125",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082019978166055125",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.056Z"
       }
     },
     {
@@ -6725,7 +6725,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082018713117880730",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082018713117880730",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.056Z"
       }
     },
     {
@@ -6757,7 +6757,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082018711918235775",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082018711918235775",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.056Z"
       }
     },
     {
@@ -6789,7 +6789,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082016346809024589",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082016346809024589",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -6821,7 +6821,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082016345227677926",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082016345227677926",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -6853,7 +6853,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082016308649193778",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082016308649193778",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -6885,7 +6885,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082016302932304100",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082016302932304100",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -6917,7 +6917,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082016184627847449",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082016184627847449",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -6949,7 +6949,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082015935742026034",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082015935742026034",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -6981,7 +6981,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082015934173360580",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082015934173360580",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -7013,7 +7013,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082013914259452031",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082013914259452031",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -7045,7 +7045,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082013911575134373",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082013911575134373",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -7077,7 +7077,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082013490685022342",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082013490685022342",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -7109,7 +7109,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082013487996502023",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082013487996502023",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -7125,8 +7125,8 @@
       "prefecture_group": "",
       "region_group": "",
       "date": "2026-07-28",
-      "title": "(続き) (続き) こち��は芦北町です",
-      "content": "(続き) (続き) こち��は芦北町です。 現在(2026/07/28 16:55)発令中の避難情報については、以下をクリックして確認してください。 防災情報くまもと URL: https://t.co/OmOLef7ZZ9 #避難情報",
+      "title": "(続き) (続き) こちらは芦北町です",
+      "content": "(続き) (続き) こちらは芦北町です。 現在(2026/07/28 16:55)発令中の避難情報については、以下をクリックして確認してください。 防災情報くまもと URL: https://t.co/OmOLef7ZZ9 #避難情報",
       "url": "https://x.com/Bousai_Kumamoto/status/2082012169647092157",
       "keywords": [],
       "review_note": "",
@@ -7141,7 +7141,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082012169647092157",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082012169647092157",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -7158,7 +7158,7 @@
       "region_group": "",
       "date": "2026-07-28",
       "title": "こちらは芦北町です",
-      "content": "こちらは芦北町です。 こちらは芦北町です。 2026/07/28 16:27に避難指示を発令しました。 発令地区： 芦北町全域 理由：地震警戒のため",
+      "content": "こちらは芦北町です。 こちらは芦北町です。 2026/07/28 16:27に避難指示を発令しました。 発令地区： 芦北町全域 理由：地震警戒のた��",
       "url": "https://x.com/Bousai_Kumamoto/status/2082012167889674415",
       "keywords": [],
       "review_note": "",
@@ -7173,7 +7173,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082012167889674415",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082012167889674415",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -7205,7 +7205,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082010826740044113",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082010826740044113",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -7237,7 +7237,7 @@
         "source_post_id": "POST-SRC-KUM-001-2082010825104253061",
         "source_id": "SRC-KUM-001",
         "post_url": "https://x.com/Bousai_Kumamoto/status/2082010825104253061",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.057Z"
       }
     },
     {
@@ -7269,7 +7269,7 @@
         "source_post_id": "POST-SRC-MUN-KM005-2082015000000000001",
         "source_id": "SRC-MUN-KM005",
         "post_url": "https://x.com/yatsushiro0801/status/2082015000000000001",
-        "fetched_at": "2026-07-31T18:51:50.855Z"
+        "fetched_at": "2026-07-31T19:03:48.058Z"
       }
     },
     {
@@ -7301,7 +7301,7 @@
         "source_post_id": "POST-SRC-MUN-KM006-2082016000000000001",
         "source_id": "SRC-MUN-KM006",
         "post_url": "https://x.com/hitoyoshishi/status/2082016000000000001",
-        "fetched_at": "2026-07-31T18:51:50.856Z"
+        "fetched_at": "2026-07-31T19:03:48.058Z"
       }
     }
   ]

@@ -34,12 +34,11 @@
   },
   "sns_fetch": {
     "platforms": [
-      "X",
-      "Instagram"
+      "X"
     ],
     "since_date": "2026-07-28"
   },
-  "generated_at": "2026-07-31T18:30:19.348Z",
+  "generated_at": "2026-07-31T19:03:48.963Z",
   "AUTO_PUBLISH": false,
   "AUTO_APPLY": false,
   "STOP_AT": "REVIEW_QUEUE",
@@ -50,61 +49,49 @@
     "error_count": 0
   },
   "counts": {
-    "inbox_item_count": 273,
-    "review_queue_item_count": 273,
-    "apply_queue_item_count": 273,
-    "index_entry_count": 273,
-    "source_count": 8,
-    "incomplete_inbox_count": 273,
-    "incomplete_index_count": 273,
-    "incomplete_review_count": 273,
+    "inbox_item_count": 227,
+    "review_queue_item_count": 227,
+    "apply_queue_item_count": 227,
+    "index_entry_count": 227,
+    "source_count": 7,
+    "incomplete_inbox_count": 227,
+    "incomplete_index_count": 227,
+    "incomplete_review_count": 227,
     "duplicate_review_count": 0,
     "pending_review_count": 0,
-    "approved_review_count": 273
+    "approved_review_count": 227
   },
   "review_status_summary": {
-    "PENDING": 273,
-    "APPROVED": 0,
+    "PENDING": 0,
+    "APPROVED": 227,
     "REJECTED": 0,
     "DUPLICATE": 0
   },
   "prefecture_summary": {
-    "熊本県": 271,
-    "鹿児島県": 2
+    "熊本県": 227
   },
   "prefecture_detail": {
     "熊本県": {
-      "entry_count": 271,
-      "incomplete_count": 271,
+      "entry_count": 227,
+      "incomplete_count": 227,
       "duplicate_count": 0,
       "category_counts": {
-        "OTHER": 173,
-        "WATER": 87,
-        "SUPPLIES": 6,
-        "FOOD": 5
-      }
-    },
-    "鹿児島県": {
-      "entry_count": 2,
-      "incomplete_count": 2,
-      "duplicate_count": 0,
-      "category_counts": {
-        "OTHER": 1,
-        "FOOD": 1
+        "OTHER": 145,
+        "WATER": 81,
+        "SUPPLIES": 1
       }
     }
   },
   "source_type_summary": {
     "X": 2,
     "WEB": 3,
-    "OTHER": 2,
-    "Instagram": 1
+    "OTHER": 2
   },
   "last_updated": {
     "inbox": null,
-    "review_queue": "2026-07-31T18:30:19.274Z",
-    "apply_queue": "2026-07-31T18:30:19.276Z",
-    "index": "2026-07-31T18:30:19.280Z"
+    "review_queue": "2026-07-31T19:03:48.754Z",
+    "apply_queue": "2026-07-31T19:03:48.757Z",
+    "index": "2026-07-31T18:51:50.876Z"
   },
   "incomplete_items": [
     {
@@ -1922,420 +1909,6 @@
         "district"
       ],
       "entry_id": "SOC-IDX-SNS-X-POST-SRC-MUN-KM006-2082016000000000001"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0001",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0001"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0002",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0002"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0003",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0003"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0004",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0004"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0005",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0005"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0006",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0006"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0007",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0007"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0008",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0008"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0009",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0009"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0010",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0010"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0011",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0011"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0012",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0012"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0013",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0013"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0014",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0014"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0015",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0015"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0016",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0016"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0017",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0017"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0018",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0018"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0019",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0019"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0020",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0020"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0021",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0021"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0022",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0022"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0023",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0023"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0024",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0024"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0025",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0025"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0026",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0026"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0027",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0027"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0028",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0028"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0029",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0029"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0030",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0030"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0031",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0031"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0032",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0032"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0033",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0033"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0034",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0034"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0035",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0035"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0036",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0036"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0037",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0037"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0038",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0038"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0039",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0039"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0040",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0040"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0041",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0041"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0042",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0042"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0043",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0043"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0044",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0044"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0045",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0045"
-    },
-    {
-      "inbox_id": "SNS-IG-IG-0046",
-      "review_note": "",
-      "missing_fields": [
-        "district",
-        "url"
-      ],
-      "entry_id": "SOC-IDX-SNS-IG-IG-0046"
     }
   ]
 }

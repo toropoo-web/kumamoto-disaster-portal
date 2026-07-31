@@ -5,8 +5,8 @@
   "AUTO_PUBLISH": false,
   "item_count": 227,
   "status_summary": {
-    "PENDING": 227,
-    "APPROVED": 0,
+    "PENDING": 0,
+    "APPROVED": 227,
     "REJECTED": 0,
     "DUPLICATE": 0
   },
@@ -7049,5 +7049,5 @@
       "review_note": ""
     }
   ],
-  "last_updated": "2026-07-31T18:51:50.871Z"
+  "last_updated": "2026-07-31T19:03:48.754Z"
 }
