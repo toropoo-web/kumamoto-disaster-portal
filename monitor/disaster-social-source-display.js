@@ -2,7 +2,6 @@
 
 const SOCIAL_SOURCE_TYPE_LABELS = {
   X: "X",
-  Instagram: "Instagram",
   WEB: "WEB",
   MANUAL: "MANUAL",
   OTHER: "その他"

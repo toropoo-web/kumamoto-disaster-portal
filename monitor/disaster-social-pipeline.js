@@ -230,10 +230,7 @@ function inboxItemToIndexEntry(inboxItem, index) {
     entry.post_url = inboxItem.post_url;
   } else if (inboxItem.sns_fetch && inboxItem.sns_fetch.post_url) {
     entry.post_url = inboxItem.sns_fetch.post_url;
-  } else if (
-    (inboxItem.source_type === "X" || inboxItem.source_type === "Instagram") &&
-    inboxItem.url
-  ) {
+  } else if (inboxItem.source_type === "X" && inboxItem.url) {
     entry.post_url = inboxItem.url;
   }
   if (inboxItem.prefecture_group) {

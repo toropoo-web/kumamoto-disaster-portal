@@ -1531,7 +1531,6 @@
 
   var SOCIAL_SOURCE_TYPE_LABELS = {
     X: "X",
-    Instagram: "Instagram",
     WEB: "WEB",
     MANUAL: "MANUAL",
     OTHER: "その他"
@@ -1559,7 +1558,7 @@
 
   function resolveSocialPostLinkLabel(item) {
     var sourceType = String((item && item.source_type) || "").trim();
-    if (sourceType === "X" || sourceType === "Instagram") {
+    if (sourceType === "X") {
       return "▶ 投稿を見る";
     }
     return "情報を見る";

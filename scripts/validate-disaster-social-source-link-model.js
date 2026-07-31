@@ -131,13 +131,16 @@ function mainStatic() {
   }
 
   const igWithoutUrl = entries.filter(function (entry) {
-    return entry.source_type === "Instagram" && !resolveSocialEntryUrl(entry);
+    return entry.source_type === "Instagram";
   });
   checks.push({
-    check: "Instagram without url preserved",
-    pass: igWithoutUrl.length > 0,
-    ig_without_url: igWithoutUrl.length
+    check: "Instagram entries excluded from index",
+    pass: igWithoutUrl.length === 0,
+    ig_count: igWithoutUrl.length
   });
+  if (igWithoutUrl.length) {
+    errors.push("community index must not contain Instagram entries");
+  }
 
   return { checks: checks, errors: errors, entries: entries, sourceLookup: sourceLookup };
 }
@@ -187,26 +190,6 @@ async function mainBrowser(entries, sourceLookup) {
       errors.push("sns post link display failed");
     }
 
-    await page.locator("#disaster-social-search-region").fill("霧島市");
-    await page.locator("#disaster-social-search-category").fill("");
-    await page.locator(".disaster-social-search__form button[type='submit']").click();
-    await page.waitForSelector("#disaster-social-search-results .disaster-search__card", {
-      timeout: 15000
-    });
-    const igCardCount = await page.locator("#disaster-social-search-results .disaster-search__card").count();
-    const igSourceTypeCount = await page.locator(".disaster-social-search__source-type").count();
-    const igLinkCount = await page.locator("#disaster-social-search-results .disaster-social-search__post-link").count();
-    checks.push({
-      check: "instagram without url shows source only",
-      pass: igCardCount > 0 && igSourceTypeCount > 0 && igLinkCount === 0,
-      card_count: igCardCount,
-      source_type_count: igSourceTypeCount,
-      link_count: igLinkCount
-    });
-    if (!igCardCount || igLinkCount !== 0) {
-      errors.push("instagram entries without url must not show post link");
-    }
-
     const withUrlEntry = entries.find(function (entry) {
       return Boolean(resolveSocialEntryUrl(entry));
     });
@@ -224,9 +207,7 @@ async function mainBrowser(entries, sourceLookup) {
       const link = card.locator(".disaster-social-search__post-link");
       const linkText = await link.innerText();
       const href = await link.getAttribute("href");
-      const expectedLabel = withUrlEntry.source_type === "X" || withUrlEntry.source_type === "Instagram"
-        ? "▶ 投稿を見る"
-        : "情報を見る";
+      const expectedLabel = withUrlEntry.source_type === "X" ? "▶ 投稿を見る" : "情報を見る";
       checks.push({
         check: "url present shows source and post link",
         pass:

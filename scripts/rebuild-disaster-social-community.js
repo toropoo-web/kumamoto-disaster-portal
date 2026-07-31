@@ -99,14 +99,11 @@ async function main() {
     indexPath: INDEX_FILE
   });
 
-  const byPlatform = { X: 0, Instagram: 0 };
+  const byPlatform = { X: 0 };
   const byCategory = {};
   const indexPayload = JSON.parse(fs.readFileSync(INDEX_FILE, "utf8"));
   indexPayload.entries.forEach(function (entry) {
-    const st = entry.source_type || "";
-    if (st === "Instagram") {
-      byPlatform.Instagram += 1;
-    } else if (st === "X") {
+    if (entry.source_type === "X") {
       byPlatform.X += 1;
     }
     const cat = entry.category || "OTHER";

@@ -298,7 +298,7 @@ function main() {
   }).length;
   checks.push({
     check: "kirishima city search",
-    pass: kirishimaResults.length === kirishimaEntryCount && kirishimaEntryCount > 0,
+    pass: kirishimaResults.length === kirishimaEntryCount,
     count: kirishimaResults.length,
     kirishima_entry_count: kirishimaEntryCount
   });

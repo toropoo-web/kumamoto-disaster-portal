@@ -14,9 +14,11 @@ const PUBLIC_INDEX_FILE = path.join(ROOT, "data", "public", "disaster_social_ind
 const SERVE_URL = process.env.SERVE_URL || "http://localhost:3030";
 
 const {
+  SNS_FETCH_PLATFORMS
+} = require(path.join(ROOT, "monitor", "disaster-social-community-scope"));
+const {
   resolveSocialEntryUrl,
   isXPostUrl,
-  isInstagramPostUrl,
   resolveSnsPostUrlFromFeedPost,
   containsBlockedPublicUrl
 } = require(path.join(ROOT, "monitor", "disaster-social-url"));
@@ -53,11 +55,28 @@ async function main() {
   const inboxItems = inboxPayload.items || [];
 
   checks.push({
+    check: "sns fetch platforms x only",
+    pass: SNS_FETCH_PLATFORMS.length === 1 && SNS_FETCH_PLATFORMS[0] === "X",
+    platforms: SNS_FETCH_PLATFORMS
+  });
+  if (SNS_FETCH_PLATFORMS.join(",") !== "X") {
+    errors.push("SNS_FETCH_PLATFORMS must be X only");
+  }
+
+  checks.push({
     check: "ui post link label",
     pass: /▶ 投稿を見る/.test(appJs) && /resolveSocialPostLinkLabel/.test(appJs)
   });
   if (!/▶ 投稿を見る/.test(appJs)) {
-    errors.push("app.js must show ▶ 投稿を見る for sns posts with url");
+    errors.push("app.js must show ▶ 投稿を見る for X posts with url");
+  }
+
+  checks.push({
+    check: "instagram fetch removed from app",
+    pass: !/Instagram/.test(appJs) || !/sourceType === "Instagram"/.test(appJs)
+  });
+  if (/sourceType === "Instagram"/.test(appJs)) {
+    errors.push("app.js must not reference Instagram sns post links");
   }
 
   const xEntries = entries.filter(function (entry) {
@@ -68,12 +87,6 @@ async function main() {
   });
   const xWithUrl = xEntries.filter(function (entry) {
     return isXPostUrl(resolveSocialEntryUrl(entry));
-  });
-  const igWithUrl = igEntries.filter(function (entry) {
-    return isInstagramPostUrl(resolveSocialEntryUrl(entry));
-  });
-  const igWithoutUrl = igEntries.filter(function (entry) {
-    return !resolveSocialEntryUrl(entry);
   });
 
   checks.push({
@@ -87,32 +100,12 @@ async function main() {
   }
 
   checks.push({
-    check: "Instagram url only when available",
-    pass: igWithoutUrl.length > 0,
-    ig_total: igEntries.length,
-    ig_with_url: igWithUrl.length,
-    ig_without_url: igWithoutUrl.length
+    check: "Instagram entries excluded from index",
+    pass: igEntries.length === 0,
+    ig_total: igEntries.length
   });
-
-  const instagramResolverPass = resolveSnsPostUrlFromFeedPost(
-    {
-      postUrl: "https://www.instagram.com/p/ABC123xyz/",
-      permalink: ""
-    },
-    "Instagram"
-  ) === "https://www.instagram.com/p/ABC123xyz/";
-  const instagramReelResolverPass = resolveSnsPostUrlFromFeedPost(
-    {
-      reel_url: "https://www.instagram.com/reel/XYZ987abc/"
-    },
-    "Instagram"
-  ) === "https://www.instagram.com/reel/XYZ987abc/";
-  checks.push({
-    check: "Instagram real url resolver",
-    pass: instagramResolverPass && instagramReelResolverPass
-  });
-  if (!instagramResolverPass || !instagramReelResolverPass) {
-    errors.push("Instagram post/reel url resolver failed");
+  if (igEntries.length) {
+    errors.push("community index must not contain Instagram entries");
   }
 
   const feedPayload = await fetchJson(
@@ -136,13 +129,17 @@ async function main() {
   const fetchedWithUrl = (xFetch.items || []).filter(function (item) {
     return isXPostUrl(item.url);
   });
+  const fetchedInstagram = (xFetch.items || []).filter(function (item) {
+    return item.source_type === "Instagram";
+  });
   checks.push({
     check: "X sns fetch keeps post urls",
-    pass: fetchedWithUrl.length > 0,
-    fetched_with_url: fetchedWithUrl.length
+    pass: fetchedWithUrl.length > 0 && fetchedInstagram.length === 0,
+    fetched_with_url: fetchedWithUrl.length,
+    fetched_instagram_count: fetchedInstagram.length
   });
-  if (!fetchedWithUrl.length) {
-    errors.push("X sns fetch must keep post urls from feed");
+  if (!fetchedWithUrl.length || fetchedInstagram.length) {
+    errors.push("X sns fetch must keep post urls and exclude Instagram");
   }
 
   const inboxSns = inboxItems.filter(function (item) {
@@ -151,12 +148,19 @@ async function main() {
   const inboxXWithUrl = inboxSns.filter(function (item) {
     return item.source_type === "X" && isXPostUrl(item.url);
   });
+  const inboxInstagram = inboxSns.filter(function (item) {
+    return item.source_type === "Instagram";
+  });
   checks.push({
     check: "inbox sns url preserved",
-    pass: inboxXWithUrl.length > 0,
+    pass: inboxXWithUrl.length > 0 && inboxInstagram.length === 0,
     inbox_sns_count: inboxSns.length,
-    inbox_x_with_url: inboxXWithUrl.length
+    inbox_x_with_url: inboxXWithUrl.length,
+    inbox_instagram_count: inboxInstagram.length
   });
+  if (inboxInstagram.length) {
+    errors.push("production inbox must not contain Instagram sns items");
+  }
 
   checks.push({
     check: "dummy url count zero",
@@ -184,34 +188,22 @@ async function main() {
     const postLinkCount = await page.locator("#disaster-social-search-results .disaster-social-search__post-link").count();
     const linkText = postLinkCount ? await postLink.innerText() : "";
     const href = postLinkCount ? await postLink.getAttribute("href") : "";
+    const sourceTypeText = await page.locator(".disaster-social-search__source-type").first().innerText();
 
     checks.push({
       check: "browser X post link visible",
-      pass: postLinkCount > 0 && linkText === "▶ 投稿を見る" && isXPostUrl(href),
+      pass:
+        postLinkCount > 0 &&
+        linkText === "▶ 投稿を見る" &&
+        isXPostUrl(href) &&
+        sourceTypeText === "情報元：X",
       post_link_count: postLinkCount,
       link_text: linkText,
-      href: href
+      href: href,
+      source_type_text: sourceTypeText
     });
-    if (!postLinkCount || linkText !== "▶ 投稿を見る" || !isXPostUrl(href)) {
-      errors.push("browser must show ▶ 投稿を見る with real X url");
-    }
-
-    await page.locator("#disaster-social-search-region").fill("霧島市");
-    await page.locator(".disaster-social-search__form button[type='submit']").click();
-    await page.waitForSelector("#disaster-social-search-results .disaster-search__card", {
-      timeout: 15000
-    });
-    const igCards = await page.locator("#disaster-social-search-results .disaster-search__card").count();
-    const igPostLinks = await page.locator("#disaster-social-search-results .disaster-social-search__post-link").count();
-    const igSourceTypes = await page.locator(".disaster-social-search__source-type").count();
-    checks.push({
-      check: "browser Instagram no-url hides button",
-      pass: igCards > 0 && igSourceTypes > 0 && igPostLinks === 0,
-      ig_cards: igCards,
-      ig_post_links: igPostLinks
-    });
-    if (!igCards || igPostLinks > 0) {
-      errors.push("Instagram entries without url must not show post link button");
+    if (!postLinkCount || linkText !== "▶ 投稿を見る" || !isXPostUrl(href) || sourceTypeText !== "情報元：X") {
+      errors.push("browser must show 情報元：X and ▶ 投稿を見る with real X url");
     }
   } finally {
     await browser.close();

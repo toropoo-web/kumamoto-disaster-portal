@@ -56,21 +56,21 @@ function main() {
     errors.push("production inbox must be SNS-dominant");
   }
 
-  const platformCounts = { X: 0, Instagram: 0 };
+  const platformCounts = { X: 0 };
   snsItems.forEach(function (item) {
-    if (item.source_type === "Instagram") {
-      platformCounts.Instagram += 1;
-    } else if (item.source_type === "X") {
+    if (item.source_type === "X") {
       platformCounts.X += 1;
+    } else if (item.source_type === "Instagram") {
+      errors.push("production inbox must not include Instagram sns items");
     }
   });
   checks.push({
     check: "sns platform coverage",
-    pass: platformCounts.X > 0 && platformCounts.Instagram > 0,
+    pass: platformCounts.X > 0,
     platform_counts: platformCounts
   });
-  if (!platformCounts.X || !platformCounts.Instagram) {
-    errors.push("production inbox must include both X and Instagram SNS items");
+  if (!platformCounts.X) {
+    errors.push("production inbox must include X SNS items");
   }
 
   const municipalitySet = new Set();
@@ -123,13 +123,20 @@ function main() {
   }
 
   const indexSns = entries.filter(function (entry) {
-    return entry.source_type === "X" || entry.source_type === "Instagram";
+    return entry.source_type === "X";
+  });
+  const indexInstagram = entries.filter(function (entry) {
+    return entry.source_type === "Instagram";
   });
   checks.push({
     check: "index sns source types",
-    pass: indexSns.length > 0,
-    index_sns_count: indexSns.length
+    pass: indexSns.length > 0 && indexInstagram.length === 0,
+    index_sns_count: indexSns.length,
+    index_instagram_count: indexInstagram.length
   });
+  if (indexInstagram.length) {
+    errors.push("community index must not contain Instagram entries");
+  }
 
   checks.push({
     check: "minimum fetch volume",

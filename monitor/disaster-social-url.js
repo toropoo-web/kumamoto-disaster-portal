@@ -89,42 +89,18 @@ function isXPostUrl(value) {
   }
 }
 
-function isInstagramPostUrl(value) {
-  const resolved = resolveExternalUrl(value);
-  if (!resolved) {
-    return false;
-  }
-  try {
-    const parsed = new URL(resolved);
-    const host = parsed.hostname.toLowerCase();
-    if (host !== "instagram.com" && host !== "www.instagram.com") {
-      return false;
-    }
-    return /^\/(p|reel|reels|tv)\//i.test(parsed.pathname);
-  } catch (err) {
-    return false;
-  }
-}
-
 function resolveSnsPostUrlFromFeedPost(post, platform) {
   const normalizedPlatform = String(platform || "").trim();
-  const candidates = [];
-  if (normalizedPlatform === "Instagram") {
-    candidates.push(post.postUrl, post.permalink, post.reel_url, post.reelUrl, post.url);
-  } else if (normalizedPlatform === "X") {
-    candidates.push(post.postUrl);
-  } else {
-    candidates.push(post.postUrl, post.url, post.permalink);
-  }
+  const candidates =
+    normalizedPlatform === "X"
+      ? [post.postUrl]
+      : [post.postUrl, post.url];
   for (let i = 0; i < candidates.length; i += 1) {
     const candidate = candidates[i];
     if (!candidate) {
       continue;
     }
     if (normalizedPlatform === "X" && isXPostUrl(candidate)) {
-      return resolveExternalUrl(candidate);
-    }
-    if (normalizedPlatform === "Instagram" && isInstagramPostUrl(candidate)) {
       return resolveExternalUrl(candidate);
     }
     if (!normalizedPlatform) {
@@ -289,7 +265,6 @@ module.exports = {
   resolveExternalUrl,
   resolveSocialEntryUrl,
   isXPostUrl,
-  isInstagramPostUrl,
   resolveSnsPostUrlFromFeedPost,
   sanitizeExternalUrl,
   sanitizeUrlField,

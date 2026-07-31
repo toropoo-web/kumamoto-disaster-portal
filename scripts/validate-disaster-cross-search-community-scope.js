@@ -156,7 +156,7 @@ function main() {
     normalizeInboxItem(
       {
         import_format: "SNS",
-        source_type: "Instagram",
+        source_type: "X",
         municipality: "霧島市",
         date: "2026-07-27",
         title: "scope fail date",

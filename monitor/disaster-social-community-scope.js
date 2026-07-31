@@ -11,7 +11,7 @@ const EVACUATION_ALERT_REGION_FILE = path.join(
   "evacuation_alert_region.json"
 );
 
-const SNS_FETCH_PLATFORMS = ["X", "Instagram"];
+const SNS_FETCH_PLATFORMS = ["X"];
 const SNS_FETCH_SINCE_DATE = "2026-07-28";
 const COMMUNITY_FETCH_CATEGORIES = [
   "WATER",

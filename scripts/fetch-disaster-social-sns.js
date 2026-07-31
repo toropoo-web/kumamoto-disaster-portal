@@ -64,11 +64,9 @@ async function main() {
 
   fs.writeFileSync(options.inboxPath, JSON.stringify(payload, null, 2) + "\n", "utf8");
 
-  const byPlatform = { X: 0, Instagram: 0 };
+  const byPlatform = { X: 0 };
   items.forEach(function (item) {
-    if (item.source_type === "Instagram") {
-      byPlatform.Instagram += 1;
-    } else if (item.source_type === "X") {
+    if (item.source_type === "X") {
       byPlatform.X += 1;
     }
   });

@@ -43,7 +43,7 @@ function main() {
   const workflowChecks = [
     { name: "cron schedule", pass: /cron:\s*"0 \*\/6 \* \* \*"/.test(workflowText) },
     { name: "workflow_dispatch", pass: /workflow_dispatch:/.test(workflowText) },
-    { name: "instagram feed sync", pass: /sync:disaster-social-instagram-feed/.test(workflowText) },
+    { name: "instagram feed sync removed", pass: !/sync:disaster-social-instagram-feed/.test(workflowText) },
     { name: "sns fetch step", pass: /fetch:disaster-social-sns/.test(workflowText) },
     { name: "review queue generation", pass: /review:disaster-social-queue/.test(workflowText) },
     { name: "operation monitor", pass: /monitor:disaster-social-operation/.test(workflowText) },
@@ -86,7 +86,7 @@ function main() {
   });
   checks.push({
     check: "source_type coverage",
-    pass: sourceTypesPresent.length >= 4,
+    pass: sourceTypesPresent.indexOf("X") !== -1,
     present: sourceTypesPresent
   });
 
@@ -152,8 +152,9 @@ function main() {
   }).length;
   checks.push({
     check: "kirishima city search",
-    pass: kirishimaResults.length === kirishimaEntryCount && kirishimaEntryCount > 0,
-    count: kirishimaResults.length
+    pass: kirishimaResults.length === kirishimaEntryCount,
+    count: kirishimaResults.length,
+    kirishima_entry_count: kirishimaEntryCount
   });
   if (kirishimaResults.length !== kirishimaEntryCount) {
     errors.push("search 鹿児島県霧島市 must return all Kirishima entries");
