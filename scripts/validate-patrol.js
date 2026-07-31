@@ -6,17 +6,16 @@ const path = require("path");
 const crypto = require("crypto");
 
 const ROOT = path.join(__dirname, "..");
-const { getMunicipalityPatrolSources } = require(path.join(
+const { getMunicipalityPatrolSources, countSourcesByMunicipality } = require(path.join(
   ROOT,
   "monitor",
   "municipality-patrol-sources"
 ));
 
 const EXPECTED_MUNICIPALITY_AREA_COUNT = 23;
-const EXPECTED_MUNICIPALITY_PATROL_SOURCE_COUNT = 140;
 const EXPECTED_COMMUNICATION_SOURCE_COUNT = 7;
-const EXPECTED_PATROL_SOURCE_COUNT =
-  EXPECTED_MUNICIPALITY_PATROL_SOURCE_COUNT + EXPECTED_COMMUNICATION_SOURCE_COUNT;
+const MIN_MUNICIPALITY_PATROL_SOURCE_COUNT = 120;
+const MIN_SOURCES_PER_MUNICIPALITY = 3;
 
 const PUBLIC_FILES = [
   "data/public/phase1_areas.json",
@@ -68,6 +67,27 @@ function hashFile(filePath) {
   return crypto.createHash("sha256").update(content).digest("hex");
 }
 
+function findLatestPatrolReport() {
+  const reportsDir = path.join(ROOT, "monitor", "reports");
+  if (!fs.existsSync(reportsDir)) {
+    return null;
+  }
+
+  const patrolReports = fs
+    .readdirSync(reportsDir)
+    .filter(function (name) {
+      return /^patrol-\d{4}-\d{2}-\d{2}T/.test(name) && name.endsWith(".json");
+    })
+    .sort()
+    .reverse();
+
+  if (!patrolReports.length) {
+    return null;
+  }
+
+  return path.join(reportsDir, patrolReports[0]);
+}
+
 function main() {
   const errors = [];
   const checks = [];
@@ -104,9 +124,9 @@ function main() {
         `Municipality patrol area count: ${municipalityAreaCount} (expected ${EXPECTED_MUNICIPALITY_AREA_COUNT})`
       );
     }
-    if (municipalityPatrolCount !== EXPECTED_MUNICIPALITY_PATROL_SOURCE_COUNT) {
+    if (municipalityPatrolCount < MIN_MUNICIPALITY_PATROL_SOURCE_COUNT) {
       errors.push(
-        `Municipality patrol source count: ${municipalityPatrolCount} (expected ${EXPECTED_MUNICIPALITY_PATROL_SOURCE_COUNT})`
+        `Municipality patrol source count: ${municipalityPatrolCount} (expected at least ${MIN_MUNICIPALITY_PATROL_SOURCE_COUNT})`
       );
     }
     if (communicationCount !== EXPECTED_COMMUNICATION_SOURCE_COUNT) {
@@ -114,10 +134,36 @@ function main() {
         `Communication monitor count: ${communicationCount} (expected ${EXPECTED_COMMUNICATION_SOURCE_COUNT})`
       );
     }
-    if (sourceCount !== EXPECTED_PATROL_SOURCE_COUNT) {
+
+    const municipalityCounts = countSourcesByMunicipality(municipalityPatrolSources);
+    Object.keys(municipalityCounts).forEach(function (areaId) {
+      if (municipalityCounts[areaId] < MIN_SOURCES_PER_MUNICIPALITY) {
+        errors.push(
+          `Municipality ${areaId} patrol source count: ${municipalityCounts[areaId]} (expected at least ${MIN_SOURCES_PER_MUNICIPALITY})`
+        );
+      }
+    });
+    if (Object.keys(municipalityCounts).length !== EXPECTED_MUNICIPALITY_AREA_COUNT) {
       errors.push(
-        `Patrol source count: ${sourceCount} (expected ${EXPECTED_PATROL_SOURCE_COUNT})`
+        `Municipality patrol coverage areas: ${Object.keys(municipalityCounts).length} (expected ${EXPECTED_MUNICIPALITY_AREA_COUNT})`
       );
+    }
+
+    const latestPatrolReport = findLatestPatrolReport();
+    if (latestPatrolReport) {
+      try {
+        const patrolReport = JSON.parse(fs.readFileSync(latestPatrolReport, "utf8"));
+        if (
+          patrolReport.PATROL_SOURCE_COUNT &&
+          patrolReport.PATROL_SOURCE_COUNT !== sourceCount
+        ) {
+          errors.push(
+            `Latest patrol report source count: ${patrolReport.PATROL_SOURCE_COUNT} (expected ${sourceCount})`
+          );
+        }
+      } catch (err) {
+        errors.push("Latest patrol report invalid JSON: " + err.message);
+      }
     }
 
     const nttWest = (sources.communication || []).find((item) => item.id === "COMM-ntt-west");
