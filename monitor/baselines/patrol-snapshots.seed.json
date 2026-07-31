@@ -20,8 +20,27 @@
       "sourceName": "熊本県",
       "category": "municipality"
     },
+    "KM001-kumamoto-city-bousai": {
+      "url": "https://www.city.kumamoto.jp/bousai/",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "防災サイト",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "避難",
+        "地震",
+        "津波",
+        "災害",
+        "緊急"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "seed-km001-bousai-primary",
+      "checkedAt": "2026-07-31T01:50:00.000Z",
+      "sourceName": "熊本市",
+      "category": "municipality"
+    },
     "KM001-kumamoto-shelter": {
-      "url": "https://city-kumamoto.my.salesforce-sites.com/X_PUB_VF_KUMA_HinanjyoNaviList",
+      "url": "https://city-kumamoto.my.salesforce-sites.com/",
       "httpStatus": 200,
       "reachable": true,
       "title": "避難所案内",
@@ -215,8 +234,26 @@
       "sourceName": "御船町",
       "category": "municipality"
     },
+    "KM011-kikuyo-emergency": {
+      "url": "https://www.town.kikuyo.lg.jp/list00113.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "安全・安心",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "避難",
+        "給水",
+        "災害",
+        "防災"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "seed-km011-emergency-primary",
+      "checkedAt": "2026-07-31T01:55:00.000Z",
+      "sourceName": "菊陽町",
+      "category": "municipality"
+    },
     "KM011-kikuyo-water": {
-      "url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "httpStatus": 200,
       "reachable": true,
       "title": "給水所を設置します / 防災・災害情報 / 菊陽町",
@@ -228,6 +265,23 @@
       "contaminationRisk": false,
       "contentHash": "fbfe83fa186c5d601fe8d52d4601d0a9647eb9f739d1dae268f7fd7c1351fe4f",
       "checkedAt": "2026-07-29T10:32:20.662Z",
+      "sourceName": "菊陽町",
+      "category": "municipality"
+    },
+    "KM011-kikuyo-shelter": {
+      "url": "https://www.town.kikuyo.lg.jp/bousai/list00498.html",
+      "httpStatus": 200,
+      "reachable": true,
+      "title": "本日の自主避難所・福祉避難所開設について",
+      "pageUpdatedAt": "",
+      "keywords": [
+        "避難",
+        "避難所",
+        "開設"
+      ],
+      "contaminationRisk": false,
+      "contentHash": "seed-km011-shelter-secondary",
+      "checkedAt": "2026-07-31T01:55:00.000Z",
       "sourceName": "菊陽町",
       "category": "municipality"
     },
