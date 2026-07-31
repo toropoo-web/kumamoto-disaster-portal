@@ -159,6 +159,13 @@
     TRANSPORT: "交通",
     GENERAL: "公式発信"
   };
+  var EVACUATION_ALERT_SEARCH_SCOPE = {
+    periodLabel: "2026年熊本地震関連（投稿日・情報日ベース）",
+    officialLayerLabel: "公式X投稿（災害公式投稿検索）",
+    communityLayerLabel: "現地支援情報（Community Layer）",
+    officialCategoriesLabel: "給水・避難・暑さ・物資・ボランティア・防犯・復旧など",
+    communityCategoriesLabel: "水・食事・物資・避難・ボランティアなど全カテゴリ"
+  };
   var SOCIAL_CATEGORY_LABELS = {
     WATER: "水",
     FOOD: "食事",
@@ -271,6 +278,17 @@
       groupValue.indexOf(normalizedToken) !== -1 ||
       normalizedToken.indexOf(groupValue) !== -1
     );
+  }
+
+  function matchesSocialMunicipality(entry, municipalityName) {
+    var normalizedName = normalizeSearchText(municipalityName);
+    if (!normalizedName || !entry) {
+      return false;
+    }
+    if (normalizeSearchText(entry.municipality).indexOf(normalizedName) !== -1) {
+      return true;
+    }
+    return normalizeSearchText(buildSocialRegionHaystack(entry)).indexOf(normalizedName) !== -1;
   }
 
   function buildSocialRegionHaystack(entry) {
@@ -1649,7 +1667,7 @@
         if (options.municipality) {
           locationOk =
             locationOk &&
-            normalizeSearchText(entry.municipality).indexOf(normalizeSearchText(options.municipality)) !== -1;
+            matchesSocialMunicipality(entry, options.municipality);
         }
         if (options.district) {
           var districtHay = normalizeSearchText(entry.district);
@@ -1689,12 +1707,39 @@
     });
   }
 
+  function buildDisasterIndexLocationHaystack(item) {
+    return normalizeSearchText(
+      [
+        item.prefecture,
+        item.municipality,
+        item.district,
+        item.location,
+        item.address,
+        item.organization,
+        item.title,
+        item.content
+      ].filter(Boolean).join(" ")
+    );
+  }
+
+  function matchesDisasterIndexMunicipality(item, municipalityName) {
+    var normalizedName = normalizeSearchText(municipalityName);
+    if (!normalizedName || !item) {
+      return false;
+    }
+    if (normalizeSearchText(item.municipality) === normalizedName) {
+      return true;
+    }
+    return buildDisasterIndexLocationHaystack(item).indexOf(normalizedName) !== -1;
+  }
+
   function searchDisasterIndex(indexPayload, query, options) {
     options = options || {};
     var items = (indexPayload && indexPayload.index) || [];
     var tokens = normalizeSearchText(query).split(" ").filter(Boolean);
+    var municipalityOnly = Boolean(options.municipalityOnly && options.municipality);
 
-    if (!tokens.length) {
+    if (!tokens.length && !municipalityOnly) {
       return [];
     }
 
@@ -1707,10 +1752,21 @@
         return false;
       }
 
+      if (options.municipality && !matchesDisasterIndexMunicipality(item, options.municipality)) {
+        return false;
+      }
+
+      if (municipalityOnly) {
+        return true;
+      }
+
       var hay = normalizeSearchText(
         [
           item.prefecture,
           item.municipality,
+          item.district,
+          item.location,
+          item.address,
           item.organization,
           item.title,
           (item.keywords || []).join(" "),
@@ -1731,6 +1787,25 @@
         return hay.indexOf(token) !== -1;
       });
     });
+  }
+
+  function searchEvacuationAlertRegion(municipalityName, disasterSearchIndex, socialPayload) {
+    var officialResults = searchDisasterIndex(disasterSearchIndex, "", {
+      category: "OFFICIAL_POST",
+      municipality: municipalityName,
+      municipalityOnly: true
+    });
+    var communityResults = [];
+    if (socialPayload && socialPayload.index) {
+      communityResults = searchDisasterSocialIndex(socialPayload.index, {
+        municipality: municipalityName
+      });
+    }
+    return {
+      municipality: municipalityName,
+      officialResults: officialResults,
+      communityResults: communityResults
+    };
   }
 
   function formatSupportServiceDate(value) {
@@ -1829,7 +1904,88 @@
     }
   }
 
-  function renderDisasterSearchResult(resultsContainer, results, query, category) {
+  function renderEvacuationAlertSearchResult(resultsContainer, searchResult, socialPayload) {
+    if (!resultsContainer || !searchResult) {
+      return;
+    }
+
+    resultsContainer.innerHTML = "";
+    var municipality = searchResult.municipality || "";
+    var officialResults = searchResult.officialResults || [];
+    var communityResults = searchResult.communityResults || [];
+    var totalCount = officialResults.length + communityResults.length;
+    var sourceLookup = buildSocialSourceLookup(socialPayload && socialPayload.sources);
+
+    resultsContainer.appendChild(createElement(
+      "p",
+      "disaster-search__summary",
+      municipality + " の検索結果：" + totalCount + "件（公式X投稿 " +
+        officialResults.length + "件 / 現地支援情報 " + communityResults.length + "件）"
+    ));
+
+    if (!totalCount) {
+      var emptyBlock = createElement("div", "evacuation-alert-search__empty");
+      emptyBlock.appendChild(createElement(
+        "p",
+        "disaster-search__empty",
+        municipality + " に該当する災害情報は見つかりませんでした。"
+      ));
+
+      var contextBlock = createElement("div", "evacuation-alert-search__context");
+      contextBlock.appendChild(createElement(
+        "p",
+        "evacuation-alert-search__context-title",
+        "検索条件の確認"
+      ));
+      var contextList = createElement("ul", "evacuation-alert-search__context-list");
+      [
+        "検索対象Layer：" + EVACUATION_ALERT_SEARCH_SCOPE.officialLayerLabel + " / " +
+          EVACUATION_ALERT_SEARCH_SCOPE.communityLayerLabel,
+        "対象期間：" + EVACUATION_ALERT_SEARCH_SCOPE.periodLabel,
+        "対象カテゴリ（公式）：" + EVACUATION_ALERT_SEARCH_SCOPE.officialCategoriesLabel,
+        "対象カテゴリ（現地）：" + EVACUATION_ALERT_SEARCH_SCOPE.communityCategoriesLabel
+      ].forEach(function (line) {
+        contextList.appendChild(createElement("li", "evacuation-alert-search__context-item", line));
+      });
+      contextBlock.appendChild(contextList);
+      emptyBlock.appendChild(contextBlock);
+      resultsContainer.appendChild(emptyBlock);
+      return;
+    }
+
+    if (officialResults.length) {
+      var officialSection = createElement("div", "evacuation-alert-search__layer");
+      officialSection.appendChild(createElement(
+        "h3",
+        "evacuation-alert-search__layer-title",
+        EVACUATION_ALERT_SEARCH_SCOPE.officialLayerLabel
+      ));
+      var officialWrap = createElement("div", "evacuation-alert-search__layer-results");
+      renderDisasterSearchResult(officialWrap, officialResults, municipality, "OFFICIAL_POST", {
+        skipSummary: true
+      });
+      officialSection.appendChild(officialWrap);
+      resultsContainer.appendChild(officialSection);
+    }
+
+    if (communityResults.length) {
+      var communitySection = createElement("div", "evacuation-alert-search__layer");
+      communitySection.appendChild(createElement(
+        "h3",
+        "evacuation-alert-search__layer-title",
+        EVACUATION_ALERT_SEARCH_SCOPE.communityLayerLabel
+      ));
+      var communityWrap = createElement("div", "evacuation-alert-search__layer-results");
+      renderDisasterSocialSearchResult(communityWrap, communityResults, sourceLookup, {
+        skipSummary: true
+      });
+      communitySection.appendChild(communityWrap);
+      resultsContainer.appendChild(communitySection);
+    }
+  }
+
+  function renderDisasterSearchResult(resultsContainer, results, query, category, renderOptions) {
+    renderOptions = renderOptions || {};
     if (!resultsContainer) {
       return;
     }
@@ -1854,11 +2010,13 @@
       return;
     }
 
-    resultsContainer.appendChild(createElement(
-      "p",
-      "disaster-search__summary",
-      "検索結果：" + results.length + "件"
-    ));
+    if (!renderOptions.skipSummary) {
+      resultsContainer.appendChild(createElement(
+        "p",
+        "disaster-search__summary",
+        "検索結果：" + results.length + "件"
+      ));
+    }
 
     var list = createElement("div", "disaster-search__results");
     results.forEach(function (item) {
@@ -2117,8 +2275,37 @@
     var resultsContainer = createElement("div", "disaster-search__results-wrap");
     resultsContainer.id = resultsId;
 
+    var evacuationAlertMunicipalityList = options.evacuationAlertMunicipalities || [];
+    var socialPayload = options.socialPayload || null;
+    var activeEvacuationMunicipality = "";
+
+    function isEvacuationMunicipalityQuery(query) {
+      return evacuationAlertMunicipalityList.indexOf(query) !== -1;
+    }
+
     function runSearch() {
       var query = input.value.trim();
+
+      if (
+        categoryKey === "OFFICIAL_POST" &&
+        socialPayload &&
+        (activeEvacuationMunicipality || isEvacuationMunicipalityQuery(query))
+      ) {
+        var municipalityName = activeEvacuationMunicipality || query;
+        var evacuationSearchResult = searchEvacuationAlertRegion(
+          municipalityName,
+          disasterSearchIndex,
+          socialPayload
+        );
+        renderEvacuationAlertSearchResult(
+          resultsContainer,
+          evacuationSearchResult,
+          socialPayload
+        );
+        trackUsage("search_official_post");
+        return;
+      }
+
       var results = searchDisasterIndex(disasterSearchIndex, query, { category: categoryKey });
       renderDisasterSearchResult(
         resultsContainer,
@@ -2138,8 +2325,22 @@
         if (results.length) {
           trackUsage("view_water_detail");
         }
+      } else if (categoryKey === "OFFICIAL_POST") {
+        trackUsage("search_official_post");
       }
     }
+
+    input.addEventListener("input", function () {
+      if (activeEvacuationMunicipality && input.value.trim() !== activeEvacuationMunicipality) {
+        activeEvacuationMunicipality = "";
+        if (evacuationAlertRegionBlock) {
+          evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (button) {
+            button.classList.remove("evacuation-alert-region__btn--active");
+            button.setAttribute("aria-pressed", "false");
+          });
+        }
+      }
+    });
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -2150,6 +2351,7 @@
       evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (regionButton) {
         regionButton.addEventListener("click", function () {
           var municipalityName = regionButton.getAttribute("data-municipality") || "";
+          activeEvacuationMunicipality = municipalityName;
           input.value = municipalityName;
           evacuationAlertRegionBlock.querySelectorAll(".evacuation-alert-region__btn").forEach(function (button) {
             var isActive = button === regionButton;
@@ -2212,7 +2414,8 @@
     container.appendChild(section);
   }
 
-  function renderDisasterSocialSearchResult(resultsContainer, results, sourceLookup) {
+  function renderDisasterSocialSearchResult(resultsContainer, results, sourceLookup, renderOptions) {
+    renderOptions = renderOptions || {};
     if (!resultsContainer) {
       return;
     }
@@ -2228,11 +2431,13 @@
       return;
     }
 
-    resultsContainer.appendChild(createElement(
-      "p",
-      "disaster-search__summary",
-      "検索結果：" + results.length + "件"
-    ));
+    if (!renderOptions.skipSummary) {
+      resultsContainer.appendChild(createElement(
+        "p",
+        "disaster-search__summary",
+        "検索結果：" + results.length + "件"
+      ));
+    }
 
     var list = createElement("div", "disaster-search__results");
     results.forEach(function (resultItem) {
@@ -4135,7 +4340,8 @@
         renderDisasterSearch(page, disasterSearchIndex, "VOLUNTEER");
         renderDisasterSearch(page, disasterSearchIndex, "SUPPORT_SERVICE");
         renderDisasterSearch(page, disasterSearchIndex, "OFFICIAL_POST", {
-          evacuationAlertMunicipalities: evacuationAlertMunicipalities
+          evacuationAlertMunicipalities: evacuationAlertMunicipalities,
+          socialPayload: disasterSocialPayload
         });
         renderDisasterSocialSearch(page, disasterSocialPayload);
         renderWaterSearch(page, waterSearchIndex);

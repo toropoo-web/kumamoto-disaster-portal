@@ -2601,6 +2601,45 @@ button:focus-visible {
   }
 }
 
+.evacuation-alert-search__empty {
+  margin-top: 8px;
+}
+
+.evacuation-alert-search__context {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-muted, #f8f9fa);
+}
+
+.evacuation-alert-search__context-title {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.evacuation-alert-search__context-list {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.evacuation-alert-search__context-item + .evacuation-alert-search__context-item {
+  margin-top: 4px;
+}
+
+.evacuation-alert-search__layer + .evacuation-alert-search__layer {
+  margin-top: 20px;
+}
+
+.evacuation-alert-search__layer-title {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .disaster-search__form {
   display: grid;
   gap: 10px;

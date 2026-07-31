@@ -74,6 +74,11 @@ function main() {
 
   [
     { name: "検索連携 PASS", pattern: /input\.value = municipalityName[\s\S]*runSearch\(\)/ },
+    { name: "multi-layer evacuation search", pattern: /searchEvacuationAlertRegion/ },
+    { name: "evacuation search result renderer", pattern: /renderEvacuationAlertSearchResult/ },
+    { name: "social payload passed to official post search", pattern: /socialPayload:\s*disasterSocialPayload/ },
+    { name: "municipality field matching", pattern: /matchesDisasterIndexMunicipality/ },
+    { name: "evacuation search scope context", pattern: /evacuation-alert-search__context/ },
     { name: "load evacuation alert region json", pattern: /loadEvacuationAlertRegion/ },
     { name: "evacuation alert region json path", pattern: /evacuation_alert_region\.json/ },
     { name: "evacuation alert municipalities option", pattern: /evacuationAlertMunicipalities/ },
@@ -110,8 +115,55 @@ function main() {
     errors.push("phase1_navigation.json must remain unchanged (23 entries)");
   }
 
+  const disasterSearchIndex = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "data", "public", "disaster_search_index.json"), "utf8")
+  );
+  const disasterSocialIndex = JSON.parse(
+    fs.readFileSync(path.join(ROOT, "data", "public", "disaster_social_index.json"), "utf8")
+  );
+  const searchItems = disasterSearchIndex.index || [];
+  const socialEntries = disasterSocialIndex.entries || [];
+
+  function countMunicipalityMatches(items, municipalityName, getFields) {
+    return items.filter(function (item) {
+      const hay = getFields(item).join(" ");
+      return hay.indexOf(municipalityName) !== -1;
+    }).length;
+  }
+
+  ["霧島市", "阿蘇市", "南阿蘇村"].forEach(function (name) {
+    const officialCount = countMunicipalityMatches(searchItems, name, function (item) {
+      return [
+        item.prefecture,
+        item.municipality,
+        item.district,
+        item.location,
+        item.address
+      ].filter(Boolean);
+    });
+    const socialCount = countMunicipalityMatches(socialEntries, name, function (item) {
+      return [
+        item.prefecture,
+        item.municipality,
+        item.district,
+        item.title,
+        item.content
+      ].filter(Boolean);
+    });
+    const pass = officialCount > 0 || socialCount > 0;
+    checks.push({
+      check: "data exists: " + name,
+      pass: pass,
+      official_count: officialCount,
+      social_count: socialCount
+    });
+    if (!pass) {
+      errors.push("no disaster data found for " + name);
+    }
+  });
+
   const output = {
-    EVACUATION_ALERT_REGION_FINAL_SCOPE_UPDATE_VALIDATION: errors.length === 0 ? "PASS" : "FAIL",
+    EVACUATION_ALERT_REGION_SEARCH_RESULT_FIX_VALIDATION: errors.length === 0 ? "PASS" : "FAIL",
     municipality_count: municipalities.length,
     checks: checks,
     errors: errors
@@ -124,7 +176,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log("EVACUATION_ALERT_REGION_FINAL_SCOPE_UPDATE_COMPLETE");
+  console.log("EVACUATION_ALERT_REGION_SEARCH_RESULT_FIX_COMPLETE");
 }
 
 main();

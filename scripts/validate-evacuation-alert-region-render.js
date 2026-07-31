@@ -71,21 +71,36 @@ async function verifyUi(baseUrl) {
       errors.push("municipality nav count changed: " + navCount);
     }
 
-    const sampleMunicipalities = ["熊本市", "霧島市", "阿蘇市", "南阿蘇村"];
+    const sampleMunicipalities = [
+      { name: "熊本市", requireCommunity: false },
+      { name: "霧島市", requireCommunity: true },
+      { name: "阿蘇市", requireCommunity: true },
+      { name: "南阿蘇村", requireCommunity: true }
+    ];
     for (let i = 0; i < sampleMunicipalities.length; i += 1) {
-      const name = sampleMunicipalities[i];
+      const sample = sampleMunicipalities[i];
+      const name = sample.name;
       const button = page.locator(
         '.evacuation-alert-region__btn[data-municipality="' + name + '"]'
       );
       await button.click();
       const inputValue = await page.locator("#disaster-search-official-post-input").inputValue();
       const resultsText = await page.locator("#disaster-search-official-post-results").innerText();
-      const pass = inputValue === name && resultsText.trim().length > 0;
+      const cardCount = await page.locator("#disaster-search-official-post-results .disaster-search__card").count();
+      const hasSummary = /の検索結果：\d+件/.test(resultsText);
+      const hasCommunityLayer = /現地支援情報/.test(resultsText);
+      const pass =
+        inputValue === name &&
+        hasSummary &&
+        cardCount > 0 &&
+        (!sample.requireCommunity || hasCommunityLayer);
       checks.push({
         check: "検索連携 PASS: " + name,
         pass: pass,
         input_value: inputValue,
-        results_preview: resultsText.trim().slice(0, 80)
+        card_count: cardCount,
+        has_community_layer: hasCommunityLayer,
+        results_preview: resultsText.trim().slice(0, 120)
       });
       if (!pass) {
         errors.push("search integration failed for " + name);
@@ -127,12 +142,13 @@ async function verifyRenderArtifacts() {
   const appResult = await fetchText(RENDER_URL + "/js/app.js");
   const hasLoader = appResult.ok && /loadEvacuationAlertRegion/.test(appResult.text);
   const hasButtons = appResult.ok && /evacuation-alert-region__btn/.test(appResult.text);
+  const hasMultiLayerSearch = appResult.ok && /searchEvacuationAlertRegion/.test(appResult.text);
   checks.push({
     check: "Render app.js includes evacuation alert UI",
-    pass: hasLoader && hasButtons
+    pass: hasLoader && hasButtons && hasMultiLayerSearch
   });
-  if (!hasLoader || !hasButtons) {
-    errors.push("Render app.js does not include evacuation alert region UI");
+  if (!hasLoader || !hasButtons || !hasMultiLayerSearch) {
+    errors.push("Render app.js does not include evacuation alert multi-layer search");
   }
 
   return { checks: checks, errors: errors };
