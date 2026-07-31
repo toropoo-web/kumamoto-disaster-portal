@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T16:27:42.231Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "updateCount": 0,
+  "readyCount": 0,
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 0,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceReviewQueueFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\test\\disaster-pipeline-e2e\\runs\\e2e-2026-07-30T16-27-42-222Z\\patrol_review_queue.json",
+  "updates": []
+}

@@ -151,6 +151,134 @@
     },
     {
       "region": "熊本県",
+      "organization": "水俣市",
+      "source_type": "official",
+      "url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "甲佐町",
+      "source_type": "official",
+      "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "芦北町",
+      "source_type": "official",
+      "url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "津奈木町",
+      "source_type": "official",
+      "url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "上天草市",
+      "source_type": "official",
+      "url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "西原村",
+      "source_type": "official",
+      "url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "苓北町",
+      "source_type": "official",
+      "url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "多良木町",
+      "source_type": "official",
+      "url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
       "organization": "天草市",
       "source_type": "official",
       "url": "https://www.city.amakusa.lg.jp/",

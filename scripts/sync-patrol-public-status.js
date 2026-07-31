@@ -1,10 +1,17 @@
 #!/usr/bin/env node
 "use strict";
 
-const { syncPublicStatusFromLatestPatrol } = require("../monitor/patrol-publish-pipeline");
+const { syncPublicStatusFromLatestPatrol, refreshPhase1TimestampsFromSnapshots, readLatestPatrolReport } = require("../monitor/patrol-publish-pipeline");
 
 function main() {
-  const result = syncPublicStatusFromLatestPatrol();
+  const statusResult = syncPublicStatusFromLatestPatrol();
+  const latestPatrol = readLatestPatrolReport();
+  const timestampResult = refreshPhase1TimestampsFromSnapshots(
+    latestPatrol ? latestPatrol.patrolAt : null
+  );
+  const result = Object.assign({}, statusResult, {
+    phase1_timestamp_refresh: timestampResult
+  });
 
   console.log("=== Sync Patrol Public Status ===");
   console.log(JSON.stringify(result, null, 2));

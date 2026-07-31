@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:14.030Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "autoPublish": false,
+  "sourcePublicUpdateQueueFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\shelter_registry_apply\\KM016\\patrol_public_update_queue.json",
+  "gateSummary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "blocked": 0
+  },
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 1,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "results": [
+    {
+      "update_id": "UPD-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+      "gate_status": "PASS",
+      "validated_at": "2026-07-30T18:42:14.030Z",
+      "checks": [
+        {
+          "name": "schema",
+          "pass": true
+        },
+        {
+          "name": "source_url_format",
+          "pass": true
+        },
+        {
+          "name": "source_trace",
+          "pass": true
+        },
+        {
+          "name": "incident_contamination",
+          "pass": true
+        },
+        {
+          "name": "auto_publish_disabled",
+          "pass": true
+        },
+        {
+          "name": "target_layer_mapping",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "candidate": {
+        "update_id": "UPD-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+        "municipality": "芦北町",
+        "category": "SHELTER",
+        "title": "芦北町 避難所情報",
+        "source_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+        "source_id": "KM016-ashikita-hinan",
+        "area_id": "KM016",
+        "detected_keywords": [
+          "避難所",
+          "開設",
+          "閉鎖",
+          "避難場所"
+        ],
+        "target_layer": "shelter_search_index",
+        "status": "READY",
+        "created_at": "2026-07-30T18:42:14.029Z",
+        "auto_publish": false,
+        "source_trace": {
+          "queue_id": "RQ-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+          "classification_id": "CLS-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+          "change_log": "data/shelter_registry_apply/KM016/change-log.json",
+          "classification_file": "data/shelter_registry_apply/KM016/classified.json",
+          "diff_type": "CONTENT_AND_TITLE_CHANGED",
+          "before_hash": "shelter-KM016-before",
+          "after_hash": "shelter-KM016-after",
+          "changed_text": "防災情報\n芦北町 避難所情報\n芦北町 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+          "detected_at": "2026-07-30T18:42:14.027Z"
+        }
+      }
+    }
+  ],
+  "passedUpdates": [
+    {
+      "update_id": "UPD-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+      "municipality": "芦北町",
+      "category": "SHELTER",
+      "title": "芦北町 避難所情報",
+      "source_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+      "source_id": "KM016-ashikita-hinan",
+      "area_id": "KM016",
+      "detected_keywords": [
+        "避難所",
+        "開設",
+        "閉鎖",
+        "避難場所"
+      ],
+      "target_layer": "shelter_search_index",
+      "status": "READY",
+      "created_at": "2026-07-30T18:42:14.029Z",
+      "auto_publish": false,
+      "source_trace": {
+        "queue_id": "RQ-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+        "classification_id": "CLS-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+        "change_log": "data/shelter_registry_apply/KM016/change-log.json",
+        "classification_file": "data/shelter_registry_apply/KM016/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "shelter-KM016-before",
+        "after_hash": "shelter-KM016-after",
+        "changed_text": "防災情報\n芦北町 避難所情報\n芦北町 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+        "detected_at": "2026-07-30T18:42:14.027Z"
+      }
+    }
+  ],
+  "failedUpdates": []
+}

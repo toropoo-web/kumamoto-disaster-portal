@@ -1,0 +1,23 @@
+[
+  {
+    "source": "KM016-ashikita-hinan",
+    "sourceName": "芦北町",
+    "category": "municipality",
+    "areaId": "KM016",
+    "url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+    "detectedAt": "2026-07-30T18:42:28.344Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "e2e-KM016-SHELTER-before",
+    "currentHash": "e2e-KM016-SHELTER-after",
+    "keywords": [
+      "避難所",
+      "開設"
+    ],
+    "status": "DETECTED",
+    "changed_text": "避難所 開設 情報更新",
+    "titleChanged": {
+      "from": "更新前タイトル",
+      "to": "避難所情報更新"
+    }
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "prefecture": "熊本県",
+  "targets": [
+    { "prefecture": "熊本県", "municipality": "八代市", "official_domain": "city.yatsushiro.lg.jp" },
+    { "prefecture": "熊本県", "municipality": "宇土市", "official_domain": "city.uto.lg.jp" },
+    { "prefecture": "熊本県", "municipality": "宇城市", "official_domain": "city.uki.kumamoto.jp" },
+    { "prefecture": "熊本県", "municipality": "美里町", "official_domain": "town.kumamoto-misato.lg.jp" },
+    { "prefecture": "熊本県", "municipality": "水俣市", "official_domain": "city.minamata.lg.jp" },
+    { "prefecture": "熊本県", "municipality": "甲佐町", "official_domain": "town.kosa.lg.jp" },
+    { "prefecture": "熊本県", "municipality": "津奈木町", "official_domain": "town.tsunagi.lg.jp" },
+    { "prefecture": "熊本県", "municipality": "上天草市", "official_domain": "city.kamiamakusa.kumamoto.jp" },
+    { "prefecture": "熊本県", "municipality": "天草市", "official_domain": "city.amakusa.kumamoto.jp" },
+    { "prefecture": "熊本県", "municipality": "西原村", "official_domain": "vill.nishihara.kumamoto.jp" },
+    { "prefecture": "熊本県", "municipality": "芦北町", "official_domain": "town.ashikita.lg.jp" },
+    { "prefecture": "熊本県", "municipality": "苓北町", "official_domain": "reihoku-kumamoto.jp" }
+  ]
+}

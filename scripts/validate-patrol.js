@@ -80,14 +80,23 @@ function main() {
     communicationCount = sources.communication ? sources.communication.length : 0;
     sourceCount = municipalityCount + communicationCount;
 
-    if (municipalityCount !== 14) {
-      errors.push(`Municipality monitor count: ${municipalityCount} (expected 14)`);
+    const uniqueAreaIds = new Set(
+      (sources.municipalities || []).map(function (item) {
+        return item.area_id;
+      })
+    );
+
+    if (uniqueAreaIds.size !== 23) {
+      errors.push(`Unique municipality area count: ${uniqueAreaIds.size} (expected 23)`);
+    }
+    if (municipalityCount !== 28) {
+      errors.push(`Municipality monitor entries: ${municipalityCount} (expected 28)`);
     }
     if (communicationCount !== 7) {
       errors.push(`Communication monitor count: ${communicationCount} (expected 7)`);
     }
-    if (sourceCount !== 21) {
-      errors.push(`Monitor source count: ${sourceCount} (expected 21)`);
+    if (sourceCount !== 35) {
+      errors.push(`Monitor source count: ${sourceCount} (expected 35)`);
     }
 
     const nttWest = (sources.communication || []).find((item) => item.id === "COMM-ntt-west");

@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:51:41.674Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "updateCount": 0,
+  "readyCount": 0,
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 0,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceReviewQueueFile": "data/test/real-patrol-operation/runs/rpo-2026-07-30T18-51-35-082Z/patrol_review_queue.json",
+  "updates": []
+}

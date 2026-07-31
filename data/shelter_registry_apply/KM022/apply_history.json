@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "apply_id": "APL-20260730184214-20260730-KM022-TARAGI-EMERGENCY-",
+      "update_id": "UPD-20260730-KM022-TARAGI-EMERGENCY-SHELTER-01",
+      "applied_at": "2026-07-30T18:42:14.100Z",
+      "target_layer": "shelter_search_index",
+      "target_file": "data/public/disaster_search_index.json",
+      "operation": "ADD",
+      "before_hash": "8dc23cafbd42cc95fcd44b85a7f1a3ee4aa59c8eab4a0f07999fb1d793abd9b8",
+      "after_hash": "90fe915a347a5bfbd33622e1a1777ee8bed9e623320d2ac3017384897b1a6150",
+      "source_trace": {
+        "queue_id": "RQ-20260730-KM022-TARAGI-EMERGENCY-SHELTER-01",
+        "classification_id": "CLS-20260730-KM022-TARAGI-EMERGENCY-SHELTER-01",
+        "change_log": "data/shelter_registry_apply/KM022/change-log.json",
+        "classification_file": "data/shelter_registry_apply/KM022/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "shelter-KM022-before",
+        "after_hash": "shelter-KM022-after",
+        "changed_text": "防災情報\n多良木町 避難所情報\n多良木町 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+        "detected_at": "2026-07-30T18:42:14.090Z"
+      },
+      "diff_file": "data/shelter_registry_apply/KM022/diff/APL-20260730184214-20260730-KM022-TARAGI-EMERGENCY-.json",
+      "rollback_file": "data/shelter_registry_apply/KM022/diff/APL-20260730184214-20260730-KM022-TARAGI-EMERGENCY-.json"
+    }
+  ],
+  "lastUpdatedAt": "2026-07-30T18:42:14.100Z"
+}

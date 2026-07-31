@@ -196,6 +196,40 @@ function main() {
     })
   );
 
+  const shelterCategories = payload.index.filter(function (item) {
+    return item.category === "SHELTER";
+  });
+  const shelterMinamataResults = searchDisasterIndex(payload, "水俣 避難所", { category: "SHELTER" });
+  const shelterTaragiResults = searchDisasterIndex(payload, "多良木 避難所", { category: "SHELTER" });
+
+  checks.push({
+    check: "SHELTER registry preserved",
+    pass: shelterCategories.length >= 9,
+    shelterCount: shelterCategories.length
+  });
+  checks.push({
+    check: "SHELTER search possible",
+    pass: shelterMinamataResults.length > 0 && shelterTaragiResults.length > 0,
+    minamataCount: shelterMinamataResults.length,
+    taragiCount: shelterTaragiResults.length
+  });
+
+  if (shelterCategories.length < 9) {
+    errors.push("expected at least 9 SHELTER registry entries (KM014-KM022)");
+  }
+  if (!shelterMinamataResults.length) {
+    errors.push("SHELTER search failed: 水俣 避難所");
+  }
+  if (!shelterTaragiResults.length) {
+    errors.push("SHELTER search failed: 多良木 避難所");
+  }
+
+  shelterCategories.forEach(function (entry, index) {
+    if (!entry.source_trace || !entry.area_id || !entry.source_id || entry.status !== "PENDING") {
+      errors.push("SHELTER registry[" + index + "]: invalid applied registry schema");
+    }
+  });
+
   if (!fs.existsSync(OUTPUT_FILE)) {
     errors.push("Missing output: data/disaster_search_index.json");
   }

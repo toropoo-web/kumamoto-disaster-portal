@@ -107,14 +107,6 @@ function compareSource(source, current, previous) {
     }
   }
 
-  if (
-    previous.pageUpdatedAt !== current.pageUpdatedAt &&
-    current.pageUpdatedAt &&
-    !changes.length
-  ) {
-    changes.push(buildChangeEntry(source, previous, current, "PAGE_UPDATED_AT_CHANGED"));
-  }
-
   return changes.length ? changes : null;
 }
 

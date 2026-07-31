@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM022-taragi-emergency",
+    "sourceName": "多良木町",
+    "category": "municipality",
+    "areaId": "KM022",
+    "url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+    "detectedAt": "2026-07-30T18:42:14.090Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "shelter-KM022-before",
+    "currentHash": "shelter-KM022-after",
+    "keywords": [
+      "避難所",
+      "開設",
+      "閉鎖",
+      "避難場所"
+    ],
+    "status": "DETECTED",
+    "changed_text": "避難所 開設 閉鎖 避難場所 情報更新",
+    "titleChanged": {
+      "from": "防災情報",
+      "to": "多良木町 避難所情報"
+    }
+  }
+]

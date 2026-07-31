@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:14.028Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "itemCount": 1,
+  "pendingCount": 0,
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 1,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceClassificationFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\shelter_registry_apply\\KM016\\classified.json",
+  "items": [
+    {
+      "queue_id": "RQ-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+      "municipality": "芦北町",
+      "category": "SHELTER",
+      "title": "芦北町 避難所情報",
+      "source_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+      "detected_keywords": [
+        "避難所",
+        "開設",
+        "閉鎖",
+        "避難場所"
+      ],
+      "status": "APPROVED",
+      "created_at": "2026-07-30T18:42:14.027Z",
+      "review_required": false,
+      "source_id": "KM016-ashikita-hinan",
+      "area_id": "KM016",
+      "original_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+      "before_hash": "shelter-KM016-before",
+      "after_hash": "shelter-KM016-after",
+      "changed_text": "防災情報\n芦北町 避難所情報\n芦北町 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+      "detected_at": "2026-07-30T18:42:14.027Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "reviewed_at": "2026-07-30T18:42:14.028Z",
+        "review_note": "SHELTER registry apply for 芦北町"
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM016/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM016/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    }
+  ],
+  "decisionSummary": {
+    "PENDING": 0,
+    "APPROVED": 1,
+    "REJECTED": 0
+  }
+}

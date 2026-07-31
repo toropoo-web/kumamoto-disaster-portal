@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM020-nishihara-bousai",
+    "sourceName": "西原村",
+    "category": "municipality",
+    "areaId": "KM020",
+    "url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+    "detectedAt": "2026-07-30T18:42:28.368Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "e2e-KM020-WATER-before",
+    "currentHash": "e2e-KM020-WATER-after",
+    "keywords": [
+      "断水",
+      "水道",
+      "復旧",
+      "給水"
+    ],
+    "status": "DETECTED",
+    "changed_text": "断水 水道 復旧 給水 情報更新",
+    "titleChanged": {
+      "from": "更新前タイトル",
+      "to": "断水情報更新"
+    }
+  }
+]

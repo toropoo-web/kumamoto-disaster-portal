@@ -1,0 +1,226 @@
+{
+  "DISASTER_PORTAL_OPERATION_DASHBOARD_READY": "PASS",
+  "generatedAt": "2026-07-30T19:15:27.244Z",
+  "dashboard_file": "monitor\\dashboard\\operation-dashboard.json",
+  "dashboard_snapshot": {
+    "timestamp": "2026-07-30T19:15:27.223Z",
+    "status_layer": "YELLOW",
+    "municipalities": 23,
+    "review_pending_count": 67,
+    "incident_count": 0,
+    "gate_status": "NONE"
+  },
+  "sections": {
+    "schema": {
+      "checks": [
+        {
+          "check": "dashboard.schema",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "infrastructure": {
+      "checks": [
+        {
+          "check": "infra.monitor.dashboard.dashboard-aggregator.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "infra.scripts.run-operation-dashboard.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "infra.monitor.operation-monitor.js",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "status_layer": {
+      "checks": [
+        {
+          "check": "status_layer.present",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "status_layer.YELLOW_on_pending",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "municipality_status": {
+      "checks": [
+        {
+          "check": "municipality_status.count",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "municipality_status.area_id_unique",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "municipality_status.fields",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "category_status": {
+      "checks": [
+        {
+          "check": "category_status.count",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.WATER",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.WATER.fields",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.SHELTER",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.SHELTER.fields",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.COMMUNICATION",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.COMMUNICATION.fields",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.ROAD",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.ROAD.fields",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.SUPPORT",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.SUPPORT.fields",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.VOLUNTEER",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "category_status.VOLUNTEER.fields",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "audit_traces": {
+      "checks": [
+        {
+          "check": "audit_traces.total",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "audit_traces.complete_count",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "audit_traces.items_array",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "audit_traces.sample.source_id",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "audit_traces.sample.change_log",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "audit_traces.sample.classification_id",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "audit_traces.sample.queue_id",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "audit_traces.sample.decision",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "public_data_integrity": {
+      "checks": [
+        {
+          "check": "public_data_hash.baseline_recorded",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "public_data_hash.unchanged",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "output": {
+      "checks": [
+        {
+          "check": "dashboard.file_written",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "dashboard.path",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "errors": []
+}

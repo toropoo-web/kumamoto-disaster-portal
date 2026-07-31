@@ -1,0 +1,3384 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T16:35:37.795Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "mode": "LIVE",
+  "targetsFile": "data/patrol_discovery/accuracy-targets.json",
+  "totals": {
+    "municipalities": 12,
+    "candidates": 120,
+    "MATCH": 10,
+    "BETTER_CANDIDATE": 57,
+    "FALSE_POSITIVE": 21,
+    "NEW_CANDIDATE": 32,
+    "primary_discovered": 5,
+    "primary_total": 10,
+    "excluded": 6
+  },
+  "municipalities": [
+    {
+      "municipality": "八代市",
+      "area_id": "KM005",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "entry_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "candidate_count": 15,
+      "link_count": 104,
+      "registered_source_count": 2,
+      "comparison_summary": {
+        "MATCH": 1,
+        "BETTER_CANDIDATE": 11,
+        "FALSE_POSITIVE": 3,
+        "NEW_CANDIDATE": 0
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 1,
+        "primary_matches": [
+          {
+            "source_id": "KM005-yatsushiro-bousai",
+            "url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+            "discovered": true,
+            "comparison": "MATCH"
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 12,
+          "MEDIUM": 0,
+          "LOW": 3
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [
+          {
+            "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01003.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01971.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01009.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01012.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "medium_samples": [],
+        "low_samples": [
+          {
+            "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01007.html",
+            "score": 35,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "skip"
+          },
+          {
+            "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01011.html",
+            "score": 16,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "skip"
+          },
+          {
+            "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/hazardmap/index.html",
+            "score": 10,
+            "page_type": "HAZARD_MAP",
+            "recommended_role": "skip"
+          }
+        ]
+      },
+      "exclusion_analysis": {
+        "excluded_count": 2,
+        "skipped_status_count": 2,
+        "exclusion_types": {
+          "PLAN_PDF": 1,
+          "HAZARD_MAP": 1
+        },
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-17C87B1F",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-38C307B9",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01003.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-49A0833E",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01971.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-D87758D6",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01009.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-DC8911D9",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01012.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-E47FFBD6",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01002.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-2F6F7A2F",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01004.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-7CB28B2B",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01005.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-0C4F5076",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01006.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-1E9F02DE",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01972.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-87320BA7",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01010.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-09007508",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+          "score": 83,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "断水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害",
+            "伝言"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM005-yatsushiro-bousai",
+          "matched_patrol_role": "primary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-E1D33394",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01007.html",
+          "score": 35,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "SKIPPED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "matched exclusion rule: PLAN_PDF"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-B98DA988",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01011.html",
+          "score": 16,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM005-EMERGENCY-71437E5B",
+          "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/hazardmap/index.html",
+          "score": 10,
+          "score_tier": "LOW",
+          "page_type": "HAZARD_MAP",
+          "detected_keywords": [
+            "防災",
+            "bousai"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "SKIPPED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "matched exclusion rule: HAZARD_MAP"
+        }
+      ]
+    },
+    {
+      "municipality": "宇土市",
+      "area_id": "KM002",
+      "official_domain": "city.uto.lg.jp",
+      "entry_url": "https://www.city.uto.lg.jp/article/list/1014.html",
+      "candidate_count": 5,
+      "link_count": 5,
+      "registered_source_count": 3,
+      "comparison_summary": {
+        "MATCH": 3,
+        "BETTER_CANDIDATE": 0,
+        "FALSE_POSITIVE": 2,
+        "NEW_CANDIDATE": 0
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 1,
+        "primary_matches": [
+          {
+            "source_id": "KM002-uto-emergency",
+            "url": "https://www.city.uto.lg.jp/article/list/1014.html",
+            "discovered": true,
+            "comparison": "MATCH"
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 2,
+          "MEDIUM": 1,
+          "LOW": 2
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [
+          {
+            "candidate_url": "https://www.city.uto.lg.jp/article/list/1014.html",
+            "score": 87,
+            "page_type": "EMERGENCY_LIST",
+            "recommended_role": "primary"
+          },
+          {
+            "candidate_url": "https://www.city.uto.lg.jp/article/view/1014/16304.html",
+            "score": 87,
+            "page_type": "DISASTER_UPDATE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "medium_samples": [
+          {
+            "candidate_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+            "score": 79,
+            "page_type": "DISASTER_UPDATE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "low_samples": [
+          {
+            "candidate_url": "https://www.city.uto.lg.jp/category/list/1013.html",
+            "score": 12,
+            "page_type": "EMERGENCY_LIST",
+            "recommended_role": "skip"
+          },
+          {
+            "candidate_url": "https://www.city.uto.lg.jp/category/list/1012.html",
+            "score": 8,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "skip"
+          }
+        ]
+      },
+      "exclusion_analysis": {
+        "excluded_count": 0,
+        "skipped_status_count": 0,
+        "exclusion_types": {},
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM002-EMERGENCY-E10B521C",
+          "candidate_url": "https://www.city.uto.lg.jp/article/list/1014.html",
+          "score": 87,
+          "score_tier": "HIGH",
+          "page_type": "EMERGENCY_LIST",
+          "detected_keywords": [
+            "緊急",
+            "避難",
+            "避難所",
+            "復旧",
+            "閉鎖"
+          ],
+          "recommended_role": "primary",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM002-uto-emergency",
+          "matched_patrol_role": "primary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM002-SHELTER-C1374B15",
+          "candidate_url": "https://www.city.uto.lg.jp/article/view/1014/16304.html",
+          "score": 87,
+          "score_tier": "HIGH",
+          "page_type": "DISASTER_UPDATE",
+          "detected_keywords": [
+            "避難",
+            "避難所",
+            "開設",
+            "閉鎖"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM002-uto-shelter",
+          "matched_patrol_role": "secondary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM002-WATER-4887E46E",
+          "candidate_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+          "score": 79,
+          "score_tier": "MEDIUM",
+          "page_type": "DISASTER_UPDATE",
+          "detected_keywords": [
+            "水道",
+            "断水",
+            "復旧"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM002-uto-water",
+          "matched_patrol_role": "secondary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM002-EMERGENCY-FF4D3C23",
+          "candidate_url": "https://www.city.uto.lg.jp/category/list/1013.html",
+          "score": 12,
+          "score_tier": "LOW",
+          "page_type": "EMERGENCY_LIST",
+          "detected_keywords": [
+            "防災",
+            "避難",
+            "避難所",
+            "復旧",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM002-EMERGENCY-B08B86D1",
+          "candidate_url": "https://www.city.uto.lg.jp/category/list/1012.html",
+          "score": 8,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "避難",
+            "避難所",
+            "復旧",
+            "開設",
+            "支援",
+            "災害",
+            "災害支援"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        }
+      ]
+    },
+    {
+      "municipality": "宇城市",
+      "area_id": "KM003",
+      "official_domain": "city.uki.kumamoto.jp",
+      "entry_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "candidate_count": 11,
+      "link_count": 11,
+      "registered_source_count": 1,
+      "comparison_summary": {
+        "MATCH": 0,
+        "BETTER_CANDIDATE": 7,
+        "FALSE_POSITIVE": 0,
+        "NEW_CANDIDATE": 4
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 0,
+        "primary_matches": [
+          {
+            "source_id": "KM003-uki-emergency",
+            "url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+            "discovered": false,
+            "comparison": null
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 7,
+          "MEDIUM": 4,
+          "LOW": 0
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [
+          {
+            "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/bosaiinfo",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/bosaiinfo/bosai/2607030",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/bosaiinfo/sonota_bousai/2515854",
+            "score": 92,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
+            "score": 92,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/kankyo/gomi/2607719",
+            "score": 88,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "medium_samples": [
+          {
+            "candidate_url": "https://www.city.uki.kumamoto.jp/jigyosha/sangyo/nogyo/nogyozenpan/2025087",
+            "score": 76,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/tsuko",
+            "score": 54,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.uki.kumamoto.jp/kosodate/shiensenta",
+            "score": 54,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.uki.kumamoto.jp/kosodate/shienseido",
+            "score": 54,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "low_samples": []
+      },
+      "exclusion_analysis": {
+        "excluded_count": 0,
+        "skipped_status_count": 0,
+        "exclusion_types": {},
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM003-EMERGENCY-CD4E0715",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/bosaiinfo",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "bosai",
+            "避難",
+            "避難所",
+            "復旧",
+            "開設",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-EMERGENCY-05355E29",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/bosaiinfo/bosai/2607030",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bosai",
+            "避難",
+            "避難所",
+            "開設",
+            "閉鎖",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-SUPPORT-BBEADD1B",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/bosaiinfo/sonota_bousai/2515854",
+          "score": 92,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "罹災",
+            "bousai",
+            "bosai",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-WATER-F252D42E",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/sumai/jogesuido/2606682",
+          "score": 92,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "給水",
+            "断水",
+            "復旧",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-EMERGENCY-1144DEC6",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/kankyo/gomi/2607719",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "避難",
+            "避難所",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-SHELTER-65C8BEE9",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/toppage/kinkyu/2415505",
+          "score": 84,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "避難",
+            "kinkyu",
+            "避難所",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-EMERGENCY-B64B73E8",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/toppage/kinkyu/2606668",
+          "score": 80,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "kinkyu",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-EMERGENCY-84C0E1A3",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/jigyosha/sangyo/nogyo/nogyozenpan/2025087",
+          "score": 76,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-ROAD-CA6974AA",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/kurashi/tsuko",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "通行",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-SUPPORT-332BDDC4",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/kosodate/shiensenta",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM003-SUPPORT-0DCADFF2",
+          "candidate_url": "https://www.city.uki.kumamoto.jp/kosodate/shienseido",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        }
+      ]
+    },
+    {
+      "municipality": "美里町",
+      "area_id": "KM004",
+      "official_domain": "town.kumamoto-misato.lg.jp",
+      "entry_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "candidate_count": 8,
+      "link_count": 8,
+      "registered_source_count": 1,
+      "comparison_summary": {
+        "MATCH": 1,
+        "BETTER_CANDIDATE": 3,
+        "FALSE_POSITIVE": 0,
+        "NEW_CANDIDATE": 4
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 1,
+        "primary_matches": [
+          {
+            "source_id": "KM004-misato-emergency",
+            "url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+            "discovered": true,
+            "comparison": "MATCH"
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 4,
+          "MEDIUM": 4,
+          "LOW": 0
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [
+          {
+            "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/jogesuido/3904.html",
+            "score": 92,
+            "page_type": "DISASTER_UPDATE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/anzen_anshin/3/3902.html",
+            "score": 88,
+            "page_type": "DISASTER_UPDATE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.kumamoto-misato.lg.jp/soshiki/juminsekatsu/kankyou/3900.html",
+            "score": 84,
+            "page_type": "DISASTER_UPDATE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+            "score": 83,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "medium_samples": [
+          {
+            "candidate_url": "https://www.town.kumamoto-misato.lg.jp/town_news/3352.html",
+            "score": 76,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kinkyu/index.html",
+            "score": 66,
+            "page_type": "EMERGENCY_LIST",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+            "score": 54,
+            "page_type": "UNKNOWN",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/doro_kotsu/3/3903.html",
+            "score": 50,
+            "page_type": "UNKNOWN",
+            "recommended_role": "secondary"
+          }
+        ],
+        "low_samples": []
+      },
+      "exclusion_analysis": {
+        "excluded_count": 0,
+        "skipped_status_count": 0,
+        "exclusion_types": {},
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM004-WATER-DB24F3A1",
+          "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/jogesuido/3904.html",
+          "score": 92,
+          "score_tier": "HIGH",
+          "page_type": "DISASTER_UPDATE",
+          "detected_keywords": [
+            "給水",
+            "断水"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM004-SHELTER-24D7F826",
+          "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/anzen_anshin/3/3902.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "DISASTER_UPDATE",
+          "detected_keywords": [
+            "避難",
+            "避難所",
+            "開設"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM004-EMERGENCY-7E7BFB1C",
+          "candidate_url": "https://www.town.kumamoto-misato.lg.jp/soshiki/juminsekatsu/kankyou/3900.html",
+          "score": 84,
+          "score_tier": "HIGH",
+          "page_type": "DISASTER_UPDATE",
+          "detected_keywords": [
+            "災害",
+            "開設"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM004-EMERGENCY-D17D487E",
+          "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+          "score": 83,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "saigai",
+            "避難",
+            "避難所",
+            "給水",
+            "断水",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM004-misato-emergency",
+          "matched_patrol_role": "primary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM004-SUPPORT-5FF5F417",
+          "candidate_url": "https://www.town.kumamoto-misato.lg.jp/town_news/3352.html",
+          "score": 76,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "罹災",
+            "復旧",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM004-EMERGENCY-4601BEF3",
+          "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kinkyu/index.html",
+          "score": 66,
+          "score_tier": "MEDIUM",
+          "page_type": "EMERGENCY_LIST",
+          "detected_keywords": [
+            "緊急",
+            "kinkyu"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM004-WATER-0FFB8F56",
+          "candidate_url": "https://www.town.kumamoto-misato.lg.jp/scene/jogesuido/index.html",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "水道",
+            "給水"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM004-ROAD-896BAD7D",
+          "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/doro_kotsu/3/3903.html",
+          "score": 50,
+          "score_tier": "MEDIUM",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "通行"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        }
+      ]
+    },
+    {
+      "municipality": "水俣市",
+      "area_id": "KM014",
+      "official_domain": "city.minamata.lg.jp",
+      "entry_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "candidate_count": 6,
+      "link_count": 6,
+      "registered_source_count": 1,
+      "comparison_summary": {
+        "MATCH": 1,
+        "BETTER_CANDIDATE": 3,
+        "FALSE_POSITIVE": 0,
+        "NEW_CANDIDATE": 2
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 1,
+        "primary_matches": [
+          {
+            "source_id": "KM014-minamata-emergency",
+            "url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+            "discovered": true,
+            "comparison": "MATCH"
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 4,
+          "MEDIUM": 2,
+          "LOW": 0
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [
+          {
+            "candidate_url": "https://www.city.minamata.lg.jp/bousai/default.html",
+            "score": 88,
+            "page_type": "DISASTER_HUB",
+            "recommended_role": "primary"
+          },
+          {
+            "candidate_url": "https://www.city.minamata.lg.jp/kiji0034776/index.html",
+            "score": 88,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+            "score": 83,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.minamata.lg.jp/kiji0031914/index.html",
+            "score": 80,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "medium_samples": [
+          {
+            "candidate_url": "https://www.city.minamata.lg.jp/kiji0031924/index.html",
+            "score": 76,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.minamata.lg.jp/kankyo/kiji0031913/index.html",
+            "score": 54,
+            "page_type": "UNKNOWN",
+            "recommended_role": "secondary"
+          }
+        ],
+        "low_samples": []
+      },
+      "exclusion_analysis": {
+        "excluded_count": 0,
+        "skipped_status_count": 0,
+        "exclusion_types": {},
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM014-EMERGENCY-72CD0403",
+          "candidate_url": "https://www.city.minamata.lg.jp/bousai/default.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "DISASTER_HUB",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "災害"
+          ],
+          "recommended_role": "primary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM014-SHELTER-93D61F91",
+          "candidate_url": "https://www.city.minamata.lg.jp/kiji0034776/index.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "避難",
+            "避難所",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM014-EMERGENCY-93F9D4CA",
+          "candidate_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+          "score": 83,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM014-minamata-emergency",
+          "matched_patrol_role": "primary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM014-EMERGENCY-6E483846",
+          "candidate_url": "https://www.city.minamata.lg.jp/kiji0031914/index.html",
+          "score": 80,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "復旧",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM014-SUPPORT-1DEB6F1E",
+          "candidate_url": "https://www.city.minamata.lg.jp/kiji0031924/index.html",
+          "score": 76,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "罹災",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM014-EMERGENCY-E6EC564B",
+          "candidate_url": "https://www.city.minamata.lg.jp/kankyo/kiji0031913/index.html",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        }
+      ]
+    },
+    {
+      "municipality": "甲佐町",
+      "area_id": "KM015",
+      "official_domain": "town.kosa.lg.jp",
+      "entry_url": "https://www.town.kosa.lg.jp/q/list/51.html",
+      "candidate_count": 12,
+      "link_count": 12,
+      "registered_source_count": 1,
+      "comparison_summary": {
+        "MATCH": 1,
+        "BETTER_CANDIDATE": 0,
+        "FALSE_POSITIVE": 11,
+        "NEW_CANDIDATE": 0
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 1,
+        "primary_matches": [
+          {
+            "source_id": "KM015-kosa-emergency",
+            "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+            "discovered": true,
+            "comparison": "MATCH"
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 0,
+          "MEDIUM": 0,
+          "LOW": 12
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [],
+        "medium_samples": [],
+        "low_samples": [
+          {
+            "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13538.html",
+            "score": 12,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "skip"
+          },
+          {
+            "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13528.html",
+            "score": 8,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "skip"
+          },
+          {
+            "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13513.html",
+            "score": 8,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "skip"
+          },
+          {
+            "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13523.html",
+            "score": 8,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "skip"
+          },
+          {
+            "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13521.html",
+            "score": 8,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "skip"
+          }
+        ]
+      },
+      "exclusion_analysis": {
+        "excluded_count": 0,
+        "skipped_status_count": 0,
+        "exclusion_types": {},
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM015-EMERGENCY-93EE563E",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13538.html",
+          "score": 12,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "ボランティア",
+            "給水",
+            "閉鎖",
+            "支援"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-WATER-606923AF",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13528.html",
+          "score": 8,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "給水",
+            "断水",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-WATER-157BAC54",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13513.html",
+          "score": 8,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "給水",
+            "断水",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-WATER-1D6D293F",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13523.html",
+          "score": 8,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "断水",
+            "給水",
+            "復旧",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-SHELTER-8BB3E153",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13521.html",
+          "score": 8,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "避難",
+            "避難所",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-SHELTER-181DD93C",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13520.html",
+          "score": 8,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "避難",
+            "避難所",
+            "開設",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-SUPPORT-64C6C3FE",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13540.html",
+          "score": 4,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "緊急",
+            "支援",
+            "給水",
+            "閉鎖",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-EMERGENCY-E9E45558",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13539.html",
+          "score": 4,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "給水",
+            "閉鎖",
+            "支援"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-EMERGENCY-E70CBFF6",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13515.html",
+          "score": 4,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "開設",
+            "閉鎖",
+            "支援"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-EMERGENCY-CF2079A3",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/list/51.html",
+          "score": 3,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "緊急",
+            "避難",
+            "避難所",
+            "給水",
+            "断水",
+            "開設",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM015-kosa-emergency",
+          "matched_patrol_role": "primary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-EMERGENCY-D363760A",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13525.html",
+          "score": 0,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "緊急",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM015-ROAD-3D7AD833",
+          "candidate_url": "https://www.town.kosa.lg.jp/q/aview/51/13533.html",
+          "score": 0,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "通行",
+            "閉鎖",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        }
+      ]
+    },
+    {
+      "municipality": "津奈木町",
+      "area_id": "KM017",
+      "official_domain": "town.tsunagi.lg.jp",
+      "entry_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "candidate_count": 15,
+      "link_count": 20,
+      "registered_source_count": 1,
+      "comparison_summary": {
+        "MATCH": 0,
+        "BETTER_CANDIDATE": 0,
+        "FALSE_POSITIVE": 0,
+        "NEW_CANDIDATE": 15
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 0,
+        "primary_matches": [
+          {
+            "source_id": "KM017-tsunagi-emergency",
+            "url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+            "discovered": false,
+            "comparison": null
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 0,
+          "MEDIUM": 15,
+          "LOW": 0
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [],
+        "medium_samples": [
+          {
+            "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=502",
+            "score": 76,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=505",
+            "score": 76,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=510",
+            "score": 76,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=509",
+            "score": 72,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=512",
+            "score": 72,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "low_samples": []
+      },
+      "exclusion_analysis": {
+        "excluded_count": 0,
+        "skipped_status_count": 0,
+        "exclusion_types": {},
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM017-WATER-3968D980",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=502",
+          "score": 76,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "水道",
+            "給水",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-WATER-DF473BD9",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=505",
+          "score": 76,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "水道",
+            "給水",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-EMERGENCY-3D3402C3",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=510",
+          "score": 76,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-ROAD-A1081801",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=509",
+          "score": 72,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-SHELTER-80D21F09",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=512",
+          "score": 72,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "避難",
+            "避難所",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-EMERGENCY-27EBA81F",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/detail.aspx?c_id=9&id=35&pg=1",
+          "score": 62,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "緊急",
+            "kinkyu",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-EMERGENCY-68868874",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/detail.aspx?c_id=9&id=34&pg=1",
+          "score": 62,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "緊急",
+            "kinkyu",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-SUPPORT-9D67A966",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=551",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-SUPPORT-DF242B62",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=884",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-SUPPORT-DC202FF2",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=882",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-SUPPORT-33C140AB",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=917",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-SUPPORT-9F208177",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=918",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-SUPPORT-301AD59C",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=919",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-SUPPORT-1BC8797B",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=557",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM017-SUPPORT-30647FF5",
+          "candidate_url": "https://www.town.tsunagi.lg.jp/hpkiji/pub/List.aspx?c_id=3&class_set_id=1&class_id=558",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        }
+      ]
+    },
+    {
+      "municipality": "上天草市",
+      "area_id": "KM018",
+      "official_domain": "city.kamiamakusa.kumamoto.jp",
+      "entry_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "candidate_count": 3,
+      "link_count": 3,
+      "registered_source_count": 1,
+      "comparison_summary": {
+        "MATCH": 0,
+        "BETTER_CANDIDATE": 3,
+        "FALSE_POSITIVE": 0,
+        "NEW_CANDIDATE": 0
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 0,
+        "primary_matches": [
+          {
+            "source_id": "KM018-kamiamakusa-emergency",
+            "url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+            "discovered": false,
+            "comparison": null
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 3,
+          "MEDIUM": 0,
+          "LOW": 0
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [
+          {
+            "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/aview/542/23186.html",
+            "score": 92,
+            "page_type": "DISASTER_UPDATE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/aview/542/23164.html",
+            "score": 88,
+            "page_type": "DISASTER_UPDATE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/aview/542/23156.html",
+            "score": 84,
+            "page_type": "DISASTER_UPDATE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "medium_samples": [],
+        "low_samples": []
+      },
+      "exclusion_analysis": {
+        "excluded_count": 0,
+        "skipped_status_count": 0,
+        "exclusion_types": {},
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM018-WATER-92F4E34C",
+          "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/aview/542/23186.html",
+          "score": 92,
+          "score_tier": "HIGH",
+          "page_type": "DISASTER_UPDATE",
+          "detected_keywords": [
+            "断水",
+            "給水",
+            "復旧",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM018-ROAD-C27B46BF",
+          "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/aview/542/23164.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "DISASTER_UPDATE",
+          "detected_keywords": [
+            "通行",
+            "断水",
+            "復旧",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM018-EMERGENCY-B89243D7",
+          "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/aview/542/23156.html",
+          "score": 84,
+          "score_tier": "HIGH",
+          "page_type": "DISASTER_UPDATE",
+          "detected_keywords": [
+            "災害",
+            "断水"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        }
+      ]
+    },
+    {
+      "municipality": "天草市",
+      "area_id": "KM019",
+      "official_domain": "city.amakusa.kumamoto.jp",
+      "entry_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "candidate_count": 0,
+      "link_count": 0,
+      "registered_source_count": 1,
+      "comparison_summary": {
+        "MATCH": 0,
+        "BETTER_CANDIDATE": 0,
+        "FALSE_POSITIVE": 0,
+        "NEW_CANDIDATE": 0
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 0,
+        "primary_matches": [
+          {
+            "source_id": "KM019-amakusa-bousai",
+            "url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+            "discovered": false,
+            "comparison": null
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 0,
+          "MEDIUM": 0,
+          "LOW": 0
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [],
+        "medium_samples": [],
+        "low_samples": []
+      },
+      "exclusion_analysis": {
+        "excluded_count": 0,
+        "skipped_status_count": 0,
+        "exclusion_types": {},
+        "all_marked_skip": true
+      },
+      "candidates": []
+    },
+    {
+      "municipality": "西原村",
+      "area_id": "KM020",
+      "official_domain": "vill.nishihara.kumamoto.jp",
+      "entry_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "candidate_count": 15,
+      "link_count": 64,
+      "registered_source_count": 1,
+      "comparison_summary": {
+        "MATCH": 0,
+        "BETTER_CANDIDATE": 13,
+        "FALSE_POSITIVE": 2,
+        "NEW_CANDIDATE": 0
+      },
+      "primary_coverage": {
+        "primary_total": 1,
+        "primary_discovered": 0,
+        "primary_matches": [
+          {
+            "source_id": "KM020-nishihara-bousai",
+            "url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+            "discovered": false,
+            "comparison": null
+          }
+        ]
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 13,
+          "MEDIUM": 0,
+          "LOW": 2
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [
+          {
+            "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00303.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00306.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00325.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00309.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00326.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "medium_samples": [],
+        "low_samples": [
+          {
+            "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00305.html",
+            "score": 35,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "skip"
+          },
+          {
+            "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00304.html",
+            "score": 0,
+            "page_type": "ARCHIVE",
+            "recommended_role": "skip"
+          }
+        ]
+      },
+      "exclusion_analysis": {
+        "excluded_count": 2,
+        "skipped_status_count": 2,
+        "exclusion_types": {
+          "PLAN_PDF": 1,
+          "ARCHIVE": 1
+        },
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-011B3331",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00303.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-032F9D15",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00306.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-26204AC3",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00325.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-34D73D81",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00309.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-BCC81868",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00326.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-396F1CBF",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害",
+            "伝言"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-FE5BD571",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00301.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-SHELTER-AA27D2B0",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00302.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "避難",
+            "bousai",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-B913F067",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00307.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-SHELTER-E70FF6DD",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00308.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "避難",
+            "bousai",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-6DFF9658",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00310.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-8216C569",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00328.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-ROAD-7893EAA7",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00327.html",
+          "score": 80,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-7B682389",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00305.html",
+          "score": 35,
+          "score_tier": "LOW",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "SKIPPED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "matched exclusion rule: PLAN_PDF"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM020-EMERGENCY-22129023",
+          "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00304.html",
+          "score": 0,
+          "score_tier": "LOW",
+          "page_type": "ARCHIVE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "SKIPPED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "matched exclusion rule: ARCHIVE"
+        }
+      ]
+    },
+    {
+      "municipality": "芦北町",
+      "area_id": "KM016",
+      "official_domain": "town.ashikita.lg.jp",
+      "entry_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "candidate_count": 15,
+      "link_count": 16,
+      "registered_source_count": 2,
+      "comparison_summary": {
+        "MATCH": 2,
+        "BETTER_CANDIDATE": 4,
+        "FALSE_POSITIVE": 2,
+        "NEW_CANDIDATE": 7
+      },
+      "primary_coverage": {
+        "primary_total": 0,
+        "primary_discovered": 0,
+        "primary_matches": []
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 8,
+          "MEDIUM": 5,
+          "LOW": 2
+        },
+        "high_operational_pass": false,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+            "score": 96,
+            "page_type": "DISASTER_UPDATE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/saigai",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/bosaimusen_bosai",
+            "score": 84,
+            "page_type": "UNKNOWN",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/bosaimap",
+            "score": 84,
+            "page_type": "UNKNOWN",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/shobodan",
+            "score": 84,
+            "page_type": "UNKNOWN",
+            "recommended_role": "secondary"
+          }
+        ],
+        "medium_samples": [
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+            "score": 71,
+            "page_type": "UNKNOWN",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/oshirase_bosai/2111544",
+            "score": 71,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/n_bosaimusen",
+            "score": 58,
+            "page_type": "EMERGENCY_LIST",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/article.php?id=2111544",
+            "score": 54,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/rss/news?refc=2001708",
+            "score": 54,
+            "page_type": "UNKNOWN",
+            "recommended_role": "secondary"
+          }
+        ],
+        "low_samples": [
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/keikaku/2111322",
+            "score": 35,
+            "page_type": "UNKNOWN",
+            "recommended_role": "skip"
+          },
+          {
+            "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/keikaku",
+            "score": 0,
+            "page_type": "UNKNOWN",
+            "recommended_role": "skip"
+          }
+        ]
+      },
+      "exclusion_analysis": {
+        "excluded_count": 1,
+        "skipped_status_count": 1,
+        "exclusion_types": {
+          "PLAN_PDF": 1
+        },
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM016-SHELTER-B2D922B3",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "DISASTER_UPDATE",
+          "detected_keywords": [
+            "避難",
+            "hinan",
+            "bosai",
+            "避難所",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-3A0EACE8",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/saigai",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "saigai",
+            "bosai",
+            "避難",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-76CAF7F3",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/bosaimusen_bosai",
+          "score": 84,
+          "score_tier": "HIGH",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "防災",
+            "bosai",
+            "避難",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-DBFEC75B",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/bosaimap",
+          "score": 84,
+          "score_tier": "HIGH",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "防災",
+            "bosai",
+            "避難",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-8F9A3B6A",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/shobodan",
+          "score": 84,
+          "score_tier": "HIGH",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "防災",
+            "bosai",
+            "避難",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-646760F8",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/link_bosai",
+          "score": 84,
+          "score_tier": "HIGH",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "防災",
+            "bosai",
+            "避難",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-498643D4",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/news?refc=2001708",
+          "score": 84,
+          "score_tier": "HIGH",
+          "page_type": "EMERGENCY_LIST",
+          "detected_keywords": [
+            "bosai",
+            "避難",
+            "災害"
+          ],
+          "recommended_role": "primary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-51E05C0B",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/oshirase_bosai",
+          "score": 80,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bosai",
+            "避難",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-716952E9",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+          "score": 71,
+          "score_tier": "MEDIUM",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "bosai",
+            "避難",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM016-ashikita-bousai",
+          "matched_patrol_role": "secondary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-SUPPORT-65AB3DAE",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/oshirase_bosai/2111544",
+          "score": 71,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "罹災",
+            "bosai",
+            "避難",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM016-ashikita-disaster-cert",
+          "matched_patrol_role": "secondary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-03BD864F",
+          "candidate_url": "https://www.town.ashikita.lg.jp/n_bosaimusen",
+          "score": 58,
+          "score_tier": "MEDIUM",
+          "page_type": "EMERGENCY_LIST",
+          "detected_keywords": [
+            "bosai"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-SUPPORT-974EBE35",
+          "candidate_url": "https://www.town.ashikita.lg.jp/article.php?id=2111544",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "罹災",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-F32D7FB9",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/rss/news?refc=2001708",
+          "score": 54,
+          "score_tier": "MEDIUM",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "bosai",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "NEW_CANDIDATE",
+          "matched_source_id": null,
+          "note": "valid candidate for manual review"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-6BE3E7AA",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/keikaku/2111322",
+          "score": 35,
+          "score_tier": "LOW",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "防災",
+            "bosai",
+            "避難",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "SKIPPED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "matched exclusion rule: PLAN_PDF"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM016-EMERGENCY-BB6CAE52",
+          "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/keikaku",
+          "score": 0,
+          "score_tier": "LOW",
+          "page_type": "UNKNOWN",
+          "detected_keywords": [
+            "bosai",
+            "避難",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "DISCOVERED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "low-value page or excluded by recommended_role"
+        }
+      ]
+    },
+    {
+      "municipality": "苓北町",
+      "area_id": "KM021",
+      "official_domain": "reihoku-kumamoto.jp",
+      "entry_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "candidate_count": 15,
+      "link_count": 59,
+      "registered_source_count": 1,
+      "comparison_summary": {
+        "MATCH": 1,
+        "BETTER_CANDIDATE": 13,
+        "FALSE_POSITIVE": 1,
+        "NEW_CANDIDATE": 0
+      },
+      "primary_coverage": {
+        "primary_total": 0,
+        "primary_discovered": 0,
+        "primary_matches": []
+      },
+      "score_analysis": {
+        "summary": {
+          "HIGH": 14,
+          "MEDIUM": 0,
+          "LOW": 1
+        },
+        "high_operational_pass": true,
+        "medium_support_pass": true,
+        "low_skip_pass": true,
+        "high_samples": [
+          {
+            "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00305.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00306.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00309.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00326.html",
+            "score": 96,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          },
+          {
+            "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00301.html",
+            "score": 88,
+            "page_type": "SUPPORT_PAGE",
+            "recommended_role": "secondary"
+          }
+        ],
+        "medium_samples": [],
+        "low_samples": [
+          {
+            "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00303.html",
+            "score": 10,
+            "page_type": "HAZARD_MAP",
+            "recommended_role": "skip"
+          }
+        ]
+      },
+      "exclusion_analysis": {
+        "excluded_count": 1,
+        "skipped_status_count": 1,
+        "exclusion_types": {
+          "HAZARD_MAP": 1
+        },
+        "all_marked_skip": true
+      },
+      "candidates": [
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-9E998B96",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00305.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "防災",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-CCA30CDB",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00306.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-8FF6E40F",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00309.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-93AF05C9",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00326.html",
+          "score": 96,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "災害",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-0B4E2DDE",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00301.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-SHELTER-4A3AEA10",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00302.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "避難",
+            "bousai",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-2F430261",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00304.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-B5198121",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00307.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-9AEEA757",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00310.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-42141873",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00329.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-4626A5C1",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00328.html",
+          "score": 88,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-744A66C4",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+          "score": 83,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害",
+            "伝言"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "ALREADY_REGISTERED",
+          "comparison": "MATCH",
+          "matched_source_id": "KM021-reihoku-bousai",
+          "matched_patrol_role": "secondary",
+          "note": "matches existing sources.json entry"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-ROAD-0F669FA4",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00327.html",
+          "score": 80,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-ROAD-CAC5360C",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00330.html",
+          "score": 80,
+          "score_tier": "HIGH",
+          "page_type": "SUPPORT_PAGE",
+          "detected_keywords": [
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "secondary",
+          "discovery_status": "DISCOVERED",
+          "comparison": "BETTER_CANDIDATE",
+          "matched_source_id": null,
+          "note": "high-score operational page not yet registered"
+        },
+        {
+          "discovery_id": "PDU-20260730-KM021-EMERGENCY-0C6C3043",
+          "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00303.html",
+          "score": 10,
+          "score_tier": "LOW",
+          "page_type": "HAZARD_MAP",
+          "detected_keywords": [
+            "防災",
+            "bousai",
+            "避難",
+            "避難所",
+            "給水",
+            "復旧",
+            "開設",
+            "支援",
+            "災害"
+          ],
+          "recommended_role": "skip",
+          "discovery_status": "SKIPPED",
+          "comparison": "FALSE_POSITIVE",
+          "matched_source_id": null,
+          "note": "matched exclusion rule: HAZARD_MAP"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

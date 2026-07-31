@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM017-tsunagi-emergency",
+    "sourceName": "津奈木町",
+    "category": "municipality",
+    "areaId": "KM017",
+    "url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+    "detectedAt": "2026-07-30T18:42:14.037Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "shelter-KM017-before",
+    "currentHash": "shelter-KM017-after",
+    "keywords": [
+      "避難所",
+      "開設",
+      "閉鎖",
+      "避難場所"
+    ],
+    "status": "DETECTED",
+    "changed_text": "避難所 開設 閉鎖 避難場所 情報更新",
+    "titleChanged": {
+      "from": "防災情報",
+      "to": "津奈木町 避難所情報"
+    }
+  }
+]

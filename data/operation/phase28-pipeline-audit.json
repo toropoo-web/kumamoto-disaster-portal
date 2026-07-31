@@ -1,0 +1,166 @@
+{
+  "PHASE28_FORCE_UPDATE_PIPELINE": "PASS",
+  "final_status": "PASS",
+  "generatedAt": "2026-07-31T00:22:35.998Z",
+  "pipeline": [
+    "kumamoto-disaster-x-feed: Fetch X Posts (*/30 UTC cron)",
+    "kumamoto-disaster-x-feed: commit data/posts.json",
+    "kumamoto-disaster-x-feed: repository_dispatch -> portal",
+    "kumamoto-disaster-portal: X Feed Sync and Portal Publish",
+    "kumamoto-disaster-portal: npm run build + commit + push",
+    "Render: autoDeploy on main push"
+  ],
+  "required_secrets": {
+    "kumamoto-disaster-x-feed": [
+      "X_API_BEARER_TOKEN",
+      "PORTAL_DISPATCH_TOKEN"
+    ],
+    "kumamoto-disaster-portal": [
+      "GITHUB_TOKEN (default)"
+    ]
+  },
+  "sections": {
+    "portal_workflows": {
+      "checks": [
+        {
+          "check": "portal.x_feed_sync.exists",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.schedule_backup",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.workflow_dispatch",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.repository_dispatch",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.sync_script",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.validate_script",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.build_step",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.commit_push",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.render_autodeploy_check",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.staging_guard",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.no_pc_dependency",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "portal.render_yaml",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "xfeed_workflows": {
+      "checks": [
+        {
+          "check": "xfeed.fetch_workflow.exists",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.schedule_30min",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.workflow_dispatch",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.schedule_before_dispatch",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.fetch_script",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.build_step",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.commit_push",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.portal_dispatch_job",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.portal_dispatch_token",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.repository_dispatch_event",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "xfeed.no_pc_dependency",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "pc_dependency_risks": {
+      "checks": [
+        {
+          "check": "risk.scheduled_triggers_present",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "risk.manual_only_fetch",
+          "status": "PASS",
+          "reason": "fetch must not be workflow_dispatch only"
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "warnings": [],
+  "failures": []
+}

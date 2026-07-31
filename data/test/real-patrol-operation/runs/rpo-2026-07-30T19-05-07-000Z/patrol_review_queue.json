@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T19:05:13.456Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "itemCount": 0,
+  "pendingCount": 0,
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 0,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceClassificationFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\test\\real-patrol-operation\\runs\\rpo-2026-07-30T19-05-07-000Z\\classified.json",
+  "items": []
+}

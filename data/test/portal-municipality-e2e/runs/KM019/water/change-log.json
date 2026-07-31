@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM019-amakusa-bousai",
+    "sourceName": "天草市",
+    "category": "municipality",
+    "areaId": "KM019",
+    "url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+    "detectedAt": "2026-07-30T18:42:28.362Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "e2e-KM019-WATER-before",
+    "currentHash": "e2e-KM019-WATER-after",
+    "keywords": [
+      "断水",
+      "水道",
+      "復旧",
+      "給水"
+    ],
+    "status": "DETECTED",
+    "changed_text": "断水 水道 復旧 給水 情報更新",
+    "titleChanged": {
+      "from": "更新前タイトル",
+      "to": "断水情報更新"
+    }
+  }
+]

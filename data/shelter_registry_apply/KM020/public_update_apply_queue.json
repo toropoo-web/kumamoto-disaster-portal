@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:14.079Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "autoPublish": false,
+  "sourceGateFile": "data/shelter_registry_apply/KM020/patrol_public_update_gate.json",
+  "itemCount": 1,
+  "pendingCount": 1,
+  "blockedCount": 0,
+  "items": [
+    {
+      "apply_id": "APL-20260730184214-20260730-KM020-NISHIHARA-BOUSAI-",
+      "update_id": "UPD-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+      "category": "SHELTER",
+      "target_layer": "shelter_search_index",
+      "operation": "ADD",
+      "status": "APPLIED",
+      "blocked_reason": null,
+      "source_trace": {
+        "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+        "change_log": "data/shelter_registry_apply/KM020/change-log.json",
+        "classification_file": "data/shelter_registry_apply/KM020/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "shelter-KM020-before",
+        "after_hash": "shelter-KM020-after",
+        "changed_text": "防災情報\n西原村 避難所情報\n西原村 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+        "detected_at": "2026-07-30T18:42:14.069Z"
+      },
+      "candidate": {
+        "update_id": "UPD-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+        "municipality": "西原村",
+        "category": "SHELTER",
+        "title": "西原村 避難所情報",
+        "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+        "source_id": "KM020-nishihara-bousai",
+        "area_id": "KM020",
+        "detected_keywords": [
+          "避難所",
+          "開設",
+          "閉鎖",
+          "避難場所"
+        ],
+        "target_layer": "shelter_search_index",
+        "status": "READY",
+        "created_at": "2026-07-30T18:42:14.071Z",
+        "auto_publish": false,
+        "source_trace": {
+          "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+          "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+          "change_log": "data/shelter_registry_apply/KM020/change-log.json",
+          "classification_file": "data/shelter_registry_apply/KM020/classified.json",
+          "diff_type": "CONTENT_AND_TITLE_CHANGED",
+          "before_hash": "shelter-KM020-before",
+          "after_hash": "shelter-KM020-after",
+          "changed_text": "防災情報\n西原村 避難所情報\n西原村 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+          "detected_at": "2026-07-30T18:42:14.069Z"
+        }
+      },
+      "diff_file": "data/shelter_registry_apply/KM020/diff/APL-20260730184214-20260730-KM020-NISHIHARA-BOUSAI-.json",
+      "created_at": "2026-07-30T18:42:14.073Z",
+      "applied_at": "2026-07-30T18:42:14.078Z"
+    }
+  ],
+  "appliedCount": 1
+}

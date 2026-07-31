@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:14.070Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "itemCount": 1,
+  "pendingCount": 0,
+  "categorySummary": {
+    "WATER": 0,
+    "SHELTER": 1,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceClassificationFile": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\data\\shelter_registry_apply\\KM020\\classified.json",
+  "items": [
+    {
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+      "municipality": "西原村",
+      "category": "SHELTER",
+      "title": "西原村 避難所情報",
+      "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "detected_keywords": [
+        "避難所",
+        "開設",
+        "閉鎖",
+        "避難場所"
+      ],
+      "status": "APPROVED",
+      "created_at": "2026-07-30T18:42:14.069Z",
+      "review_required": false,
+      "source_id": "KM020-nishihara-bousai",
+      "area_id": "KM020",
+      "original_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "before_hash": "shelter-KM020-before",
+      "after_hash": "shelter-KM020-after",
+      "changed_text": "防災情報\n西原村 避難所情報\n西原村 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+      "detected_at": "2026-07-30T18:42:14.069Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "reviewed_at": "2026-07-30T18:42:14.070Z",
+        "review_note": "SHELTER registry apply for 西原村"
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM020/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM020/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    }
+  ],
+  "decisionSummary": {
+    "PENDING": 0,
+    "APPROVED": 1,
+    "REJECTED": 0
+  }
+}

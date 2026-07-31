@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-07-30T18:42:28.355Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "classificationCount": 1,
+  "categorySummary": {
+    "WATER": 1,
+    "SHELTER": 0,
+    "COMMUNICATION": 0,
+    "VOLUNTEER": 0,
+    "ROAD": 0,
+    "SUPPORT": 0
+  },
+  "autoPublish": false,
+  "sourceChangeLog": "data/test/portal-municipality-e2e/runs/KM018/water/change-log.json",
+  "classifications": [
+    {
+      "id": "CLS-20260730-KM018-KAMIAMAKUSA-EMERGENCY-WATER-01",
+      "source_id": "KM018-kamiamakusa-emergency",
+      "area_id": "KM018",
+      "municipality": "上天草市",
+      "category": "WATER",
+      "title": "断水情報更新",
+      "source_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "detected_keywords": [
+        "給水",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "detected_at": "2026-07-30T18:42:28.355Z",
+      "confidence": "HIGH",
+      "autoPublish": false,
+      "source_page": {
+        "source_id": "KM018-kamiamakusa-emergency",
+        "url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "changed_text": "更新前タイトル\n断水情報更新\n断水情報更新\n断水 水道 復旧 給水\n断水 水道 復旧 給水 情報更新",
+        "before": {
+          "title": "更新前タイトル",
+          "contentHash": "e2e-KM018-WATER-before",
+          "pageUpdatedAt": null
+        },
+        "after": {
+          "title": "断水情報更新",
+          "contentHash": "e2e-KM018-WATER-after",
+          "pageUpdatedAt": null
+        },
+        "detected_keywords": [
+          "断水",
+          "水道",
+          "復旧",
+          "給水"
+        ]
+      }
+    }
+  ]
+}

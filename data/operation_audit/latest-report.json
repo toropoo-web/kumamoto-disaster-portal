@@ -1,0 +1,677 @@
+{
+  "DISASTER_PORTAL_OPERATION_READY": "PASS",
+  "generatedAt": "2026-07-30T19:09:40.141Z",
+  "scope": {
+    "existing_municipalities": "KM000-KM013",
+    "expansion_municipalities": [
+      "KM014",
+      "KM015",
+      "KM016",
+      "KM017",
+      "KM018",
+      "KM019",
+      "KM020",
+      "KM021",
+      "KM022"
+    ],
+    "total_area_count": 23
+  },
+  "sections": {
+    "data_integrity": {
+      "checks": [
+        {
+          "check": "phase1_areas.count",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "phase1_areas.area_id_unique",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "phase1_navigation.area_id_unique",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "phase1_navigation.matches_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM014.phase1_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM014.phase1_navigation",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM014.phase1_updates",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM014.sources_active",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM015.phase1_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM015.phase1_navigation",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM015.phase1_updates",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM015.sources_active",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM016.phase1_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM016.phase1_navigation",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM016.phase1_updates",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM016.sources_active",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM017.phase1_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM017.phase1_navigation",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM017.phase1_updates",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM017.sources_active",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM018.phase1_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM018.phase1_navigation",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM018.phase1_updates",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM018.sources_active",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM019.phase1_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM019.phase1_navigation",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM019.phase1_updates",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM019.sources_active",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM020.phase1_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM020.phase1_navigation",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM020.phase1_updates",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM020.sources_active",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM021.phase1_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM021.phase1_navigation",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM021.phase1_updates",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM021.sources_active",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM022.phase1_areas",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM022.phase1_navigation",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM022.phase1_updates",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "registry.KM022.sources_active",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search_index.present",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "disaster_search_index.present",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "disaster_search_index.index_id_unique",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search.KM014",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_search.KM014",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_trace.KM014",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search.KM015",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_search.KM015",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_trace.KM015",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search.KM016",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_search.KM016",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_trace.KM016",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search.KM017",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_search.KM017",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_trace.KM017",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search.KM018",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_search.KM018",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_trace.KM018",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search.KM019",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_search.KM019",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_trace.KM019",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search.KM020",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_search.KM020",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_trace.KM020",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search.KM021",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_search.KM021",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_trace.KM021",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "water_search.KM022",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "shelter_search.KM022",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "source_trace.KM022",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.area_id_unique",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.KM014",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.KM015",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.KM016",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.KM017",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.KM018",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.KM019",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.KM020",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.KM021",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "area_navigation.KM022",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "ui_final": {
+      "checks": [
+        {
+          "check": "ui.municipality_tiles",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.anchor_unique",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.emergency_section",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.water_search",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.disaster_search",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.area_disaster_nav",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.empty_state",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.no_duplicate_quick_access",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.AREA_DISPLAY_RULES.KM014",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.tile.KM014",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.AREA_DISPLAY_RULES.KM015",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.tile.KM015",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.AREA_DISPLAY_RULES.KM016",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.tile.KM016",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.AREA_DISPLAY_RULES.KM017",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.tile.KM017",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.AREA_DISPLAY_RULES.KM018",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.tile.KM018",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.AREA_DISPLAY_RULES.KM019",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.tile.KM019",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.AREA_DISPLAY_RULES.KM020",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.tile.KM020",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.AREA_DISPLAY_RULES.KM021",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.tile.KM021",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.AREA_DISPLAY_RULES.KM022",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.tile.KM022",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "ui.no_duplicate_municipality_names",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "patrol_operation": {
+      "checks": [
+        {
+          "check": "patrol.script.run-monitor.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.script.classify-patrol-diffs.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.script.build-patrol-review-queue.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.script.run-patrol-pipeline.js",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.PAGE_UPDATED_AT_CHANGED_excluded",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.CONTENT_CHANGED_classified",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.isClassifiableChangeEntry",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.no_diff_no_classification",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "patrol.change_log_dir",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "security_governance": {
+      "checks": [
+        {
+          "check": "governance.review_queue.auto_publish_false",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "governance.pipeline.manual_apply_only",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "governance.pipeline.auto_publish_false",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "governance.rollback_function",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "governance.rollback_metadata_required",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "governance.public_hash_baseline",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "governance.sources_json_unchanged",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    },
+    "build_verification": {
+      "checks": [
+        {
+          "check": "build.npm test",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "build.npm run build",
+          "status": "PASS",
+          "reason": null
+        },
+        {
+          "check": "build.validate-production-readiness",
+          "status": "PASS",
+          "reason": null
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "errors": []
+}

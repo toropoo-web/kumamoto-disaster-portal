@@ -1,0 +1,9 @@
+{
+  "DISASTER_PORTAL_OPERATION_DASHBOARD_READY": "PASS",
+  "timestamp": "2026-07-30T19:15:27.223Z",
+  "status_layer": "YELLOW",
+  "municipalities": 23,
+  "review_pending_count": 67,
+  "incident_count": 0,
+  "gate_status": "NONE"
+}

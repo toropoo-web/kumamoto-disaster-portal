@@ -1,0 +1,987 @@
+{
+  "timestamp": "2026-07-30T19:15:27.223Z",
+  "generatedAt": "2026-07-30T19:15:27.223Z",
+  "status_layer": "YELLOW",
+  "municipalities": 23,
+  "municipality_status": [
+    {
+      "area_id": "KM000",
+      "municipality": "熊本県",
+      "patrol": "YELLOW",
+      "water": "AVAILABLE",
+      "shelter": "NONE",
+      "pending": 5,
+      "last_update": "2026-07-30T10:04:19.000Z"
+    },
+    {
+      "area_id": "KM001",
+      "municipality": "熊本市",
+      "patrol": "YELLOW",
+      "water": "AVAILABLE",
+      "shelter": "NONE",
+      "pending": 3,
+      "last_update": "2026-07-29T06:30:00+09:00"
+    },
+    {
+      "area_id": "KM002",
+      "municipality": "宇土市",
+      "patrol": "YELLOW",
+      "water": "NONE",
+      "shelter": "NONE",
+      "pending": 3,
+      "last_update": "2026-07-29T16:30:00+09:00"
+    },
+    {
+      "area_id": "KM003",
+      "municipality": "宇城市",
+      "patrol": "YELLOW",
+      "water": "AVAILABLE",
+      "shelter": "NONE",
+      "pending": 3,
+      "last_update": "2026-07-29T14:30:00+09:00"
+    },
+    {
+      "area_id": "KM004",
+      "municipality": "美里町",
+      "patrol": "GREEN",
+      "water": "NONE",
+      "shelter": "NONE",
+      "pending": 0,
+      "last_update": "2026-07-30T16:02:07.987Z"
+    },
+    {
+      "area_id": "KM005",
+      "municipality": "八代市",
+      "patrol": "YELLOW",
+      "water": "AVAILABLE",
+      "shelter": "NONE",
+      "pending": 5,
+      "last_update": "2026-07-29T17:02:04+09:00"
+    },
+    {
+      "area_id": "KM006",
+      "municipality": "人吉市",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "NONE",
+      "pending": 0,
+      "last_update": "2026-07-29T00:00:00+09:00"
+    },
+    {
+      "area_id": "KM007",
+      "municipality": "氷川町",
+      "patrol": "YELLOW",
+      "water": "NONE",
+      "shelter": "NONE",
+      "pending": 5,
+      "last_update": "2026-07-30T08:02:04.000Z"
+    },
+    {
+      "area_id": "KM008",
+      "municipality": "益城町",
+      "patrol": "GREEN",
+      "water": "NONE",
+      "shelter": "NONE",
+      "pending": 0,
+      "last_update": "2026-07-29T00:00:00+09:00"
+    },
+    {
+      "area_id": "KM009",
+      "municipality": "合志市",
+      "patrol": "YELLOW",
+      "water": "AVAILABLE",
+      "shelter": "NONE",
+      "pending": 5,
+      "last_update": "2026-07-30T09:01:06.000Z"
+    },
+    {
+      "area_id": "KM010",
+      "municipality": "御船町",
+      "patrol": "YELLOW",
+      "water": "NONE",
+      "shelter": "NONE",
+      "pending": 5,
+      "last_update": "2026-07-29T16:30:00+09:00"
+    },
+    {
+      "area_id": "KM011",
+      "municipality": "菊陽町",
+      "patrol": "YELLOW",
+      "water": "AVAILABLE",
+      "shelter": "NONE",
+      "pending": 1,
+      "last_update": "2026-07-29T16:30:00+09:00"
+    },
+    {
+      "area_id": "KM012",
+      "municipality": "嘉島町",
+      "patrol": "GREEN",
+      "water": "NONE",
+      "shelter": "NONE",
+      "pending": 0,
+      "last_update": "2026-07-29T00:00:00+09:00"
+    },
+    {
+      "area_id": "KM013",
+      "municipality": "菊池市",
+      "patrol": "YELLOW",
+      "water": "AVAILABLE",
+      "shelter": "NONE",
+      "pending": 10,
+      "last_update": "2026-07-29T16:30:00+09:00"
+    },
+    {
+      "area_id": "KM014",
+      "municipality": "水俣市",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "AVAILABLE",
+      "pending": 0,
+      "last_update": "2026-07-31T00:00:00.000Z"
+    },
+    {
+      "area_id": "KM015",
+      "municipality": "甲佐町",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "AVAILABLE",
+      "pending": 0,
+      "last_update": "2026-07-31T00:00:00.000Z"
+    },
+    {
+      "area_id": "KM016",
+      "municipality": "芦北町",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "AVAILABLE",
+      "pending": 0,
+      "last_update": "2026-07-31T00:00:00.000Z"
+    },
+    {
+      "area_id": "KM017",
+      "municipality": "津奈木町",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "AVAILABLE",
+      "pending": 0,
+      "last_update": "2026-07-31T00:00:00.000Z"
+    },
+    {
+      "area_id": "KM018",
+      "municipality": "上天草市",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "AVAILABLE",
+      "pending": 0,
+      "last_update": "2026-07-31T00:00:00.000Z"
+    },
+    {
+      "area_id": "KM019",
+      "municipality": "天草市",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "AVAILABLE",
+      "pending": 0,
+      "last_update": "2026-07-31T00:00:00.000Z"
+    },
+    {
+      "area_id": "KM020",
+      "municipality": "西原村",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "AVAILABLE",
+      "pending": 0,
+      "last_update": "2026-07-31T00:00:00.000Z"
+    },
+    {
+      "area_id": "KM021",
+      "municipality": "苓北町",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "AVAILABLE",
+      "pending": 0,
+      "last_update": "2026-07-31T00:00:00.000Z"
+    },
+    {
+      "area_id": "KM022",
+      "municipality": "多良木町",
+      "patrol": "GREEN",
+      "water": "AVAILABLE",
+      "shelter": "AVAILABLE",
+      "pending": 0,
+      "last_update": "2026-07-31T00:00:00.000Z"
+    }
+  ],
+  "patrol_status": "ACTIVE",
+  "diff_count": 14,
+  "classification_count": 50,
+  "review_pending_count": 67,
+  "approved_count": 0,
+  "rejected_count": 0,
+  "public_update_count": 0,
+  "gate_status": "NONE",
+  "apply_pending_count": 0,
+  "incident_count": 0,
+  "categories": [
+    {
+      "category": "WATER",
+      "pending_count": 15,
+      "total_count": 15,
+      "last_update": "2026-07-30T16:02:18.511Z",
+      "municipality_count": 12,
+      "source_status": {
+        "reachable": 12,
+        "unreachable": 0,
+        "missing": 0
+      }
+    },
+    {
+      "category": "SHELTER",
+      "pending_count": 13,
+      "total_count": 13,
+      "last_update": "2026-07-30T16:02:18.511Z",
+      "municipality_count": 10,
+      "source_status": {
+        "reachable": 10,
+        "unreachable": 0,
+        "missing": 0
+      }
+    },
+    {
+      "category": "COMMUNICATION",
+      "pending_count": 15,
+      "total_count": 15,
+      "last_update": "2026-07-30T16:02:18.511Z",
+      "municipality_count": 11,
+      "source_status": {
+        "reachable": 11,
+        "unreachable": 0,
+        "missing": 0
+      }
+    },
+    {
+      "category": "ROAD",
+      "pending_count": 12,
+      "total_count": 12,
+      "last_update": "2026-07-30T16:02:18.511Z",
+      "municipality_count": 9,
+      "source_status": {
+        "reachable": 9,
+        "unreachable": 0,
+        "missing": 0
+      }
+    },
+    {
+      "category": "SUPPORT",
+      "pending_count": 12,
+      "total_count": 12,
+      "last_update": "2026-07-30T16:02:18.511Z",
+      "municipality_count": 9,
+      "source_status": {
+        "reachable": 9,
+        "unreachable": 0,
+        "missing": 0
+      }
+    },
+    {
+      "category": "VOLUNTEER",
+      "pending_count": 0,
+      "total_count": 0,
+      "last_update": null,
+      "municipality_count": 0,
+      "source_status": {
+        "reachable": 0,
+        "unreachable": 0,
+        "missing": 0
+      }
+    }
+  ],
+  "audit_traces": {
+    "total": 67,
+    "complete_count": 67,
+    "items": [
+      {
+        "source_id": "KM000-pref-hub",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM000-PREF-HUB-WATER-01",
+        "queue_id": "RQ-20260730-KM000-PREF-HUB-WATER-01",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM000-pref-hub",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM000-PREF-HUB-SHELTER-02",
+        "queue_id": "RQ-20260730-KM000-PREF-HUB-SHELTER-02",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM000-pref-hub",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM000-PREF-HUB-COMMUNICATION-03",
+        "queue_id": "RQ-20260730-KM000-PREF-HUB-COMMUNICATION-03",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM000-pref-hub",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM000-PREF-HUB-ROAD-04",
+        "queue_id": "RQ-20260730-KM000-PREF-HUB-ROAD-04",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM000-pref-hub",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM000-PREF-HUB-SUPPORT-05",
+        "queue_id": "RQ-20260730-KM000-PREF-HUB-SUPPORT-05",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM001-kumamoto-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM001-KUMAMOTO-SHELTER-WATER-06",
+        "queue_id": "RQ-20260730-KM001-KUMAMOTO-SHELTER-WATER-06",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM001-kumamoto-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM001-KUMAMOTO-SHELTER-SHELTER-07",
+        "queue_id": "RQ-20260730-KM001-KUMAMOTO-SHELTER-SHELTER-07",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM001-kumamoto-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM001-KUMAMOTO-SHELTER-COMMUNICATION-08",
+        "queue_id": "RQ-20260730-KM001-KUMAMOTO-SHELTER-COMMUNICATION-08",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM002-uto-water",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM002-UTO-WATER-WATER-09",
+        "queue_id": "RQ-20260730-KM002-UTO-WATER-WATER-09",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM002-uto-water",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM002-UTO-WATER-COMMUNICATION-10",
+        "queue_id": "RQ-20260730-KM002-UTO-WATER-COMMUNICATION-10",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM002-uto-water",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM002-UTO-WATER-ROAD-11",
+        "queue_id": "RQ-20260730-KM002-UTO-WATER-ROAD-11",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM003-uki-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM003-UKI-EMERGENCY-WATER-12",
+        "queue_id": "RQ-20260730-KM003-UKI-EMERGENCY-WATER-12",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM003-uki-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM003-UKI-EMERGENCY-SHELTER-13",
+        "queue_id": "RQ-20260730-KM003-UKI-EMERGENCY-SHELTER-13",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM003-uki-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM003-UKI-EMERGENCY-SUPPORT-14",
+        "queue_id": "RQ-20260730-KM003-UKI-EMERGENCY-SUPPORT-14",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM005-yatsushiro-bousai",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM005-YATSUSHIRO-BOUSAI-WATER-15",
+        "queue_id": "RQ-20260730-KM005-YATSUSHIRO-BOUSAI-WATER-15",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM005-yatsushiro-bousai",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM005-YATSUSHIRO-BOUSAI-SHELTER-16",
+        "queue_id": "RQ-20260730-KM005-YATSUSHIRO-BOUSAI-SHELTER-16",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM005-yatsushiro-bousai",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM005-YATSUSHIRO-BOUSAI-COMMUNICATION-17",
+        "queue_id": "RQ-20260730-KM005-YATSUSHIRO-BOUSAI-COMMUNICATION-17",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM005-yatsushiro-bousai",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM005-YATSUSHIRO-BOUSAI-ROAD-18",
+        "queue_id": "RQ-20260730-KM005-YATSUSHIRO-BOUSAI-ROAD-18",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM005-yatsushiro-bousai",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM005-YATSUSHIRO-BOUSAI-SUPPORT-19",
+        "queue_id": "RQ-20260730-KM005-YATSUSHIRO-BOUSAI-SUPPORT-19",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM007-hikawa-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM007-HIKAWA-EMERGENCY-WATER-20",
+        "queue_id": "RQ-20260730-KM007-HIKAWA-EMERGENCY-WATER-20",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM007-hikawa-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM007-HIKAWA-EMERGENCY-SHELTER-21",
+        "queue_id": "RQ-20260730-KM007-HIKAWA-EMERGENCY-SHELTER-21",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM007-hikawa-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM007-HIKAWA-EMERGENCY-COMMUNICATION-22",
+        "queue_id": "RQ-20260730-KM007-HIKAWA-EMERGENCY-COMMUNICATION-22",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM007-hikawa-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM007-HIKAWA-EMERGENCY-ROAD-23",
+        "queue_id": "RQ-20260730-KM007-HIKAWA-EMERGENCY-ROAD-23",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM007-hikawa-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM007-HIKAWA-EMERGENCY-SUPPORT-24",
+        "queue_id": "RQ-20260730-KM007-HIKAWA-EMERGENCY-SUPPORT-24",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM009-koshi-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM009-KOSHI-EMERGENCY-WATER-25",
+        "queue_id": "RQ-20260730-KM009-KOSHI-EMERGENCY-WATER-25",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM009-koshi-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM009-KOSHI-EMERGENCY-SHELTER-26",
+        "queue_id": "RQ-20260730-KM009-KOSHI-EMERGENCY-SHELTER-26",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM009-koshi-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM009-KOSHI-EMERGENCY-COMMUNICATION-27",
+        "queue_id": "RQ-20260730-KM009-KOSHI-EMERGENCY-COMMUNICATION-27",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM009-koshi-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM009-KOSHI-EMERGENCY-ROAD-28",
+        "queue_id": "RQ-20260730-KM009-KOSHI-EMERGENCY-ROAD-28",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM009-koshi-emergency",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM009-KOSHI-EMERGENCY-SUPPORT-29",
+        "queue_id": "RQ-20260730-KM009-KOSHI-EMERGENCY-SUPPORT-29",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM010-mifune-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM010-MIFUNE-SHELTER-WATER-30",
+        "queue_id": "RQ-20260730-KM010-MIFUNE-SHELTER-WATER-30",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM010-mifune-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM010-MIFUNE-SHELTER-SHELTER-31",
+        "queue_id": "RQ-20260730-KM010-MIFUNE-SHELTER-SHELTER-31",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM010-mifune-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM010-MIFUNE-SHELTER-COMMUNICATION-32",
+        "queue_id": "RQ-20260730-KM010-MIFUNE-SHELTER-COMMUNICATION-32",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM010-mifune-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM010-MIFUNE-SHELTER-ROAD-33",
+        "queue_id": "RQ-20260730-KM010-MIFUNE-SHELTER-ROAD-33",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM010-mifune-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM010-MIFUNE-SHELTER-SUPPORT-34",
+        "queue_id": "RQ-20260730-KM010-MIFUNE-SHELTER-SUPPORT-34",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM011-kikuyo-water",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM011-KIKUYO-WATER-WATER-35",
+        "queue_id": "RQ-20260730-KM011-KIKUYO-WATER-WATER-35",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-WATER-36",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-WATER-36",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-SHELTER-37",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-SHELTER-37",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-COMMUNICATION-38",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-COMMUNICATION-38",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-ROAD-39",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-ROAD-39",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-SUPPORT-40",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-SUPPORT-40",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-WATER-41",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-WATER-41",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-SHELTER-42",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-SHELTER-42",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-COMMUNICATION-43",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-COMMUNICATION-43",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-ROAD-44",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-ROAD-44",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-SUPPORT-45",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-SUPPORT-45",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-WATER-46",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-WATER-46",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-SHELTER-47",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-SHELTER-47",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-COMMUNICATION-48",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-COMMUNICATION-48",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-ROAD-49",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-ROAD-49",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-SUPPORT-50",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-SUPPORT-50",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-disaster-message",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DISASTER-MESSAGE-COMMUNICATION-51",
+        "queue_id": "RQ-20260730-COMM-DISASTER-MESSAGE-COMMUNICATION-51",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-WATER-35",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-WATER-35",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-SHELTER-36",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-SHELTER-36",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-COMMUNICATION-37",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-COMMUNICATION-37",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-ROAD-38",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-ROAD-38",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "KM013-kikuchi-shelter",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-SUPPORT-39",
+        "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-SUPPORT-39",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-WATER-40",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-WATER-40",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-SHELTER-41",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-SHELTER-41",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-COMMUNICATION-42",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-COMMUNICATION-42",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-ROAD-43",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-ROAD-43",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-docomo",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DOCOMO-SUPPORT-44",
+        "queue_id": "RQ-20260730-COMM-DOCOMO-SUPPORT-44",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-WATER-45",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-WATER-45",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-SHELTER-46",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-SHELTER-46",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-COMMUNICATION-47",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-COMMUNICATION-47",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-ROAD-48",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-ROAD-48",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-rakuten",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-SUPPORT-49",
+        "queue_id": "RQ-20260730-COMM-RAKUTEN-SUPPORT-49",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      },
+      {
+        "source_id": "COMM-disaster-message",
+        "change_log": "monitor/change-log/2026-07-30.json",
+        "classification_id": "CLS-20260730-COMM-DISASTER-MESSAGE-COMMUNICATION-50",
+        "queue_id": "RQ-20260730-COMM-DISASTER-MESSAGE-COMMUNICATION-50",
+        "decision": "PENDING",
+        "update_id": null,
+        "apply_id": null,
+        "trace_complete": true
+      }
+    ]
+  },
+  "constraints": {
+    "ui_public_page_unchanged": true,
+    "auto_approval": false,
+    "auto_publish": false,
+    "sources_json_auto_change": false,
+    "public_data_direct_edit": false
+  },
+  "public_data_hash": {
+    "baseline_recorded": true,
+    "current_hash": "phase1_areas.json:1a59b9f4769d2002a657d42348edc6589cd15117e88606df3fcb30ed2df04f32|phase1_navigation.json:1a59b9f4769d2002a657d42348edc6589cd15117e88606df3fcb30ed2df04f32|phase1_updates.json:4bc2dce0e986e8360867a6f3930059297783c9e54e4c14ff6217a6ef8f6aed61|area_navigation.json:83a37af290d84dd15cb6025f53c475e61ee9f35057155fc9ea3c9e685c7afab5|water_search_index.json:8c47c21e243e70df76de1a0518c3a0631281772da84e3fd63a8bc33460b175be|disaster_search_index.json:cdd8cfdebfda47daf7bc79f470bd459a49bf78b55896e8b5dfb2555fbe41de37|location_sources.json:a3241c24cff67acbcaca3c915f06e7d9537edc7e19cec1f7758ae861795edce6|emergency_sources.json:f73fa2d80b55bcc985da8c6e71ec441eb254e84d928787d82a5ebad7d111fc99",
+    "unchanged": true
+  }
+}

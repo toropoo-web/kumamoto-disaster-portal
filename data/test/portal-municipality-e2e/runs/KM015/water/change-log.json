@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM015-kosa-emergency",
+    "sourceName": "甲佐町",
+    "category": "municipality",
+    "areaId": "KM015",
+    "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+    "detectedAt": "2026-07-30T18:42:28.333Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "e2e-KM015-WATER-before",
+    "currentHash": "e2e-KM015-WATER-after",
+    "keywords": [
+      "断水",
+      "水道",
+      "復旧",
+      "給水"
+    ],
+    "status": "DETECTED",
+    "changed_text": "断水 水道 復旧 給水 情報更新",
+    "titleChanged": {
+      "from": "更新前タイトル",
+      "to": "断水情報更新"
+    }
+  }
+]

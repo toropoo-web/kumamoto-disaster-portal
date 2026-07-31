@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T18:42:14.026Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "autoPublish": false,
+  "sourceGateFile": "data/shelter_registry_apply/KM015/patrol_public_update_gate.json",
+  "itemCount": 1,
+  "pendingCount": 1,
+  "blockedCount": 0,
+  "items": [
+    {
+      "apply_id": "APL-20260730184214-20260730-KM015-KOSA-EMERGENCY-SH",
+      "update_id": "UPD-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+      "category": "SHELTER",
+      "target_layer": "shelter_search_index",
+      "operation": "ADD",
+      "status": "APPLIED",
+      "blocked_reason": null,
+      "source_trace": {
+        "queue_id": "RQ-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+        "classification_id": "CLS-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+        "change_log": "data/shelter_registry_apply/KM015/change-log.json",
+        "classification_file": "data/shelter_registry_apply/KM015/classified.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "before_hash": "shelter-KM015-before",
+        "after_hash": "shelter-KM015-after",
+        "changed_text": "防災情報\n甲佐町 避難所情報\n甲佐町 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+        "detected_at": "2026-07-30T18:42:14.016Z"
+      },
+      "candidate": {
+        "update_id": "UPD-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+        "municipality": "甲佐町",
+        "category": "SHELTER",
+        "title": "甲佐町 避難所情報",
+        "source_url": "https://www.town.kosa.lg.jp/q/list/51.html",
+        "source_id": "KM015-kosa-emergency",
+        "area_id": "KM015",
+        "detected_keywords": [
+          "避難所",
+          "開設",
+          "閉鎖",
+          "避難場所"
+        ],
+        "target_layer": "shelter_search_index",
+        "status": "READY",
+        "created_at": "2026-07-30T18:42:14.019Z",
+        "auto_publish": false,
+        "source_trace": {
+          "queue_id": "RQ-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+          "classification_id": "CLS-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+          "change_log": "data/shelter_registry_apply/KM015/change-log.json",
+          "classification_file": "data/shelter_registry_apply/KM015/classified.json",
+          "diff_type": "CONTENT_AND_TITLE_CHANGED",
+          "before_hash": "shelter-KM015-before",
+          "after_hash": "shelter-KM015-after",
+          "changed_text": "防災情報\n甲佐町 避難所情報\n甲佐町 避難所情報\n避難所 開設 閉鎖 避難場所\n避難所 開設 閉鎖 避難場所 情報更新",
+          "detected_at": "2026-07-30T18:42:14.016Z"
+        }
+      },
+      "diff_file": "data/shelter_registry_apply/KM015/diff/APL-20260730184214-20260730-KM015-KOSA-EMERGENCY-SH.json",
+      "created_at": "2026-07-30T18:42:14.021Z",
+      "applied_at": "2026-07-30T18:42:14.026Z"
+    }
+  ],
+  "appliedCount": 1
+}

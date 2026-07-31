@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "entries": [
+    {
+      "apply_id": "RAP-FIXTURE-UTO-WATER",
+      "source_id": "KM002-uto-water",
+      "municipality": "宇土市",
+      "prefecture": "熊本県",
+      "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "official_domain": "city.uto.lg.jp",
+      "decision": {
+        "status": "APPROVED",
+        "reviewer": "manual-reviewer",
+        "reviewed_at": "2026-07-31T00:00:00.000Z",
+        "review_note": "Registry apply approved for production connection E2E"
+      },
+      "apply_status": "COMPLETE",
+      "applied_at": "2026-07-31T00:00:00.000Z",
+      "source_trace": {
+        "discovery_run_id": "NDR-FIXTURE",
+        "review_id": "PRD-FIXTURE-UTO-WATER",
+        "municipality_id": "JP432091",
+        "target_id": "DST-432091",
+        "pipeline_run_id": "PDP-FIXTURE"
+      }
+    }
+  ]
+}

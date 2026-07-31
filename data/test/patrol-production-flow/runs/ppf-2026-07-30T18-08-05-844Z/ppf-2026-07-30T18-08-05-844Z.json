@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "run_id": "ppf-2026-07-30T18-08-05-844Z",
+  "started_at": "2026-07-31T00:00:00.000Z",
+  "completed_at": "2026-07-30T18:08:05.859Z",
+  "dryRun": false,
+  "registry_updates": [
+    {
+      "apply_id": "RAP-FIXTURE-UTO-WATER",
+      "source_id": "KM002-uto-water",
+      "municipality": "宇土市",
+      "prefecture": "熊本県",
+      "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "official_domain": "city.uto.lg.jp",
+      "decision": {
+        "status": "APPROVED",
+        "reviewer": "manual-reviewer",
+        "reviewed_at": "2026-07-31T00:00:00.000Z",
+        "review_note": "Registry apply approved for production connection E2E"
+      },
+      "apply_status": "COMPLETE",
+      "applied_at": "2026-07-31T00:00:00.000Z",
+      "source_trace": {
+        "discovery_run_id": "NDR-FIXTURE",
+        "review_id": "PRD-FIXTURE-UTO-WATER",
+        "municipality_id": "JP432091",
+        "target_id": "DST-432091",
+        "pipeline_run_id": "PDP-FIXTURE"
+      }
+    }
+  ],
+  "patrol_result": {
+    "source_count": 1,
+    "failed_count": 0,
+    "changeLogPath": "data/test/patrol-production-flow/runs/ppf-2026-07-30T18-08-05-844Z/change-log.json"
+  },
+  "snapshot_result": {
+    "created": 1,
+    "updated": 1,
+    "source_id": "KM002-uto-water",
+    "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html"
+  },
+  "classification_result": {
+    "count": 3,
+    "outputPath": "data/test/patrol-production-flow/runs/ppf-2026-07-30T18-08-05-844Z/classified.json",
+    "categorySummary": {
+      "WATER": 1,
+      "SHELTER": 0,
+      "COMMUNICATION": 1,
+      "VOLUNTEER": 0,
+      "ROAD": 1,
+      "SUPPORT": 0
+    }
+  },
+  "review_queue_result": {
+    "item_count": 3,
+    "outputPath": "data/test/patrol-production-flow/runs/ppf-2026-07-30T18-08-05-844Z/patrol_review_queue.json",
+    "items": [
+      {
+        "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+        "municipality": "宇土市",
+        "category": "WATER",
+        "title": "水道復旧状況更新",
+        "source_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "detected_keywords": [
+          "断水",
+          "水道",
+          "復旧"
+        ],
+        "status": "PENDING",
+        "created_at": "2026-07-31T00:00:00.000Z",
+        "review_required": true,
+        "source_id": "KM002-uto-water",
+        "original_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "before_hash": "e2e-uto-water-before-hash-7f3a9c2d",
+        "after_hash": "e2e-uto-water-after-hash-4b8e1f6a",
+        "changed_text": "今回の地震に伴う断水について\n水道復旧状況更新\n水道復旧状況更新\n断水 水道 復旧\n水道復旧状況更新",
+        "detected_at": "2026-07-31T00:00:00.000Z",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "confidence": "HIGH",
+        "auto_publish": false,
+        "decision": {
+          "status": "PENDING",
+          "reviewer": "",
+          "reviewed_at": "",
+          "review_note": ""
+        },
+        "source_trace": {
+          "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+          "classification_file": "data/test/patrol-production-flow/runs/ppf-2026-07-30T18-08-05-844Z/classified.json",
+          "source_change_log": "data/test/patrol-production-flow/runs/ppf-2026-07-30T18-08-05-844Z/change-log.json",
+          "diff_type": "CONTENT_AND_TITLE_CHANGED"
+        }
+      },
+      {
+        "queue_id": "RQ-20260731-KM002-UTO-WATER-COMMUNICATION-02",
+        "municipality": "宇土市",
+        "category": "COMMUNICATION",
+        "title": "水道復旧状況更新",
+        "source_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "detected_keywords": [
+          "復旧"
+        ],
+        "status": "PENDING",
+        "created_at": "2026-07-31T00:00:00.000Z",
+        "review_required": true,
+        "source_id": "KM002-uto-water",
+        "original_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "before_hash": "e2e-uto-water-before-hash-7f3a9c2d",
+        "after_hash": "e2e-uto-water-after-hash-4b8e1f6a",
+        "changed_text": "今回の地震に伴う断水について\n水道復旧状況更新\n水道復旧状況更新\n断水 水道 復旧\n水道復旧状況更新",
+        "detected_at": "2026-07-31T00:00:00.000Z",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "confidence": "HIGH",
+        "auto_publish": false,
+        "decision": {
+          "status": "PENDING",
+          "reviewer": "",
+          "reviewed_at": "",
+          "review_note": ""
+        },
+        "source_trace": {
+          "classification_id": "CLS-20260731-KM002-UTO-WATER-COMMUNICATION-02",
+          "classification_file": "data/test/patrol-production-flow/runs/ppf-2026-07-30T18-08-05-844Z/classified.json",
+          "source_change_log": "data/test/patrol-production-flow/runs/ppf-2026-07-30T18-08-05-844Z/change-log.json",
+          "diff_type": "CONTENT_AND_TITLE_CHANGED"
+        }
+      },
+      {
+        "queue_id": "RQ-20260731-KM002-UTO-WATER-ROAD-03",
+        "municipality": "宇土市",
+        "category": "ROAD",
+        "title": "水道復旧状況更新",
+        "source_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "detected_keywords": [
+          "復旧"
+        ],
+        "status": "PENDING",
+        "created_at": "2026-07-31T00:00:00.000Z",
+        "review_required": true,
+        "source_id": "KM002-uto-water",
+        "original_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "before_hash": "e2e-uto-water-before-hash-7f3a9c2d",
+        "after_hash": "e2e-uto-water-after-hash-4b8e1f6a",
+        "changed_text": "今回の地震に伴う断水について\n水道復旧状況更新\n水道復旧状況更新\n断水 水道 復旧\n水道復旧状況更新",
+        "detected_at": "2026-07-31T00:00:00.000Z",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED",
+        "confidence": "HIGH",
+        "auto_publish": false,
+        "decision": {
+          "status": "PENDING",
+          "reviewer": "",
+          "reviewed_at": "",
+          "review_note": ""
+        },
+        "source_trace": {
+          "classification_id": "CLS-20260731-KM002-UTO-WATER-ROAD-03",
+          "classification_file": "data/test/patrol-production-flow/runs/ppf-2026-07-30T18-08-05-844Z/classified.json",
+          "source_change_log": "data/test/patrol-production-flow/runs/ppf-2026-07-30T18-08-05-844Z/change-log.json",
+          "diff_type": "CONTENT_AND_TITLE_CHANGED"
+        }
+      }
+    ]
+  },
+  "rollback_bundle": "data/patrol_production/rollback/ppf-2026-07-30T18-08-05-844Z.json",
+  "status": "SUCCESS",
+  "trace": {
+    "registry_updates": [
+      {
+        "apply_id": "RAP-FIXTURE-UTO-WATER",
+        "source_id": "KM002-uto-water",
+        "municipality": "宇土市",
+        "prefecture": "熊本県",
+        "url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+        "official_domain": "city.uto.lg.jp",
+        "decision": {
+          "status": "APPROVED",
+          "reviewer": "manual-reviewer",
+          "reviewed_at": "2026-07-31T00:00:00.000Z",
+          "review_note": "Registry apply approved for production connection E2E"
+        },
+        "apply_status": "COMPLETE",
+        "applied_at": "2026-07-31T00:00:00.000Z",
+        "source_trace": {
+          "discovery_run_id": "NDR-FIXTURE",
+          "review_id": "PRD-FIXTURE-UTO-WATER",
+          "municipality_id": "JP432091",
+          "target_id": "DST-432091",
+          "pipeline_run_id": "PDP-FIXTURE"
+        }
+      }
+    ],
+    "sources_hash": "af561e5e36db761d4bde6ffc3c070281aa7ae767ba2048f72cf612ce7a0c83fa",
+    "patrol_source_id": "KM002-uto-water",
+    "classification_ids": [
+      "CLS-20260731-KM002-UTO-WATER-WATER-01",
+      "CLS-20260731-KM002-UTO-WATER-COMMUNICATION-02",
+      "CLS-20260731-KM002-UTO-WATER-ROAD-03"
+    ],
+    "queue_ids": [
+      "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "RQ-20260731-KM002-UTO-WATER-COMMUNICATION-02",
+      "RQ-20260731-KM002-UTO-WATER-ROAD-03"
+    ],
+    "sources_hash_before": "af561e5e36db761d4bde6ffc3c070281aa7ae767ba2048f72cf612ce7a0c83fa",
+    "sources_hash_after": "af561e5e36db761d4bde6ffc3c070281aa7ae767ba2048f72cf612ce7a0c83fa",
+    "public_hash_before": "area_navigation.json:5e602c52f0fcef99a075fff11a0f4c4c1caae144a58b1b5328a83d0b85e7457f|communication_status.json:e76e88dbc4221ef6989e64e67632f154b44d01cc6b0b6dcdd1473701bce627b1|disaster_locations.json:38da9e7cec8bed59a379b16396fb429cc806368d25f9f774dc5999552fc944c7|disaster_search_index.json:371fea1f8ecbd744751f322e31df331729e0a4f6aa84806907691dc783175cf1|emergency_sources.json:cc6bfa0d595cdc4e09e3a1ca51eee7dc89f3ab89363ef0a37737aac187bc5c9b|infrastructure_sources.json:3e6eafa7db697faab568e2c58bcdcb4f9edf26fce7278f10b71110a68951e0d0|infrastructure_status.json:c68d0ffb154afbe9bf3fd266bcf3325f2acc648a28f74a5f705537123a227f97|location_sources.json:3b12f1787e69fc50fc56e34e66ff3a9b58a62b9d156caf72e8b9941b09fdb69d|phase1_areas.json:a02702a28a653fd6be60f5271a5de8d41714e93b34a8f35e10fa69dd36595b58|phase1_navigation.json:a02702a28a653fd6be60f5271a5de8d41714e93b34a8f35e10fa69dd36595b58|phase1_updates.json:f8138d56adcfb571d101c9ae557dc839ccca77af6a64130b348f695fe723f29f|status.json:45436ad17ba104482782ec8eabe69cbae9a2491892a83c112919894ae801c7ba|water_cross_view.json:892f376a21269f38e646ce07f56540a73dba4f92929633280f12f78b8c1cf546|water_search_index.json:792cf90e28f38ad04aa10238e42925d83eb42292258276edeb32dfd3a65d098a|x_feed_preview.json:6e80f3431e90c97031d2ecdd6cee5d9cbab58ca9a2cea00928b93085107e0543",
+    "public_hash_after": "area_navigation.json:5e602c52f0fcef99a075fff11a0f4c4c1caae144a58b1b5328a83d0b85e7457f|communication_status.json:e76e88dbc4221ef6989e64e67632f154b44d01cc6b0b6dcdd1473701bce627b1|disaster_locations.json:38da9e7cec8bed59a379b16396fb429cc806368d25f9f774dc5999552fc944c7|disaster_search_index.json:371fea1f8ecbd744751f322e31df331729e0a4f6aa84806907691dc783175cf1|emergency_sources.json:cc6bfa0d595cdc4e09e3a1ca51eee7dc89f3ab89363ef0a37737aac187bc5c9b|infrastructure_sources.json:3e6eafa7db697faab568e2c58bcdcb4f9edf26fce7278f10b71110a68951e0d0|infrastructure_status.json:c68d0ffb154afbe9bf3fd266bcf3325f2acc648a28f74a5f705537123a227f97|location_sources.json:3b12f1787e69fc50fc56e34e66ff3a9b58a62b9d156caf72e8b9941b09fdb69d|phase1_areas.json:a02702a28a653fd6be60f5271a5de8d41714e93b34a8f35e10fa69dd36595b58|phase1_navigation.json:a02702a28a653fd6be60f5271a5de8d41714e93b34a8f35e10fa69dd36595b58|phase1_updates.json:f8138d56adcfb571d101c9ae557dc839ccca77af6a64130b348f695fe723f29f|status.json:45436ad17ba104482782ec8eabe69cbae9a2491892a83c112919894ae801c7ba|water_cross_view.json:892f376a21269f38e646ce07f56540a73dba4f92929633280f12f78b8c1cf546|water_search_index.json:792cf90e28f38ad04aa10238e42925d83eb42292258276edeb32dfd3a65d098a|x_feed_preview.json:6e80f3431e90c97031d2ecdd6cee5d9cbab58ca9a2cea00928b93085107e0543"
+  },
+  "errors": []
+}

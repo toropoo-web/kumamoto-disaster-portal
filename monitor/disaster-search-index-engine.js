@@ -411,6 +411,21 @@ function dedupeIndexItems(items) {
   return deduped;
 }
 
+function readPreservedShelterRegistryEntries(options) {
+  options = options || {};
+  const publicPath = options.publicOutputPath || PUBLIC_OUTPUT_FILE;
+  const existing = readJson(publicPath, { index: [] });
+  return (existing.index || []).filter(function (entry) {
+    return (
+      entry &&
+      entry.category === "SHELTER" &&
+      entry.source_trace &&
+      typeof entry.source_trace === "object" &&
+      entry.area_id
+    );
+  });
+}
+
 function buildDisasterSearchIndex(options) {
   options = options || {};
 
@@ -426,8 +441,9 @@ function buildDisasterSearchIndex(options) {
   const registryItems = buildRegistryItems(disasterSources);
   const snapshotItems = buildSnapshotFacilityItems(snapshots, disasterSources);
   const volunteerRegistryItems = buildVolunteerRegistryItems(disasterSources);
+  const preservedShelterItems = readPreservedShelterRegistryEntries(options);
   const index = dedupeIndexItems(
-    locationItems.concat(registryItems, snapshotItems, volunteerRegistryItems)
+    locationItems.concat(registryItems, snapshotItems, volunteerRegistryItems, preservedShelterItems)
   );
 
   return {
@@ -439,6 +455,7 @@ function buildDisasterSearchIndex(options) {
       registry_item_count: registryItems.length,
       snapshot_item_count: snapshotItems.length,
       volunteer_registry_item_count: volunteerRegistryItems.length,
+      shelter_registry_item_count: preservedShelterItems.length,
       item_count: index.length,
       last_updated: new Date().toISOString()
     }
@@ -546,6 +563,20 @@ function validateDisasterSearchIndexEntry(entry, index) {
     }
     if (!entry.disaster_start_date) {
       errors.push(label + ": missing disaster_start_date");
+    }
+  }
+
+  if (entry.category === "SHELTER" && entry.source_trace) {
+    ["area_id", "source_id", "status"].forEach(function (field) {
+      if (!entry[field]) {
+        errors.push(label + ": missing " + field);
+      }
+    });
+    if (entry.status && entry.status !== "PENDING") {
+      errors.push(label + ": SHELTER registry status must be PENDING");
+    }
+    if (!entry.source_trace.queue_id) {
+      errors.push(label + ": source_trace.queue_id is required");
     }
   }
 

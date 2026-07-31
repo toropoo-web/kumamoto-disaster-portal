@@ -1,0 +1,1624 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T16:43:53.221Z",
+  "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+  "count": 51,
+  "items": [
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM005-yatsushiro-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.037Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01003.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM005-yatsushiro-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.038Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01971.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM005-yatsushiro-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.173Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01009.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM005-yatsushiro-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.417Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01010.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM005-yatsushiro-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.547Z",
+        "matched_hints": [
+          "bousai",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01012.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM005-yatsushiro-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:55.793Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01017.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM005-yatsushiro-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:56.016Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01014.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM005-yatsushiro-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:56.119Z",
+        "matched_hints": [
+          "避難",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "八代市",
+      "candidate_url": "https://www.city.yatsushiro.lg.jp/bousai/list01018.html",
+      "current_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM005-yatsushiro-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:43:56.330Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "八代市",
+          "official_domain": "city.yatsushiro.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "美里町",
+      "candidate_url": "https://www.town.kumamoto-misato.lg.jp/kinkyu/index.html",
+      "current_url": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 82,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM004-misato-emergency",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.town.kumamoto-misato.lg.jp/kurashi_tetsuzuki/gou-saigai_1/index.html",
+        "discovered_at": "2026-07-30T16:44:22.977Z",
+        "matched_hints": [
+          "緊急",
+          "kinkyu"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2",
+          "disaster_probe"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "美里町",
+          "official_domain": "town.kumamoto-misato.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/141.html",
+      "current_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 70,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM018-kamiamakusa-emergency",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:36.330Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "上天草市",
+      "candidate_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/288.html",
+      "current_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 66,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM018-kamiamakusa-emergency",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+        "discovered_at": "2026-07-30T16:44:38.413Z",
+        "matched_hints": [],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_A",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "上天草市",
+          "official_domain": "city.kamiamakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314538/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM019-amakusa-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:40.166Z",
+        "matched_hints": [
+          "水道",
+          "bousai",
+          "復旧状況"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00314537/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM019-amakusa-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:40.404Z",
+        "matched_hints": [
+          "避難",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313473/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM019-amakusa-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:40.529Z",
+        "matched_hints": [
+          "bousai",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313512/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM019-amakusa-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovered_at": "2026-07-30T16:44:41.284Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313681/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM019-amakusa-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovered_at": "2026-07-30T16:44:41.498Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313605/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM019-amakusa-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovered_at": "2026-07-30T16:44:41.845Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "天草市",
+      "candidate_url": "https://www.city.amakusa.kumamoto.jp/bousai/kiji00313561/index.html",
+      "current_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 98,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM019-amakusa-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.city.amakusa.kumamoto.jp/bousai/list01516.html",
+        "discovered_at": "2026-07-30T16:44:41.610Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 2,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "天草市",
+          "official_domain": "city.amakusa.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "bousai_portal",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:43.635Z",
+        "matched_hints": [
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00325.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:43.754Z",
+        "matched_hints": [
+          "災害",
+          "bousai",
+          "災害対策本部"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00337.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:43.877Z",
+        "matched_hints": [
+          "水道",
+          "bousai",
+          "復旧状況"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00302.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:43.878Z",
+        "matched_hints": [
+          "避難",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00303.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:43.879Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00306.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:44.122Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00308.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:44.233Z",
+        "matched_hints": [
+          "避難",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00309.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:44.342Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00326.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:44.462Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00311.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:44.640Z",
+        "matched_hints": [
+          "避難",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00313.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:44.742Z",
+        "matched_hints": [
+          "支援",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00339.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:44.852Z",
+        "matched_hints": [
+          "給水",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "西原村",
+      "candidate_url": "https://www.vill.nishihara.kumamoto.jp/bousai/list00340.html",
+      "current_url": "https://www.vill.nishihara.kumamoto.jp/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM020-nishihara-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.vill.nishihara.kumamoto.jp/default.html",
+        "discovered_at": "2026-07-30T16:44:44.994Z",
+        "matched_hints": [
+          "bousai",
+          "復旧状況"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "西原村",
+          "official_domain": "vill.nishihara.kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM016-ashikita-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:47.424Z",
+        "matched_hints": [
+          "避難",
+          "hinan",
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/saigai",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM016-ashikita-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:47.733Z",
+        "matched_hints": [
+          "災害",
+          "saigai",
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/oshirase_bosai",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 98,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM016-ashikita-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:50.457Z",
+        "matched_hints": [
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/bosai_site/news?refc=2001708",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 94,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM016-ashikita-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:51.321Z",
+        "matched_hints": [
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/article.php?id=2111544",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 80,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM016-ashikita-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:49.765Z",
+        "matched_hints": [
+          "罹災",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "芦北町",
+      "candidate_url": "https://www.town.ashikita.lg.jp/n_bosaimusen",
+      "current_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 68,
+      "score_tier": "MEDIUM",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM016-ashikita-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://www.town.ashikita.lg.jp/bosai_site/",
+        "discovered_at": "2026-07-30T16:44:51.111Z",
+        "matched_hints": [
+          "bosai"
+        ],
+        "discovery_methods": [
+          "entry_link"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": null,
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "芦北町",
+          "official_domain": "town.ashikita.lg.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00325.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:52.432Z",
+        "matched_hints": [
+          "災害",
+          "bousai",
+          "災害対策本部"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00337.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:52.540Z",
+        "matched_hints": [
+          "水道",
+          "bousai",
+          "復旧状況"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00302.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:52.541Z",
+        "matched_hints": [
+          "避難",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00305.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:52.669Z",
+        "matched_hints": [
+          "防災",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00306.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:52.772Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00309.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:52.876Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00326.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:53.019Z",
+        "matched_hints": [
+          "災害",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00308.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:53.127Z",
+        "matched_hints": [
+          "避難",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00311.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:53.237Z",
+        "matched_hints": [
+          "避難",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00313.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:53.345Z",
+        "matched_hints": [
+          "支援",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00343.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "disaster_special",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "secondary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:53.454Z",
+        "matched_hints": [
+          "bousai",
+          "地震"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00323.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:53.553Z",
+        "matched_hints": [
+          "ボランティア",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    },
+    {
+      "municipality": "苓北町",
+      "candidate_url": "https://reihoku-kumamoto.jp/bousai/list00355.html",
+      "current_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "classification": "BETTER_CANDIDATE",
+      "page_type": "emergency_list",
+      "score": 100,
+      "score_tier": "HIGH",
+      "recommended_role": "primary",
+      "matched_source_id": "KM021-reihoku-bousai",
+      "classification_note": "higher page_type priority than registered baseline",
+      "source_trace": {
+        "discovered_from": "https://reihoku-kumamoto.jp/bousai/default.html",
+        "discovered_at": "2026-07-30T16:44:53.642Z",
+        "matched_hints": [
+          "ボランティア",
+          "bousai"
+        ],
+        "discovery_methods": [
+          "entry_link",
+          "crawl_depth_2"
+        ],
+        "crawl_depth": 1,
+        "cms_pattern": "CMS_C",
+        "registry_match_id": null,
+        "input": {
+          "prefecture": "熊本県",
+          "municipality": "苓北町",
+          "official_domain": "reihoku-kumamoto.jp"
+        }
+      }
+    }
+  ]
+}

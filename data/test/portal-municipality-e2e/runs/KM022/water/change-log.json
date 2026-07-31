@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM022-taragi-emergency",
+    "sourceName": "多良木町",
+    "category": "municipality",
+    "areaId": "KM022",
+    "url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+    "detectedAt": "2026-07-30T18:42:28.382Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "e2e-KM022-WATER-before",
+    "currentHash": "e2e-KM022-WATER-after",
+    "keywords": [
+      "断水",
+      "水道",
+      "復旧",
+      "給水"
+    ],
+    "status": "DETECTED",
+    "changed_text": "断水 水道 復旧 給水 情報更新",
+    "titleChanged": {
+      "from": "更新前タイトル",
+      "to": "断水情報更新"
+    }
+  }
+]

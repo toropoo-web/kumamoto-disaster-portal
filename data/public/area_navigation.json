@@ -140,6 +140,96 @@
         "road": "美里町 通行止め",
         "disaster_map": "https://www.town.kumamoto-misato.lg.jp/"
       }
+    },
+    {
+      "area_id": "KM014",
+      "name": "水俣市",
+      "navigation": {
+        "water": "水俣市 給水場所",
+        "shelter": "水俣市 避難所",
+        "road": "水俣市 通行止め",
+        "disaster_map": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html"
+      }
+    },
+    {
+      "area_id": "KM015",
+      "name": "甲佐町",
+      "navigation": {
+        "water": "甲佐町 給水場所",
+        "shelter": "甲佐町 避難所",
+        "road": "甲佐町 通行止め",
+        "disaster_map": "https://www.town.kosa.lg.jp/q/list/51.html"
+      }
+    },
+    {
+      "area_id": "KM016",
+      "name": "芦北町",
+      "navigation": {
+        "water": "芦北町 給水場所",
+        "shelter": "芦北町 避難所",
+        "road": "芦北町 通行止め",
+        "disaster_map": "https://www.town.ashikita.lg.jp/bosai_site/hinan"
+      }
+    },
+    {
+      "area_id": "KM017",
+      "name": "津奈木町",
+      "navigation": {
+        "water": "津奈木町 給水場所",
+        "shelter": "津奈木町 避難所",
+        "road": "津奈木町 通行止め",
+        "disaster_map": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9"
+      }
+    },
+    {
+      "area_id": "KM018",
+      "name": "上天草市",
+      "navigation": {
+        "water": "上天草市 給水場所",
+        "shelter": "上天草市 避難所",
+        "road": "上天草市 通行止め",
+        "disaster_map": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html"
+      }
+    },
+    {
+      "area_id": "KM019",
+      "name": "天草市",
+      "navigation": {
+        "water": "天草市 給水場所",
+        "shelter": "天草市 避難所",
+        "road": "天草市 通行止め",
+        "disaster_map": "https://www.city.amakusa.kumamoto.jp/bousai/default.html"
+      }
+    },
+    {
+      "area_id": "KM020",
+      "name": "西原村",
+      "navigation": {
+        "water": "西原村 給水場所",
+        "shelter": "西原村 避難所",
+        "road": "西原村 通行止め",
+        "disaster_map": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html"
+      }
+    },
+    {
+      "area_id": "KM021",
+      "name": "苓北町",
+      "navigation": {
+        "water": "苓北町 給水場所",
+        "shelter": "苓北町 避難所",
+        "road": "苓北町 通行止め",
+        "disaster_map": "https://reihoku-kumamoto.jp/bousai/default.html"
+      }
+    },
+    {
+      "area_id": "KM022",
+      "name": "多良木町",
+      "navigation": {
+        "water": "多良木町 給水場所",
+        "shelter": "多良木町 避難所",
+        "road": "多良木町 通行止め",
+        "disaster_map": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list"
+      }
     }
   ]
 }

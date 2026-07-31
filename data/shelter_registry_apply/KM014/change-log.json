@@ -1,0 +1,25 @@
+[
+  {
+    "source": "KM014-minamata-emergency",
+    "sourceName": "水俣市",
+    "category": "municipality",
+    "areaId": "KM014",
+    "url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+    "detectedAt": "2026-07-30T18:42:14.002Z",
+    "changeType": "CONTENT_AND_TITLE_CHANGED",
+    "previousHash": "shelter-KM014-before",
+    "currentHash": "shelter-KM014-after",
+    "keywords": [
+      "避難所",
+      "開設",
+      "閉鎖",
+      "避難場所"
+    ],
+    "status": "DETECTED",
+    "changed_text": "避難所 開設 閉鎖 避難場所 情報更新",
+    "titleChanged": {
+      "from": "防災情報",
+      "to": "水俣市 避難所情報"
+    }
+  }
+]

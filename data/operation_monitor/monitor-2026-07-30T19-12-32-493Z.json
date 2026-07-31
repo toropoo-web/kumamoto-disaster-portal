@@ -1,0 +1,256 @@
+{
+  "DISASTER_PORTAL_OPERATION_MONITORING_READY": "PASS",
+  "generatedAt": "2026-07-30T19:12:32.493Z",
+  "timestamp": "2026-07-30T19:12:32.493Z",
+  "scope": {
+    "area_ids": [
+      "KM000",
+      "KM001",
+      "KM002",
+      "KM003",
+      "KM004",
+      "KM005",
+      "KM006",
+      "KM007",
+      "KM008",
+      "KM009",
+      "KM010",
+      "KM011",
+      "KM012",
+      "KM013",
+      "KM014",
+      "KM015",
+      "KM016",
+      "KM017",
+      "KM018",
+      "KM019",
+      "KM020",
+      "KM021",
+      "KM022"
+    ],
+    "municipality_count": 23,
+    "portal": "kumamoto-disaster-emergency-portal"
+  },
+  "constraints": {
+    "auto_municipality_add": false,
+    "sources_json_auto_change": false,
+    "auto_publish": false,
+    "auto_approval": false,
+    "public_data_direct_edit": false
+  },
+  "patrol_status": {
+    "status": "ACTIVE",
+    "last_patrol_at": "2026-07-30T16:02:05.203Z",
+    "source_count": 28,
+    "success_count": 33,
+    "failed_count": 0,
+    "change_log_path": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\monitor\\change-log\\2026-07-30.json",
+    "change_log_entry_count": 14,
+    "metadata_only_ignored_count": 1,
+    "classifiable_change_count": 13,
+    "classification_count": 50,
+    "pipeline_connected": true,
+    "pipeline_scripts": [
+      {
+        "script": "run-monitor.js",
+        "exists": true
+      },
+      {
+        "script": "classify-patrol-diffs.js",
+        "exists": true
+      },
+      {
+        "script": "build-patrol-review-queue.js",
+        "exists": true
+      },
+      {
+        "script": "run-patrol-pipeline.js",
+        "exists": true
+      }
+    ],
+    "snapshot_missing_count": 0,
+    "unreachable_source_count": 0,
+    "no_diff_stops": false,
+    "hash_change_triggers_classification": true,
+    "page_updated_at_excluded": true,
+    "missing_snapshots": [],
+    "unreachable_sources": []
+  },
+  "diff_summary": {
+    "change_log_path": "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\monitor\\change-log\\2026-07-30.json",
+    "total_changes": 14,
+    "ignored_changes": 1,
+    "classified_changes": 50,
+    "by_change_type": {
+      "CONTENT_CHANGED": 7,
+      "CONTENT_AND_TITLE_CHANGED": 6,
+      "PAGE_UPDATED_AT_CHANGED": 1
+    },
+    "by_category": {
+      "WATER": 11,
+      "SHELTER": 10,
+      "COMMUNICATION": 11,
+      "ROAD": 9,
+      "SUPPORT": 9
+    },
+    "ignored_reasons": {
+      "page_updated_at_only": 1,
+      "same_hash": 1
+    },
+    "latest_change_logs": [
+      "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\monitor\\change-log\\2026-07-29.json",
+      "C:\\Users\\KOJI Corei7\\Desktop\\AI_Automation\\Kumamoto\\monitor\\change-log\\2026-07-30.json"
+    ]
+  },
+  "review_pending": {
+    "item_count": 67,
+    "pending_count": 67,
+    "approved_count": 0,
+    "rejected_count": 0,
+    "category_summary": {
+      "WATER": 15,
+      "SHELTER": 13,
+      "COMMUNICATION": 15,
+      "VOLUNTEER": 0,
+      "ROAD": 12,
+      "SUPPORT": 12
+    },
+    "auto_publish": true,
+    "all_pending_review_required": true,
+    "decision_log_entries": 64,
+    "decision_log_file": "data\\review_queue\\patrol_review_decision_log.json",
+    "source_trace_missing_count": 0,
+    "schema_error_count": 0
+  },
+  "public_update_status": {
+    "public_update_queue_count": 0,
+    "public_update_ready_count": 0,
+    "gate_total": 0,
+    "gate_passed": 0,
+    "gate_failed": 0,
+    "apply_pending_count": 0,
+    "apply_blocked_count": 0,
+    "auto_apply_prohibited": true,
+    "confirm_required": true,
+    "auto_publish_false": true,
+    "files": {
+      "queue": "data\\public_update_queue\\patrol_public_update_queue.json",
+      "gate": "data\\public_update_gate\\patrol_public_update_gate.json",
+      "apply": "data\\public_update_apply\\public_update_apply_queue.json"
+    }
+  },
+  "ui_integrity": {
+    "municipality_count": 23,
+    "expected_municipality_count": 23,
+    "area_id_unique": true,
+    "water_search_count": 43,
+    "shelter_search_count": 9,
+    "emergency_card_count": 29,
+    "json_schema_checks": [
+      {
+        "file": "phase1_areas.json",
+        "valid": true
+      },
+      {
+        "file": "phase1_navigation.json",
+        "valid": true
+      },
+      {
+        "file": "phase1_updates.json",
+        "valid": true
+      },
+      {
+        "file": "water_search_index.json",
+        "valid": true
+      },
+      {
+        "file": "disaster_search_index.json",
+        "valid": true
+      }
+    ],
+    "schema_valid": true
+  },
+  "incidents": [],
+  "validation_result": {
+    "status": "PASS",
+    "checks": [
+      {
+        "check": "patrol.pipeline_connected",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "patrol.no_diff_stops",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "patrol.page_updated_at_excluded",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "patrol.hash_change_triggers_classification",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "review.pending_review_required",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "review.auto_publish_false",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "review.decision_log_present",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "review.source_trace_complete",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "public_update.auto_apply_prohibited",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "public_update.confirm_required",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "public_update.auto_publish_false",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "ui.municipality_count",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "ui.area_id_unique",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "ui.json_schema_valid",
+        "status": "PASS",
+        "reason": null
+      },
+      {
+        "check": "incidents.none_critical",
+        "status": "PASS",
+        "reason": null
+      }
+    ],
+    "failed_count": 0
+  },
+  "errors": []
+}

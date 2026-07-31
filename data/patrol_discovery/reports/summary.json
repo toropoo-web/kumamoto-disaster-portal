@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T16:43:53.221Z",
+  "pipeline_run_id": "PDP-2026-07-30T16-43-53-221Z",
+  "engine_version": 2,
+  "PATROL_DISCOVERY_PIPELINE": "PASS",
+  "primary_discovery_rate": 0.9,
+  "false_positive_rate": 0.416,
+  "totals": {
+    "municipalities": 12,
+    "candidates": 161,
+    "MATCH": 14,
+    "BETTER_CANDIDATE": 51,
+    "NEW_CANDIDATE": 29,
+    "FALSE_POSITIVE": 67,
+    "primary_discovered": 9,
+    "primary_total": 10,
+    "review_queue_items": 80
+  },
+  "errors": []
+}

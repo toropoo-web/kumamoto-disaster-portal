@@ -1,0 +1,587 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-30T19:04:50.210Z",
+  "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
+  "itemCount": 16,
+  "pendingCount": 16,
+  "categorySummary": {
+    "WATER": 3,
+    "SHELTER": 3,
+    "COMMUNICATION": 4,
+    "VOLUNTEER": 0,
+    "ROAD": 3,
+    "SUPPORT": 3
+  },
+  "autoPublish": false,
+  "sourceClassificationFile": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+  "items": [
+    {
+      "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-WATER-35",
+      "municipality": "菊池市",
+      "category": "WATER",
+      "title": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト",
+      "source_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "KM013-kikuchi-shelter",
+      "area_id": "KM013",
+      "original_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "before_hash": "a998e2722f9df57b97b81b4e3434efc1bac61d35f9a0a826b8cb68a379710bea",
+      "after_hash": "792b67197aa66adad4d67f2876adf57d1ad1fb0acc1045fafc312b1f5096d309",
+      "changed_text": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト\n避難 避難所 復旧 開設 支援 災害",
+      "detected_at": "2026-07-30T16:02:18.510Z",
+      "diff_type": "CONTENT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-WATER-35",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-SHELTER-36",
+      "municipality": "菊池市",
+      "category": "SHELTER",
+      "title": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト",
+      "source_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "detected_keywords": [
+        "避難所",
+        "開設"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "KM013-kikuchi-shelter",
+      "area_id": "KM013",
+      "original_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "before_hash": "a998e2722f9df57b97b81b4e3434efc1bac61d35f9a0a826b8cb68a379710bea",
+      "after_hash": "792b67197aa66adad4d67f2876adf57d1ad1fb0acc1045fafc312b1f5096d309",
+      "changed_text": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト\n避難 避難所 復旧 開設 支援 災害",
+      "detected_at": "2026-07-30T16:02:18.510Z",
+      "diff_type": "CONTENT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-SHELTER-36",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-COMMUNICATION-37",
+      "municipality": "菊池市",
+      "category": "COMMUNICATION",
+      "title": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト",
+      "source_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "KM013-kikuchi-shelter",
+      "area_id": "KM013",
+      "original_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "before_hash": "a998e2722f9df57b97b81b4e3434efc1bac61d35f9a0a826b8cb68a379710bea",
+      "after_hash": "792b67197aa66adad4d67f2876adf57d1ad1fb0acc1045fafc312b1f5096d309",
+      "changed_text": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト\n避難 避難所 復旧 開設 支援 災害",
+      "detected_at": "2026-07-30T16:02:18.510Z",
+      "diff_type": "CONTENT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-COMMUNICATION-37",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-ROAD-38",
+      "municipality": "菊池市",
+      "category": "ROAD",
+      "title": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト",
+      "source_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "KM013-kikuchi-shelter",
+      "area_id": "KM013",
+      "original_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "before_hash": "a998e2722f9df57b97b81b4e3434efc1bac61d35f9a0a826b8cb68a379710bea",
+      "after_hash": "792b67197aa66adad4d67f2876adf57d1ad1fb0acc1045fafc312b1f5096d309",
+      "changed_text": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト\n避難 避難所 復旧 開設 支援 災害",
+      "detected_at": "2026-07-30T16:02:18.510Z",
+      "diff_type": "CONTENT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-ROAD-38",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-KM013-KIKUCHI-SHELTER-SUPPORT-39",
+      "municipality": "菊池市",
+      "category": "SUPPORT",
+      "title": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト",
+      "source_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "detected_keywords": [
+        "支援"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "KM013-kikuchi-shelter",
+      "area_id": "KM013",
+      "original_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "before_hash": "a998e2722f9df57b97b81b4e3434efc1bac61d35f9a0a826b8cb68a379710bea",
+      "after_hash": "792b67197aa66adad4d67f2876adf57d1ad1fb0acc1045fafc312b1f5096d309",
+      "changed_text": "避難所を開設しています（7月28日17時30分時点）｜菊池市公式ウェブサイト\n避難 避難所 復旧 開設 支援 災害",
+      "detected_at": "2026-07-30T16:02:18.510Z",
+      "diff_type": "CONTENT_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM013-KIKUCHI-SHELTER-SUPPORT-39",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-DOCOMO-WATER-40",
+      "municipality": "NTTドコモ",
+      "category": "WATER",
+      "title": "重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ",
+      "source_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-docomo",
+      "area_id": null,
+      "original_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "before_hash": "37b1b5925a54d69cb54ba7b20dea195fdcecd5c1ee6fdf05fec73661f164d6f4",
+      "after_hash": "3001ddc65299e0d640689035329fc4422b201bff7dfe45a4e7e0bb918c5ee13b",
+      "changed_text": "重要なお知らせ（通信障害等） : 【災害影響】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（第7報：7月29日午後7時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n避難 避難所 復旧 支援 災害 通信 Wi-Fi 伝言 公衆電話",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-DOCOMO-WATER-40",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-DOCOMO-SHELTER-41",
+      "municipality": "NTTドコモ",
+      "category": "SHELTER",
+      "title": "重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ",
+      "source_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "detected_keywords": [
+        "避難所"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-docomo",
+      "area_id": null,
+      "original_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "before_hash": "37b1b5925a54d69cb54ba7b20dea195fdcecd5c1ee6fdf05fec73661f164d6f4",
+      "after_hash": "3001ddc65299e0d640689035329fc4422b201bff7dfe45a4e7e0bb918c5ee13b",
+      "changed_text": "重要なお知らせ（通信障害等） : 【災害影響】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（第7報：7月29日午後7時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n避難 避難所 復旧 支援 災害 通信 Wi-Fi 伝言 公衆電話",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-DOCOMO-SHELTER-41",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-DOCOMO-COMMUNICATION-42",
+      "municipality": "NTTドコモ",
+      "category": "COMMUNICATION",
+      "title": "重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ",
+      "source_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "detected_keywords": [
+        "携帯",
+        "通信",
+        "電話",
+        "復旧",
+        "Wi-Fi"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-docomo",
+      "area_id": null,
+      "original_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "before_hash": "37b1b5925a54d69cb54ba7b20dea195fdcecd5c1ee6fdf05fec73661f164d6f4",
+      "after_hash": "3001ddc65299e0d640689035329fc4422b201bff7dfe45a4e7e0bb918c5ee13b",
+      "changed_text": "重要なお知らせ（通信障害等） : 【災害影響】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（第7報：7月29日午後7時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n避難 避難所 復旧 支援 災害 通信 Wi-Fi 伝言 公衆電話",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-DOCOMO-COMMUNICATION-42",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-DOCOMO-ROAD-43",
+      "municipality": "NTTドコモ",
+      "category": "ROAD",
+      "title": "重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ",
+      "source_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-docomo",
+      "area_id": null,
+      "original_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "before_hash": "37b1b5925a54d69cb54ba7b20dea195fdcecd5c1ee6fdf05fec73661f164d6f4",
+      "after_hash": "3001ddc65299e0d640689035329fc4422b201bff7dfe45a4e7e0bb918c5ee13b",
+      "changed_text": "重要なお知らせ（通信障害等） : 【災害影響】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（第7報：7月29日午後7時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n避難 避難所 復旧 支援 災害 通信 Wi-Fi 伝言 公衆電話",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-DOCOMO-ROAD-43",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-DOCOMO-SUPPORT-44",
+      "municipality": "NTTドコモ",
+      "category": "SUPPORT",
+      "title": "重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ",
+      "source_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "detected_keywords": [
+        "支援"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-docomo",
+      "area_id": null,
+      "original_url": "https://www.nttdocomo.co.jp/info/network/kanto/pages/260728_00_m.html",
+      "before_hash": "37b1b5925a54d69cb54ba7b20dea195fdcecd5c1ee6fdf05fec73661f164d6f4",
+      "after_hash": "3001ddc65299e0d640689035329fc4422b201bff7dfe45a4e7e0bb918c5ee13b",
+      "changed_text": "重要なお知らせ（通信障害等） : 【災害影響】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（第7報：7月29日午後7時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n重要なお知らせ（通信障害等） : 【復旧】令和8年熊本地震の影響により、携帯電話サービスがご利用できない、またはご利用しづらい状況について（復旧報：7月30日午後5時00分時点） | お知らせ | NTTドコモ\n避難 避難所 復旧 支援 災害 通信 Wi-Fi 伝言 公衆電話",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-DOCOMO-SUPPORT-44",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-RAKUTEN-WATER-45",
+      "municipality": "楽天モバイル",
+      "category": "WATER",
+      "title": "【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル",
+      "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-rakuten",
+      "area_id": null,
+      "original_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "before_hash": "7ac60d990d1f2d48945ba5b1183e56d8b220bc7e5d04499e0775764b37eafcc0",
+      "after_hash": "68bd575647fd1d21a861dfd6f0f04b5edf560400e85d8e0eccbacca0574b56df",
+      "changed_text": "【災害影響】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（第6報：7月29日午後6時20分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n避難 避難所 復旧 支援 通信 Wi-Fi",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-WATER-45",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-RAKUTEN-SHELTER-46",
+      "municipality": "楽天モバイル",
+      "category": "SHELTER",
+      "title": "【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル",
+      "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "detected_keywords": [
+        "避難所"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-rakuten",
+      "area_id": null,
+      "original_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "before_hash": "7ac60d990d1f2d48945ba5b1183e56d8b220bc7e5d04499e0775764b37eafcc0",
+      "after_hash": "68bd575647fd1d21a861dfd6f0f04b5edf560400e85d8e0eccbacca0574b56df",
+      "changed_text": "【災害影響】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（第6報：7月29日午後6時20分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n避難 避難所 復旧 支援 通信 Wi-Fi",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-SHELTER-46",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-RAKUTEN-COMMUNICATION-47",
+      "municipality": "楽天モバイル",
+      "category": "COMMUNICATION",
+      "title": "【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル",
+      "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "detected_keywords": [
+        "通信",
+        "復旧",
+        "Wi-Fi"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-rakuten",
+      "area_id": null,
+      "original_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "before_hash": "7ac60d990d1f2d48945ba5b1183e56d8b220bc7e5d04499e0775764b37eafcc0",
+      "after_hash": "68bd575647fd1d21a861dfd6f0f04b5edf560400e85d8e0eccbacca0574b56df",
+      "changed_text": "【災害影響】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（第6報：7月29日午後6時20分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n避難 避難所 復旧 支援 通信 Wi-Fi",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-COMMUNICATION-47",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-RAKUTEN-ROAD-48",
+      "municipality": "楽天モバイル",
+      "category": "ROAD",
+      "title": "【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル",
+      "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "detected_keywords": [
+        "復旧"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-rakuten",
+      "area_id": null,
+      "original_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "before_hash": "7ac60d990d1f2d48945ba5b1183e56d8b220bc7e5d04499e0775764b37eafcc0",
+      "after_hash": "68bd575647fd1d21a861dfd6f0f04b5edf560400e85d8e0eccbacca0574b56df",
+      "changed_text": "【災害影響】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（第6報：7月29日午後6時20分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n避難 避難所 復旧 支援 通信 Wi-Fi",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-ROAD-48",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-RAKUTEN-SUPPORT-49",
+      "municipality": "楽天モバイル",
+      "category": "SUPPORT",
+      "title": "【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル",
+      "source_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "detected_keywords": [
+        "支援"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-rakuten",
+      "area_id": null,
+      "original_url": "https://network.mobile.rakuten.co.jp/information/failure/3795/",
+      "before_hash": "7ac60d990d1f2d48945ba5b1183e56d8b220bc7e5d04499e0775764b37eafcc0",
+      "after_hash": "68bd575647fd1d21a861dfd6f0f04b5edf560400e85d8e0eccbacca0574b56df",
+      "changed_text": "【災害影響】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（第6報：7月29日午後6時20分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n【復旧】熊本県の地震の影響により、一部のお客様において通信サービスがご利用できない、またはご利用しづらい状況について（7月30日午後9時30分時点） | 障害情報 | 楽天モバイル\n避難 避難所 復旧 支援 通信 Wi-Fi",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-RAKUTEN-SUPPORT-49",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    },
+    {
+      "queue_id": "RQ-20260730-COMM-DISASTER-MESSAGE-COMMUNICATION-50",
+      "municipality": "災害用伝言サービス",
+      "category": "COMMUNICATION",
+      "title": "総務省｜安全・信頼性の向上｜災害用伝言サービス",
+      "source_url": "https://www.soumu.go.jp/menu_seisaku/ictseisaku/net_anzen/hijyo/dengon.html",
+      "detected_keywords": [
+        "通信",
+        "電話"
+      ],
+      "status": "PENDING",
+      "created_at": "2026-07-30T19:04:50.206Z",
+      "review_required": true,
+      "source_id": "COMM-disaster-message",
+      "area_id": null,
+      "original_url": "https://www.soumu.go.jp/menu_seisaku/ictseisaku/net_anzen/hijyo/dengon.html",
+      "before_hash": "ca7d1f09bc06c4f960fb73ce04a4e34a3bd908846e8fbf495fb4357d86dccc55",
+      "after_hash": "7f38ad419aa544863766f5ff5a31a57b393e7a103171d7fd05b75b3f3dc45950",
+      "changed_text": "�����ȁb���S�E�M�����̌���b�ЊQ�p�`���T�[�r�X\n総務省｜安全・信頼性の向上｜災害用伝言サービス\n総務省｜安全・信頼性の向上｜災害用伝言サービス\n避難 災害 通信 伝言 公衆電話",
+      "detected_at": "2026-07-30T16:02:18.511Z",
+      "diff_type": "CONTENT_AND_TITLE_CHANGED",
+      "confidence": "HIGH",
+      "auto_publish": false,
+      "decision": {
+        "status": "PENDING",
+        "reviewer": "",
+        "reviewed_at": "",
+        "review_note": ""
+      },
+      "source_trace": {
+        "classification_id": "CLS-20260730-COMM-DISASTER-MESSAGE-COMMUNICATION-50",
+        "classification_file": "data/update_candidates/classified-2026-07-30T19-04-50-141Z.json",
+        "source_change_log": "monitor/change-log/2026-07-30.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1478 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "logged_at": "2026-07-30T16:27:59.666Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T16:27:59.666Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-27-59-658Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-27-59-658Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T16:28:09.462Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T16:28:09.462Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-28-09-455Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-28-09-455Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T16:30:51.756Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T16:30:51.756Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-30-51-749Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-30-51-749Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T16:32:12.837Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T16:32:12.837Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-32-12-830Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-32-12-830Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T16:35:48.558Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T16:35:48.558Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-35-48-550Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-35-48-550Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T16:39:08.145Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T16:39:08.145Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-39-08-137Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-39-08-137Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T16:43:47.170Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T16:43:47.170Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-43-47-162Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T16-43-47-162Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T17:14:09.341Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T17:14:09.341Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T17-14-09-330Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T17-14-09-330Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T17:33:48.084Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T17:33:48.084Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T17-33-48-077Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T17-33-48-077Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T17:41:22.454Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T17:41:22.454Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T17-41-22-447Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T17-41-22-447Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:08:04.384Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T18:08:04.384Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-08-04-379Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-08-04-379Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:29:58.181Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T18:29:58.181Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-29-58-173Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-29-58-173Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:32:10.233Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T18:32:10.233Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-32-10-226Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.501Z",
+      "queue_id": "RQ-20260730-KM014-MINAMATA-EMERGENCY-WATER-01",
+      "municipality": "水俣市",
+      "category": "WATER",
+      "source_id": "KM014-minamata-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.501Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM014-MINAMATA-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM014/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM014/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.506Z",
+      "queue_id": "RQ-20260730-KM014-MINAMATA-EMERGENCY-SHELTER-01",
+      "municipality": "水俣市",
+      "category": "SHELTER",
+      "source_id": "KM014-minamata-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.506Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM014-MINAMATA-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM014/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM014/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.511Z",
+      "queue_id": "RQ-20260730-KM015-KOSA-EMERGENCY-WATER-01",
+      "municipality": "甲佐町",
+      "category": "WATER",
+      "source_id": "KM015-kosa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.511Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM015-KOSA-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM015/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM015/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.515Z",
+      "queue_id": "RQ-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+      "municipality": "甲佐町",
+      "category": "SHELTER",
+      "source_id": "KM015-kosa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.515Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM015/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM015/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.519Z",
+      "queue_id": "RQ-20260730-KM016-ASHIKITA-HINAN-WATER-01",
+      "municipality": "芦北町",
+      "category": "WATER",
+      "source_id": "KM016-ashikita-hinan",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.519Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM016-ASHIKITA-HINAN-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM016/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM016/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.523Z",
+      "queue_id": "RQ-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+      "municipality": "芦北町",
+      "category": "SHELTER",
+      "source_id": "KM016-ashikita-hinan",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.523Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM016/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM016/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.527Z",
+      "queue_id": "RQ-20260730-KM017-TSUNAGI-EMERGENCY-WATER-01",
+      "municipality": "津奈木町",
+      "category": "WATER",
+      "source_id": "KM017-tsunagi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.527Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM017-TSUNAGI-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM017/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM017/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.531Z",
+      "queue_id": "RQ-20260730-KM017-TSUNAGI-EMERGENCY-SHELTER-01",
+      "municipality": "津奈木町",
+      "category": "SHELTER",
+      "source_id": "KM017-tsunagi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.531Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM017-TSUNAGI-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM017/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM017/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.535Z",
+      "queue_id": "RQ-20260730-KM018-KAMIAMAKUSA-EMERGENCY-WATER-01",
+      "municipality": "上天草市",
+      "category": "WATER",
+      "source_id": "KM018-kamiamakusa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.535Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM018-KAMIAMAKUSA-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM018/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM018/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.539Z",
+      "queue_id": "RQ-20260730-KM018-KAMIAMAKUSA-EMERGENCY-SHELTER-01",
+      "municipality": "上天草市",
+      "category": "SHELTER",
+      "source_id": "KM018-kamiamakusa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.539Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM018-KAMIAMAKUSA-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM018/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM018/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.543Z",
+      "queue_id": "RQ-20260730-KM019-AMAKUSA-BOUSAI-WATER-01",
+      "municipality": "天草市",
+      "category": "WATER",
+      "source_id": "KM019-amakusa-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.543Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM019-AMAKUSA-BOUSAI-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM019/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM019/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.546Z",
+      "queue_id": "RQ-20260730-KM019-AMAKUSA-BOUSAI-SHELTER-01",
+      "municipality": "天草市",
+      "category": "SHELTER",
+      "source_id": "KM019-amakusa-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.546Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM019-AMAKUSA-BOUSAI-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM019/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM019/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.551Z",
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-WATER-01",
+      "municipality": "西原村",
+      "category": "WATER",
+      "source_id": "KM020-nishihara-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.551Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM020/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM020/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.554Z",
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+      "municipality": "西原村",
+      "category": "SHELTER",
+      "source_id": "KM020-nishihara-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.554Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM020/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM020/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.559Z",
+      "queue_id": "RQ-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+      "municipality": "苓北町",
+      "category": "WATER",
+      "source_id": "KM021-reihoku-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.559Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM021/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM021/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.563Z",
+      "queue_id": "RQ-20260730-KM021-REIHOKU-BOUSAI-SHELTER-01",
+      "municipality": "苓北町",
+      "category": "SHELTER",
+      "source_id": "KM021-reihoku-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.563Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM021-REIHOKU-BOUSAI-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM021/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM021/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.567Z",
+      "queue_id": "RQ-20260730-KM022-TARAGI-EMERGENCY-WATER-01",
+      "municipality": "多良木町",
+      "category": "WATER",
+      "source_id": "KM022-taragi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.567Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM022-TARAGI-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM022/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM022/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:37:48.571Z",
+      "queue_id": "RQ-20260730-KM022-TARAGI-EMERGENCY-SHELTER-01",
+      "municipality": "多良木町",
+      "category": "SHELTER",
+      "source_id": "KM022-taragi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:37:48.571Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM022-TARAGI-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM022/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM022/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:14.005Z",
+      "queue_id": "RQ-20260730-KM014-MINAMATA-EMERGENCY-SHELTER-01",
+      "municipality": "水俣市",
+      "category": "SHELTER",
+      "source_id": "KM014-minamata-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "shelter-registry-apply-operator",
+      "reviewed_at": "2026-07-30T18:42:14.005Z",
+      "review_note": "SHELTER registry apply for 水俣市",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM014-MINAMATA-EMERGENCY-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM014/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM014/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "review_note": "SHELTER registry apply for 水俣市"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:14.018Z",
+      "queue_id": "RQ-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+      "municipality": "甲佐町",
+      "category": "SHELTER",
+      "source_id": "KM015-kosa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "shelter-registry-apply-operator",
+      "reviewed_at": "2026-07-30T18:42:14.018Z",
+      "review_note": "SHELTER registry apply for 甲佐町",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM015/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM015/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "review_note": "SHELTER registry apply for 甲佐町"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:14.028Z",
+      "queue_id": "RQ-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+      "municipality": "芦北町",
+      "category": "SHELTER",
+      "source_id": "KM016-ashikita-hinan",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "shelter-registry-apply-operator",
+      "reviewed_at": "2026-07-30T18:42:14.028Z",
+      "review_note": "SHELTER registry apply for 芦北町",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM016/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM016/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "review_note": "SHELTER registry apply for 芦北町"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:14.039Z",
+      "queue_id": "RQ-20260730-KM017-TSUNAGI-EMERGENCY-SHELTER-01",
+      "municipality": "津奈木町",
+      "category": "SHELTER",
+      "source_id": "KM017-tsunagi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "shelter-registry-apply-operator",
+      "reviewed_at": "2026-07-30T18:42:14.038Z",
+      "review_note": "SHELTER registry apply for 津奈木町",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM017-TSUNAGI-EMERGENCY-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM017/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM017/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "review_note": "SHELTER registry apply for 津奈木町"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:14.049Z",
+      "queue_id": "RQ-20260730-KM018-KAMIAMAKUSA-EMERGENCY-SHELTER-01",
+      "municipality": "上天草市",
+      "category": "SHELTER",
+      "source_id": "KM018-kamiamakusa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "shelter-registry-apply-operator",
+      "reviewed_at": "2026-07-30T18:42:14.049Z",
+      "review_note": "SHELTER registry apply for 上天草市",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM018-KAMIAMAKUSA-EMERGENCY-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM018/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM018/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "review_note": "SHELTER registry apply for 上天草市"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:14.060Z",
+      "queue_id": "RQ-20260730-KM019-AMAKUSA-BOUSAI-SHELTER-01",
+      "municipality": "天草市",
+      "category": "SHELTER",
+      "source_id": "KM019-amakusa-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "shelter-registry-apply-operator",
+      "reviewed_at": "2026-07-30T18:42:14.060Z",
+      "review_note": "SHELTER registry apply for 天草市",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM019-AMAKUSA-BOUSAI-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM019/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM019/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "review_note": "SHELTER registry apply for 天草市"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:14.070Z",
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+      "municipality": "西原村",
+      "category": "SHELTER",
+      "source_id": "KM020-nishihara-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "shelter-registry-apply-operator",
+      "reviewed_at": "2026-07-30T18:42:14.070Z",
+      "review_note": "SHELTER registry apply for 西原村",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM020/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM020/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "review_note": "SHELTER registry apply for 西原村"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:14.081Z",
+      "queue_id": "RQ-20260730-KM021-REIHOKU-BOUSAI-SHELTER-01",
+      "municipality": "苓北町",
+      "category": "SHELTER",
+      "source_id": "KM021-reihoku-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "shelter-registry-apply-operator",
+      "reviewed_at": "2026-07-30T18:42:14.081Z",
+      "review_note": "SHELTER registry apply for 苓北町",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM021-REIHOKU-BOUSAI-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM021/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM021/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "review_note": "SHELTER registry apply for 苓北町"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:14.091Z",
+      "queue_id": "RQ-20260730-KM022-TARAGI-EMERGENCY-SHELTER-01",
+      "municipality": "多良木町",
+      "category": "SHELTER",
+      "source_id": "KM022-taragi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "shelter-registry-apply-operator",
+      "reviewed_at": "2026-07-30T18:42:14.091Z",
+      "review_note": "SHELTER registry apply for 多良木町",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM022-TARAGI-EMERGENCY-SHELTER-01",
+        "classification_file": "data/shelter_registry_apply/KM022/classified.json",
+        "source_change_log": "data/shelter_registry_apply/KM022/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "shelter-registry-apply-operator",
+        "review_note": "SHELTER registry apply for 多良木町"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:22.648Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T18:42:22.648Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-42-22-642Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T18-42-22-642Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.326Z",
+      "queue_id": "RQ-20260730-KM014-MINAMATA-EMERGENCY-WATER-01",
+      "municipality": "水俣市",
+      "category": "WATER",
+      "source_id": "KM014-minamata-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.326Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM014-MINAMATA-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM014/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM014/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.330Z",
+      "queue_id": "RQ-20260730-KM014-MINAMATA-EMERGENCY-SHELTER-01",
+      "municipality": "水俣市",
+      "category": "SHELTER",
+      "source_id": "KM014-minamata-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.330Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM014-MINAMATA-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM014/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM014/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.334Z",
+      "queue_id": "RQ-20260730-KM015-KOSA-EMERGENCY-WATER-01",
+      "municipality": "甲佐町",
+      "category": "WATER",
+      "source_id": "KM015-kosa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.334Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM015-KOSA-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM015/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM015/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.338Z",
+      "queue_id": "RQ-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+      "municipality": "甲佐町",
+      "category": "SHELTER",
+      "source_id": "KM015-kosa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.338Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM015-KOSA-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM015/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM015/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.342Z",
+      "queue_id": "RQ-20260730-KM016-ASHIKITA-HINAN-WATER-01",
+      "municipality": "芦北町",
+      "category": "WATER",
+      "source_id": "KM016-ashikita-hinan",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.342Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM016-ASHIKITA-HINAN-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM016/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM016/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.345Z",
+      "queue_id": "RQ-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+      "municipality": "芦北町",
+      "category": "SHELTER",
+      "source_id": "KM016-ashikita-hinan",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.345Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM016-ASHIKITA-HINAN-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM016/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM016/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.348Z",
+      "queue_id": "RQ-20260730-KM017-TSUNAGI-EMERGENCY-WATER-01",
+      "municipality": "津奈木町",
+      "category": "WATER",
+      "source_id": "KM017-tsunagi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.348Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM017-TSUNAGI-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM017/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM017/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.352Z",
+      "queue_id": "RQ-20260730-KM017-TSUNAGI-EMERGENCY-SHELTER-01",
+      "municipality": "津奈木町",
+      "category": "SHELTER",
+      "source_id": "KM017-tsunagi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.352Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM017-TSUNAGI-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM017/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM017/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.356Z",
+      "queue_id": "RQ-20260730-KM018-KAMIAMAKUSA-EMERGENCY-WATER-01",
+      "municipality": "上天草市",
+      "category": "WATER",
+      "source_id": "KM018-kamiamakusa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.356Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM018-KAMIAMAKUSA-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM018/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM018/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.360Z",
+      "queue_id": "RQ-20260730-KM018-KAMIAMAKUSA-EMERGENCY-SHELTER-01",
+      "municipality": "上天草市",
+      "category": "SHELTER",
+      "source_id": "KM018-kamiamakusa-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.359Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM018-KAMIAMAKUSA-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM018/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM018/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.363Z",
+      "queue_id": "RQ-20260730-KM019-AMAKUSA-BOUSAI-WATER-01",
+      "municipality": "天草市",
+      "category": "WATER",
+      "source_id": "KM019-amakusa-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.363Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM019-AMAKUSA-BOUSAI-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM019/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM019/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.366Z",
+      "queue_id": "RQ-20260730-KM019-AMAKUSA-BOUSAI-SHELTER-01",
+      "municipality": "天草市",
+      "category": "SHELTER",
+      "source_id": "KM019-amakusa-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.366Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM019-AMAKUSA-BOUSAI-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM019/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM019/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.370Z",
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-WATER-01",
+      "municipality": "西原村",
+      "category": "WATER",
+      "source_id": "KM020-nishihara-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.370Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM020/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM020/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.373Z",
+      "queue_id": "RQ-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+      "municipality": "西原村",
+      "category": "SHELTER",
+      "source_id": "KM020-nishihara-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.373Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM020-NISHIHARA-BOUSAI-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM020/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM020/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.377Z",
+      "queue_id": "RQ-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+      "municipality": "苓北町",
+      "category": "WATER",
+      "source_id": "KM021-reihoku-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.377Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM021-REIHOKU-BOUSAI-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM021/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM021/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.380Z",
+      "queue_id": "RQ-20260730-KM021-REIHOKU-BOUSAI-SHELTER-01",
+      "municipality": "苓北町",
+      "category": "SHELTER",
+      "source_id": "KM021-reihoku-bousai",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.380Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM021-REIHOKU-BOUSAI-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM021/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM021/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.383Z",
+      "queue_id": "RQ-20260730-KM022-TARAGI-EMERGENCY-WATER-01",
+      "municipality": "多良木町",
+      "category": "WATER",
+      "source_id": "KM022-taragi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.383Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM022-TARAGI-EMERGENCY-WATER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM022/water/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM022/water/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T18:42:28.387Z",
+      "queue_id": "RQ-20260730-KM022-TARAGI-EMERGENCY-SHELTER-01",
+      "municipality": "多良木町",
+      "category": "SHELTER",
+      "source_id": "KM022-taragi-emergency",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "portal-municipality-e2e",
+      "reviewed_at": "2026-07-30T18:42:28.387Z",
+      "review_note": "E2E connection validation (manual approval in test namespace)",
+      "source_trace": {
+        "classification_id": "CLS-20260730-KM022-TARAGI-EMERGENCY-SHELTER-01",
+        "classification_file": "data/test/portal-municipality-e2e/runs/KM022/shelter/classified.json",
+        "source_change_log": "data/test/portal-municipality-e2e/runs/KM022/shelter/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "portal-municipality-e2e",
+        "review_note": "E2E connection validation (manual approval in test namespace)"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T19:03:06.743Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T19:03:06.742Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-03-06-736Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-03-06-736Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T19:04:02.106Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T19:04:02.106Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-04-02-099Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-04-02-099Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T19:04:39.082Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T19:04:39.082Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-04-39-076Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-04-39-076Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T19:09:08.196Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T19:09:08.196Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-09-08-186Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-09-08-186Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    },
+    {
+      "logged_at": "2026-07-30T19:09:34.574Z",
+      "queue_id": "RQ-20260731-KM002-UTO-WATER-WATER-01",
+      "municipality": "宇土市",
+      "category": "WATER",
+      "source_id": "KM002-uto-water",
+      "previous_status": "PENDING",
+      "new_status": "APPROVED",
+      "reviewer": "e2e-manual-reviewer",
+      "reviewed_at": "2026-07-30T19:09:34.574Z",
+      "review_note": "E2E validation approval",
+      "source_trace": {
+        "classification_id": "CLS-20260731-KM002-UTO-WATER-WATER-01",
+        "classification_file": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-09-34-567Z/classified.json",
+        "source_change_log": "data/test/disaster-pipeline-e2e/runs/e2e-2026-07-30T19-09-34-567Z/change-log.json",
+        "diff_type": "CONTENT_AND_TITLE_CHANGED"
+      },
+      "input": {
+        "status": "APPROVED",
+        "reviewer": "e2e-manual-reviewer",
+        "review_note": "E2E validation approval"
+      }
+    }
+  ],
+  "lastUpdatedAt": "2026-07-30T19:09:34.574Z"
+}

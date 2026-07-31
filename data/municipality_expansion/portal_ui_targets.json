@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "portal": "kumamoto-disaster-portal",
+  "description": "Patrol対象追加自治体のトップページUI反映リスト",
+  "municipalities": [
+    {
+      "area_id": "KM014",
+      "name": "水俣市",
+      "anchor": "minamata-city",
+      "disaster_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "water_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
+      "official_url": "https://www.city.minamata.lg.jp/"
+    },
+    {
+      "area_id": "KM015",
+      "name": "甲佐町",
+      "anchor": "kosa-town",
+      "disaster_url": "https://www.town.kosa.lg.jp/q/list/51.html",
+      "water_url": "https://www.town.kosa.lg.jp/q/list/51.html",
+      "official_url": "https://www.town.kosa.lg.jp/"
+    },
+    {
+      "area_id": "KM016",
+      "name": "芦北町",
+      "anchor": "ashikita-town",
+      "disaster_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+      "water_url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "official_url": "https://www.town.ashikita.lg.jp/"
+    },
+    {
+      "area_id": "KM017",
+      "name": "津奈木町",
+      "anchor": "tsunagi-town",
+      "disaster_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "water_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
+      "official_url": "https://www.town.tsunagi.lg.jp/"
+    },
+    {
+      "area_id": "KM018",
+      "name": "上天草市",
+      "anchor": "kamiamakusa-city",
+      "disaster_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "water_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
+      "official_url": "https://www.city.kamiamakusa.kumamoto.jp/"
+    },
+    {
+      "area_id": "KM019",
+      "name": "天草市",
+      "anchor": "amakusa-city",
+      "disaster_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "water_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
+      "official_url": "https://www.city.amakusa.kumamoto.jp/"
+    },
+    {
+      "area_id": "KM020",
+      "name": "西原村",
+      "anchor": "nishihara-village",
+      "disaster_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "water_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+      "official_url": "https://www.vill.nishihara.kumamoto.jp/"
+    },
+    {
+      "area_id": "KM021",
+      "name": "苓北町",
+      "anchor": "reihoku-town",
+      "disaster_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "water_url": "https://reihoku-kumamoto.jp/bousai/default.html",
+      "official_url": "https://reihoku-kumamoto.jp/"
+    },
+    {
+      "area_id": "KM022",
+      "name": "多良木町",
+      "anchor": "taragi-town",
+      "disaster_url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+      "water_url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+      "official_url": "http://www.town.taragi.lg.jp/"
+    }
+  ]
+}

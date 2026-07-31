@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "portal": "kumamoto-disaster-portal",
+  "description": "Portal指定自治体のみを対象とする拡張フロー入力",
+  "required": ["portal", "municipalities"],
+  "fields": {
+    "portal": {
+      "type": "string",
+      "enum": ["kumamoto-disaster-portal"]
+    },
+    "municipalities": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Portal側で指定された自治体名のみ。自動発見・追加は禁止。"
+    }
+  },
+  "discovery_targets": [
+    "official_top",
+    "disaster_page",
+    "emergency",
+    "disaster_special",
+    "water",
+    "shelter",
+    "support"
+  ],
+  "forbidden": [
+    "auto_municipality_discovery",
+    "national_exploration",
+    "scope_change",
+    "auto_sources_register"
+  ],
+  "output_fields": [
+    "municipality",
+    "patrol_candidates",
+    "recommended_primary",
+    "confidence",
+    "dry_run_status"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "portal": "kumamoto-disaster-portal",
+  "municipalities": ["宇土市", "八代市"],
+  "fixture_map": {
+    "宇土市": {
+      "entry": "monitor/fixtures/patrol-url-discovery/uto-emergency-hub.html",
+      "candidates": {
+        "https://www.city.uto.lg.jp/article/list/1014.html": "monitor/fixtures/patrol-url-discovery/uto-emergency-hub.html",
+        "https://www.city.uto.lg.jp/article/view/1014/16317.html": "monitor/fixtures/patrol-url-discovery/uto-water-page.html"
+      }
+    },
+    "八代市": {
+      "entry": "monitor/fixtures/municipality-expansion/yatsushiro-bousai.html",
+      "candidates": {
+        "https://www.city.yatsushiro.lg.jp/bousai/default.html": "monitor/fixtures/municipality-expansion/yatsushiro-bousai.html",
+        "https://www.city.yatsushiro.lg.jp/kinkyu.html": "monitor/fixtures/municipality-expansion/yatsushiro-bousai.html"
+      }
+    }
+  }
+}

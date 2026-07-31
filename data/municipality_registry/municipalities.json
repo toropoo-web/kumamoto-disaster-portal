@@ -1,0 +1,683 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-31T00:00:00.000Z",
+  "prefecture": "熊本県",
+  "count": 45,
+  "municipalities": [
+    {
+      "municipality_id": "JP432015",
+      "prefecture": "熊本県",
+      "municipality": "熊本市",
+      "type": "city",
+      "official_domain": "city.kumamoto.jp",
+      "official_url": "https://www.city.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432023",
+      "prefecture": "熊本県",
+      "municipality": "八代市",
+      "type": "city",
+      "official_domain": "city.yatsushiro.lg.jp",
+      "official_url": "https://www.city.yatsushiro.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432031",
+      "prefecture": "熊本県",
+      "municipality": "人吉市",
+      "type": "city",
+      "official_domain": "city.hitoyoshi.lg.jp",
+      "official_url": "https://www.city.hitoyoshi.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432040",
+      "prefecture": "熊本県",
+      "municipality": "荒尾市",
+      "type": "city",
+      "official_domain": "city.arao.lg.jp",
+      "official_url": "https://www.city.arao.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432058",
+      "prefecture": "熊本県",
+      "municipality": "水俣市",
+      "type": "city",
+      "official_domain": "city.minamata.lg.jp",
+      "official_url": "https://www.city.minamata.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432066",
+      "prefecture": "熊本県",
+      "municipality": "玉名市",
+      "type": "city",
+      "official_domain": "city.tamana.lg.jp",
+      "official_url": "https://www.city.tamana.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432074",
+      "prefecture": "熊本県",
+      "municipality": "山鹿市",
+      "type": "city",
+      "official_domain": "city.yamaga.lg.jp",
+      "official_url": "https://www.city.yamaga.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432082",
+      "prefecture": "熊本県",
+      "municipality": "菊池市",
+      "type": "city",
+      "official_domain": "city.kikuchi.lg.jp",
+      "official_url": "https://www.city.kikuchi.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432091",
+      "prefecture": "熊本県",
+      "municipality": "宇土市",
+      "type": "city",
+      "official_domain": "city.uto.lg.jp",
+      "official_url": "https://www.city.uto.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432104",
+      "prefecture": "熊本県",
+      "municipality": "上天草市",
+      "type": "city",
+      "official_domain": "city.kamiamakusa.kumamoto.jp",
+      "official_url": "https://www.city.kamiamakusa.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432112",
+      "prefecture": "熊本県",
+      "municipality": "宇城市",
+      "type": "city",
+      "official_domain": "city.uki.kumamoto.jp",
+      "official_url": "https://www.city.uki.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432121",
+      "prefecture": "熊本県",
+      "municipality": "阿蘇市",
+      "type": "city",
+      "official_domain": "city.aso.kumamoto.jp",
+      "official_url": "https://www.city.aso.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432139",
+      "prefecture": "熊本県",
+      "municipality": "天草市",
+      "type": "city",
+      "official_domain": "city.amakusa.kumamoto.jp",
+      "official_url": "https://www.city.amakusa.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP432147",
+      "prefecture": "熊本県",
+      "municipality": "合志市",
+      "type": "city",
+      "official_domain": "city.koshi.lg.jp",
+      "official_url": "https://www.city.koshi.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP433489",
+      "prefecture": "熊本県",
+      "municipality": "美里町",
+      "type": "town",
+      "official_domain": "town.kumamoto-misato.lg.jp",
+      "official_url": "https://www.town.kumamoto-misato.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP433641",
+      "prefecture": "熊本県",
+      "municipality": "玉東町",
+      "type": "town",
+      "official_domain": "town.tamato.kumamoto.jp",
+      "official_url": "https://www.town.tamato.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP433675",
+      "prefecture": "熊本県",
+      "municipality": "南関町",
+      "type": "town",
+      "official_domain": "town.nankan.lg.jp",
+      "official_url": "https://www.town.nankan.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP433683",
+      "prefecture": "熊本県",
+      "municipality": "長洲町",
+      "type": "town",
+      "official_domain": "town.nagasu.lg.jp",
+      "official_url": "https://www.town.nagasu.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP433691",
+      "prefecture": "熊本県",
+      "municipality": "和水町",
+      "type": "town",
+      "official_domain": "town.nagomi.lg.jp",
+      "official_url": "https://www.town.nagomi.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP433812",
+      "prefecture": "熊本県",
+      "municipality": "大津町",
+      "type": "town",
+      "official_domain": "town.ozu.kumamoto.jp",
+      "official_url": "https://www.town.ozu.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP433821",
+      "prefecture": "熊本県",
+      "municipality": "菊陽町",
+      "type": "town",
+      "official_domain": "town.kikuyo.lg.jp",
+      "official_url": "https://www.town.kikuyo.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434035",
+      "prefecture": "熊本県",
+      "municipality": "南小国町",
+      "type": "town",
+      "official_domain": "town.minamioguni.lg.jp",
+      "official_url": "https://www.town.minamioguni.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434043",
+      "prefecture": "熊本県",
+      "municipality": "小国町",
+      "type": "town",
+      "official_domain": "town.oguni.kumamoto.jp",
+      "official_url": "https://www.town.oguni.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434051",
+      "prefecture": "熊本県",
+      "municipality": "産山村",
+      "type": "village",
+      "official_domain": "vill.ubuyama.lg.jp",
+      "official_url": "https://www.vill.ubuyama.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434060",
+      "prefecture": "熊本県",
+      "municipality": "高森町",
+      "type": "town",
+      "official_domain": "town.takamori.kumamoto.jp",
+      "official_url": "https://www.town.takamori.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434078",
+      "prefecture": "熊本県",
+      "municipality": "西原村",
+      "type": "village",
+      "official_domain": "vill.nishihara.kumamoto.jp",
+      "official_url": "https://www.vill.nishihara.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434086",
+      "prefecture": "熊本県",
+      "municipality": "南阿蘇村",
+      "type": "village",
+      "official_domain": "vill.minamiaso.lg.jp",
+      "official_url": "https://www.vill.minamiaso.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434231",
+      "prefecture": "熊本県",
+      "municipality": "御船町",
+      "type": "town",
+      "official_domain": "town.mifune.kumamoto.jp",
+      "official_url": "https://www.town.mifune.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434249",
+      "prefecture": "熊本県",
+      "municipality": "嘉島町",
+      "type": "town",
+      "official_domain": "town.kumamoto-kashima.lg.jp",
+      "official_url": "https://www.town.kumamoto-kashima.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434257",
+      "prefecture": "熊本県",
+      "municipality": "益城町",
+      "type": "town",
+      "official_domain": "town.mashiki.lg.jp",
+      "official_url": "https://www.town.mashiki.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434265",
+      "prefecture": "熊本県",
+      "municipality": "甲佐町",
+      "type": "town",
+      "official_domain": "town.kosa.lg.jp",
+      "official_url": "https://www.town.kosa.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434273",
+      "prefecture": "熊本県",
+      "municipality": "山都町",
+      "type": "town",
+      "official_domain": "town.yamato.lg.jp",
+      "official_url": "https://www.town.yamato.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434281",
+      "prefecture": "熊本県",
+      "municipality": "氷川町",
+      "type": "town",
+      "official_domain": "town.hikawa.kumamoto.jp",
+      "official_url": "https://www.town.hikawa.kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434329",
+      "prefecture": "熊本県",
+      "municipality": "芦北町",
+      "type": "town",
+      "official_domain": "town.ashikita.lg.jp",
+      "official_url": "https://www.town.ashikita.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434337",
+      "prefecture": "熊本県",
+      "municipality": "津奈木町",
+      "type": "town",
+      "official_domain": "town.tsunagi.lg.jp",
+      "official_url": "https://www.town.tsunagi.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434418",
+      "prefecture": "熊本県",
+      "municipality": "錦町",
+      "type": "town",
+      "official_domain": "town.nishiki.lg.jp",
+      "official_url": "https://www.town.nishiki.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434426",
+      "prefecture": "熊本県",
+      "municipality": "多良木町",
+      "type": "town",
+      "official_domain": "town.taragi.lg.jp",
+      "official_url": "https://www.town.taragi.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434434",
+      "prefecture": "熊本県",
+      "municipality": "湯前町",
+      "type": "town",
+      "official_domain": "town.yunomae.lg.jp",
+      "official_url": "https://www.town.yunomae.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434442",
+      "prefecture": "熊本県",
+      "municipality": "水上村",
+      "type": "village",
+      "official_domain": "vill.mizukami.lg.jp",
+      "official_url": "https://www.vill.mizukami.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434459",
+      "prefecture": "熊本県",
+      "municipality": "相良村",
+      "type": "village",
+      "official_domain": "vill.sagara.lg.jp",
+      "official_url": "https://www.vill.sagara.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434467",
+      "prefecture": "熊本県",
+      "municipality": "五木村",
+      "type": "village",
+      "official_domain": "vill.itsuki.lg.jp",
+      "official_url": "https://www.vill.itsuki.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434475",
+      "prefecture": "熊本県",
+      "municipality": "山江村",
+      "type": "village",
+      "official_domain": "vill.yamae.lg.jp",
+      "official_url": "https://www.vill.yamae.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434483",
+      "prefecture": "熊本県",
+      "municipality": "球磨村",
+      "type": "village",
+      "official_domain": "vill.kuma.lg.jp",
+      "official_url": "https://www.vill.kuma.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434680",
+      "prefecture": "熊本県",
+      "municipality": "あさぎり町",
+      "type": "town",
+      "official_domain": "town.asagiri.lg.jp",
+      "official_url": "https://www.town.asagiri.lg.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "LOW",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    },
+    {
+      "municipality_id": "JP434825",
+      "prefecture": "熊本県",
+      "municipality": "苓北町",
+      "type": "town",
+      "official_domain": "reihoku-kumamoto.jp",
+      "official_url": "https://www.reihoku-kumamoto.jp/",
+      "status": "ACTIVE",
+      "discovery_status": "READY",
+      "priority": "HIGH",
+      "source": {
+        "created_at": "2026-07-31T00:00:00+09:00",
+        "source": "official"
+      }
+    }
+  ]
+}
