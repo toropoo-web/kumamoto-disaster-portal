@@ -1,6 +1,6 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-31T20:37:26.389Z",
+  "synced_at": "2026-07-31T21:48:09.571Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
@@ -8,9 +8,9 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-31T12:03:45.000Z",
-      "text": "【避難所運営について】 \n　画像のとおり避難所を再編しましたのでお知らせします。 https://t.co/accjErN9TY",
-      "url": "https://x.com/yatsushiro0801/status/2083161692293537951",
+      "post_time": "2026-07-31T21:30:00.000Z",
+      "text": "【応急給水活動について】（その２）\n\n時間　７：００～１９：００ \n場所\n・第二中学校\n・代陽コミュニティセンター\n・八代小学校\n・八千把コミュニティセンター\n・太田郷コミュニティセンター\n・昭和コミュニティセンター\n・鏡コミュニティセンター\n・千丁コミュニティセンター\n・泉運動公園\n（続く）",
+      "url": "https://x.com/yatsushiro0801/status/2083304194815955029",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
@@ -49,6 +49,17 @@
       "content_filter": "RECENT_POSTS"
     },
     {
+      "source_id": "SRC-MUN-KM005",
+      "account_name": "八代市公式X",
+      "account_handle": "yatsushiro0801",
+      "post_time": "2026-07-31T21:30:00.000Z",
+      "text": "【本日８月１日(土)の応急給水活動について】（その１） 　\n配布量は１回あたり５L程度となります。\n給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。\nまた、給水車が水の補給で一時的に不在になることがありますが、あらかじめご了承ください。\n（続く）",
+      "url": "https://x.com/yatsushiro0801/status/2083304193826443520",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "八代市",
+      "content_filter": "RECENT_POSTS"
+    },
+    {
       "source_id": "SRC-NAT-001",
       "account_name": "首相官邸 災害・危機管理情報",
       "account_handle": "Kantei_Saigai",
@@ -70,20 +81,9 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-31T11:47:31.000Z",
-      "text": "【応急給水活動について】（その３）\n\n時間　８：３０～１９：００\n場所\n・松高コミュニティセンター\n・第七中学校\n・第四中学校\n・宮地小学校\n・竜峯コミュニティセンター\n��日奈久小学校\n・金剛小学校\n・第六中学校\n・八代支援学校\n・日奈久コミュニティセンター\n・太田郷小学校",
-      "url": "https://x.com/yatsushiro0801/status/2083157609402773651",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
-      "content_filter": "RECENT_POSTS"
-    },
-    {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-31T11:47:07.000Z",
-      "text": "【応急給水活動について】（その２）\n\n時間　７：００～１９：００\n場所\n・第二中学校\n・代陽コミュニティセンター\n・八代小学校\n・八千把コミュニティセンター\n・太田郷コミュニティセンター\n・昭和コミュニティセンター\n・鏡コミュニティセンター\n・千丁コミュニティセンター\n・泉運動公園\n（続く）",
-      "url": "https://x.com/yatsushiro0801/status/2083157505723789344",
+      "post_time": "2026-07-31T12:03:45.000Z",
+      "text": "【避難所運営について】 \n　画像のとおり避難所を再編しましたのでお知らせします。 https://t.co/accjErN9TY",
+      "url": "https://x.com/yatsushiro0801/status/2083161692293537951",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
