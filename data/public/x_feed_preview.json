@@ -1,6 +1,6 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-31T08:21:42.267Z",
+  "synced_at": "2026-07-31T11:12:43.774Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
@@ -8,33 +8,33 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-31T05:35:07.000Z",
-      "text": "【八代港での応急給水活動について】\n　本日、下記の場所にて応急給水をおこないます。\n\n時間　７月３１日（金）１５：００～１８：００（予定）\n場所　八代港内　八代市港町　県営６号上屋近く　４．５ｍ岸壁\n〒866-0033 熊本県八代市港町９７\n\n詳しくはこちら\nhttps://t.co/9Sgo4tig0Y",
-      "url": "https://x.com/yatsushiro0801/status/2083063889189802248",
+      "post_time": "2026-07-31T08:29:41.000Z",
+      "text": "【生活用水の配布のお知らせ】 \n場所　イオン八代ショッピングセンター駐車場\n　　　（八代市沖町六番割3987-3）\n時間　８月１日（土）午後～なくなり次第終了  \n\n・配布量は１回あたり１０L程度となります。 \n・給水容器（ペットボトルやポリタンクなど）を持参ください。  \n※飲料水ではありません。",
+      "url": "https://x.com/yatsushiro0801/status/2083107823131787351",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
-      "content_filter": "DISASTER_RELATED"
-    },
-    {
-      "source_id": "SRC-MUN-KM001",
-      "account_name": "熊本市公式X",
-      "account_handle": "kumamotocity_",
-      "post_time": "2026-07-31T05:21:23.000Z",
-      "text": "【南区城南町における試験通水の実施について(続報)（７月31日13：00時点）】\n漏水箇所を特定するため、断水中の下記対象地区において、7月31日（金）午後も継続して試験通水を実施しております。\n\n詳細はこちら↓\nhttps://t.co/aiYZ2BxUQi",
-      "url": "https://x.com/kumamotocity_/status/2083060434492613105",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "熊本市",
       "content_filter": "DISASTER_RELATED"
     },
     {
       "source_id": "SRC-MUN-KM006",
       "account_name": "人吉市公式X",
       "account_handle": "hitoyoshishi",
-      "post_time": "2026-07-31T04:35:44.000Z",
-      "text": "【防災無線放送内容】給水のお知らせ（2026/07/31/13:35）\n水道局からのお知らせです。\n���野町公民館、中原団地、西瀬コミュニティセンター、村山公園あやめ広場の４か所の給水所を、本日（３１日）、午後２時に閉鎖し、新たに午後３時から赤...\nhttps://t.co/68Io67AGP2",
-      "url": "https://x.com/hitoyoshishi/status/2083048947820667249",
+      "post_time": "2026-07-31T07:55:41.000Z",
+      "text": "【防災無線放���内容】生活用水提供のお知らせ（2026/07/31/16:55）\n環境課からのお知らせです。\n生活用水として市内各地で開放しておりました井戸水は、市民プールを除き、本日（３１日）、午後５時をもって終了いたします。\nなお、下林町の市...\nhttps://t.co/29s96gridQ",
+      "url": "https://x.com/hitoyoshishi/status/2083099266609033568",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "人吉市",
+      "content_filter": "DISASTER_RELATED"
+    },
+    {
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-07-31T07:34:03.000Z",
+      "text": "【応急給水活動について（７月31日15：30時点）】\n飽田南小、城南小、天明中の応急給水所は、７月31日（金）17時をもって終了します。\n\nなお、その他の応急給水活動は次のとおりです。↓\nhttps://t.co/aiYZ2BxUQi https://t.co/L8SkrttGrP",
+      "url": "https://x.com/kumamotocity_/status/2083093821995536775",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
       "content_filter": "DISASTER_RELATED"
     },
     {
@@ -42,51 +42,48 @@
       "account_name": "合志市公式X",
       "account_handle": "Koshi_city",
       "post_time": "2026-07-31T02:34:11.000Z",
-      "text": "応急給水について（8月1日〜）\n＜実施場所＞\n●8月1日（土）～濁水が収まるまで\n・御代志市民センター（午前9時～午後5��）\n・泉ヶ丘市民センター（午前9時～午後5時）\n・合志市役所（午後6時～午後8時）\n※配布量は1人あたり4リットル以内。給水容器（ポリタンクやペットボトルなど）を持参ください。",
+      "text": "応急給水について（8月1日〜）\n＜実施場所＞\n●8月1日（土）～濁水が収まるまで\n・御代志市民センター（午前9時～午後5時）\n・泉ヶ丘市民センター（午前9時～午後5時）\n・合志市役所（午後6時～午後8時）\n※配布量は1人あたり4リットル以内。給水容器（ポリタンクやペットボトルなど）を持参ください。",
       "url": "https://x.com/Koshi_city/status/2083018356882653450",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "合志市",
       "content_filter": "DISASTER_RELATED"
     },
     {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-31T05:28:11.000Z",
-      "text": "【応急給水情報】 \n7月31日(金)の応急給水を1カ所追加します。 \n\n配布量は１回あたり５L程度となります。 給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。 給水車が水の補給で一時的に不在になることがあります。 \n\n時間　１５：００～１９：００\n・日奈久コミセン",
-      "url": "https://x.com/yatsushiro0801/status/2083062144200028400",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
-      "content_filter": "DISASTER_RELATED"
+      "source_id": "SRC-NAT-001",
+      "account_name": "首相官邸 災害・危機管理情報",
+      "account_handle": "Kantei_Saigai",
+      "post_time": "2026-07-31T08:24:09.000Z",
+      "text": "【エコノミークラス症候群にご注意ください】\n慣れない避難生活では、エコノミークラス症候群が発生しやすくなります。 https://t.co/tP39xJhtBo",
+      "url": "https://x.com/Kantei_Saigai/status/2083106426894131684",
+      "source_type": "GOVERNMENT"
+    },
+    {
+      "source_id": "SRC-NAT-001",
+      "account_name": "首相官邸 災害・危機管理情報",
+      "account_handle": "Kantei_Saigai",
+      "post_time": "2026-07-31T08:23:31.000Z",
+      "text": "令和8年熊本地震に関する第4回非常災害対策本部会議のライブ配信です。 https://t.co/h8Wmdk3gy3",
+      "url": "https://x.com/Kantei_Saigai/status/2083106270865952849",
+      "source_type": "GOVERNMENT"
     },
     {
       "source_id": "SRC-NAT-004",
       "account_name": "総務省消防庁",
       "account_handle": "FDMA_JAPAN",
-      "post_time": "2026-07-31T04:47:03.000Z",
-      "text": "【消防庁とりまとめ第24報】令和８年熊本地震による被害及び消防機関等の対応状況について、7月31日（金）13時30分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/u47Z5IkvPK\n#総務省消防庁 #災害情報 #地震",
-      "url": "https://x.com/FDMA_JAPAN/status/2083051793857335566",
+      "post_time": "2026-07-31T08:19:37.000Z",
+      "text": "【消防庁とりまとめ第25報】令和８年熊本地震による被害及び消防機関等の対応状況について、7月31日（金）17時00分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/q3gSBJb1IC\n#総務省消防庁 #災害情報 #地震",
+      "url": "https://x.com/FDMA_JAPAN/status/2083105286517309543",
       "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-31T04:36:22.000Z",
-      "text": "【応急給水情報】  \n　7月31日(金)の応急給水を1カ所追加します。   \n\n　配布量は１回あたり５L程度となります。 給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。 給水車が水の補給で一時的に不在になることがあります。    \n\n時間　１４：００～１９：００  \n・第６中学校",
-      "url": "https://x.com/yatsushiro0801/status/2083049104024936784",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
-      "content_filter": "DISASTER_RELATED"
-    },
-    {
-      "source_id": "SRC-KUM-001",
-      "account_name": "防災くまもと",
-      "account_handle": "Bousai_Kumamoto",
-      "post_time": "2026-07-31T04:30:08.000Z",
-      "text": "(続き) \nこちらは西原村です。\n現在(2026/07/31 13:30)発令中の避難情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9 #避難情報",
-      "url": "https://x.com/Bousai_Kumamoto/status/2083047536542245319",
-      "source_type": "PREFECTURE"
+      "source_id": "SRC-NAT-001",
+      "account_name": "首相官邸 災害・危機管理情報",
+      "account_handle": "Kantei_Saigai",
+      "post_time": "2026-07-31T07:25:36.000Z",
+      "text": "【地震関連・官房長官記者会見】\n本日（７月３１日）１１時００分頃から行われた木原官房長官の記者会見における、令和８年熊本地震に関する冒頭発言と関連質疑です。\n\n※要旨（速報版）\n （地震関連外冒頭発言　略） https://t.co/MApNPnYJa2",
+      "url": "https://x.com/Kantei_Saigai/status/2083091694078378275",
+      "source_type": "GOVERNMENT"
     }
-  ]
+  ],
+  "sync_status": "FRESH"
 }
