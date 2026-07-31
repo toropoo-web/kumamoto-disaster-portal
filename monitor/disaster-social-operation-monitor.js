@@ -47,6 +47,53 @@ function countByStatus(items, field, status) {
   }).length;
 }
 
+function countByField(items, getter) {
+  const summary = {};
+  (items || []).forEach(function (item) {
+    const key = getter(item) || "UNKNOWN";
+    summary[key] = (summary[key] || 0) + 1;
+  });
+  return summary;
+}
+
+function buildPrefectureDetail(indexEntries, reviewItems) {
+  const detail = {};
+  indexEntries.forEach(function (entry) {
+    const prefecture = entry.prefecture || "UNKNOWN";
+    if (!detail[prefecture]) {
+      detail[prefecture] = {
+        entry_count: 0,
+        incomplete_count: 0,
+        duplicate_count: 0,
+        category_counts: {}
+      };
+    }
+    detail[prefecture].entry_count += 1;
+    if (entry.status === "incomplete") {
+      detail[prefecture].incomplete_count += 1;
+    }
+    const category = entry.category || "UNKNOWN";
+    detail[prefecture].category_counts[category] =
+      (detail[prefecture].category_counts[category] || 0) + 1;
+  });
+  reviewItems.forEach(function (item) {
+    if (item.review_status !== "DUPLICATE") {
+      return;
+    }
+    const prefecture = (item.entry && item.entry.prefecture) || "UNKNOWN";
+    if (!detail[prefecture]) {
+      detail[prefecture] = {
+        entry_count: 0,
+        incomplete_count: 0,
+        duplicate_count: 0,
+        category_counts: {}
+      };
+    }
+    detail[prefecture].duplicate_count += 1;
+  });
+  return detail;
+}
+
 function buildDisasterSocialOperationReport(options) {
   options = options || {};
 
@@ -83,15 +130,15 @@ function buildDisasterSocialOperationReport(options) {
 
   const schemaErrors = validateDisasterSocialInbox(inbox);
   const regionMaster = loadCommunityRegionMaster();
-  const prefectureSummary = {};
-  indexEntries.forEach(function (entry) {
-    const key = entry.prefecture || "UNKNOWN";
-    prefectureSummary[key] = (prefectureSummary[key] || 0) + 1;
+  const prefectureSummary = countByField(indexEntries, function (entry) {
+    return entry.prefecture;
   });
+  const prefectureDetail = buildPrefectureDetail(indexEntries, reviewItems);
 
   return {
-    phase: "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE6_MULTI_PREFECTURE_EXTENSION",
+    phase: "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE7_KYUSHU_REGION_OPERATION",
     layer_scope: regionMaster.layer_scope || LAYER_SCOPE,
+    region_group: regionMaster.region_group || "KYUSHU",
     generated_at: new Date().toISOString(),
     AUTO_PUBLISH: AUTO_PUBLISH,
     AUTO_APPLY: false,
@@ -117,6 +164,7 @@ function buildDisasterSocialOperationReport(options) {
     },
     review_status_summary: reviewQueue.status_summary || {},
     prefecture_summary: prefectureSummary,
+    prefecture_detail: prefectureDetail,
     source_type_summary: sourceTypeSummary,
     last_updated: {
       inbox: inbox.last_updated || null,

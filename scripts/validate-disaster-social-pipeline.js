@@ -128,6 +128,32 @@ function main() {
   ]);
   checks.push({ check: "json import", pass: jsonItems.length === 1 });
 
+  const snsItems = parseJsonImport([
+    {
+      import_format: "SNS",
+      source_type: "X",
+      source: "SOC-LOCAL-001",
+      category: "WATER",
+      prefecture: "佐賀県",
+      date: "2026-08-01",
+      title: "SNS抽出テスト",
+      content: "市町村・地区は確認中",
+      url: "https://x.com/example/status/sns-import-test",
+      keywords: ["給水", "SNS"]
+    }
+  ]);
+  checks.push({
+    check: "sns import",
+    pass:
+      snsItems.length === 1 &&
+      snsItems[0].import_format === "SNS" &&
+      snsItems[0].source_type === "X" &&
+      snsItems[0].status === "incomplete"
+  });
+  if (!snsItems.length || snsItems[0].status !== "incomplete") {
+    errors.push("sns import must preserve incomplete when location fields missing");
+  }
+
   const incompleteItem = normalizeInboxItem(
     {
       source: "SOC-LOCAL-005",
@@ -151,7 +177,7 @@ function main() {
     version: "1.0",
     region: "KYUSHU_SOUTH",
     AUTO_PUBLISH: AUTO_PUBLISH,
-    items: inboxPayload.items.concat(csvItems, jsonItems, [incompleteItem])
+    items: inboxPayload.items.concat(csvItems, jsonItems, snsItems, [incompleteItem])
   };
   fs.writeFileSync(inboxPath, JSON.stringify(pipelineInbox, null, 2) + "\n", "utf8");
 
@@ -240,6 +266,33 @@ function main() {
   if (kagoshimaResults.length !== kagoshimaEntryCount) {
     errors.push("prefecture search 鹿児島県 must return all Kagoshima entries");
   }
+
+  const miyazakiResults = searchDisasterSocialIndex(indexPayload, { region: "宮崎県" });
+  const miyazakiEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "宮崎県";
+  }).length;
+  checks.push({
+    check: "miyazaki prefecture wide search",
+    pass: miyazakiResults.length === miyazakiEntryCount && miyazakiEntryCount > 0,
+    count: miyazakiResults.length
+  });
+
+  const oitaResults = searchDisasterSocialIndex(indexPayload, { region: "大分県" });
+  const oitaEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "大分県";
+  }).length;
+  checks.push({
+    check: "oita prefecture wide search",
+    pass: oitaResults.length === oitaEntryCount && oitaEntryCount > 0,
+    count: oitaResults.length
+  });
+
+  const kyushuAllResults = searchDisasterSocialIndex(indexPayload, { region: "九州全域" });
+  checks.push({
+    check: "kyushu region search",
+    pass: kyushuAllResults.length === indexPayload.entries.length,
+    count: kyushuAllResults.length
+  });
 
   const municipalityResults = searchDisasterSocialIndex(indexPayload, { region: "合志市" });
   checks.push({

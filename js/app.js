@@ -265,11 +265,11 @@
     {
       id: "KYUSHU_SOUTH",
       label: "九州南部",
-      prefectures: ["熊本県", "鹿児島県"]
+      prefectures: ["熊本県", "鹿児島県", "宮崎県"]
     },
     {
       id: "KYUSHU",
-      label: "九州",
+      label: "九州全域",
       prefectures: ["熊本県", "鹿児島県", "宮崎県", "大分県", "福岡県", "長崎県", "佐賀県"]
     }
   ];
@@ -2267,7 +2267,7 @@
     regionInput.id = "disaster-social-search-region";
     regionInput.type = "search";
     regionInput.name = "region";
-    regionInput.placeholder = "例：熊本県 / 鹿児島県 / 九州南部 / 阿蘇市 黒川";
+    regionInput.placeholder = "例：熊本県 / 鹿児島県 / 九州南部 / 九州全域";
     regionInput.autocomplete = "off";
 
     var dateLabel = createElement("label", "disaster-search__label", "日付");

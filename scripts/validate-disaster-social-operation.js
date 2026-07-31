@@ -96,10 +96,16 @@ function main() {
   errors.push.apply(errors, validateCommunityRegionMaster(regionMaster));
   checks.push({
     check: "community region layer",
-    pass: regionMaster.layer_scope === LAYER_SCOPE && regionMaster.extensible === true
+    pass:
+      regionMaster.layer_scope === LAYER_SCOPE &&
+      regionMaster.extensible === true &&
+      regionMaster.region_group === "KYUSHU"
   });
   if (regionMaster.layer_scope !== LAYER_SCOPE) {
     errors.push("community layer scope must be " + LAYER_SCOPE);
+  }
+  if (regionMaster.region_group !== "KYUSHU") {
+    errors.push("community region_group must be KYUSHU");
   }
 
   const masterPayload = loadMunicipalityMaster();
@@ -164,6 +170,55 @@ function main() {
     errors.push("district search failed");
   }
 
+  const miyazakiResults = searchDisasterSocialIndex(indexPayload, { region: "宮崎県" });
+  const miyazakiEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "宮崎県";
+  }).length;
+  checks.push({
+    check: "miyazaki prefecture wide search",
+    pass: miyazakiResults.length === miyazakiEntryCount && miyazakiEntryCount > 0,
+    count: miyazakiResults.length
+  });
+  if (!miyazakiEntryCount || miyazakiResults.length !== miyazakiEntryCount) {
+    errors.push("prefecture search 宮崎県 must return all Miyazaki entries");
+  }
+
+  const oitaResults = searchDisasterSocialIndex(indexPayload, { region: "大分県" });
+  const oitaEntryCount = indexPayload.entries.filter(function (entry) {
+    return entry.prefecture === "大分県";
+  }).length;
+  checks.push({
+    check: "oita prefecture wide search",
+    pass: oitaResults.length === oitaEntryCount && oitaEntryCount > 0,
+    count: oitaResults.length
+  });
+  if (!oitaEntryCount || oitaResults.length !== oitaEntryCount) {
+    errors.push("prefecture search 大分県 must return all Oita entries");
+  }
+
+  const kyushuSouthResults = searchDisasterSocialIndex(indexPayload, { region: "九州南部" });
+  const kyushuSouthCount = indexPayload.entries.filter(function (entry) {
+    return ["熊本県", "鹿児島県", "宮崎県"].indexOf(entry.prefecture) !== -1;
+  }).length;
+  checks.push({
+    check: "kyushu south region search",
+    pass: kyushuSouthResults.length === kyushuSouthCount && kyushuSouthCount > 0,
+    count: kyushuSouthResults.length
+  });
+  if (kyushuSouthResults.length !== kyushuSouthCount) {
+    errors.push("九州南部 search must return all south Kyushu entries");
+  }
+
+  const kyushuAllResults = searchDisasterSocialIndex(indexPayload, { region: "九州全域" });
+  checks.push({
+    check: "kyushu all region search",
+    pass: kyushuAllResults.length === indexPayload.entries.length,
+    count: kyushuAllResults.length
+  });
+  if (kyushuAllResults.length !== indexPayload.entries.length) {
+    errors.push("九州全域 search must return all indexed entries");
+  }
+
   checks.push({
     check: "operation monitor report",
     pass: report.counts.index_entry_count > 0,
@@ -203,6 +258,17 @@ function main() {
     check: "stop at review queue",
     pass: report.STOP_AT === "REVIEW_QUEUE"
   });
+
+  checks.push({
+    check: "prefecture detail monitor",
+    pass:
+      report.prefecture_detail &&
+      report.prefecture_detail["熊本県"] &&
+      typeof report.prefecture_detail["熊本県"].category_counts === "object"
+  });
+  if (!report.prefecture_detail || !report.prefecture_detail["熊本県"]) {
+    errors.push("operation monitor must include prefecture_detail");
+  }
 
   const officialWater = searchDisasterIndex(buildAndWriteDisasterSearchIndex(), "給水", {
     category: "WATER"
@@ -254,7 +320,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log("DISASTER_CROSS_SEARCH_COMMUNITY_PHASE6_MULTI_PREFECTURE_COMPLETE");
+  console.log("DISASTER_CROSS_SEARCH_COMMUNITY_PHASE7_KYUSHU_REGION_COMPLETE");
 }
 
 main();

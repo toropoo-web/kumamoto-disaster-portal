@@ -1,7 +1,8 @@
 {
-  "phase": "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE6_MULTI_PREFECTURE_EXTENSION",
+  "phase": "DISASTER_CROSS_SEARCH_COMMUNITY_PHASE7_KYUSHU_REGION_OPERATION",
   "layer_scope": "九州災害 Community Layer",
-  "generated_at": "2026-07-31T17:01:47.236Z",
+  "region_group": "KYUSHU",
+  "generated_at": "2026-07-31T17:05:19.384Z",
   "AUTO_PUBLISH": false,
   "AUTO_APPLY": false,
   "STOP_AT": "REVIEW_QUEUE",
@@ -12,27 +13,88 @@
     "error_count": 0
   },
   "counts": {
-    "inbox_item_count": 51,
-    "review_queue_item_count": 51,
-    "apply_queue_item_count": 49,
-    "index_entry_count": 57,
+    "inbox_item_count": 56,
+    "review_queue_item_count": 56,
+    "apply_queue_item_count": 54,
+    "index_entry_count": 62,
     "source_count": 8,
     "incomplete_inbox_count": 0,
-    "incomplete_index_count": 4,
-    "incomplete_review_count": 4,
+    "incomplete_index_count": 7,
+    "incomplete_review_count": 7,
     "duplicate_review_count": 2,
     "pending_review_count": 0,
-    "approved_review_count": 49
+    "approved_review_count": 54
   },
   "review_status_summary": {
     "PENDING": 0,
-    "APPROVED": 49,
+    "APPROVED": 54,
     "REJECTED": 0,
     "DUPLICATE": 2
   },
   "prefecture_summary": {
     "熊本県": 54,
-    "鹿児島県": 3
+    "鹿児島県": 3,
+    "宮崎県": 2,
+    "大分県": 2,
+    "福岡県": 1
+  },
+  "prefecture_detail": {
+    "熊本県": {
+      "entry_count": 54,
+      "incomplete_count": 3,
+      "duplicate_count": 2,
+      "category_counts": {
+        "WATER": 8,
+        "SHELTER": 2,
+        "FOOD": 6,
+        "SUPPLIES": 7,
+        "VOLUNTEER": 5,
+        "MEDICAL": 1,
+        "CHARGING": 5,
+        "TOILET": 4,
+        "PET_SUPPORT": 8,
+        "BATH": 2,
+        "SHOWER": 2,
+        "FREE_SPACE": 2,
+        "WIFI": 2
+      }
+    },
+    "鹿児島県": {
+      "entry_count": 3,
+      "incomplete_count": 1,
+      "duplicate_count": 0,
+      "category_counts": {
+        "TRANSPORT": 1,
+        "WATER": 1,
+        "SUPPLIES": 1
+      }
+    },
+    "宮崎県": {
+      "entry_count": 2,
+      "incomplete_count": 1,
+      "duplicate_count": 0,
+      "category_counts": {
+        "WATER": 1,
+        "SUPPLIES": 1
+      }
+    },
+    "大分県": {
+      "entry_count": 2,
+      "incomplete_count": 1,
+      "duplicate_count": 0,
+      "category_counts": {
+        "FOOD": 1,
+        "VOLUNTEER": 1
+      }
+    },
+    "福岡県": {
+      "entry_count": 1,
+      "incomplete_count": 1,
+      "duplicate_count": 0,
+      "category_counts": {
+        "WATER": 1
+      }
+    }
   },
   "source_type_summary": {
     "X": 2,
@@ -42,9 +104,9 @@
   },
   "last_updated": {
     "inbox": null,
-    "review_queue": "2026-07-31T17:01:46.764Z",
-    "apply_queue": "2026-07-31T17:01:46.765Z",
-    "index": "2026-07-31T17:01:46.819Z"
+    "review_queue": "2026-07-31T17:05:18.959Z",
+    "apply_queue": "2026-07-31T17:05:18.960Z",
+    "index": "2026-07-31T17:05:19.016Z"
   },
   "incomplete_items": [
     {
@@ -84,6 +146,35 @@
         "url"
       ],
       "entry_id": "SOC-IDX-INB-20260801-KGS-002"
+    },
+    {
+      "inbox_id": "INB-20260801-MYZ-002",
+      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持",
+      "missing_fields": [
+        "municipality",
+        "district",
+        "url"
+      ],
+      "entry_id": "SOC-IDX-INB-20260801-MYZ-002"
+    },
+    {
+      "inbox_id": "INB-20260801-OIT-002",
+      "review_note": "municipality, district, url 未確認。推測補完せず incomplete で保持",
+      "missing_fields": [
+        "municipality",
+        "district",
+        "url"
+      ],
+      "entry_id": "SOC-IDX-INB-20260801-OIT-002"
+    },
+    {
+      "inbox_id": "INB-20260801-SNS-001",
+      "review_note": "municipality, district 未確認。SNS抽出のため incomplete で保持",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-INB-20260801-SNS-001"
     }
   ]
 }

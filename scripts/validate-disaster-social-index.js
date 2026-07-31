@@ -145,6 +145,45 @@ function main() {
     errors.push("prefecture group search must return results for 九州南部");
   }
 
+  const kyushuAllResults = searchDisasterSocialIndex(payload.index, {
+    region: "九州全域"
+  });
+  checks.push({
+    check: "kyushu region group search",
+    pass: kyushuAllResults.length === payload.index.entries.length,
+    count: kyushuAllResults.length,
+    entry_count: payload.index.entries.length
+  });
+  if (kyushuAllResults.length !== payload.index.entries.length) {
+    errors.push("九州全域 search must return all indexed entries");
+  }
+
+  const miyazakiResults = searchDisasterSocialIndex(payload.index, { region: "宮崎県" });
+  const miyazakiEntryCount = payload.index.entries.filter(function (entry) {
+    return entry.prefecture === "宮崎県";
+  }).length;
+  checks.push({
+    check: "miyazaki prefecture wide search",
+    pass: miyazakiResults.length === miyazakiEntryCount && miyazakiEntryCount > 0,
+    count: miyazakiResults.length
+  });
+  if (!miyazakiEntryCount || miyazakiResults.length !== miyazakiEntryCount) {
+    errors.push("prefecture search 宮崎県 must return all Miyazaki entries");
+  }
+
+  const oitaResults = searchDisasterSocialIndex(payload.index, { region: "大分県" });
+  const oitaEntryCount = payload.index.entries.filter(function (entry) {
+    return entry.prefecture === "大分県";
+  }).length;
+  checks.push({
+    check: "oita prefecture wide search",
+    pass: oitaResults.length === oitaEntryCount && oitaEntryCount > 0,
+    count: oitaResults.length
+  });
+  if (!oitaEntryCount || oitaResults.length !== oitaEntryCount) {
+    errors.push("prefecture search 大分県 must return all Oita entries");
+  }
+
   const regionResults = searchDisasterSocialIndex(payload.index, {
     region: "八代"
   });
