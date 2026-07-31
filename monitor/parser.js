@@ -36,6 +36,89 @@ function extractMetaUpdatedAt(html) {
   return "";
 }
 
+function normalizeDateToken(value) {
+  if (!value) {
+    return "";
+  }
+
+  const text = decodeHtmlEntities(String(value).replace(/\s+/g, " ").trim());
+  const japanese = text.match(/(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日/);
+  if (japanese) {
+    return (
+      japanese[1] +
+      "-" +
+      String(japanese[2]).padStart(2, "0") +
+      "-" +
+      String(japanese[3]).padStart(2, "0") +
+      "T00:00:00+09:00"
+    );
+  }
+
+  const slash = text.match(/(\d{4})[\/\-.](\d{1,2})[\/\-.](\d{1,2})/);
+  if (slash) {
+    return (
+      slash[1] +
+      "-" +
+      String(slash[2]).padStart(2, "0") +
+      "-" +
+      String(slash[3]).padStart(2, "0") +
+      "T00:00:00+09:00"
+    );
+  }
+
+  const parsed = Date.parse(text);
+  if (!Number.isNaN(parsed)) {
+    return new Date(parsed).toISOString();
+  }
+
+  return "";
+}
+
+function collectArticleDateCandidates(html) {
+  const candidates = [];
+  const patterns = [
+    { regex: /<p[^>]*class=["'][^"']*art-date[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi, weight: 100 },
+    { regex: /<p[^>]*class=["'][^"']*br-art-date[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi, weight: 95 },
+    { regex: /<time[^>]+datetime=["']([^"']+)["'][^>]*>/gi, weight: 90, direct: true },
+    { regex: /<span[^>]*class=["'][^"']*date["'][^>]*>([\s\S]*?)<\/span>/gi, weight: 80 },
+    { regex: /<span[^>]*class=["'][^"']*u-date["'][^>]*>([\s\S]*?)<\/span>/gi, weight: 40 }
+  ];
+
+  patterns.forEach(function (pattern) {
+    let match;
+    while ((match = pattern.regex.exec(html)) !== null) {
+      const raw = pattern.direct ? match[1] : stripHtml(match[1]);
+      const iso = normalizeDateToken(raw);
+      if (iso) {
+        candidates.push({ iso: iso, weight: pattern.weight, raw: raw });
+      }
+    }
+  });
+
+  candidates.sort(function (left, right) {
+    if (right.weight !== left.weight) {
+      return right.weight - left.weight;
+    }
+    return Date.parse(right.iso) - Date.parse(left.iso);
+  });
+
+  return candidates;
+}
+
+function extractArticleUpdatedAt(html, options) {
+  options = options || {};
+  const candidates = collectArticleDateCandidates(html || "");
+  if (!candidates.length) {
+    return "";
+  }
+
+  if (options.preferArticleUpdatedAt === false) {
+    return candidates[candidates.length - 1].iso;
+  }
+
+  return candidates[0].iso;
+}
+
 function stripHtml(html) {
   return decodeHtmlEntities(
     html
@@ -123,6 +206,7 @@ function parsePdfPage(fetchResult) {
   }
   const contaminationRisk = detectContamination(text);
   const normalized = [title, text].join("\n").replace(/\s+/g, " ").trim();
+  const checkedAt = new Date().toISOString();
 
   return {
     url: fetchResult.url,
@@ -130,11 +214,12 @@ function parsePdfPage(fetchResult) {
     reachable: fetchResult.ok,
     title,
     pageUpdatedAt,
+    sourceUpdatedAt: pageUpdatedAt,
     keywords,
     contaminationRisk,
     contentHash: hashContent(normalized),
     contentType: "pdf",
-    checkedAt: new Date().toISOString()
+    checkedAt: checkedAt
   };
 }
 
@@ -152,7 +237,8 @@ function hashContent(normalized) {
   return crypto.createHash("sha256").update(normalized || "").digest("hex");
 }
 
-function parsePage(fetchResult) {
+function parsePage(fetchResult, options) {
+  options = options || {};
   if (isPdfResponse(fetchResult)) {
     return parsePdfPage(fetchResult);
   }
@@ -162,23 +248,35 @@ function parsePage(fetchResult) {
   const content = normalizeContent(fetchResult.body || "");
   const keywords = findKeywords(content.text);
   const contaminationRisk = detectContamination(content.text);
+  const pageUpdatedAt = metaUpdatedAt || headerModified || "";
+  const articleUpdatedAt = extractArticleUpdatedAt(fetchResult.body || "", options);
+  const sourceUpdatedAt =
+    options.preferArticleUpdatedAt === false
+      ? pageUpdatedAt || articleUpdatedAt
+      : articleUpdatedAt || pageUpdatedAt;
+  const checkedAt = new Date().toISOString();
 
   return {
     url: fetchResult.url,
     httpStatus: fetchResult.status,
     reachable: fetchResult.ok,
     title: content.title,
-    pageUpdatedAt: metaUpdatedAt || headerModified || "",
+    pageUpdatedAt: pageUpdatedAt,
+    sourceUpdatedAt: sourceUpdatedAt,
     keywords,
     contaminationRisk,
     contentHash: hashContent(content.normalized),
-    checkedAt: new Date().toISOString()
+    checkedAt: checkedAt
   };
 }
 
 module.exports = {
   parsePage,
   extractTitle,
+  extractArticleUpdatedAt,
+  extractMetaUpdatedAt,
+  normalizeDateToken,
+  collectArticleDateCandidates,
   findKeywords,
   hashContent,
   normalizeContent

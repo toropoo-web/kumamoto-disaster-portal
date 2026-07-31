@@ -141,7 +141,9 @@ function refreshPhase1TimestampsFromSnapshots(patrolAt) {
     }
 
     record.checked_at = checkedAt;
-    const sourceUpdatedAt = normalizePageUpdatedAt(snapshot.pageUpdatedAt);
+    const sourceUpdatedAt = normalizePageUpdatedAt(
+      snapshot.sourceUpdatedAt || snapshot.pageUpdatedAt
+    );
     if (sourceUpdatedAt) {
       record.source_updated_at = sourceUpdatedAt;
       record.displayed_updated_at = sourceUpdatedAt;

@@ -7,9 +7,9 @@
   ],
   "source_registry": "data/water_sources.json",
   "location_item_count": 11,
-  "registry_item_count": 32,
-  "item_count": 43,
-  "last_updated": "2026-07-30T19:09:39.969Z",
+  "registry_item_count": 38,
+  "item_count": 49,
+  "last_updated": "2026-07-31T03:30:49.031Z",
   "items": [
     {
       "item_kind": "location",
@@ -138,7 +138,7 @@
       "search_text": "熊本県 菊陽町 菊陽町総合体育館 給水所 給水対応中 給水 給水所 応急給水",
       "source_name": "菊陽町公式",
       "source_type": "official",
-      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "updated_at": "2026-07-29T16:30:00+09:00"
     },
     {
@@ -151,7 +151,7 @@
       "search_text": "熊本県 菊陽町 西部町民センター 給水所 給水対応中 給水 給水所 応急給水",
       "source_name": "菊陽町公式",
       "source_type": "official",
-      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "updated_at": "2026-07-29T16:30:00+09:00"
     },
     {
@@ -177,7 +177,7 @@
       "search_text": "熊本県 熊本市 熊本市 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
       "source_name": "熊本市公式",
       "source_type": "official",
-      "source_url": "https://www.city.kumamoto.jp/kurashi/bosai/",
+      "source_url": "https://www.city.kumamoto.jp/bousai/",
       "updated_at": null
     },
     {
@@ -190,7 +190,7 @@
       "search_text": "熊本県 熊本市 熊本市上下水道局 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
       "source_name": "熊本市上下水道局",
       "source_type": "official",
-      "source_url": "https://www.city.kumamoto.jp/kurashi/bosai/",
+      "source_url": "https://www.city.kumamoto.jp/bousai/",
       "updated_at": null
     },
     {
@@ -209,6 +209,19 @@
     {
       "item_kind": "registry",
       "region": "熊本県",
+      "municipality": "宇土市",
+      "organization": "宇土市",
+      "location": "給水関連情報",
+      "title": "給水関連情報",
+      "search_text": "熊本県 宇土市 宇土市 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
+      "source_name": "宇土市公式",
+      "source_type": "official",
+      "source_url": "https://www.city.uto.lg.jp/article/view/1014/16317.html",
+      "updated_at": null
+    },
+    {
+      "item_kind": "registry",
+      "region": "熊本県",
       "municipality": "宇城市",
       "organization": "宇城市",
       "location": "給水関連情報",
@@ -216,7 +229,72 @@
       "search_text": "熊本県 宇城市 宇城市 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
       "source_name": "宇城市公式",
       "source_type": "official",
-      "source_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
+      "source_url": "https://www.city.uki.kumamoto.jp/toppage/important/2606682",
+      "updated_at": null
+    },
+    {
+      "item_kind": "registry",
+      "region": "熊本県",
+      "municipality": "氷川町",
+      "organization": "氷川町",
+      "location": "給水関連情報",
+      "title": "給水関連情報",
+      "search_text": "熊本県 氷川町 氷川町 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
+      "source_name": "氷川町公式",
+      "source_type": "official",
+      "source_url": "https://www.town.hikawa.kumamoto.jp/",
+      "updated_at": null
+    },
+    {
+      "item_kind": "registry",
+      "region": "熊本県",
+      "municipality": "益城町",
+      "organization": "益城町",
+      "location": "給水関連情報",
+      "title": "給水関連情報",
+      "search_text": "熊本県 益城町 益城町 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
+      "source_name": "益城町公式",
+      "source_type": "official",
+      "source_url": "https://www.town.mashiki.lg.jp/kiji0038070/index.html",
+      "updated_at": null
+    },
+    {
+      "item_kind": "registry",
+      "region": "熊本県",
+      "municipality": "御船町",
+      "organization": "御船町",
+      "location": "給水関連情報",
+      "title": "給水関連情報",
+      "search_text": "熊本県 御船町 御船町 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
+      "source_name": "御船町公式",
+      "source_type": "official",
+      "source_url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8#kid337",
+      "updated_at": null
+    },
+    {
+      "item_kind": "registry",
+      "region": "熊本県",
+      "municipality": "嘉島町",
+      "organization": "嘉島町",
+      "location": "給水関連情報",
+      "title": "給水関連情報",
+      "search_text": "熊本県 嘉島町 嘉島町 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧 自衛隊 文化財センター 飲料水",
+      "source_name": "嘉島町公式",
+      "source_type": "official",
+      "source_url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/55/6037.html",
+      "updated_at": null
+    },
+    {
+      "item_kind": "registry",
+      "region": "熊本県",
+      "municipality": "菊陽町",
+      "organization": "菊陽町",
+      "location": "給水関連情報",
+      "title": "給水関連情報",
+      "search_text": "熊本県 菊陽町 菊陽町 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
+      "source_name": "菊陽町公式",
+      "source_type": "official",
+      "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "updated_at": null
     },
     {
@@ -229,7 +307,7 @@
       "search_text": "熊本県 人吉市 人吉市 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
       "source_name": "人吉市公式",
       "source_type": "official",
-      "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
+      "source_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2501833",
       "updated_at": null
     },
     {
@@ -242,7 +320,7 @@
       "search_text": "熊本県 菊池市 菊池市 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
       "source_name": "菊池市公式",
       "source_type": "official",
-      "source_url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "source_url": "https://www.city.kikuchi.lg.jp/article/list/900.html",
       "updated_at": null
     },
     {

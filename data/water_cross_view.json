@@ -2,7 +2,7 @@
   "category": "WATER",
   "title": "給水情報",
   "description": "現在利用可能な給水所",
-  "last_updated": "2026-07-29T17:01:00+09:00",
+  "last_updated": "2026-07-31T11:40:00+09:00",
   "municipality_count": 3,
   "municipalities": [
     {
@@ -149,7 +149,7 @@
       "location_count": 2,
       "source_type": "official",
       "source_label": "菊陽町公式",
-      "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+      "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
       "locations": [
         {
           "location_id": "LOC-KM011-WATER-0001",
@@ -157,7 +157,7 @@
           "municipality": "菊陽町",
           "source_type": "official",
           "source_name": "菊陽町公式防災情報",
-          "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+          "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
           "status_label": "給水対応中",
           "updated_at": "2026-07-29T16:30:00+09:00"
         },
@@ -167,7 +167,7 @@
           "municipality": "菊陽町",
           "source_type": "official",
           "source_name": "菊陽町公式防災情報",
-          "source_url": "https://www.town.kikuyo.lg.jp/bousai/kiji0035638/index.html",
+          "source_url": "https://www.town.kikuyo.lg.jp/kiji0035638/index.html",
           "status_label": "給水対応中",
           "updated_at": "2026-07-29T16:30:00+09:00"
         }

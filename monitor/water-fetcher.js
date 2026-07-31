@@ -63,13 +63,16 @@ async function fetchWaterSource(source, options) {
   }
 
   const fetched = await fetchSource(source.url);
-  const parsed = parsePage(fetched);
+  const parsed = parsePage(fetched, {
+    preferArticleUpdatedAt: source.prefer_article_updated_at === true
+  });
   const originalText = extractPageText(fetched.body || "");
   const keywords = findWaterKeywords(originalText, source.keywords);
 
   return Object.assign({}, parsed, {
     originalText: originalText,
-    publishedAt: parsed.pageUpdatedAt || "",
+    publishedAt: parsed.sourceUpdatedAt || parsed.pageUpdatedAt || "",
+    source_updated_at: parsed.sourceUpdatedAt || parsed.pageUpdatedAt || "",
     keywords: keywords
   });
 }

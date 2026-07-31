@@ -137,12 +137,14 @@ function buildUpdateCandidate(source, current, previous, changeEntries) {
     before: {
       title: previous ? previous.title || "" : null,
       contentHash: previous ? previous.contentHash || null : null,
-      pageUpdatedAt: previous ? previous.pageUpdatedAt || null : null
+      pageUpdatedAt: previous ? previous.pageUpdatedAt || null : null,
+      sourceUpdatedAt: previous ? previous.sourceUpdatedAt || previous.pageUpdatedAt || null : null
     },
     after: {
       title: current.title || "",
       contentHash: current.contentHash || null,
-      pageUpdatedAt: current.pageUpdatedAt || null
+      pageUpdatedAt: current.pageUpdatedAt || null,
+      sourceUpdatedAt: current.sourceUpdatedAt || current.pageUpdatedAt || null
     },
     autoPublish: false
   };

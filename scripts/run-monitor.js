@@ -15,10 +15,11 @@ const { generateOperationReports, renderDailyReport } = require("../monitor/oper
 const { runUrlAudit } = require("../monitor/url-audit");
 const { saveOperationStatus } = require("../monitor/operation-status");
 const { savePublicStatus } = require("../monitor/public-status");
+const { getMunicipalityPatrolSources } = require("../monitor/municipality-patrol-sources");
 
 function loadSources() {
   const data = JSON.parse(fs.readFileSync(SOURCES_FILE, "utf8"));
-  return data.municipalities.concat(data.communication);
+  return getMunicipalityPatrolSources().concat(data.communication);
 }
 
 function ensureDir(dirPath) {
@@ -29,7 +30,9 @@ function ensureDir(dirPath) {
 
 async function patrolSource(source) {
   const fetched = await fetchSource(source.url);
-  const parsed = parsePage(fetched);
+  const parsed = parsePage(fetched, {
+    preferArticleUpdatedAt: source.prefer_article_updated_at === true
+  });
   return { fetched, parsed };
 }
 
