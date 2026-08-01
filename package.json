@@ -120,6 +120,7 @@
     "fetch:disaster-social-sns": "node scripts/fetch-disaster-social-sns.js",
     "sync:disaster-social-cross-search": "node scripts/sync-disaster-social-cross-search-production.js",
     "validate:disaster-x-cross-search-open-acquisition": "node scripts/validate-disaster-x-cross-search-open-acquisition.js",
+    "validate:disaster-x-cross-search-disaster-relevance": "node scripts/validate-disaster-x-cross-search-disaster-relevance.js",
     "rebuild:disaster-social-community": "node scripts/rebuild-disaster-social-community.js",
     "validate:disaster-social-community-rebuild": "node scripts/validate-disaster-social-community-rebuild.js",
     "validate:disaster-social-sns-url-source-link": "node scripts/validate-disaster-social-sns-url-source-link.js",

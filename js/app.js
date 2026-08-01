@@ -3019,12 +3019,40 @@
     return "投稿者";
   }
 
+  function isDisasterRelevantSocialEntry(item) {
+    var haystack = String((item && item.title) || "") + " " + String((item && item.content) || "");
+    haystack = haystack.replace(/\s+/g, " ").trim();
+    if (!haystack) {
+      return false;
+    }
+    var disasterTerms = [
+      "熊本地震", "令和8年熊本地震", "地震", "被災", "災害", "支援", "給水", "断水",
+      "炊き出し", "物資", "支援物資", "入浴", "風呂", "無料開放", "避難", "避難所",
+      "車中泊", "Wi-Fi", "充電", "電気", "氷", "ペット", "迷子", "復旧", "ボランティア", "井戸水"
+    ];
+    var noiseTerms = [
+      "アフィリエイト", "アマゾン", "Amazon", "楽天", "通販", "ゲーム紹介", "ゲーム実況",
+      "Steam", "PlayStation", "Switch", "任天堂", "攻略", "観光スポット", "旅行記", "ホテル予約"
+    ];
+    var disasterHit = disasterTerms.some(function (term) {
+      return haystack.indexOf(term) !== -1;
+    });
+    var noiseHit = noiseTerms.some(function (term) {
+      return haystack.indexOf(term) !== -1;
+    });
+    if (noiseHit && !disasterHit) {
+      return false;
+    }
+    return disasterHit;
+  }
+
   function renderDisasterSocialLatest(container, entries, sourceLookup) {
     if (!container || !entries || !entries.length) {
       return;
     }
 
     var latestEntries = entries
+      .filter(isDisasterRelevantSocialEntry)
       .slice()
       .sort(compareSocialEntriesByDateDesc)
       .slice(0, DISASTER_SOCIAL_LATEST_COUNT);
