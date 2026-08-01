@@ -1,6 +1,6 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-08-01T09:44:58.905Z",
+  "synced_at": "2026-08-01T11:06:53.021Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
@@ -8,11 +8,22 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-08-01T07:34:11.000Z",
-      "text": "【八代港での支援のお知らせ】\n  本日、８月１日(土)八代港にて、 \n・給水　（終日） \n・充電　（20:00まで）\n ・入浴　（20:00まで） の支援を行っております。\n 各注意事項などの詳細は、画像をご確認ください。 https://t.co/GGL4RVJzRm",
-      "url": "https://x.com/yatsushiro0801/status/2083456242958413865",
+      "post_time": "2026-08-01T09:05:57.000Z",
+      "text": "【避難所運営について】\n 画像のとおり、避難所を再編しましたのでお知らせします。 https://t.co/olQ8RJmOoh",
+      "url": "https://x.com/yatsushiro0801/status/2083479335269511326",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
+      "content_filter": "RECENT_POSTS"
+    },
+    {
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-08-01T08:28:39.000Z",
+      "text": "南区城南町の一部で発生しておりました断水は解消しました。\n また南区富合町の一部で発生しておりました水圧低下も、解消いたしました。\n \n 断水が継続している市民の皆様にはご迷惑をおかけしますが、ご理解とご協力をお願いいたします。\n \n詳細はこちら↓\nhttps://t.co/aiYZ2BxUQi",
+      "url": "https://x.com/kumamotocity_/status/2083469947897049372",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
       "content_filter": "RECENT_POSTS"
     },
     {
@@ -27,17 +38,6 @@
       "content_filter": "RECENT_POSTS"
     },
     {
-      "source_id": "SRC-MUN-KM001",
-      "account_name": "熊本市公式X",
-      "account_handle": "kumamotocity_",
-      "post_time": "2026-07-31T21:58:38.000Z",
-      "text": "【応急給水活動について（8月1日07：00時点）】\n8月1日（土）の応急給水活動について下記のとおり実施します。\nhttps://t.co/aiYZ2BxUQi https://t.co/fwlofu5lrv",
-      "url": "https://x.com/kumamotocity_/status/2083311401196753368",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "熊本市",
-      "content_filter": "RECENT_POSTS"
-    },
-    {
       "source_id": "SRC-MUN-KM009",
       "account_name": "合志市公式X",
       "account_handle": "Koshi_city",
@@ -49,30 +49,30 @@
       "content_filter": "RECENT_POSTS"
     },
     {
-      "source_id": "SRC-NAT-001",
-      "account_name": "首相官邸 災害・危機管理情報",
-      "account_handle": "Kantei_Saigai",
-      "post_time": "2026-08-01T07:24:42.000Z",
-      "text": "【お知らせ】 \n本日（８月１日）、高市総理は、令和８年熊本地震に関する非常災害対策本部会議（第５回）を開催しました。 \n\n※高市総理発言要旨（速報版）\n　「令和８年熊本地震」でお亡くなりになられた方々に哀悼の誠を捧げますとともに、謹んで御遺族の皆様にお悔やみを申し上げます。 https://t.co/eYdoaC4H3n",
-      "url": "https://x.com/Kantei_Saigai/status/2083453853396328493",
+      "source_id": "SRC-NAT-005",
+      "account_name": "防衛省 災害対策",
+      "account_handle": "ModJapan_saigai",
+      "post_time": "2026-08-01T09:01:45.000Z",
+      "text": "本日も、自衛隊は熊本県内で入浴支援を実施しています。\n陸上自衛隊が引き続き熊本市の「火の君文化センター」（18時～22時）で入浴支援（シャ���ー）を行います。\nまた、海上自衛隊も宇城市の「三角港緑地公園」（18時30～22時）において入浴支援を行います。 https://t.co/JDKlrbUI2o",
+      "url": "https://x.com/ModJapan_saigai/status/2083478278137139430",
       "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-NAT-003",
-      "account_name": "気象庁防災情報",
-      "account_handle": "JMA_bousai",
-      "post_time": "2026-08-01T07:13:36.000Z",
-      "text": "令和8年熊本地震の地震活動は、8月1日15時までに震度1以上の地震が335回発生するなど、依然として活発な状況です。揺れの強かった地域では、7月28日の地震発生から1週間程度、最大震度7程度の地震に注意してください。\n#令和8年熊本地震 ポータルサイトで最新情報の確認を！\nhttps://t.co/CaWQARIStK https://t.co/Y1Ykt7tqgZ",
-      "url": "https://x.com/JMA_bousai/status/2083451062187590131",
+      "source_id": "SRC-NAT-004",
+      "account_name": "総務省消防庁",
+      "account_handle": "FDMA_JAPAN",
+      "post_time": "2026-08-01T08:23:32.000Z",
+      "text": "【消防庁とりまとめ第28報】令和８年熊本地震による被害及び消防機関等の対応状況について、8月1日（土）17時00分現在の被害状況等を取りまとめました。詳細はこちら→https://t.co/kISMA18sgU\n#総務省消防庁 #災害情報 #地震",
+      "url": "https://x.com/FDMA_JAPAN/status/2083468660371521945",
       "source_type": "GOVERNMENT"
     },
     {
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-08-01T06:38:57.000Z",
-      "text": "【避難所開設情報　８月１日　１２：００現在】  \n   現在、開設している避難所の一覧を公表します。 \n詳しくは画像を確認ください。 https://t.co/5BmXkboWYn",
-      "url": "https://x.com/yatsushiro0801/status/2083442343022379146",
+      "post_time": "2026-08-01T07:34:11.000Z",
+      "text": "【八代港での支援のお知らせ】\n  本日、８月１日(土)八代港にて、 \n・給水　（終日） \n・充電　（20:00まで）\n ・入浴　（20:00まで） の支援を行っております。\n 各注意事項などの詳細は、画像をご確認ください。 https://t.co/GGL4RVJzRm",
+      "url": "https://x.com/yatsushiro0801/status/2083456242958413865",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
@@ -81,9 +81,9 @@
       "source_id": "SRC-NAT-001",
       "account_name": "首相官邸 災害・危機管理情報",
       "account_handle": "Kantei_Saigai",
-      "post_time": "2026-08-01T06:01:08.000Z",
-      "text": "令和8年熊本地震に関する第5回非常災害対策本部会議のライブ配信です。 https://t.co/OWjVpiSr4D",
-      "url": "https://x.com/Kantei_Saigai/status/2083432825186099334",
+      "post_time": "2026-08-01T07:24:42.000Z",
+      "text": "【お知らせ】 \n本日（８月１日）、高市総理は、令和８年熊本地震に関する非常災害対策本部会議（第５回）を開催しました。 \n\n※高市総理発言要旨（速報版）\n　「令和８年熊本地震」でお亡くなりになられた方々に哀悼の誠を捧げますとともに、謹んで御遺族の皆様にお悔やみを申し上げます。 https://t.co/eYdoaC4H3n",
+      "url": "https://x.com/Kantei_Saigai/status/2083453853396328493",
       "source_type": "GOVERNMENT"
     }
   ],
