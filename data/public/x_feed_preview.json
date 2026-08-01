@@ -1,9 +1,20 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-08-01T12:14:15.460Z",
+  "synced_at": "2026-08-01T14:01:29.232Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
+    {
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-08-01T12:29:09.000Z",
+      "text": "【8月2日の応急給水所について（8月1日21：00時点）】\n\n8月2日（日）の応急給水活動について下記のとおり実施します。\nhttps://t.co/aiYZ2BxUQi https://t.co/VixjdHCwA5",
+      "url": "https://x.com/kumamotocity_/status/2083530472802722215",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "熊本市",
+      "content_filter": "RECENT_POSTS"
+    },
     {
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
@@ -13,17 +24,6 @@
       "url": "https://x.com/yatsushiro0801/status/2083509178753339445",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
-      "content_filter": "RECENT_POSTS"
-    },
-    {
-      "source_id": "SRC-MUN-KM001",
-      "account_name": "熊本市公式X",
-      "account_handle": "kumamotocity_",
-      "post_time": "2026-08-01T08:28:39.000Z",
-      "text": "南区城南町の一部で発生しておりました断水は解消しました。\n また南区富合町の一部で発生しておりました水圧低下も、解消いたしました。\n \n 断水が継続している市民の皆様にはご迷惑をおかけしますが、ご理解とご協力をお願いいたします。\n \n詳細はこちら↓\nhttps://t.co/aiYZ2BxUQi",
-      "url": "https://x.com/kumamotocity_/status/2083469947897049372",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "熊本市",
       "content_filter": "RECENT_POSTS"
     },
     {
@@ -49,6 +49,15 @@
       "content_filter": "RECENT_POSTS"
     },
     {
+      "source_id": "SRC-NAT-001",
+      "account_name": "首相官邸 災害・危機管理情報",
+      "account_handle": "Kantei_Saigai",
+      "post_time": "2026-08-01T11:56:09.000Z",
+      "text": "【熊本地震】\n現地では災害派遣医療チームであるDMATにより転院搬送・診療の補助等が実施されています。酷暑の中、懸命に救出・救助活動に従事されている皆様に敬意と感謝を申し上げます。\n（写真提供：DMAT） https://t.co/Zf8mn9244i",
+      "url": "https://x.com/Kantei_Saigai/status/2083522168814805089",
+      "source_type": "GOVERNMENT"
+    },
+    {
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
@@ -69,23 +78,14 @@
       "source_type": "GOVERNMENT"
     },
     {
-      "source_id": "SRC-NAT-004",
-      "account_name": "総務省消防庁",
-      "account_handle": "FDMA_JAPAN",
-      "post_time": "2026-08-01T08:23:32.000Z",
-      "text": "【消防庁とりまとめ第28報】令和８年熊本地震による被害及び消防機関等の対応状況について、8月1日（土）17時00分現在の被害状況等を取りまとめました。詳細はこちら→https://t.co/kISMA18sgU\n#総務省消防庁 #災害情報 #地震",
-      "url": "https://x.com/FDMA_JAPAN/status/2083468660371521945",
-      "source_type": "GOVERNMENT"
-    },
-    {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-08-01T07:34:11.000Z",
-      "text": "【八代港での支援のお知らせ】\n  本日、８月１日(土)八代港にて、 \n・給水　（終日） \n・充電　（20:00まで）\n ・入浴　（20:00まで） の支援を行っております。\n 各注意事項などの詳細は、画像をご確認���ださい。 https://t.co/GGL4RVJzRm",
-      "url": "https://x.com/yatsushiro0801/status/2083456242958413865",
+      "source_id": "SRC-MUN-KM001",
+      "account_name": "熊本市公式X",
+      "account_handle": "kumamotocity_",
+      "post_time": "2026-08-01T08:28:39.000Z",
+      "text": "南区城南町の一部で発生しておりました断水は解消しました。\n また南区富合町の一部で発生しておりました水圧低下も、解消いたしました。\n \n 断水が継続している市民の皆様にはご迷惑をおかけしますが、ご理解とご協力をお願いいたします。\n \n詳細はこちら↓\nhttps://t.co/aiYZ2BxUQi",
+      "url": "https://x.com/kumamotocity_/status/2083469947897049372",
       "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
+      "municipality": "熊本市",
       "content_filter": "RECENT_POSTS"
     }
   ],
