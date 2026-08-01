@@ -2881,6 +2881,13 @@ button:focus-visible {
   line-height: 1.5;
 }
 
+.disaster-social-search__example {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 .disaster-social-search__latest {
   margin: 0 0 20px;
   padding: 14px;

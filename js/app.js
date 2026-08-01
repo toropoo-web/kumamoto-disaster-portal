@@ -72,58 +72,25 @@
     scopeSummary:
       "水・避難所・シェルター・災害ボランティア・自治体支援情報など"
   };
-  var DISASTER_SOCIAL_LATEST_COUNT = 6;
-  var DISASTER_SOCIAL_CONTENT_EXCERPT_LENGTH = 120;
+  var X_CROSS_SEARCH_DESCRIPTION =
+    "23自治体のX投稿から、熊本地震関連情報を横断検索できます。";
+  var X_CROSS_SEARCH_EXAMPLE = "迷子猫　無料開放";
   var X_CROSS_SEARCH_HELP = {
     panelTitle: "X横断検索について",
-    description:
-      "X（旧Twitter）の投稿から、被災地に関する情報を検索します。",
-    targetPosters: [
-      "自治体",
-      "国",
-      "防災機関",
-      "企業",
-      "店舗",
-      "団体",
-      "個人"
-    ],
-    instruction: "探したい内容を入力してください",
+    description: "地域名・キーワードを入力して検索できます。",
     examples: [
-      "給水",
+      "迷子猫",
+      "迷子犬",
+      "車中泊",
+      "無料開放",
       "炊き出し",
       "支援物資",
-      "無料開放",
+      "給水",
+      "井戸水",
       "風呂",
       "シャワー",
-      "車中泊",
       "Wi-Fi",
-      "ペット",
-      "迷子"
-    ],
-    regionTitle: "地域指定",
-    regionDescription: "地域名を追加すると、地域に関する投稿を探せます。",
-    regionExamples: [
-      "八代市 給水",
-      "熊本市 風呂",
-      "宇城市 支援物資"
-    ],
-    currentTargets: [
-      "水、給水",
-      "支援物資",
-      "食料、炊き出し",
-      "入浴、風呂",
-      "車中泊",
-      "通信",
-      "ペット",
-      "暑さ対策"
-    ],
-    plannedTargets: [
-      "交通",
-      "停電",
-      "医療",
-      "営業情報",
-      "店舗支援",
-      "生活支援"
+      "避難所"
     ],
     notice: "X投稿情報です。公式情報と合わせて確認してください。"
   };
@@ -2976,33 +2943,6 @@
     resultsContainer.appendChild(list);
   }
 
-  function compareSocialEntriesByDateDesc(a, b) {
-    var dateA = parseDate(a.published_at || a.date || a.captured_at);
-    var dateB = parseDate(b.published_at || b.date || b.captured_at);
-    if (dateA && dateB) {
-      return dateB - dateA;
-    }
-    if (dateA) {
-      return -1;
-    }
-    if (dateB) {
-      return 1;
-    }
-    return 0;
-  }
-
-  function excerptSocialContent(text, maxLength) {
-    var cleaned = String(text || "").replace(/\s+/g, " ").trim();
-    if (!cleaned) {
-      return "";
-    }
-    var limit = maxLength || DISASTER_SOCIAL_CONTENT_EXCERPT_LENGTH;
-    if (cleaned.length <= limit) {
-      return cleaned;
-    }
-    return cleaned.slice(0, limit) + "…";
-  }
-
   function resolveSocialAuthorLabel(item, sourceMeta) {
     item = item || {};
     sourceMeta = sourceMeta || {};
@@ -3017,108 +2957,6 @@
       return item.source;
     }
     return "投稿者";
-  }
-
-  function isDisasterRelevantSocialEntry(item) {
-    var haystack = String((item && item.title) || "") + " " + String((item && item.content) || "");
-    haystack = haystack.replace(/\s+/g, " ").trim();
-    if (!haystack) {
-      return false;
-    }
-    var disasterTerms = [
-      "熊本地震", "令和8年熊本地震", "地震", "被災", "災害", "支援", "給水", "断水",
-      "炊き出し", "物資", "支援物資", "入浴", "風呂", "無料開放", "避難", "避難所",
-      "車中泊", "Wi-Fi", "充電", "電気", "氷", "ペット", "迷子", "復旧", "ボランティア", "井戸水"
-    ];
-    var noiseTerms = [
-      "アフィリエイト", "アマゾン", "Amazon", "楽天", "通販", "ゲーム紹介", "ゲーム実況",
-      "Steam", "PlayStation", "Switch", "任天堂", "攻略", "観光スポット", "旅行記", "ホテル予約"
-    ];
-    var disasterHit = disasterTerms.some(function (term) {
-      return haystack.indexOf(term) !== -1;
-    });
-    var noiseHit = noiseTerms.some(function (term) {
-      return haystack.indexOf(term) !== -1;
-    });
-    if (noiseHit && !disasterHit) {
-      return false;
-    }
-    return disasterHit;
-  }
-
-  function renderDisasterSocialLatest(container, entries, sourceLookup) {
-    if (!container || !entries || !entries.length) {
-      return;
-    }
-
-    var latestEntries = entries
-      .filter(isDisasterRelevantSocialEntry)
-      .slice()
-      .sort(compareSocialEntriesByDateDesc)
-      .slice(0, DISASTER_SOCIAL_LATEST_COUNT);
-
-    if (!latestEntries.length) {
-      return;
-    }
-
-    var section = createElement("section", "disaster-social-search__latest");
-    section.id = "disaster-social-search-latest";
-    section.setAttribute("aria-labelledby", "disaster-social-search-latest-title");
-
-    var title = createElement("h3", "disaster-social-search__latest-title", "最新情報");
-    title.id = "disaster-social-search-latest-title";
-    section.appendChild(title);
-    section.appendChild(createElement(
-      "p",
-      "disaster-social-search__latest-lead",
-      "直近のX投稿です。検索結果とは別に、現在の情報の動きを確認できます。"
-    ));
-
-    var list = createElement("ul", "disaster-social-search__latest-list");
-    latestEntries.forEach(function (item) {
-      var sourceMeta = sourceLookup[item.source] || {};
-      var li = createElement("li", "disaster-social-search__latest-item");
-      var meta = createElement("div", "disaster-social-search__latest-meta");
-
-      var datetime = formatDateTime(item.published_at || item.date);
-      if (datetime) {
-        meta.appendChild(createElement("time", "disaster-social-search__latest-date", datetime));
-      }
-
-      meta.appendChild(createElement(
-        "span",
-        "disaster-social-search__latest-author",
-        resolveSocialAuthorLabel(item, sourceMeta)
-      ));
-      li.appendChild(meta);
-
-      var excerpt = excerptSocialContent(item.content || item.title || "");
-      if (excerpt) {
-        li.appendChild(createElement("p", "disaster-social-search__latest-excerpt", excerpt));
-      }
-
-      var entryUrl = resolveSocialEntryUrl(item);
-      if (entryUrl) {
-        var link = createElement(
-          "a",
-          "disaster-social-search__latest-link disaster-social-search__post-link",
-          resolveSocialPostLinkLabel(item)
-        );
-        link.href = entryUrl;
-        link.target = "_blank";
-        link.rel = "noopener";
-        link.setAttribute(
-          "aria-label",
-          resolveSocialAuthorLabel(item, sourceMeta) + "の投稿を見る（外部リンク）"
-        );
-        li.appendChild(link);
-      }
-
-      list.appendChild(li);
-    });
-
-    section.appendChild(list);
-    container.appendChild(section);
   }
 
   function renderSearchHelp(container, config) {
@@ -3229,35 +3067,9 @@
       description: X_CROSS_SEARCH_HELP.description,
       sections: [
         {
-          heading: "対象投稿",
-          items: X_CROSS_SEARCH_HELP.targetPosters,
-          listStyle: "tags"
-        },
-        {
-          heading: "検索方法",
-          paragraphs: [X_CROSS_SEARCH_HELP.instruction]
-        },
-        {
-          heading: "入力例",
+          heading: "検索できる例",
           items: X_CROSS_SEARCH_HELP.examples,
           listStyle: "tags"
-        },
-        {
-          heading: X_CROSS_SEARCH_HELP.regionTitle,
-          paragraphs: [X_CROSS_SEARCH_HELP.regionDescription]
-        },
-        {
-          heading: "例",
-          items: X_CROSS_SEARCH_HELP.regionExamples,
-          listStyle: "tags"
-        },
-        {
-          heading: "検索対象（現在）",
-          items: X_CROSS_SEARCH_HELP.currentTargets
-        },
-        {
-          heading: "追加可能",
-          items: X_CROSS_SEARCH_HELP.plannedTargets
         }
       ],
       notice: X_CROSS_SEARCH_HELP.notice
@@ -3287,15 +3099,8 @@
     inner.appendChild(createElement(
       "p",
       "disaster-search__guide-text",
-      "熊本地震関連のX投稿を横断検索します。投稿者（自治体・企業・団体・個人）を問わず、" +
-        EVACUATION_ALERT_SEARCH_SCOPE.periodLabel + "・対象23自治体の投稿が対象です。"
+      X_CROSS_SEARCH_DESCRIPTION
     ));
-
-    renderDisasterSocialLatest(
-      inner,
-      (socialPayload.index && socialPayload.index.entries) || [],
-      sourceLookup
-    );
 
     var evacuationAlertRegionBlock = null;
     if (evacuationAlertMunicipalities.length) {
@@ -3339,7 +3144,7 @@
     regionInput.id = "disaster-social-search-region";
     regionInput.type = "search";
     regionInput.name = "region";
-    regionInput.placeholder = "例：八代市 / 霧島市 / 阿蘇市";
+    regionInput.placeholder = "例：八代市";
     regionInput.autocomplete = "off";
 
     var categoryLabel = createElement("label", "disaster-search__label", "カテゴリ・キーワード");
@@ -3348,7 +3153,7 @@
     categoryInput.id = "disaster-social-search-category";
     categoryInput.type = "search";
     categoryInput.name = "category";
-    categoryInput.placeholder = "例：給水 / 迷子犬 / 風呂 / 水";
+    categoryInput.placeholder = "例：" + X_CROSS_SEARCH_EXAMPLE;
     categoryInput.autocomplete = "off";
     categoryInput.setAttribute("list", "disaster-social-search-category-suggestions");
     var categoryDatalist = createElement("datalist", "disaster-social-search__datalist");
@@ -3451,6 +3256,11 @@
     form.appendChild(categoryLabel);
     form.appendChild(categoryInput);
     form.appendChild(categoryDatalist);
+    form.appendChild(createElement(
+      "p",
+      "disaster-social-search__example",
+      "例：" + X_CROSS_SEARCH_EXAMPLE
+    ));
     form.appendChild(button);
     inner.appendChild(form);
     inner.appendChild(resultsContainer);

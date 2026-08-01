@@ -21,6 +21,24 @@ const {
 } = require(path.join(ROOT, "monitor", "disaster-search-index-engine"));
 const { isXPostUrl, resolveSocialEntryUrl } = require(path.join(ROOT, "monitor", "disaster-social-url"));
 
+const EXPECTED_DESCRIPTION =
+  "23自治体のX投稿から、熊本地震関連情報を横断検索できます。";
+const EXPECTED_EXAMPLE = "迷子猫　無料開放";
+const EXPECTED_HELP_EXAMPLES = [
+  "迷子猫",
+  "迷子犬",
+  "車中泊",
+  "無料開放",
+  "炊き出し",
+  "支援物資",
+  "給水",
+  "井戸水",
+  "風呂",
+  "シャワー",
+  "Wi-Fi",
+  "避難所"
+];
+
 async function main() {
   const errors = [];
   const checks = [];
@@ -37,11 +55,13 @@ async function main() {
     { name: "official info note", pattern: /disaster-search__official-note/ },
     { name: "x cross search help", pattern: /X_CROSS_SEARCH_HELP/ },
     { name: "x cross search help ui", pattern: /disaster-social-search__help/ },
-    { name: "x cross search latest section", pattern: /disaster-social-search__latest/ },
-    { name: "render latest posts", pattern: /renderDisasterSocialLatest/ },
-    { name: "latest info title", pattern: /最新情報/ }
+    { name: "x cross search description", pattern: /X_CROSS_SEARCH_DESCRIPTION/ },
+    { name: "x cross search example", pattern: /X_CROSS_SEARCH_EXAMPLE/ },
+    { name: "x cross search example ui", pattern: /disaster-social-search__example/ },
+    { name: "latest section removed", pattern: /renderDisasterSocialLatest/, invert: true },
+    { name: "latest info title removed", pattern: /disaster-social-search-latest/, invert: true }
   ].forEach(function (check) {
-    const pass = check.pattern.test(appJs);
+    const pass = check.invert ? !check.pattern.test(appJs) : check.pattern.test(appJs);
     checks.push({ check: "JS: " + check.name, pass: pass });
     if (!pass) {
       errors.push("JS check failed: " + check.name);
@@ -51,7 +71,7 @@ async function main() {
   [
     { name: "official info promo styles", pattern: /\.portal-quick-access__lead/ },
     { name: "x cross search help styles", pattern: /\.disaster-social-search__help-trigger/ },
-    { name: "x cross search latest styles", pattern: /\.disaster-social-search__latest-item/ },
+    { name: "x cross search example styles", pattern: /\.disaster-social-search__example/ },
     { name: "official info note styles", pattern: /\.disaster-search__official-note/ }
   ].forEach(function (check) {
     const pass = check.pattern.test(css);
@@ -98,7 +118,10 @@ async function main() {
   const browser = await chromium.launch();
   const page = await browser.newPage();
   try {
-    await page.goto(SERVE_URL, { waitUntil: "networkidle", timeout: 90000 });
+    await page.goto(SERVE_URL + "?ui-validate=" + Date.now(), {
+      waitUntil: "networkidle",
+      timeout: 90000
+    });
     await page.waitForSelector("#portal-quick-access-title", { timeout: 30000 });
     const promoTitle = await page.locator("#portal-quick-access-title").innerText();
     checks.push({
@@ -112,31 +135,59 @@ async function main() {
     await page.waitForSelector("#disaster-social-search", { timeout: 30000 });
     await page.locator("#disaster-social-search").scrollIntoViewIfNeeded();
 
-    const latestCount = await page.locator("#disaster-social-search-latest .disaster-social-search__latest-item").count();
-    const latestLinkHref = latestCount
-      ? await page.locator("#disaster-social-search-latest .disaster-social-search__post-link").first().getAttribute("href")
-      : "";
+    const latestCount = await page.locator("#disaster-social-search-latest").count();
     checks.push({
-      check: "browser: latest posts visible",
-      pass: latestCount > 0 && isXPostUrl(latestLinkHref),
-      latest_count: latestCount,
-      href: latestLinkHref || null
+      check: "browser: latest posts removed",
+      pass: latestCount === 0,
+      latest_section_count: latestCount
     });
-    if (!latestCount || !isXPostUrl(latestLinkHref)) {
-      errors.push("latest X posts must be visible with valid x.com URLs");
+    if (latestCount !== 0) {
+      errors.push("latest posts section must not be displayed");
     }
 
-    await page.locator(".disaster-social-search__help-trigger").click();
-    const helpText = await page.locator(".disaster-social-search__help-text").innerText();
-    const helpExampleCount = await page.locator(".disaster-social-search__help-example").count();
+    const descriptionText = await page
+      .locator("#disaster-social-search .disaster-search__guide-text")
+      .innerText();
     checks.push({
-      check: "browser: search help visible",
-      pass: helpText === "探したい内容を入力してください" && helpExampleCount >= 5,
-      help_text: helpText,
-      example_count: helpExampleCount
+      check: "browser: description text",
+      pass: descriptionText === EXPECTED_DESCRIPTION,
+      description: descriptionText
     });
-    if (helpText !== "探したい内容を入力してください" || helpExampleCount < 5) {
-      errors.push("search help panel must show instruction and examples");
+    if (descriptionText !== EXPECTED_DESCRIPTION) {
+      errors.push("description text must be " + EXPECTED_DESCRIPTION);
+    }
+
+    await page.waitForSelector(
+      "#disaster-social-search .disaster-social-search__example",
+      { timeout: 30000 }
+    );
+    const exampleText = await page
+      .locator("#disaster-social-search .disaster-social-search__example")
+      .innerText();
+    checks.push({
+      check: "browser: search example visible",
+      pass: exampleText === "例：" + EXPECTED_EXAMPLE,
+      example: exampleText
+    });
+    if (exampleText !== "例：" + EXPECTED_EXAMPLE) {
+      errors.push("search example must show 例：" + EXPECTED_EXAMPLE);
+    }
+
+    await page.locator("#disaster-social-search .disaster-social-search__help-trigger").click();
+    const helpExampleTexts = await page
+      .locator(".disaster-social-search__help-example")
+      .allInnerTexts();
+    const helpExamplesOk = EXPECTED_HELP_EXAMPLES.every(function (example) {
+      return helpExampleTexts.indexOf(example) !== -1;
+    });
+    checks.push({
+      check: "browser: search help examples",
+      pass: helpExamplesOk && helpExampleTexts.length >= EXPECTED_HELP_EXAMPLES.length,
+      example_count: helpExampleTexts.length,
+      examples: helpExampleTexts
+    });
+    if (!helpExamplesOk) {
+      errors.push("search help must list all searchable examples");
     }
 
     await page.locator("#disaster-social-search-region").fill("八代市");
@@ -174,8 +225,10 @@ async function main() {
   }
 
   const result = {
+    PHASE_RESULT: errors.length === 0 ? "PASS" : "FAIL",
     DISASTER_X_CROSS_SEARCH_UI_IMPROVEMENT_VALIDATION: errors.length === 0 ? "PASS" : "FAIL",
     x_count: entries.length,
+    keyword_count_給水: keywordResults.length,
     checks: checks,
     errors: errors
   };
