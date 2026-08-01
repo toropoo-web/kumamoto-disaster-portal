@@ -38,7 +38,7 @@
     ],
     "since_date": "2026-07-28"
   },
-  "generated_at": "2026-08-01T12:33:46.744Z",
+  "generated_at": "2026-08-01T12:55:42.653Z",
   "AUTO_PUBLISH": false,
   "AUTO_APPLY": false,
   "STOP_AT": "REVIEW_QUEUE",
@@ -49,52 +49,52 @@
     "error_count": 0
   },
   "counts": {
-    "inbox_item_count": 4291,
-    "review_queue_item_count": 4291,
-    "apply_queue_item_count": 4291,
-    "index_entry_count": 4291,
+    "inbox_item_count": 4873,
+    "review_queue_item_count": 4873,
+    "apply_queue_item_count": 4873,
+    "index_entry_count": 4873,
     "source_count": 8,
-    "incomplete_inbox_count": 4291,
-    "incomplete_index_count": 4291,
-    "incomplete_review_count": 4291,
+    "incomplete_inbox_count": 4873,
+    "incomplete_index_count": 4873,
+    "incomplete_review_count": 4873,
     "duplicate_review_count": 0,
     "pending_review_count": 0,
-    "approved_review_count": 4291
+    "approved_review_count": 4873
   },
   "review_status_summary": {
     "PENDING": 0,
-    "APPROVED": 4291,
+    "APPROVED": 4873,
     "REJECTED": 0,
     "DUPLICATE": 0
   },
   "prefecture_summary": {
-    "熊本県": 4074,
-    "鹿児島県": 217
+    "熊本県": 4645,
+    "鹿児島県": 228
   },
   "prefecture_detail": {
     "熊本県": {
-      "entry_count": 4074,
-      "incomplete_count": 4074,
+      "entry_count": 4645,
+      "incomplete_count": 4645,
       "duplicate_count": 0,
       "category_counts": {
-        "OTHER": 2320,
-        "WATER": 988,
-        "SUPPLIES": 123,
-        "VOLUNTEER": 171,
-        "CHARGING": 357,
-        "FOOD": 115
+        "OTHER": 2732,
+        "WATER": 1104,
+        "SUPPLIES": 130,
+        "VOLUNTEER": 178,
+        "CHARGING": 382,
+        "FOOD": 119
       }
     },
     "鹿児島県": {
-      "entry_count": 217,
-      "incomplete_count": 217,
+      "entry_count": 228,
+      "incomplete_count": 228,
       "duplicate_count": 0,
       "category_counts": {
-        "OTHER": 138,
-        "WATER": 75,
+        "OTHER": 145,
+        "WATER": 78,
         "SUPPLIES": 2,
         "CHARGING": 1,
-        "FOOD": 1
+        "FOOD": 2
       }
     }
   },
@@ -106,9 +106,9 @@
   },
   "last_updated": {
     "inbox": null,
-    "review_queue": "2026-08-01T12:33:44.495Z",
-    "apply_queue": "2026-08-01T12:33:44.544Z",
-    "index": "2026-08-01T12:33:44.617Z"
+    "review_queue": "2026-08-01T12:55:38.709Z",
+    "apply_queue": "2026-08-01T12:55:38.805Z",
+    "index": "2026-08-01T12:55:38.972Z"
   },
   "incomplete_items": [
     {
@@ -36306,6 +36306,5120 @@
         "district"
       ],
       "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2082086860051116250"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531703470141784",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531703470141784"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531699930149353",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531699930149353"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531698990653880",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531698990653880"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531697161904519",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531697161904519"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531692632101217",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531692632101217"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531684902019163",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531684902019163"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531680670007616",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531680670007616"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531679420088569",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531679420088569"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531676974776724",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531676974776724"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531674042925242",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531674042925242"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531668380663960",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531668380663960"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531667130769804",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531667130769804"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531663343255912",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531663343255912"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531661799743783",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531661799743783"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531660394643614",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531660394643614"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531656850550993",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531656850550993"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531651922235717",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531651922235717"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531645538484509",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531645538484509"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531636839432325",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531636839432325"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531632796143896",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531632796143896"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531636638134647",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531636638134647"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531622138384450",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531622138384450"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531620762714378",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531620762714378"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531617965105585",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531617965105585"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531610360869095",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531610360869095"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531609249341651",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531609249341651"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531607772918023",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531607772918023"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531605608636448",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531605608636448"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531605050806712",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531605050806712"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531604044161382",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531604044161382"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531603234656746",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531603234656746"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531601556975798",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531601556975798"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531599774412800",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531599774412800"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531599677882595",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531599677882595"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531596498616338",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531596498616338"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531595739505089",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531595739505089"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531593617154520",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531593617154520"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531594615357710",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531594615357710"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531592241393982",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531592241393982"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531592195289491",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531592195289491"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531590513406239",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531590513406239"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531588525298084",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531588525298084"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531587988439262",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531587988439262"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531586642010536",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531586642010536"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531586063262112",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531586063262112"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531579134205994",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531579134205994"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531577066398084",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531577066398084"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531577628426281",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531577628426281"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531573744594959",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531573744594959"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531571093770379",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531571093770379"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531570464624905",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531570464624905"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531565762765112",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531565762765112"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531561845309598",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531561845309598"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531559299342704",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531559299342704"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531558187577523",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531558187577523"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531557336428896",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531557336428896"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531550499778766",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531550499778766"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531548230574316",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531548230574316"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531542211760407",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531542211760407"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531538474692894",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531538474692894"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531536356565202",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531536356565202"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531535651934648",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531535651934648"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531532892012804",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531532892012804"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531532015415778",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531532015415778"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531525178753507",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531525178753507"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531522817269963",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531522817269963"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531522326532292",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531522326532292"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531521387049113",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531521387049113"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531520921448495",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531520921448495"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531520875360289",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531520875360289"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531520690806813",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531520690806813"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531520497606966",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531520497606966"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531518811770889",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531518811770889"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531516337070457",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531516337070457"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531514126729530",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531514126729530"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531513912815820",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531513912815820"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531497169158308",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531497169158308"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531496112239041",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531496112239041"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531494073770119",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531494073770119"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531484082958729",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531484082958729"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531482153554158",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531482153554158"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531479209103787",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531479209103787"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531477682434310",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531477682434310"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531477581787411",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531477581787411"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531476432306382",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531476432306382"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531474670936371",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531474670936371"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531473316180324",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531473316180324"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531472162767225",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531472162767225"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531470380179928",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531470380179928"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531470191423654",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531470191423654"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531466856894958",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531466856894958"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531461639258484",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531461639258484"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531457612722230",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531457612722230"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531452973789531",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531452973789531"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531454471135285",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531454471135285"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531446942368087",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531446942368087"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531441657520488",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531441657520488"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531438985736646",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531438985736646"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531436959924330",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531436959924330"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531433583530129",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531433583530129"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531431494693341",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531431494693341"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531423235928092",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531423235928092"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531420165918827",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531420165918827"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531420497264879",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531420497264879"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531416105812344",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531416105812344"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531415388557454",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531415388557454"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531410892370376",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531410892370376"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531406014287937",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531406014287937"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531399127277734",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531399127277734"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531397080481873",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531397080481873"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531396682043440",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531396682043440"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531395054682363",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531395054682363"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531390776406423",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531390776406423"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531388779966953",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531388779966953"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531387995623628",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531387995623628"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531381414785161",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531381414785161"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531381083377720",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531381083377720"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531363291164833",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531363291164833"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531362590749146",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531362590749146"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531351681048721",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531351681048721"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531351601664147",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531351601664147"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531350335013238",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531350335013238"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531349642616941",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531349642616941"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531348988571657",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531348988571657"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531346069307898",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531346069307898"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531344043561359",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531344043561359"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531343145930871",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531343145930871"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531334811865140",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531334811865140"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531332353970588",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531332353970588"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531324783272356",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531324783272356"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531324779106513",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531324779106513"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531321868255290",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531321868255290"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531321574654311",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531321574654311"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531319620075671",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531319620075671"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531318022094891",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531318022094891"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531312074478074",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531312074478074"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531310417719609",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531310417719609"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531307842458006",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531307842458006"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531299810377846",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531299810377846"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531291455291700",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531291455291700"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531288951320728",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531288951320728"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531286275301562",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531286275301562"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531283431612586",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531283431612586"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531277542797660",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531277542797660"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531273113583896",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531273113583896"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531266033594492",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531266033594492"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531258098024580",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531258098024580"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531255438832035",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531255438832035"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531252821569609",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531252821569609"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531250720235693",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531250720235693"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531245544480828",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531245544480828"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531242461630796",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531242461630796"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531240783942100",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531240783942100"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531238602944539",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531238602944539"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531238527385607",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531238527385607"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531232303079799",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531232303079799"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531232772792678",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531232772792678"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531216234721281",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531216234721281"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531214351393276",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531214351393276"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531217211949254",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531217211949254"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531210186457221",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531210186457221"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531203966087386",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531203966087386"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531203135873185",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531203135873185"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531201881801064",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531201881801064"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531197884645623",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531197884645623"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531196479476045",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531196479476045"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531193421885848",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531193421885848"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531195141455934",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531195141455934"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531193384095935",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531193384095935"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531188862701817",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531188862701817"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531182755426540",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531182755426540"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531180302012787",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531180302012787"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531179643605334",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531179643605334"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531175688294546",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531175688294546"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531177793904768",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531177793904768"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531174643986886",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531174643986886"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531171649274153",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531171649274153"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531173209247928",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531173209247928"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531163797209575",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531163797209575"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531159649321244",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531159649321244"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531151554277481",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531151554277481"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531151461982700",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531151461982700"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531150212075547",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531150212075547"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531148484091956",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531148484091956"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531143736070615",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531143736070615"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531142654017728",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531142654017728"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531141655793929",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531141655793929"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531141471211702",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531141471211702"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531134273786081",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531134273786081"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531131169968252",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531131169968252"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531130914148668",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531130914148668"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531125952323770",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531125952323770"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531123897033038",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531123897033038"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531119438524774",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531119438524774"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531116875809246",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531116875809246"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531115298787661",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531115298787661"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531114787094764",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531114787094764"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531114225037502",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531114225037502"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531111154798760",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531111154798760"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531104326418481",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531104326418481"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531102107685093",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531102107685093"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531097254809736",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531097254809736"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531099591094446",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531099591094446"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531092330692974",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531092330692974"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531084923638178",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531084923638178"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531081140334858",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531081140334858"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531079898861778",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531079898861778"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531070914617845",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531070914617845"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531067118768458",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531067118768458"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531066154033333",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531066154033333"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531064853811666",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531064853811666"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531057513820349",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531057513820349"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531046721863926",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531046721863926"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531038949826592",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531038949826592"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531030234042816",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531030234042816"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531026685702623",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531026685702623"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531026425643468",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531026425643468"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531024680800615",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531024680800615"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531024089403689",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531024089403689"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531022218793356",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531022218793356"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531015088435418",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531015088435418"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531013456900548",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531013456900548"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531013419049038",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531013419049038"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531009807839373",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531009807839373"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531011779186729",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531011779186729"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531001888989312",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531001888989312"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531001649893426",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531001649893426"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083531000664281204",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083531000664281204"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530998311198949",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530998311198949"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530997958877309",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530997958877309"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530997254246841",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530997254246841"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530992489476180",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530992489476180"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530989230547307",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530989230547307"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530988722987204",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530988722987204"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530987468894390",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530987468894390"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530984809754975",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530984809754975"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530979432657106",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530979432657106"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530978585362715",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530978585362715"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530969022374224",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530969022374224"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530968166711711",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530968166711711"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530959677485089",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530959677485089"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530959551611296",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530959551611296"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530959035768929",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530959035768929"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530958452761005",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530958452761005"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530957748125808",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530957748125808"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530944573751757",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530944573751757"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530943747526820",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530943747526820"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530943118381528",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530943118381528"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530931311423918",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530931311423918"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530931030437954",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530931030437954"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530926383083632",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530926383083632"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530925242294470",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530925242294470"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530922285215899",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530922285215899"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530918778859685",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530918778859685"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530917142995006",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530917142995006"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530916664955224",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530916664955224"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530912902619520",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530912902619520"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530914467053830",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530914467053830"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530906850189641",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530906850189641"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530902848876649",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530902848876649"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530901963608150",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530901963608150"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530901695144065",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530901695144065"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530900332335604",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530900332335604"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530898147094875",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530898147094875"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530893113876500",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530893113876500"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530890341499171",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530890341499171"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530888936386629",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530888936386629"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530888609190008",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530888609190008"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530887866765815",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530887866765815"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530883223691283",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530883223691283"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530882640658585",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530882640658585"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530877670498789",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530877670498789"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530869718061084",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530869718061084"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530862235447564",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530862235447564"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530855226790216",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530855226790216"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530853477675477",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530853477675477"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530851984556105",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530851984556105"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530851380551948",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530851380551948"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530849333674472",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530849333674472"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530845827252717",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530845827252717"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530848100589613",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530848100589613"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530845747302565",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530845747302565"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530845475021093",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530845475021093"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530843226832971",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530843226832971"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530841993736662",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530841993736662"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530828358005044",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530828358005044"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530815309521080",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530815309521080"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530813757641023",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530813757641023"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530808548331860",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530808548331860"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530806941868473",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530806941868473"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530806702809435",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530806702809435"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530804098117692",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530804098117692"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530800449175678",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530800449175678"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530798645588440",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530798645588440"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530794921025950",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530794921025950"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530793977348450",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530793977348450"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530792198898135",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530792198898135"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530791016108155",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530791016108155"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530779775410278",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530779775410278"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530772959609305",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530772959609305"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530768874450972",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530768874450972"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530764495556923",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530764495556923"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530764470366457",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530764470366457"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530760729002381",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530760729002381"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530755217739850",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530755217739850"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530752525045975",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530752525045975"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530748200620153",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530748200620153"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530749429567916",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530749429567916"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530744924963316",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530744924963316"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530743394046298",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530743394046298"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530743201075529",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530743201075529"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530739744920037",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530739744920037"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530735215108331",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530735215108331"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530736725000434",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530736725000434"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530735110222027",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530735110222027"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530730341319120",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530730341319120"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530729041146014",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530729041146014"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530726780354710",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530726780354710"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530724376781039",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530724376781039"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530723135455391",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530723135455391"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530716428849620",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530716428849620"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530713010454681",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530713010454681"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530711710257605",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530711710257605"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530707478118649",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530707478118649"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530705901142384",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530705901142384"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530705309671861",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530705309671861"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530699827453959",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530699827453959"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530689560117359",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530689560117359"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530679338631488",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530679338631488"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530661722546195",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530661722546195"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530643972214904",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530643972214904"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530606366060900",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530606366060900"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530602943524930",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530602943524930"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530593284067755",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530593284067755"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530593707655602",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530593707655602"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530594072584615",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530594072584615"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530586443186399",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530586443186399"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530398198575474",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530398198575474"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530381744357510",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530381744357510"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530358449140048",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530358449140048"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530339566436403",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530339566436403"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530319580508532",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530319580508532"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530315348496512",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530315348496512"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530312488046970",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530312488046970"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530302224486674",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530302224486674"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530302090281182",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530302090281182"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530256640888852",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530256640888852"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530241306415567",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530241306415567"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530232179613816",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530232179613816"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530222151053494",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530222151053494"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530218757861716",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530218757861716"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530200516595718",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530200516595718"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530173128040853",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530173128040853"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530170389144008",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530170389144008"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530152458555770",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530152458555770"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530125094879571",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530125094879571"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530115632484860",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530115632484860"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530098997874955",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530098997874955"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530072682876974",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530072682876974"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530039308714410",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530039308714410"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083530039308726751",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083530039308726751"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529998535938422",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529998535938422"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529973261054252",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529973261054252"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529938234474567",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529938234474567"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529927819989429",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529927819989429"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529895171551679",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529895171551679"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529877937144207",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529877937144207"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529863173222827",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529863173222827"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529862711787731",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529862711787731"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529854314848298",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529854314848298"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529811906170984",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529811906170984"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529757413761344",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529757413761344"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529742205251792",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529742205251792"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529741349601374",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529741349601374"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529727441256847",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529727441256847"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529727151849859",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529727151849859"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529700442575054",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529700442575054"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529678925742187",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529678925742187"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529674676953188",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529674676953188"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529661330694253",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529661330694253"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529657505235123",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529657505235123"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529656930893862",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529656930893862"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529645740499097",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529645740499097"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529610328002846",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529610328002846"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529607614222359",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529607614222359"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529576706351536",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529576706351536"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529554552115216",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529554552115216"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529503868072271",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529503868072271"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529462138995035",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529462138995035"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529426042851769",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529426042851769"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529401598378423",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529401598378423"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529370191450576",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529370191450576"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529352361423153",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529352361423153"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529343977009461",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529343977009461"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529340491595984",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529340491595984"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529333583589884",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529333583589884"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529310854685160",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529310854685160"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529307725721814",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529307725721814"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529291330097168",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529291330097168"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529281553232079",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529281553232079"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529274724888704",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529274724888704"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529259600277757",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529259600277757"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529258690068721",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529258690068721"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529202251567207",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529202251567207"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529187542135130",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529187542135130"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529179983990848",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529179983990848"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529172027097345",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529172027097345"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529161931653564",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529161931653564"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529154352578743",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529154352578743"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529131996889500",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529131996889500"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529122244956657",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529122244956657"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529117711077446",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529117711077446"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529107867107692",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529107867107692"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529089244405902",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529089244405902"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529072630800700",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529072630800700"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529059464511865",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529059464511865"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529017622479188",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529017622479188"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083529009015758950",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083529009015758950"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528981811524000",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528981811524000"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528982281212406",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528982281212406"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528959376187445",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528959376187445"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528948454166637",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528948454166637"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528934956863539",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528934956863539"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528927692329372",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528927692329372"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528918083272999",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528918083272999"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528902241304949",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528902241304949"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528877822075123",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528877822075123"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528838320160794",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528838320160794"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528825154257297",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528825154257297"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528809412989148",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528809412989148"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528808037269594",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528808037269594"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528796645536010",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528796645536010"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528789771051362",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528789771051362"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528790857388302",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528790857388302"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528737300328634",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528737300328634"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528713971626106",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528713971626106"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528685852950880",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528685852950880"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528684733096016",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528684733096016"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528684133347783",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528684133347783"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528681117651083",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528681117651083"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528666206851270",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528666206851270"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528643624804659",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528643624804659"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528630442053979",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528630442053979"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528609122381844",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528609122381844"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528604517114127",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528604517114127"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528594970833292",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528594970833292"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528569154949314",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528569154949314"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528556576194609",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528556576194609"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528539052339623",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528539052339623"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528538037399960",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528538037399960"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528532479938661",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528532479938661"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528525076742214",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528525076742214"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528505787318411",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528505787318411"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528497293910515",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528497293910515"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528482349563990",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528482349563990"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528479967215796",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528479967215796"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528477299589414",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528477299589414"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528429379756288",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528429379756288"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528411503575214",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528411503575214"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528408206811282",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528408206811282"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528386216067117",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528386216067117"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528375579410938",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528375579410938"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528357917204953",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528357917204953"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528348404445274",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528348404445274"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528352112251331",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528352112251331"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528349948014602",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528349948014602"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528298769031364",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528298769031364"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528290904752283",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528290904752283"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528287738077481",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528287738077481"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528282528735637",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528282528735637"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528279131312496",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528279131312496"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528269144731953",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528269144731953"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528194121224662",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528194121224662"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528189855650300",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528189855650300"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528184730136981",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528184730136981"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528171002208689",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528171002208689"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528130552324265",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528130552324265"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528128442540218",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528128442540218"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528065762664618",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528065762664618"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083528038416105808",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083528038416105808"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527963753283669",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527963753283669"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527950977413228",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527950977413228"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527948330819625",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527948330819625"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527943003820091",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527943003820091"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527937190686726",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527937190686726"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527932556017670",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527932556017670"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527874901090781",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527874901090781"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527869234360608",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527869234360608"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527864234967509",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527864234967509"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527808316567606",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527808316567606"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527808102613089",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527808102613089"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527799097475174",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527799097475174"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527797801423107",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527797801423107"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527784811692222",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527784811692222"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527770978791831",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527770978791831"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527760220389640",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527760220389640"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527751466893815",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527751466893815"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527744391127498",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527744391127498"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527741069304128",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527741069304128"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527734106665441",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527734106665441"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527735964819480",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527735964819480"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527729815884228",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527729815884228"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527707179340250",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527707179340250"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527658848276947",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527658848276947"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527648102531316",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527648102531316"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527623108600082",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527623108600082"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527613033988282",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527613033988282"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527584730710397",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527584730710397"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527565722230862",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527565722230862"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527544041799731",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527544041799731"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527490086285726",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527490086285726"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527467378307146",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527467378307146"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527455860830500",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527455860830500"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527447342207143",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527447342207143"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527419584197058",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527419584197058"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527415226114053",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527415226114053"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527389649527041",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527389649527041"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527373044301826",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527373044301826"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527328798548446",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527328798548446"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527312444629194",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527312444629194"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527247026401521",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527247026401521"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527243842605061",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527243842605061"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527241594724631",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527241594724631"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527213216080266",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527213216080266"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527196782841979",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527196782841979"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527194836361504",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527194836361504"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527174729146720",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527174729146720"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527161894633581",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527161894633581"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527144710533622",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527144710533622"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527133297795563",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527133297795563"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527091555914010",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527091555914010"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527058802794971",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527058802794971"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527052804976887",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527052804976887"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527048338014376",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527048338014376"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527030977798395",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527030977798395"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527015018221721",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527015018221721"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083527003643482339",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083527003643482339"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526996198642160",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526996198642160"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526950581063864",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526950581063864"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526931614671187",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526931614671187"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526912488653091",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526912488653091"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526912379343157",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526912379343157"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526909343006760",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526909343006760"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526885594787938",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526885594787938"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526879286530379",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526879286530379"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526873066148205",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526873066148205"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526866141667496",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526866141667496"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526844100305294",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526844100305294"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526814220308580",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526814220308580"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526810923643245",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526810923643245"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526810231546229",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526810231546229"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526792443212064",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526792443212064"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526790296072341",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526790296072341"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526770964447598",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526770964447598"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526769475563902",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526769475563902"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526734750924897",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526734750924897"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526734306287702",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526734306287702"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526725741514769",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526725741514769"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526676592665061",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526676592665061"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526658934599791",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526658934599791"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526662231404850",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526662231404850"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526650575380670",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526650575380670"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526644380405904",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526644380405904"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526607512416596",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526607512416596"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526581843263722",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526581843263722"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526575384072578",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526575384072578"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526569843470516",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526569843470516"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526561509298456",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526561509298456"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526551040332152",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526551040332152"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526546258571348",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526546258571348"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526528735007211",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526528735007211"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526517733327311",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526517733327311"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526519121682929",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526519121682929"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526496048787669",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526496048787669"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526497739169804",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526497739169804"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526484367708451",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526484367708451"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526480999686429",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526480999686429"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526465644016050",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526465644016050"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526443871649850",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526443871649850"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526410099134925",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526410099134925"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526410426261903",
+      "review_note": "",
+      "missing_fields": [
+        "municipality",
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526410426261903"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083526382207074530",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083526382207074530"
     }
   ]
 }

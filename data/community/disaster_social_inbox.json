@@ -4,18 +4,17 @@
   "AUTO_PUBLISH": false,
   "acquisition_mode": "SNS_SEARCH_CROSS_FETCH",
   "description": "SNS横断検索Inbox（本番運用）",
-  "last_fetched_at": "2026-08-01T12:39:53.347Z",
+  "last_fetched_at": "2026-08-01T12:55:38.430Z",
   "fetch_summary": {
     "since_date": "2026-07-28",
     "platforms": {
       "X": {
         "feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts-cross-search.json",
         "source_post_count": 4873,
-        "inbox_item_count": 4873
+        "inbox_item_count": 2547
       }
     },
     "municipality_summary": {
-      "UNKNOWN": 2326,
       "熊本市": 367,
       "八代市": 482,
       "宇城市": 312,
@@ -41,12 +40,12 @@
       "菊陽町": 11
     },
     "category_summary": {
-      "OTHER": 2877,
-      "WATER": 1182,
-      "SUPPLIES": 132,
-      "VOLUNTEER": 178,
-      "CHARGING": 383,
-      "FOOD": 121
+      "OTHER": 1355,
+      "WATER": 613,
+      "CHARGING": 331,
+      "VOLUNTEER": 155,
+      "SUPPLIES": 51,
+      "FOOD": 42
     }
   },
   "items": [
