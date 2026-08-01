@@ -29,6 +29,17 @@ function main() {
   if (!/posts-cross-search\.json/.test(fetchJs)) {
     errors.push("portal must use posts-cross-search.json");
   }
+  checks.push({
+    check: "portal applies 23-municipality scope at acquisition",
+    pass: /matchesMunicipalityScope/.test(fetchJs)
+  });
+  if (!/matchesMunicipalityScope/.test(fetchJs)) {
+    errors.push("portal must apply 23-municipality scope before index save");
+  }
+  checks.push({
+    check: "portal does not use registered official feed for cross-search",
+    pass: !/DEFAULT_OFFICIAL_X_FEED_URL[\s\S]*fetchXInboxItems/.test(fetchJs)
+  });
 
   const workflow = fs.readFileSync(
     path.join(ROOT, ".github", "workflows", "disaster-social-inbox.yml"),
@@ -88,7 +99,9 @@ function main() {
       mode: "SNS_SEARCH_CROSS_FETCH",
       feed_url: DEFAULT_X_CROSS_SEARCH_FEED_URL,
       since_date: SNS_FETCH_SINCE_DATE,
+      municipality_scope_count: 23,
       sender_restriction: false,
+      keyword_exclusion_at_acquisition: false,
       category_exclusion_at_acquisition: false,
       ai_exclusion: false
     },

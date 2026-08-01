@@ -234,12 +234,26 @@ function isActivePost(post) {
   return post && (!post.status || post.status === "ACTIVE");
 }
 
+function matchesMunicipalityScope(post, scopeMunicipalities) {
+  const municipality = resolveMunicipalityFromPost(post, scopeMunicipalities);
+  if (municipality && isInCommunityScope(municipality)) {
+    return true;
+  }
+  const regions = Array.isArray(post.regions) ? post.regions : [];
+  return regions.some(function (region) {
+    return isInCommunityScope(region);
+  });
+}
+
 function xPostToInboxItem(post, index, scopeMunicipalities) {
-  const regionMeta = resolvePostRegionMetadata(post, scopeMunicipalities);
   const postDate = String(post.postedAt || post.post_time || post.published_at || "").slice(0, 10);
   if (!isOnOrAfterSnsFetchSinceDate(postDate)) {
     return null;
   }
+  if (!matchesMunicipalityScope(post, scopeMunicipalities)) {
+    return null;
+  }
+  const regionMeta = resolvePostRegionMetadata(post, scopeMunicipalities);
   const text = getPostText(post);
   if (!text) {
     return null;
@@ -367,5 +381,6 @@ module.exports = {
   dedupeInboxItems,
   resolveMunicipalityFromPost,
   resolvePostRegionMetadata,
+  matchesMunicipalityScope,
   resolveCommunityCategory
 };
