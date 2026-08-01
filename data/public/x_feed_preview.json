@@ -1,6 +1,6 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-08-01T20:01:48.147Z",
+  "synced_at": "2026-08-01T21:11:19.211Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
@@ -8,9 +8,9 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-08-01T14:10:24.000Z",
-      "text": "【給水場所等のマップ】\n給水場所等の位置関係は以下のリンクから確認できます。\nhttps://t.co/Obkvuky3RA",
-      "url": "https://x.com/yatsushiro0801/status/2083555952394137896",
+      "post_time": "2026-08-01T14:28:38.000Z",
+      "text": "【避難所開設情報　８月１日　２１：００現在】\n　現在、開設している避難所の一覧を公表します。\n詳しくは、画像を確認ください。 https://t.co/toiCVnUmPT",
+      "url": "https://x.com/yatsushiro0801/status/2083560539851288731",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
@@ -52,6 +52,17 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
+      "post_time": "2026-08-01T14:10:24.000Z",
+      "text": "【給水場所等のマップ】\n給水場所等の位置関係は以下のリンクから確認できます。\nhttps://t.co/Obkvuky3RA",
+      "url": "https://x.com/yatsushiro0801/status/2083555952394137896",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "八代市",
+      "content_filter": "RECENT_POSTS"
+    },
+    {
+      "source_id": "SRC-MUN-KM005",
+      "account_name": "八代市公式X",
+      "account_handle": "yatsushiro0801",
       "post_time": "2026-08-01T14:09:43.000Z",
       "text": "【応急給水活動について】\nその3\n時間　７：００～１９：００\n場所\n・第二中学校\n・代陽コミュニティセンター\n・八代小学校\n・八千把コミュニティセンター\n・太田郷コミュニティセンター\n・昭和コミュニティセンター\n・鏡コミュニティセンター\n・千丁コミュニティセンター\n・泉運動公園\n以上です",
       "url": "https://x.com/yatsushiro0801/status/2083555779551154214",
@@ -80,15 +91,6 @@
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
-    },
-    {
-      "source_id": "SRC-NAT-002",
-      "account_name": "内閣府防災",
-      "account_handle": "CAO_BOUSAI",
-      "post_time": "2026-08-01T12:55:07.000Z",
-      "text": "【地震情報】01日21時47分頃、熊本県熊本で震度5弱の地震がありました。今後の情報に注意してください。強い揺れのあった地域の皆さんは落ち着いて行動してください。",
-      "url": "https://x.com/CAO_BOUSAI/status/2083537006798455282",
-      "source_type": "GOVERNMENT"
     }
   ],
   "sync_status": "FRESH"
