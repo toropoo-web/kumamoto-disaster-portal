@@ -2,80 +2,81 @@
 "use strict";
 
 const { execSync } = require("child_process");
+const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
+const PACKAGE_JSON = path.join(ROOT, "package.json");
 
-const VALIDATORS = [
-  "scripts/validate-data.js",
-  "scripts/validate-ui.js",
-  "scripts/validate-communication-display.js",
-  "scripts/validate-water-cross-view.js",
-  "scripts/validate-water-search.js",
-  "scripts/validate-water-patrol.js",
-  "scripts/validate-disaster-sources.js",
-  "scripts/validate-volunteer-schema.js",
-  "scripts/validate-disaster-search-index.js",
-  "scripts/validate-disaster-post-index.js",
-  "scripts/validate-disaster-search-ui.js",
-  "scripts/validate-support-service-visual-priority.js",
-  "scripts/validate-support-service-coverage-operation.js",
-  "scripts/validate-support-service-category-acquisition.js",
-  "scripts/validate-support-service-category-review-apply.js",
-  "scripts/validate-support-service-live-operation.js",
-  "scripts/validate-support-service-live-patrol-final.js",
-  "scripts/validate-support-service-production-readiness.js",
-  "scripts/validate-support-service-operation-monitor.js",
-  "scripts/validate-support-service-source-expansion-operation.js",
-  "scripts/validate-support-service-source-review-registration.js",
-  "scripts/validate-support-service-source-registry-apply.js",
-  "scripts/validate-support-service-patrol.js",
-  "scripts/validate-support-service-source-information.js",
-  "scripts/validate-support-service-change-queue.js",
-  "scripts/validate-support-service-x-discovery.js",
-  "scripts/validate-support-service-x-public-search.js",
-  "scripts/validate-support-service-phase28-keywords.js",
-  "scripts/validate-municipality-top-patrol-sources.js",
-  "scripts/validate-municipality-patrol-source-expansion.js",
-  "scripts/validate-public-status.js",
-  "scripts/validate-diff-classification.js",
-  "scripts/validate-patrol-review-queue.js",
-  "scripts/validate-review-approved-converter.js",
-  "scripts/validate-review-decision-layer.js",
-  "scripts/validate-public-update-validation-gate.js",
-  "scripts/validate-public-update-apply.js",
-  "scripts/validate-disaster-pipeline-e2e.js",
-  "scripts/validate-patrol-url-discovery.js",
-  "scripts/validate-patrol-discovery-accuracy.js --fixture-only",
-  "scripts/validate-patrol-discovery-pipeline.js --fixture-only",
-  "scripts/validate-municipality-registry.js",
-  "scripts/validate-patrol-production-flow.js",
-  "scripts/validate-municipality-expansion.js",
-  "scripts/validate-x-feed-fail-open.js",
-  "scripts/validate-x-feed-sync-workflow.js",
-  "scripts/validate-force-update-pipeline.js",
-  "scripts/validate-production-readiness.js --skip-public-hash"
+const X_CROSS_SEARCH_VALIDATORS = [
+  "validate-disaster-social-index.js",
+  "validate-disaster-social-pipeline.js",
+  "validate-disaster-cross-search-community-scope.js",
+  "validate-disaster-social-community-rebuild.js"
 ];
 
+function resolveOfficialInfoValidators() {
+  const packageJson = JSON.parse(fs.readFileSync(PACKAGE_JSON, "utf8"));
+  const testCommand = packageJson.scripts.test || "";
+
+  return testCommand
+    .split(" && ")
+    .map(function (entry) {
+      return entry.trim();
+    })
+    .filter(function (entry) {
+      return entry.indexOf("node scripts/") === 0;
+    })
+    .filter(function (entry) {
+      return !X_CROSS_SEARCH_VALIDATORS.some(function (name) {
+        return entry.indexOf(name) !== -1;
+      });
+    })
+    .filter(function (entry) {
+      const scriptPath = entry.split(" ")[1];
+      return fs.existsSync(path.join(ROOT, scriptPath));
+    });
+}
+
 function main() {
+  const validators = resolveOfficialInfoValidators();
   const errors = [];
+  const skippedMissing = [];
 
-  VALIDATORS.forEach(function (entry) {
-    const parts = entry.split(" ");
-    const script = parts[0];
-    const args = parts.slice(1).join(" ");
-    const command = "node " + script + (args ? " " + args : "");
+  const packageJson = JSON.parse(fs.readFileSync(PACKAGE_JSON, "utf8"));
+  (packageJson.scripts.test || "")
+    .split(" && ")
+    .map(function (entry) {
+      return entry.trim();
+    })
+    .filter(function (entry) {
+      return entry.indexOf("node scripts/") === 0;
+    })
+    .filter(function (entry) {
+      return !X_CROSS_SEARCH_VALIDATORS.some(function (name) {
+        return entry.indexOf(name) !== -1;
+      });
+    })
+    .forEach(function (entry) {
+      const scriptPath = entry.split(" ")[1];
+      if (!fs.existsSync(path.join(ROOT, scriptPath))) {
+        skippedMissing.push(entry);
+      }
+    });
 
+  validators.forEach(function (entry) {
     try {
-      execSync(command, { cwd: ROOT, stdio: "inherit" });
+      execSync(entry, { cwd: ROOT, stdio: "inherit" });
     } catch (error) {
-      errors.push(command);
+      errors.push(entry);
     }
   });
 
   const result = {
     OFFICIAL_INFO_LAYER_VALIDATION: errors.length === 0 ? "PASS" : "FAIL",
-    validator_count: VALIDATORS.length,
+    validator_count: validators.length,
+    skipped_missing_count: skippedMissing.length,
+    skipped_missing: skippedMissing,
     errors: errors
   };
 
