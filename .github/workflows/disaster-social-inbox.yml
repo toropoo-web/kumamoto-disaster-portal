@@ -2,7 +2,7 @@ name: Disaster Social Inbox Operation
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "10,40 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -29,17 +29,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Fetch disaster social SNS inbox
-        run: npm run fetch:disaster-social-sns -- --merge
+      - name: Sync cross-search production pipeline
+        run: node scripts/sync-disaster-social-cross-search-production.js
+
+      - name: Validate open acquisition configuration
+        run: node scripts/validate-disaster-x-cross-search-open-acquisition.js
 
       - name: Validate inbox schema
         run: npm run validate:disaster-social-inbox-schema
 
       - name: Validate disaster social pipeline
         run: npm run validate:disaster-social-pipeline
-
-      - name: Build review queue from inbox
-        run: npm run review:disaster-social-queue
 
       - name: Operation monitor
         run: npm run monitor:disaster-social-operation
@@ -50,6 +50,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/community/disaster_social_inbox.json
+          git add data/community/disaster_social_index.json
+          git add data/community/disaster_social_sources.json
+          git add data/public/disaster_social_index.json
+          git add data/public/disaster_social_sources.json
           git add data/community/disaster_social_review_queue.json
           git add data/community/disaster_social_apply_queue.json
           git add data/operation_monitor/disaster-social-operation.json
@@ -58,12 +62,12 @@ jobs:
             echo "NO_REVIEW_QUEUE_CHANGES"
             exit 0
           fi
-          git commit -m "chore: update disaster social review queue"
+          git commit -m "chore: sync disaster social cross-search index"
           git push
           echo "REVIEW_QUEUE_UPDATED=true"
 
       - name: Operation summary
         run: |
           echo "DISASTER_SOCIAL_INBOX_OPERATION=COMPLETE"
-          echo "AUTO_APPLY=false"
-          echo "STOP_AT=REVIEW_QUEUE"
+          echo "AUTO_APPLY=true"
+          echo "STOP_AT=DISASTER_SOCIAL_INDEX"
