@@ -38,8 +38,13 @@ function main() {
   }
   checks.push({
     check: "portal does not use registered official feed for cross-search",
-    pass: !/DEFAULT_OFFICIAL_X_FEED_URL[\s\S]*fetchXInboxItems/.test(fetchJs)
+    pass:
+      /loadCrossSearchFeedPayload/.test(fetchJs) &&
+      /DEFAULT_X_CROSS_SEARCH_FEED_URL/.test(fetchJs)
   });
+  if (!/loadCrossSearchFeedPayload/.test(fetchJs)) {
+    errors.push("fetchXInboxItems must load posts-cross-search.json");
+  }
 
   const workflow = fs.readFileSync(
     path.join(ROOT, ".github", "workflows", "disaster-social-inbox.yml"),
