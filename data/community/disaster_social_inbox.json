@@ -4,7 +4,7 @@
   "AUTO_PUBLISH": false,
   "acquisition_mode": "SNS_SEARCH_CROSS_FETCH",
   "description": "SNS横断検索Inbox（本番運用）",
-  "last_fetched_at": "2026-08-01T19:50:44.139Z",
+  "last_fetched_at": "2026-08-01T21:06:45.940Z",
   "fetch_summary": {
     "since_date": "2026-07-28",
     "platforms": {
