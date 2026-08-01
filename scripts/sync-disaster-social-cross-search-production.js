@@ -48,8 +48,7 @@ function mergeInboxItems(existingItems, incomingItems) {
 
 async function main() {
   const fetchResult = await fetchDisasterSocialSnsInbox();
-  const existingInbox = readJson(INBOX_FILE, { items: [] });
-  const items = mergeInboxItems(existingInbox.items || [], fetchResult.items || []);
+  const items = (fetchResult.items || []).slice();
 
   const inbox = {
     version: "1.1",
@@ -57,6 +56,7 @@ async function main() {
     AUTO_PUBLISH: AUTO_PUBLISH,
     acquisition_mode: "SNS_SEARCH_CROSS_FETCH",
     description: "SNS横断検索Inbox（本番運用）",
+    replace_index_on_sync: true,
     last_fetched_at: fetchResult.fetched_at,
     fetch_summary: {
       since_date: fetchResult.since_date,
@@ -67,6 +67,25 @@ async function main() {
     items: items
   };
   writeJson(INBOX_FILE, inbox);
+
+  writeJson(INDEX_FILE, {
+    version: "1.1",
+    region: REGION_KYUSHU_SOUTH,
+    entries: [],
+    last_updated: new Date().toISOString()
+  });
+  writeJson(REVIEW_QUEUE_FILE, {
+    version: "1.1",
+    region: REGION_KYUSHU_SOUTH,
+    items: [],
+    item_count: 0
+  });
+  writeJson(APPLY_QUEUE_FILE, {
+    version: "1.1",
+    region: REGION_KYUSHU_SOUTH,
+    items: [],
+    item_count: 0
+  });
 
   const reviewQueue = buildReviewQueueFromInbox(inbox, {
     indexPath: INDEX_FILE,
