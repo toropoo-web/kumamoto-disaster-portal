@@ -19,6 +19,9 @@ function main() {
     "scripts/publish-patrol-pipeline.js",
     "scripts/seed-patrol-snapshots.js",
     "scripts/sync-patrol-public-status.js",
+    "scripts/validate-official-info-layer.js",
+    "scripts/validate-x-cross-search-layer.js",
+    "scripts/validate-patrol-status-publish-gate.js",
     "scripts/verify-public-commit-staging.js",
     "monitor/baselines/patrol-snapshots.seed.json",
     ".github/workflows/patrol.yml",
@@ -39,7 +42,9 @@ function main() {
     { name: "review queue generation", pattern: /npm run review/ },
     { name: "sync patrol public status", pattern: /sync-patrol-public-status\.js/ },
     { name: "public index build", pattern: /npm run build/ },
-    { name: "publication validation", pattern: /npm test/ },
+    { name: "official info publication validation", pattern: /validate:official-info/ },
+    { name: "publish official public data", pattern: /Publish official public data/ },
+    { name: "x cross-search validation", pattern: /validate:x-cross-search/ },
     { name: "public commit guard", pattern: /verify-public-commit-staging\.js/ },
     { name: "water cross view commit", pattern: /water_cross_view\.json/ }
   ].forEach(function (item) {
@@ -85,6 +90,15 @@ function main() {
     return item.kind === "patrol" && item.seedExists;
   })) {
     errors.push("patrol snapshot seed baseline missing");
+  }
+
+  try {
+    require("child_process").execSync("node scripts/validate-patrol-status-publish-gate.js", {
+      cwd: ROOT,
+      stdio: "pipe"
+    });
+  } catch (error) {
+    errors.push("patrol status publish gate validation failed");
   }
 
   const output = {

@@ -83,14 +83,12 @@ jobs:
         if: env.AUTO_APPLY_ENABLED == 'true'
         run: npm run build
 
-      - name: Run publication validation
-        if: env.AUTO_APPLY_ENABLED == 'true'
-        run: npm test
+      - name: Run official info publication validation
+        run: npm run validate:official-info
 
-      - name: Publish public patrol data
+      - name: Publish official public data
         run: |
           set -e
-          node scripts/validate-public-status.js
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/public/status.json
@@ -101,13 +99,17 @@ jobs:
           fi
           STAGED="$(git diff --cached --name-only)"
           if [ -z "$STAGED" ]; then
-            echo "NO_PUBLIC_DATA_CHANGES"
+            echo "NO_OFFICIAL_PUBLIC_DATA_CHANGES"
             exit 0
           fi
           node scripts/verify-public-commit-staging.js
-          git commit -m "chore: publish patrol public data"
+          git commit -m "chore: publish official public data"
           git pull --rebase --autostash origin main
           git push
+
+      - name: Run X cross-search validation
+        continue-on-error: true
+        run: npm run validate:x-cross-search
 
       - name: Validate patrol and operation infrastructure
         run: |
