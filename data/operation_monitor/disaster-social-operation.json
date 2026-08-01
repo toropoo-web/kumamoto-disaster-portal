@@ -38,7 +38,7 @@
     ],
     "since_date": "2026-07-28"
   },
-  "generated_at": "2026-08-01T15:16:58.498Z",
+  "generated_at": "2026-08-01T16:33:41.705Z",
   "AUTO_PUBLISH": false,
   "AUTO_APPLY": false,
   "STOP_AT": "REVIEW_QUEUE",
@@ -62,8 +62,8 @@
     "approved_review_count": 5914
   },
   "review_status_summary": {
-    "PENDING": 401,
-    "APPROVED": 5513,
+    "PENDING": 0,
+    "APPROVED": 5914,
     "REJECTED": 0,
     "DUPLICATE": 0
   },
@@ -106,9 +106,9 @@
   },
   "last_updated": {
     "inbox": null,
-    "review_queue": "2026-08-01T15:16:53.910Z",
-    "apply_queue": "2026-08-01T15:16:54.037Z",
-    "index": "2026-08-01T15:16:54.200Z"
+    "review_queue": "2026-08-01T16:33:37.092Z",
+    "apply_queue": "2026-08-01T16:33:37.207Z",
+    "index": "2026-08-01T16:33:37.377Z"
   },
   "incomplete_items": [
     {
