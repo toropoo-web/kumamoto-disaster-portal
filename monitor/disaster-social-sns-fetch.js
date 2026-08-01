@@ -144,9 +144,16 @@ function resolveMunicipalityFromPost(post, scopeMunicipalities) {
   if (post.municipality && isInCommunityScope(post.municipality)) {
     return post.municipality;
   }
+  const regions = Array.isArray(post.regions) ? post.regions : [];
+  for (let i = 0; i < regions.length; i += 1) {
+    const region = String(regions[i] || "").trim();
+    if (region && isInCommunityScope(region)) {
+      return region;
+    }
+  }
   const text = getPostText(post);
-  const regions = Array.isArray(post.regions) ? post.regions.join(" ") : "";
-  const haystack = text + " " + regions;
+  const regionText = Array.isArray(post.regions) ? post.regions.join(" ") : "";
+  const haystack = text + " " + regionText;
   const sorted = scopeMunicipalities.slice().sort(function (a, b) {
     return b.length - a.length;
   });
