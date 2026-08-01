@@ -21,6 +21,7 @@
     "validate:disaster-x-cross-search-acquisition-scope": "node scripts/validate-disaster-x-cross-search-acquisition-scope.js",
     "validate:disaster-x-cross-search-match-precision": "node scripts/validate-disaster-x-cross-search-match-precision.js",
     "validate:disaster-x-cross-search-dictionary-expansion": "node scripts/validate-disaster-x-cross-search-dictionary-expansion.js",
+    "validate:disaster-x-cross-search-source-separation": "node scripts/validate-disaster-x-cross-search-source-separation.js",
     "validate:disaster-x-cross-search-production-release": "node scripts/validate-disaster-x-cross-search-production-release.js",
     "validate:x-municipality-fetch-relax": "node scripts/validate-x-municipality-fetch-relax.js",
     "check:x-feed-operation": "node scripts/run-x-feed-operation-check.js",

@@ -122,6 +122,17 @@
       ],
       "active": true,
       "source_url": ""
+    },
+    {
+      "source_id": "SOC-X-CROSS-SEARCH",
+      "name": "SOC-X-CROSS-SEARCH",
+      "source_type": "MANUAL",
+      "type": "UNKNOWN",
+      "platform": "MANUAL",
+      "url": "",
+      "coverage_prefectures": [],
+      "active": true,
+      "source_url": ""
     }
   ]
 }

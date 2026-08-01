@@ -1,6 +1,8 @@
 "use strict";
 
+const fs = require("fs");
 const https = require("https");
+const path = require("path");
 
 const {
   loadEvacuationAlertScope,
@@ -10,16 +12,28 @@ const {
   SNS_FETCH_SINCE_DATE,
   COMMUNITY_FETCH_CATEGORIES
 } = require("./disaster-social-community-scope");
-const {
-  X_COMMUNITY_SOURCE_REGISTRY,
-  DEFAULT_X_SOURCE_ID
-} = require("./disaster-social-x-source-registry");
 const { resolveCategoryFromKeyword } = require("./disaster-social-index-engine");
 const { resolveSnsPostUrlFromFeedPost, isXPostUrl } = require("./disaster-social-url");
 const { normalizeInboxItem } = require("./disaster-social-pipeline");
 
-const DEFAULT_X_FEED_URL =
+const DEFAULT_OFFICIAL_X_FEED_URL =
   "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json";
+const DEFAULT_X_CROSS_SEARCH_FEED_URL =
+  process.env.X_CROSS_SEARCH_FEED_URL ||
+  "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts-cross-search.json";
+const DEFAULT_X_SOURCE_ID = "SOC-X-CROSS-SEARCH";
+const LOCAL_CROSS_SEARCH_FEED_FALLBACK = path.join(
+  __dirname,
+  "..",
+  "..",
+  "kumamoto-disaster-x-feed",
+  "data",
+  "posts-cross-search.json"
+);
+
+function readJsonFile(filePath) {
+  return JSON.parse(fs.readFileSync(filePath, "utf8"));
+}
 
 function fetchJson(url) {
   return new Promise(function (resolve, reject) {
@@ -59,12 +73,66 @@ function normalizePostsPayload(payload) {
   return [];
 }
 
+function resolveCrossSearchFeedSource(options) {
+  options = options || {};
+  if (options.xFeedFile && fs.existsSync(options.xFeedFile)) {
+    return {
+      source: options.xFeedFile,
+      kind: "file"
+    };
+  }
+  const envFile = process.env.X_CROSS_SEARCH_FEED_FILE;
+  if (envFile && fs.existsSync(envFile)) {
+    return {
+      source: envFile,
+      kind: "file"
+    };
+  }
+  if (options.xFeedUrl) {
+    return {
+      source: options.xFeedUrl,
+      kind: "url"
+    };
+  }
+  return {
+    source: DEFAULT_X_CROSS_SEARCH_FEED_URL,
+    kind: "url"
+  };
+}
+
+async function loadCrossSearchFeedPayload(options) {
+  const resolved = resolveCrossSearchFeedSource(options);
+  if (resolved.kind === "file") {
+    return {
+      payload: readJsonFile(resolved.source),
+      feedSource: resolved.source
+    };
+  }
+  try {
+    return {
+      payload: await fetchJson(resolved.source),
+      feedSource: resolved.source
+    };
+  } catch (err) {
+    if (
+      fs.existsSync(LOCAL_CROSS_SEARCH_FEED_FALLBACK) &&
+      /HTTP 404/.test(String(err && err.message))
+    ) {
+      return {
+        payload: readJsonFile(LOCAL_CROSS_SEARCH_FEED_FALLBACK),
+        feedSource: LOCAL_CROSS_SEARCH_FEED_FALLBACK
+      };
+    }
+    throw err;
+  }
+}
+
 function getScopeMunicipalities(scopePayload) {
   return (scopePayload || loadEvacuationAlertScope()).municipalities.slice();
 }
 
 function getPostText(post) {
-  return [post.title, post.summary, post.text, post.caption]
+  return [post.title, post.summary, post.content, post.text, post.caption]
     .filter(function (value) {
       return typeof value === "string" && value.trim();
     })
@@ -73,10 +141,6 @@ function getPostText(post) {
 }
 
 function resolveMunicipalityFromPost(post, scopeMunicipalities) {
-  const registryMeta = X_COMMUNITY_SOURCE_REGISTRY[post.sourceId];
-  if (registryMeta && isInCommunityScope(registryMeta.municipality)) {
-    return registryMeta.municipality;
-  }
   if (post.municipality && isInCommunityScope(post.municipality)) {
     return post.municipality;
   }
@@ -143,11 +207,7 @@ function resolveCommunityCategory(post) {
   return "OTHER";
 }
 
-function resolveXSourceId(post) {
-  const registryMeta = X_COMMUNITY_SOURCE_REGISTRY[post.sourceId];
-  if (registryMeta && registryMeta.source_id) {
-    return registryMeta.source_id;
-  }
+function resolveXSourceId() {
   return DEFAULT_X_SOURCE_ID;
 }
 
@@ -198,7 +258,7 @@ function xPostToInboxItem(post, index, scopeMunicipalities) {
       captured_at: post.fetchedAt || publishedAt || new Date().toISOString(),
       published_at: publishedAt,
       source_account: sourceAccount,
-      source: resolveXSourceId(post),
+      source: resolveXSourceId(),
       category: resolveCommunityCategory(post),
       prefecture: regionMeta.prefecture,
       municipality: regionMeta.municipality,
@@ -212,7 +272,7 @@ function xPostToInboxItem(post, index, scopeMunicipalities) {
       sns_fetch: {
         platform: "X",
         source_post_id: post.postId || post.id || "",
-        source_id: post.sourceId || "",
+        acquisition_mode: post.acquisition_mode || "SEARCH_CROSS",
         source_account: sourceAccount,
         post_url: url,
         fetched_at: new Date().toISOString()
@@ -239,8 +299,9 @@ function dedupeInboxItems(items) {
 async function fetchXInboxItems(options) {
   options = options || {};
   const scopeMunicipalities = getScopeMunicipalities(options.scopePayload);
-  const feedUrl = options.xFeedUrl || DEFAULT_X_FEED_URL;
-  const payload = await fetchJson(feedUrl);
+  const feedResult = await loadCrossSearchFeedPayload(options);
+  const feedUrl = feedResult.feedSource;
+  const payload = feedResult.payload;
   const posts = normalizePostsPayload(payload).filter(isActivePost);
   const items = [];
   posts.forEach(function (post, index) {
@@ -273,8 +334,8 @@ async function fetchDisasterSocialSnsInbox(options) {
     categorySummary[key] = (categorySummary[key] || 0) + 1;
   });
   return {
-    phase: "DISASTER_X_CROSS_SEARCH_CONTENT_SCOPE",
-    acquisition_mode: "SNS_CONTENT_CROSS_FETCH",
+    phase: "DISASTER_X_CROSS_SEARCH_SOURCE_SEPARATION",
+    acquisition_mode: "SNS_SEARCH_CROSS_FETCH",
     region_filter_at_search: true,
     since_date: SNS_FETCH_SINCE_DATE,
     fetch_categories: COMMUNITY_FETCH_CATEGORIES.slice(),
@@ -295,7 +356,11 @@ async function fetchDisasterSocialSnsInbox(options) {
 }
 
 module.exports = {
-  DEFAULT_X_FEED_URL,
+  DEFAULT_OFFICIAL_X_FEED_URL,
+  DEFAULT_X_CROSS_SEARCH_FEED_URL,
+  LOCAL_CROSS_SEARCH_FEED_FALLBACK,
+  resolveCrossSearchFeedSource,
+  loadCrossSearchFeedPayload,
   fetchXInboxItems,
   fetchDisasterSocialSnsInbox,
   xPostToInboxItem,
