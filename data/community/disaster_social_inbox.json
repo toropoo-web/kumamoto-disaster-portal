@@ -2,9 +2,9 @@
   "version": "1.1",
   "region": "KYUSHU_SOUTH",
   "AUTO_PUBLISH": false,
-  "acquisition_mode": "SNS_AUTO_FETCH",
-  "description": "SNS自動取得Inbox（本番運用）",
-  "last_fetched_at": "2026-08-01T08:42:46.864Z",
+  "acquisition_mode": "SNS_SEARCH_CROSS_FETCH",
+  "description": "SNS横断検索Inbox（本番運用）",
+  "last_fetched_at": "2026-08-01T12:12:21.938Z",
   "fetch_summary": {
     "since_date": "2026-07-28",
     "platforms": {
