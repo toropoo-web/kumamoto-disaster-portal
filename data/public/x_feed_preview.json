@@ -1,9 +1,20 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-07-31T23:16:50.021Z",
+  "synced_at": "2026-08-01T01:16:57.526Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
+    {
+      "source_id": "SRC-MUN-KM005",
+      "account_name": "八代市公式X",
+      "account_handle": "yatsushiro0801",
+      "post_time": "2026-07-31T23:38:23.000Z",
+      "text": "【応急給水活動について】\n\n 八代市からのお知らせです。\n 給水所の一部で、給水車の到着が遅れております。 市民の皆様には大変ご迷惑をおかけしますが、ご理解とご協力をお願いいたします。",
+      "url": "https://x.com/yatsushiro0801/status/2083336503992918200",
+      "source_type": "LOCAL_GOVERNMENT",
+      "municipality": "八代市",
+      "content_filter": "RECENT_POSTS"
+    },
     {
       "source_id": "SRC-MUN-KM006",
       "account_name": "人吉市公式X",
@@ -27,17 +38,6 @@
       "content_filter": "RECENT_POSTS"
     },
     {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-31T21:30:00.000Z",
-      "text": "【応急給水活動について】（その２）\n\n時間　７：００～１９：００ \n場所\n・第二中学校\n・代陽コミュニティセンター\n・八代小学校\n・八千把コミュニティセンター\n・太田郷コミュニティセンター\n・昭和コミュニティセンター\n・鏡コミュニティセンター\n・千丁コミュニティセンター\n・泉運動公園\n（続く）",
-      "url": "https://x.com/yatsushiro0801/status/2083304194815955029",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
-      "content_filter": "RECENT_POSTS"
-    },
-    {
       "source_id": "SRC-MUN-KM009",
       "account_name": "合志市公式X",
       "account_handle": "Koshi_city",
@@ -49,41 +49,41 @@
       "content_filter": "RECENT_POSTS"
     },
     {
-      "source_id": "SRC-NAT-004",
-      "account_name": "総務省消防庁",
-      "account_handle": "FDMA_JAPAN",
-      "post_time": "2026-07-31T22:17:27.000Z",
-      "text": "【消防庁とりまとめ第26報】令和８年熊本地震による被害及び消防機関等の対応状況について、8月1日（土）7時00分現在の被害状況等を取りまとめました。 詳細はこちら→https://t.co/XdfNoLkqTC #総務省消防庁 #災害情報 #地震",
-      "url": "https://x.com/FDMA_JAPAN/status/2083316135647498504",
-      "source_type": "GOVERNMENT"
-    },
-    {
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-07-31T21:30:00.000Z",
-      "text": "【本日８月１日(土)の応急給水活動について】（その１） 　\n配布量は１回あたり５L程度となります。\n給水容器（ポリタンクやペットボトルなど）をご持参のうえ、お越しください。\nまた、給水車が水の補給で一時的に不在になることがありますが、あらかじめご了承ください。\n（続く）",
-      "url": "https://x.com/yatsushiro0801/status/2083304193826443520",
+      "post_time": "2026-07-31T23:29:47.000Z",
+      "text": "【応急給水活動(八代支援学校への給水車の到着時間変更)】 \n 八代市からのお知らせです。\n 「八代支援学校」への給水車の到着が遅れております。 ９：００～９：３０ごろに到着する予定です。 市民の皆様には大変ご迷惑をおかけしますが、ご理解とご協力をお願いいたします。",
+      "url": "https://x.com/yatsushiro0801/status/2083334339144962518",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
     },
     {
-      "source_id": "SRC-NAT-001",
-      "account_name": "首相官邸 災害・危機管理情報",
-      "account_handle": "Kantei_Saigai",
-      "post_time": "2026-07-31T12:40:50.000Z",
-      "text": "【お知らせ】\n本日（７月３１日）、高市総理は、令和８年熊本地震に関する非常災害対策本部会議（第４回）を開催しました。\n\n※高市総理発言要旨（速報版）\n　「令和８年熊本地震」でお亡くなりになった方は、災害との関連を調査中の方を含めて、本日１５時時点で、３５名となりました。 https://t.co/EIPyAr90Ev",
-      "url": "https://x.com/Kantei_Saigai/status/2083171025458491541",
-      "source_type": "GOVERNMENT"
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-31T23:12:17.000Z",
+      "text": "(続き) \nこちらは益城町です。\n現在(2026/07/28 18:50)開設中の避難所情報については、以下をクリックして確認してください。\n 防災情報くまもと URL: https://t.co/OmOLef7ZZ9\n #避難所開設",
+      "url": "https://x.com/Bousai_Kumamoto/status/2083329934089658572",
+      "source_type": "PREFECTURE"
     },
     {
-      "source_id": "SRC-NAT-002",
-      "account_name": "内閣府防災",
-      "account_handle": "CAO_BOUSAI",
-      "post_time": "2026-07-31T12:10:47.000Z",
-      "text": "令和８年熊本地震の被害状況等を更新しました。\n #令和８年熊本地震 #被害状況 https://t.co/e5fsH6XhUU",
-      "url": "https://x.com/CAO_BOUSAI/status/2083163463522951243",
+      "source_id": "SRC-KUM-001",
+      "account_name": "防災くまもと",
+      "account_handle": "Bousai_Kumamoto",
+      "post_time": "2026-07-31T23:12:17.000Z",
+      "text": "こちらは益城町です。\n2026/07/28 18:50 に避難所を開設しましたのでお知らせします。\n開設した避難所： 益城町総合体育館",
+      "url": "https://x.com/Bousai_Kumamoto/status/2083329932923670641",
+      "source_type": "PREFECTURE"
+    },
+    {
+      "source_id": "SRC-NAT-004",
+      "account_name": "総務省消防庁",
+      "account_handle": "FDMA_JAPAN",
+      "post_time": "2026-07-31T22:17:27.000Z",
+      "text": "【消防庁とりまとめ第26報】令和８年熊本地震による被害及び消防機関等の対応状況について、8月1日（土）7時00分現在の被害状況等を取���まとめました。 詳細はこちら→https://t.co/XdfNoLkqTC #総務省消防庁 #災害情報 #地震",
+      "url": "https://x.com/FDMA_JAPAN/status/2083316135647498504",
       "source_type": "GOVERNMENT"
     }
   ],
