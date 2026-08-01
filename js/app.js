@@ -76,18 +76,82 @@
   var DISASTER_SOCIAL_LATEST_COUNT = 6;
   var DISASTER_SOCIAL_CONTENT_EXCERPT_LENGTH = 120;
   var X_CROSS_SEARCH_HELP = {
+    panelTitle: "X横断検索について",
+    description:
+      "X（旧Twitter）の投稿から、被災地に関する情報を検索します。",
+    targetPosters: [
+      "自治体",
+      "国",
+      "防災機関",
+      "企業",
+      "店舗",
+      "団体",
+      "個人"
+    ],
     instruction: "探したい内容を入力してください",
     examples: [
-      "炊き出し",
-      "迷子",
-      "支援物資",
       "給水",
+      "炊き出し",
+      "支援物資",
       "無料開放",
       "風呂",
+      "シャワー",
       "車中泊",
       "Wi-Fi",
-      "ペット"
-    ]
+      "ペット",
+      "迷子"
+    ],
+    regionTitle: "地域指定",
+    regionDescription: "地域名を追加すると、地域に関する投稿を探せます。",
+    regionExamples: [
+      "八代市 給水",
+      "熊本市 風呂",
+      "宇城市 支援物資"
+    ],
+    currentTargets: [
+      "水、給水",
+      "支援物資",
+      "食料、炊き出し",
+      "入浴、風呂",
+      "車中泊",
+      "通信",
+      "ペット",
+      "暑さ対策"
+    ],
+    plannedTargets: [
+      "交通",
+      "停電",
+      "医療",
+      "営業情報",
+      "店舗支援",
+      "生活支援"
+    ],
+    notice: "X投稿情報です。公式情報と合わせて確認してください。"
+  };
+  var OFFICIAL_INFO_HELP = {
+    panelTitle: "公式情報を探す",
+    description:
+      "自治体や公的機関が公開している公式情報を検索します。",
+    searchTargets: [
+      "水",
+      "給水",
+      "断水",
+      "避難所",
+      "避難場所",
+      "シェルター",
+      "災害ボランティア"
+    ],
+    scopeTargets: [
+      "23自治体公式情報",
+      "公的機関公式情報"
+    ],
+    examples: [
+      "八代市 給水",
+      "熊本市 避難所",
+      "宇城市 ボランティア"
+    ],
+    notice:
+      "公式情報を対象にしています。最新情報は各公式発表を確認してください。"
   };
   var DISASTER_SEARCH_SHARED = {
     scopeLabel: "検索対象：",
@@ -2702,9 +2766,12 @@
     section.setAttribute("aria-labelledby", "portal-quick-access-title");
 
     var inner = createElement("div", "container");
+    var titleRow = createElement("div", "portal-quick-access__title-row");
     var title = createElement("h2", "portal-quick-access__title", OFFICIAL_INFO_PROMO.title);
     title.id = "portal-quick-access-title";
-    inner.appendChild(title);
+    titleRow.appendChild(title);
+    renderOfficialInfoSearchHelp(titleRow);
+    inner.appendChild(titleRow);
     inner.appendChild(createElement("p", "portal-quick-access__lead", OFFICIAL_INFO_PROMO.lead));
     inner.appendChild(createElement(
       "p",
@@ -2730,11 +2797,14 @@
     inner.appendChild(officialGroup);
 
     var xGroup = createElement("div", "portal-quick-access__group portal-quick-access__group--x");
-    xGroup.appendChild(createElement(
+    var xTitleRow = createElement("div", "portal-quick-access__title-row");
+    xTitleRow.appendChild(createElement(
       "h3",
       "portal-quick-access__group-title",
       X_CROSS_SEARCH_PROMO.icon + " " + X_CROSS_SEARCH_PROMO.title
     ));
+    renderDisasterSocialSearchHelp(xTitleRow, { id: "x-cross-search-help-promo" });
+    xGroup.appendChild(xTitleRow);
     var xCard = createElement("a", "portal-quick-access__card portal-quick-access__card--x");
     xCard.href = "#" + DISASTER_SOCIAL_SEARCH_ID;
     xCard.setAttribute("aria-label", X_CROSS_SEARCH_PROMO.title + "の検索へ移動");
@@ -2917,29 +2987,147 @@
     container.appendChild(section);
   }
 
-  function renderDisasterSocialSearchHelp(container) {
-    var helpDetails = createElement("details", "disaster-social-search__help");
-    helpDetails.id = "disaster-social-search-help";
+  function renderSearchHelp(container, config) {
+    config = config || {};
+    var isSocialVariant = config.variant === "social";
+    var helpDetails = createElement("details", "search-help " + (config.className || ""));
+    if (config.id) {
+      helpDetails.id = config.id;
+    }
 
-    var helpSummary = createElement("summary", "disaster-social-search__help-trigger");
-    helpSummary.setAttribute("aria-label", "検索方法の説明");
+    var triggerClass = "search-help__trigger";
+    if (isSocialVariant) {
+      triggerClass += " disaster-social-search__help-trigger";
+    }
+    var helpSummary = createElement("summary", triggerClass);
+    helpSummary.setAttribute("aria-label", config.ariaLabel || "検索方法の説明");
     helpSummary.textContent = "?";
     helpDetails.appendChild(helpSummary);
 
-    var helpBody = createElement("div", "disaster-social-search__help-body");
-    helpBody.appendChild(createElement(
-      "p",
-      "disaster-social-search__help-text",
-      X_CROSS_SEARCH_HELP.instruction
-    ));
-    helpBody.appendChild(createElement("p", "disaster-social-search__help-label", "例："));
-    var helpList = createElement("ul", "disaster-social-search__help-examples");
-    X_CROSS_SEARCH_HELP.examples.forEach(function (example) {
-      helpList.appendChild(createElement("li", "disaster-social-search__help-example", example));
+    var bodyClass = "search-help__body";
+    if (isSocialVariant) {
+      bodyClass += " disaster-social-search__help-body";
+    }
+    var helpBody = createElement("div", bodyClass);
+    if (config.panelTitle) {
+      helpBody.appendChild(createElement("p", "search-help__title", config.panelTitle));
+    }
+    if (config.description) {
+      helpBody.appendChild(createElement("p", "search-help__text", config.description));
+    }
+
+    (config.sections || []).forEach(function (section) {
+      if (section.heading) {
+        helpBody.appendChild(createElement("p", "search-help__heading", section.heading));
+      }
+      (section.paragraphs || []).forEach(function (paragraph) {
+        var textClass = "search-help__text";
+        if (isSocialVariant && section.heading === "検索方法") {
+          textClass += " disaster-social-search__help-text";
+        }
+        helpBody.appendChild(createElement("p", textClass, paragraph));
+      });
+      if (section.items && section.items.length) {
+        var listClass = section.listStyle === "tags"
+          ? "search-help__list search-help__list--tags"
+          : "search-help__list";
+        if (isSocialVariant && section.listStyle === "tags") {
+          listClass += " disaster-social-search__help-examples";
+        }
+        var list = createElement("ul", listClass);
+        section.items.forEach(function (item) {
+          var itemClass = section.listStyle === "tags"
+            ? "search-help__tag search-help__example"
+            : "search-help__item";
+          if (isSocialVariant && section.listStyle === "tags") {
+            itemClass += " disaster-social-search__help-example";
+          }
+          list.appendChild(createElement("li", itemClass, item));
+        });
+        helpBody.appendChild(list);
+      }
     });
-    helpBody.appendChild(helpList);
+
+    if (config.notice) {
+      helpBody.appendChild(createElement("p", "search-help__notice", config.notice));
+    }
+
     helpDetails.appendChild(helpBody);
     container.appendChild(helpDetails);
+    return helpDetails;
+  }
+
+  function renderOfficialInfoSearchHelp(container) {
+    return renderSearchHelp(container, {
+      id: "official-info-search-help",
+      className: "official-info-search__help",
+      ariaLabel: "公式情報検索の説明",
+      panelTitle: OFFICIAL_INFO_HELP.panelTitle,
+      description: OFFICIAL_INFO_HELP.description,
+      sections: [
+        {
+          heading: "検索対象",
+          items: OFFICIAL_INFO_HELP.searchTargets,
+          listStyle: "tags"
+        },
+        {
+          heading: "対象",
+          items: OFFICIAL_INFO_HELP.scopeTargets
+        },
+        {
+          heading: "入力例",
+          items: OFFICIAL_INFO_HELP.examples,
+          listStyle: "tags"
+        }
+      ],
+      notice: OFFICIAL_INFO_HELP.notice
+    });
+  }
+
+  function renderDisasterSocialSearchHelp(container, options) {
+    options = options || {};
+    return renderSearchHelp(container, {
+      id: options.id || "disaster-social-search-help",
+      className: "disaster-social-search__help",
+      variant: "social",
+      ariaLabel: "X横断検索の説明",
+      panelTitle: X_CROSS_SEARCH_HELP.panelTitle,
+      description: X_CROSS_SEARCH_HELP.description,
+      sections: [
+        {
+          heading: "対象投稿",
+          items: X_CROSS_SEARCH_HELP.targetPosters,
+          listStyle: "tags"
+        },
+        {
+          heading: "検索方法",
+          paragraphs: [X_CROSS_SEARCH_HELP.instruction]
+        },
+        {
+          heading: "入力例",
+          items: X_CROSS_SEARCH_HELP.examples,
+          listStyle: "tags"
+        },
+        {
+          heading: X_CROSS_SEARCH_HELP.regionTitle,
+          paragraphs: [X_CROSS_SEARCH_HELP.regionDescription]
+        },
+        {
+          heading: "例",
+          items: X_CROSS_SEARCH_HELP.regionExamples,
+          listStyle: "tags"
+        },
+        {
+          heading: "検索対象（現在）",
+          items: X_CROSS_SEARCH_HELP.currentTargets
+        },
+        {
+          heading: "追加可能",
+          items: X_CROSS_SEARCH_HELP.plannedTargets
+        }
+      ],
+      notice: X_CROSS_SEARCH_HELP.notice
+    });
   }
 
   function renderDisasterSocialSearch(container, socialPayload, options) {
