@@ -1488,6 +1488,130 @@
     {
       "event": "page_view",
       "recorded_at": "2026-07-31T18:13:46.387Z"
+    },
+    {
+      "event": "view_communication",
+      "recorded_at": "2026-08-01T08:59:47.067Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.069Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.071Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.072Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.074Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.075Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.076Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.077Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.079Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.080Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.081Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.083Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.084Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.085Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.086Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.088Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.089Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.090Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.092Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.093Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.094Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.095Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.097Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.098Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.099Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.100Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.102Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.103Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.104Z"
+    },
+    {
+      "event": "view_official_info",
+      "recorded_at": "2026-08-01T08:59:47.105Z"
+    },
+    {
+      "event": "page_view",
+      "recorded_at": "2026-08-01T08:59:47.320Z"
     }
   ]
 }

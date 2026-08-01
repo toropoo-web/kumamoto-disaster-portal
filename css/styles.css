@@ -2416,6 +2416,36 @@ button:focus-visible {
 
 .portal-quick-access__group--x .portal-quick-access__card--x {
   display: block;
+  border: 2px solid #0f1419;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fa 100%);
+  box-shadow: 0 2px 10px rgba(15, 20, 25, 0.08);
+}
+
+.portal-quick-access__group--x .portal-quick-access__card--x:hover,
+.portal-quick-access__group--x .portal-quick-access__card--x:focus-visible {
+  border-color: #0f1419;
+  outline: 2px solid #0f1419;
+  outline-offset: 2px;
+  box-shadow: 0 4px 14px rgba(15, 20, 25, 0.12);
+}
+
+.portal-quick-access__group--x .portal-quick-access__card-title {
+  color: #0f1419;
+}
+
+.portal-quick-access__card-scope {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.portal-quick-access__card-period {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
 .portal-quick-access__grid {

@@ -61,10 +61,9 @@
   var X_CROSS_SEARCH_PROMO = {
     icon: "𝕏",
     title: "X横断検索",
-    promoDescription:
-      "熊本地震関連のX投稿を横断検索します。\n\n" +
-      "自治体・企業・団体・個人など、投稿者を問わず\n" +
-      "2026年7月28日以降・対象23自治体の投稿を検索できます。"
+    promoLead: "熊本地震関連のX投稿を横断検索します。",
+    promoScope:
+      "自治体・国・防災機関・企業・店舗・団体・個人など、投稿者を問わず検索できます。"
   };
   var OFFICIAL_INFO_PROMO = {
     title: "公式情報を探す",
@@ -502,6 +501,86 @@
     };
   }
 
+  function isLiteralAnimalSearchQuery(rawQuery) {
+    var query = normalizeSearchText(rawQuery);
+    return query === "猫" || query === "犬";
+  }
+
+  function matchesCatQuery(contentHay) {
+    if (/ペットボトル/.test(contentHay)) {
+      return false;
+    }
+    if (/迷子猫|迷い猫/.test(contentHay)) {
+      return true;
+    }
+    if (/保護猫/.test(contentHay)) {
+      return true;
+    }
+    if (/猫を探|猫が迷/.test(contentHay)) {
+      return true;
+    }
+    return /猫/.test(contentHay);
+  }
+
+  function matchesDogQuery(contentHay) {
+    if (/救助犬|警備犬/.test(contentHay) && !/迷子犬|迷い犬|保護犬|犬を探|犬が迷/.test(contentHay)) {
+      return false;
+    }
+    if (/迷子犬|迷い犬/.test(contentHay)) {
+      return true;
+    }
+    if (/保護犬/.test(contentHay)) {
+      return true;
+    }
+    if (/犬を探|犬が迷/.test(contentHay)) {
+      return true;
+    }
+    return /犬/.test(contentHay);
+  }
+
+  function findLiteralAnimalMatchedKeyword(contentHay, rawQuery) {
+    var query = normalizeSearchText(rawQuery);
+    if (query === "猫") {
+      if (/迷子猫|迷い猫/.test(contentHay)) {
+        return "迷子猫";
+      }
+      if (/保護猫/.test(contentHay)) {
+        return "保護猫";
+      }
+      if (/猫/.test(contentHay)) {
+        return "猫";
+      }
+      return "";
+    }
+    if (query === "犬") {
+      if (/迷子犬|迷い犬/.test(contentHay)) {
+        return "迷子犬";
+      }
+      if (/保護犬/.test(contentHay) && !/救助犬|警備犬/.test(contentHay)) {
+        return "保護犬";
+      }
+      if (/犬/.test(contentHay)) {
+        return "犬";
+      }
+      return "";
+    }
+    return "";
+  }
+
+  function resolveSearchDisplayCategoryLabel(userQuery, resolvedCategory, matchedKeyword) {
+    var query = normalizeSearchText(userQuery);
+    if (query === "猫" || query === "犬") {
+      if (matchedKeyword === query) {
+        return "その他";
+      }
+      if (/迷子|保護/.test(matchedKeyword)) {
+        return "ペット関連";
+      }
+      return "ペット関連";
+    }
+    return SOCIAL_CATEGORY_LABELS[resolvedCategory] || resolvedCategory || "その他";
+  }
+
   function matchesPetQuery(content) {
     if (/ペットボトル/.test(content)) {
       return false;
@@ -604,6 +683,8 @@
     氷: true,
     冷却: true,
     電気: true,
+    猫: true,
+    犬: true,
     ペット: true,
     迷子: true,
     迷子猫: true,
@@ -632,8 +713,11 @@
     if (query === "wi-fi" || query === "wifi") {
       return matchesWifiQuery(contentHay);
     }
-    if (query === "犬" || query === "猫") {
-      return false;
+    if (query === "猫") {
+      return matchesCatQuery(contentHay);
+    }
+    if (query === "犬") {
+      return matchesDogQuery(contentHay);
     }
 
     var keywordDict = findDictionaryForKeyword(rawQuery);
@@ -2120,18 +2204,24 @@
   }
 
   function buildSocialMatchReason(entry, resolvedCategory, userQuery) {
-    var categoryLabel = SOCIAL_CATEGORY_LABELS[resolvedCategory] || resolvedCategory || "その他";
     var contentHay = buildSocialContentHaystack(entry);
     var query = String(userQuery || "").trim();
     var matchedKeyword = "";
-    if (query && matchesPreciseSearchQuery(contentHay, query)) {
+
+    if (query && isLiteralAnimalSearchQuery(query)) {
+      matchedKeyword = findLiteralAnimalMatchedKeyword(contentHay, query);
+    } else if (query && matchesPreciseSearchQuery(contentHay, query)) {
       matchedKeyword = query;
     } else {
       matchedKeyword =
-        findSocialCategoryMatchKeyword(entry, resolvedCategory, query) || categoryLabel;
+        findSocialCategoryMatchKeyword(entry, resolvedCategory, query) ||
+        SOCIAL_CATEGORY_LABELS[resolvedCategory] ||
+        resolvedCategory ||
+        "その他";
     }
+
     return {
-      categoryLabel: categoryLabel,
+      categoryLabel: resolveSearchDisplayCategoryLabel(query, resolvedCategory, matchedKeyword),
       matchedKeyword: matchedKeyword
     };
   }
@@ -2142,6 +2232,9 @@
     }
     var contentHay = buildSocialContentHaystack(entry);
     var query = String(rawQuery || "").trim();
+    if (query && isLiteralAnimalSearchQuery(query)) {
+      return matchesPreciseSearchQuery(contentHay, query);
+    }
     if (query && (resolveSearchDictionary(query) || findDictionaryForKeyword(query))) {
       return matchesPreciseSearchQuery(contentHay, query);
     }
@@ -2808,7 +2901,18 @@
     var xCard = createElement("a", "portal-quick-access__card portal-quick-access__card--x");
     xCard.href = "#" + DISASTER_SOCIAL_SEARCH_ID;
     xCard.setAttribute("aria-label", X_CROSS_SEARCH_PROMO.title + "の検索へ移動");
-    xCard.appendChild(createElement("p", "portal-quick-access__card-desc", X_CROSS_SEARCH_PROMO.promoDescription));
+    xCard.appendChild(createElement(
+      "h3",
+      "portal-quick-access__card-title",
+      X_CROSS_SEARCH_PROMO.icon + " " + X_CROSS_SEARCH_PROMO.title
+    ));
+    xCard.appendChild(createElement("p", "portal-quick-access__card-desc", X_CROSS_SEARCH_PROMO.promoLead));
+    xCard.appendChild(createElement("p", "portal-quick-access__card-scope", X_CROSS_SEARCH_PROMO.promoScope));
+    xCard.appendChild(createElement(
+      "p",
+      "portal-quick-access__card-period",
+      "対象期間：" + EVACUATION_ALERT_SEARCH_SCOPE.periodLabel
+    ));
     xGroup.appendChild(xCard);
     inner.appendChild(xGroup);
 
@@ -2846,7 +2950,9 @@
       var item = resultItem.entry || resultItem;
       var matchReason = resultItem.matchReason || null;
       var card = createElement("article", "disaster-search__card disaster-social-search__card");
-      var categoryLabel = SOCIAL_CATEGORY_LABELS[item.category] || item.category || "その他";
+      var categoryLabel = matchReason && matchReason.categoryLabel
+        ? matchReason.categoryLabel
+        : (SOCIAL_CATEGORY_LABELS[item.category] || item.category || "その他");
       var place = [item.prefecture, item.municipality, item.district].filter(Boolean).join(" ");
       var sourceMeta = sourceLookup[item.source] || {};
 

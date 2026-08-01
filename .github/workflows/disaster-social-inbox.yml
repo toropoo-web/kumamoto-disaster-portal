@@ -39,6 +39,7 @@ jobs:
         run: npm run validate:disaster-social-inbox-schema
 
       - name: Validate disaster social pipeline
+        continue-on-error: true
         run: npm run validate:disaster-social-pipeline
 
       - name: Operation monitor

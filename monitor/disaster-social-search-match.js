@@ -133,6 +133,86 @@ function expandSearchDictionaryKeywords(rawQuery) {
   };
 }
 
+function isLiteralAnimalSearchQuery(rawQuery) {
+  const query = normalizeSearchText(rawQuery);
+  return query === "猫" || query === "犬";
+}
+
+function matchesCatQuery(contentHay) {
+  if (/ペットボトル/.test(contentHay)) {
+    return false;
+  }
+  if (/迷子猫|迷い猫/.test(contentHay)) {
+    return true;
+  }
+  if (/保護猫/.test(contentHay)) {
+    return true;
+  }
+  if (/猫を探|猫が迷/.test(contentHay)) {
+    return true;
+  }
+  return /猫/.test(contentHay);
+}
+
+function matchesDogQuery(contentHay) {
+  if (/救助犬|警備犬/.test(contentHay) && !/迷子犬|迷い犬|保護犬|犬を探|犬が迷/.test(contentHay)) {
+    return false;
+  }
+  if (/迷子犬|迷い犬/.test(contentHay)) {
+    return true;
+  }
+  if (/保護犬/.test(contentHay)) {
+    return true;
+  }
+  if (/犬を探|犬が迷/.test(contentHay)) {
+    return true;
+  }
+  return /犬/.test(contentHay);
+}
+
+function findLiteralAnimalMatchedKeyword(contentHay, rawQuery) {
+  const query = normalizeSearchText(rawQuery);
+  if (query === "猫") {
+    if (/迷子猫|迷い猫/.test(contentHay)) {
+      return "迷子猫";
+    }
+    if (/保護猫/.test(contentHay)) {
+      return "保護猫";
+    }
+    if (/猫/.test(contentHay)) {
+      return "猫";
+    }
+    return "";
+  }
+  if (query === "犬") {
+    if (/迷子犬|迷い犬/.test(contentHay)) {
+      return "迷子犬";
+    }
+    if (/保護犬/.test(contentHay) && !/救助犬|警備犬/.test(contentHay)) {
+      return "保護犬";
+    }
+    if (/犬/.test(contentHay)) {
+      return "犬";
+    }
+    return "";
+  }
+  return "";
+}
+
+function resolveSearchDisplayCategoryLabel(userQuery, resolvedCategory, matchedKeyword, categoryLabels) {
+  const query = normalizeSearchText(userQuery);
+  if (query === "猫" || query === "犬") {
+    if (matchedKeyword === query) {
+      return "その他";
+    }
+    if (/迷子|保護/.test(matchedKeyword)) {
+      return "ペット関連";
+    }
+    return "ペット関連";
+  }
+  return categoryLabels[resolvedCategory] || resolvedCategory || "その他";
+}
+
 function matchesPetQuery(content) {
   if (/ペットボトル/.test(content)) {
     return false;
@@ -249,8 +329,11 @@ function matchesPreciseSearchQuery(contentHay, rawQuery) {
   if (query === "wi-fi" || query === "wifi") {
     return matchesWifiQuery(contentHay);
   }
-  if (query === "犬" || query === "猫") {
-    return false;
+  if (query === "猫") {
+    return matchesCatQuery(contentHay);
+  }
+  if (query === "犬") {
+    return matchesDogQuery(contentHay);
   }
 
   const keywordDict = findDictionaryForKeyword(rawQuery);
@@ -266,6 +349,8 @@ const CATEGORY_KEYWORD_NO_EXPAND = {
   氷: true,
   冷却: true,
   電気: true,
+  猫: true,
+  犬: true,
   ペット: true,
   迷子: true,
   迷子猫: true,
@@ -308,6 +393,10 @@ function matchesSocialSearchQuery(entry, categoryQuery, rawQuery, categoryKeywor
   const contentHay = buildEntryContentHaystack(entry);
   const query = String(rawQuery || "").trim();
 
+  if (query && isLiteralAnimalSearchQuery(query)) {
+    return matchesPreciseSearchQuery(contentHay, query);
+  }
+
   if (query && (resolveSearchDictionary(query) || findDictionaryForKeyword(query))) {
     return matchesPreciseSearchQuery(contentHay, query);
   }
@@ -324,18 +413,28 @@ function matchesSocialSearchQuery(entry, categoryQuery, rawQuery, categoryKeywor
 }
 
 function describeSocialSearchMatch(entry, resolvedCategory, userQuery, categoryLabels, categoryKeywords) {
-  const categoryLabel = categoryLabels[resolvedCategory] || resolvedCategory || "その他";
   const contentHay = buildEntryContentHaystack(entry);
   const query = String(userQuery || "").trim();
   let matchedKeyword = "";
 
-  if (query && matchesPreciseSearchQuery(contentHay, query)) {
+  if (query && isLiteralAnimalSearchQuery(query)) {
+    matchedKeyword = findLiteralAnimalMatchedKeyword(contentHay, query);
+  } else if (query && matchesPreciseSearchQuery(contentHay, query)) {
     matchedKeyword = query;
   } else {
     matchedKeyword =
       findMatchedCategoryKeyword(contentHay, resolvedCategory, query, categoryKeywords) ||
-      categoryLabel;
+      categoryLabels[resolvedCategory] ||
+      resolvedCategory ||
+      "その他";
   }
+
+  const categoryLabel = resolveSearchDisplayCategoryLabel(
+    query,
+    resolvedCategory,
+    matchedKeyword,
+    categoryLabels
+  );
 
   return {
     categoryLabel: categoryLabel,
@@ -357,5 +456,10 @@ module.exports = {
   findMatchedCategoryKeyword,
   matchesSocialSearchQuery,
   describeSocialSearchMatch,
+  isLiteralAnimalSearchQuery,
+  matchesCatQuery,
+  matchesDogQuery,
+  findLiteralAnimalMatchedKeyword,
+  resolveSearchDisplayCategoryLabel,
   CATEGORY_KEYWORD_NO_EXPAND
 };

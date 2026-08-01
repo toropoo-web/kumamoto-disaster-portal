@@ -1,7 +1,7 @@
 {
   "version": 2,
   "engineVersion": 2,
-  "generatedAt": "2026-07-31T10:12:33.780Z",
+  "generatedAt": "2026-08-01T11:29:53.751Z",
   "incidentScope": "2026_KUMAMOTO_EARTHQUAKE",
   "input": {
     "prefecture": "熊本県",
@@ -20,7 +20,7 @@
   "sourceRegistryFile": "monitor/sources.json",
   "candidates": [
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-09007508",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-09007508",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -82,12 +82,12 @@
         "contamination_risk": false,
         "verdict": "PASS",
         "reason": "disaster keywords detected",
-        "checked_at": "2026-07-31T10:12:31.548Z",
+        "checked_at": "2026-08-01T11:29:50.794Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
-        "discovered_at": "2026-07-31T10:12:31.548Z",
+        "discovered_at": "2026-08-01T11:29:50.794Z",
         "matched_hints": [
           "防災",
           "bousai",
@@ -109,7 +109,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-6DCD50AA",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-6DCD50AA",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -171,12 +171,12 @@
         "contamination_risk": false,
         "verdict": "PASS",
         "reason": "disaster keywords detected",
-        "checked_at": "2026-07-31T10:12:31.548Z",
+        "checked_at": "2026-08-01T11:29:50.794Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
-        "discovered_at": "2026-07-31T10:12:31.548Z",
+        "discovered_at": "2026-08-01T11:29:50.794Z",
         "matched_hints": [
           "緊急",
           "kinkyu",
@@ -198,7 +198,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-17C87B1F",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-17C87B1F",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -247,7 +247,7 @@
         "http_pass": true,
         "html_pass": true,
         "title": "防災 / 防災サイトTOP / 熊本県八代市",
-        "text_length": 2820,
+        "text_length": 2794,
         "keywords": [
           "避難",
           "避難所",
@@ -257,16 +257,16 @@
           "支援",
           "災害"
         ],
-        "content_hash": "c70085b78fe8250ea9ccfd0ec5add182f672b7349489defaabc4e51324f8b25f",
+        "content_hash": "a6bf106f3eb53adf4908752592f99e8d54ec15e9cbb8fc3a5f4a55e938c3b47e",
         "contamination_risk": false,
         "verdict": "PASS",
         "reason": "disaster keywords detected",
-        "checked_at": "2026-07-31T10:12:32.002Z",
+        "checked_at": "2026-08-01T11:29:50.936Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
-        "discovered_at": "2026-07-31T10:12:32.002Z",
+        "discovered_at": "2026-08-01T11:29:50.936Z",
         "matched_hints": [
           "災害",
           "bousai"
@@ -286,7 +286,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-38C307B9",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-38C307B9",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -349,12 +349,12 @@
         "contamination_risk": false,
         "verdict": "PASS",
         "reason": "disaster keywords detected",
-        "checked_at": "2026-07-31T10:12:32.145Z",
+        "checked_at": "2026-08-01T11:29:51.359Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01003.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
-        "discovered_at": "2026-07-31T10:12:32.145Z",
+        "discovered_at": "2026-08-01T11:29:51.359Z",
         "matched_hints": [
           "災害",
           "bousai"
@@ -373,7 +373,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-49A0833E",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-49A0833E",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -422,7 +422,7 @@
         "http_pass": true,
         "html_pass": true,
         "title": "災害発生時 / 防災サイトTOP / 熊本県八代市",
-        "text_length": 2178,
+        "text_length": 2177,
         "keywords": [
           "避難",
           "避難所",
@@ -432,16 +432,16 @@
           "支援",
           "災害"
         ],
-        "content_hash": "8df1fc0841eb91b4aea1ff33edfab9c81ac4e573c62facb20a3a9183d3054814",
+        "content_hash": "4a790161333194f33bc49e128dfee09945dd8264647b918daa3cf5ebcb2c6a5d",
         "contamination_risk": false,
         "verdict": "PASS",
         "reason": "disaster keywords detected",
-        "checked_at": "2026-07-31T10:12:32.313Z",
+        "checked_at": "2026-08-01T11:29:52.214Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01971.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
-        "discovered_at": "2026-07-31T10:12:32.313Z",
+        "discovered_at": "2026-08-01T11:29:52.215Z",
         "matched_hints": [
           "災害",
           "bousai"
@@ -460,7 +460,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-D87758D6",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-D87758D6",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -523,12 +523,12 @@
         "contamination_risk": false,
         "verdict": "PASS",
         "reason": "disaster keywords detected",
-        "checked_at": "2026-07-31T10:12:32.746Z",
+        "checked_at": "2026-08-01T11:29:52.893Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01009.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
-        "discovered_at": "2026-07-31T10:12:32.746Z",
+        "discovered_at": "2026-08-01T11:29:52.894Z",
         "matched_hints": [
           "災害",
           "bousai"
@@ -547,7 +547,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-87320BA7",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-87320BA7",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -611,12 +611,12 @@
         "contamination_risk": false,
         "verdict": "PASS",
         "reason": "disaster keywords detected",
-        "checked_at": "2026-07-31T10:12:33.108Z",
+        "checked_at": "2026-08-01T11:29:53.063Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01010.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
-        "discovered_at": "2026-07-31T10:12:33.108Z",
+        "discovered_at": "2026-08-01T11:29:53.063Z",
         "matched_hints": [
           "bousai",
           "地震"
@@ -635,7 +635,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-DC8911D9",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-DC8911D9",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -698,12 +698,12 @@
         "contamination_risk": false,
         "verdict": "PASS",
         "reason": "disaster keywords detected",
-        "checked_at": "2026-07-31T10:12:33.617Z",
+        "checked_at": "2026-08-01T11:29:53.408Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01012.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
-        "discovered_at": "2026-07-31T10:12:33.617Z",
+        "discovered_at": "2026-08-01T11:29:53.408Z",
         "matched_hints": [
           "災害",
           "bousai"
@@ -722,7 +722,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-E1D33394",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-E1D33394",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -786,12 +786,12 @@
         "contamination_risk": false,
         "verdict": "PASS",
         "reason": "disaster keywords detected",
-        "checked_at": "2026-07-31T10:12:32.478Z",
+        "checked_at": "2026-08-01T11:29:52.783Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01007.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
-        "discovered_at": "2026-07-31T10:12:32.478Z",
+        "discovered_at": "2026-08-01T11:29:52.783Z",
         "matched_hints": [
           "防災",
           "bousai"
@@ -810,7 +810,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-B98DA988",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-B98DA988",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -874,12 +874,12 @@
         "contamination_risk": true,
         "verdict": "FAIL",
         "reason": "possible 2016 contamination",
-        "checked_at": "2026-07-31T10:12:33.474Z",
+        "checked_at": "2026-08-01T11:29:53.241Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01011.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
-        "discovered_at": "2026-07-31T10:12:33.474Z",
+        "discovered_at": "2026-08-01T11:29:53.241Z",
         "matched_hints": [
           "防災",
           "bousai"
@@ -898,7 +898,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-115E7DCF",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-115E7DCF",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -962,12 +962,12 @@
         "contamination_risk": true,
         "verdict": "FAIL",
         "reason": "possible 2016 contamination",
-        "checked_at": "2026-07-31T10:12:33.780Z",
+        "checked_at": "2026-08-01T11:29:53.750Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/list01013.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
-        "discovered_at": "2026-07-31T10:12:33.780Z",
+        "discovered_at": "2026-08-01T11:29:53.751Z",
         "matched_hints": [
           "防災",
           "bousai"
@@ -986,7 +986,7 @@
       }
     },
     {
-      "discovery_id": "PDU-20260731-KM005-EMERGENCY-71437E5B",
+      "discovery_id": "PDU-20260801-KM005-EMERGENCY-71437E5B",
       "prefecture": "熊本県",
       "municipality": "八代市",
       "official_domain": "city.yatsushiro.lg.jp",
@@ -1035,12 +1035,12 @@
         "contamination_risk": false,
         "verdict": "WARNING",
         "reason": "page fetched but weak disaster signals",
-        "checked_at": "2026-07-31T10:12:32.000Z",
+        "checked_at": "2026-08-01T11:29:50.935Z",
         "final_url": "https://www.city.yatsushiro.lg.jp/bousai/hazardmap/index.html"
       },
       "source_trace": {
         "discovered_from": "https://www.city.yatsushiro.lg.jp/bousai/list01001.html",
-        "discovered_at": "2026-07-31T10:12:32.000Z",
+        "discovered_at": "2026-08-01T11:29:50.935Z",
         "matched_hints": [
           "防災",
           "bousai"
