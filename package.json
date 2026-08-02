@@ -32,6 +32,7 @@
     "patrol:emergency": "node scripts/run-emergency-patrol.js",
     "patrol:infrastructure": "node scripts/run-infrastructure-patrol.js",
     "patrol:water": "node scripts/run-water-patrol.js",
+    "patrol:support-service": "node scripts/run-support-service-patrol.js",
     "patrol:support-service-x": "node scripts/run-support-service-x-patrol.js",
     "research:locations": "node scripts/run-location-research.js",
     "url-audit": "node scripts/run-url-audit.js",
