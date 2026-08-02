@@ -1,6 +1,6 @@
 {
   "section_title": "公式X速報",
-  "synced_at": "2026-08-02T07:19:33.425Z",
+  "synced_at": "2026-08-02T09:45:16.941Z",
   "source_feed_url": "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json",
   "item_count": 8,
   "posts": [
@@ -8,9 +8,9 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-08-01T14:28:38.000Z",
-      "text": "【避難所開設情報　８月１日　２１：００現在】\n　現在、開設している避難所の一覧を公表します。\n詳しくは、画像を確認ください。 https://t.co/toiCVnUmPT",
-      "url": "https://x.com/yatsushiro0801/status/2083560539851288731",
+      "post_time": "2026-08-02T08:06:20.000Z",
+      "text": "【給水場所等のマップ】\n給水場所等の位置関係は以下のリンクから確認できます。\nhttps://t.co/Obkvuky3RA",
+      "url": "https://x.com/yatsushiro0801/status/2083826722521469149",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
@@ -19,9 +19,9 @@
       "source_id": "SRC-MUN-KM001",
       "account_name": "熊本市公式X",
       "account_handle": "kumamotocity_",
-      "post_time": "2026-08-01T12:51:24.000Z",
-      "text": "地震情報（第1号）\n気象庁\n8月1日21時51分 発表\n\n地震情報（第1号）\n\n地震検知日時: 8月1日21時47分\n最大震度: 震度５弱\nマグニチュード: 4.7\n震央地名: 熊本県熊本地方\n緯度: 32.7N\n経度: 130.7E\n震源深さ: 10km\n\n震度４:\n  熊本西区\n  熊本南区\n震度３:\n  熊本中央区\n  熊本東区\n  熊本北区",
-      "url": "https://x.com/kumamotocity_/status/2083536073955930238",
+      "post_time": "2026-08-02T05:55:07.000Z",
+      "text": "【断水の一部解消について（8月2日14:30時点）】\n南区城南町の一部（今吉野、さんさん、隈庄、宮地、下宮地）（約1,350戸）の断水は解消しました。\n水が出ない場合は、メーターボックス内のバルブが開いているかご確認ください。\n\n断水解消・継続地区などの詳細はこちら↓\nhttps://t.co/aiYZ2BxUQi https://t.co/jhJ1Z72WgW",
+      "url": "https://x.com/kumamotocity_/status/2083793698580738368",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "熊本市",
       "content_filter": "RECENT_POSTS"
@@ -52,9 +52,9 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-08-01T14:10:24.000Z",
-      "text": "【給水場所等のマップ】\n給水場所等の位置関係は以下のリンクから確認できます。\nhttps://t.co/Obkvuky3RA",
-      "url": "https://x.com/yatsushiro0801/status/2083555952394137896",
+      "post_time": "2026-08-02T08:06:03.000Z",
+      "text": "【本日８月２日（日）の応急給水活動について】\n その４\n\n・昭和コミュニティセンター\n・鏡コミュニティセンター\n・千丁コミュニティセンター\n・泉運動公園\n・宮��コミュニティセンター\n・麦島コミュニティセンター\n\n以上です。",
+      "url": "https://x.com/yatsushiro0801/status/2083826647644680588",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
@@ -63,9 +63,9 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-08-01T14:09:43.000Z",
-      "text": "【応急給水活動について】\nその3\n時間　７：００～１９：００\n場所\n・第二中学校\n・代陽コミュニティセンター\n・八代小学校\n・八千把コミュニティセンター\n・太田郷コミュニティセンター\n・昭和コミュニティセンター\n・鏡コミュニティセンター\n・千丁コミュニティセンター\n・泉運動公園\n以上です",
-      "url": "https://x.com/yatsushiro0801/status/2083555779551154214",
+      "post_time": "2026-08-02T08:03:53.000Z",
+      "text": "【本日８月２日（日）の応急給水活動について】 その３\n\n・太田郷小学校\n・第一中学校\n・第二中学校\n・代陽コミュニティセンター\n・八代小学校\n・八千把コミュニティセンター\n・太田郷コミュニティセンター\n　\n(続く)",
+      "url": "https://x.com/yatsushiro0801/status/2083826103760888133",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
@@ -74,23 +74,21 @@
       "source_id": "SRC-MUN-KM005",
       "account_name": "八代市公式X",
       "account_handle": "yatsushiro0801",
-      "post_time": "2026-08-01T13:58:54.000Z",
-      "text": "【応急給水活動について】\nその２\n\n時間　８:３０～１９:００\n・松高コミュニティセンター\n・第七中学校\n・第四中学校\n・龍峯コミュニティセンター\n・日奈久小学校\n・金剛小学校\n・植柳小学校\n・松高小学校\n・八代支援学校\n・日奈久コミュニティセンター\n・太田郷小学校\n・第一中学校\n・本庁舎西側",
-      "url": "https://x.com/yatsushiro0801/status/2083553059263959060",
+      "post_time": "2026-08-02T08:01:57.000Z",
+      "text": "【本日８月２日（日）の応急給水活動について】 その２\n\n終了時間（予定）　１９：００\n\n場所\n\n・松高コミュニティセンター\n・第七中学校\n・第四中学校\n・龍峯コミュニティセンター\n・日奈久小学校\n・金剛小学校\n・植柳小学校\n・松高小学校\n・八代支援学校\n・日奈久コミュニティセンター",
+      "url": "https://x.com/yatsushiro0801/status/2083825619612422286",
       "source_type": "LOCAL_GOVERNMENT",
       "municipality": "八代市",
       "content_filter": "RECENT_POSTS"
     },
     {
-      "source_id": "SRC-MUN-KM005",
-      "account_name": "八代市公式X",
-      "account_handle": "yatsushiro0801",
-      "post_time": "2026-08-01T13:54:34.000Z",
-      "text": "【明日８月２日（日）の応急給水活動について】\n(その１) \n 配布量は１回あたり５L程度となります。 \n給水容器（ポ��タンクやペットボトルなど）をご持参のうえ、お越しください。 　\nまた、給水車が水の補給で一時的に不在になることがありますが、あらかじめご了承ください。\n（続く）",
-      "url": "https://x.com/yatsushiro0801/status/2083551970477199828",
-      "source_type": "LOCAL_GOVERNMENT",
-      "municipality": "八代市",
-      "content_filter": "RECENT_POSTS"
+      "source_id": "SRC-NAT-002",
+      "account_name": "内閣府防災",
+      "account_handle": "CAO_BOUSAI",
+      "post_time": "2026-08-02T08:01:02.000Z",
+      "text": "【熊本市と八代市の避難所】\n熊本市と八代市の避難所における、水やエアコン等の情報は、各市のホームペ���ジでご覧いただくことも可能です。\n\n熊本市は https://t.co/oPnXgb8PB7\n八代市は https://t.co/DRdx8CnVLl\n\nをご覧ください。",
+      "url": "https://x.com/CAO_BOUSAI/status/2083825386186748240",
+      "source_type": "GOVERNMENT"
     }
   ],
   "sync_status": "FRESH"
