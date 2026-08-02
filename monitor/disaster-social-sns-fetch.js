@@ -15,8 +15,6 @@ const {
 const { resolveCategoryFromKeyword } = require("./disaster-social-index-engine");
 const { resolveSnsPostUrlFromFeedPost, isXPostUrl } = require("./disaster-social-url");
 const { normalizeInboxItem } = require("./disaster-social-pipeline");
-const { isDisasterRelevantPostText } = require("./disaster-social-disaster-relevance");
-
 const DEFAULT_OFFICIAL_X_FEED_URL =
   "https://raw.githubusercontent.com/toropoo-web/kumamoto-disaster-x-feed/main/data/posts.json";
 const DEFAULT_X_CROSS_SEARCH_FEED_URL =
@@ -262,7 +260,7 @@ function xPostToInboxItem(post, index, scopeMunicipalities) {
     return null;
   }
   const text = getPostText(post);
-  if (!text || !isDisasterRelevantPostText(text)) {
+  if (!text) {
     return null;
   }
   const regionMeta = resolvePostRegionMetadata(post, scopeMunicipalities);

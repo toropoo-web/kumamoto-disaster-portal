@@ -46,6 +46,14 @@ function main() {
     errors.push("fetchXInboxItems must load posts-cross-search.json");
   }
 
+  checks.push({
+    check: "portal does not filter by disaster relevance at acquisition",
+    pass: !/isDisasterRelevantPostText/.test(fetchJs)
+  });
+  if (/isDisasterRelevantPostText/.test(fetchJs)) {
+    errors.push("portal must not filter posts by disaster relevance at acquisition");
+  }
+
   const workflow = fs.readFileSync(
     path.join(ROOT, ".github", "workflows", "disaster-social-inbox.yml"),
     "utf8"
@@ -108,6 +116,7 @@ function main() {
       sender_restriction: false,
       keyword_exclusion_at_acquisition: false,
       category_exclusion_at_acquisition: false,
+      disaster_relevance_exclusion_at_acquisition: false,
       ai_exclusion: false
     },
     checks: checks,

@@ -23,20 +23,20 @@ const { isXPostUrl, resolveSocialEntryUrl } = require(path.join(ROOT, "monitor",
 
 const EXPECTED_DESCRIPTION =
   "23自治体のX投稿から、熊本地震関連情報を横断検索できます。";
-const EXPECTED_EXAMPLE = "迷子猫　無料開放";
+const EXPECTED_EXAMPLE = "迷子猫　無料シャワー　車中泊";
 const EXPECTED_HELP_EXAMPLES = [
   "迷子猫",
   "迷子犬",
+  "無料シャワー",
   "車中泊",
-  "無料開放",
   "炊き出し",
   "支援物資",
   "給水",
   "井戸水",
   "風呂",
-  "シャワー",
   "Wi-Fi",
-  "避難所"
+  "避難所",
+  "無料開放"
 ];
 
 async function main() {
