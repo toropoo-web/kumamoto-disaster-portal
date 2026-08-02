@@ -1623,6 +1623,7 @@ button:focus-visible {
   color: #5c4a00;
   font-size: 13px;
   line-height: 1.6;
+  white-space: pre-line;
 }
 
 .x-api-fetch-suspended-updated,

@@ -10,7 +10,7 @@
   var X_FEED_STATUS_UNAVAILABLE = "UNAVAILABLE";
   var X_FEED_ACCOUNT_LABEL = "公式X情報";
   var X_API_FETCH_SUSPENDED_NOTICE =
-    "現在、X APIの利用停止により新規投稿の取得を停止しています。表示内容の最終更新日時をご確認ください。";
+    "現在、X API課金対応のため\n新規取得を一時停止しています。\n\n表示中のデータは\n最後に取得できた情報です。";
   var X_FEED_EXCLUDED_SOURCE_IDS = { "SRC-PER-001": true };
   var X_FEED_EXCLUDED_ACCOUNT_HANDLES = { shinjirokoiz: true };
   var AREA_DISASTER_NAV_ID = "area-disaster-nav";
@@ -1181,7 +1181,7 @@
     return createElement(
       "p",
       className || "x-api-fetch-suspended-updated",
-      "最終データ更新：" + formatted
+      "最終更新日時：" + formatted
     );
   }
 
