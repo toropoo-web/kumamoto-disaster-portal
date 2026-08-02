@@ -338,6 +338,17 @@ function resolveSourceFeedUrl(options) {
   return options.postsFile || process.env.X_FEED_POSTS_FILE || options.postsUrl || X_FEED_POSTS_URL;
 }
 
+function previewContentEquals(existing, output) {
+  if (!existing || !output) {
+    return false;
+  }
+  return (
+    existing.section_title === output.section_title &&
+    existing.item_count === output.item_count &&
+    JSON.stringify(existing.posts) === JSON.stringify(output.posts)
+  );
+}
+
 function buildPreviewOutput(posts, meta) {
   const output = {
     section_title: "公式X速報",
@@ -468,6 +479,17 @@ async function syncXFeed(options) {
     syncStatus: "FRESH"
   });
 
+  const existing = loadExistingPreview(outputPath);
+  if (existing && previewContentEquals(existing, output)) {
+    return buildResult("NO_CHANGES", {
+      source: sourceFeedUrl,
+      rawCount: rawPosts.length,
+      selectedCount: existing.posts.length,
+      sync_status: existing.sync_status || "UNCHANGED",
+      output: path.relative(ROOT, outputPath)
+    });
+  }
+
   writePreviewOutput(outputPath, output);
 
   return buildResult("PASS", {
@@ -507,6 +529,7 @@ module.exports = {
   countSelectedMunicipalityPosts,
   loadExistingPreview,
   retainStalePreview,
+  previewContentEquals,
   passesContentFilter,
   matchesDisasterRelatedContent,
   isOfficialMunicipalityPost,

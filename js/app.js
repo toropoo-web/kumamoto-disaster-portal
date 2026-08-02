@@ -9,6 +9,8 @@
   var X_FEED_STATUS_AVAILABLE = "AVAILABLE";
   var X_FEED_STATUS_UNAVAILABLE = "UNAVAILABLE";
   var X_FEED_ACCOUNT_LABEL = "公式X情報";
+  var X_API_FETCH_SUSPENDED_NOTICE =
+    "現在、X APIの利用停止により新規投稿の取得を停止しています。表示内容の最終更新日時をご確認ください。";
   var X_FEED_EXCLUDED_SOURCE_IDS = { "SRC-PER-001": true };
   var X_FEED_EXCLUDED_ACCOUNT_HANDLES = { shinjirokoiz: true };
   var AREA_DISASTER_NAV_ID = "area-disaster-nav";
@@ -1078,6 +1080,7 @@
               status: X_FEED_STATUS_AVAILABLE,
               section_title: data.section_title,
               synced_at: data.synced_at,
+              last_successful_sync_at: data.last_successful_sync_at,
               posts: posts
             };
           })
@@ -1158,6 +1161,42 @@
     var h = String(date.getHours()).padStart(2, "0");
     var min = String(date.getMinutes()).padStart(2, "0");
     return y + "/" + m + "/" + d + " " + h + ":" + min;
+  }
+
+  function createXApiFetchSuspendedNotice(className) {
+    var notice = createElement(
+      "p",
+      className || "x-api-fetch-suspended-notice",
+      X_API_FETCH_SUSPENDED_NOTICE
+    );
+    notice.setAttribute("role", "status");
+    return notice;
+  }
+
+  function createXApiFetchLastUpdatedLine(className, value) {
+    var formatted = formatDateTime(value) || formatSyncedAt(value);
+    if (!formatted) {
+      return null;
+    }
+    return createElement(
+      "p",
+      className || "x-api-fetch-suspended-updated",
+      "最終データ更新：" + formatted
+    );
+  }
+
+  function getXFeedLastUpdatedAt(xFeedState) {
+    if (!xFeedState) {
+      return "";
+    }
+    return xFeedState.last_successful_sync_at || xFeedState.synced_at || "";
+  }
+
+  function getDisasterSocialLastUpdatedAt(socialPayload) {
+    if (!socialPayload || !socialPayload.index) {
+      return "";
+    }
+    return socialPayload.index.last_updated || "";
   }
 
   function getCommunicationServiceKindLabel(service) {
@@ -3096,6 +3135,15 @@
     renderDisasterSocialSearchHelp(titleRow);
     inner.appendChild(titleRow);
 
+    inner.appendChild(createXApiFetchSuspendedNotice("disaster-social-search__suspended-notice"));
+    var socialLastUpdated = createXApiFetchLastUpdatedLine(
+      "disaster-social-search__last-updated",
+      getDisasterSocialLastUpdatedAt(socialPayload)
+    );
+    if (socialLastUpdated) {
+      inner.appendChild(socialLastUpdated);
+    }
+
     inner.appendChild(createElement(
       "p",
       "disaster-search__guide-text",
@@ -4633,9 +4681,13 @@
     titleEl.id = "x-feed-title";
     inner.appendChild(titleEl);
 
-    var syncedAt = formatSyncedAt(xFeedState.synced_at);
-    if (syncedAt) {
-      inner.appendChild(createElement("p", "x-feed__synced", "最終取得：" + syncedAt));
+    inner.appendChild(createXApiFetchSuspendedNotice("x-feed__suspended-notice"));
+    var xFeedLastUpdated = createXApiFetchLastUpdatedLine(
+      "x-feed__last-updated",
+      getXFeedLastUpdatedAt(xFeedState)
+    );
+    if (xFeedLastUpdated) {
+      inner.appendChild(xFeedLastUpdated);
     }
 
     inner.appendChild(createElement("p", "x-feed__role", "速報性重視"));
