@@ -38,7 +38,7 @@
     ],
     "since_date": "2026-07-28"
   },
-  "generated_at": "2026-08-02T03:50:13.120Z",
+  "generated_at": "2026-08-02T06:42:51.644Z",
   "AUTO_PUBLISH": false,
   "AUTO_APPLY": false,
   "STOP_AT": "REVIEW_QUEUE",
@@ -49,51 +49,52 @@
     "error_count": 0
   },
   "counts": {
-    "inbox_item_count": 3315,
-    "review_queue_item_count": 3315,
-    "apply_queue_item_count": 3315,
-    "index_entry_count": 3315,
+    "inbox_item_count": 3321,
+    "review_queue_item_count": 3321,
+    "apply_queue_item_count": 3321,
+    "index_entry_count": 3321,
     "source_count": 8,
-    "incomplete_inbox_count": 3315,
-    "incomplete_index_count": 3315,
-    "incomplete_review_count": 3315,
+    "incomplete_inbox_count": 3321,
+    "incomplete_index_count": 3321,
+    "incomplete_review_count": 3321,
     "duplicate_review_count": 0,
     "pending_review_count": 0,
-    "approved_review_count": 3315
+    "approved_review_count": 3321
   },
   "review_status_summary": {
-    "PENDING": 3315,
+    "PENDING": 3321,
     "APPROVED": 0,
     "REJECTED": 0,
     "DUPLICATE": 0
   },
   "prefecture_summary": {
-    "熊本県": 3251,
-    "鹿児島県": 64
+    "鹿児島県": 66,
+    "熊本県": 3255
   },
   "prefecture_detail": {
-    "熊本県": {
-      "entry_count": 3251,
-      "incomplete_count": 3251,
+    "鹿児島県": {
+      "entry_count": 66,
+      "incomplete_count": 66,
       "duplicate_count": 0,
       "category_counts": {
+        "WATER": 33,
+        "VOLUNTEER": 1,
+        "OTHER": 29,
+        "SUPPLIES": 2,
+        "CHARGING": 1
+      }
+    },
+    "熊本県": {
+      "entry_count": 3255,
+      "incomplete_count": 3255,
+      "duplicate_count": 0,
+      "category_counts": {
+        "OTHER": 1515,
         "CHARGING": 538,
         "WATER": 834,
         "SUPPLIES": 89,
         "FOOD": 77,
-        "OTHER": 1511,
         "VOLUNTEER": 202
-      }
-    },
-    "鹿児島県": {
-      "entry_count": 64,
-      "incomplete_count": 64,
-      "duplicate_count": 0,
-      "category_counts": {
-        "OTHER": 29,
-        "SUPPLIES": 2,
-        "WATER": 32,
-        "CHARGING": 1
       }
     }
   },
@@ -105,11 +106,35 @@
   },
   "last_updated": {
     "inbox": null,
-    "review_queue": "2026-08-02T03:50:10.304Z",
-    "apply_queue": "2026-08-02T03:50:10.340Z",
-    "index": "2026-08-02T03:50:10.404Z"
+    "review_queue": "2026-08-02T06:42:48.967Z",
+    "apply_queue": "2026-08-02T06:42:49.001Z",
+    "index": "2026-08-02T06:42:49.066Z"
   },
   "incomplete_items": [
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083797422048985274",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083797422048985274"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083775571918835944",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083775571918835944"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083774784702398616",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083774784702398616"
+    },
     {
       "inbox_id": "SNS-X-POST-CROSS-2083761038621892697",
       "review_note": "",
@@ -149,6 +174,14 @@
         "district"
       ],
       "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083758088323207311"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083757909834441086",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083757909834441086"
     },
     {
       "inbox_id": "SNS-X-POST-CROSS-2083757788992618669",
@@ -1031,6 +1064,14 @@
       "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083698503088537723"
     },
     {
+      "inbox_id": "SNS-X-POST-CROSS-2083698004754825312",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083698004754825312"
+    },
+    {
       "inbox_id": "SNS-X-POST-CROSS-2083697876950229216",
       "review_note": "",
       "missing_fields": [
@@ -1461,6 +1502,14 @@
         "district"
       ],
       "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083676599430623331"
+    },
+    {
+      "inbox_id": "SNS-X-POST-CROSS-2083676095199826396",
+      "review_note": "",
+      "missing_fields": [
+        "district"
+      ],
+      "entry_id": "SOC-IDX-SNS-X-POST-CROSS-2083676095199826396"
     },
     {
       "inbox_id": "SNS-X-POST-CROSS-2083675611990806555",
