@@ -47,6 +47,15 @@ services:
     name: kumamoto-patrol-cron
     runtime: node
     schedule: "0 */5 * * *"
-    buildCommand: npm ci
+    buildCommand: npm ci && npx playwright install chromium
     startCommand: npm run patrol:cron
     autoDeploy: true
+    envVars:
+      - key: PATROL_FETCH_V2
+        value: "1"
+      - key: PATROL_DEFAULT_FETCH_MODE
+        value: auto
+      - key: PATROL_ALERT_WEBHOOK_URL
+        sync: false
+      - key: PATROL_ALERT_EMAIL_WEBHOOK_URL
+        sync: false

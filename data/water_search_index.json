@@ -9,7 +9,7 @@
   "location_item_count": 11,
   "registry_item_count": 41,
   "item_count": 52,
-  "last_updated": "2026-08-03T09:38:58.891Z",
+  "last_updated": "2026-08-03T16:58:21.084Z",
   "items": [
     {
       "item_kind": "location",
@@ -23,8 +23,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-03T08:35:02.000Z",
-      "checked_at": "2026-08-03T09:26:10.204Z"
+      "source_updated_at": "2026-08-03T13:30:04.000Z",
+      "checked_at": "2026-08-03T16:54:24.645Z"
     },
     {
       "item_kind": "location",
@@ -38,8 +38,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-03T08:35:02.000Z",
-      "checked_at": "2026-08-03T09:26:10.204Z"
+      "source_updated_at": "2026-08-03T13:30:04.000Z",
+      "checked_at": "2026-08-03T16:54:24.645Z"
     },
     {
       "item_kind": "location",
@@ -53,8 +53,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-03T08:35:02.000Z",
-      "checked_at": "2026-08-03T09:26:10.204Z"
+      "source_updated_at": "2026-08-03T13:30:04.000Z",
+      "checked_at": "2026-08-03T16:54:24.645Z"
     },
     {
       "item_kind": "location",
@@ -68,8 +68,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-03T08:35:02.000Z",
-      "checked_at": "2026-08-03T09:26:10.204Z"
+      "source_updated_at": "2026-08-03T13:30:04.000Z",
+      "checked_at": "2026-08-03T16:54:24.645Z"
     },
     {
       "item_kind": "location",
@@ -83,8 +83,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-03T08:35:02.000Z",
-      "checked_at": "2026-08-03T09:26:10.204Z"
+      "source_updated_at": "2026-08-03T13:30:04.000Z",
+      "checked_at": "2026-08-03T16:54:24.645Z"
     },
     {
       "item_kind": "location",
@@ -182,8 +182,8 @@
       "source_type": "official",
       "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-03T09:14:33.000Z",
-      "checked_at": "2026-08-03T09:26:04.457Z"
+      "source_updated_at": "2026-08-03T16:04:20.000Z",
+      "checked_at": "2026-08-03T16:54:08.543Z"
     },
     {
       "item_kind": "registry",
@@ -197,8 +197,8 @@
       "source_type": "official",
       "source_url": "https://www.city.kumamoto.jp/bousai/",
       "updated_at": null,
-      "source_updated_at": "2026-08-03T07:34:16.000Z",
-      "checked_at": "2026-08-03T09:26:04.615Z"
+      "source_updated_at": "2026-08-03T15:00:10.000Z",
+      "checked_at": "2026-08-03T16:54:09.463Z"
     },
     {
       "item_kind": "registry",
@@ -212,8 +212,8 @@
       "source_type": "official",
       "source_url": "https://www.city.kumamoto.jp/bousai/",
       "updated_at": null,
-      "source_updated_at": "2026-08-03T07:34:16.000Z",
-      "checked_at": "2026-08-03T09:26:04.615Z"
+      "source_updated_at": "2026-08-03T15:00:10.000Z",
+      "checked_at": "2026-08-03T16:54:09.463Z"
     },
     {
       "item_kind": "registry",
@@ -227,8 +227,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-03T09:06:04.000Z",
-      "checked_at": "2026-08-03T09:26:10.103Z"
+      "source_updated_at": "2026-08-03T15:01:04.000Z",
+      "checked_at": "2026-08-03T16:54:23.926Z"
     },
     {
       "item_kind": "registry",
@@ -243,7 +243,7 @@
       "source_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
       "updated_at": null,
       "source_updated_at": "2026-08-02T15:00:00.000Z",
-      "checked_at": "2026-08-03T09:26:08.379Z"
+      "checked_at": "2026-08-03T16:54:18.172Z"
     },
     {
       "item_kind": "registry",
@@ -269,8 +269,10 @@
       "search_text": "熊本県 菊池市 菊池市 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
       "source_name": "菊池市公式",
       "source_type": "official",
-      "source_url": "https://www.city.kikuchi.lg.jp/q/list/186.html",
-      "updated_at": null
+      "source_url": "https://www.city.kikuchi.lg.jp/",
+      "updated_at": null,
+      "source_updated_at": "2026-08-02T15:00:00.000Z",
+      "checked_at": "2026-08-03T16:55:40.016Z"
     },
     {
       "item_kind": "registry",
@@ -312,7 +314,7 @@
       "source_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
       "updated_at": null,
       "source_updated_at": "2026-08-03T09:21:03.000Z",
-      "checked_at": "2026-08-03T09:26:17.371Z"
+      "checked_at": "2026-08-03T16:54:40.059Z"
     },
     {
       "item_kind": "registry",
@@ -355,7 +357,7 @@
       "source_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
       "updated_at": null,
       "source_updated_at": "2026-07-30T15:00:00.000Z",
-      "checked_at": "2026-08-03T09:26:19.735Z"
+      "checked_at": "2026-08-03T16:54:46.129Z"
     },
     {
       "item_kind": "registry",
@@ -369,7 +371,7 @@
       "source_type": "official",
       "source_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
       "updated_at": null,
-      "checked_at": "2026-08-03T09:26:20.062Z"
+      "checked_at": "2026-08-03T16:54:47.397Z"
     },
     {
       "item_kind": "registry",
@@ -383,8 +385,8 @@
       "source_type": "official",
       "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-03T08:12:05.000Z",
-      "checked_at": "2026-08-03T09:26:20.550Z"
+      "source_updated_at": "2026-08-03T15:00:11.000Z",
+      "checked_at": "2026-08-03T16:54:49.087Z"
     },
     {
       "item_kind": "registry",
@@ -398,8 +400,8 @@
       "source_type": "official",
       "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-03T05:05:07.000Z",
-      "checked_at": "2026-08-03T09:26:20.823Z"
+      "source_updated_at": "2026-08-03T15:00:15.000Z",
+      "checked_at": "2026-08-03T16:54:49.915Z"
     },
     {
       "item_kind": "registry",
@@ -426,8 +428,8 @@
       "source_type": "official",
       "source_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-03T09:24:12.000Z",
-      "checked_at": "2026-08-03T09:26:20.293Z"
+      "source_updated_at": "2026-08-03T15:02:09.000Z",
+      "checked_at": "2026-08-03T16:54:48.220Z"
     },
     {
       "item_kind": "registry",
@@ -630,7 +632,7 @@
       "source_url": "https://www.city.uto.lg.jp/article/list/1014.html",
       "updated_at": null,
       "source_updated_at": "2026-07-27T15:00:00.000Z",
-      "checked_at": "2026-08-03T09:26:06.850Z"
+      "checked_at": "2026-08-03T16:54:13.311Z"
     },
     {
       "item_kind": "registry",
@@ -642,8 +644,10 @@
       "search_text": "熊本県 美里町 美里町 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
       "source_name": "美里町公式",
       "source_type": "official",
-      "source_url": "https://www.town.kumamoto-misato.lg.jp/bousai/",
-      "updated_at": null
+      "source_url": "https://www.town.kumamoto-misato.lg.jp/",
+      "updated_at": null,
+      "source_updated_at": "2026-08-03T07:10:00.000Z",
+      "checked_at": "2026-08-03T16:54:23.008Z"
     },
     {
       "item_kind": "registry",
@@ -657,8 +661,8 @@
       "source_type": "official",
       "source_url": "https://www.town.mashiki.lg.jp/bousai",
       "updated_at": null,
-      "source_updated_at": "2026-08-03T06:27:25.000Z",
-      "checked_at": "2026-08-03T09:26:13.420Z"
+      "source_updated_at": "2026-08-03T15:00:10.000Z",
+      "checked_at": "2026-08-03T16:54:28.873Z"
     },
     {
       "item_kind": "registry",
@@ -700,8 +704,8 @@
       "source_type": "official",
       "source_url": "https://www.town.kikuyo.lg.jp/bousai",
       "updated_at": null,
-      "source_updated_at": "2026-08-03T08:16:06.000Z",
-      "checked_at": "2026-08-03T09:26:14.988Z"
+      "source_updated_at": "2026-08-03T15:01:53.000Z",
+      "checked_at": "2026-08-03T16:54:33.665Z"
     },
     {
       "item_kind": "registry",
@@ -713,8 +717,9 @@
       "search_text": "熊本県 氷川町 氷川町 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
       "source_name": "氷川町公式",
       "source_type": "official",
-      "source_url": "https://www.hikawa.kumamoto.jp/list00115.html",
-      "updated_at": null
+      "source_url": "https://www.town.hikawa.kumamoto.jp/",
+      "updated_at": null,
+      "checked_at": "2026-07-31T03:30:19.908Z"
     },
     {
       "item_kind": "registry",
@@ -726,8 +731,10 @@
       "search_text": "熊本県 阿蘇市 阿蘇市 給水関連情報 給水 応急給水 給水所 給水車 断水 水道 復旧",
       "source_name": "阿蘇市公式",
       "source_type": "official",
-      "source_url": "https://www.city.aso.kumamoto.jp/bousai/",
-      "updated_at": null
+      "source_url": "https://www.city.aso.kumamoto.jp/",
+      "updated_at": null,
+      "source_updated_at": "2026-06-02T15:00:00.000Z",
+      "checked_at": "2026-08-03T16:55:42.724Z"
     },
     {
       "item_kind": "registry",

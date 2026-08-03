@@ -105,7 +105,7 @@
       "region": "熊本県",
       "organization": "菊池市",
       "source_type": "official",
-      "url": "https://www.city.kikuchi.lg.jp/q/list/186.html",
+      "url": "https://www.city.kikuchi.lg.jp/",
       "keywords": [
         "給水",
         "応急給水",
@@ -537,7 +537,7 @@
       "region": "熊本県",
       "organization": "美里町",
       "source_type": "official",
-      "url": "https://www.town.kumamoto-misato.lg.jp/bousai/",
+      "url": "https://www.town.kumamoto-misato.lg.jp/",
       "keywords": [
         "給水",
         "応急給水",
@@ -617,7 +617,7 @@
       "region": "熊本県",
       "organization": "氷川町",
       "source_type": "official",
-      "url": "https://www.hikawa.kumamoto.jp/list00115.html",
+      "url": "https://www.town.hikawa.kumamoto.jp/",
       "keywords": [
         "給水",
         "応急給水",
@@ -633,7 +633,7 @@
       "region": "熊本県",
       "organization": "阿蘇市",
       "source_type": "official",
-      "url": "https://www.city.aso.kumamoto.jp/bousai/",
+      "url": "https://www.city.aso.kumamoto.jp/",
       "keywords": [
         "給水",
         "応急給水",

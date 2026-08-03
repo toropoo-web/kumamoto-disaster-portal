@@ -55,7 +55,7 @@
       "area_id": "KM004",
       "municipality": "美里町",
       "top_page_url": "https://www.town.kumamoto-misato.lg.jp/",
-      "disaster_page_url": "https://www.town.kumamoto-misato.lg.jp/bousai/"
+      "disaster_page_url": "https://www.town.kumamoto-misato.lg.jp/"
     },
     {
       "area_id": "KM015",
@@ -115,7 +115,7 @@
       "area_id": "KM013",
       "municipality": "菊池市",
       "top_page_url": "https://www.city.kikuchi.lg.jp/",
-      "disaster_page_url": "https://www.city.kikuchi.lg.jp/q/list/186.html"
+      "disaster_page_url": "https://www.city.kikuchi.lg.jp/"
     },
     {
       "area_id": "KM009",
@@ -126,14 +126,14 @@
     {
       "area_id": "KM007",
       "municipality": "氷川町",
-      "top_page_url": "https://www.hikawa.kumamoto.jp/",
-      "disaster_page_url": "https://www.hikawa.kumamoto.jp/list00115.html"
+      "top_page_url": "https://www.town.hikawa.kumamoto.jp/",
+      "disaster_page_url": "https://www.town.hikawa.kumamoto.jp/"
     },
     {
       "area_id": "KM022",
       "municipality": "阿蘇市",
       "top_page_url": "https://www.city.aso.kumamoto.jp/",
-      "disaster_page_url": "https://www.city.aso.kumamoto.jp/bousai/"
+      "disaster_page_url": "https://www.city.aso.kumamoto.jp/"
     },
     {
       "area_id": "KM023",

@@ -368,7 +368,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z",
+    "checked_at": "2026-08-03T16:58:21.184Z",
     "source_updated_at": "2026-08-03T09:21:03.000Z"
   },
   {
@@ -380,13 +380,13 @@
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
     "displayed_updated_at": "2026-08-11T15:00:00.000Z",
     "source_name": "甲佐町",
-    "source_url": "https://www.town.kosa.lg.jp/q/list/51.html",
+    "source_url": "https://www.town.kosa.lg.jp/list00171.html",
     "department": "甲佐町",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z",
+    "checked_at": "2026-08-03T16:58:21.184Z",
     "source_updated_at": "2026-08-11T15:00:00.000Z"
   },
   {
@@ -398,13 +398,13 @@
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
     "displayed_updated_at": "2019-07-01T15:00:00.000Z",
     "source_name": "芦北町",
-    "source_url": "https://www.town.ashikita.lg.jp/bosai_site/hinan",
+    "source_url": "https://www.town.ashikita.lg.jp/bosai_site",
     "department": "芦北町",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z",
+    "checked_at": "2026-08-03T16:58:21.184Z",
     "source_updated_at": "2019-07-01T15:00:00.000Z"
   },
   {
@@ -422,7 +422,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z",
+    "checked_at": "2026-08-03T16:58:21.184Z",
     "source_updated_at": "2026-07-30T15:00:00.000Z"
   },
   {
@@ -440,7 +440,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z",
+    "checked_at": "2026-08-03T16:58:21.184Z",
     "source_updated_at": "2026-07-29T15:00:00.000Z"
   },
   {
@@ -450,7 +450,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（天草市）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-03T09:24:12.000Z",
+    "displayed_updated_at": "2026-08-03T15:02:09.000Z",
     "source_name": "天草市",
     "source_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
     "department": "天草市",
@@ -458,8 +458,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z",
-    "source_updated_at": "2026-08-03T09:24:12.000Z"
+    "checked_at": "2026-08-03T16:58:21.184Z",
+    "source_updated_at": "2026-08-03T15:02:09.000Z"
   },
   {
     "area_id": "KM020",
@@ -468,7 +468,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（西原村）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-03T08:12:05.000Z",
+    "displayed_updated_at": "2026-08-03T15:00:11.000Z",
     "source_name": "西原村",
     "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
     "department": "西原村",
@@ -476,8 +476,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z",
-    "source_updated_at": "2026-08-03T08:12:05.000Z"
+    "checked_at": "2026-08-03T16:58:21.184Z",
+    "source_updated_at": "2026-08-03T15:00:11.000Z"
   },
   {
     "area_id": "KM021",
@@ -486,7 +486,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（苓北町）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-03T05:05:07.000Z",
+    "displayed_updated_at": "2026-08-03T15:00:15.000Z",
     "source_name": "苓北町",
     "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
     "department": "苓北町",
@@ -494,8 +494,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z",
-    "source_updated_at": "2026-08-03T05:05:07.000Z"
+    "checked_at": "2026-08-03T16:58:21.184Z",
+    "source_updated_at": "2026-08-03T15:00:15.000Z"
   },
   {
     "area_id": "KM022",
@@ -504,16 +504,16 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（多良木町）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2024-07-22T15:00:00.000Z",
+    "displayed_updated_at": "2026-06-02T15:00:00.000Z",
     "source_name": "多良木町",
-    "source_url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+    "source_url": "https://www.city.aso.kumamoto.jp/",
     "department": "多良木町",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z",
-    "source_updated_at": "2024-07-22T15:00:00.000Z"
+    "checked_at": "2026-08-03T16:58:21.184Z",
+    "source_updated_at": "2026-06-02T15:00:00.000Z"
   },
   {
     "area_id": "KM004",
@@ -521,15 +521,16 @@
     "public_category_id": "EMERGENCY",
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（美里町）",
-    "summary": "美里町の公式防災・緊急情報ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-03T09:36:40.643Z",
+    "summary": "令和8年熊本地震（7月28日発生）に関する情報。最新状況はリンク先でご確認ください。",
+    "displayed_updated_at": "2026-08-03T07:10:00.000Z",
     "source_name": "美里町",
-    "source_url": "https://www.town.kumamoto-misato.lg.jp/bousai/",
+    "source_url": "https://www.town.kumamoto-misato.lg.jp/",
     "department": "美里町",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-08-03T09:36:40.643Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T09:38:59.076Z"
+    "checked_at": "2026-08-03T16:58:21.184Z",
+    "source_updated_at": "2026-08-03T07:10:00.000Z"
   }
 ]

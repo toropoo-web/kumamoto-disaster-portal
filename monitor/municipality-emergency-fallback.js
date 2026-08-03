@@ -233,7 +233,7 @@ function mergePhase1EmergencyRecord(existing, record) {
   if (!existing.summary || !String(existing.summary).trim()) {
     existing.summary = record.summary;
   }
-  if (!existing.source_url) {
+  if (!existing.source_url || existing.source_url !== record.source_url) {
     existing.source_url = record.source_url;
   }
   existing.checked_at = record.checked_at;
@@ -342,6 +342,8 @@ function ensureMunicipalityEmergencyFallbacks(options) {
     }
 
     const existing = updates[existingIndex];
+    existing.source_url = record.source_url;
+
     if (scrapeFailed || scrapeEmpty) {
       mergePhase1EmergencyRecord(existing, record);
       refreshed += 1;
@@ -350,6 +352,9 @@ function ensureMunicipalityEmergencyFallbacks(options) {
       if (record.source_updated_at) {
         existing.source_updated_at = record.source_updated_at;
         existing.displayed_updated_at = record.displayed_updated_at;
+      }
+      if (isUsablePageText(record.summary) && record.summary !== DEFAULT_SUMMARY) {
+        existing.summary = record.summary;
       }
       refreshed += 1;
     }

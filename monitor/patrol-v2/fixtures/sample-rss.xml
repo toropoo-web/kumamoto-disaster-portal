@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>テスト自治体 RSS</title>
+    <item>
+      <title>避難所開設のお知らせ</title>
+      <link>https://example.test/news/1</link>
+      <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>給水所の設置について</title>
+      <link>https://example.test/news/2</link>
+      <pubDate>Fri, 31 Jul 2026 09:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

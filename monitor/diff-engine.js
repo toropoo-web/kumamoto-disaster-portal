@@ -13,6 +13,8 @@ const { findLocationSourcesByUrl } = require("./location-sources");
 const { findEmergencySourcesByUrl } = require("./emergency-sources");
 const { findInfrastructureSourcesByUrl } = require("./infrastructure-sources");
 
+const { detectMultiLayerChange } = require("./patrol-v2/multi-layer-detector");
+
 const ROOT = path.join(__dirname, "..");
 const SNAPSHOT_FILE = path.join(__dirname, "reports", "snapshots.json");
 const CHANGE_LOG_DIR = path.join(__dirname, "change-log");
@@ -105,6 +107,32 @@ function compareSource(source, current, previous) {
         changes[0].changeType = "CONTENT_AND_TITLE_CHANGED";
       }
     }
+  }
+
+  if (previous.regionHash !== current.regionHash && current.regionHash) {
+    const regionEntry = buildChangeEntry(source, previous, current, "REGION_CHANGED");
+    if (!changes.length) {
+      changes.push(regionEntry);
+    } else {
+      changes[0].regionHashChanged = {
+        from: previous.regionHash,
+        to: current.regionHash
+      };
+    }
+  }
+
+  if (
+    previous.feedFingerprint &&
+    current.feedFingerprint &&
+    previous.feedFingerprint !== current.feedFingerprint
+  ) {
+    changes.push(buildChangeEntry(source, previous, current, "FEED_CHANGED"));
+  }
+
+  const multiLayer = detectMultiLayerChange(previous, current);
+  if (changes.length && multiLayer.signals.length) {
+    changes[0].detectionSignals = multiLayer.signals;
+    changes[0].detectionScore = multiLayer.score;
   }
 
   return changes.length ? changes : null;

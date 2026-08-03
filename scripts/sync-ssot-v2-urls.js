@@ -26,7 +26,7 @@ const SSOT_V2_URLS = {
   上天草市: "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
   宇城市: "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
   天草市: "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
-  美里町: "https://www.town.kumamoto-misato.lg.jp/bousai/",
+  美里町: "https://www.town.kumamoto-misato.lg.jp/",
   甲佐町: "https://www.town.kosa.lg.jp/list00171.html",
   芦北町: "https://www.town.ashikita.lg.jp/bosai_site",
   津奈木町: "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
@@ -36,10 +36,10 @@ const SSOT_V2_URLS = {
   嘉島町: "https://www.town.kashima.kumamoto.jp/bousai/",
   人吉市: "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294",
   菊陽町: "https://www.town.kikuyo.lg.jp/bousai",
-  菊池市: "https://www.city.kikuchi.lg.jp/q/list/186.html",
+  菊池市: "https://www.city.kikuchi.lg.jp/",
   合志市: "https://www.city.koshi.lg.jp/kiji00318536/index.html",
-  氷川町: "https://www.hikawa.kumamoto.jp/list00115.html",
-  阿蘇市: "https://www.city.aso.kumamoto.jp/bousai/",
+  氷川町: "https://www.town.hikawa.kumamoto.jp/",
+  阿蘇市: "https://www.city.aso.kumamoto.jp/",
   南阿蘇村: "https://www.vill.minamiaso.lg.jp/site/bousai/",
   西原村: "https://www.vill.nishihara.kumamoto.jp/bousai/default.html"
 };

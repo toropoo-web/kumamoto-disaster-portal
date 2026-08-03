@@ -95,12 +95,12 @@
       "area_id": "KM004",
       "name": "美里町",
       "category": "municipality",
-      "url": "https://www.town.kumamoto-misato.lg.jp/bousai/",
+      "url": "https://www.town.kumamoto-misato.lg.jp/",
       "public_category_id": "EMERGENCY",
       "status": "ACTIVE",
       "source_type": "official",
       "patrol_role": "primary",
-      "note": "R8地震情報ハブ（旧index.htmlから差し替え）"
+      "note": "公式トップページ（令和8年熊本地震情報・新着情報を掲載）"
     },
     {
       "id": "KM005-yatsushiro-bousai",
@@ -162,7 +162,7 @@
       "area_id": "KM007",
       "name": "氷川町",
       "category": "municipality",
-      "url": "https://www.hikawa.kumamoto.jp/list00115.html",
+      "url": "https://www.town.hikawa.kumamoto.jp/",
       "public_category_id": "EMERGENCY",
       "status": "ACTIVE",
       "source_type": "official",
@@ -345,6 +345,17 @@
       "patrol_role": "secondary"
     },
     {
+      "id": "KM013-kikuchi-emergency",
+      "area_id": "KM013",
+      "name": "菊池市",
+      "category": "municipality",
+      "url": "https://www.city.kikuchi.lg.jp/",
+      "public_category_id": "EMERGENCY",
+      "status": "ACTIVE",
+      "source_type": "official",
+      "patrol_role": "primary"
+    },
+    {
       "id": "KM013-kikuchi-shelter",
       "area_id": "KM013",
       "name": "菊池市",
@@ -472,7 +483,7 @@
       "area_id": "KM022",
       "name": "阿蘇市",
       "category": "municipality",
-      "url": "https://www.city.aso.kumamoto.jp/bousai/",
+      "url": "https://www.city.aso.kumamoto.jp/",
       "public_category_id": "EMERGENCY",
       "status": "ACTIVE",
       "source_type": "official",

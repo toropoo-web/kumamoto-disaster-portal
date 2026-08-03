@@ -19,10 +19,17 @@ const { getMunicipalityPatrolSources } = require("../monitor/municipality-patrol
 const {
   ensureMunicipalityEmergencyFallbacks
 } = require("../monitor/municipality-emergency-fallback");
+const { fetchPageForPatrol } = require("../monitor/patrol-v2/fetch-orchestrator");
+const { filterMunicipalityPatrolSources } = require("../monitor/patrol-v2/source-guard");
+const {
+  dispatchPatrolAlert,
+  dispatchPatrolSummary
+} = require("../monitor/patrol-v2/alert-dispatcher");
 
 function loadSources() {
   const data = JSON.parse(fs.readFileSync(SOURCES_FILE, "utf8"));
-  return getMunicipalityPatrolSources().concat(data.communication);
+  const merged = getMunicipalityPatrolSources().concat(data.communication);
+  return filterMunicipalityPatrolSources(merged);
 }
 
 function ensureDir(dirPath) {
@@ -32,9 +39,70 @@ function ensureDir(dirPath) {
 }
 
 async function patrolSource(source) {
-  const fetched = await fetchSource(source.url);
+  const useV2 = process.env.PATROL_FETCH_V2 !== "0";
+  let fetched;
+  let feedFingerprint = "";
+  let feedUrl = "";
+
+  try {
+    if (useV2) {
+      const orchestrated = await fetchPageForPatrol(source);
+      fetched = orchestrated.fetched;
+      feedFingerprint = orchestrated.meta.feedFingerprint || "";
+      feedUrl = orchestrated.meta.feedUrl || "";
+
+      if (orchestrated.meta.error) {
+        await dispatchPatrolAlert({
+          level: "ERROR",
+          summary: "巡回オーケストレータ例外: " + source.id,
+          detail: source.url + "\n" + orchestrated.meta.error
+        });
+      }
+    } else {
+      fetched = await fetchSource(source.url);
+    }
+  } catch (err) {
+    await dispatchPatrolAlert({
+      level: "ERROR",
+      summary: "巡回取得例外: " + source.id,
+      detail: source.url + "\n" + err.message
+    });
+    fetched = {
+      ok: false,
+      url: source.url,
+      originalUrl: source.url,
+      finalUrl: source.url,
+      status: 0,
+      redirectCount: 0,
+      error: "patrol_exception",
+      message: err.message,
+      body: "",
+      bodyBuffer: Buffer.alloc(0),
+      charset: "utf-8",
+      headers: {},
+      fetchMode: "error"
+    };
+  }
+
+  if (!fetched.ok) {
+    await dispatchPatrolAlert({
+      level: "WARNING",
+      summary: "取得失敗: " + source.id,
+      detail:
+        source.url +
+        "\nstatus=" +
+        fetched.status +
+        " error=" +
+        (fetched.error || "") +
+        " " +
+        (fetched.message || "")
+    });
+  }
+
   const parsed = parsePage(fetched, {
-    preferArticleUpdatedAt: source.prefer_article_updated_at === true
+    preferArticleUpdatedAt: source.prefer_article_updated_at === true,
+    feedFingerprint: feedFingerprint,
+    feedUrl: feedUrl
   });
   return { fetched, parsed };
 }
@@ -121,6 +189,20 @@ async function main() {
   const stamp = patrolAt.replace(/[:.]/g, "-");
   const reportPath = path.join(REPORTS_DIR, "patrol-" + stamp + ".json");
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + "\n", "utf8");
+
+  const failureSample = (operation.summary.failures || [])
+    .slice(0, 5)
+    .map(function (item) {
+      return item.source + " " + item.url;
+    })
+    .join("\n");
+
+  await dispatchPatrolSummary({
+    failedCount: diffResult.failedCount,
+    successCount: diffResult.successCount,
+    highPriorityCount: operation.HIGH_PRIORITY_COUNT || 0,
+    failureSample: failureSample
+  });
 
   console.log("=== Kumamoto Disaster Portal Patrol ===");
   console.log(JSON.stringify(report, null, 2));

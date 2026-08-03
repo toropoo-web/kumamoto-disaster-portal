@@ -2,6 +2,7 @@
 
 const crypto = require("crypto");
 const { KEYWORDS, CONTAMINATION_PATTERNS } = require("./constants");
+const { extractContentRegions } = require("./patrol-v2/content-region-extractor");
 
 function decodeHtmlEntities(text) {
   return text
@@ -233,6 +234,82 @@ function normalizeContent(html) {
   };
 }
 
+function isMisatoTownHomepage(url) {
+  if (!url) {
+    return false;
+  }
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname !== "www.town.kumamoto-misato.lg.jp") {
+      return false;
+    }
+    const path = parsed.pathname || "/";
+    return path === "/" || path === "/index.html";
+  } catch (err) {
+    return false;
+  }
+}
+
+function parseMisatoTownUpdateToken(token) {
+  const match = String(token || "").match(/(\d{1,2})月(\d{1,2})日(?:\s*(\d{1,2})時(\d{1,2})分)?/);
+  if (!match) {
+    return "";
+  }
+  const month = String(match[1]).padStart(2, "0");
+  const day = String(match[2]).padStart(2, "0");
+  if (match[3] && match[4]) {
+    const hour = String(match[3]).padStart(2, "0");
+    const minute = String(match[4]).padStart(2, "0");
+    return "2026-" + month + "-" + day + "T" + hour + ":" + minute + ":00+09:00";
+  }
+  return "2026-" + month + "-" + day + "T00:00:00+09:00";
+}
+
+function extractMisatoTownHomepageMeta(html) {
+  const linkRegex =
+    /<a[^>]+href=["']([^"']+)["'][^>]*>([^<]*令和8年熊本地震[^<]*)<\/a>/gi;
+  let disasterLink = null;
+  let match;
+
+  while ((match = linkRegex.exec(html)) !== null) {
+    const linkText = decodeHtmlEntities(match[2].replace(/\s+/g, " ").trim());
+    if (!linkText || !/令和8年熊本地震/.test(linkText)) {
+      continue;
+    }
+    disasterLink = {
+      href: match[1],
+      linkText: linkText
+    };
+    if (/更新/.test(linkText)) {
+      break;
+    }
+  }
+
+  if (disasterLink) {
+    const linkText = disasterLink.linkText;
+    const updateMatch = linkText.match(/（([^）]*更新)）/);
+    const headline = linkText.replace(/（[^）]*更新）\s*$/, "").trim();
+    const pageUpdatedAt = updateMatch ? parseMisatoTownUpdateToken(updateMatch[1]) : "";
+    return {
+      headline: headline || linkText,
+      summary: linkText,
+      pageUpdatedAt: pageUpdatedAt
+    };
+  }
+
+  const h2Match = html.match(/<h2[^>]*>([^<]*令和8年熊本地震[^<]*)<\/h2>/i);
+  if (h2Match) {
+    const headline = stripHtml(h2Match[1]).replace(/\s+/g, " ").trim();
+    return {
+      headline: headline,
+      summary: headline,
+      pageUpdatedAt: ""
+    };
+  }
+
+  return null;
+}
+
 function hashContent(normalized) {
   return crypto.createHash("sha256").update(normalized || "").digest("hex");
 }
@@ -246,26 +323,52 @@ function parsePage(fetchResult, options) {
   const headerModified = fetchResult.headers["last-modified"] || "";
   const metaUpdatedAt = extractMetaUpdatedAt(fetchResult.body || "");
   const content = normalizeContent(fetchResult.body || "");
+  let title = content.title;
+  let pageUpdatedAt = metaUpdatedAt || headerModified || "";
+  const misatoMeta = isMisatoTownHomepage(fetchResult.finalUrl || fetchResult.url)
+    ? extractMisatoTownHomepageMeta(fetchResult.body || "")
+    : null;
+
+  if (misatoMeta) {
+    if (misatoMeta.headline) {
+      title = misatoMeta.headline;
+    }
+    if (misatoMeta.summary) {
+      content.text = [misatoMeta.summary, content.text].join(" ").trim();
+    }
+    if (misatoMeta.pageUpdatedAt) {
+      pageUpdatedAt = misatoMeta.pageUpdatedAt;
+    }
+    content.normalized = [title, content.text].join("\n").replace(/\s+/g, " ").trim();
+  }
+
   const keywords = findKeywords(content.text);
   const contaminationRisk = detectContamination(content.text);
-  const pageUpdatedAt = metaUpdatedAt || headerModified || "";
+  const regions = extractContentRegions(fetchResult.body || "");
   const articleUpdatedAt = extractArticleUpdatedAt(fetchResult.body || "", options);
   const sourceUpdatedAt =
     options.preferArticleUpdatedAt === false
       ? pageUpdatedAt || articleUpdatedAt
-      : articleUpdatedAt || pageUpdatedAt;
+      : misatoMeta && misatoMeta.pageUpdatedAt
+        ? misatoMeta.pageUpdatedAt
+        : articleUpdatedAt || pageUpdatedAt;
   const checkedAt = new Date().toISOString();
 
   return {
     url: fetchResult.url,
     httpStatus: fetchResult.status,
     reachable: fetchResult.ok,
-    title: content.title,
+    title: title,
     pageUpdatedAt: pageUpdatedAt,
     sourceUpdatedAt: sourceUpdatedAt,
     keywords,
     contaminationRisk,
     contentHash: hashContent(content.normalized),
+    regionHash: regions.regionHash,
+    regionTextLength: regions.regionText.length,
+    feedFingerprint: options.feedFingerprint || "",
+    feedUrl: options.feedUrl || "",
+    fetchMode: fetchResult.fetchMode || "http",
     checkedAt: checkedAt
   };
 }
