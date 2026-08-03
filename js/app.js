@@ -3168,11 +3168,11 @@
     var officialGroup = createElement("div", "portal-quick-access__group portal-quick-access__group--official");
     var grid = createElement("div", "portal-quick-access__grid");
     Object.keys(DISASTER_SEARCH_CATEGORY_CONFIG).forEach(function (categoryKey) {
+      if (categoryKey === "SUPPORT_SERVICE") {
+        return;
+      }
       var config = DISASTER_SEARCH_CATEGORY_CONFIG[categoryKey];
       var card = createElement("a", "portal-quick-access__card");
-      if (categoryKey === "SUPPORT_SERVICE") {
-        card.classList.add("disaster-search-card--support-service");
-      }
       card.href = "#" + (config.sectionId || DISASTER_SEARCH_ID);
       card.setAttribute("aria-label", config.title + "の検索へ移動");
       card.appendChild(createElement("h3", "portal-quick-access__card-title", config.icon + " " + config.title));
@@ -3181,33 +3181,6 @@
     });
     officialGroup.appendChild(grid);
     inner.appendChild(officialGroup);
-
-    var xGroup = createElement("div", "portal-quick-access__group portal-quick-access__group--x");
-    var xTitleRow = createElement("div", "portal-quick-access__title-row");
-    xTitleRow.appendChild(createElement(
-      "h3",
-      "portal-quick-access__group-title",
-      X_CROSS_SEARCH_PROMO.icon + " " + X_CROSS_SEARCH_PROMO.title
-    ));
-    renderDisasterSocialSearchHelp(xTitleRow, { id: "x-cross-search-help-promo" });
-    xGroup.appendChild(xTitleRow);
-    var xCard = createElement("a", "portal-quick-access__card portal-quick-access__card--x");
-    xCard.href = "#" + DISASTER_SOCIAL_SEARCH_ID;
-    xCard.setAttribute("aria-label", X_CROSS_SEARCH_PROMO.title + "の検索へ移動");
-    xCard.appendChild(createElement(
-      "h3",
-      "portal-quick-access__card-title",
-      X_CROSS_SEARCH_PROMO.icon + " " + X_CROSS_SEARCH_PROMO.title
-    ));
-    xCard.appendChild(createElement("p", "portal-quick-access__card-desc", X_CROSS_SEARCH_PROMO.promoLead));
-    xCard.appendChild(createElement("p", "portal-quick-access__card-scope", X_CROSS_SEARCH_PROMO.promoScope));
-    xCard.appendChild(createElement(
-      "p",
-      "portal-quick-access__card-period",
-      "対象期間：" + EVACUATION_ALERT_SEARCH_SCOPE.periodLabel
-    ));
-    xGroup.appendChild(xCard);
-    inner.appendChild(xGroup);
 
     section.appendChild(inner);
     container.appendChild(section);
