@@ -57,7 +57,7 @@
       "region": "熊本県",
       "organization": "八代市",
       "source_type": "official",
-      "url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
+      "url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -105,7 +105,7 @@
       "region": "熊本県",
       "organization": "菊池市",
       "source_type": "official",
-      "url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "url": "https://www.city.kikuchi.lg.jp/q/list/186.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -121,7 +121,7 @@
       "region": "熊本県",
       "organization": "合志市",
       "source_type": "official",
-      "url": "https://www.city.koshi.lg.jp/",
+      "url": "https://www.city.koshi.lg.jp/kiji00318536/index.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -169,7 +169,7 @@
       "region": "熊本県",
       "organization": "甲佐町",
       "source_type": "official",
-      "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+      "url": "https://www.town.kosa.lg.jp/list00171.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -185,7 +185,7 @@
       "region": "熊本県",
       "organization": "芦北町",
       "source_type": "official",
-      "url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "url": "https://www.town.ashikita.lg.jp/bosai_site",
       "keywords": [
         "給水",
         "応急給水",
@@ -281,7 +281,7 @@
       "region": "熊本県",
       "organization": "天草市",
       "source_type": "official",
-      "url": "https://www.city.amakusa.kumamoto.jp/",
+      "url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -506,6 +506,150 @@
       "organization": "海上保安庁",
       "source_type": "official",
       "url": "https://www.kaiho.mlit.go.jp/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "宇土市",
+      "source_type": "official",
+      "url": "https://www.city.uto.lg.jp/article/list/1014.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "美里町",
+      "source_type": "official",
+      "url": "https://www.town.kumamoto-misato.lg.jp/bousai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "益城町",
+      "source_type": "official",
+      "url": "https://www.town.mashiki.lg.jp/bousai",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "御船町",
+      "source_type": "official",
+      "url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "嘉島町",
+      "source_type": "official",
+      "url": "https://www.town.kashima.kumamoto.jp/bousai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "菊陽町",
+      "source_type": "official",
+      "url": "https://www.town.kikuyo.lg.jp/bousai",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "氷川町",
+      "source_type": "official",
+      "url": "https://www.hikawa.kumamoto.jp/list00115.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "阿蘇市",
+      "source_type": "official",
+      "url": "https://www.city.aso.kumamoto.jp/bousai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "official": true
+    },
+    {
+      "region": "熊本県",
+      "organization": "南阿蘇村",
+      "source_type": "official",
+      "url": "https://www.vill.minamiaso.lg.jp/site/bousai/",
       "keywords": [
         "給水",
         "応急給水",

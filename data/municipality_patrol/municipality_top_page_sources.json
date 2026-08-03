@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-  "description": "自治体公式トップページの緊急情報・重要なお知らせ・防災無線セクション巡回ソース（全23自治体）",
+  "description": "自治体公式トップページの緊急情報・重要なお知らせ・防災無線セクション巡回ソース（熊本県内23市町村 + 県）",
   "municipalities": [
     {
       "area_id": "KM000",
@@ -11,12 +11,32 @@
     {
       "area_id": "KM001",
       "municipality": "熊本市",
-      "top_page_url": "https://www.city.kumamoto.jp/"
+      "top_page_url": "https://www.city.kumamoto.jp/",
+      "disaster_page_url": "https://www.city.kumamoto.jp/bousai/"
+    },
+    {
+      "area_id": "KM005",
+      "municipality": "八代市",
+      "top_page_url": "https://www.city.yatsushiro.lg.jp/",
+      "disaster_page_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html"
+    },
+    {
+      "area_id": "KM014",
+      "municipality": "水俣市",
+      "top_page_url": "https://www.city.minamata.lg.jp/",
+      "disaster_page_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html"
     },
     {
       "area_id": "KM002",
       "municipality": "宇土市",
-      "top_page_url": "https://www.city.uto.lg.jp/"
+      "top_page_url": "https://www.city.uto.lg.jp/",
+      "disaster_page_url": "https://www.city.uto.lg.jp/article/list/1014.html"
+    },
+    {
+      "area_id": "KM018",
+      "municipality": "上天草市",
+      "top_page_url": "https://www.city.kamiamakusa.kumamoto.jp/",
+      "disaster_page_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html"
     },
     {
       "area_id": "KM003",
@@ -26,101 +46,106 @@
       "water_official_url": "https://www.city.uki.kumamoto.jp/toppage/important/2606682"
     },
     {
+      "area_id": "KM019",
+      "municipality": "天草市",
+      "top_page_url": "https://www.city.amakusa.kumamoto.jp/",
+      "disaster_page_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html"
+    },
+    {
       "area_id": "KM004",
       "municipality": "美里町",
-      "top_page_url": "https://www.town.kumamoto-misato.lg.jp/"
-    },
-    {
-      "area_id": "KM005",
-      "municipality": "八代市",
-      "top_page_url": "https://www.city.yatsushiro.lg.jp/"
-    },
-    {
-      "area_id": "KM006",
-      "municipality": "人吉市",
-      "top_page_url": "https://www.city.hitoyoshi.lg.jp/"
-    },
-    {
-      "area_id": "KM007",
-      "municipality": "氷川町",
-      "top_page_url": "https://www.town.hikawa.kumamoto.jp/"
-    },
-    {
-      "area_id": "KM008",
-      "municipality": "益城町",
-      "top_page_url": "https://www.town.mashiki.lg.jp/"
-    },
-    {
-      "area_id": "KM009",
-      "municipality": "合志市",
-      "top_page_url": "https://www.city.koshi.lg.jp/"
-    },
-    {
-      "area_id": "KM010",
-      "municipality": "御船町",
-      "top_page_url": "https://www.town.mifune.kumamoto.jp/"
-    },
-    {
-      "area_id": "KM011",
-      "municipality": "菊陽町",
-      "top_page_url": "https://www.town.kikuyo.lg.jp/"
-    },
-    {
-      "area_id": "KM012",
-      "municipality": "嘉島町",
-      "top_page_url": "https://www.town.kumamoto-kashima.lg.jp/",
-      "disaster_page_url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/55/6037.html",
-      "water_official_url": "https://www.town.kumamoto-kashima.lg.jp/q/aview/55/6037.html"
-    },
-    {
-      "area_id": "KM013",
-      "municipality": "菊池市",
-      "top_page_url": "https://www.city.kikuchi.lg.jp/"
-    },
-    {
-      "area_id": "KM014",
-      "municipality": "水俣市",
-      "top_page_url": "https://www.city.minamata.lg.jp/"
+      "top_page_url": "https://www.town.kumamoto-misato.lg.jp/",
+      "disaster_page_url": "https://www.town.kumamoto-misato.lg.jp/bousai/"
     },
     {
       "area_id": "KM015",
       "municipality": "甲佐町",
-      "top_page_url": "https://www.town.kosa.lg.jp/"
+      "top_page_url": "https://www.town.kosa.lg.jp/",
+      "disaster_page_url": "https://www.town.kosa.lg.jp/list00171.html"
     },
     {
       "area_id": "KM016",
       "municipality": "芦北町",
-      "top_page_url": "https://www.town.ashikita.lg.jp/"
+      "top_page_url": "https://www.town.ashikita.lg.jp/",
+      "disaster_page_url": "https://www.town.ashikita.lg.jp/bosai_site"
     },
     {
       "area_id": "KM017",
       "municipality": "津奈木町",
-      "top_page_url": "https://www.town.tsunagi.lg.jp/"
-    },
-    {
-      "area_id": "KM018",
-      "municipality": "上天草市",
-      "top_page_url": "https://www.city.kamiamakusa.kumamoto.jp/"
-    },
-    {
-      "area_id": "KM019",
-      "municipality": "天草市",
-      "top_page_url": "https://www.city.amakusa.kumamoto.jp/"
-    },
-    {
-      "area_id": "KM020",
-      "municipality": "西原村",
-      "top_page_url": "https://www.vill.nishihara.kumamoto.jp/"
+      "top_page_url": "https://www.town.tsunagi.lg.jp/",
+      "disaster_page_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9"
     },
     {
       "area_id": "KM021",
       "municipality": "苓北町",
-      "top_page_url": "https://reihoku-kumamoto.jp/"
+      "top_page_url": "https://reihoku-kumamoto.jp/",
+      "disaster_page_url": "https://reihoku-kumamoto.jp/bousai/default.html"
+    },
+    {
+      "area_id": "KM008",
+      "municipality": "益城町",
+      "top_page_url": "https://www.town.mashiki.lg.jp/",
+      "disaster_page_url": "https://www.town.mashiki.lg.jp/bousai"
+    },
+    {
+      "area_id": "KM010",
+      "municipality": "御船町",
+      "top_page_url": "https://www.town.mifune.kumamoto.jp/",
+      "disaster_page_url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8"
+    },
+    {
+      "area_id": "KM012",
+      "municipality": "嘉島町",
+      "top_page_url": "https://www.town.kashima.kumamoto.jp/",
+      "disaster_page_url": "https://www.town.kashima.kumamoto.jp/bousai/"
+    },
+    {
+      "area_id": "KM006",
+      "municipality": "人吉市",
+      "top_page_url": "https://www.city.hitoyoshi.lg.jp/",
+      "disaster_page_url": "https://www.city.hitoyoshi.lg.jp/disaster_mode/saigai_kinkyujyoho/2500294"
+    },
+    {
+      "area_id": "KM011",
+      "municipality": "菊陽町",
+      "top_page_url": "https://www.town.kikuyo.lg.jp/",
+      "disaster_page_url": "https://www.town.kikuyo.lg.jp/bousai"
+    },
+    {
+      "area_id": "KM013",
+      "municipality": "菊池市",
+      "top_page_url": "https://www.city.kikuchi.lg.jp/",
+      "disaster_page_url": "https://www.city.kikuchi.lg.jp/q/list/186.html"
+    },
+    {
+      "area_id": "KM009",
+      "municipality": "合志市",
+      "top_page_url": "https://www.city.koshi.lg.jp/",
+      "disaster_page_url": "https://www.city.koshi.lg.jp/kiji00318536/index.html"
+    },
+    {
+      "area_id": "KM007",
+      "municipality": "氷川町",
+      "top_page_url": "https://www.hikawa.kumamoto.jp/",
+      "disaster_page_url": "https://www.hikawa.kumamoto.jp/list00115.html"
     },
     {
       "area_id": "KM022",
-      "municipality": "多良木町",
-      "top_page_url": "http://www.town.taragi.lg.jp/"
+      "municipality": "阿蘇市",
+      "top_page_url": "https://www.city.aso.kumamoto.jp/",
+      "disaster_page_url": "https://www.city.aso.kumamoto.jp/bousai/"
+    },
+    {
+      "area_id": "KM023",
+      "municipality": "南阿蘇村",
+      "top_page_url": "https://www.vill.minamiaso.lg.jp/",
+      "disaster_page_url": "https://www.vill.minamiaso.lg.jp/site/bousai/"
+    },
+    {
+      "area_id": "KM020",
+      "municipality": "西原村",
+      "top_page_url": "https://www.vill.nishihara.kumamoto.jp/",
+      "disaster_page_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html"
     }
   ]
 }

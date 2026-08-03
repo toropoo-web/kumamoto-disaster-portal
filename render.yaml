@@ -42,3 +42,11 @@ services:
       - path: /data/public/disaster_social_sources.json
         name: Cache-Control
         value: no-cache, no-store, must-revalidate
+
+  - type: cron
+    name: kumamoto-patrol-cron
+    runtime: node
+    schedule: "0 */5 * * *"
+    buildCommand: npm ci
+    startCommand: npm run patrol:cron
+    autoDeploy: true

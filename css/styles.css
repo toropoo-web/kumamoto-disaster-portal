@@ -2333,6 +2333,42 @@ button:focus-visible {
   cursor: pointer;
 }
 
+.water-search__shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.water-search__shortcut {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #0369a1;
+  border-radius: 8px;
+  background: #f0f9ff;
+  color: #0369a1;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.disaster-search__municipality-filter {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.disaster-search__municipality-select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 16px;
+  background: var(--surface);
+  box-sizing: border-box;
+}
+
 .water-search__results {
   display: grid;
   gap: 12px;

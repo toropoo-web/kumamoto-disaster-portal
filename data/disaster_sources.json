@@ -72,7 +72,7 @@
       "municipality": "八代市",
       "organization": "八代市",
       "source_type": "MUNICIPALITY",
-      "url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
+      "url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -135,7 +135,7 @@
       "municipality": "菊池市",
       "organization": "菊池市",
       "source_type": "MUNICIPALITY",
-      "url": "https://www.city.kikuchi.lg.jp/article/view/900/18702.html",
+      "url": "https://www.city.kikuchi.lg.jp/q/list/186.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -156,7 +156,7 @@
       "municipality": "合志市",
       "organization": "合志市",
       "source_type": "MUNICIPALITY",
-      "url": "https://www.city.koshi.lg.jp/",
+      "url": "https://www.city.koshi.lg.jp/kiji00318536/index.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -219,7 +219,7 @@
       "municipality": "甲佐町",
       "organization": "甲佐町",
       "source_type": "MUNICIPALITY",
-      "url": "https://www.town.kosa.lg.jp/q/list/51.html",
+      "url": "https://www.town.kosa.lg.jp/list00171.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -240,7 +240,7 @@
       "municipality": "芦北町",
       "organization": "芦北町",
       "source_type": "MUNICIPALITY",
-      "url": "https://www.town.ashikita.lg.jp/bosai_site/",
+      "url": "https://www.town.ashikita.lg.jp/bosai_site",
       "keywords": [
         "給水",
         "応急給水",
@@ -342,10 +342,10 @@
       "source_id": "DSRC-WAT-ED8E377176",
       "category": "WATER",
       "prefecture": "熊本県",
-      "municipality": "多良木町",
-      "organization": "多良木町",
+      "municipality": "阿蘇市",
+      "organization": "阿蘇市",
       "source_type": "MUNICIPALITY",
-      "url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+      "url": "https://www.city.aso.kumamoto.jp/bousai/",
       "keywords": [
         "給水",
         "応急給水",
@@ -366,7 +366,7 @@
       "municipality": "天草市",
       "organization": "天草市",
       "source_type": "MUNICIPALITY",
-      "url": "https://www.city.amakusa.kumamoto.jp/",
+      "url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
       "keywords": [
         "給水",
         "応急給水",
@@ -1362,6 +1362,174 @@
         "confirmed": false,
         "source": ""
       }
+    },
+    {
+      "source_id": "DSRC-WAT-ASO-CITY",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "南阿蘇村",
+      "organization": "南阿蘇村",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.vill.minamiaso.lg.jp/site/bousai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-宇土市",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "宇土市",
+      "organization": "宇土市",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.city.uto.lg.jp/article/list/1014.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-美里町",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "美里町",
+      "organization": "美里町",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.town.kumamoto-misato.lg.jp/bousai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-益城町",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "益城町",
+      "organization": "益城町",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.town.mashiki.lg.jp/bousai",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-御船町",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "御船町",
+      "organization": "御船町",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-嘉島町",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "嘉島町",
+      "organization": "嘉島町",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.town.kashima.kumamoto.jp/bousai/",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-菊陽町",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "菊陽町",
+      "organization": "菊陽町",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.town.kikuyo.lg.jp/bousai",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-氷川町",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "氷川町",
+      "organization": "氷川町",
+      "source_type": "MUNICIPALITY",
+      "url": "https://www.hikawa.kumamoto.jp/list00115.html",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
     }
   ]
 }

@@ -4,6 +4,41 @@
   var DATA_BASE = "./data/public/";
   var VERIFIED_STATUS = "VERIFIED";
   var INCIDENT_SCOPE = "2026_KUMAMOTO_EARTHQUAKE";
+  var KUMAMOTO_23_MUNICIPALITIES = [
+    "熊本市",
+    "八代市",
+    "水俣市",
+    "宇土市",
+    "上天草市",
+    "宇城市",
+    "天草市",
+    "美里町",
+    "甲佐町",
+    "芦北町",
+    "津奈木町",
+    "苓北町",
+    "益城町",
+    "御船町",
+    "嘉島町",
+    "人吉市",
+    "菊陽町",
+    "菊池市",
+    "合志市",
+    "氷川町",
+    "阿蘇市",
+    "南阿蘇村",
+    "西原村"
+  ];
+  var WATER_EMERGENCY_CROSS_KEYWORDS = [
+    "給水",
+    "水",
+    "断水",
+    "避難所",
+    "シェルター",
+    "給水車",
+    "応急給水",
+    "給水所"
+  ];
   var MAX_LATEST = 4;
   var LOAD_ERROR_MESSAGE = "情報を読み込めませんでした。自治体公式サイトの情報をご確認ください。";
   var X_FEED_STATUS_AVAILABLE = "AVAILABLE";
@@ -1747,6 +1782,104 @@
     });
   }
 
+  function matchesWaterEmergencyHaystack(text) {
+    var hay = normalizeSearchText(text);
+    if (!hay) {
+      return false;
+    }
+    return WATER_EMERGENCY_CROSS_KEYWORDS.some(function (keyword) {
+      return hay.indexOf(normalizeSearchText(keyword)) !== -1;
+    });
+  }
+
+  function normalizePhase1UpdateToWaterItem(record) {
+    if (!record || record.verification_status !== VERIFIED_STATUS) {
+      return null;
+    }
+    var haystack = [record.headline, record.summary, record.public_category_label].join(" ");
+    if (!matchesWaterEmergencyHaystack(haystack)) {
+      return null;
+    }
+    return {
+      region: "熊本県",
+      municipality: record.area_name || "",
+      organization: record.source_name || record.department || record.area_name || "公式情報",
+      location: record.area_name || "",
+      title: record.headline || "公式情報",
+      search_text: [record.headline, record.summary].filter(Boolean).join(" "),
+      source_url: record.source_url || "",
+      source_updated_at: record.source_updated_at || record.displayed_updated_at || "",
+      checked_at: record.checked_at || record.collected_at || "",
+      cross_source: "phase1_updates"
+    };
+  }
+
+  function normalizeDisasterIndexToWaterItem(item) {
+    if (!item) {
+      return null;
+    }
+    var haystack = [
+      item.title,
+      item.content,
+      (item.keywords || []).join(" "),
+      item.organization,
+      item.municipality
+    ].join(" ");
+    if (!matchesWaterEmergencyHaystack(haystack)) {
+      return null;
+    }
+    return {
+      region: item.prefecture || "",
+      municipality: item.municipality || "",
+      organization: item.organization || "公式情報",
+      location: item.location || item.municipality || "",
+      title: item.title || "公式情報",
+      search_text: [
+        item.title,
+        item.content,
+        (item.keywords || []).join(" ")
+      ].filter(Boolean).join(" "),
+      source_url: item.source_url || "",
+      source_updated_at: item.updated_at || item.source_updated_at || "",
+      checked_at: item.checked_at || "",
+      cross_source: "disaster_search_index"
+    };
+  }
+
+  function buildWaterCrossSearchPool(publicUpdates, disasterSearchIndex) {
+    var pool = [];
+    (publicUpdates || []).forEach(function (record) {
+      var item = normalizePhase1UpdateToWaterItem(record);
+      if (item) {
+        pool.push(item);
+      }
+    });
+    var indexItems = (disasterSearchIndex && disasterSearchIndex.index) || [];
+    indexItems.forEach(function (entry) {
+      var item = normalizeDisasterIndexToWaterItem(entry);
+      if (item) {
+        pool.push(item);
+      }
+    });
+    return pool;
+  }
+
+  function mergeWaterSearchItems(baseItems, crossItems) {
+    var merged = (baseItems || []).slice();
+    var seen = new Set();
+    merged.forEach(function (item) {
+      seen.add((item.source_url || "") + "|" + (item.title || ""));
+    });
+    (crossItems || []).forEach(function (item) {
+      var key = (item.source_url || "") + "|" + (item.title || "");
+      if (!seen.has(key)) {
+        seen.add(key);
+        merged.push(item);
+      }
+    });
+    return merged;
+  }
+
   function getWaterSearchPriority(item) {
     var hay = normalizeSearchText(
       [item.location, item.title, item.search_text].join(" ")
@@ -1767,8 +1900,13 @@
     return 1;
   }
 
-  function searchWater(index, keyword) {
-    if (!index || !Array.isArray(index.items) || !keyword) {
+  function searchWater(index, keyword, crossPool) {
+    if (!keyword) {
+      return [];
+    }
+
+    var mergedItems = mergeWaterSearchItems(index && index.items, crossPool);
+    if (!mergedItems.length) {
       return [];
     }
 
@@ -1777,7 +1915,7 @@
       return [];
     }
 
-    return index.items
+    return mergedItems
       .filter(function (item) {
         var hay = normalizeSearchText(
           [
@@ -1886,10 +2024,16 @@
     resultsContainer.appendChild(list);
   }
 
-  function renderWaterSearch(container, waterSearchIndex) {
+  function renderWaterSearch(container, waterSearchIndex, crossSearchOptions) {
     if (!waterSearchIndex) {
       return;
     }
+
+    crossSearchOptions = crossSearchOptions || {};
+    var crossPool = buildWaterCrossSearchPool(
+      crossSearchOptions.publicUpdates,
+      crossSearchOptions.disasterSearchIndex
+    );
 
     var section = createElement("section", "water-search");
     section.id = WATER_SEARCH_ID;
@@ -1927,9 +2071,25 @@
     var resultsContainer = createElement("div", "water-search__results-wrap");
     resultsContainer.id = "water-search-results";
 
+    var shortcuts = createElement("div", "water-search__shortcuts");
+    shortcuts.setAttribute("aria-label", "よく使う検索キーワード");
+    [
+      { label: "給水所", query: "給水所" },
+      { label: "避難所・シェルター", query: "避難所 シェルター" },
+      { label: "断水・復旧", query: "断水 復旧" }
+    ].forEach(function (shortcut) {
+      var shortcutButton = createElement("button", "water-search__shortcut", shortcut.label);
+      shortcutButton.type = "button";
+      shortcutButton.addEventListener("click", function () {
+        input.value = shortcut.query;
+        runSearch();
+      });
+      shortcuts.appendChild(shortcutButton);
+    });
+
     function runSearch() {
       var query = input.value.trim();
-      var results = searchWater(waterSearchIndex, query);
+      var results = searchWater(waterSearchIndex, query, crossPool);
       renderWaterSearchResult(resultsContainer, results, query);
       if (query) {
         trackUsage("search_water");
@@ -1945,6 +2105,7 @@
     form.appendChild(input);
     form.appendChild(button);
     inner.appendChild(form);
+    inner.appendChild(shortcuts);
     inner.appendChild(resultsContainer);
     renderWaterSearchResult(resultsContainer, [], "");
     section.appendChild(inner);
@@ -2804,6 +2965,27 @@
     form.setAttribute("role", "search");
     form.setAttribute("aria-label", "災害情報検索");
 
+    var municipalitySelect = null;
+    if (categoryKey === "VOLUNTEER") {
+      var municipalityWrap = createElement("div", "disaster-search__municipality-filter");
+      var municipalityLabel = createElement("label", "disaster-search__label", "自治体絞り込み");
+      municipalityLabel.setAttribute("for", "volunteer-municipality-select");
+      municipalitySelect = createElement("select", "disaster-search__municipality-select");
+      municipalitySelect.id = "volunteer-municipality-select";
+      municipalitySelect.setAttribute("aria-label", "自治体絞り込み");
+      var allOption = createElement("option", "", "全域（熊本県23市町村）");
+      allOption.value = "";
+      municipalitySelect.appendChild(allOption);
+      KUMAMOTO_23_MUNICIPALITIES.forEach(function (municipalityName) {
+        var option = createElement("option", "", municipalityName);
+        option.value = municipalityName;
+        municipalitySelect.appendChild(option);
+      });
+      municipalityWrap.appendChild(municipalityLabel);
+      municipalityWrap.appendChild(municipalitySelect);
+      inner.appendChild(municipalityWrap);
+    }
+
     var label = createElement("label", "disaster-search__label", "地区名・キーワード");
     label.setAttribute("for", inputId);
 
@@ -2823,14 +3005,25 @@
 
     function runSearch() {
       var query = input.value.trim();
-      var results = searchDisasterIndex(disasterSearchIndex, query, { category: categoryKey });
+      var searchOptions = { category: categoryKey };
+      if (municipalitySelect && municipalitySelect.value) {
+        searchOptions.municipality = municipalitySelect.value;
+        if (!query) {
+          searchOptions.municipalityOnly = true;
+        }
+      }
+      var results = searchDisasterIndex(disasterSearchIndex, query, searchOptions);
+      var displayQuery = query;
+      if (!displayQuery && municipalitySelect && municipalitySelect.value) {
+        displayQuery = municipalitySelect.value;
+      }
       renderDisasterSearchResult(
         resultsContainer,
         results,
-        query,
+        displayQuery,
         categoryKey
       );
-      if (!query) {
+      if (!query && !(municipalitySelect && municipalitySelect.value)) {
         return;
       }
       if (categoryKey === "VOLUNTEER") {
@@ -2849,6 +3042,10 @@
       event.preventDefault();
       runSearch();
     });
+
+    if (municipalitySelect) {
+      municipalitySelect.addEventListener("change", runSearch);
+    }
 
     form.appendChild(label);
     form.appendChild(input);
@@ -5088,7 +5285,10 @@
         renderDisasterSocialSearch(page, disasterSocialPayload, {
           evacuationAlertMunicipalities: evacuationAlertMunicipalities
         });
-        renderWaterSearch(page, waterSearchIndex);
+        renderWaterSearch(page, waterSearchIndex, {
+          publicUpdates: publicRecords,
+          disasterSearchIndex: disasterSearchIndex
+        });
         renderWaterCrossView(page, waterCrossView);
         renderInfrastructureSection(page, infrastructureStatus, infrastructureSources, areas);
         renderDisasterMapSection(page, disasterLocations, infrastructureStatus, infrastructureSources, areas);
