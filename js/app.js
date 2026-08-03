@@ -1427,6 +1427,79 @@
     return el;
   }
 
+  function createPortalAccordion(options) {
+    options = options || {};
+    var accordion = createElement("details", "portal-accordion");
+    if (options.id) {
+      accordion.id = options.id;
+    }
+    if (options.extraClass) {
+      options.extraClass.split(/\s+/).forEach(function (className) {
+        if (className) {
+          accordion.classList.add(className);
+        }
+      });
+    }
+
+    var summary = createElement("summary", "portal-accordion__summary");
+    if (options.summaryId && options.summaryExtra) {
+      summary.id = options.summaryId;
+    }
+    if (options.bodyId) {
+      summary.setAttribute("aria-controls", options.bodyId);
+    }
+
+    var summaryInner = createElement("div", "portal-accordion__summary-inner");
+    if (options.summaryExtra) {
+      summaryInner.appendChild(options.summaryExtra);
+    } else {
+      if (options.title) {
+        var titleEl = createElement("span", "portal-accordion__summary-title", options.title);
+        if (options.summaryId) {
+          titleEl.id = options.summaryId;
+        }
+        summaryInner.appendChild(titleEl);
+      }
+      if (options.lead) {
+        summaryInner.appendChild(
+          createElement("span", "portal-accordion__summary-lead", options.lead)
+        );
+      }
+    }
+    summaryInner.appendChild(
+      createElement("span", "portal-accordion__summary-hint portal-accordion__summary-hint--closed", "クリックで開く")
+    );
+    summaryInner.appendChild(
+      createElement("span", "portal-accordion__summary-hint portal-accordion__summary-hint--open", "クリックで閉じる")
+    );
+    var chevron = createElement("span", "portal-accordion__chevron");
+    chevron.setAttribute("aria-hidden", "true");
+    chevron.textContent = "▼";
+    summaryInner.appendChild(chevron);
+    summary.appendChild(summaryInner);
+
+    var body = createElement("div", "portal-accordion__body");
+    if (options.bodyId) {
+      body.id = options.bodyId;
+    }
+    if (options.bodyClass) {
+      options.bodyClass.split(/\s+/).forEach(function (className) {
+        if (className) {
+          body.classList.add(className);
+        }
+      });
+    }
+
+    accordion.appendChild(summary);
+    accordion.appendChild(body);
+
+    return {
+      accordion: accordion,
+      summary: summary,
+      body: body
+    };
+  }
+
   function buildGoogleMapsSearchUrl(query) {
     return GOOGLE_MAPS_SEARCH_BASE + encodeURIComponent(query);
   }
@@ -2873,16 +2946,33 @@
     section.setAttribute("aria-labelledby", titleId);
 
     var inner = createElement("div", "container");
-    var title = createElement(
-      "h2",
-      "section-title disaster-search__heading",
-      categoryConfig.icon + " " + categoryConfig.title
-    );
-    title.id = titleId;
-    inner.appendChild(title);
+    var contentTarget = inner;
+    var useAccordion = categoryKey === "SUPPORT_SERVICE";
+
+    if (useAccordion) {
+      var accordionBundle = createPortalAccordion({
+        id: sectionId + "-accordion",
+        extraClass: "disaster-search__accordion",
+        summaryId: titleId,
+        bodyId: sectionId + "-body",
+        title: categoryConfig.icon + " " + categoryConfig.title,
+        lead: categoryConfig.lead,
+        bodyClass: "disaster-search__accordion-body"
+      });
+      inner.appendChild(accordionBundle.accordion);
+      contentTarget = accordionBundle.body;
+    } else {
+      var title = createElement(
+        "h2",
+        "section-title disaster-search__heading",
+        categoryConfig.icon + " " + categoryConfig.title
+      );
+      title.id = titleId;
+      inner.appendChild(title);
+    }
 
     if (categoryKey === "WATER") {
-      inner.appendChild(createElement(
+      contentTarget.appendChild(createElement(
         "p",
         "disaster-search__flow-note",
         "入口 → 検索 → 詳細確認の流れで水情報を確認できます。詳細一覧は下の「給水情報一覧」へ。"
@@ -2890,7 +2980,7 @@
     }
 
     if (categoryKey === "SUPPORT_SERVICE") {
-      inner.appendChild(createElement(
+      contentTarget.appendChild(createElement(
         "p",
         "disaster-search__caution",
         SUPPORT_SERVICE_USER_SEARCH_CAUTION
@@ -2905,7 +2995,7 @@
     ));
     guide.appendChild(createElement("p", "disaster-search__guide-text", guidance.intro));
     guide.appendChild(createElement("p", "disaster-search__guide-text", guidance.instruction));
-    inner.appendChild(guide);
+    contentTarget.appendChild(guide);
 
     var examplesBlock = createElement("div", "disaster-search__examples");
     examplesBlock.appendChild(createElement("p", "disaster-search__examples-title", "検索例："));
@@ -2915,7 +3005,7 @@
       examplesList.appendChild(item);
     });
     examplesBlock.appendChild(examplesList);
-    inner.appendChild(examplesBlock);
+    contentTarget.appendChild(examplesBlock);
 
     var scopeBlock = createElement("div", "disaster-search__scope");
     scopeBlock.appendChild(createElement(
@@ -2929,7 +3019,7 @@
       scopeList.appendChild(createElement("li", "disaster-search__scope-item", "・" + itemText));
     });
     scopeBlock.appendChild(scopeList);
-    inner.appendChild(scopeBlock);
+    contentTarget.appendChild(scopeBlock);
 
     if (!options.compact) {
       var categoriesBlock = createElement("div", "disaster-search__categories");
@@ -2958,7 +3048,7 @@
         categoriesBlock.appendChild(plannedTitle);
         categoriesBlock.appendChild(plannedList);
       }
-      inner.appendChild(categoriesBlock);
+      contentTarget.appendChild(categoriesBlock);
     }
 
     var form = createElement("form", "disaster-search__form");
@@ -2983,7 +3073,7 @@
       });
       municipalityWrap.appendChild(municipalityLabel);
       municipalityWrap.appendChild(municipalitySelect);
-      inner.appendChild(municipalityWrap);
+      contentTarget.appendChild(municipalityWrap);
     }
 
     var label = createElement("label", "disaster-search__label", "地区名・キーワード");
@@ -3050,8 +3140,8 @@
     form.appendChild(label);
     form.appendChild(input);
     form.appendChild(button);
-    inner.appendChild(form);
-    inner.appendChild(resultsContainer);
+    contentTarget.appendChild(form);
+    contentTarget.appendChild(resultsContainer);
     renderDisasterSearchResult(resultsContainer, [], "", categoryKey);
     section.appendChild(inner);
     container.appendChild(section);
@@ -3325,23 +3415,32 @@
     section.setAttribute("aria-labelledby", "disaster-social-search-title");
 
     var inner = createElement("div", "container");
-    var titleRow = createElement("div", "disaster-social-search__title-row");
-    var title = createElement("h2", "section-title disaster-search__heading", "𝕏 X横断検索");
-    title.id = "disaster-social-search-title";
-    titleRow.appendChild(title);
+    var titleRow = createElement("div", "disaster-social-search__title-row portal-accordion__summary-title-row");
+    var titleSpan = createElement("span", "portal-accordion__summary-title", "𝕏 X横断検索");
+    titleSpan.id = "disaster-social-search-title";
+    titleRow.appendChild(titleSpan);
     renderDisasterSocialSearchHelp(titleRow);
-    inner.appendChild(titleRow);
 
-    inner.appendChild(createXApiFetchSuspendedNotice("disaster-social-search__suspended-notice"));
+    var accordionBundle = createPortalAccordion({
+      id: "disaster-social-search-accordion",
+      extraClass: "disaster-social-search__accordion",
+      bodyId: "disaster-social-search-body",
+      summaryExtra: titleRow,
+      bodyClass: "disaster-social-search__accordion-body"
+    });
+    inner.appendChild(accordionBundle.accordion);
+    var contentTarget = accordionBundle.body;
+
+    contentTarget.appendChild(createXApiFetchSuspendedNotice("disaster-social-search__suspended-notice"));
     var socialLastUpdated = createXApiFetchLastUpdatedLine(
       "disaster-social-search__last-updated",
       getDisasterSocialLastUpdatedAt(socialPayload)
     );
     if (socialLastUpdated) {
-      inner.appendChild(socialLastUpdated);
+      contentTarget.appendChild(socialLastUpdated);
     }
 
-    inner.appendChild(createElement(
+    contentTarget.appendChild(createElement(
       "p",
       "disaster-search__guide-text",
       X_CROSS_SEARCH_DESCRIPTION
@@ -3493,7 +3592,7 @@
           runSearch();
         });
       });
-      inner.appendChild(evacuationAlertRegionBlock);
+      contentTarget.appendChild(evacuationAlertRegionBlock);
     }
 
     form.appendChild(regionLabel);
@@ -3507,8 +3606,8 @@
       "例：" + X_CROSS_SEARCH_EXAMPLE
     ));
     form.appendChild(button);
-    inner.appendChild(form);
-    inner.appendChild(resultsContainer);
+    contentTarget.appendChild(form);
+    contentTarget.appendChild(resultsContainer);
     resultsContainer.appendChild(createElement(
       "p",
       "disaster-search__hint",

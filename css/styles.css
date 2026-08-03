@@ -1688,6 +1688,108 @@ button:focus-visible {
   background: var(--background);
 }
 
+/* Portal accordion — shared collapsible sections (search, X cross-search, etc.) */
+.portal-accordion {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.portal-accordion__summary {
+  min-height: 48px;
+  padding: 12px 14px;
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 0.15s ease;
+}
+
+.portal-accordion__summary:hover,
+.portal-accordion__summary:focus {
+  background: #f8fafc;
+}
+
+.portal-accordion__summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+.portal-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.portal-accordion__summary-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px 10px;
+  flex-wrap: wrap;
+}
+
+.portal-accordion__summary-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.portal-accordion__summary-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.disaster-search .portal-accordion__summary-title {
+  font-size: 1.125rem;
+}
+
+.portal-accordion__summary-lead {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.portal-accordion__summary-hint {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.portal-accordion:not([open]) .portal-accordion__summary-hint--open {
+  display: none;
+}
+
+.portal-accordion[open] .portal-accordion__summary-hint--closed {
+  display: none;
+}
+
+.portal-accordion__chevron {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.portal-accordion[open] .portal-accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.portal-accordion__body {
+  padding: 12px 14px 14px;
+  border-top: 1px solid var(--border);
+  background: var(--background);
+}
+
+.disaster-search__accordion-body,
+.disaster-social-search__accordion-body {
+  padding-top: 16px;
+}
+
+.disaster-search__accordion-body .disaster-search__heading {
+  margin-top: 0;
+}
+
 .x-feed__lead {
   margin: 0 0 10px;
   font-size: 13px;
