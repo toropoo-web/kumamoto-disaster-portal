@@ -4874,21 +4874,43 @@
     section.setAttribute("aria-labelledby", "x-feed-title");
 
     var inner = createElement("div", "container");
-    var titleEl = createElement("h2", "section-title x-feed__title", xFeedState.section_title || "公式X速報");
-    titleEl.id = "x-feed-title";
-    inner.appendChild(titleEl);
 
-    inner.appendChild(createXApiFetchSuspendedNotice("x-feed__suspended-notice"));
+    var accordion = createElement("details", "x-feed__accordion");
+    accordion.id = "x-feed-accordion";
+
+    var summary = createElement("summary", "x-feed__summary");
+    summary.id = "x-feed-title";
+    summary.setAttribute("aria-controls", "x-feed-body");
+
+    var summaryInner = createElement("div", "x-feed__summary-inner");
+    summaryInner.appendChild(createElement("span", "x-feed__badge", "公式X"));
+    summaryInner.appendChild(
+      createElement("span", "x-feed__summary-title", xFeedState.section_title || "公式X速報")
+    );
+    summaryInner.appendChild(createElement("span", "x-feed__summary-hint x-feed__summary-hint--closed", "クリックで開く"));
+    summaryInner.appendChild(createElement("span", "x-feed__summary-hint x-feed__summary-hint--open", "クリックで閉じる"));
+    var chevron = createElement("span", "x-feed__chevron");
+    chevron.setAttribute("aria-hidden", "true");
+    chevron.textContent = "▼";
+    summaryInner.appendChild(chevron);
+    summary.appendChild(summaryInner);
+
+    accordion.appendChild(summary);
+
+    var body = createElement("div", "x-feed__body");
+    body.id = "x-feed-body";
+
+    body.appendChild(createXApiFetchSuspendedNotice("x-feed__suspended-notice"));
     var xFeedLastUpdated = createXApiFetchLastUpdatedLine(
       "x-feed__last-updated",
       getXFeedLastUpdatedAt(xFeedState)
     );
     if (xFeedLastUpdated) {
-      inner.appendChild(xFeedLastUpdated);
+      body.appendChild(xFeedLastUpdated);
     }
 
-    inner.appendChild(createElement("p", "x-feed__role", "速報性重視"));
-    inner.appendChild(createElement(
+    body.appendChild(createElement("p", "x-feed__role", "速報性重視"));
+    body.appendChild(createElement(
       "p",
       "x-feed__lead",
       "自治体・公的機関の公式X投稿です。リアルタイムに近い最新投稿を表示します。詳細はリンク先でご確認ください。"
@@ -4935,7 +4957,9 @@
       list.appendChild(li);
     });
 
-    inner.appendChild(list);
+    body.appendChild(list);
+    accordion.appendChild(body);
+    inner.appendChild(accordion);
     section.appendChild(inner);
     container.appendChild(section);
   }
