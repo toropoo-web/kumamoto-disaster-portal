@@ -8,7 +8,7 @@ const ROOT = path.join(__dirname, "..");
 const DATA_DIR = path.join(ROOT, "data", "public");
 
 const EXPECTED_AREA_COUNT = 23;
-const EXPECTED_PUBLIC_CARD_COUNT = 29;
+const EXPECTED_PUBLIC_CARD_COUNT = 30;
 
 const ALLOWED_CATEGORIES = new Set([
   "EMERGENCY", "SHELTER", "WATER", "LIFELINE",

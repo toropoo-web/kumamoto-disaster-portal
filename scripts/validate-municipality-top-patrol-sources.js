@@ -12,7 +12,7 @@ const {
   loadMunicipalityTopPageRegistry
 } = require(path.join(ROOT, "monitor", "municipality-top-patrol-sources"));
 
-const EXPECTED_MUNICIPALITY_COUNT = 23;
+const EXPECTED_MUNICIPALITY_COUNT = 24;
 const EXPECTED_SECTION_COUNT = TOP_PAGE_SECTIONS.length;
 const EXPECTED_SOURCE_COUNT = EXPECTED_MUNICIPALITY_COUNT * EXPECTED_SECTION_COUNT;
 
@@ -54,7 +54,7 @@ function main() {
     return entry.area_id;
   }));
   if (areaIds.size !== EXPECTED_MUNICIPALITY_COUNT) {
-    errors.push("Unique area_id count in registry: " + areaIds.size + " (expected 23)");
+    errors.push("Unique area_id count in registry: " + areaIds.size + " (expected 24)");
   }
 
   municipalities.forEach(function (entry) {

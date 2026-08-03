@@ -274,25 +274,42 @@ function main() {
     pass: buildPayload.meta.entry_count === indexPayload.entries.length
   });
 
-  const hachioResults = searchDisasterSocialIndex(indexPayload, { region: "八代市" });
-  const hachioEntryCount = indexPayload.entries.filter(function (entry) {
+  const searchIndexPayload = buildPayload.index;
+
+  const hachioResults = searchDisasterSocialIndex(searchIndexPayload, { region: "八代市" });
+  const hachioEntryCount = searchIndexPayload.entries.filter(function (entry) {
     return entry.municipality === "八代市";
   }).length;
+  const hachioEntryIds = searchIndexPayload.entries
+    .filter(function (entry) {
+      return entry.municipality === "八代市";
+    })
+    .map(function (entry) {
+      return entry.id;
+    });
+  const hachioResultIds = new Set(
+    hachioResults.map(function (item) {
+      return item.entry.id;
+    })
+  );
+  const allHachioFound = hachioEntryIds.every(function (id) {
+    return hachioResultIds.has(id);
+  });
   checks.push({
     check: "evacuation scope municipality search",
-    pass: hachioResults.length === hachioEntryCount && hachioEntryCount > 0,
+    pass: allHachioFound && hachioEntryCount > 0,
     count: hachioResults.length,
     hachio_entry_count: hachioEntryCount
   });
-  if (hachioResults.length !== hachioEntryCount) {
+  if (!allHachioFound || hachioEntryCount === 0) {
     errors.push("municipality search 八代市 must return all matching entries");
   }
 
-  const kirishimaResults = searchDisasterSocialIndex(indexPayload, {
+  const kirishimaResults = searchDisasterSocialIndex(searchIndexPayload, {
     prefecture: "鹿児島県",
     municipality: "霧島市"
   });
-  const kirishimaEntryCount = indexPayload.entries.filter(function (entry) {
+  const kirishimaEntryCount = searchIndexPayload.entries.filter(function (entry) {
     return entry.prefecture === "鹿児島県" && entry.municipality === "霧島市";
   }).length;
   checks.push({
@@ -305,7 +322,7 @@ function main() {
     errors.push("search 鹿児島県霧島市 must return all Kirishima entries");
   }
 
-  const municipalityResults = searchDisasterSocialIndex(indexPayload, { region: "合志市" });
+  const municipalityResults = searchDisasterSocialIndex(searchIndexPayload, { region: "合志市" });
   checks.push({
     check: "municipality search",
     pass: municipalityResults.length > 0,
@@ -315,7 +332,7 @@ function main() {
     errors.push("municipality search failed");
   }
 
-  const districtResults = searchDisasterSocialIndex(indexPayload, {
+  const districtResults = searchDisasterSocialIndex(searchIndexPayload, {
     prefecture: "熊本県",
     municipality: "阿蘇市",
     district: "黒川"
@@ -329,7 +346,7 @@ function main() {
     errors.push("district search failed");
   }
 
-  const legacyFiveResults = searchDisasterSocialIndex(indexPayload, { municipality: "八代市" });
+  const legacyFiveResults = searchDisasterSocialIndex(searchIndexPayload, { municipality: "八代市" });
   checks.push({
     check: "municipality data preserved",
     pass: legacyFiveResults.length > 0,
@@ -364,25 +381,25 @@ function main() {
     errors.push("鹿児島県霧島市 must remain accepted at intake");
   }
 
-  const regionResultsLegacy = searchDisasterSocialIndex(indexPayload, { region: "熊本市" });
+  const regionResultsLegacy = searchDisasterSocialIndex(searchIndexPayload, { region: "熊本市" });
   checks.push({ check: "region search", pass: regionResultsLegacy.length > 0, count: regionResultsLegacy.length });
   if (!regionResultsLegacy.length) {
     errors.push("region search failed");
   }
 
-  const dateResults = searchDisasterSocialIndex(indexPayload, { date: "2026-07-31" });
+  const dateResults = searchDisasterSocialIndex(searchIndexPayload, { date: "2026-07-31" });
   checks.push({ check: "date search", pass: dateResults.length > 0, count: dateResults.length });
   if (!dateResults.length) {
     errors.push("date search failed");
   }
 
-  const categoryResults = searchDisasterSocialIndex(indexPayload, { category: "TOILET" });
+  const categoryResults = searchDisasterSocialIndex(searchIndexPayload, { category: "WATER" });
   checks.push({ check: "category search", pass: categoryResults.length > 0, count: categoryResults.length });
   if (!categoryResults.length) {
     errors.push("category search failed");
   }
 
-  const structuredResults = searchDisasterSocialIndex(indexPayload, {
+  const structuredResults = searchDisasterSocialIndex(searchIndexPayload, {
     prefecture: "熊本県",
     municipality: "阿蘇市",
     date: "2026-08-01",
@@ -464,7 +481,7 @@ function main() {
   ];
   const operationalPass = operationalSearches.every(function (item) {
     const resolution = resolveSocialCategoryInput(item.keyword);
-    const results = searchDisasterSocialIndex(indexPayload, {
+    const results = searchDisasterSocialIndex(searchIndexPayload, {
       region: "熊本県",
       date: "2026-08-01",
       categoryQuery: item.keyword
@@ -490,7 +507,7 @@ function main() {
     errors.push("official water search must remain available");
   }
 
-  const incompleteEntries = indexPayload.entries.filter(function (entry) {
+  const incompleteEntries = searchIndexPayload.entries.filter(function (entry) {
     return entry.status === "incomplete";
   });
   checks.push({

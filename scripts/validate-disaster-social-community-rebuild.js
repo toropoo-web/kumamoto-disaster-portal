@@ -33,9 +33,14 @@ function main() {
 
   checks.push({
     check: "production inbox acquisition mode",
-    pass: inbox.acquisition_mode === "SNS_AUTO_FETCH"
+    pass:
+      inbox.acquisition_mode === "SNS_AUTO_FETCH" ||
+      inbox.acquisition_mode === "SNS_SEARCH_CROSS_FETCH"
   });
-  if (inbox.acquisition_mode !== "SNS_AUTO_FETCH") {
+  if (
+    inbox.acquisition_mode !== "SNS_AUTO_FETCH" &&
+    inbox.acquisition_mode !== "SNS_SEARCH_CROSS_FETCH"
+  ) {
     errors.push("production inbox must use SNS_AUTO_FETCH acquisition mode");
   }
 

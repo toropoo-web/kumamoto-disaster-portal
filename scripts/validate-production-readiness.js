@@ -14,11 +14,11 @@ const REVIEW_QUEUE_FILE = path.join(ROOT, "data", "review_queue", "patrol_review
 const PUBLIC_HASH_FILE = path.join(ROOT, "data", "production_readiness", "public-data-hash.json");
 
 const TARGET_AREA_IDS = [
-  "KM014", "KM015", "KM016", "KM017", "KM018",
+  "KM004", "KM014", "KM015", "KM016", "KM017", "KM018",
   "KM019", "KM020", "KM021", "KM022"
 ];
 
-const EXPECTED_MUNICIPALITY_COUNT = 9;
+const EXPECTED_MUNICIPALITY_COUNT = 10;
 const ALLOWED_DECISION_STATUSES = ["PENDING", "APPROVED", "REJECTED"];
 
 const {

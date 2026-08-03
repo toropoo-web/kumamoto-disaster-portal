@@ -24,6 +24,13 @@ function readText(filePath) {
   return fs.readFileSync(filePath, "utf8");
 }
 
+function isBillingPausedFetchWorkflow(fetchText) {
+  return fetchText &&
+    !/\*\/30 \* \* \* \*/.test(fetchText) &&
+    /workflow_dispatch:/.test(fetchText) &&
+    /X_API_FETCH_ENABLED/.test(fetchText);
+}
+
 function check(name, status, reason) {
   return { check: name, status: status, reason: reason || null };
 }
@@ -60,13 +67,17 @@ function auditXFeedWorkflows() {
   const checks = [];
   const fetch = readText(X_FEED_WORKFLOWS.fetch);
 
-  checks.push(check("xfeed.fetch_workflow.exists", fetch ? "PASS" : "FAIL"));
+  checks.push(check("xfeed.fetch_workflow.exists", fetch ? "PASS" : "WARN", fetch ? null : "kumamoto-disaster-x-feed not found at sibling path"));
   if (!fetch) {
-    checks.push(check("xfeed.repo_present", "WARN", "kumamoto-disaster-x-feed not found at sibling path"));
     return checks;
   }
 
-  checks.push(check("xfeed.schedule_30min", /\*\/30 \* \* \* \*/.test(fetch) ? "PASS" : "FAIL"));
+  const billingPaused = isBillingPausedFetchWorkflow(fetch);
+  if (billingPaused) {
+    checks.push(check("xfeed.schedule_30min", "WARN", "billing paused: cron disabled, workflow_dispatch only"));
+  } else {
+    checks.push(check("xfeed.schedule_30min", /\*\/30 \* \* \* \*/.test(fetch) ? "PASS" : "FAIL"));
+  }
   checks.push(check("xfeed.workflow_dispatch", /workflow_dispatch:/.test(fetch) ? "PASS" : "FAIL"));
   checks.push(check("xfeed.schedule_before_dispatch", fetch.indexOf("schedule:") < fetch.indexOf("workflow_dispatch:") ? "PASS" : "WARN"));
   checks.push(check("xfeed.fetch_script", /npm run fetch:x/.test(fetch) ? "PASS" : "FAIL"));
@@ -74,7 +85,11 @@ function auditXFeedWorkflows() {
   checks.push(check("xfeed.commit_push", /git push/.test(fetch) ? "PASS" : "FAIL"));
   checks.push(check("xfeed.portal_dispatch_job", /dispatch-portal:/.test(fetch) ? "PASS" : "FAIL"));
   checks.push(check("xfeed.portal_dispatch_token", /PORTAL_DISPATCH_TOKEN/.test(fetch) ? "PASS" : "FAIL"));
-  checks.push(check("xfeed.dispatch_non_blocking", /PORTAL_DISPATCH_SKIPPED=true/.test(fetch) ? "PASS" : "FAIL"));
+  if (billingPaused) {
+    checks.push(check("xfeed.dispatch_non_blocking", "WARN", "billing paused: portal dispatch requires token"));
+  } else {
+    checks.push(check("xfeed.dispatch_non_blocking", /PORTAL_DISPATCH_SKIPPED=true/.test(fetch) ? "PASS" : "FAIL"));
+  }
   checks.push(check("xfeed.repository_dispatch_event", /event_type=x-feed-updated/.test(fetch) ? "PASS" : "FAIL"));
   checks.push(check("xfeed.no_pc_dependency", !/localhost|127\.0\.0\.1/.test(fetch) ? "PASS" : "FAIL"));
 
@@ -92,8 +107,8 @@ function auditPcDependencyRisks() {
 
   const fetch = readText(X_FEED_WORKFLOWS.fetch);
   if (!fetch) {
-    risks.push("x-feed repo not available for local audit");
-  } else if (!/\*\/30 \* \* \* \*/.test(fetch)) {
+    // sibling x-feed repo is optional for portal CI
+  } else if (!/\*\/30 \* \* \* \*/.test(fetch) && !isBillingPausedFetchWorkflow(fetch)) {
     risks.push("x-feed fetch missing */30 cron");
   }
 

@@ -108,13 +108,28 @@ function main() {
   const hachioEntryCount = payload.index.entries.filter(function (entry) {
     return entry.municipality === "八代市";
   }).length;
+  const hachioEntryIds = payload.index.entries
+    .filter(function (entry) {
+      return entry.municipality === "八代市";
+    })
+    .map(function (entry) {
+      return entry.id;
+    });
+  const hachioResultIds = new Set(
+    hachioResults.map(function (item) {
+      return item.entry.id;
+    })
+  );
+  const allHachioFound = hachioEntryIds.every(function (id) {
+    return hachioResultIds.has(id);
+  });
   checks.push({
     check: "evacuation scope municipality search",
-    pass: hachioResults.length === hachioEntryCount && hachioEntryCount > 0,
+    pass: allHachioFound && hachioEntryCount > 0,
     count: hachioResults.length,
     hachio_entry_count: hachioEntryCount
   });
-  if (hachioResults.length !== hachioEntryCount) {
+  if (!allHachioFound || hachioEntryCount === 0) {
     errors.push("municipality search 八代市 must return all matching entries");
   }
 

@@ -23,8 +23,8 @@ const {
   searchDisasterIndex
 } = require(path.join(ROOT, "monitor", "disaster-search-index-engine"));
 
-const EXPECTED_MUNICIPALITY_COUNT = 23;
-const EXPECTED_TOP_PAGE_SOURCE_COUNT = 69;
+const EXPECTED_MUNICIPALITY_COUNT = 24;
+const EXPECTED_TOP_PAGE_SOURCE_COUNT = 72;
 const PARSER_FIXTURE = path.join(
   ROOT,
   "monitor",
@@ -75,11 +75,11 @@ function main() {
   const municipalityCounts = countSourcesByMunicipality(allSources);
 
   checks.push({
-    check: "23 municipalities in registry",
+    check: "24 municipalities in registry",
     pass: (registry.municipalities || []).length === EXPECTED_MUNICIPALITY_COUNT
   });
   if ((registry.municipalities || []).length !== EXPECTED_MUNICIPALITY_COUNT) {
-    errors.push("registry municipality count is not 23");
+    errors.push("registry municipality count is not 24");
   }
 
   checks.push({

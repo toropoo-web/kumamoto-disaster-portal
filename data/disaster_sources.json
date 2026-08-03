@@ -1530,6 +1530,27 @@
       "extractor": {},
       "official": true,
       "active": true
+    },
+    {
+      "source_id": "DSRC-WAT-多良木町",
+      "category": "WATER",
+      "prefecture": "熊本県",
+      "municipality": "多良木町",
+      "organization": "多良木町",
+      "source_type": "MUNICIPALITY",
+      "url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
+      "keywords": [
+        "給水",
+        "応急給水",
+        "給水所",
+        "給水車",
+        "断水",
+        "水道",
+        "復旧"
+      ],
+      "extractor": {},
+      "official": true,
+      "active": true
     }
   ]
 }
