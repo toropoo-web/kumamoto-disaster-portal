@@ -16,6 +16,9 @@ const { runUrlAudit } = require("../monitor/url-audit");
 const { saveOperationStatus } = require("../monitor/operation-status");
 const { savePublicStatus } = require("../monitor/public-status");
 const { getMunicipalityPatrolSources } = require("../monitor/municipality-patrol-sources");
+const {
+  ensureMunicipalityEmergencyFallbacks
+} = require("../monitor/municipality-emergency-fallback");
 
 function loadSources() {
   const data = JSON.parse(fs.readFileSync(SOURCES_FILE, "utf8"));
@@ -49,6 +52,9 @@ async function main() {
   }
 
   const diffResult = processResults(sources, parsedResults);
+  const emergencyFallbackResult = ensureMunicipalityEmergencyFallbacks({
+    checkedAt: patrolAt
+  });
   const urlAudit = await runUrlAudit({ save: true });
   const operation = generateOperationReports({
     patrolAt,
@@ -107,7 +113,8 @@ async function main() {
     currentStatus: operationStatus.currentStatus,
     publicStatusUpdated: publicStatusResult.saved === true,
     publicStatusPath: publicStatusResult.saved ? publicStatusResult.statusPath : null,
-    sources: operation.summary.sources
+    sources: operation.summary.sources,
+    municipalityEmergencyFallback: emergencyFallbackResult
   };
 
   ensureDir(REPORTS_DIR);

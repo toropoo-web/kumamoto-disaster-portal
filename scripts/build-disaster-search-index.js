@@ -9,6 +9,12 @@ const {
 
 function main() {
   const payload = buildAndWriteDisasterSearchIndex();
+  const { ensureMunicipalityEmergencyFallbacks } = require(
+    path.join(__dirname, "..", "monitor", "municipality-emergency-fallback")
+  );
+  const fallbackResult = ensureMunicipalityEmergencyFallbacks({
+    checkedAt: payload.meta.last_updated || new Date().toISOString()
+  });
 
   console.log("=== Disaster Search Index Build ===");
   console.log(
@@ -22,6 +28,15 @@ function main() {
         REGISTRY_ITEM_COUNT: payload.meta.registry_item_count,
         SNAPSHOT_ITEM_COUNT: payload.meta.snapshot_item_count,
         LAST_UPDATED: payload.meta.last_updated
+      },
+      null,
+      2
+    )
+  );
+  console.log(
+    JSON.stringify(
+      {
+        MUNICIPALITY_EMERGENCY_FALLBACK: fallbackResult
       },
       null,
       2

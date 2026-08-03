@@ -59,7 +59,7 @@ const JS_CHECKS = [
   { name: "communication section title", pattern: /section_title \|\| "携帯電話・通信"/ },
   { name: "communication display adapter", pattern: /CommunicationDisplayAdapter/ },
   { name: "communication card render", pattern: /renderCommunicationCard/ },
-  { name: "misato placeholder", pattern: /公開可能な公式情報を確認中です/ },
+  { name: "misato emergency display rules", pattern: /KM004:[\s\S]*allowed: \["EMERGENCY"/ },
   { name: "KM010 area rules", pattern: /KM010:/ },
   { name: "KM013 area rules", pattern: /KM013:/ },
   { name: "status.json load", pattern: /loadJson\("status\.json"\)/ },

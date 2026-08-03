@@ -5,6 +5,14 @@
   "description": "Patrol対象追加自治体のトップページUI反映リスト",
   "municipalities": [
     {
+      "area_id": "KM004",
+      "name": "美里町",
+      "anchor": "misato-town",
+      "disaster_url": "https://www.town.kumamoto-misato.lg.jp/bousai/",
+      "water_url": "https://www.town.kumamoto-misato.lg.jp/bousai/",
+      "official_url": "https://www.town.kumamoto-misato.lg.jp/"
+    },
+    {
       "area_id": "KM014",
       "name": "水俣市",
       "anchor": "minamata-city",

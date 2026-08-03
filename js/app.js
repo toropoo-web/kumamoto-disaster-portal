@@ -45,7 +45,7 @@
   var X_FEED_STATUS_UNAVAILABLE = "UNAVAILABLE";
   var X_FEED_ACCOUNT_LABEL = "公式X情報";
   var X_API_FETCH_SUSPENDED_NOTICE =
-    "現在、X API課金対応のため\n新規取得を一時停止しています。\n\n表示中のデータは\n最後に取得できた情報です。";
+    "現在、当方の事情で\n新規取得を一時停止しています。\n\n表示中のデータは\n最後に取得できた情報です。";
   var X_FEED_EXCLUDED_SOURCE_IDS = { "SRC-PER-001": true };
   var X_FEED_EXCLUDED_ACCOUNT_HANDLES = { shinjirokoiz: true };
   var AREA_DISASTER_NAV_ID = "area-disaster-nav";
@@ -928,8 +928,8 @@
       blocked: ["ROAD", "CERTIFICATE", "IMPACT", "SUPPORT"]
     },
     KM004: {
-      allowed: [],
-      requireDirectVerification: true
+      allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
+      blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"]
     },
     KM005: {
       allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"],
@@ -5087,11 +5087,7 @@
       .filter(function (r) { return r.area_id === area.area_id; })
       .sort(compareByCategoryThenDate);
 
-    if (area.area_id === "KM004" && areaRecords.length === 0) {
-      var empty = createElement("div", "area-section__placeholder");
-      empty.appendChild(createElement("p", "area-section__placeholder-text", "現在、公開可能な公式情報を確認中です。"));
-      inner.appendChild(empty);
-    } else if (areaRecords.length === 0) {
+    if (areaRecords.length === 0) {
       section.remove();
       return;
     } else {

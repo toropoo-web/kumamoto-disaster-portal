@@ -6,7 +6,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "令和8年熊本地震に関する情報 - 熊本県ホームページ",
     "summary": "熊本県が令和8年熊本地震に関する公式情報を掲載しています。被害情報や災害対策本部会議資料などを随時追加しています。",
-    "displayed_updated_at": "2026-08-03T02:04:02.000Z",
+    "displayed_updated_at": "2026-08-03T09:14:33.000Z",
     "source_name": "熊本県",
     "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
     "department": "熊本県",
@@ -14,8 +14,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-08-03T02:26:09.213Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
-    "source_updated_at": "2026-08-03T02:04:02.000Z"
+    "checked_at": "2026-08-03T09:36:40.643Z",
+    "source_updated_at": "2026-08-03T09:14:33.000Z"
   },
   {
     "area_id": "KM000",
@@ -79,7 +79,7 @@
     "summary": "この地震による津波の心配はありません。",
     "original_text": "この地震による津波の心配はありません。",
     "published_at": "2026-07-29T06:30:00+09:00",
-    "displayed_updated_at": "2026-08-03T02:00:04.000Z",
+    "displayed_updated_at": "2026-08-03T07:34:16.000Z",
     "source_name": "熊本市公式X",
     "source_url": "https://www.city.kumamoto.jp/",
     "department": "熊本市",
@@ -89,8 +89,8 @@
     "update_type": "EMERGENCY_INFO",
     "emergency_source_id": "EMG-SRC-KM001-X-001",
     "display_priority": 0,
-    "checked_at": "2026-08-03T02:21:55.535Z",
-    "source_updated_at": "2026-08-03T02:00:04.000Z"
+    "checked_at": "2026-08-03T09:36:40.643Z",
+    "source_updated_at": "2026-08-03T07:34:16.000Z"
   },
   {
     "area_id": "KM002",
@@ -132,14 +132,16 @@
     "public_category_label": "地震・緊急情報",
     "headline": "市役所の窓口業務を停止します",
     "summary": "7月29日（水）から当面の間、市役所・網津支所・網田支所の窓口業務を停止します。",
-    "displayed_updated_at": "2026-07-28T00:00:00+09:00",
+    "displayed_updated_at": "2026-07-27T15:00:00.000Z",
     "source_name": "宇土市",
     "source_url": "https://www.city.uto.lg.jp/article/view/1014/16312.html",
     "department": "宇土市役所",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
-    "display_priority": 3
+    "display_priority": 3,
+    "checked_at": "2026-08-03T09:36:40.643Z",
+    "source_updated_at": "2026-07-27T15:00:00.000Z"
   },
   {
     "area_id": "KM003",
@@ -156,7 +158,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T07:34:24.185Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
+    "checked_at": "2026-08-03T09:36:40.643Z",
     "source_updated_at": "2026-08-02T15:00:00.000Z"
   },
   {
@@ -166,7 +168,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "令和8年熊本地震（八代市防災サイト）",
     "summary": "避難所開設状況、給水所情報、断水のお知らせなど、八代市の最新情報を掲載しています。",
-    "displayed_updated_at": "2026-08-03T02:20:04.000Z",
+    "displayed_updated_at": "2026-08-03T09:06:04.000Z",
     "source_name": "八代市",
     "source_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
     "department": "八代市",
@@ -174,8 +176,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T08:31:28.036Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
-    "source_updated_at": "2026-08-03T02:20:04.000Z"
+    "checked_at": "2026-08-03T09:36:40.643Z",
+    "source_updated_at": "2026-08-03T09:06:04.000Z"
   },
   {
     "area_id": "KM006",
@@ -225,7 +227,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-08-03T02:26:09.213Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
+    "checked_at": "2026-08-03T09:36:40.643Z",
     "source_updated_at": "2026-08-03T02:15:08.000Z"
   },
   {
@@ -279,7 +281,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-08-03T02:26:09.213Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
+    "checked_at": "2026-08-03T09:36:40.643Z",
     "source_updated_at": "2026-08-03T02:03:04.000Z"
   },
   {
@@ -358,7 +360,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（水俣市）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-03T02:01:04.000Z",
+    "displayed_updated_at": "2026-08-03T09:21:03.000Z",
     "source_name": "水俣市",
     "source_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
     "department": "水俣市",
@@ -366,8 +368,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
-    "source_updated_at": "2026-08-03T02:01:04.000Z"
+    "checked_at": "2026-08-03T09:38:59.076Z",
+    "source_updated_at": "2026-08-03T09:21:03.000Z"
   },
   {
     "area_id": "KM015",
@@ -376,7 +378,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（甲佐町）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-02T15:00:00.000Z",
+    "displayed_updated_at": "2026-08-11T15:00:00.000Z",
     "source_name": "甲佐町",
     "source_url": "https://www.town.kosa.lg.jp/q/list/51.html",
     "department": "甲佐町",
@@ -384,8 +386,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
-    "source_updated_at": "2026-08-02T15:00:00.000Z"
+    "checked_at": "2026-08-03T09:38:59.076Z",
+    "source_updated_at": "2026-08-11T15:00:00.000Z"
   },
   {
     "area_id": "KM016",
@@ -402,7 +404,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
+    "checked_at": "2026-08-03T09:38:59.076Z",
     "source_updated_at": "2019-07-01T15:00:00.000Z"
   },
   {
@@ -412,7 +414,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（津奈木町）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-07-29T15:00:00.000Z",
+    "displayed_updated_at": "2026-07-30T15:00:00.000Z",
     "source_name": "津奈木町",
     "source_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
     "department": "津奈木町",
@@ -420,8 +422,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
-    "source_updated_at": "2026-07-29T15:00:00.000Z"
+    "checked_at": "2026-08-03T09:38:59.076Z",
+    "source_updated_at": "2026-07-30T15:00:00.000Z"
   },
   {
     "area_id": "KM018",
@@ -438,7 +440,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
+    "checked_at": "2026-08-03T09:38:59.076Z",
     "source_updated_at": "2026-07-29T15:00:00.000Z"
   },
   {
@@ -448,7 +450,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（天草市）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-03T01:46:12.000Z",
+    "displayed_updated_at": "2026-08-03T09:24:12.000Z",
     "source_name": "天草市",
     "source_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
     "department": "天草市",
@@ -456,8 +458,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
-    "source_updated_at": "2026-08-03T01:46:12.000Z"
+    "checked_at": "2026-08-03T09:38:59.076Z",
+    "source_updated_at": "2026-08-03T09:24:12.000Z"
   },
   {
     "area_id": "KM020",
@@ -466,7 +468,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（西原村）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-02T15:00:10.000Z",
+    "displayed_updated_at": "2026-08-03T08:12:05.000Z",
     "source_name": "西原村",
     "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
     "department": "西原村",
@@ -474,8 +476,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
-    "source_updated_at": "2026-08-02T15:00:10.000Z"
+    "checked_at": "2026-08-03T09:38:59.076Z",
+    "source_updated_at": "2026-08-03T08:12:05.000Z"
   },
   {
     "area_id": "KM021",
@@ -484,7 +486,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（苓北町）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-02T15:01:08.000Z",
+    "displayed_updated_at": "2026-08-03T05:05:07.000Z",
     "source_name": "苓北町",
     "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
     "department": "苓北町",
@@ -492,8 +494,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-03T02:21:55.535Z",
-    "source_updated_at": "2026-08-02T15:01:08.000Z"
+    "checked_at": "2026-08-03T09:38:59.076Z",
+    "source_updated_at": "2026-08-03T05:05:07.000Z"
   },
   {
     "area_id": "KM022",
@@ -502,13 +504,32 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（多良木町）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-07-31T00:00:00.000Z",
+    "displayed_updated_at": "2024-07-22T15:00:00.000Z",
     "source_name": "多良木町",
     "source_url": "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
     "department": "多良木町",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
-    "display_priority": 1
+    "display_priority": 1,
+    "checked_at": "2026-08-03T09:38:59.076Z",
+    "source_updated_at": "2024-07-22T15:00:00.000Z"
+  },
+  {
+    "area_id": "KM004",
+    "area_name": "美里町",
+    "public_category_id": "EMERGENCY",
+    "public_category_label": "地震・緊急情報",
+    "headline": "防災・緊急情報（美里町）",
+    "summary": "美里町の公式防災・緊急情報ページです。最新状況はリンク先でご確認ください。",
+    "displayed_updated_at": "2026-08-03T09:36:40.643Z",
+    "source_name": "美里町",
+    "source_url": "https://www.town.kumamoto-misato.lg.jp/bousai/",
+    "department": "美里町",
+    "verification_status": "VERIFIED",
+    "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
+    "collected_at": "2026-08-03T09:36:40.643Z",
+    "display_priority": 1,
+    "checked_at": "2026-08-03T09:38:59.076Z"
   }
 ]

@@ -28,7 +28,7 @@ const AREA_RULES = {
   KM001: { allowed: ["EMERGENCY", "SHELTER", "WATER", "LIFELINE", "CERTIFICATE", "SUPPORT"], blocked: ["ROAD"] },
   KM002: { allowed: ["EMERGENCY", "SHELTER", "WATER", "CERTIFICATE", "IMPACT"], blocked: ["ROAD", "LIFELINE"], blockedHeadlines: ["宇土市の被害状況"] },
   KM003: { allowed: ["EMERGENCY", "SHELTER", "WATER"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "SUPPORT"] },
-  KM004: { allowed: [], requireDirectVerification: true },
+  KM004: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
   KM005: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
   KM006: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
   KM007: { allowed: ["EMERGENCY", "SHELTER", "WATER", "SUPPORT"], blocked: ["ROAD", "CERTIFICATE", "IMPACT", "LIFELINE"] },
