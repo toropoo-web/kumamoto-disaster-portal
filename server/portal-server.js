@@ -9,17 +9,20 @@ const { recordUsageEvent, isAllowedUsageEvent, buildUserUsageCounter } = require
 
 const ROOT = path.join(__dirname, "..");
 const PORT = Number(process.env.PORT || 3000);
+const NO_STORE_CACHE = "no-store, no-cache, must-revalidate, proxy-revalidate";
+const SERVER_BUILD_ID =
+  process.env.RENDER_GIT_COMMIT || process.env.BUILD_ID || process.env.GIT_COMMIT || "local";
 
 const CACHE_CONTROL_PATHS = {
-  "/index.html": "no-cache, no-store, must-revalidate",
-  "/data/public/phase1_updates.json": "no-cache, no-store, must-revalidate",
-  "/data/public/communication_status.json": "no-cache, no-store, must-revalidate",
-  "/data/public/status.json": "no-cache, no-store, must-revalidate",
-  "/data/public/x_feed_preview.json": "no-cache, no-store, must-revalidate",
-  "/data/public/disaster_locations.json": "no-cache, no-store, must-revalidate",
-  "/data/public/water_cross_view.json": "no-cache, no-store, must-revalidate",
-  "/data/public/water_search_index.json": "no-cache, no-store, must-revalidate",
-  "/data/public/disaster_search_index.json": "no-cache, no-store, must-revalidate"
+  "/index.html": NO_STORE_CACHE,
+  "/data/public/phase1_updates.json": NO_STORE_CACHE,
+  "/data/public/communication_status.json": NO_STORE_CACHE,
+  "/data/public/status.json": NO_STORE_CACHE,
+  "/data/public/x_feed_preview.json": NO_STORE_CACHE,
+  "/data/public/disaster_locations.json": NO_STORE_CACHE,
+  "/data/public/water_cross_view.json": NO_STORE_CACHE,
+  "/data/public/water_search_index.json": NO_STORE_CACHE,
+  "/data/public/disaster_search_index.json": NO_STORE_CACHE
 };
 
 const MIME_TYPES = {
@@ -36,11 +39,34 @@ const MIME_TYPES = {
   ".txt": "text/plain; charset=utf-8"
 };
 
+function normalizePathname(pathname) {
+  if (!pathname) {
+    return "/";
+  }
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    return pathname.slice(0, -1);
+  }
+  return pathname;
+}
+
+function shouldApplyNoStore(urlPath) {
+  return urlPath.indexOf("/api/") === 0 || urlPath.indexOf("/data/operation_monitor/") === 0;
+}
+
+function applyNoStoreHeaders(res) {
+  res.setHeader("Cache-Control", NO_STORE_CACHE);
+  res.setHeader("Pragma", "no-cache");
+  res.setHeader("Expires", "0");
+}
+
 function sendJson(res, statusCode, payload) {
-  res.writeHead(statusCode, {
+  const headers = {
     "Content-Type": "application/json; charset=utf-8",
-    "Cache-Control": "no-store"
-  });
+    "Cache-Control": NO_STORE_CACHE,
+    "Pragma": "no-cache",
+    "Expires": "0"
+  };
+  res.writeHead(statusCode, headers);
   res.end(JSON.stringify(payload));
 }
 
@@ -73,8 +99,8 @@ function resolveFilePath(urlPath) {
   return candidate;
 }
 
-function serveStatic(req, res) {
-  const filePath = resolveFilePath(req.url);
+function serveStatic(req, res, urlPath) {
+  const filePath = resolveFilePath(urlPath);
   if (!filePath || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
     res.end("Not Found");
@@ -85,15 +111,22 @@ function serveStatic(req, res) {
   const headers = {
     "Content-Type": MIME_TYPES[ext] || "application/octet-stream"
   };
-  const urlPath = req.url.split("?")[0];
   const cacheControl = CACHE_CONTROL_PATHS[urlPath];
   if (cacheControl) {
     headers["Cache-Control"] = cacheControl;
-  } else if (urlPath.indexOf("/data/operation_monitor/") === 0) {
-    headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
+    headers["Pragma"] = "no-cache";
+    headers["Expires"] = "0";
+  } else if (shouldApplyNoStore(urlPath)) {
+    headers["Cache-Control"] = NO_STORE_CACHE;
+    headers["Pragma"] = "no-cache";
+    headers["Expires"] = "0";
   }
 
   res.writeHead(200, headers);
+  if (req.method === "HEAD") {
+    res.end();
+    return;
+  }
   fs.createReadStream(filePath).pipe(res);
 }
 
@@ -115,9 +148,7 @@ async function handleUsageEvent(req, res) {
     }
     sendJson(res, 200, { ok: true, event: result.event, recorded_at: result.recorded_at });
   } catch (err) {
-    if (process.env.NODE_ENV !== "production") {
-      console.error("[usage-event] request failed:", err);
-    }
+    console.error("[usage-event] request failed:", err && err.message || err);
     sendJson(res, 400, { ok: false, error: "invalid request" });
   }
 }
@@ -127,18 +158,33 @@ function handleUsageCounter(req, res) {
     const report = buildUserUsageCounter();
     sendJson(res, 200, report);
   } catch (err) {
-    if (process.env.NODE_ENV !== "production") {
-      console.error("[usage-counter] read failed:", err);
-    }
+    console.error("[usage-counter] read failed:", err && err.message || err);
     sendJson(res, 500, { ok: false, error: "counter read failed" });
   }
 }
 
+function handleHealth(req, res) {
+  sendJson(res, 200, {
+    ok: true,
+    service: "portal-server",
+    runtime: "node",
+    build_id: SERVER_BUILD_ID,
+    routes: ["/api/health", "/api/usage-counter", "/api/usage-event"]
+  });
+}
+
 function createPortalServer() {
   return http.createServer(function (req, res) {
+    const url = new URL(req.url, "http://localhost");
+    const pathname = normalizePathname(url.pathname);
+
     res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, HEAD, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    if (shouldApplyNoStore(pathname)) {
+      applyNoStoreHeaders(res);
+    }
 
     if (req.method === "OPTIONS") {
       res.writeHead(204);
@@ -146,19 +192,28 @@ function createPortalServer() {
       return;
     }
 
-    const url = new URL(req.url, "http://localhost");
-    if (req.method === "POST" && url.pathname === "/api/usage-event") {
+    if (req.method === "GET" && pathname === "/api/health") {
+      handleHealth(req, res);
+      return;
+    }
+
+    if (req.method === "POST" && pathname === "/api/usage-event") {
       handleUsageEvent(req, res);
       return;
     }
 
-    if (req.method === "GET" && url.pathname === "/api/usage-counter") {
+    if (req.method === "GET" && pathname === "/api/usage-counter") {
       handleUsageCounter(req, res);
       return;
     }
 
+    if (pathname.indexOf("/api/") === 0) {
+      sendJson(res, 404, { ok: false, error: "api route not found", path: pathname });
+      return;
+    }
+
     if (req.method === "GET" || req.method === "HEAD") {
-      serveStatic(req, res);
+      serveStatic(req, res, pathname);
       return;
     }
 
@@ -173,6 +228,13 @@ function startPortalServer(options) {
   const port = options.port || PORT;
   return new Promise(function (resolve) {
     server.listen(port, function () {
+      console.log(
+        "[portal-server] listening on port " +
+          port +
+          " build_id=" +
+          SERVER_BUILD_ID +
+          " routes=/api/health,/api/usage-counter,/api/usage-event"
+      );
       resolve({ server: server, port: port });
     });
   });
@@ -188,5 +250,7 @@ module.exports = {
   createPortalServer,
   startPortalServer,
   ROOT,
-  PORT
+  PORT,
+  NO_STORE_CACHE,
+  normalizePathname
 };

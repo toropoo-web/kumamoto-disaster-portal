@@ -1,50 +1,68 @@
+# Render Blueprint: Node Web Service (NOT Static Site).
+# API routes (/api/usage-counter, /api/usage-event) require portal-server.js.
 services:
   - type: web
     name: kumamoto-disaster-portal
     runtime: node
     buildCommand: npm ci && npm run build
-    startCommand: node server/portal-server.js
+    startCommand: npm start
+    healthCheckPath: /api/health
     autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
     headers:
       - path: /index.html
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/phase1_updates.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/communication_status.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/status.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/x_feed_preview.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/disaster_locations.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/water_cross_view.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/water_search_index.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/disaster_search_index.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/disaster_post_index.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/disaster_social_index.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
       - path: /data/public/disaster_social_sources.json
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
-      - path: /data/operation_monitor/*
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
+      - path: /api/health
         name: Cache-Control
-        value: no-cache, no-store, must-revalidate
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
+      - path: /api/usage-counter
+        name: Cache-Control
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
+      - path: /api/usage-event
+        name: Cache-Control
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
+      - path: /data/operation_monitor/user-usage-counter.json
+        name: Cache-Control
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
+      - path: /data/operation_monitor/internal-operation-counter.json
+        name: Cache-Control
+        value: no-store, no-cache, must-revalidate, proxy-revalidate
 
   - type: cron
     name: kumamoto-patrol-cron

@@ -143,18 +143,49 @@ function main() {
     const port = server.address().port;
     const counterUrl = "http://127.0.0.1:" + port + "/api/usage-counter";
     const eventUrl = "http://127.0.0.1:" + port + "/api/usage-event";
+    const healthUrl = "http://127.0.0.1:" + port + "/api/health";
 
-    fetch(eventUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ event: "page_view" })
-    })
+    fetch(healthUrl, { cache: "no-store" })
+      .then(function (response) {
+        check("health API", response.ok, "status " + response.status, errors, checks);
+        check(
+          "health cache-control",
+          (response.headers.get("cache-control") || "").indexOf("no-store") >= 0,
+          response.headers.get("cache-control"),
+          errors,
+          checks
+        );
+        return response.json();
+      })
+      .then(function (payload) {
+        check(
+          "health runtime node",
+          payload && payload.runtime === "node",
+          null,
+          errors,
+          checks
+        );
+      })
+      .then(function () {
+        return fetch(eventUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ event: "page_view" })
+        });
+      })
       .then(function (response) {
         check("usage-event API", response.ok, "status " + response.status, errors, checks);
         return fetch(counterUrl, { cache: "no-store" });
       })
       .then(function (response) {
         check("usage-counter API", response.ok, "status " + response.status, errors, checks);
+        check(
+          "usage-counter cache-control",
+          (response.headers.get("cache-control") || "").indexOf("no-store") >= 0,
+          response.headers.get("cache-control"),
+          errors,
+          checks
+        );
         return response.json();
       })
       .then(function (payload) {
