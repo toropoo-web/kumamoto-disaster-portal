@@ -72,8 +72,20 @@ function loadExpansionSources() {
 }
 
 function validateSnapshots(sources) {
-  const snapshots = readJson(SNAPSHOT_FILE, { sources: {} });
   const checks = [];
+  if (!fs.existsSync(SNAPSHOT_FILE)) {
+    // snapshots.json is gitignored; CI clean checkouts skip live snapshot baseline.
+    checks.push(
+      check(
+        "snapshot_baseline_available",
+        true,
+        "skipped: monitor/reports/snapshots.json absent (gitignored)"
+      )
+    );
+    return checks;
+  }
+
+  const snapshots = readJson(SNAPSHOT_FILE, { sources: {} });
 
   sources.forEach(function (source) {
     const snapshot = snapshots.sources[source.id];

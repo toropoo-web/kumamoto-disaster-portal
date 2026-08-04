@@ -129,13 +129,33 @@ function main() {
 
   const changeLogPath = resolveChangeLogPath();
   if (!changeLogPath) {
-    errors.push("change-log not found");
-    checks.push({ check: "existing change-log parse", pass: false });
+    // change-log JSON files are gitignored; CI clean checkouts rely on synthetic samples above.
+    checks.push({
+      check: "existing change-log parse",
+      pass: true,
+      skipped: true,
+      reason: "monitor/change-log/*.json absent (gitignored)"
+    });
+    checks.push({
+      check: "classification generated from change-log",
+      pass: true,
+      skipped: true,
+      reason: "no local change-log"
+    });
+    ["WATER", "SHELTER", "COMMUNICATION", "SUPPORT"].forEach(function (category) {
+      checks.push({
+        check: "category present: " + category,
+        pass: true,
+        skipped: true,
+        reason: "no local change-log"
+      });
+    });
   } else {
     const entries = JSON.parse(fs.readFileSync(changeLogPath, "utf8"));
-    const snapshots = JSON.parse(
-      fs.readFileSync(path.join(ROOT, "monitor", "reports", "snapshots.json"), "utf8")
-    );
+    const snapshotsPath = path.join(ROOT, "monitor", "reports", "snapshots.json");
+    const snapshots = fs.existsSync(snapshotsPath)
+      ? JSON.parse(fs.readFileSync(snapshotsPath, "utf8"))
+      : { sources: {} };
     const classifications = classifyChangeLogEntries(entries, snapshots);
     checks.push({
       check: "existing change-log parse",
