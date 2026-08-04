@@ -1,7 +1,8 @@
 {
   "PRODUCTION_READINESS": "PASS",
-  "generatedAt": "2026-08-01T11:29:54.783Z",
+  "generatedAt": "2026-08-04T19:26:55.462Z",
   "target_area_ids": [
+    "KM004",
     "KM014",
     "KM015",
     "KM016",
@@ -21,6 +22,11 @@
   "sections": {
     "snapshot_baseline": {
       "checks": [
+        {
+          "check": "snapshot.KM004-misato-emergency",
+          "status": "PASS",
+          "reason": null
+        },
         {
           "check": "snapshot.KM014-minamata-emergency",
           "status": "PASS",
@@ -157,6 +163,11 @@
           "reason": null
         },
         {
+          "check": "patrol_source.KM004",
+          "status": "PASS",
+          "reason": null
+        },
+        {
           "check": "patrol_source.KM014",
           "status": "PASS",
           "reason": null
@@ -207,47 +218,47 @@
     "trace_integrity": {
       "checks": [
         {
-          "check": "shelter_trace.KM014[69]",
+          "check": "shelter_trace.KM014[78]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM015[70]",
+          "check": "shelter_trace.KM015[79]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM016[71]",
+          "check": "shelter_trace.KM016[80]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM017[72]",
+          "check": "shelter_trace.KM017[81]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM018[73]",
+          "check": "shelter_trace.KM018[82]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM019[74]",
+          "check": "shelter_trace.KM019[83]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM020[75]",
+          "check": "shelter_trace.KM020[84]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM021[76]",
+          "check": "shelter_trace.KM021[85]",
           "status": "PASS",
           "reason": null
         },
         {
-          "check": "shelter_trace.KM022[77]",
+          "check": "shelter_trace.KM022[86]",
           "status": "PASS",
           "reason": null
         }

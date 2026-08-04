@@ -752,6 +752,134 @@ const INFRASTRUCTURE_STATUS_BY_CATEGORY = {
 const ISO_TIMESTAMP_PATTERN =
   /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
 
+/** Municipality name must not appear in URLs of other municipalities (cross-mapping guard). */
+const MUNICIPALITY_FORBIDDEN_URL_SUBSTRINGS = {
+  多良木町: ["aso.kumamoto.jp", "city.aso.kumamoto"],
+  阿蘇市: ["town.taragi.lg.jp"]
+};
+
+/** Expected hostname fragments for official municipality URLs (cross-check hint). */
+const MUNICIPALITY_EXPECTED_URL_HINTS = {
+  多良木町: ["taragi"],
+  阿蘇市: ["aso.kumamoto"],
+  南阿蘇村: ["minamiaso"]
+};
+
+function extractUrlHost(url) {
+  try {
+    return new URL(url).hostname.toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
+function urlMatchesMunicipalityHints(municipality, url) {
+  const host = extractUrlHost(url);
+  if (!host) {
+    return false;
+  }
+  const forbidden = MUNICIPALITY_FORBIDDEN_URL_SUBSTRINGS[municipality] || [];
+  if (forbidden.some(function (fragment) {
+    return host.indexOf(fragment) !== -1 || url.indexOf(fragment) !== -1;
+  })) {
+    return false;
+  }
+  const hints = MUNICIPALITY_EXPECTED_URL_HINTS[municipality];
+  if (!hints || !hints.length) {
+    return true;
+  }
+  return hints.some(function (hint) {
+    return host.indexOf(hint) !== -1;
+  });
+}
+
+function buildAreaNameById(areas) {
+  const map = new Map();
+  areas.forEach(function (area) {
+    if (area.area_id && area.name) {
+      map.set(area.area_id, area.name);
+    }
+  });
+  return map;
+}
+
+function validateMunicipalityUrlCrossCheck(errors, areas) {
+  const areaNameById = buildAreaNameById(areas);
+
+  const updates = readJson("phase1_updates.json");
+  updates.forEach(function (record, index) {
+    const label = "phase1_updates[" + index + "]";
+    const expectedName = areaNameById.get(record.area_id);
+    if (expectedName && record.area_name && record.area_name !== expectedName) {
+      errors.push(
+        label + ": area_name " + record.area_name + " mismatches phase1_areas (" + expectedName + ")"
+      );
+    }
+    if (record.area_name && record.source_url && !urlMatchesMunicipalityHints(record.area_name, record.source_url)) {
+      errors.push(
+        label + ": source_url domain mismatch for " + record.area_name + " (" + record.source_url + ")"
+      );
+    }
+  });
+
+  const emergencyPath = path.join(DATA_DIR, "emergency_sources.json");
+  if (fs.existsSync(emergencyPath)) {
+    const emergency = JSON.parse(fs.readFileSync(emergencyPath, "utf8"));
+    (emergency.sources || []).forEach(function (source, index) {
+      const label = "emergency_sources[" + (source.source_id || index) + "]";
+      const expectedName = areaNameById.get(source.area_id);
+      if (expectedName && source.municipality && source.municipality !== expectedName) {
+        errors.push(
+          label + ": municipality " + source.municipality + " mismatches phase1_areas (" + expectedName + ")"
+        );
+      }
+      if (source.municipality && source.url && !urlMatchesMunicipalityHints(source.municipality, source.url)) {
+        errors.push(label + ": url domain mismatch for " + source.municipality + " (" + source.url + ")");
+      }
+    });
+  }
+
+  const locationSourcesPath = path.join(DATA_DIR, "location_sources.json");
+  if (fs.existsSync(locationSourcesPath)) {
+    const locationSources = JSON.parse(fs.readFileSync(locationSourcesPath, "utf8"));
+    (locationSources.sources || []).forEach(function (source, index) {
+      const label = "location_sources[" + (source.source_id || index) + "]";
+      const expectedName = areaNameById.get(source.area_id);
+      if (expectedName && source.municipality && source.municipality !== expectedName) {
+        errors.push(
+          label + ": municipality " + source.municipality + " mismatches phase1_areas (" + expectedName + ")"
+        );
+      }
+      if (source.municipality && source.url && !urlMatchesMunicipalityHints(source.municipality, source.url)) {
+        errors.push(label + ": url domain mismatch for " + source.municipality + " (" + source.url + ")");
+      }
+    });
+  }
+
+  const topPagePath = path.join(ROOT, "data", "municipality_patrol", "municipality_top_page_sources.json");
+  if (fs.existsSync(topPagePath)) {
+    const topPage = JSON.parse(fs.readFileSync(topPagePath, "utf8"));
+    (topPage.municipalities || []).forEach(function (entry) {
+      const expectedName = areaNameById.get(entry.area_id);
+      if (!expectedName) {
+        return;
+      }
+      const label = "municipality_top_page_sources[" + entry.area_id + "]";
+      if (entry.municipality && entry.municipality !== expectedName) {
+        errors.push(
+          label + ": municipality " + entry.municipality + " mismatches phase1_areas (" + expectedName + ")"
+        );
+      }
+      if (entry.top_page_url && !urlMatchesMunicipalityHints(expectedName, entry.top_page_url)) {
+        errors.push(label + ": top_page_url domain mismatch (" + entry.top_page_url + ")");
+      }
+      if (entry.disaster_page_url && !urlMatchesMunicipalityHints(expectedName, entry.disaster_page_url)) {
+        errors.push(label + ": disaster_page_url domain mismatch (" + entry.disaster_page_url + ")");
+      }
+    });
+  }
+}
+
 function isValidIsoTimestamp(value) {
   if (value === null || value === undefined || value === "") {
     return true;
@@ -1092,6 +1220,7 @@ function main() {
 
   validateXFeedPreview(errors);
   validateAreaNavigation(errors, areas);
+  validateMunicipalityUrlCrossCheck(errors, areas);
   const locationStats = validateDisasterLocations(errors, areas);
   const locationSourceStats = validateLocationSources(errors, areas);
   const emergencySourceStats = validateEmergencySources(errors, areas);

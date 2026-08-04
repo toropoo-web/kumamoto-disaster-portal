@@ -479,11 +479,11 @@
       "patrol_role": "primary"
     },
     {
-      "id": "KM022-aso-bousai",
+      "id": "KM022-taragi-emergency",
       "area_id": "KM022",
-      "name": "阿蘇市",
+      "name": "多良木町",
       "category": "municipality",
-      "url": "https://www.city.aso.kumamoto.jp/",
+      "url": "https://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list",
       "public_category_id": "EMERGENCY",
       "status": "ACTIVE",
       "source_type": "official",

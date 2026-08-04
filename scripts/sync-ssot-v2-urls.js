@@ -41,7 +41,8 @@ const SSOT_V2_URLS = {
   氷川町: "https://www.town.hikawa.kumamoto.jp/",
   阿蘇市: "https://www.city.aso.kumamoto.jp/",
   南阿蘇村: "https://www.vill.minamiaso.lg.jp/site/bousai/",
-  西原村: "https://www.vill.nishihara.kumamoto.jp/bousai/default.html"
+  西原村: "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
+  多良木町: "http://www.town.taragi.lg.jp/cgi-bin/smart_alert.php/1/list"
 };
 
 function readJson(filePath) {
@@ -68,28 +69,6 @@ function updateDisasterSources(disaster) {
       updated += 1;
     }
   });
-
-  // Replace 多良木町 with 阿蘇市 / 南阿蘇村 entries
-  const taragiIdx = (disaster.sources || []).findIndex(function (e) {
-    return e.municipality === "多良木町" && e.source_type === "MUNICIPALITY";
-  });
-  if (taragiIdx >= 0) {
-    const taragi = disaster.sources[taragiIdx];
-    disaster.sources[taragiIdx] = Object.assign({}, taragi, {
-      municipality: "阿蘇市",
-      organization: "阿蘇市",
-      url: SSOT_V2_URLS["阿蘇市"]
-    });
-    disaster.sources.push(
-      Object.assign({}, taragi, {
-        source_id: "DSRC-WAT-ASO-CITY",
-        municipality: "南阿蘇村",
-        organization: "南阿蘇村",
-        url: SSOT_V2_URLS["南阿蘇村"]
-      })
-    );
-    updated += 2;
-  }
 
   // Add missing municipalities
   const existing = new Set(
