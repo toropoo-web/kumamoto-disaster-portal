@@ -26,7 +26,8 @@ const {
   loadSupportInformationCandidates,
   writeSupportInformationCandidates,
   validateSupportInformationCandidates,
-  INFORMATION_FILE
+  INFORMATION_FILE,
+  INFORMATION_LATEST_FILE
 } = require("./support-service-information");
 
 const {
@@ -318,7 +319,7 @@ function runSupportServicePatrol(options) {
       outputPath: options.candidatesOutputPath || CANDIDATES_FILE
     });
     informationPath = writeSupportInformationCandidates(discoveredInformation, {
-      outputPath: options.discoveredInformationPath || INFORMATION_FILE
+      outputPath: options.discoveredInformationPath || INFORMATION_LATEST_FILE
     });
     changeQueuePath = writeSupportServiceChangeQueue(changeQueue, {
       outputPath: options.changeQueuePath || CHANGE_QUEUE_FILE

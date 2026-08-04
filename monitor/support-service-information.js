@@ -11,6 +11,12 @@ const INFORMATION_FILE = path.join(
   "support_service_discovery",
   "support_information_candidates.json"
 );
+const INFORMATION_LATEST_FILE = path.join(
+  ROOT,
+  "data",
+  "support_service_discovery",
+  "support_information_candidates.latest.json"
+);
 
 const INFORMATION_STATUSES = ["ACTIVE", "EXPIRED", "UNKNOWN", "OUT_OF_AREA"];
 const UNKNOWN_DATE = "UNKNOWN";
@@ -303,13 +309,15 @@ function loadSupportInformationCandidates(options) {
 
 function writeSupportInformationCandidates(payload, options) {
   options = options || {};
-  const outputPath = options.outputPath || INFORMATION_FILE;
+  // Do not overwrite the committed seed file by default; patrol writes .latest.
+  const outputPath = options.outputPath || INFORMATION_LATEST_FILE;
   writeJson(outputPath, payload);
   return outputPath;
 }
 
 module.exports = {
   INFORMATION_FILE,
+  INFORMATION_LATEST_FILE,
   INFORMATION_STATUSES,
   UNKNOWN_DATE,
   buildInformationId,

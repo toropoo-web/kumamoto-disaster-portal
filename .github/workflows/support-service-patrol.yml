@@ -32,11 +32,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run SUPPORT_SERVICE patrol
-        run: npm run patrol:support-service
-
+      # Validate committed tree first. Patrol writes discovery outputs and must
+      # not run before npm test (it overwrites support_information_candidates.json).
       - name: Run validation tests
         run: npm test
+
+      - name: Run SUPPORT_SERVICE patrol
+        run: npm run patrol:support-service
 
       - name: Upload SUPPORT_SERVICE patrol artifacts
         if: always()
@@ -46,5 +48,6 @@ jobs:
           path: |
             data/support_service_discovery/support_service_patrol_log.json
             data/support_service_discovery/support_service_change_queue.json
+            data/support_service_discovery/support_information_candidates.latest.json
             data/candidates/support_service_candidates.json
           if-no-files-found: error

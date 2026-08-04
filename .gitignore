@@ -52,3 +52,4 @@ data/approved/*.json
 data/approved/locations/*.json
 !data/approved/locations/_template.json
 !data/approved/locations/20260729-km005-water-unchanged.json
+data/support_service_discovery/support_information_candidates.latest.json
