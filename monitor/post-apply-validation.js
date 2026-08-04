@@ -9,7 +9,7 @@ const ROOT = path.join(__dirname, "..");
 const DATA_DIR = path.join(ROOT, "data", "public");
 
 const EXPECTED_AREA_COUNT = 23;
-const EXPECTED_PUBLIC_CARD_COUNT = 29;
+const EXPECTED_PUBLIC_CARD_COUNT = 30;
 const EXPECTED_COMMUNICATION_COUNT = 7;
 const INCIDENT_SCOPE = "2026_KUMAMOTO_EARTHQUAKE";
 const CONTAMINATION_PATTERNS = [/2016/, /平成28/, /H28/, /平成２８/];

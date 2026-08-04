@@ -386,7 +386,10 @@ function toLocationIndexEntry(entry, location, sourceLookup) {
     source_type: "MUNICIPALITY",
     source_url: location.source_url || entry.source_url || sourceLookup.url || "",
     official: true,
-    updated_at: location.updated_at || entry.last_updated || null
+    updated_at: location.updated_at || entry.last_updated || null,
+    source_updated_at:
+      location.source_updated_at || location.updated_at || entry.last_updated || null,
+    checked_at: location.checked_at || entry.checked_at || null
   };
 }
 
@@ -529,7 +532,12 @@ function toVolunteerRegistryIndexEntry(source) {
     source_type: source.source_type || "SOCIAL_WELFARE",
     source_url: source.url,
     official: true,
-    updated_at: null,
+    updated_at: source.updated_at || null,
+    checked_at:
+      source.checked_at ||
+      source.last_checked_at ||
+      (source.published_at ? String(source.published_at) : null),
+    source_updated_at: source.source_updated_at || source.published_at || null,
     current_capability: source.current_capability || null
   };
 }
