@@ -2,7 +2,8 @@
   "use strict";
 
   var COUNTER_URL = "../../data/operation_monitor/internal-operation-counter.json";
-  var USAGE_COUNTER_URL = "../../data/operation_monitor/user-usage-counter.json";
+  var USAGE_COUNTER_API = "/api/usage-counter";
+  var USAGE_COUNTER_STATIC = "../../data/operation_monitor/user-usage-counter.json";
 
   function escapeHtml(value) {
     return String(value || "")
@@ -20,11 +21,17 @@
   }
 
   function loadJson(url) {
-    return fetch(url).then(function (response) {
+    return fetch(url, { cache: "no-store" }).then(function (response) {
       if (!response.ok) {
         throw new Error("Failed to load " + url);
       }
       return response.json();
+    });
+  }
+
+  function loadUsageCounterReport() {
+    return loadJson(USAGE_COUNTER_API).catch(function (apiError) {
+      return loadJson(USAGE_COUNTER_STATIC + "?t=" + encodeURIComponent(Date.now()));
     });
   }
 
@@ -207,8 +214,8 @@
 
   function init() {
     Promise.all([
-      loadJson(COUNTER_URL),
-      loadJson(USAGE_COUNTER_URL).catch(function () {
+      loadJson(COUNTER_URL + "?t=" + encodeURIComponent(Date.now())),
+      loadUsageCounterReport().catch(function () {
         return null;
       })
     ])

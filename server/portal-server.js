@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 const { URL } = require("url");
 
-const { recordUsageEvent, isAllowedUsageEvent } = require("../monitor/user-usage-counter");
+const { recordUsageEvent, isAllowedUsageEvent, buildUserUsageCounter } = require("../monitor/user-usage-counter");
 
 const ROOT = path.join(__dirname, "..");
 const PORT = Number(process.env.PORT || 3000);
@@ -85,9 +85,12 @@ function serveStatic(req, res) {
   const headers = {
     "Content-Type": MIME_TYPES[ext] || "application/octet-stream"
   };
-  const cacheControl = CACHE_CONTROL_PATHS[req.url.split("?")[0]];
+  const urlPath = req.url.split("?")[0];
+  const cacheControl = CACHE_CONTROL_PATHS[urlPath];
   if (cacheControl) {
     headers["Cache-Control"] = cacheControl;
+  } else if (urlPath.indexOf("/data/operation_monitor/") === 0) {
+    headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
   }
 
   res.writeHead(200, headers);
@@ -106,9 +109,28 @@ async function handleUsageEvent(req, res) {
     }
 
     const result = recordUsageEvent(eventName);
+    if (!result.ok) {
+      sendJson(res, 500, { ok: false, error: result.error || "record failed" });
+      return;
+    }
     sendJson(res, 200, { ok: true, event: result.event, recorded_at: result.recorded_at });
   } catch (err) {
+    if (process.env.NODE_ENV !== "production") {
+      console.error("[usage-event] request failed:", err);
+    }
     sendJson(res, 400, { ok: false, error: "invalid request" });
+  }
+}
+
+function handleUsageCounter(req, res) {
+  try {
+    const report = buildUserUsageCounter();
+    sendJson(res, 200, report);
+  } catch (err) {
+    if (process.env.NODE_ENV !== "production") {
+      console.error("[usage-counter] read failed:", err);
+    }
+    sendJson(res, 500, { ok: false, error: "counter read failed" });
   }
 }
 
@@ -127,6 +149,11 @@ function createPortalServer() {
     const url = new URL(req.url, "http://localhost");
     if (req.method === "POST" && url.pathname === "/api/usage-event") {
       handleUsageEvent(req, res);
+      return;
+    }
+
+    if (req.method === "GET" && url.pathname === "/api/usage-counter") {
+      handleUsageCounter(req, res);
       return;
     }
 

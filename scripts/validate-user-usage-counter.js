@@ -14,8 +14,10 @@ const {
   recordUsageEvent,
   validateUserUsageCounter,
   writeUserUsageCounter,
-  buildUserUsageCounter
+  buildUserUsageCounter,
+  getJstDateString
 } = require("../monitor/user-usage-counter");
+const { createPortalServer } = require("../server/portal-server");
 
 function check(name, pass, detail, errors, checks) {
   checks.push({ check: name, pass: pass, detail: detail || null });
@@ -118,8 +120,61 @@ function main() {
     checks
   );
   check("last_access_at present", Boolean(report.last_access_at), null, errors, checks);
+  check(
+    "today_key uses JST",
+    getJstDateString(new Date("2026-07-31T16:00:00.000Z")) === "2026-08-01",
+    null,
+    errors,
+    checks
+  );
+  check(
+    "today_views uses JST boundary",
+    buildUserUsageCounter({
+      logPath: tempLog,
+      generatedAt: "2026-07-31T16:00:00.000Z"
+    }).today_key === "2026-08-01",
+    null,
+    errors,
+    checks
+  );
 
-  const schemaErrors = validateUserUsageCounter(report);
+  const server = createPortalServer();
+  server.listen(0, function () {
+    const port = server.address().port;
+    const counterUrl = "http://127.0.0.1:" + port + "/api/usage-counter";
+    const eventUrl = "http://127.0.0.1:" + port + "/api/usage-event";
+
+    fetch(eventUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ event: "page_view" })
+    })
+      .then(function (response) {
+        check("usage-event API", response.ok, "status " + response.status, errors, checks);
+        return fetch(counterUrl, { cache: "no-store" });
+      })
+      .then(function (response) {
+        check("usage-counter API", response.ok, "status " + response.status, errors, checks);
+        return response.json();
+      })
+      .then(function (payload) {
+        check(
+          "usage-counter API schema",
+          payload && payload.view_type === "USER_USAGE_COUNTER",
+          null,
+          errors,
+          checks
+        );
+        server.close(finish);
+      })
+      .catch(function (err) {
+        check("usage-counter API", false, err.message, errors, checks);
+        server.close(finish);
+      });
+  });
+
+  function finish() {
+    const schemaErrors = validateUserUsageCounter(report);
   check("counter schema", schemaErrors.length === 0, schemaErrors.join("; "), errors, checks);
   check("no cookies flag", report.constraints && report.constraints.no_cookies === true, null, errors, checks);
   check("no ip storage flag", report.constraints && report.constraints.no_ip_storage === true, null, errors, checks);
@@ -168,6 +223,7 @@ function main() {
   }
 
   console.log("PHASE39B2_USER_USAGE_COUNTER_VALIDATION_COMPLETE");
+  }
 }
 
 main();

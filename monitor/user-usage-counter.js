@@ -67,9 +67,29 @@ function isAllowedUsageEvent(eventName) {
   return Object.prototype.hasOwnProperty.call(USAGE_EVENTS, eventName);
 }
 
-function getTodayKey(date) {
+function getJstDateString(date) {
   const value = date || new Date();
-  return value.toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(value);
+}
+
+function getTodayKey(date) {
+  return getJstDateString(date || new Date());
+}
+
+function getRecordedDateKey(recordedAt) {
+  if (!recordedAt) {
+    return "";
+  }
+  const parsed = new Date(recordedAt);
+  if (Number.isNaN(parsed.getTime())) {
+    return String(recordedAt).slice(0, 10);
+  }
+  return getJstDateString(parsed);
 }
 
 function loadUsageEventLog(options) {
@@ -152,7 +172,7 @@ function buildUserUsageCounter(options) {
     return entry.event === USAGE_EVENTS.page_view;
   });
   const todayViews = pageViews.filter(function (entry) {
-    return String(entry.recorded_at || "").slice(0, 10) === todayKey;
+    return getRecordedDateKey(entry.recorded_at) === todayKey;
   });
 
   const lastAccess = events.length
@@ -247,6 +267,9 @@ module.exports = {
   USAGE_EVENTS,
   EVENT_OUTPUT_KEYS,
   isAllowedUsageEvent,
+  getJstDateString,
+  getTodayKey,
+  getRecordedDateKey,
   loadUsageEventLog,
   writeUsageEventLog,
   recordUsageEvent,
