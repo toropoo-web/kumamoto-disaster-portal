@@ -6,16 +6,16 @@
     "public_category_label": "地震・緊急情報",
     "headline": "令和8年熊本地震に関する情報 - 熊本県ホームページ",
     "summary": "熊本県が令和8年熊本地震に関する公式情報を掲載しています。被害情報や災害対策本部会議資料などを随時追加しています。",
-    "displayed_updated_at": "2026-08-09T08:04:01.000Z",
+    "displayed_updated_at": "2026-08-09T16:04:08.000Z",
     "source_name": "熊本県",
     "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
     "department": "熊本県",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-08-09T08:43:12.022Z",
+    "collected_at": "2026-08-09T16:36:53.262Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:35:56.723Z",
-    "source_updated_at": "2026-08-09T08:04:01.000Z"
+    "checked_at": "2026-08-09T16:27:55.728Z",
+    "source_updated_at": "2026-08-09T16:04:08.000Z"
   },
   {
     "area_id": "KM000",
@@ -24,7 +24,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "大地震に関する知事コメント",
     "summary": "令和8年7月28日に発生した大地震に関する木村知事コメントを公表しました。",
-    "displayed_updated_at": "2026-08-09T08:04:01.000Z",
+    "displayed_updated_at": "2026-08-09T16:04:08.000Z",
     "source_name": "熊本県",
     "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
     "department": "知事室",
@@ -32,8 +32,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 2,
-    "checked_at": "2026-08-09T08:35:56.723Z",
-    "source_updated_at": "2026-08-09T08:04:01.000Z"
+    "checked_at": "2026-08-09T16:27:55.728Z",
+    "source_updated_at": "2026-08-09T16:04:08.000Z"
   },
   {
     "area_id": "KM000",
@@ -42,7 +42,7 @@
     "public_category_label": "被災者支援",
     "headline": "令和8年熊本地震に係る災害救助法の適用について",
     "summary": "令和8年7月28日に発生した地震を受け、9市10町1村に災害救助法の適用を決定しました。",
-    "displayed_updated_at": "2026-08-09T08:04:01.000Z",
+    "displayed_updated_at": "2026-08-09T16:04:08.000Z",
     "source_name": "熊本県",
     "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
     "department": "熊本県",
@@ -50,8 +50,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 3,
-    "checked_at": "2026-08-09T08:35:56.723Z",
-    "source_updated_at": "2026-08-09T08:04:01.000Z"
+    "checked_at": "2026-08-09T16:27:55.728Z",
+    "source_updated_at": "2026-08-09T16:04:08.000Z"
   },
   {
     "area_id": "KM001",
@@ -68,7 +68,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:35:56.723Z"
+    "checked_at": "2026-08-09T16:27:55.728Z"
   },
   {
     "area_id": "KM001",
@@ -79,7 +79,7 @@
     "summary": "この地震による津波の心配はありません。",
     "original_text": "この地震による津波の心配はありません。",
     "published_at": "2026-07-29T06:30:00+09:00",
-    "displayed_updated_at": "2026-08-09T08:27:02.000Z",
+    "displayed_updated_at": "2026-08-09T15:00:07.000Z",
     "source_name": "熊本市公式X",
     "source_url": "https://www.city.kumamoto.jp/",
     "department": "熊本市",
@@ -89,8 +89,8 @@
     "update_type": "EMERGENCY_INFO",
     "emergency_source_id": "EMG-SRC-KM001-X-001",
     "display_priority": 0,
-    "checked_at": "2026-08-09T08:35:56.723Z",
-    "source_updated_at": "2026-08-09T08:27:02.000Z"
+    "checked_at": "2026-08-09T16:27:55.728Z",
+    "source_updated_at": "2026-08-09T15:00:07.000Z"
   },
   {
     "area_id": "KM002",
@@ -107,7 +107,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:35:56.723Z"
+    "checked_at": "2026-08-09T16:27:55.728Z"
   },
   {
     "area_id": "KM002",
@@ -158,7 +158,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T07:34:24.185Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:35:56.723Z",
+    "checked_at": "2026-08-09T16:27:55.728Z",
     "source_updated_at": "2026-08-08T15:00:00.000Z"
   },
   {
@@ -168,7 +168,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "令和8年熊本地震（八代市防災サイト）",
     "summary": "避難所開設状況、給水所情報、断水のお知らせなど、八代市の最新情報を掲載しています。",
-    "displayed_updated_at": "2026-08-09T06:14:04.000Z",
+    "displayed_updated_at": "2026-08-09T15:01:04.000Z",
     "source_name": "八代市",
     "source_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
     "department": "八代市",
@@ -176,8 +176,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T08:31:28.036Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:35:56.723Z",
-    "source_updated_at": "2026-08-09T06:14:04.000Z"
+    "checked_at": "2026-08-09T16:27:55.728Z",
+    "source_updated_at": "2026-08-09T15:01:04.000Z"
   },
   {
     "area_id": "KM006",
@@ -219,16 +219,16 @@
     "public_category_label": "地震・緊急情報",
     "headline": "氷川町",
     "summary": "飲料水・食料の配布、家屋の安全確認の呼びかけなど、町からの緊急お知らせを掲載しています。",
-    "displayed_updated_at": "2026-08-09T08:20:09.000Z",
+    "displayed_updated_at": "2026-08-09T15:00:40.000Z",
     "source_name": "氷川町",
     "source_url": "https://www.town.hikawa.kumamoto.jp/",
     "department": "氷川町",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-08-09T08:43:12.022Z",
+    "collected_at": "2026-08-09T16:36:53.262Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:35:56.723Z",
-    "source_updated_at": "2026-08-09T08:20:09.000Z"
+    "checked_at": "2026-08-09T16:27:55.728Z",
+    "source_updated_at": "2026-08-09T15:00:40.000Z"
   },
   {
     "area_id": "KM008",
@@ -237,7 +237,7 @@
     "public_category_label": "避難所",
     "headline": "避難所の開設状況",
     "summary": "益城町総合体育館（キズナアリーナ益城）に避難所を開設しています。福田分館・津森分館・飯野分館は閉鎖しています。",
-    "displayed_updated_at": "2026-08-09T08:03:04.000Z",
+    "displayed_updated_at": "2026-08-09T08:44:03.000Z",
     "source_name": "益城町",
     "source_url": "https://www.town.mashiki.lg.jp/kiji0038078/index.html",
     "department": "益城町",
@@ -245,8 +245,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:35:56.723Z",
-    "source_updated_at": "2026-08-09T08:03:04.000Z"
+    "checked_at": "2026-08-09T16:27:55.728Z",
+    "source_updated_at": "2026-08-09T08:44:03.000Z"
   },
   {
     "area_id": "KM008",
@@ -263,7 +263,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 2,
-    "checked_at": "2026-08-09T08:35:56.723Z",
+    "checked_at": "2026-08-09T16:27:55.728Z",
     "source_updated_at": "2026-08-05T15:00:00.000Z"
   },
   {
@@ -273,7 +273,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災サイト / 合志市ホームページ",
     "summary": "避難所の開設状況、断水・水道のお知らせ、クーリングシェルターの状況などを掲載しています。",
-    "displayed_updated_at": "2026-08-08T15:00:12.000Z",
+    "displayed_updated_at": "2026-08-09T15:00:25.000Z",
     "source_name": "合志市",
     "source_url": "https://www.city.koshi.lg.jp/",
     "department": "合志市",
@@ -281,8 +281,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-08-03T02:26:09.213Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:35:56.723Z",
-    "source_updated_at": "2026-08-08T15:00:12.000Z"
+    "checked_at": "2026-08-09T16:27:55.728Z",
+    "source_updated_at": "2026-08-09T15:00:25.000Z"
   },
   {
     "area_id": "KM010",
@@ -315,7 +315,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T16:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:35:56.723Z",
+    "checked_at": "2026-08-09T16:27:55.728Z",
     "source_updated_at": "2026-08-05T15:00:00.000Z"
   },
   {
@@ -368,7 +368,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
+    "checked_at": "2026-08-09T16:36:54.481Z",
     "source_updated_at": "2026-08-07T06:55:05.000Z"
   },
   {
@@ -386,7 +386,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
+    "checked_at": "2026-08-09T16:36:54.481Z",
     "source_updated_at": "2026-08-11T15:00:00.000Z"
   },
   {
@@ -404,7 +404,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
+    "checked_at": "2026-08-09T16:36:54.481Z",
     "source_updated_at": "2019-07-01T15:00:00.000Z"
   },
   {
@@ -422,7 +422,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
+    "checked_at": "2026-08-09T16:36:54.481Z",
     "source_updated_at": "2026-07-30T15:00:00.000Z"
   },
   {
@@ -440,7 +440,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
+    "checked_at": "2026-08-09T16:36:54.481Z",
     "source_updated_at": "2026-07-29T15:00:00.000Z"
   },
   {
@@ -450,7 +450,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（天草市）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-08T23:05:24.000Z",
+    "displayed_updated_at": "2026-08-09T15:03:31.000Z",
     "source_name": "天草市",
     "source_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
     "department": "天草市",
@@ -458,8 +458,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
-    "source_updated_at": "2026-08-08T23:05:24.000Z"
+    "checked_at": "2026-08-09T16:36:54.481Z",
+    "source_updated_at": "2026-08-09T15:03:31.000Z"
   },
   {
     "area_id": "KM020",
@@ -468,7 +468,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（西原村）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-08T15:01:07.000Z",
+    "displayed_updated_at": "2026-08-09T15:01:20.000Z",
     "source_name": "西原村",
     "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
     "department": "西原村",
@@ -476,8 +476,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
-    "source_updated_at": "2026-08-08T15:01:07.000Z"
+    "checked_at": "2026-08-09T16:36:54.481Z",
+    "source_updated_at": "2026-08-09T15:01:20.000Z"
   },
   {
     "area_id": "KM021",
@@ -486,7 +486,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "防災・緊急情報（苓北町）",
     "summary": "避難所・断水・災害情報など、自治体公式の防災ページです。最新状況はリンク先でご確認ください。",
-    "displayed_updated_at": "2026-08-08T15:01:10.000Z",
+    "displayed_updated_at": "2026-08-09T15:00:29.000Z",
     "source_name": "苓北町",
     "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
     "department": "苓北町",
@@ -494,8 +494,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
-    "source_updated_at": "2026-08-08T15:01:10.000Z"
+    "checked_at": "2026-08-09T16:36:54.481Z",
+    "source_updated_at": "2026-08-09T15:00:29.000Z"
   },
   {
     "area_id": "KM022",
@@ -512,7 +512,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
+    "checked_at": "2026-08-09T16:36:54.481Z",
     "source_updated_at": "2026-06-11T15:00:00.000Z"
   },
   {
@@ -530,7 +530,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-08-03T09:36:40.643Z",
     "display_priority": 1,
-    "checked_at": "2026-08-09T08:43:13.103Z",
+    "checked_at": "2026-08-09T16:36:54.481Z",
     "source_updated_at": "2026-08-07T11:35:00.000Z"
   }
 ]
