@@ -25,8 +25,8 @@
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-11T00:57:02.000Z",
-      "checked_at": "2026-08-11T01:17:28.957Z"
+      "source_updated_at": "2026-08-11T06:10:02.000Z",
+      "checked_at": "2026-08-11T08:48:59.219Z"
     },
     {
       "index_id": "DIDX-CBA0C17B0FD5",
@@ -51,8 +51,8 @@
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-11T00:57:02.000Z",
-      "checked_at": "2026-08-11T01:17:28.957Z"
+      "source_updated_at": "2026-08-11T06:10:02.000Z",
+      "checked_at": "2026-08-11T08:48:59.219Z"
     },
     {
       "index_id": "DIDX-8D6A40BFA26E",
@@ -77,8 +77,8 @@
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-11T00:57:02.000Z",
-      "checked_at": "2026-08-11T01:17:28.957Z"
+      "source_updated_at": "2026-08-11T06:10:02.000Z",
+      "checked_at": "2026-08-11T08:48:59.219Z"
     },
     {
       "index_id": "DIDX-5C136E4FC248",
@@ -103,8 +103,8 @@
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-11T00:57:02.000Z",
-      "checked_at": "2026-08-11T01:17:28.957Z"
+      "source_updated_at": "2026-08-11T06:10:02.000Z",
+      "checked_at": "2026-08-11T08:48:59.219Z"
     },
     {
       "index_id": "DIDX-10A9468D3D4D",
@@ -129,8 +129,8 @@
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "official": true,
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-11T00:57:02.000Z",
-      "checked_at": "2026-08-11T01:17:28.957Z"
+      "source_updated_at": "2026-08-11T06:10:02.000Z",
+      "checked_at": "2026-08-11T08:48:59.219Z"
     },
     {
       "index_id": "DIDX-7DBB32BBFAC4",
@@ -311,8 +311,8 @@
       "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
       "official": true,
       "updated_at": null,
-      "source_updated_at": "2026-08-11T00:04:01.000Z",
-      "checked_at": "2026-08-11T01:17:02.097Z"
+      "source_updated_at": "2026-08-11T08:04:02.000Z",
+      "checked_at": "2026-08-11T08:48:26.553Z"
     },
     {
       "index_id": "DIDX-6AAC8681D8F4",
@@ -338,7 +338,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-07-27T15:00:00.000Z",
-      "checked_at": "2026-08-11T01:20:38.490Z"
+      "checked_at": "2026-08-11T08:53:04.676Z"
     },
     {
       "index_id": "DIDX-46EB4F200FB8",
@@ -364,7 +364,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-07-27T15:00:00.000Z",
-      "checked_at": "2026-08-11T01:20:38.490Z"
+      "checked_at": "2026-08-11T08:53:04.676Z"
     },
     {
       "index_id": "DIDX-407654443FFF",
@@ -389,8 +389,8 @@
       "source_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
       "official": true,
       "updated_at": null,
-      "source_updated_at": "2026-08-11T00:57:04.000Z",
-      "checked_at": "2026-08-11T01:20:40.278Z"
+      "source_updated_at": "2026-08-11T08:04:04.000Z",
+      "checked_at": "2026-08-11T08:53:06.396Z"
     },
     {
       "index_id": "DIDX-9EEE4573D419",
@@ -416,7 +416,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-10T15:00:00.000Z",
-      "checked_at": "2026-08-11T01:20:46.941Z"
+      "checked_at": "2026-08-11T08:53:11.600Z"
     },
     {
       "index_id": "DIDX-7EF2845EB558",
@@ -468,7 +468,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-09T15:00:00.000Z",
-      "checked_at": "2026-08-11T01:20:49.110Z"
+      "checked_at": "2026-08-11T08:53:15.391Z"
     },
     {
       "index_id": "DIDX-3559DF78038A",
@@ -543,7 +543,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-06T15:00:00.000Z",
-      "checked_at": "2026-08-11T01:20:52.016Z"
+      "checked_at": "2026-08-11T08:53:19.288Z"
     },
     {
       "index_id": "DIDX-D2FC067E6CB6",
@@ -593,7 +593,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-07-29T15:00:00.000Z",
-      "checked_at": "2026-08-11T01:20:55.340Z"
+      "checked_at": "2026-08-11T08:53:24.587Z"
     },
     {
       "index_id": "DIDX-8FF3079DBB35",
@@ -619,7 +619,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-07-30T15:00:00.000Z",
-      "checked_at": "2026-08-11T01:20:57.192Z"
+      "checked_at": "2026-08-11T08:53:28.092Z"
     },
     {
       "index_id": "DIDX-BF8B03D17B36",
@@ -644,7 +644,7 @@
       "source_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
       "official": true,
       "updated_at": null,
-      "checked_at": "2026-08-11T01:20:58.912Z"
+      "checked_at": "2026-08-11T08:53:30.320Z"
     },
     {
       "index_id": "DIDX-B57F825D470F",
@@ -670,7 +670,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-10T15:01:08.000Z",
-      "checked_at": "2026-08-11T01:21:01.153Z"
+      "checked_at": "2026-08-11T08:53:32.784Z"
     },
     {
       "index_id": "DIDX-C26021A020F2",
@@ -696,7 +696,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-10T15:00:18.000Z",
-      "checked_at": "2026-08-11T01:21:03.223Z"
+      "checked_at": "2026-08-11T08:53:35.841Z"
     },
     {
       "index_id": "DIDX-2A5E4D4E6D89",
@@ -748,7 +748,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-10T15:02:00.000Z",
-      "checked_at": "2026-08-11T01:21:10.494Z"
+      "checked_at": "2026-08-11T08:53:44.401Z"
     },
     {
       "index_id": "DIDX-A4643DA2A13B",
@@ -1140,7 +1140,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-10T15:00:00.000Z",
-      "checked_at": "2026-08-11T01:21:14.030Z"
+      "checked_at": "2026-08-11T08:53:48.316Z"
     },
     {
       "index_id": "DIDX-38F773134B0B",
@@ -1166,7 +1166,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-10T07:00:00.000Z",
-      "checked_at": "2026-08-11T01:21:16.380Z"
+      "checked_at": "2026-08-11T08:53:51.122Z"
     },
     {
       "index_id": "DIDX-AB74AD49E4B4",
@@ -1192,7 +1192,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-10T23:01:10.000Z",
-      "checked_at": "2026-08-11T01:21:18.726Z"
+      "checked_at": "2026-08-11T08:53:54.555Z"
     },
     {
       "index_id": "DIDX-07A2C2309BF6",
@@ -1218,7 +1218,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-09T15:00:00.000Z",
-      "checked_at": "2026-08-11T01:17:51.072Z"
+      "checked_at": "2026-08-11T08:49:29.603Z"
     },
     {
       "index_id": "DIDX-386928460E7C",
@@ -1268,7 +1268,7 @@
       "official": true,
       "updated_at": null,
       "source_updated_at": "2026-08-10T01:01:15.000Z",
-      "checked_at": "2026-08-11T01:21:21.459Z"
+      "checked_at": "2026-08-11T08:53:59.077Z"
     },
     {
       "index_id": "DIDX-4FAD096342FD",
@@ -1293,8 +1293,8 @@
       "source_url": "https://www.town.hikawa.kumamoto.jp/",
       "official": true,
       "updated_at": null,
-      "source_updated_at": "2026-08-10T15:00:26.000Z",
-      "checked_at": "2026-08-11T01:20:21.987Z"
+      "source_updated_at": "2026-08-11T08:48:07.000Z",
+      "checked_at": "2026-08-11T08:52:42.902Z"
     },
     {
       "index_id": "DIDX-9F591C4F5175",
@@ -1342,7 +1342,7 @@
       "source_url": "https://www.fukushi-kumamoto.or.jp/kvc/",
       "official": true,
       "updated_at": null,
-      "checked_at": "2026-08-11T01:21:26.708Z",
+      "checked_at": "2026-08-11T08:54:06.294Z",
       "source_updated_at": "2026-07-28",
       "current_capability": {
         "confirmed": true,
@@ -1400,7 +1400,7 @@
       "source_url": "http://www.yatsushiro-shakyo.jp/",
       "official": true,
       "updated_at": null,
-      "checked_at": "2026-08-11T01:21:33.899Z",
+      "checked_at": "2026-08-11T08:54:16.011Z",
       "source_updated_at": "2026-08-10T06:42:14.000Z",
       "current_capability": {
         "confirmed": true,
@@ -1458,7 +1458,7 @@
       "source_url": "https://www.mashiki-shakyo.or.jp/",
       "official": true,
       "updated_at": null,
-      "checked_at": "2026-08-10T16:54:36.027Z",
+      "checked_at": "2026-08-11T08:54:27.194Z",
       "source_updated_at": "2026-06-29T15:00:00.000Z",
       "current_capability": {
         "confirmed": true,
@@ -1545,7 +1545,7 @@
       "source_url": "https://mifune-shakyo.jp/",
       "official": true,
       "updated_at": null,
-      "checked_at": "2026-08-11T01:22:11.821Z",
+      "checked_at": "2026-08-11T08:54:41.911Z",
       "source_updated_at": "2026-07-28",
       "current_capability": {
         "confirmed": false,
@@ -1603,7 +1603,7 @@
       "source_url": "http://kikuchi-shakyo.or.jp/",
       "official": true,
       "updated_at": null,
-      "checked_at": "2026-08-10T16:54:54.304Z",
+      "checked_at": "2026-08-11T08:54:54.202Z",
       "source_updated_at": "2025-08-19T15:00:00.000Z",
       "current_capability": {
         "confirmed": false,
@@ -1632,7 +1632,7 @@
       "source_url": "https://www.koshi-shakyo.or.jp/",
       "official": true,
       "updated_at": null,
-      "checked_at": "2026-08-10T16:54:56.999Z",
+      "checked_at": "2026-08-11T08:54:58.332Z",
       "source_updated_at": "2026-02-24T15:00:00.000Z",
       "current_capability": {
         "confirmed": false,

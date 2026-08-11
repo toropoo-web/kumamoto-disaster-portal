@@ -4,18 +4,18 @@
     "area_name": "熊本県",
     "public_category_id": "EMERGENCY",
     "public_category_label": "地震・緊急情報",
-    "headline": "令和8年熊本地震に関する情報 - 熊本県ホームページ",
+    "headline": "令和８年熊本地震に関する情報 - 熊本県ホームページ",
     "summary": "熊本県が令和8年熊本地震に関する公式情報を掲載しています。被害情報や災害対策本部会議資料などを随時追加しています。",
-    "displayed_updated_at": "2026-08-11T00:04:01.000Z",
+    "displayed_updated_at": "2026-08-11T08:04:02.000Z",
     "source_name": "熊本県",
     "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
     "department": "熊本県",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-08-11T01:24:56.645Z",
+    "collected_at": "2026-08-11T08:57:35.933Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:17:00.241Z",
-    "source_updated_at": "2026-08-11T00:04:01.000Z"
+    "checked_at": "2026-08-11T08:48:22.995Z",
+    "source_updated_at": "2026-08-11T08:04:02.000Z"
   },
   {
     "area_id": "KM000",
@@ -24,7 +24,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "大地震に関する知事コメント",
     "summary": "令和8年7月28日に発生した大地震に関する木村知事コメントを公表しました。",
-    "displayed_updated_at": "2026-08-11T00:04:01.000Z",
+    "displayed_updated_at": "2026-08-11T08:04:02.000Z",
     "source_name": "熊本県",
     "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
     "department": "知事室",
@@ -32,8 +32,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 2,
-    "checked_at": "2026-08-11T01:17:00.241Z",
-    "source_updated_at": "2026-08-11T00:04:01.000Z"
+    "checked_at": "2026-08-11T08:48:22.995Z",
+    "source_updated_at": "2026-08-11T08:04:02.000Z"
   },
   {
     "area_id": "KM000",
@@ -42,7 +42,7 @@
     "public_category_label": "被災者支援",
     "headline": "令和8年熊本地震に係る災害救助法の適用について",
     "summary": "令和8年7月28日に発生した地震を受け、9市10町1村に災害救助法の適用を決定しました。",
-    "displayed_updated_at": "2026-08-11T00:04:01.000Z",
+    "displayed_updated_at": "2026-08-11T08:04:02.000Z",
     "source_name": "熊本県",
     "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
     "department": "熊本県",
@@ -50,8 +50,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 3,
-    "checked_at": "2026-08-11T01:17:00.241Z",
-    "source_updated_at": "2026-08-11T00:04:01.000Z"
+    "checked_at": "2026-08-11T08:48:22.995Z",
+    "source_updated_at": "2026-08-11T08:04:02.000Z"
   },
   {
     "area_id": "KM001",
@@ -68,7 +68,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:17:00.241Z"
+    "checked_at": "2026-08-11T08:48:22.995Z"
   },
   {
     "area_id": "KM001",
@@ -79,7 +79,7 @@
     "summary": "この地震による津波の心配はありません。",
     "original_text": "この地震による津波の心配はありません。",
     "published_at": "2026-07-29T06:30:00+09:00",
-    "displayed_updated_at": "2026-08-11T00:44:00.000Z",
+    "displayed_updated_at": "2026-08-11T07:08:09.000Z",
     "source_name": "熊本市公式X",
     "source_url": "https://www.city.kumamoto.jp/",
     "department": "熊本市",
@@ -89,8 +89,8 @@
     "update_type": "EMERGENCY_INFO",
     "emergency_source_id": "EMG-SRC-KM001-X-001",
     "display_priority": 0,
-    "checked_at": "2026-08-11T01:17:00.241Z",
-    "source_updated_at": "2026-08-11T00:44:00.000Z"
+    "checked_at": "2026-08-11T08:48:22.995Z",
+    "source_updated_at": "2026-08-11T07:08:09.000Z"
   },
   {
     "area_id": "KM002",
@@ -107,7 +107,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:17:00.241Z"
+    "checked_at": "2026-08-11T08:48:22.995Z"
   },
   {
     "area_id": "KM002",
@@ -158,7 +158,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T07:34:24.185Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:17:00.241Z",
+    "checked_at": "2026-08-11T08:48:22.995Z",
     "source_updated_at": "2026-08-10T15:00:00.000Z"
   },
   {
@@ -168,7 +168,7 @@
     "public_category_label": "地震・緊急情報",
     "headline": "令和8年熊本地震（八代市防災サイト）",
     "summary": "避難所開設状況、給水所情報、断水のお知らせなど、八代市の最新情報を掲載しています。",
-    "displayed_updated_at": "2026-08-11T00:57:04.000Z",
+    "displayed_updated_at": "2026-08-11T08:04:04.000Z",
     "source_name": "八代市",
     "source_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
     "department": "八代市",
@@ -176,8 +176,8 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T08:31:28.036Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:17:00.241Z",
-    "source_updated_at": "2026-08-11T00:57:04.000Z"
+    "checked_at": "2026-08-11T08:48:22.995Z",
+    "source_updated_at": "2026-08-11T08:04:04.000Z"
   },
   {
     "area_id": "KM006",
@@ -219,16 +219,16 @@
     "public_category_label": "地震・緊急情報",
     "headline": "氷川町",
     "summary": "飲料水・食料の配布、家屋の安全確認の呼びかけなど、町からの緊急お知らせを掲載しています。",
-    "displayed_updated_at": "2026-08-10T15:00:26.000Z",
+    "displayed_updated_at": "2026-08-11T08:48:07.000Z",
     "source_name": "氷川町",
     "source_url": "https://www.town.hikawa.kumamoto.jp/",
     "department": "氷川町",
     "verification_status": "VERIFIED",
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
-    "collected_at": "2026-08-11T01:24:56.645Z",
+    "collected_at": "2026-08-11T08:57:35.933Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:17:00.241Z",
-    "source_updated_at": "2026-08-10T15:00:26.000Z"
+    "checked_at": "2026-08-11T08:48:22.995Z",
+    "source_updated_at": "2026-08-11T08:48:07.000Z"
   },
   {
     "area_id": "KM008",
@@ -245,7 +245,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:17:00.241Z",
+    "checked_at": "2026-08-11T08:48:22.995Z",
     "source_updated_at": "2026-08-10T00:16:07.000Z"
   },
   {
@@ -263,7 +263,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-29T15:00:00+09:00",
     "display_priority": 2,
-    "checked_at": "2026-08-11T01:17:00.241Z",
+    "checked_at": "2026-08-11T08:48:22.995Z",
     "source_updated_at": "2026-08-05T15:00:00.000Z"
   },
   {
@@ -281,7 +281,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-08-03T02:26:09.213Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:17:00.241Z",
+    "checked_at": "2026-08-11T08:48:22.995Z",
     "source_updated_at": "2026-08-10T15:00:15.000Z"
   },
   {
@@ -368,7 +368,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2026-08-07T06:55:05.000Z"
   },
   {
@@ -386,7 +386,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2026-09-06T15:00:00.000Z"
   },
   {
@@ -404,7 +404,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2019-07-01T15:00:00.000Z"
   },
   {
@@ -422,7 +422,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2026-07-30T15:00:00.000Z"
   },
   {
@@ -440,7 +440,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2026-07-29T15:00:00.000Z"
   },
   {
@@ -458,7 +458,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2026-08-10T15:02:00.000Z"
   },
   {
@@ -476,7 +476,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2026-08-10T15:01:08.000Z"
   },
   {
@@ -494,7 +494,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2026-08-10T15:00:18.000Z"
   },
   {
@@ -512,7 +512,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-07-31T00:00:00.000Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2026-06-11T15:00:00.000Z"
   },
   {
@@ -530,7 +530,7 @@
     "incident_scope": "2026_KUMAMOTO_EARTHQUAKE",
     "collected_at": "2026-08-03T09:36:40.643Z",
     "display_priority": 1,
-    "checked_at": "2026-08-11T01:24:57.776Z",
+    "checked_at": "2026-08-11T08:57:37.272Z",
     "source_updated_at": "2026-08-10T07:00:00.000Z"
   }
 ]
