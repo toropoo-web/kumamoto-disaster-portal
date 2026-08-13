@@ -9,7 +9,7 @@
   "location_item_count": 11,
   "registry_item_count": 41,
   "item_count": 52,
-  "last_updated": "2026-08-13T01:37:39.119Z",
+  "last_updated": "2026-08-13T09:15:57.571Z",
   "items": [
     {
       "item_kind": "location",
@@ -23,8 +23,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-13T01:06:03.000Z",
-      "checked_at": "2026-08-13T01:27:48.562Z"
+      "source_updated_at": "2026-08-13T05:20:02.000Z",
+      "checked_at": "2026-08-13T09:08:06.594Z"
     },
     {
       "item_kind": "location",
@@ -38,8 +38,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-13T01:06:03.000Z",
-      "checked_at": "2026-08-13T01:27:48.562Z"
+      "source_updated_at": "2026-08-13T05:20:02.000Z",
+      "checked_at": "2026-08-13T09:08:06.594Z"
     },
     {
       "item_kind": "location",
@@ -53,8 +53,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-13T01:06:03.000Z",
-      "checked_at": "2026-08-13T01:27:48.562Z"
+      "source_updated_at": "2026-08-13T05:20:02.000Z",
+      "checked_at": "2026-08-13T09:08:06.594Z"
     },
     {
       "item_kind": "location",
@@ -68,8 +68,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-13T01:06:03.000Z",
-      "checked_at": "2026-08-13T01:27:48.562Z"
+      "source_updated_at": "2026-08-13T05:20:02.000Z",
+      "checked_at": "2026-08-13T09:08:06.594Z"
     },
     {
       "item_kind": "location",
@@ -83,8 +83,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/kinkyu.html",
       "updated_at": "2026-07-29T17:01:00+09:00",
-      "source_updated_at": "2026-08-13T01:06:03.000Z",
-      "checked_at": "2026-08-13T01:27:48.562Z"
+      "source_updated_at": "2026-08-13T05:20:02.000Z",
+      "checked_at": "2026-08-13T09:08:06.594Z"
     },
     {
       "item_kind": "location",
@@ -188,8 +188,8 @@
       "source_type": "official",
       "source_url": "https://www.pref.kumamoto.jp/soshiki/1/274517.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-13T01:08:16.000Z",
-      "checked_at": "2026-08-13T01:27:12.659Z"
+      "source_updated_at": "2026-08-13T08:04:30.000Z",
+      "checked_at": "2026-08-13T09:07:11.031Z"
     },
     {
       "item_kind": "registry",
@@ -204,7 +204,7 @@
       "source_url": "https://www.city.kumamoto.jp/bousai/",
       "updated_at": null,
       "source_updated_at": "2026-07-27T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:31:56.416Z"
+      "checked_at": "2026-08-13T09:11:48.615Z"
     },
     {
       "item_kind": "registry",
@@ -219,7 +219,7 @@
       "source_url": "https://www.city.kumamoto.jp/bousai/",
       "updated_at": null,
       "source_updated_at": "2026-07-27T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:31:56.416Z"
+      "checked_at": "2026-08-13T09:11:48.615Z"
     },
     {
       "item_kind": "registry",
@@ -233,8 +233,8 @@
       "source_type": "official",
       "source_url": "https://www.city.yatsushiro.lg.jp/bousai/default.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-13T01:21:04.000Z",
-      "checked_at": "2026-08-13T01:31:59.004Z"
+      "source_updated_at": "2026-08-13T09:11:04.000Z",
+      "checked_at": "2026-08-13T09:11:50.257Z"
     },
     {
       "item_kind": "registry",
@@ -249,7 +249,7 @@
       "source_url": "https://www.city.uki.kumamoto.jp/kinkyu/2606699",
       "updated_at": null,
       "source_updated_at": "2026-08-12T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:32:04.224Z"
+      "checked_at": "2026-08-13T09:11:55.686Z"
     },
     {
       "item_kind": "registry",
@@ -278,8 +278,8 @@
       "source_type": "official",
       "source_url": "https://www.city.kikuchi.lg.jp/",
       "updated_at": null,
-      "source_updated_at": "2026-08-11T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:32:07.614Z"
+      "source_updated_at": "2026-08-12T15:00:00.000Z",
+      "checked_at": "2026-08-13T09:11:58.703Z"
     },
     {
       "item_kind": "registry",
@@ -321,7 +321,7 @@
       "source_url": "https://www.city.minamata.lg.jp/bousai/kiji003257/index.html",
       "updated_at": null,
       "source_updated_at": "2026-08-11T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:32:12.109Z"
+      "checked_at": "2026-08-13T09:12:02.360Z"
     },
     {
       "item_kind": "registry",
@@ -349,7 +349,7 @@
       "source_url": "https://www.town.ashikita.lg.jp/bosai_site",
       "updated_at": null,
       "source_updated_at": "2026-07-29T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:32:16.528Z"
+      "checked_at": "2026-08-13T09:12:06.473Z"
     },
     {
       "item_kind": "registry",
@@ -364,7 +364,7 @@
       "source_url": "https://www.town.tsunagi.lg.jp/kinkyu/pub/default.aspx?c_id=9",
       "updated_at": null,
       "source_updated_at": "2026-07-30T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:32:19.502Z"
+      "checked_at": "2026-08-13T09:12:08.595Z"
     },
     {
       "item_kind": "registry",
@@ -378,7 +378,7 @@
       "source_type": "official",
       "source_url": "https://www.city.kamiamakusa.kumamoto.jp/q/list/542.html",
       "updated_at": null,
-      "checked_at": "2026-08-13T01:32:22.399Z"
+      "checked_at": "2026-08-13T09:12:12.896Z"
     },
     {
       "item_kind": "registry",
@@ -392,8 +392,8 @@
       "source_type": "official",
       "source_url": "https://www.vill.nishihara.kumamoto.jp/bousai/default.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-13T00:49:07.000Z",
-      "checked_at": "2026-08-13T01:32:26.349Z"
+      "source_updated_at": "2026-08-13T04:28:06.000Z",
+      "checked_at": "2026-08-13T09:12:15.526Z"
     },
     {
       "item_kind": "registry",
@@ -408,7 +408,7 @@
       "source_url": "https://reihoku-kumamoto.jp/bousai/default.html",
       "updated_at": null,
       "source_updated_at": "2026-08-12T15:00:12.000Z",
-      "checked_at": "2026-08-13T01:32:29.632Z"
+      "checked_at": "2026-08-13T09:12:17.851Z"
     },
     {
       "item_kind": "registry",
@@ -435,8 +435,8 @@
       "source_type": "official",
       "source_url": "https://www.city.amakusa.kumamoto.jp/bousai/default.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-12T23:00:31.000Z",
-      "checked_at": "2026-08-13T01:32:38.206Z"
+      "source_updated_at": "2026-08-13T08:15:38.000Z",
+      "checked_at": "2026-08-13T09:12:25.863Z"
     },
     {
       "item_kind": "registry",
@@ -638,8 +638,8 @@
       "source_type": "official",
       "source_url": "https://www.city.uto.lg.jp/article/list/1014.html",
       "updated_at": null,
-      "source_updated_at": "2026-08-11T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:32:41.907Z"
+      "source_updated_at": "2026-08-12T15:00:00.000Z",
+      "checked_at": "2026-08-13T09:12:29.548Z"
     },
     {
       "item_kind": "registry",
@@ -654,7 +654,7 @@
       "source_url": "https://www.town.kumamoto-misato.lg.jp/",
       "updated_at": null,
       "source_updated_at": "2026-08-13T00:45:00.000Z",
-      "checked_at": "2026-08-13T01:32:44.924Z"
+      "checked_at": "2026-08-13T09:12:31.812Z"
     },
     {
       "item_kind": "registry",
@@ -668,8 +668,8 @@
       "source_type": "official",
       "source_url": "https://www.town.mashiki.lg.jp/bousai",
       "updated_at": null,
-      "source_updated_at": "2026-08-11T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:32:49.087Z"
+      "source_updated_at": "2026-08-13T04:05:15.000Z",
+      "checked_at": "2026-08-13T09:12:34.115Z"
     },
     {
       "item_kind": "registry",
@@ -684,7 +684,7 @@
       "source_url": "https://www.town.mifune.kumamoto.jp/kinkyu/pub/default.aspx?c_id=8",
       "updated_at": null,
       "source_updated_at": "2026-08-09T15:00:00.000Z",
-      "checked_at": "2026-08-13T01:28:15.596Z"
+      "checked_at": "2026-08-13T09:08:30.595Z"
     },
     {
       "item_kind": "registry",
@@ -711,8 +711,8 @@
       "source_type": "official",
       "source_url": "https://www.town.kikuyo.lg.jp/bousai",
       "updated_at": null,
-      "source_updated_at": "2026-08-12T15:06:41.000Z",
-      "checked_at": "2026-08-13T01:32:53.151Z"
+      "source_updated_at": "2026-08-13T05:01:07.000Z",
+      "checked_at": "2026-08-13T09:12:37.626Z"
     },
     {
       "item_kind": "registry",
@@ -726,8 +726,8 @@
       "source_type": "official",
       "source_url": "https://www.town.hikawa.kumamoto.jp/",
       "updated_at": null,
-      "source_updated_at": "2026-08-13T00:08:08.000Z",
-      "checked_at": "2026-08-13T01:31:33.030Z"
+      "source_updated_at": "2026-08-13T08:56:06.000Z",
+      "checked_at": "2026-08-13T09:11:28.697Z"
     },
     {
       "item_kind": "registry",
