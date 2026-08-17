@@ -1,9 +1,9 @@
 {
-  "last_patrol_at": "2026-08-17T08:36:41.569Z",
-  "last_success_at": "2026-08-17T08:36:41.569Z",
+  "last_patrol_at": "2026-08-17T16:21:00.982Z",
+  "last_success_at": "2026-08-17T16:21:00.982Z",
   "system_status": "HEALTHY",
   "source_count": 158,
   "sources_checked": 158,
   "changes_detected": 0,
-  "last_validation_at": "2026-08-17T08:44:00.914Z"
+  "last_validation_at": "2026-08-17T16:27:26.794Z"
 }
