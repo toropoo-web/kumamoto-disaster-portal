@@ -1,8 +1,6 @@
 name: Auto Patrol
 
 on:
-  schedule:
-    - cron: "0 0,8,16 * * *"
   workflow_dispatch:
     inputs:
       auto_apply:
