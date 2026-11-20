@@ -38,7 +38,7 @@
     ],
     "since_date": "2026-07-28"
   },
-  "generated_at": "2026-11-20T17:13:59.346Z",
+  "generated_at": "2026-11-20T23:18:56.604Z",
   "AUTO_PUBLISH": false,
   "AUTO_APPLY": false,
   "STOP_AT": "REVIEW_QUEUE",
@@ -106,9 +106,9 @@
   },
   "last_updated": {
     "inbox": null,
-    "review_queue": "2026-11-20T17:13:56.707Z",
-    "apply_queue": "2026-11-20T17:13:56.745Z",
-    "index": "2026-11-20T17:13:56.820Z"
+    "review_queue": "2026-11-20T23:18:54.722Z",
+    "apply_queue": "2026-11-20T23:18:54.751Z",
+    "index": "2026-11-20T23:18:54.803Z"
   },
   "incomplete_items": [
     {
